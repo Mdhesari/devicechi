@@ -1,0 +1,5 @@
+suites:
+    default:
+        namespace: Predmond\Calculator
+        psr4_prefix: Predmond\Calculator
+formatter.name: pretty
