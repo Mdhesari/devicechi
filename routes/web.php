@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,13 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::get('/test', function () {
+
+    return 'testing route...';
+});
+
+RateLimiter::for('/test', function (Request $request) {
+
+    return Limit::perMinute(1);
+});
