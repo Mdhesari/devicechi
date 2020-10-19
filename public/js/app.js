@@ -3462,7 +3462,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../Layouts/AppLayout */ "./resources/js/Layouts/AppLayout.vue");
 //
 //
 //
@@ -3481,10 +3480,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+// import AppLayout from './../Layouts/AppLayout'
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    AppLayout: _Layouts_AppLayout__WEBPACK_IMPORTED_MODULE_0__["default"]
+  components: {// AppLayout,
   }
 });
 
@@ -27300,29 +27298,19 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "app-layout",
-    {
-      scopedSlots: _vm._u([
-        {
-          key: "header",
-          fn: function() {
-            return [
-              _c(
-                "h2",
-                {
-                  staticClass:
-                    "font-semibold text-xl text-gray-800 leading-tight"
-                },
-                [_vm._v("\n              Home\n          ")]
-              )
-            ]
-          },
-          proxy: true
-        }
-      ])
-    },
-    [
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "h2",
+        { staticClass: "font-semibold text-xl text-gray-800 leading-tight" },
+        [_vm._v("\n              Home\n          ")]
+      ),
       _vm._v(" "),
       _c("div", { staticClass: "py-12" }, [
         _c("div", { staticClass: "max-w-7xl mx-auto sm:px-6 lg:px-8" }, [
@@ -27333,10 +27321,9 @@ var render = function() {
           )
         ])
       ])
-    ]
-  )
-}
-var staticRenderFns = []
+    ])
+  }
+]
 render._withStripped = true
 
 
