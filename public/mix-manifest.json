@@ -3,5 +3,6 @@
     "/css/tailwind.css": "/css/tailwind.css",
     "/css/normalize.min.css": "/css/normalize.min.css",
     "/css/bootstrap.min.css": "/css/bootstrap.min.css",
-    "/css/bootstrap-rtl.min.css": "/css/bootstrap-rtl.min.css"
+    "/css/bootstrap-rtl.min.css": "/css/bootstrap-rtl.min.css",
+    "/css/front-style.min.css": "/css/front-style.min.css"
 }

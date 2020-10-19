@@ -42086,6 +42086,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/css/front-style.css":
+/*!***************************************!*\
+  !*** ./resources/css/front-style.css ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/css/normalize.css":
 /*!*************************************!*\
   !*** ./resources/css/normalize.css ***!
@@ -44874,9 +44885,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/tailwind.css ./resources/css/normalize.css ./resources/css/bootstrap.css ./resources/css/bootstrap-rtl.css ***!
-  \**************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/css/tailwind.css ./resources/css/normalize.css ./resources/css/bootstrap.css ./resources/css/bootstrap-rtl.css ./resources/css/front-style.css ***!
+  \**********************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44884,7 +44895,8 @@ __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/js/app.js 
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/tailwind.css */"./resources/css/tailwind.css");
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/normalize.css */"./resources/css/normalize.css");
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap.css */"./resources/css/bootstrap.css");
-module.exports = __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap-rtl.css */"./resources/css/bootstrap-rtl.css");
+__webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap-rtl.css */"./resources/css/bootstrap-rtl.css");
+module.exports = __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/front-style.css */"./resources/css/front-style.css");
 
 
 /***/ })
