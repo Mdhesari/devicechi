@@ -17,5 +17,7 @@ mix.js('resources/js/app.js', 'public/js')
         require('tailwindcss'),
     ]);
 
-// additonal custom mix
-mix.postCss('resources/css/normalize.css', 'public/css');
+// additonal custom resources
+mix.postCss('resources/css/normalize.css', 'public/css/normalize.min.css')
+.postCss('resources/css/bootstrap.css','public/css/bootstrap.min.css')
+.postCss('resources/css/bootstrap-rtl.css','public/css/bootstrap-rtl.min.css');
