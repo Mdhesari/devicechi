@@ -16,3 +16,6 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ]);
+
+// additonal custom mix
+mix.postCss('resources/css/normalize.css', 'public/css');
