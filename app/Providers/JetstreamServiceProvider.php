@@ -8,6 +8,8 @@ use App\Actions\Jetstream\DeleteTeam;
 use App\Actions\Jetstream\DeleteUser;
 use App\Actions\Jetstream\UpdateTeamName;
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
+use Laravel\Fortify\Fortify;
 use Laravel\Jetstream\Jetstream;
 
 class JetstreamServiceProvider extends ServiceProvider
@@ -59,5 +61,20 @@ class JetstreamServiceProvider extends ServiceProvider
             'create',
             'update',
         ])->description('Editor users have the ability to read, create, and update.');
+
+        // $this->fortifyViewCustomization();
+    }
+    
+    /**
+     * Customize Fortify views
+     *
+     * @return void
+     */
+    public function fortifyViewCustomization() {
+
+        Fortify::loginView(function() {
+
+            return Inertia::render('Auth/Login');
+        });
     }
 }
