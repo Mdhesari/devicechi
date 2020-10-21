@@ -26,7 +26,13 @@
 </head>
 
 <body class="font-sans antialiased">
+
+    @include('partials.header')
+
     @inertia
+
+    @include('partials.footer')
+
 </body>
 
 </html>
