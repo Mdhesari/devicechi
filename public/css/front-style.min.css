@@ -1,22 +1,19 @@
-/* in the name of allah */
 @charset "UTF-8";
+
 /* FONT */
+
 @font-face {
   font-family: IRANSans;
   font-style: normal;
   font-weight: normal;
   src: url(/fonts/IRANSansWeb.eot?e43cfbc1a67d90e910398ded8345cd32);
-  src: url(/fonts/IRANSansWeb.eot?e43cfbc1a67d90e910398ded8345cd32?#iefix) format("embedded-opentype"), url(/fonts/IRANSansWeb.woff?df14582918ca379a280e453bb3cc6ba5) format("woff"), url(/fonts/IRANSansWeb.ttf?ac22d187130d6c3433a49a1e98bfa968) format("truetype");
-}
-
-html, body {
-
-  height:100%;
+  src: url(/fonts/IRANSansWeb.eot?e43cfbc1a67d90e910398ded8345cd32) format("embedded-opentype"), url(/fonts/IRANSansWeb.woff?df14582918ca379a280e453bb3cc6ba5) format("woff"), url(/fonts/IRANSansWeb.ttf?ac22d187130d6c3433a49a1e98bfa968) format("truetype");
 }
 
 /* general */
+
 body {
-  background-color: #f5f6fa;
+  background-color: #ffffff;
 }
 
 p {
@@ -24,7 +21,9 @@ p {
 }
 
 /* FONT */
+
 /* NECESSARY */
+
 .h1,
 .h2,
 .h3,
@@ -56,16 +55,13 @@ ul li {
 }
 
 .form-control {
-
-	outline: none !important;
-	box-shadow:none !important;
-
+  outline: none;
+  box-shadow: none;
 }
 
 .btn {
-	box-shadow: none !important;
+  box-shadow: none;
 }
-
 
 .mini-container {
   width: 900px;
@@ -81,7 +77,9 @@ ul li {
 }
 
 /* NECESSARY */
+
 /* HEADER */
+
 .header-site .container {
   height: 100px;
   display: flex;
@@ -202,7 +200,9 @@ ul li {
 }
 
 /* HEADER */
+
 /* MAIN */
+
 .main-site .about-us-section {
   padding: 120px 0;
 }
@@ -424,7 +424,9 @@ ul li {
 }
 
 /* MAIN */
+
 /* SINGLE */
+
 .single-product {
   padding: 120px 0;
 }
@@ -513,7 +515,9 @@ ul li {
 }
 
 /* SINGLE */
+
 /* BLOG */
+
 .blog-lists {
   padding: 120px 0;
 }
@@ -572,7 +576,9 @@ ul li {
 }
 
 /* BLOG */
+
 /*Payment*/
+
 .payment-section {
   padding: 300px 0;
 }
@@ -688,7 +694,9 @@ ul li {
 }
 
 /*Payment*/
+
 /*Single*/
+
 .post-holder {
   padding: 80px 0;
 }
@@ -801,7 +809,9 @@ ul li {
 }
 
 /*Single*/
+
 /*SingleBlog*/
+
 .single-blog-section {
   padding: 100px 0;
 }
@@ -1051,6 +1061,7 @@ ul li {
 }
 
 /*Login*/
+
 .header-dashboard {
   height: 400px;
   background-color: #fb7ba2;
@@ -1062,8 +1073,11 @@ ul li {
 }
 
 /*Login*/
+
 /*SingleBlog*/
+
 /*Tutorial*/
+
 .tutorial-section {
   padding: 110px 0;
 }
@@ -1123,7 +1137,9 @@ ul li {
 }
 
 /*Tutorial*/
+
 /*Mvp*/
+
 .title-section {
   padding: 30px 0 0 0;
 }
@@ -1166,11 +1182,11 @@ ul li {
   outline: 0;
   width: 250px;
   padding: 25px 0;
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 .get-start-section .form .btn-get {
@@ -1188,7 +1204,9 @@ ul li {
 }
 
 /*Mvp*/
+
 /*Dashboard*/
+
 .user-panel-section {
   padding: 150px 0;
 }
@@ -1272,15 +1290,19 @@ ul li {
   font-size: 12px;
   color: #ffffff;
 }
+
 .adver .accept-back {
   background-color: #6ab070;
 }
+
 .adver .queue-back {
   background-color: #fccb0f;
 }
 
 /*Sidebar*/
+
 /*Home Redesign*/
+
 .normal-ads .inner {
   color: #b3b3b3;
 }
@@ -1330,7 +1352,9 @@ ul li {
 }
 
 /*Home Redesign*/
+
 /* FOOTER */
+
 .footer-site .social > a {
   display: inline-block;
   width: 50px;
@@ -1366,7 +1390,9 @@ ul li {
 }
 
 /* FOOTER */
+
 /*breadcrumb*/
+
 .breadcrumb {
   background-color: #ffffff !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -1388,20 +1414,10 @@ ul li {
   color: #424242;
 }
 
-/* not found */
-.not-found-section {
-
-  padding: 1em;
-}
-
-.not-found-picture-holder img {
-
-  width:90%;
-}
-/* end not found */
-
 /*breadcrumb*/
+
 /* Queries*/
+
 @media (max-width: 768px) {
   .single-product .gallery-items .gallery-item {
     display: inline-block;
@@ -1428,4 +1444,48 @@ ul li {
     padding: 40px 0 !important;
   }
 }
+
+.single-product .gallery-items .gallery-item {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.searc-bar-section {
+  padding: initial;
+}
+
+.footer-site .menu {
+  text-align: right;
+}
+
+.title-section .title h1 {
+  font-size: 18px;
+}
+
+.single-product .gallery-items .gallery-item {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.searc-bar-section {
+  padding: initial;
+}
+
+.footer-site .menu {
+  text-align: right;
+}
+
+.title-section .title h1 {
+  font-size: 18px;
+}
+
+.about-us {
+  font-size: 14px !important;
+}
+
+.about-us-mvp-section {
+  padding: 40px 0 !important;
+}
+
 /* Queries*/
+

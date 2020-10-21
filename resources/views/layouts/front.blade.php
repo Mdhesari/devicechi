@@ -29,7 +29,9 @@
 
     @include('partials.header')
 
-    @inertia
+    <main class="main-site">
+        @inertia
+    </main>
 
     @include('partials.footer')
 

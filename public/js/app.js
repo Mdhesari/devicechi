@@ -3470,6 +3470,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 // import AppLayout from './../Layouts/AppLayout'
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {// AppLayout,
@@ -27288,9 +27317,63 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("section", { staticClass: "title-section" }, [
+        _c("div", { staticClass: "mini-container" }, [
+          _c("div", { staticClass: "title" }, [
+            _c("h1", [_vm._v("موبایل خود را بصورت آنلاین بفروشید")])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "about-usSection about-us-mvp-section" }, [
+        _c("div", { staticClass: "mini-container" }, [
+          _c("div", { staticClass: "about-us" }, [
+            _c("p", [
+              _vm._v(
+                "\n                      لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است،\n                      چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی\n                      مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه\n                      درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.\n                  "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "get-start-section" }, [
+        _c("div", { staticClass: "mini-container" }, [
+          _c("div", { staticClass: "get-start-holder" }, [
+            _c("form", { staticClass: "form" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "text",
+                    placeholder: "شماره تماس خودرا وارد کنید"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-secondary btn-get",
+                  attrs: { type: "submit" }
+                },
+                [_vm._v("بریم که شروع کنیم")]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -42053,17 +42136,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/front-style.css":
-/*!***************************************!*\
-  !*** ./resources/css/front-style.css ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/css/normalize.css":
 /*!*************************************!*\
   !*** ./resources/css/normalize.css ***!
@@ -44851,19 +44923,30 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/scss/front-style.scss":
+/*!*****************************************!*\
+  !*** ./resources/scss/front-style.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!**********************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/tailwind.css ./resources/css/normalize.css ./resources/css/bootstrap.css ./resources/css/bootstrap-rtl.css ./resources/css/front-style.css ***!
-  \**********************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/front-style.scss ./resources/css/tailwind.css ./resources/css/normalize.css ./resources/css/bootstrap.css ./resources/css/bootstrap-rtl.css ***!
+  \************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/scss/front-style.scss */"./resources/scss/front-style.scss");
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/tailwind.css */"./resources/css/tailwind.css");
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/normalize.css */"./resources/css/normalize.css");
 __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap.css */"./resources/css/bootstrap.css");
-__webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap-rtl.css */"./resources/css/bootstrap-rtl.css");
-module.exports = __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/front-style.css */"./resources/css/front-style.css");
+module.exports = __webpack_require__(/*! /home/milad/projects/www/MobileSale/resources/css/bootstrap-rtl.css */"./resources/css/bootstrap-rtl.css");
 
 
 /***/ })

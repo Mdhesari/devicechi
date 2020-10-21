@@ -23,8 +23,10 @@ mix.postCss("resources/css/normalize.css", "public/css/normalize.min.css")
     .postCss(
         "resources/css/bootstrap-rtl.css",
         "public/css/bootstrap-rtl.min.css"
-    )
-    .postCss(
-        "resources/css/front-style.css",
-        "public/css/front-style.min.css"
     );
+
+// scss
+mix.sass(
+    "resources/scss/front-style.scss",
+    "public/css/front-style.min.css"
+);
