@@ -27,13 +27,7 @@
 
 <body class="font-sans antialiased">
 
-    @include('partials.header')
-
-    <main class="main-site">
-        @inertia
-    </main>
-
-    @include('partials.footer')
+    @inertia
 
 </body>
 
