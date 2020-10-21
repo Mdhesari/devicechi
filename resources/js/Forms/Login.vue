@@ -12,7 +12,7 @@
           </b-form-group>
 
           <b-button type="submit" variant="secondary" class="btn-login-submit">
-            <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
+            <BIconArrowRight style="vertical-align: middle "></BIconArrowRight>
             شروع کنید
           </b-button>
         </b-form>

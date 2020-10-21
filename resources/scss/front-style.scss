@@ -118,6 +118,10 @@ ul li {
 .section.login-form {
     margin-top: 4.8em;
 
+    .phone_number input {
+        padding: 1.8em 1em;
+    }
+
     .btn-login-submit {
         padding: 0.6em 3em;
     }
