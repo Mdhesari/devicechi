@@ -51,6 +51,11 @@ p {
 
 /* FONT */
 /* NECESSARY */
+
+body > div {
+    overflow: visible;
+}
+
 .h1,
 .h2,
 .h3,
@@ -85,6 +90,12 @@ ul li {
     MD Styles
 ======= */
 
+.vector {
+    img {
+        width: 500px;
+    }
+}
+
 .section {
     margin-top: 2em;
 }
@@ -97,12 +108,11 @@ ul li {
     border-color: #f5f6fa;
 }
 
-.blob {
+.blob-0 {
     background: transparent
-        url(/images/blob-1.svg?eab22fd4848b242f92d013b677d0ecef) no-repeat
-        center center;
-    width: 100px;
-    height: 100px;
+        url(/images/blob-1.svg?eab22fd4848b242f92d013b677d0ecef) no-repeat -6em 8em;
+    background-size: 300px;
+    overflow: visible;
 }
 
 .section.login-form {
@@ -115,6 +125,16 @@ ul li {
     .btn-login-submit {
         padding: 0.6em 3em;
     }
+}
+
+.section.about-us {
+
+    margin-top: 8em;
+}
+
+.intro-wrapper {
+    background: transparent url("../assets/img/background/bg.svg") no-repeat
+        center center;
 }
 /* =====
     End MD styles
@@ -266,6 +286,9 @@ ul li {
 
 /* HEADER */
 /* MAIN */
+.main-size {
+    overflow: visible;
+}
 .main-site .about-us-section {
     padding: 120px 0;
 }
