@@ -1,29 +1,40 @@
 <template>
-  <section class="login-form">
+  <AppSection class="login-form">
     <b-container>
       <div class="text-center">
         <b-form @submit="onSubmit" @reset="onReset">
-          <b-form-group id="phone-number">
+          <b-form-group class="phone_number">
             <b-form-input
-              placeholder="لطفا شماره موبایل خود را وارد نمایید."
-              v-model="form.email"
+              v-model="form.phone_number"
+              class="w-25 mx-auto input-light-silver border-0 text-left dir-ltr"
             >
             </b-form-input>
           </b-form-group>
 
-          <b-button type="submit" variant="primary">شروع کنید </b-button>
+          <b-button type="submit" variant="secondary" class="btn-login-submit">
+            <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
+            شروع کنید
+          </b-button>
         </b-form>
       </div>
     </b-container>
-  </section>
+  </AppSection>
 </template>
 
 <script>
+import AppSection from "./../Components/AppSection";
+import { BIconArrowRight } from "bootstrap-vue";
+
 export default {
+  components: {
+    AppSection,
+    BIconArrowRight,
+  },
+
   data() {
     return {
       form: {
-        phone_number: "",
+        phone_number: "+98 ",
       },
     };
   },

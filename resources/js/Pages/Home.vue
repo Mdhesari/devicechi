@@ -1,6 +1,6 @@
 <template>
   <front-layout>
-    <section class="introduction">
+    <AppSection class="introduction">
       <b-container fluid="md">
         <div class="home-title">
           <h1>موبایل خود را بصورت آنلاین بفروشید</h1>
@@ -10,7 +10,7 @@
           </h2>
         </div>
       </b-container>
-    </section>
+    </AppSection>
 
     <login></login>
   </front-layout>
@@ -20,12 +20,14 @@
 // import AppLayout from './../Layouts/AppLayout'
 import FrontLayout from "./../Layouts/FrontLayout";
 import Login from "./../Forms/Login";
+import AppSection from "./../Components/AppSection";
 
 export default {
   components: {
     // AppLayout,
     FrontLayout,
-    Login
+    Login,
+    AppSection,
   },
 };
 </script>

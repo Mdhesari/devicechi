@@ -18,19 +18,15 @@ mix.js("resources/js/app.js", "public/js").postCss(
 );
 
 // additonal custom resources
-mix.postCss("resources/css/normalize.css", "public/css/normalize.min.css")
-    .postCss("resources/css/bootstrap.css", "public/css/bootstrap.min.css")
-    .postCss(
-        "resources/css/bootstrap-rtl.css",
-        "public/css/bootstrap-rtl.min.css"
-    );
+mix.postCss("resources/css/normalize.css", "public/css/normalize.min.css");
 
 // scss
-mix.sass(
-    "resources/scss/front-style.scss",
-    "public/css/front-style.min.css"
-)
-.sass(
-    "resources/scss/bootstrap-vue.scss",
-    "public/css/bootstrap-vue.min.css"
-);
+mix.sass("resources/scss/front-style.scss", "public/css/front-style.min.css")
+    .sass(
+        "resources/scss/bootstrap-vue.scss",
+        "public/css/bootstrap-vue.min.css"
+    )
+    .sass(
+        "resources/scss/bootstrap-rtl.scss",
+        "public/css/bootstrap-rtl.min.css"
+    );

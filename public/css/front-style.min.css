@@ -58,10 +58,34 @@ ul li {
     MD Styles
 ======= */
 
+.section {
+  margin-top: 2em;
+}
+
+.bg-light-silver {
+  background-color: #f5f6fa;
+}
+
+.border-light-silver {
+  border-color: #f5f6fa;
+}
+
 .blob {
   background: transparent url(/images/blob-1.svg?eab22fd4848b242f92d013b677d0ecef) no-repeat center center;
   width: 100px;
   height: 100px;
+}
+
+.section.login-form {
+  margin-top: 4.8em;
+}
+
+.section.login-form .phone_number input {
+  padding: 1.8em 1em;
+}
+
+.section.login-form .btn-login-submit {
+  padding: 0.6em 3em;
 }
 
 /* =====
