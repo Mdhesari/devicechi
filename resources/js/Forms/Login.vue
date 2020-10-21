@@ -3,7 +3,7 @@
     <b-container>
       <div class="text-center">
         <b-form @submit="onSubmit" @reset="onReset">
-          <b-form-group class="phone_number">
+          <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
             <b-form-input
               v-model="form.phone_number"
               class="w-25 mx-auto input-light-silver border-0 text-left dir-ltr"
