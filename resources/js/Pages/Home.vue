@@ -1,56 +1,31 @@
 <template>
   <front-layout>
-    <section class="title-section">
-      <div class="mini-container">
-        <div class="title">
+    <section class="introduction">
+      <b-container fluid="md">
+        <div class="home-title">
           <h1>موبایل خود را بصورت آنلاین بفروشید</h1>
+          <h2 class="sub-title">
+            در سریعترین زمان ممکن موبایل کار کرده خود را به فروش برسانید و یا
+            گوشی کارکرده بخرید.
+          </h2>
         </div>
-      </div>
+      </b-container>
     </section>
 
-    <section class="about-usSection about-us-mvp-section">
-      <div class="mini-container">
-        <div class="about-us">
-          <p>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
-            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
-            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
-            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای
-            زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و
-            متخصصان را می طلبد.
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="get-start-section">
-      <div class="mini-container">
-        <div class="get-start-holder">
-          <form class="form">
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="شماره تماس خودرا وارد کنید"
-              />
-            </div>
-            <button type="submit" class="btn btn-secondary btn-get">
-              بریم که شروع کنیم
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
+    <login></login>
   </front-layout>
 </template>
 
 <script>
 // import AppLayout from './../Layouts/AppLayout'
 import FrontLayout from "./../Layouts/FrontLayout";
+import Login from "./../Forms/Login";
 
 export default {
   components: {
     // AppLayout,
     FrontLayout,
+    Login
   },
 };
 </script>

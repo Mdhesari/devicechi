@@ -29,4 +29,8 @@ mix.postCss("resources/css/normalize.css", "public/css/normalize.min.css")
 mix.sass(
     "resources/scss/front-style.scss",
     "public/css/front-style.min.css"
+)
+.sass(
+    "resources/scss/bootstrap-vue.scss",
+    "public/css/bootstrap-vue.min.css"
 );
