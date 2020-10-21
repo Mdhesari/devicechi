@@ -62,6 +62,10 @@ ul li {
     MD Styles
 ======= */
 
+.logo img {
+  width: 60px;
+}
+
 .vector img {
   width: 500px;
 }
