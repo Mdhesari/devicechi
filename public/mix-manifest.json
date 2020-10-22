@@ -2,7 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/front-style.min.css": "/css/front-style.min.css",
     "/css/bootstrap-vue.min.css": "/css/bootstrap-vue.min.css",
+    "/css/bootstrap-rtl.min.css": "/css/bootstrap-rtl.min.css",
     "/css/tailwind.css": "/css/tailwind.css",
-    "/css/normalize.min.css": "/css/normalize.min.css",
-    "/css/bootstrap-rtl.min.css": "/css/bootstrap-rtl.min.css"
+    "/css/normalize.min.css": "/css/normalize.min.css"
 }
