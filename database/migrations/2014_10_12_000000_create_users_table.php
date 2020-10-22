@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->unique()->nullable();
             $table->string('phone_verified_at')->nullable();
             $table->string('password')->nullable();
+            $table->json('meta_user')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
