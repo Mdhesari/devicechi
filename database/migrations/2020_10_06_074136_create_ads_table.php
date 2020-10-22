@@ -17,17 +17,18 @@ class CreateAdsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->foreignId('user_id')->nullable();
+            $table->foreignId('user_id');
             $table->foreignId('city_id')->nullable();
             $table->foreignId('model_id')->nullable();
+            $table->foreignId('model_variant_id')->nullable();
             $table->decimal('price', 12, 2);
-            $table->unsignedTinyInteger('is_available')->default(1); /* 0: unavailable, 1: available, 2: pending */
-            $table->string('location');
-            $table->json('meta');
+            $table->tinyInteger('age')->nullable(); // based on months
+            $table->unsignedTinyInteger('status')->default(1); /* 0: unavailable, 1: available, 2: pending */
+            $table->text('location')->nullable();
+            $table->json('meta_ad')->nullable();
             /* contacts, meta_title, meta_description, age  */
 
             $table->boolean('is_multicard');
-            $table->boolean('is_phone_hidden');
             $table->timestamps();
         });
     }
