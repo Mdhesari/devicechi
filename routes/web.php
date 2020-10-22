@@ -20,4 +20,4 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/back/backweb.php');
+Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/back/backweb.php');
