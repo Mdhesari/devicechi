@@ -17,9 +17,9 @@ class CreateAdsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->foreginId('user_id')->index();
-            $table->foreignId('city_id')->index();
-            $table->foreignId('model_id')->index();
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('city_id')->nullable();
+            $table->foreignId('model_id')->nullable();
             $table->decimal('price', 12, 2);
             $table->unsignedTinyInteger('is_available')->default(1); /* 0: unavailable, 1: available, 2: pending */
             $table->string('location');
