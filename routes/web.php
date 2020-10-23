@@ -11,11 +11,7 @@
 |
 */
 
-use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
