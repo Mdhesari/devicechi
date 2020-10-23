@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-vue.css') }}">
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-rtl.css') }}">
 
-    <link rel="stylesheet" href="{{ mix("css/user/front-style.css") }}">
+    <link rel="stylesheet" href="{{ mix("css/user/user.css") }}">
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
