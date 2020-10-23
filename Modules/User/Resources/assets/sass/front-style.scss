@@ -34,8 +34,7 @@ $pallete: (
     font-style: normal;
     font-weight: normal;
     src: url("../fonts/IRANSansWeb.eot");
-    src: url("../fonts/IRANSansWeb.eot?#iefix")
-            format("embedded-opentype"),
+    src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
         url("../fonts/IRANSansWeb.woff") format("woff"),
         url("../fonts/IRANSansWeb.ttf") format("truetype");
 }
@@ -91,7 +90,6 @@ ul li {
 ======= */
 
 .logo img {
-
     width: 60px;
 }
 
@@ -123,23 +121,33 @@ ul li {
 .section.login-form {
     margin-top: 6em;
 
+    .phone_number input,
+    .btn-login-submit {
+        height: 55px;
+        padding: 0 15px;
+    }
+
     .phone_number input {
-        padding: 1.8em 1em;
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     .btn-login-submit {
-        padding: 0.6em 3em;
+        position: relative;
+        left: -7px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
 .section.about-us {
-
     margin-top: 8em;
 }
 
 .intro-wrapper {
-    background: transparent url("../img/background/bg.svg") no-repeat
-        center center;
+    background: transparent url("../img/background/bg.svg") no-repeat center
+        center;
 }
 /* =====
     End MD styles

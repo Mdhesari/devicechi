@@ -2,17 +2,15 @@
   <div class="text-center">
     <b-form @submit="onSubmit" @reset="onReset">
       <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
+        <b-button type="submit" variant="secondary" class="btn-login-submit d-inline-block">
+          <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
+        </b-button>
         <b-form-input
           v-model="form.phone_number"
-          class="w-25 mx-auto input-light-silver border-0 text-left dir-ltr"
+          class="w-25 mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
         >
         </b-form-input>
       </b-form-group>
-
-      <b-button type="submit" variant="secondary" class="btn-login-submit">
-        <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
-        شروع کنید
-      </b-button>
     </b-form>
   </div>
 </template>

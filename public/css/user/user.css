@@ -92,12 +92,22 @@ ul li {
   margin-top: 6em;
 }
 
+.section.login-form .phone_number input,
+.section.login-form .btn-login-submit {
+  height: 55px;
+  padding: 0 15px;
+}
+
 .section.login-form .phone_number input {
-  padding: 1.8em 1em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .section.login-form .btn-login-submit {
-  padding: 0.6em 3em;
+  position: relative;
+  left: -7px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .section.about-us {
