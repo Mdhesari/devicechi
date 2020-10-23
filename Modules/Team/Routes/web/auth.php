@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Auth Routes [auth:sanctum]
+| Team Web Auth Routes [auth:sanctum]
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
