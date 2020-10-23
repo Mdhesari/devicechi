@@ -4,6 +4,7 @@ namespace Modules\Team\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Laravel\Fortify\Fortify;
 
 class TeamServiceProvider extends ServiceProvider
 {
@@ -18,6 +19,14 @@ class TeamServiceProvider extends ServiceProvider
     protected $moduleNameLower = 'team';
 
     /**
+     * @var array $additionalProviders
+     */
+    protected $additionalProviders = [
+        RouteServiceProvider::class,
+        BladeServiceProvider::class,
+    ];
+
+    /**
      * Boot the application events.
      *
      * @return void
@@ -28,6 +37,8 @@ class TeamServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
+        Fortify::viewPrefix('team::auth.');
     }
 
     /**
@@ -37,9 +48,20 @@ class TeamServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register(RouteServiceProvider::class);
+        $this->registerProviders();
+    }
 
-        $this->app->register(BladeServiceProvider::class);
+    /**
+     * Register all additonal providers
+     *
+     * @return void
+     */
+    private function registerProviders()
+    {
+
+        foreach ($this->additionalProviders as $providerClass) {
+            $this->app->register($providerClass);
+        }
     }
 
     /**
@@ -53,7 +75,8 @@ class TeamServiceProvider extends ServiceProvider
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            module_path($this->moduleName, 'Config/config.php'), $this->moduleNameLower
+            module_path($this->moduleName, 'Config/config.php'),
+            $this->moduleNameLower
         );
     }
 

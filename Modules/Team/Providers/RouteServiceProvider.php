@@ -63,6 +63,12 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Team', '/Routes/domain/web.php'));
+
+        // fortify
+        Route::domain($this->getDomain())
+            ->middleware(config('fortify.middleware', ['web']))
+            ->namespace($this->moduleNamespace)
+            ->group(module_path('Team', '/Routes/domain/fortify/routes.php'));
     }
 
     /**
