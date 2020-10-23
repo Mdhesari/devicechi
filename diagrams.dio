@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2020-10-22T23:52:59.557Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="ChfP09ga_Zf0LBJB0Nqg" version="13.6.5" pages="5">
+<mxfile host="65bd71144e" modified="2020-10-23T00:47:46.886Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" etag="_hF36iS3DG4ezM1fTLwy" version="13.6.5" pages="5">
     <diagram id="dN_wONCvniBCr_zcQrHz" name="users">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="543" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="jT6N3bmyK0O42DcY0y-8-0"/>
                 <mxCell id="jT6N3bmyK0O42DcY0y-8-1" parent="jT6N3bmyK0O42DcY0y-8-0"/>
@@ -20,50 +20,91 @@
         </mxGraphModel>
     </diagram>
     <diagram id="yQ4ViDUzbf9Zu7t6qshH" name="application">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        &#xa;
+        <mxGraphModel dx="1221" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            &#xa;
             <root>
+                &#xa;
                 <mxCell id="_NUrvGAM6JBVdjo-ghuE-0"/>
+                &#xa;
                 <mxCell id="_NUrvGAM6JBVdjo-ghuE-1" parent="_NUrvGAM6JBVdjo-ghuE-0"/>
+                &#xa;
                 <mxCell id="e87C57ZSTwRvwWMrCxsG-0" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;failed_jobs&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;uuid&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;connection&lt;br&gt;queue&lt;br&gt;payload&lt;br&gt;exception&lt;br&gt;failed_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="_NUrvGAM6JBVdjo-ghuE-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="50" y="40" width="180" height="160" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="M8xQ-wFO8XAGGWW5h89g-0" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;password_resets&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;email&lt;br&gt;tokne&lt;br&gt;created_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="_NUrvGAM6JBVdjo-ghuE-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="320" y="40" width="180" height="110" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="M8xQ-wFO8XAGGWW5h89g-1" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;personal_access_token&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;tokenable&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;br&gt;token&lt;br&gt;abilities&lt;br&gt;last_used_at&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="_NUrvGAM6JBVdjo-ghuE-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="570" y="40" width="180" height="160" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="uHARf0LTv6JY1LGq0a9H-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="_NUrvGAM6JBVdjo-ghuE-1" source="uHARf0LTv6JY1LGq0a9H-0" target="uHARf0LTv6JY1LGq0a9H-1" edge="1">
+                    &#xa;
                     <mxGeometry relative="1" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="uHARf0LTv6JY1LGq0a9H-0" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;cities&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;state&lt;br&gt;name&lt;br&gt;country_id&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="_NUrvGAM6JBVdjo-ghuE-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="335" y="310" width="180" height="110" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="uHARf0LTv6JY1LGq0a9H-1" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;countries&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;br&gt;capital&lt;br&gt;continent_code&lt;br&gt;currency&lt;br&gt;timezone&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="_NUrvGAM6JBVdjo-ghuE-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="40" y="310" width="180" height="200" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
             </root>
+            &#xa;
         </mxGraphModel>
+        &#xa;
     </diagram>
     <diagram id="1b89aIqsB1MLql2ZpOj5" name="teams">
-        <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        &#xa;
+        <mxGraphModel dx="1221" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            &#xa;
             <root>
+                &#xa;
                 <mxCell id="fyWn7ff-L9wt-bPHi8W0-0"/>
+                &#xa;
                 <mxCell id="fyWn7ff-L9wt-bPHi8W0-1" parent="fyWn7ff-L9wt-bPHi8W0-0"/>
+                &#xa;
                 <mxCell id="A0_x2IqZ8HHxZSEDRtWQ-0" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;teams&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;br&gt;user_id&lt;br&gt;personal_team&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="fyWn7ff-L9wt-bPHi8W0-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="70" y="40" width="180" height="160" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="48sPz0dExRSA8zA1KBI9-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="fyWn7ff-L9wt-bPHi8W0-1" source="A0_x2IqZ8HHxZSEDRtWQ-1" target="A0_x2IqZ8HHxZSEDRtWQ-0">
+                    &#xa;
                     <mxGeometry relative="1" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
                 <mxCell id="A0_x2IqZ8HHxZSEDRtWQ-1" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;team_user&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;br&gt;user_id&lt;br&gt;team_id&lt;br&gt;role&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="fyWn7ff-L9wt-bPHi8W0-1" vertex="1">
+                    &#xa;
                     <mxGeometry x="390" y="40" width="180" height="160" as="geometry"/>
+                    &#xa;
                 </mxCell>
+                &#xa;
             </root>
+            &#xa;
         </mxGraphModel>
+        &#xa;
     </diagram>
     <diagram id="UwLjg07nMSnu43cpqCH-" name="ads">
-        <mxGraphModel dx="351" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="543" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="4-D3gZ4A9TJ44_CM3qtp-0"/>
                 <mxCell id="4-D3gZ4A9TJ44_CM3qtp-1" parent="4-D3gZ4A9TJ44_CM3qtp-0"/>
@@ -79,7 +120,7 @@
                 <mxCell id="ttH3wMGeWxO1kjU8UGCu-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.003;entryY=0.107;entryDx=0;entryDy=0;entryPerimeter=0;" parent="4-D3gZ4A9TJ44_CM3qtp-1" source="ttH3wMGeWxO1kjU8UGCu-2" target="NXC_wCMpFFHYcYH1V5L7-0" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="ttH3wMGeWxO1kjU8UGCu-2" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;ad_contacts&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;ad_id&lt;br&gt;type&lt;br&gt;value&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="4-D3gZ4A9TJ44_CM3qtp-1" vertex="1">
+                <mxCell id="ttH3wMGeWxO1kjU8UGCu-2" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;ad_contacts&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;PK&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;ad_id&lt;br&gt;type_id&lt;br&gt;value&lt;br&gt;created_at&lt;br&gt;updated_at&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="4-D3gZ4A9TJ44_CM3qtp-1" vertex="1">
                     <mxGeometry x="390" y="260" width="180" height="140" as="geometry"/>
                 </mxCell>
                 <mxCell id="ttH3wMGeWxO1kjU8UGCu-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="4-D3gZ4A9TJ44_CM3qtp-1" source="ttH3wMGeWxO1kjU8UGCu-4" target="ttH3wMGeWxO1kjU8UGCu-5" edge="1">
@@ -97,12 +138,18 @@
                 <mxCell id="ttH3wMGeWxO1kjU8UGCu-7" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;phone_variants&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;model_id&lt;br&gt;ram&lt;br&gt;storage&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" parent="4-D3gZ4A9TJ44_CM3qtp-1" vertex="1">
                     <mxGeometry x="390" y="600" width="180" height="110" as="geometry"/>
                 </mxCell>
+                <mxCell id="vceyWl8SXHiARB7ZY4S4-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="4-D3gZ4A9TJ44_CM3qtp-1" source="vceyWl8SXHiARB7ZY4S4-0" target="ttH3wMGeWxO1kjU8UGCu-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="vceyWl8SXHiARB7ZY4S4-0" value="&lt;div style=&quot;box-sizing: border-box ; width: 100% ; background: #e4e4e4 ; padding: 2px&quot;&gt;&lt;font color=&quot;#1a1a1a&quot;&gt;contact_types&lt;/font&gt;&lt;/div&gt;&lt;table style=&quot;width: 100% ; font-size: 1em&quot; cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;id&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;&lt;br&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;name&lt;br&gt;description&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;" vertex="1" parent="4-D3gZ4A9TJ44_CM3qtp-1">
+                    <mxGeometry x="610" y="260" width="180" height="110" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
     <diagram id="6hGFLwfOUW9BJ-s0fimq" name="mvp-register-user">
         &#xa;
-        <mxGraphModel dx="838" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1221" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             &#xa;
             <root>
                 &#xa;
