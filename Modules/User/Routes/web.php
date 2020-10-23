@@ -11,4 +11,6 @@
 |
 */
 
-Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/auth.php');
+use Modules\User\Http\Controllers\Home\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('home');

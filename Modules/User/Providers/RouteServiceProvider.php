@@ -56,6 +56,11 @@ class RouteServiceProvider extends ServiceProvider
         Route::domain($this->getDomain())
             ->middleware('web')
             ->namespace($this->moduleNamespace)
+            ->group(module_path('User', '/Routes/domain/web.php'));
+
+        Route::domain(config('app.url'))
+            ->middleware('web')
+            ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/web.php'));
     }
 

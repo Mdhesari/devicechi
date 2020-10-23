@@ -11,4 +11,4 @@
 |
 */
 
-// silence is golden
+Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/auth.php');
