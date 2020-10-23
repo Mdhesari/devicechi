@@ -1,5 +1,7 @@
 <?php
 
+use Laravel\Telescope\TelescopeServiceProvider;
+
 return [
 
     /*
