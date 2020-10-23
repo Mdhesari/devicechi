@@ -11,6 +11,9 @@ use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
 use Laravel\Fortify\Fortify;
 use Laravel\Jetstream\Jetstream;
+use Modules\Team\Entities\Membership;
+use Modules\Team\Entities\Team;
+use Modules\User\Entities\User;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -62,17 +65,22 @@ class JetstreamServiceProvider extends ServiceProvider
             'update',
         ])->description('Editor users have the ability to read, create, and update.');
 
+        Jetstream::useTeamModel(Team::class);
+        Jetstream::useUserModel(User::class);
+        Jetstream::useMembershipModel(Membership::class);
+
         // $this->fortifyViewCustomization();
     }
-    
+
     /**
      * Customize Fortify views
      *
      * @return void
      */
-    public function fortifyViewCustomization() {
+    public function fortifyViewCustomization()
+    {
 
-        Fortify::loginView(function() {
+        Fortify::loginView(function () {
 
             return Inertia::render('Auth/Login');
         });

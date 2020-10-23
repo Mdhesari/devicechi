@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Team;
+use Modules\Team\Entities\Team;
 use Modules\User\Entities\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,7 +25,7 @@ class TeamPolicy
      * Determine whether the user can view the model.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function view(User $user, Team $team)
@@ -48,7 +48,7 @@ class TeamPolicy
      * Determine whether the user can update the model.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function update(User $user, Team $team)
@@ -60,7 +60,7 @@ class TeamPolicy
      * Determine whether the user can add team members.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function addTeamMember(User $user, Team $team)
@@ -72,7 +72,7 @@ class TeamPolicy
      * Determine whether the user can update team member permissions.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function updateTeamMember(User $user, Team $team)
@@ -84,7 +84,7 @@ class TeamPolicy
      * Determine whether the user can remove team members.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function removeTeamMember(User $user, Team $team)
@@ -96,7 +96,7 @@ class TeamPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \Modules\User\Entities\User  $user
-     * @param  \App\Models\Team  $team
+     * @param  \Modules\Team\Entities\Team  $team
      * @return mixed
      */
     public function delete(User $user, Team $team)

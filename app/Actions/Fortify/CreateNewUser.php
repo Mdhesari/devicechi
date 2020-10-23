@@ -2,7 +2,7 @@
 
 namespace App\Actions\Fortify;
 
-use App\Models\Team;
+use Modules\Team\Entities\Team;
 use Modules\User\Entities\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;

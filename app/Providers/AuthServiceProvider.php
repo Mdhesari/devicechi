@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Team;
+use Modules\Team\Entities\Team;
 use App\Policies\TeamPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
