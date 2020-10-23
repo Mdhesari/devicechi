@@ -8,10 +8,6 @@ use Inertia\Inertia;
 class DashboardController extends Controller
 {
 
-    public function __construct()
-    {
-        Inertia::setRootView('layouts/back');
-    }
     /**
      * Render dashboard
      *
