@@ -4,9 +4,12 @@ namespace Modules\Team\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Core\Traits\HasDomain;
 
 class RouteServiceProvider extends ServiceProvider
 {
+
+    use HasDomain;
 
     const DOMAIN = 'team';
 
@@ -50,7 +53,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::domain(self::DOMAIN . '.' . config('app.url'))
+        Route::domain($this->getDomain())
             ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Team', '/Routes/web.php'));

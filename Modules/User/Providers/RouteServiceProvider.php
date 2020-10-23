@@ -4,9 +4,15 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Modules\Core\Traits\HasDomain;
 
 class RouteServiceProvider extends ServiceProvider
 {
+
+    use HasDomain;
+
+    const DOMAIN = 'my';
+
     /**
      * The module namespace to assume when generating URLs to actions.
      *
@@ -47,7 +53,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::domain($this->getDomain())
+            ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/web.php'));
     }
