@@ -1,18 +1,34 @@
 <template>
-  <div class="text-center">
-    <b-form @submit="onSubmit" @reset="onReset">
-      <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
-        <b-button type="submit" variant="secondary" class="btn-login-submit d-inline-block">
-          <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
-        </b-button>
-        <b-form-input
-          v-model="form.phone_number"
-          class="w-25 mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
-        >
-        </b-form-input>
-      </b-form-group>
-    </b-form>
-  </div>
+  <b-row>
+    <b-col md="6">
+      <div class="vector">
+        <img
+          class="sale-vector"
+          src="../../img/vectors/sale.jpg"
+          alt="Sale Online | فروش آنلاین"
+        />
+      </div>
+    </b-col>
+
+    <b-col md="6" class="text-right">
+      <b-form @submit="onSubmit" @reset="onReset" class="login-form">
+        <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
+          <b-button
+            type="submit"
+            variant="secondary"
+            class="btn-login-submit d-inline-block"
+          >
+            <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
+          </b-button>
+          <b-form-input
+            v-model="form.phone_number"
+            class="w-50 mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
+          >
+          </b-form-input>
+        </b-form-group>
+      </b-form>
+    </b-col>
+  </b-row>
 </template>
 
 <script>

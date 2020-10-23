@@ -1,5 +1,5 @@
 <template>
-  <front-layout class="blob-0">
+  <front-layout>
     <IntroductionSection></IntroductionSection>
     <HomeLoginSection></HomeLoginSection>
   </front-layout>

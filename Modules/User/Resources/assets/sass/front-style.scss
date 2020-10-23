@@ -95,7 +95,11 @@ ul li {
 
 .vector {
     img {
-        width: 500px;
+        width: 400px;
+    }
+
+    .sale-vector {
+        margin-top: 3em;
     }
 }
 
@@ -112,14 +116,17 @@ ul li {
 }
 
 .blob-0 {
-    background: transparent
-        url(/images/blob-1.svg?eab22fd4848b242f92d013b677d0ecef) no-repeat -6em 8em;
+    background: transparent url("../img/vectors/sale.jpg") no-repeat -6em 8em;
     background-size: 300px;
     overflow: visible;
 }
 
-.section.login-form {
-    margin-top: 6em;
+.section.login-form-section {
+    margin-top: 2em;
+
+    .login-form {
+        margin-top: 25%;
+    }
 
     .phone_number input,
     .btn-login-submit {
@@ -128,7 +135,6 @@ ul li {
     }
 
     .phone_number input {
-
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }

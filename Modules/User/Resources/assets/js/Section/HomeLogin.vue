@@ -1,5 +1,5 @@
 <template>
-  <AppSection class="login-form">
+  <AppSection class="login-form-section">
     <b-container>
       <Login></Login>
     </b-container>
