@@ -1,0 +1,53 @@
+$theme-colors: (
+    "dark": #131313
+);
+
+@import "~bootstrap";
+@import "~bootstrap-vue";
+
+.bg-light-silver {
+    background-color: #f5f6fa;
+}
+
+.border-light-silver {
+    border-color: #f5f6fa;
+}
+
+.input-light-silver {
+    background-color: #f5f6fa;
+    border-color: #f5f6fa;
+}
+
+.input-light-silver:focus {
+
+    background-color: #efeff0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.dir-ltr {
+    direction: ltr !important;
+}
+
+.btn-secondary {
+    @include button-variant(
+        theme-color("dark"),
+        darken(theme-color("dark"), 7.5%),
+        darken(theme-color("dark"), 10%),
+        lighten(theme-color("dark"), 5%),
+        lighten(theme-color("dark"), 10%),
+        darken(theme-color("dark"), 30%)
+    );
+}
+
+.btn-outline-secondary {
+    @include button-outline-variant(
+        theme-color("dark"),
+        #222222,
+        lighten(theme-color("dark"), 5%),
+        theme-color("dark")
+    );
+}
