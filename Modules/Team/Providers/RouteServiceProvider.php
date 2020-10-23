@@ -7,6 +7,9 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 
 class RouteServiceProvider extends ServiceProvider
 {
+
+    const DOMAIN = 'team';
+
     /**
      * The module namespace to assume when generating URLs to actions.
      *
@@ -47,7 +50,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::domain(self::DOMAIN . '.' . config('app.url'))
+            ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Team', '/Routes/web.php'));
     }

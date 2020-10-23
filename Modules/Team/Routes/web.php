@@ -11,8 +11,4 @@
 |
 */
 
-use Modules\Team\Http\Controllers\TeamController;
-
-Route::prefix('team')->group(function () {
-    Route::get('/', [TeamController::class, 'index']);
-});
+Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/auth.php');

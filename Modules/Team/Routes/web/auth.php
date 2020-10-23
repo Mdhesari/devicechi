@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Authenticated Snactum Routes
+| Web Auth Routes [auth:sanctum]
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
@@ -11,6 +11,6 @@
 |
 */
 
-use App\Http\Controllers\Back\DashboardController;
+use Modules\Team\Http\Controllers\DashboardController;
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

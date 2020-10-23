@@ -19,5 +19,3 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/back/backweb.php');

@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Back;
+namespace Modules\Team\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
