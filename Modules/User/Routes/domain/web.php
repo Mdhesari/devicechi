@@ -15,4 +15,7 @@ use Modules\User\Http\Controllers\Auth\LoginController;
 
 Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
 
-Route::get('/login', [LoginController::class,'index'])->name('user.login');
+Route::name('user.')->group(function () {
+
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+});
