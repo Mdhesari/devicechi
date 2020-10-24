@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use Route;
 
 class Authenticate extends Middleware
 {
@@ -14,8 +15,38 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-        if (! $request->expectsJson()) {
-            return route('login');
+        if (!$request->expectsJson()) {
+
+            return $this->getRedirectRoute($request);
         }
+    }
+    
+    /**
+     * get redirect route for authentication
+     *
+     * @param  mixed $request
+     * @return void
+     */
+    private function getRedirectRoute($request)
+    {
+
+        $hostArr =  explode('.', $request->getHost());
+
+        $redirectRoute = route('home');
+
+        if (count($hostArr) > 2) {
+            // uses sub domain
+
+            switch ($hostArr[0]) {
+
+                case \Modules\User\Providers\RouteServiceProvider::DOMAIN:
+                    $redirectRoute = route('user.login');
+                    break;
+                case \Modules\Team\Providers\RouteServiceProvider::DOMAIN:
+                    $redirectRoute = route('login');
+            }
+        }
+
+        return $redirectRoute;
     }
 }

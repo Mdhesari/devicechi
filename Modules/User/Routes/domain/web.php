@@ -11,4 +11,8 @@
 |
 */
 
-Route::middleware(['auth:sanctum', 'web'])->group(__DIR__ . '/web/auth.php');
+use Modules\User\Http\Controllers\Auth\LoginController;
+
+Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
+
+Route::get('/login', [LoginController::class,'index'])->name('user.login');
