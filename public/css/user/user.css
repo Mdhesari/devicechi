@@ -67,7 +67,11 @@ ul li {
 }
 
 .vector img {
-  width: 500px;
+  width: 400px;
+}
+
+.vector .sale-vector {
+  margin-top: 3em;
 }
 
 .section {
@@ -83,27 +87,31 @@ ul li {
 }
 
 .blob-0 {
-  background: transparent url(/images/blob-1.svg?eab22fd4848b242f92d013b677d0ecef) no-repeat -6em 8em;
+  background: transparent url(/images/sale.jpg?b7d9595abf5064c4dd962e5ecd5ba633) no-repeat -6em 8em;
   background-size: 300px;
   overflow: visible;
 }
 
-.section.login-form {
-  margin-top: 6em;
+.section.login-form-section {
+  margin-top: 2em;
 }
 
-.section.login-form .phone_number input,
-.section.login-form .btn-login-submit {
+.section.login-form-section .login-form {
+  margin-top: 25%;
+}
+
+.section.login-form-section .phone_number input,
+.section.login-form-section .btn-login-submit {
   height: 55px;
   padding: 0 15px;
 }
 
-.section.login-form .phone_number input {
+.section.login-form-section .phone_number input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.section.login-form .btn-login-submit {
+.section.login-form-section .btn-login-submit {
   position: relative;
   left: -7px;
   border-top-left-radius: 0;
