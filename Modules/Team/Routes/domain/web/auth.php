@@ -14,3 +14,5 @@
 use Modules\Team\Http\Controllers\DashboardController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::redirect('/dashboard', '/');
