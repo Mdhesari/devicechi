@@ -1,5 +1,6 @@
 <template>
   <b-row>
+    <confirm-modal ref="confirmModal"></confirm-modal>
     <b-col md="6">
       <div class="vector">
         <img
@@ -38,10 +39,12 @@
 
 <script>
 import { BIconArrowRight } from "bootstrap-vue";
+import ConfirmModal from "../Forms/ConfirmPhoneModal";
 
 export default {
   components: {
     BIconArrowRight,
+    ConfirmModal,
   },
 
   data() {
@@ -56,6 +59,8 @@ export default {
   methods: {
     onSubmit(e) {
       e.preventDefault();
+
+      this.$refs.confirmModal.activateAuth();
 
       console.log(JSON.stringify(this.form));
     },
