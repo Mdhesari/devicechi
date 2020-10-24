@@ -93,8 +93,20 @@ ul li {
 }
 
 .home-bg {
-  background: transparent url(/images/header-min.png?0f2d454c8c537a0d66a73ba0d5b2ab8e) no-repeat center -20em;
+  background: transparent url(/images/body-ellipse-1-min.png?966ea7e0716ea29c32f0e8453f8e64b1) no-repeat left 15em;
+  background-size: 10em;
+}
+
+.home-bg::after {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: transparent url(/images/header-frame-min.png?e5eef5d0a75284c170d24f5cdfa33adc) no-repeat center center;
   background-size: cover;
+  position: absolute;
+  top: 16em;
+  right: 0;
 }
 
 .section.login-form-section {

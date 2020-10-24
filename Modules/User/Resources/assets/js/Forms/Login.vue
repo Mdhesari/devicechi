@@ -4,7 +4,7 @@
       <div class="vector">
         <img
           class="sale-vector"
-          src="../../img/vectors/sale.png"
+          src="../../img/vectors/sale.jpg"
           alt="Sale Online | فروش آنلاین"
         />
       </div>
