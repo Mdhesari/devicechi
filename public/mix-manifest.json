@@ -1,15 +1,10 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/front-style.min.css": "/css/front-style.min.css",
-    "/css/bootstrap-vue.min.css": "/css/bootstrap-vue.min.css",
-    "/css/bootstrap-rtl.min.css": "/css/bootstrap-rtl.min.css",
-    "/css/normalize.min.css": "/css/normalize.min.css",
     "/js/team/team.js": "/js/team/team.js",
     "/css/team/team.css": "/css/team/team.css",
     "/css/team/tailwind.css": "/css/team/tailwind.css",
     "/js/user/user.js": "/js/user/user.js",
+    "/css/user/user.css": "/css/user/user.css",
     "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
     "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css",
-    "/css/user/normalize.css": "/css/user/normalize.css",
-    "/css/user/user.css": "/css/user/user.css"
+    "/css/user/normalize.css": "/css/user/normalize.css"
 }
