@@ -62,6 +62,16 @@ ul li {
     MD Styles
 ======= */
 
+.input-phone-number {
+  width: 45%;
+}
+
+.input-phone-code {
+  width: 12%;
+  position: relative;
+  left: 1em;
+}
+
 .logo img {
   width: 80px;
 }

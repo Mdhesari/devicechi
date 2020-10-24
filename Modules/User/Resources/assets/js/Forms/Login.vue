@@ -22,9 +22,14 @@
           </b-button>
           <b-form-input
             v-model="form.phone_number"
-            class="w-50 mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
+            class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
           >
           </b-form-input>
+          <b-form-input
+            disabled
+            v-model="form.phone_code"
+            class="input-phone-code input-light-silver border-0 text-center dir-ltr d-inline-block"
+          ></b-form-input>
         </b-form-group>
       </b-form>
     </b-col>
@@ -42,7 +47,8 @@ export default {
   data() {
     return {
       form: {
-        phone_number: "+98 ",
+        phone_number: "",
+        phone_code: "+98",
       },
     };
   },
