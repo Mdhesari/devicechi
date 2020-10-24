@@ -37,7 +37,7 @@ class Authenticate extends Middleware
     private function getRedirectRoute($request)
     {
 
-        $redirectRoute = route('home');
+        $redirectRoute = route('login');
 
         foreach ($this->customSubDomainRedirects as $domain) {
 
