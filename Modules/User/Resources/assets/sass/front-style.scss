@@ -90,7 +90,7 @@ ul li {
 ======= */
 
 .logo img {
-    width: 60px;
+    width: 80px;
 }
 
 .vector {
@@ -119,6 +119,12 @@ ul li {
     background: transparent url("../img/vectors/sale.jpg") no-repeat -6em 8em;
     background-size: 300px;
     overflow: visible;
+}
+
+.home-bg {
+
+    background: transparent url("../img/background/header-min.png") no-repeat center -20em;
+    background-size: cover;
 }
 
 .section.login-form-section {
@@ -220,7 +226,7 @@ ul li {
 }
 
 .header-site .add-advertisment {
-    width: 100px;
+    width: auto;
     display: inline-block;
     background-color: pallete("dark");
     color: pallete("white");

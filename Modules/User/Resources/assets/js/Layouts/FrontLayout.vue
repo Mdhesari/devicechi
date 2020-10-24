@@ -27,7 +27,7 @@
         <div class="left-side">
           <!-- Logo -->
           <div class="logo">
-            <img src="../../img/logo.png" alt="Mobile For Sales" />
+            <img src="../../img/logo-white.png" alt="Mobile For Sales" />
           </div>
         </div>
       </div>

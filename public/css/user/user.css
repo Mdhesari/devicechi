@@ -63,7 +63,7 @@ ul li {
 ======= */
 
 .logo img {
-  width: 60px;
+  width: 80px;
 }
 
 .vector img {
@@ -90,6 +90,11 @@ ul li {
   background: transparent url(/images/sale.jpg?b7d9595abf5064c4dd962e5ecd5ba633) no-repeat -6em 8em;
   background-size: 300px;
   overflow: visible;
+}
+
+.home-bg {
+  background: transparent url(/images/header-min.png?0f2d454c8c537a0d66a73ba0d5b2ab8e) no-repeat center -20em;
+  background-size: cover;
 }
 
 .section.login-form-section {
@@ -192,7 +197,7 @@ ul li {
 }
 
 .header-site .add-advertisment {
-  width: 100px;
+  width: auto;
   display: inline-block;
   background-color: #424242;
   color: #ffffff;

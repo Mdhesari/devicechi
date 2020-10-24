@@ -1,5 +1,5 @@
 <template>
-  <front-layout>
+  <front-layout class="home-bg">
     <IntroductionSection></IntroductionSection>
     <HomeLoginSection></HomeLoginSection>
   </front-layout>
