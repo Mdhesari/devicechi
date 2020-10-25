@@ -111,10 +111,6 @@ class UserController extends Controller
 
         try {
 
-            $request->validate([
-                'phone' => ['unique:users,phone'],
-            ]);
-
             User::create([
                 'phone' => $request->input('phone'),
             ]);
@@ -124,14 +120,14 @@ class UserController extends Controller
             ));
 
             return Response::json([
-                'status' => 'ok',
+                'status' => 1,
             ]);
         } catch (Exception $e) {
 
             report($e);
 
             return Response::json([
-                'status' => 'failed',
+                'status' => 0,
             ]);
         }
     }
