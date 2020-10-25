@@ -22,7 +22,6 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         UserRegistered::class => [
-            StorePhoneSessionVerificationCode::class,
             SendPhoneVerificationCode::class
         ]
     ];
