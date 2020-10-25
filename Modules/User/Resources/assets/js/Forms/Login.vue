@@ -67,13 +67,13 @@ export default {
 
       let auth_route = this.$inertia.page.props.routes.user_auth;
 
-      this.$inertia
+      axios
         .post(auth_route, {
           phone: this.phone_number,
           _token: this.$inertia.page.props.csrf_token,
         })
         .then((response) => {
-          console.log(response);
+          console.log(response.request.response);
         });
     },
     onReset() {

@@ -100,10 +100,12 @@ class UserController extends Controller
      *
      * @return void
      */
-    private function loginUsre($request)
+    private function loginUser($request)
     {
 
-        //
+        return Response::json([
+            'user_is_alread_loggedin',
+        ]);
     }
 
     private function registerUser($request)
