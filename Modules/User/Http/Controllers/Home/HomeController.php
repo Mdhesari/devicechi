@@ -16,6 +16,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        return Inertia::render('Home');
+        return Inertia::render('Home', [
+            'routes' => ['user_auth' => route('user.auth')]
+        ]);
     }
 }

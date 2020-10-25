@@ -40,6 +40,7 @@
 <script>
 import { BIconArrowRight } from "bootstrap-vue";
 import ConfirmModal from "../Forms/ConfirmPhoneModal";
+import Axios from "axios";
 
 export default {
   components: {
@@ -63,6 +64,17 @@ export default {
       this.$refs.confirmModal.activateAuth();
 
       console.log(JSON.stringify(this.form));
+
+      let auth_route = this.$inertia.page.props.routes.user_auth;
+
+      this.$inertia
+        .post(auth_route, {
+          phone: this.phone_number,
+          _token: this.$inertia.page.props.csrf_token,
+        })
+        .then((response) => {
+          console.log(response);
+        });
     },
     onReset() {
       alert("rest");
