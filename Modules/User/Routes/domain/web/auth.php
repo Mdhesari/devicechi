@@ -12,4 +12,4 @@
 */
 
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'UserController@index')->name('user.dashboard');

@@ -20,7 +20,7 @@ class RegisterTest extends TestCase
             'phone' => $number,
         ]);
 
-        $response->assertJson(['status' => 'ok']);
+        $response->assertJson(['status' => 1]);
     }
 
     public function test_ensure_user_is_created_after_registeration()
