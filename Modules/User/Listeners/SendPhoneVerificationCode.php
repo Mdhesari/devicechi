@@ -33,9 +33,9 @@ class SendPhoneVerificationCode
 
         $event->request->session()->push('veritication_code', Hash::make($code));
 
-        $number = $event->request->phone_number;
+        $number = $event->request->phone;
 
-        $event->request->session()->push('phone_number', $number);
+        $event->request->session()->push('phone', $number);
         $event->request->session()->push('verification_code', $code);
 
         Log::info('Mobileforsale.ir : Your verification code is ' . $code . ', number requested : ' . $number);

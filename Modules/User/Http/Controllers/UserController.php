@@ -41,10 +41,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'phone_number' => 'required|min:6',
+            'phone' => 'required|min:6',
         ]);
 
-        $user = User::where('phone', $request->input('phone_number'))->first();
+        $user = User::where('phone', $request->input('phone'))->first();
 
         if (!is_null($user)) {
 
@@ -112,7 +112,11 @@ class UserController extends Controller
         try {
 
             $request->validate([
-                'phone_number' => ['unique:users'],
+                'phone' => ['unique:users,phone'],
+            ]);
+
+            User::create([
+                'phone' => $request->input('phone'),
             ]);
 
             event(new UserRegistered(
