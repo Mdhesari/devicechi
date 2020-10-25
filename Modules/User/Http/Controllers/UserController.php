@@ -11,6 +11,7 @@ use Log;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Response;
+use Validator;
 
 class UserController extends Controller
 {
@@ -110,7 +111,11 @@ class UserController extends Controller
 
         try {
 
-            $returns = event(new UserRegistered(
+            $request->validate([
+                'phone_number' => ['unique:users'],
+            ]);
+
+            event(new UserRegistered(
                 $request,
             ));
 
@@ -120,7 +125,7 @@ class UserController extends Controller
         } catch (Exception $e) {
 
             report($e);
-            
+
             return Response::json([
                 'status' => 'failed',
             ]);
