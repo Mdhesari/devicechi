@@ -12,10 +12,13 @@
 */
 
 use Modules\User\Http\Controllers\Auth\LoginController;
+use Modules\User\Http\Controllers\UserController;
 
 Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
 
-Route::name('user.')->group(function () {
+Route::middleware('guest')->name('user.')->group(function () {
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+    Route::post('/auth', [UserController::class, 'store'])->name('auth');
 });

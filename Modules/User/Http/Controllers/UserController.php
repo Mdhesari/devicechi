@@ -2,10 +2,15 @@
 
 namespace Modules\User\Http\Controllers;
 
+use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Inertia\Inertia;
+use Log;
+use Modules\User\Entities\User;
+use Modules\User\Events\UserRegistered;
+use Response;
 
 class UserController extends Controller
 {
@@ -34,7 +39,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'phone_number' => 'required|min:6',
+        ]);
+
+        $user = User::where('phone', $request->input('phone_number'))->first();
+
+        if (!is_null($user)) {
+
+            return $this->loginUser($request);
+        }
+
+        return $this->registerUser($request);
     }
 
     /**
@@ -76,5 +92,38 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Login user
+     *
+     * @return void
+     */
+    private function loginUsre($request)
+    {
+
+        //
+    }
+
+    private function registerUser($request)
+    {
+
+        try {
+
+            $returns = event(new UserRegistered(
+                $request,
+            ));
+
+            return Response::json([
+                'status' => 'ok',
+            ]);
+        } catch (Exception $e) {
+
+            report($e);
+            
+            return Response::json([
+                'status' => 'failed',
+            ]);
+        }
     }
 }
