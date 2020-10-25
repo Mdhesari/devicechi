@@ -15,6 +15,6 @@ class UserTest extends TestCase
 
         $response = $this->get(route('user.dashboard'));
 
-        $response->assertRedirect();
+        $response->assertRedirect(route('user.login'));
     }
 }
