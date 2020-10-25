@@ -17,4 +17,17 @@ class UserTest extends TestCase
 
         $response->assertJson(['status' => 'ok']);
     }
+
+    public function test_ensure_sessions_are_stored_after_registeration()
+    {
+
+        $this->post(route('user.auth'), [
+            'phone_number' => '+989370038157',
+        ]);
+
+        $response = $this->get('/');
+
+        $response->assertSessionHas('phone_number');
+        $response->assertSessionHas('verification_code');
+    }
 }
