@@ -181,6 +181,47 @@ ul li {
     margin-top: 8em;
 }
 
+.form-confirmation {
+    form {
+        border: 1px solid black;
+        padding: 20px;
+        width: 500px;
+    }
+
+    .inputs {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(5, 1fr);
+        margin-bottom: 20px;
+        margin-top: 45px;
+        text-align: center;
+    }
+
+    .inputs > * {
+        border: none;
+        border-bottom: 1px solid black;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    input[type="submit"] {
+        background: black;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        border: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    input[type="submit"]:focus {
+        border-color: blue;
+    }
+}
+
 .intro-wrapper {
     background: transparent url("../img/background/bg.svg") no-repeat center
         center;

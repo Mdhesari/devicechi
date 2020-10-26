@@ -22,8 +22,10 @@
             <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
           </b-button>
           <b-form-input
-            v-model="form.phone"
+          v-model="form.phone"
             type="tel"
+            minlength="6"
+            maxlength="10"
             class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
           >
           </b-form-input>
@@ -59,7 +61,7 @@ export default {
         },
         {
           bag: "createUser",
-          resetOnSuccess: true,
+          resetOnSuccess: false,
         }
       ),
     };

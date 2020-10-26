@@ -149,6 +149,45 @@ ul li {
   margin-top: 8em;
 }
 
+.form-confirmation form {
+  border: 1px solid black;
+  padding: 20px;
+  width: 500px;
+}
+
+.form-confirmation .inputs {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 20px;
+  margin-top: 45px;
+  text-align: center;
+}
+
+.form-confirmation .inputs > * {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.form-confirmation input[type=submit] {
+  background: black;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  border: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.form-confirmation input[type=submit]:focus {
+  border-color: blue;
+}
+
 .intro-wrapper {
   background: transparent url(/images/bg.svg?a7ba8fcfb1f735a0bb3e6146cb42d1a3) no-repeat center center;
 }
