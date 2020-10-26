@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Log;
 use Modules\User\Entities\User;
+use Modules\User\Events\UserLoggedIn;
 use Modules\User\Events\UserRegistered;
 use Response;
 use Validator;
@@ -40,7 +41,7 @@ class UserController extends Controller
 
         if (!is_null($user)) {
 
-            return $this->loginUser($request);
+            return $this->loginUser($user);
         }
 
         return $this->registerUser($request);
@@ -51,12 +52,10 @@ class UserController extends Controller
      *
      * @return void
      */
-    private function loginUser($request)
+    private function loginUser($user)
     {
 
-        return Response::json([
-            'user_is_alread_loggedin',
-        ]);
+        event(new UserLoggedIn($user));
     }
 
     /**
