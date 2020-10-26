@@ -72,17 +72,18 @@ export default {
       e.preventDefault();
 
       let auth_route = this.$inertia.page.props.routes.user_auth;
-
-      let result = this.form
-        .post(auth_route, {
-          preserveScroll: true,
-        })
-        .then((response) => {
-          if (this.$inertia.page.props.trigger_auth) {
             this.$refs.confirmModal.activateAuth();
-          }
-        })
-        .catch(() => console.log("error"));
+
+      // let result = this.form
+      //   .post(auth_route, {
+      //     preserveScroll: true,
+      //   })
+      //   .then((response) => {
+      //     if (this.$inertia.page.props.trigger_auth) {
+      //       this.$refs.confirmModal.activateAuth();
+      //     }
+      //   })
+      //   .catch(() => console.log("error"));
     },
     onReset() {
       alert("rest");

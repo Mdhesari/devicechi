@@ -182,10 +182,8 @@ ul li {
 }
 
 .form-confirmation {
-    form {
-        border: 1px solid black;
-        padding: 20px;
-        width: 500px;
+    & {
+        direction: ltr;
     }
 
     .inputs {
