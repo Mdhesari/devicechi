@@ -28,6 +28,7 @@ export default {
   props: {
     digitsCount: {
       default: 5,
+      confirmation_code: "",
     },
   },
 
@@ -44,7 +45,9 @@ export default {
     onSubmit(ev) {
       ev.preventDefault();
 
-      alert("confirming...");
+      const inputs = this.getInputs();
+
+      alert(this.confirmation_code);
     },
     handleInput(ev) {
       const input = ev.target;
@@ -54,18 +57,23 @@ export default {
       }
     },
     onPaste(ev) {
-      const paste = ev.clipboardData.getData("text");
-      const inputs = document.querySelectorAll(".inputs input");
+      const paste = ev.clipboardData.getData("text").trim();
+      const inputs = this.getInputs();
       let i = 0;
 
       for (let input of inputs) {
-        if (paste[i] != undefined && paste[i] != "") input.value = paste[i];
-        else {
+        console.log(input, paste[i]);
+        if (paste[i] != undefined && paste[i].trim().length != 0) {
+          input.value = paste[i];
+        } else {
           input.focus();
           break;
         }
         i++;
       }
+    },
+    getInputs() {
+      return Array.from(document.querySelectorAll(".inputs input"));
     },
   },
 };
