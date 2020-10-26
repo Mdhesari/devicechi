@@ -1,6 +1,6 @@
 <template>
   <b-modal hide-footer v-model="isActive">
-    <h3>تایید کد ۶ رقمی</h3>
+    <h4>کد پیامک شده را وارد کنید.</h4>
   </b-modal>
 </template>
 
