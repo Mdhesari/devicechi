@@ -203,6 +203,12 @@ ul li {
         text-align: center;
         font-size: 20px;
         line-height: 1;
+
+        &:focus {
+            outline: none;
+            border: none;
+            border-bottom: 2px dotted #000;
+        }
     }
 
     input[type="submit"] {

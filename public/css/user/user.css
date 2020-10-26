@@ -172,6 +172,12 @@ ul li {
   line-height: 1;
 }
 
+.form-confirmation .inputs > *:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px dotted #000;
+}
+
 .form-confirmation input[type=submit] {
   background: black;
   color: white;

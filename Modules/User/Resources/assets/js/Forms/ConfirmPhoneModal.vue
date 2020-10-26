@@ -6,12 +6,14 @@
       @input="handleInput"
       @submit="onSubmit"
       @paste="onPaste"
+      @keyup.delete="onBackspace"
       inline
       class="form-confirmation"
     >
       <div class="inputs">
         <input
           type="text"
+          required
           v-for="digit in digitsCount"
           :key="digit"
           maxlength="1"
@@ -47,6 +49,14 @@ export default {
 
       const inputs = this.getInputs();
 
+      this.confirmation_code = "";
+
+      inputs.forEach((input) => {
+        this.confirmation_code += input.value;
+      });
+
+      this.confirmation_code = Number(this.confirmation_code);
+
       alert(this.confirmation_code);
     },
     handleInput(ev) {
@@ -62,8 +72,7 @@ export default {
       let i = 0;
 
       for (let input of inputs) {
-        console.log(input, paste[i]);
-        if (paste[i] != undefined && paste[i].trim().length != 0) {
+        if (paste[i] != undefined && !isNaN(Number(paste[i]))) {
           input.value = paste[i];
         } else {
           input.focus();
@@ -71,6 +80,10 @@ export default {
         }
         i++;
       }
+    },
+    onBackspace(ev) {
+      if (ev.target.previousElementSibling)
+        ev.target.previousElementSibling.focus();
     },
     getInputs() {
       return Array.from(document.querySelectorAll(".inputs input"));
