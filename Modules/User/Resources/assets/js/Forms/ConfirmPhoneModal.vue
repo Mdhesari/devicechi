@@ -1,5 +1,7 @@
 <template>
-  <b-modal hide-footer v-model="isActive">Simple modal</b-modal>
+  <b-modal hide-footer v-model="isActive">
+    <h3>تایید کد ۶ رقمی</h3>
+  </b-modal>
 </template>
 
 <script>
