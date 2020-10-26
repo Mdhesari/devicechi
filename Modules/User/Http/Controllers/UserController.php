@@ -26,28 +26,6 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        Validator::make($request->all(), [
-            'phone' => ['min:6', 'max:10'],
-            'phone_country_code' => ['required']
-        ])->validateWithBag('createUser');
-
-        $user = User::where('phone', $request->input('phone'))->first();
-
-        if (!is_null($user)) {
-
-            return $this->loginUser($user);
-        }
-
-        return $this->registerUser($request);
-    }
-
-    /**
      * Login user
      *
      * @return void
@@ -58,38 +36,4 @@ class UserController extends Controller
         event(new UserLoggedIn($user));
     }
 
-    /**
-     * Register new user
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    private function registerUser($request)
-    {
-
-        try {
-
-            User::create([
-                'phone' => $request->input('phone'),
-            ]);
-
-            event(new UserRegistered(
-                $request,
-            ));
-
-            if ($request->expectsJson())
-                return Response::json([
-                    'status' => 1,
-                ]);
-
-            return back()->with('trigger_auth', 1);
-        } catch (Exception $e) {
-
-            report($e);
-
-            return Response::json([
-                'status' => 0,
-            ]);
-        }
-    }
 }

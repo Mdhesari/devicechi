@@ -15,18 +15,21 @@ class RegisterTest extends TestCase
     {
 
         $number = $this->generatePhoneNumber();
+        $country_code = rand(1, 98);
 
         $response = $this->post(route('user.auth'), [
             'phone' => $number,
+            'phone_country_code' => $country_code,
         ]);
 
-        $response->assertJson(['status' => 1]);
+        $response->assertRedirect();
     }
 
     public function test_ensure_user_is_created_after_registeration()
     {
 
         $number = $this->generatePhoneNumber();
+        $country_code = rand(1, 98);
 
         $user = DB::table('users')->where('phone', $number)->first();
 
@@ -34,6 +37,7 @@ class RegisterTest extends TestCase
 
         $this->post(route('user.auth'), [
             'phone' => $number,
+            'phone_country_code' => $country_code,
         ]);
 
         $user = DB::table('users')->where('phone', $number)->first();
@@ -45,9 +49,11 @@ class RegisterTest extends TestCase
     {
 
         $number = $this->generatePhoneNumber();
+        $country_code = rand(1, 98);
 
         $this->post(route('user.auth'), [
             'phone' => $number,
+            'phone_country_code' => $country_code,
         ]);
 
         $response = $this->get('/');
@@ -56,18 +62,18 @@ class RegisterTest extends TestCase
         $response->assertSessionHas('verification_code');
     }
 
-    public function test_validation_fail_while_registering()
+    public function test_validation_fail_should_while_registering()
     {
 
         $this->expectException(ValidationException::class);
 
-        $number = '+989';
+        $number = '89';
+        $country_code = rand(1, 98);
 
         $response = $this->post(route('user.auth'), [
             'phone' => $number,
+            'phone_country_code' => $country_code,
         ]);
-
-        $response->dumpSession();
 
         $response->assertJsonValidationErrors(['phone']);
     }
@@ -75,6 +81,6 @@ class RegisterTest extends TestCase
     private function generatePhoneNumber()
     {
 
-        return '+989' . rand(30, 40) . rand(0000000, 9999999);
+        return rand(1, 9) . rand(0000000, 9999999);
     }
 }
