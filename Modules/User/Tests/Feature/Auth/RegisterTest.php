@@ -67,6 +67,8 @@ class RegisterTest extends TestCase
             'phone' => $number,
         ]);
 
+        $response->dumpSession();
+
         $response->assertJsonValidationErrors(['phone']);
     }
 

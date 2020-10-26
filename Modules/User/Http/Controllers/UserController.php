@@ -31,9 +31,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'phone' => 'required|min:6',
-        ]);
+        Validator::make($request->all(), [
+            'phone' => ['min:6', 'max:10'],
+            'phone_country_code' => ['required']
+        ])->validateWithBag('createUser');
 
         $user = User::where('phone', $request->input('phone'))->first();
 
@@ -77,9 +78,12 @@ class UserController extends Controller
                 $request,
             ));
 
-            return Response::json([
-                'status' => 1,
-            ]);
+            if ($request->expectsJson())
+                return Response::json([
+                    'status' => 1,
+                ]);
+
+            return back()->with('trigger_auth', 1);
         } catch (Exception $e) {
 
             report($e);

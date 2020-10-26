@@ -16,8 +16,16 @@ class HomeController extends Controller
     public function index()
     {
 
-        return Inertia::render('Home', [
+        $data =  [
             'routes' => ['user_auth' => route('user.auth')]
-        ]);
+        ];
+
+        if ($message = session('trigger_auth')) {
+
+            $data['trigger_auth'] = $message;
+        }
+
+
+        return Inertia::render('Home', $data);
     }
 }

@@ -22,15 +22,16 @@
             <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
           </b-button>
           <b-form-input
-            v-model="form.phone_number"
+            v-model="form.phone"
             class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
           >
           </b-form-input>
           <b-form-input
             disabled
-            v-model="form.phone_code"
+            v-model="form.phone_country_code"
             class="input-phone-code input-light-silver border-0 text-center dir-ltr d-inline-block"
           ></b-form-input>
+          <p class="m-2 text-danger">{{ form.error("phone") }}</p>
         </b-form-group>
       </b-form>
     </b-col>
@@ -50,10 +51,16 @@ export default {
 
   data() {
     return {
-      form: {
-        phone_number: "",
-        phone_code: "+98",
-      },
+      form: this.$inertia.form(
+        {
+          phone: "",
+          phone_country_code: "+98",
+        },
+        {
+          bag: "createUser",
+          resetOnSuccess: true,
+        }
+      ),
     };
   },
 
@@ -61,20 +68,18 @@ export default {
     onSubmit(e) {
       e.preventDefault();
 
-      this.$refs.confirmModal.activateAuth();
-
-      console.log(JSON.stringify(this.form));
-
       let auth_route = this.$inertia.page.props.routes.user_auth;
 
-      axios
+      let result = this.form
         .post(auth_route, {
-          phone: this.phone_number,
-          _token: this.$inertia.page.props.csrf_token,
+          preserveScroll: true,
         })
         .then((response) => {
-          console.log(response.request.response);
-        });
+          if (this.$inertia.page.props.trigger_auth) {
+            this.$refs.confirmModal.activateAuth();
+          }
+        })
+        .catch(() => console.log("error"));
     },
     onReset() {
       alert("rest");
