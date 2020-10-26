@@ -23,6 +23,7 @@
           </b-button>
           <b-form-input
             v-model="form.phone"
+            type="tel"
             class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
           >
           </b-form-input>

@@ -42,6 +42,8 @@ class RegisterTest extends TestCase
 
         $user = DB::table('users')->where('phone', $number)->first();
 
+        $this->assertEquals($country_code, $user->phone_country_code);
+
         $this->assertIsObject($user);
     }
 
