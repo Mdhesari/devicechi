@@ -10,6 +10,22 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class SessionTest extends TestCase
 {
 
+    public function test_ensure_required_sessions_are_stored_after_register_request()
+    {
+        $phone_number = '9370038157';
+
+        $phone_code = '+98';
+
+        $response = $this->post(route('user.auth'), [
+            'phone' => $phone_number,
+            'phone_country_code' => $phone_code,
+        ]);
+
+        $response
+            ->assertSessionHas('verification_code')
+            ->assertSessionHas('phone');
+    }
+
     public function test_ensure_verification_code_is_hashed()
     {
 
@@ -85,6 +101,6 @@ class SessionTest extends TestCase
             'code' => $code,
         ]));
 
-        $response->assertSessionHasNoErrors();
+        $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors();
     }
 }
