@@ -35,7 +35,7 @@ class PhoneVerificationController extends Controller
             $user->createToken();
 
             // update user phone_verified_at column and return
-            $this->guard->login($user);
+            $this->guard->login($user, true);
 
             return redirect()->route('user.dashboard');
         }
