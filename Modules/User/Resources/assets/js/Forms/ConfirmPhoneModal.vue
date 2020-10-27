@@ -20,6 +20,9 @@
           :name="'digit_' + digit"
         />
       </div>
+      <div class="errors">
+        <p class="text-danger">{{ form.error("code") }}</p>
+      </div>
       <input type="submit" value="تایید" id="btn-submit-confirmation" />
     </form>
   </b-modal>
@@ -41,6 +44,9 @@ export default {
   data() {
     return {
       isActive: false,
+      form: this.$inertia.form({
+        code: 0,
+      }),
     };
   },
 
@@ -53,19 +59,17 @@ export default {
 
       const inputs = this.getInputs();
 
-      this.confirmation_code = "";
+      let confirmation_code = "";
 
       inputs.forEach((input) => {
-        this.confirmation_code += input.value;
+        confirmation_code += input.value;
       });
 
-      this.confirmation_code = Number(this.confirmation_code);
+      confirmation_code = Number(confirmation_code);
 
-      let form = this.$inertia.form({
-        code: this.confirmation_code,
-      });
+      this.form.code = confirmation_code;
 
-      form.post(this.verifyRoute);
+      this.form.post(this.verifyRoute);
     },
     handleInput(ev) {
       const input = ev.target;

@@ -207,7 +207,7 @@ ul li {
         &:focus {
             outline: none;
             border: none;
-            border-bottom: 2px dotted #000;
+            border-bottom: 2px dotted pallete("green");
         }
     }
 
@@ -219,10 +219,12 @@ ul li {
         border: 0;
         width: 100%;
         text-align: center;
-    }
 
-    input[type="submit"]:focus {
-        border-color: blue;
+        &:focus,
+        &:hover {
+            background-color: pallete("green");
+            transition: background-color 350ms;
+        }
     }
 }
 

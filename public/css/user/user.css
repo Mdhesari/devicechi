@@ -175,7 +175,7 @@ ul li {
 .form-confirmation .inputs > *:focus {
   outline: none;
   border: none;
-  border-bottom: 2px dotted #000;
+  border-bottom: 2px dotted #71be34;
 }
 
 .form-confirmation input[type=submit] {
@@ -188,8 +188,10 @@ ul li {
   text-align: center;
 }
 
-.form-confirmation input[type=submit]:focus {
-  border-color: blue;
+.form-confirmation input[type=submit]:focus,
+.form-confirmation input[type=submit]:hover {
+  background-color: #71be34;
+  transition: background-color 350ms;
 }
 
 .intro-wrapper {

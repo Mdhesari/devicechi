@@ -40,7 +40,7 @@ class PhoneVerificationController extends Controller
         }
 
         return back()->withErrors([
-            'phone_verification' => false,
+            'code' => __('The confirmation code is not valid.'),
         ]);
     }
 }
