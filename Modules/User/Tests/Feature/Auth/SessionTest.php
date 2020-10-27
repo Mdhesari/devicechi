@@ -60,6 +60,31 @@ class SessionTest extends TestCase
             'code' => '_invalid_code_',
         ]));
 
-        $response->assertRedirect();
+        $response->assertRedirect()->assertSessionHasErrors();
+    }
+
+    public function test_user_can_register_and_login()
+    {
+
+        $phone_number = '9370038157';
+
+        $phone_code = '+98';
+
+        $response = $this->post(route('user.auth'), [
+            'phone' => $phone_number,
+            'phone_country_code' => $phone_code,
+        ]);
+
+        $response->assertRedirect()
+            ->assertSessionHasNoErrors()
+            ->assertSessionHas('verification_code');
+
+        $code = session('test_code');
+
+        $response = $this->post(route('user.verify', [
+            'code' => $code,
+        ]));
+
+        $response->assertSessionHasNoErrors();
     }
 }

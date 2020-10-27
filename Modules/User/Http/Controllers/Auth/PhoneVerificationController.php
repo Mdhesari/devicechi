@@ -22,8 +22,11 @@ class PhoneVerificationController extends Controller
         if (Hash::check($request->code, $hashed_verification_code)) {
 
             // update user phone_verified_at column and return
+            return back();
         }
 
-        // authentication fail
+        return back()->withErrors([
+            'phone_verification' => false,
+        ]);
     }
 }
