@@ -22,7 +22,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return 'user home';
+        return inertia('User/Profile');
     }
 
     /**
@@ -35,5 +35,4 @@ class UserController extends Controller
 
         event(new UserLoggedIn($user));
     }
-
 }
