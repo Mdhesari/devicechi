@@ -20,7 +20,7 @@
           :name="'digit_' + digit"
         />
       </div>
-      <input type="submit" value="تایید" />
+      <input type="submit" value="تایید" id="btn-submit-confirmation" />
     </form>
   </b-modal>
 </template>
@@ -65,11 +65,7 @@ export default {
         code: this.confirmation_code,
       });
 
-      axios
-        .post(this.verifyRoute, {
-          code: this.confirmation_code,
-        })
-        .then((r) => console.log("ok"));
+      form.post(this.verifyRoute);
     },
     handleInput(ev) {
       const input = ev.target;
@@ -81,11 +77,18 @@ export default {
     onPaste(ev) {
       const paste = ev.clipboardData.getData("text").trim();
       const inputs = this.getInputs();
+      const btnAction = document.getElementById("btn-submit-confirmation");
+
       let i = 0;
 
       for (let input of inputs) {
         if (paste[i] != undefined && !isNaN(Number(paste[i]))) {
           input.value = paste[i];
+          input.focus();
+
+          if (!input.nextElementSibling) {
+            btnAction.focus();
+          }
         } else {
           input.focus();
           break;
