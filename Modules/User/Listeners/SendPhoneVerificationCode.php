@@ -31,14 +31,14 @@ class SendPhoneVerificationCode
     {
         $code = $this->generateActivationCode();
 
-        $event->request->session()->push('veritication_code', Hash::make($code));
-
         $number = $event->request->phone;
 
-        $event->request->session()->push('phone', $number);
-        $event->request->session()->push('verification_code', $code);
-
         Log::info('Mobileforsale.ir : Your verification code is ' . $code . ', number requested : ' . $number);
+
+        $code = Hash::make($code);
+
+        $event->request->session()->put('phone', $number);
+        $event->request->session()->put('verification_code', $code);
     }
 
     /**
