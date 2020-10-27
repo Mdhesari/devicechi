@@ -12,4 +12,4 @@
 */
 
 
-Route::get('/dash', 'UserController@index')->name('user.dashboard');
+Route::get('/dashboard', 'UserController@index')->name('user.dashboard');

@@ -101,6 +101,8 @@ class SessionTest extends TestCase
             'code' => $code,
         ]));
 
+        $response->dumpSession();
+
         $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors();
     }
 }

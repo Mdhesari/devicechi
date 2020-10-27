@@ -29,10 +29,9 @@ class PhoneVerificationController extends Controller
 
         $hashed_verification_code = $request->session()->get('verification_code');
 
-        if (Hash::check($request->code, $hashed_verification_code) && $phone = $request->session('phone')) {
+        if (Hash::check($request->code, $hashed_verification_code) && $phone = $request->session()->get('phone')) {
 
             $user = User::where('phone', $phone)->first();
-            $user->createToken();
 
             // update user phone_verified_at column and return
             $this->guard->login($user, true);

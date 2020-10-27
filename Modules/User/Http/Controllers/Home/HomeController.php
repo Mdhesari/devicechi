@@ -17,7 +17,10 @@ class HomeController extends Controller
     {
 
         $data =  [
-            'routes' => ['user_auth' => route('user.auth')]
+            'routes' => [
+                'user_auth' => route('user.auth'),
+                'user_auth_verify' => route('user.verify')
+            ]
         ];
 
         if ($message = session('trigger_auth')) {

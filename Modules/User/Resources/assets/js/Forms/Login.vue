@@ -1,6 +1,9 @@
 <template>
   <b-row>
-    <confirm-modal ref="confirmModal"></confirm-modal>
+    <confirm-modal
+      ref="confirmModal"
+      :verifyRoute="routes.user_auth_verify"
+    ></confirm-modal>
     <b-col md="6">
       <div class="vector">
         <img
@@ -22,7 +25,7 @@
             <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
           </b-button>
           <b-form-input
-          v-model="form.phone"
+            v-model="form.phone"
             type="tel"
             minlength="6"
             maxlength="10"
@@ -54,6 +57,7 @@ export default {
 
   data() {
     return {
+      routes: this.$inertia.page.props.routes,
       form: this.$inertia.form(
         {
           phone: "",
@@ -71,19 +75,18 @@ export default {
     onSubmit(e) {
       e.preventDefault();
 
-      let auth_route = this.$inertia.page.props.routes.user_auth;
-            this.$refs.confirmModal.activateAuth();
+      let auth_route = this.routes.user_auth;
 
-      // let result = this.form
-      //   .post(auth_route, {
-      //     preserveScroll: true,
-      //   })
-      //   .then((response) => {
-      //     if (this.$inertia.page.props.trigger_auth) {
-      //       this.$refs.confirmModal.activateAuth();
-      //     }
-      //   })
-      //   .catch(() => console.log("error"));
+      let result = this.form
+        .post(auth_route, {
+          preserveScroll: true,
+        })
+        .then((response) => {
+          if (this.$inertia.page.props.trigger_auth) {
+            this.$refs.confirmModal.activateAuth();
+          }
+        })
+        .catch(() => console.log("error"));
     },
     onReset() {
       alert("rest");

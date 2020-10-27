@@ -26,11 +26,15 @@
 </template>
 
 <script>
+import Axios from "axios";
 export default {
   props: {
     digitsCount: {
       default: 5,
       confirmation_code: "",
+    },
+    verifyRoute: {
+      required: true,
     },
   },
 
@@ -57,7 +61,15 @@ export default {
 
       this.confirmation_code = Number(this.confirmation_code);
 
-      alert(this.confirmation_code);
+      let form = this.$inertia.form({
+        code: this.confirmation_code,
+      });
+
+      axios
+        .post(this.verifyRoute, {
+          code: this.confirmation_code,
+        })
+        .then((r) => console.log("ok"));
     },
     handleInput(ev) {
       const input = ev.target;
