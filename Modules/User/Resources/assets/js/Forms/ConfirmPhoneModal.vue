@@ -1,6 +1,6 @@
 <template>
-  <b-modal hide-footer v-model="isActive">
-    <h4>کد پیامک شده را وارد کنید.</h4>
+  <b-modal v-model="isActive">
+    <h4>کد پیامک شده به {{ phone }} را وارد کنید.</h4>
 
     <form
       @input="handleInput"
@@ -25,6 +25,13 @@
       </div>
       <input type="submit" value="تایید" id="btn-submit-confirmation" />
     </form>
+
+    <template #modal-footer class="text-center">
+      <b-button @click="changeNumber" variant="link">
+        شماره را اشتباه وارد کرده اید؟!
+        <BIconArrowLeft style="vertical-align: middle"></BIconArrowLeft>
+      </b-button>
+    </template>
   </b-modal>
 </template>
 
@@ -44,6 +51,7 @@ export default {
   data() {
     return {
       isActive: false,
+      phone: "",
       form: this.$inertia.form({
         code: 0,
       }),
@@ -51,8 +59,13 @@ export default {
   },
 
   methods: {
-    activateAuth() {
+    activateAuth(phone) {
+      this.phone = phone;
+
       this.isActive = true;
+    },
+    deActivateAuth() {
+      this.isActive = false;
     },
     onSubmit(ev) {
       ev.preventDefault();
@@ -106,6 +119,9 @@ export default {
     },
     getInputs() {
       return Array.from(document.querySelectorAll(".inputs input"));
+    },
+    changeNumber() {
+      this.$emit("reset-form");
     },
   },
 };

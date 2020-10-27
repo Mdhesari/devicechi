@@ -28,6 +28,11 @@ class HomeController extends Controller
             $data['trigger_auth'] = $message;
         }
 
+        if ($phone = session('phone')) {
+
+            $data['phone'] = $phone;
+        }
+
 
         return Inertia::render('Home', $data);
     }

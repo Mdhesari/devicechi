@@ -1,6 +1,7 @@
 <template>
   <b-row>
     <confirm-modal
+      v-on:reset-form="onReset"
       ref="confirmModal"
       :verifyRoute="routes.user_auth_verify"
     ></confirm-modal>
@@ -83,13 +84,16 @@ export default {
         })
         .then((response) => {
           if (this.$inertia.page.props.trigger_auth) {
-            this.$refs.confirmModal.activateAuth();
+            this.$refs.confirmModal.activateAuth(
+              this.$inertia.page.props.phone
+            );
           }
         })
         .catch(() => console.log("error"));
     },
     onReset() {
-      alert("rest");
+      this.$refs.confirmModal.deActivateAuth();
+      this.form.phone = "";
     },
   },
 };
