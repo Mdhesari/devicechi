@@ -2,20 +2,31 @@
 
 namespace Modules\User\Http\Controllers\Auth;
 
+use App;
 use Exception;
+use Hash;
 use Highlight\RegEx;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
+use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use NunoMaduro\Collision\Adapters\Phpunit\State;
 use Response;
 use Str;
 use Validator;
 
-class RegisterController extends Controller
+class SessionController extends Controller
 {
+
+    protected $codeGenerator = null;
+
+    public function __construct(CodeVerificationGenerator $generator)
+    {
+        $this->codeGenerator = $generator;
+    }
+
     /**
      * Store a newly created resource in storage.
      * @param Request $request
@@ -30,15 +41,42 @@ class RegisterController extends Controller
 
         $user = User::where('phone', $request->input('phone'))->first();
 
-        if (!is_null($user)) {
+        if (is_null($user)) {
+
+            $phone = trim($request->phone);
+            $phone_code = intval($request->phone_country_code);
+
             // user already have an account
+            $user = User::create([
+                'phone' => $phone,
+                'phone_country_code' => $phone_code
+            ]);
 
-            return null; // temp
-
-            // return $this->loginUser($user);
+            event(new UserRegistered(
+                $user,
+            ));
         }
 
-        return $this->registerUser($request);
+        $result = $this->attempt($user);
+
+        return back()->with('trigger_auth', $result);
+    }
+
+    protected function attempt($user)
+    {
+
+        $code = $this->codeGenerator->generate();
+
+        session([
+            'phone' => $user->phone,
+            'phone_country_code' => $user->phone_country_code,
+            'verification_code' => Hash::make($code),
+        ]);
+
+        if (App::environment('testing'))
+            session()->put('test_code', $code);
+
+        return $user->sendVerificationNotification($code);
     }
 
     /**
@@ -60,9 +98,7 @@ class RegisterController extends Controller
                 'phone_country_code' => $phone_code
             ]);
 
-            event(new UserRegistered(
-                $request,
-            ));
+
 
             if ($request->expectsJson())
                 return Response::json([

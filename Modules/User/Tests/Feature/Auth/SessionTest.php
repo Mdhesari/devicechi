@@ -6,6 +6,7 @@ use DB;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\User\Entities\User;
 
 class SessionTest extends TestCase
 {
@@ -91,6 +92,8 @@ class SessionTest extends TestCase
             'phone_country_code' => $phone_code,
         ]);
 
+        // $response->dumpSession();
+
         $response->assertRedirect()
             ->assertSessionHasNoErrors()
             ->assertSessionHas('verification_code');
@@ -101,8 +104,13 @@ class SessionTest extends TestCase
             'code' => $code,
         ]));
 
-        $response->dumpSession();
+        $user = User::where('phone', $phone_number)->first();
 
-        $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors();
+        $this->assertNotNull($user);
+
+        // $response->dumpSession();
+
+        $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors()
+            ->assertSessionHas('ok');
     }
 }

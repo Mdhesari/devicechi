@@ -12,8 +12,8 @@
 */
 
 use Modules\User\Http\Controllers\Auth\LoginController;
-use Modules\User\Http\Controllers\Auth\PhoneVerificationController;
-use Modules\User\Http\Controllers\Auth\RegisterController;
+use Modules\User\Http\Controllers\Auth\SessionController;
+use Modules\User\Http\Controllers\Auth\VerificationController;
 use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserController;
 
@@ -25,7 +25,7 @@ Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-    Route::post('/auth', [RegisterController::class, 'store'])->name('auth');
+    Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
-    Route::post('/auth/validate', [PhoneVerificationController::class, 'verify'])->name('verify');
+    Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
 });

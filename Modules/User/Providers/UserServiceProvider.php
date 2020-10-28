@@ -4,6 +4,8 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Modules\User\Space\GeneratorVerification;
 use Modules\User\Space\UserDomainHandler;
 
 class UserServiceProvider extends ServiceProvider
@@ -41,6 +43,8 @@ class UserServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
 
         $this->app->bind(RouteServiceProvider::DOMAIN, UserDomainHandler::class);
+
+        $this->app->bind(CodeVerificationGenerator::class, GeneratorVerification::class);
     }
 
     /**
