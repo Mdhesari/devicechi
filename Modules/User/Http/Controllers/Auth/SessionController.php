@@ -20,6 +20,11 @@ use Validator;
 class SessionController extends Controller
 {
 
+    /**
+     * code Generator
+     *
+     * @var CodeVerificationGenerator|null
+     */
     protected $codeGenerator = null;
 
     public function __construct(CodeVerificationGenerator $generator)
@@ -57,12 +62,18 @@ class SessionController extends Controller
             ));
         }
 
-        $result = $this->attempt($user);
+        $result = $this->verify($user);
 
         return back()->with('trigger_auth', $result);
     }
 
-    protected function attempt($user)
+    /**
+     * Verify user by sending muly digit code
+     *
+     * @param object $user
+     * @return void
+     */
+    protected function verify($user)
     {
 
         $code = $this->codeGenerator->generate();
@@ -76,41 +87,8 @@ class SessionController extends Controller
         if (App::environment('testing'))
             session()->put('test_code', $code);
 
-        return $user->sendVerificationNotification($code);
-    }
+        $result = $user->sendVerificationNotification($code);
 
-    /**
-     * Register new user
-     *
-     * @param  mixed $request
-     * @return void
-     */
-    private function registerUser($request)
-    {
-
-        try {
-
-            $phone = trim($request->phone);
-            $phone_code = intval($request->phone_country_code);
-
-            User::create([
-                'phone' => $phone,
-                'phone_country_code' => $phone_code
-            ]);
-
-
-
-            if ($request->expectsJson())
-                return Response::json([
-                    'status' => 1,
-                ]);
-
-            return back()->with('trigger_auth', 1);
-        } catch (Exception $e) {
-
-            report($e);
-
-            return back()->with('error', __('Something went wrong'));
-        }
+        return 1;
     }
 }

@@ -20,6 +20,12 @@ class VerificationController extends Controller
         $this->guard = $guard;
     }
 
+    /**
+     * Verify if user entered code is true
+     *
+     * @param  object $request
+     * @return mixed
+     */
     public function verify(Request $request)
     {
 

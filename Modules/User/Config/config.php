@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'User'
+    'name' => 'User',
+    'verification_length' => 5,
 ];
