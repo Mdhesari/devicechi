@@ -145,6 +145,10 @@ ul li {
   border-bottom-left-radius: 0;
 }
 
+.section.login-form-section .btn-login-submit:focus {
+  box-shadow: none;
+}
+
 .section.about-us {
   margin-top: 8em;
 }
