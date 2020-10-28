@@ -31,6 +31,8 @@
             <b-spinner v-show="isLoading"></b-spinner>
           </b-button>
           <b-form-input
+            @focus="focusOnPhone"
+            @blur="!focusOnPhone"
             v-model="form.phone"
             type="tel"
             minlength="6"
@@ -65,6 +67,7 @@ export default {
   data() {
     return {
       isLoading: false,
+      focusOnPhone: false,
       routes: this.$inertia.page.props.routes,
       form: this.$inertia.form(
         {

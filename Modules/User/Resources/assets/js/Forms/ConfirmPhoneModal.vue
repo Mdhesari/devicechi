@@ -23,7 +23,13 @@
       <div class="errors">
         <p class="text-danger">{{ form.error("code") }}</p>
       </div>
-      <input type="submit" value="تایید" id="btn-submit-confirmation" />
+      <input
+        :disabled="isLoading"
+        type="submit"
+        ref="btn_submit"
+        value="تایید"
+        id="btn-submit-confirmation"
+      />
     </form>
 
     <template #modal-footer class="text-center">
@@ -50,6 +56,7 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       isActive: false,
       phone: "",
       form: this.$inertia.form({
@@ -82,13 +89,18 @@ export default {
 
       this.form.code = confirmation_code;
 
-      this.form.post(this.verifyRoute);
+      this.isLoading = true;
+      this.form.post(this.verifyRoute).then(() => {
+        this.isLoading = false;
+      });
     },
     handleInput(ev) {
       const input = ev.target;
 
       if (input.nextElementSibling && input.value) {
         input.nextElementSibling.focus();
+      } else if (!input.nextElementSibling) {
+        this.$refs.btn_submit.focus();
       }
     },
     onPaste(ev) {

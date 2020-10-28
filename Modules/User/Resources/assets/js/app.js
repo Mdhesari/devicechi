@@ -6,6 +6,12 @@ import { InertiaApp } from "@inertiajs/inertia-vue";
 import { InertiaForm } from "laravel-jetstream";
 import PortalVue from "portal-vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import { InertiaProgress } from "@inertiajs/progress";
+
+InertiaProgress.init({
+    color: "#fcc55a",
+    showSpinner: true
+});
 
 Vue.use(InertiaApp);
 Vue.use(InertiaForm);
