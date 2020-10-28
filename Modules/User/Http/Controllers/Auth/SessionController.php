@@ -62,18 +62,18 @@ class SessionController extends Controller
             ));
         }
 
-        $result = $this->verify($user);
+        $result = $this->sendVerification($user);
 
         return back()->with('trigger_auth', $result);
     }
 
     /**
-     * Verify user by sending muly digit code
+     * Send verification to user by sending multy digit code
      *
      * @param object $user
      * @return void
      */
-    protected function verify($user)
+    protected function sendVerification($user)
     {
 
         $code = $this->codeGenerator->generate();
