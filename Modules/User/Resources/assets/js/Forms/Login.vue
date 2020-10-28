@@ -19,17 +19,23 @@
       <b-form @submit="onSubmit" @reset="onReset" class="login-form">
         <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
           <b-button
+            :disabled="isLoading"
             type="submit"
             variant="secondary"
             class="btn-login-submit d-inline-block"
           >
-            <BIconArrowRight style="vertical-align: middle"></BIconArrowRight>
+            <BIconArrowRight
+              v-show="!isLoading"
+              style="vertical-align: middle"
+            ></BIconArrowRight>
+            <b-spinner v-show="isLoading"></b-spinner>
           </b-button>
           <b-form-input
             v-model="form.phone"
             type="tel"
             minlength="6"
             maxlength="10"
+            :disabled="isLoading"
             class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
           >
           </b-form-input>
@@ -58,6 +64,7 @@ export default {
 
   data() {
     return {
+      isLoading: false,
       routes: this.$inertia.page.props.routes,
       form: this.$inertia.form(
         {
@@ -78,18 +85,21 @@ export default {
 
       let auth_route = this.routes.user_auth;
 
+      this.isLoading = true;
+
       let result = this.form
         .post(auth_route, {
           preserveScroll: true,
         })
         .then((response) => {
+          this.isLoading = false;
           if (this.$inertia.page.props.trigger_auth) {
             this.$refs.confirmModal.activateAuth(
               this.$inertia.page.props.phone
             );
           }
         })
-        .catch(() => console.log("error"));
+        .catch(() => alert("error"));
     },
     onReset() {
       this.$refs.confirmModal.deActivateAuth();
