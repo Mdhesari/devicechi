@@ -115,8 +115,11 @@ class SessionTest extends TestCase
 
     }
 
-    public function test_if_user_can_logout() {
+    public function test_if_user_can_logout()
+    {
 
-        
+        $response = $this->post(route('user.logout'));
+
+        $response->assertRedirect(route('user.home'));
     }
 }

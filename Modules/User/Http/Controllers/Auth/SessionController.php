@@ -96,7 +96,7 @@ class SessionController extends Controller
 
         return 1;
     }
-    
+
     /**
      * destroy
      *

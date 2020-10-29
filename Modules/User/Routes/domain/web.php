@@ -25,6 +25,8 @@ Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+
     Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
     Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
