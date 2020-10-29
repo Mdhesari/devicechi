@@ -3,6 +3,7 @@ $pallete: (
     "dark": #424242,
     "light_silver": #f5f6fa,
     "white": #ffffff,
+    "white_2": "f9fbff",
     "gray": #b3b3b3,
     "dark_gray": #727272,
     "green": #71be34,
@@ -41,7 +42,7 @@ $pallete: (
 
 /* general */
 body {
-    background-color: pallete("white");
+    background-color: pallete("white_2");
 }
 
 p {
