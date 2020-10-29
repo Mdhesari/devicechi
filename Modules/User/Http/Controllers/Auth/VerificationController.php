@@ -39,6 +39,8 @@ class VerificationController extends Controller
 
             $user = User::where('phone', $phone)->first();
 
+            $user->verifyPhoneNumberIfNotVerified();
+
             // update user phone_verified_at column and return
             $this->guard->login($user, true);
 

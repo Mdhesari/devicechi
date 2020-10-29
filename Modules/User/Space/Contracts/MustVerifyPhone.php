@@ -6,4 +6,6 @@ interface MustVerifyPhone
 {
 
     public function sendVerificationNotification($code);
+
+    public function verifyPhoneNumberIfNotVerified();
 }

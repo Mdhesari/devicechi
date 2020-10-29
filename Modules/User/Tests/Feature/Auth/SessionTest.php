@@ -104,13 +104,19 @@ class SessionTest extends TestCase
             'code' => $code,
         ]));
 
+        $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors()
+            ->assertSessionHas('ok');
+
         $user = User::where('phone', $phone_number)->first();
 
         $this->assertNotNull($user);
 
         // $response->dumpSession();
 
-        $response->assertRedirect(route('user.dashboard'))->assertSessionHasNoErrors()
-            ->assertSessionHas('ok');
+    }
+
+    public function test_if_user_can_logout() {
+
+        
     }
 }

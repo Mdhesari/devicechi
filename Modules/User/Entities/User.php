@@ -61,9 +61,26 @@ class User extends Authenticatable implements MustVerifyPhone
         'profile_photo_url',
     ];
 
+    public function hasVerifiedPhone()
+    {
+
+        return !is_null($this->phone_verified_at);
+    }
+
     public function sendVerificationNotification($code)
     {
 
         $this->notify(new CodeVerificatiNotification($this, $code));
+    }
+
+    public function verifyPhoneNumberIfNotVerified()
+    {
+
+        if (!$this->hasVerifiedPhone()) {
+
+            $this->forceFill([
+                'phone_verified_at' => $this->freshTimestamp(),
+            ])->save();
+        }
     }
 }

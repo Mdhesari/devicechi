@@ -3,9 +3,11 @@
 namespace Modules\User\Http\Controllers\Auth;
 
 use App;
+use Auth;
 use Exception;
 use Hash;
 use Highlight\RegEx;
+use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -20,6 +22,8 @@ use Validator;
 class SessionController extends Controller
 {
 
+    protected $gurad;
+
     /**
      * code Generator
      *
@@ -27,8 +31,9 @@ class SessionController extends Controller
      */
     protected $codeGenerator = null;
 
-    public function __construct(CodeVerificationGenerator $generator)
+    public function __construct(StatefulGuard $guard, CodeVerificationGenerator $generator)
     {
+        $this->gurad = $guard;
         $this->codeGenerator = $generator;
     }
 
@@ -90,5 +95,22 @@ class SessionController extends Controller
         $result = $user->sendVerificationNotification($code);
 
         return 1;
+    }
+    
+    /**
+     * destroy
+     *
+     * @param  mixed $request
+     * @return void
+     */
+    public function destroy(Request $request)
+    {
+
+        $this->gurad->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('user.home');
     }
 }
