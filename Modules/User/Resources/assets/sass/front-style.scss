@@ -342,6 +342,10 @@ ul li {
     -moz-border-radius: 30px 0 0 30px;
     -ms-border-radius: 30px 0 0 30px;
     -o-border-radius: 30px 0 0 30px;
+
+    &.navActive {
+        right: 0;
+    }
 }
 
 .header-site .main-menu ul {

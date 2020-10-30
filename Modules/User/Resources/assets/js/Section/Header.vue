@@ -2,25 +2,24 @@
   <!-- Header Content -->
   <header class="header-site">
     <!-- Back Cover Menu -->
-    <div class="dark-back" id="darkBack" onclick="closeMenu()"></div>
+    <div
+      @click="showNavbar = false"
+      :class="{ active: showNavbar }"
+      class="dark-back"
+      id="darkBack"
+    ></div>
     <div class="container">
       <div class="right-side">
-        <!-- <button class="burger-btn" id="burgerBtn" onclick="openMenu()">
-                <span class="rec"></span>
-                <span class="rec width18"></span>
-            </button> -->
+        <button @click="showNavbar = true" class="burger-btn" id="burgerBtn">
+          <span class="rec"></span>
+          <span class="rec width18"></span>
+        </button>
+
         <a href="#" class="btn action-btn add-advertisment">
           ورود یا ثبت نام
         </a>
 
-        <!-- Primary Navigation Menu -->
-        <nav class="main-menu" id="mainMenu">
-          <!-- Navigation Links -->
-          <ul>
-            <li><a href="#">آیتم اول</a></li>
-            <li><a href="#">آیتم دوم</a></li>
-          </ul>
-        </nav>
+        <Navbar :class="{ navActive: showNavbar }"></Navbar>
       </div>
 
       <div class="left-side">
@@ -32,3 +31,18 @@
     </div>
   </header>
 </template>
+
+<script>
+import Navbar from "./Navigation";
+
+export default {
+  data() {
+    return {
+      showNavbar: false,
+    };
+  },
+  components: {
+    Navbar,
+  },
+};
+</script>
