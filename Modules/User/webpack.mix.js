@@ -9,6 +9,7 @@ require("laravel-mix-merge-manifest");
 mix.setPublicPath("../../public").mergeManifest();
 
 mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")
+    .js(__dirname + "/Resources/assets/js/libs/moment.js", "js/user/moment.js")
     .sass(
         __dirname + "/Resources/assets/sass/front-style.scss",
         "css/user/user.css"

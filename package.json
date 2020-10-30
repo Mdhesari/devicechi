@@ -29,6 +29,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@inertiajs/progress": "^0.2.0"
+        "@inertiajs/progress": "^0.2.0",
+        "lang.js": "^1.1.14",
+        "moment": "^2.29.1"
     }
 }

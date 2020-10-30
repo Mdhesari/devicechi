@@ -7,12 +7,13 @@
             "email": "n.widart@gmail.com"
         }
     ],
+    "require": {
+        "kg-bot/laravel-localization-to-vue": "^1.6"
+    },
     "extra": {
         "laravel": {
             "providers": [],
-            "aliases": {
-
-            }
+            "aliases": {}
         }
     },
     "autoload": {

@@ -1,12 +1,23 @@
 require("./bootstrap");
 
 import Vue from "vue";
+import Lang from "lang.js";
 
 import { InertiaApp } from "@inertiajs/inertia-vue";
 import { InertiaForm } from "laravel-jetstream";
 import PortalVue from "portal-vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import { InertiaProgress } from "@inertiajs/progress";
+
+const default_locale = window.default_locale;
+const fallback_locale = window.fallback_locale;
+const messages = window.messages;
+
+Vue.prototype.trans = new Lang({
+    messages,
+    locale: default_locale,
+    fallback: fallback_locale
+});
 
 InertiaProgress.init({
     color: "#fcc55a",

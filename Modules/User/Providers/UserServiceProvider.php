@@ -41,6 +41,7 @@ class UserServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(ViewServiceProvider::class);
 
         $this->app->bind(RouteServiceProvider::DOMAIN, UserDomainHandler::class);
 

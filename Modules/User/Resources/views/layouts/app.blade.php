@@ -11,8 +11,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/user/normalize.css') }}">
@@ -22,9 +20,16 @@
     <link rel="stylesheet" href="{{ mix("css/user/user.css") }}">
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script>
+        window.default_locale = "{{ config('app.locale') }}"
+        window.fallback_locale = "{{ config('app.fallback_locale') }}"
+        window.messages = @json($messages)
+    </script>
+    <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>
-</head> 
+
+
+</head>
 
 <body class="font-sans antialiased">
 

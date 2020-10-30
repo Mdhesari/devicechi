@@ -11,6 +11,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
 use Request;
+use View;
 
 class AppServiceProvider extends ServiceProvider
 {

@@ -15,6 +15,7 @@
         "laravel-mix-merge-manifest": "^0.1.2"
     },
     "dependencies": {
-        "@inertiajs/progress": "^0.2.0"
+        "@inertiajs/progress": "^0.2.0",
+        "lang.js": "^1.1.14"
     }
 }
