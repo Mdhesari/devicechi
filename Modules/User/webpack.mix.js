@@ -6,6 +6,9 @@ dotenvExpand(
 const mix = require("laravel-mix");
 require("laravel-mix-merge-manifest");
 
+mix.disableSuccessNotifications();
+mix.disableErrorNotifications();
+
 mix.setPublicPath("../../public").mergeManifest();
 
 mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")

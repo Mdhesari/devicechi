@@ -22,17 +22,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return inertia('User/Profile');
-    }
-
-    /**
-     * Login user
-     *
-     * @return void
-     */
-    private function loginUser($user)
-    {
-
-        event(new UserLoggedIn($user));
+        return inertia('User/Profile', [
+            'user' => auth()->user(),
+        ]);
     }
 }
