@@ -9,14 +9,12 @@
 import IntroductionSection from "./../Section/Introduction";
 import HomeLoginSection from "./../Section/HomeLogin";
 import FrontLayout from "./../Layouts/FrontLayout";
-import Login from "./../Forms/Login";
 import AppSection from "./../Components/AppSection";
 
 export default {
   components: {
     FrontLayout,
     IntroductionSection,
-    Login,
     AppSection,
     HomeLoginSection,
   },
