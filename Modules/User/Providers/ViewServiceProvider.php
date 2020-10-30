@@ -23,7 +23,7 @@ class ViewServiceProvider extends ServiceProvider
 
         View::composer('user::layouts.app', function ($view) {
 
-            $messages = ExportLocalization::export()->toArray();
+            $messages = ExportLocalization::export()->toFlat();
 
             return $view->with(compact('messages'));
         });

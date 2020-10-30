@@ -12,9 +12,8 @@ import { InertiaProgress } from "@inertiajs/progress";
 const default_locale = window.default_locale;
 const fallback_locale = window.fallback_locale;
 const messages = window.messages;
-
-Vue.prototype.trans = new Lang({
-    messages,
+Vue.prototype.$t = new Lang({
+    messages: messages,
     locale: default_locale,
     fallback: fallback_locale
 });
