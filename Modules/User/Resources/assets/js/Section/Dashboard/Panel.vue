@@ -4,13 +4,16 @@
       <div class="row user-panel-main">
         <div class="col-md-4">
           <div class="sidebar">
+            <inertia-link href="/ads/create" class="btn btn-success">{{
+              $t.get("Create Ad")
+            }}</inertia-link>
             <ul class="tabs">
               <li class="tab-profile">
                 <div class="avatar">
                   <img src="img/person" alt="" />
                 </div>
                 <div class="username">
-                    {{ user.name }}
+                  {{ user.name }}
                 </div>
               </li>
               <li class="tab-item active">
@@ -62,5 +65,10 @@
 <script>
 export default {
   props: ["user"],
+  data() {
+    return {
+      routes: this.$inertia.page.props.routes,
+    };
+  },
 };
 </script>

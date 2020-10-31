@@ -7,7 +7,6 @@ const mix = require("laravel-mix");
 require("laravel-mix-merge-manifest");
 
 mix.disableSuccessNotifications();
-mix.disableErrorNotifications();
 
 mix.setPublicPath("../../public").mergeManifest();
 
