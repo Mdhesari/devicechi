@@ -70,7 +70,7 @@ class User extends Authenticatable implements MustVerifyPhone
     public function sendVerificationNotification($code)
     {
 
-        $this->notify(new CodeVerificatiNotification($this, $code));
+        return $this->notify(new CodeVerificatiNotification($this, $code));
     }
 
     public function verifyPhoneNumberIfNotVerified()
