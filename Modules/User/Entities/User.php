@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Space\Contracts\MustVerifyPhone;
+use User\Database\Factories\UserFactory;
 
 class User extends Authenticatable implements MustVerifyPhone
 {
@@ -82,5 +83,26 @@ class User extends Authenticatable implements MustVerifyPhone
                 'phone_verified_at' => $this->freshTimestamp(),
             ])->save();
         }
+    }
+
+    /**
+     * Get user ads
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ads()
+    {
+
+        return $this->hasMany(Ad::class);
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return new UserFactory;
     }
 }

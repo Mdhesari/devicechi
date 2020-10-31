@@ -47,8 +47,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "User\\Database\\Factory\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
+            "User\\Database\\Factories\\": "Modules/User/Database/factories/",
             "Modules\\": "Modules/"
         }
     },
