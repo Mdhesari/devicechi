@@ -11,6 +11,7 @@
 |
 */
 
+use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\Auth\VerificationController;
@@ -30,4 +31,9 @@ Route::middleware('guest:sanctum')->name('user.')->group(function () {
     Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
     Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
+
+    Route::name('ad.')->group(function () {
+
+        Route::get('/ads/create', [AdCreateController::class, 'show'])->name('create');
+    });
 });
