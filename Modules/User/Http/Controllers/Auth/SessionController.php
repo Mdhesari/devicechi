@@ -92,7 +92,7 @@ class SessionController extends Controller
         if (App::environment('testing'))
             session()->put('test_code', $code);
 
-        $result = $user->sendVerificationNotification($code);
+        $user->sendVerificationNotification($code);
 
         return 1;
     }
