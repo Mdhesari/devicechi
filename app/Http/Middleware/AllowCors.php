@@ -18,6 +18,7 @@ class AllowCors
     {
 
         return $next($request)->header('Access-Control-Allow-Origin', '*')
+            ->header('Cache-Control', 'no-store,no-cache,must-revalidate')
             ->header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS')
             ->header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type,X-Token-Auth,Authorization');
     }

@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Home;
 
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Modules\User\Http\Controllers\Controller;
 
@@ -13,7 +14,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function index()
+    public function index(Request $request)
     {
 
         $data =  [

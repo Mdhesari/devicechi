@@ -1,3 +1,4 @@
+
 <?php
 
 return [
@@ -15,11 +16,11 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['*'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['*', '*.mobile.test'],
 
     'allowed_origins_patterns' => [],
 

@@ -48,7 +48,7 @@ class VerificationController extends Controller
         }
 
         return back()->withErrors([
-            'code' => __('The confirmation code is not valid.'),
+            'code' => __('auth.failed'),
         ]);
     }
 }
