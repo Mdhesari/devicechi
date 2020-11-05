@@ -101,8 +101,9 @@
                 </div>
                 <div class="form-content">
                     <div class="card wizard-card">
-                       <component :is="tab">
-                       </component>
+                        <keep-alive>
+                            <component :is="tab" @next="setTab"> </component>
+                        </keep-alive>
                     </div>
                 </div>
             </b-container>
@@ -117,13 +118,20 @@ import ChooseBrand from "./ChooseBrand";
 export default {
     components: {
         auth: AuthLayout,
-        step_1: ChooseBrand,
+        step_1: ChooseBrand
     },
     data() {
         return {
             tab: "step_1",
             step: 1
         };
+    },
+    methods: {
+        setTab() {
+            step++;
+
+            this.tab = "step_" + step;
+        }
     }
 };
 </script>
