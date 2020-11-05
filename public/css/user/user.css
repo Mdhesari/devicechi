@@ -223,6 +223,10 @@ ul li {
   background-color: #FB7178;
 }
 
+.rtl {
+  direction: rtl !important;
+}
+
 .btn-mobilesale {
   width: 100%;
   border-radius: 50px;

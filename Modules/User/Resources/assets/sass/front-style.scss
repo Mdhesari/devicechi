@@ -100,6 +100,11 @@ ul li {
 
 @import "./wizard.scss";
 
+.rtl {
+
+    direction: rtl !important;
+}
+
 .btn-mobilesale {
     width: 100%;
     border-radius: 50px;
