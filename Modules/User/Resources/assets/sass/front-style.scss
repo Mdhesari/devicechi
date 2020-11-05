@@ -90,6 +90,17 @@ ul li {
     MD Styles
 ======= */
 
+.btn-mobilesale {
+    width: 100%;
+    border-radius: 50px;
+    margin-bottom: 2em;
+    padding: 16px;
+}
+
+.btn-rounded-high {
+    border-radius: 50px;
+}
+
 .input-phone-number {
     width: 45%;
 }
@@ -1644,22 +1655,19 @@ ul li {
 
 .sidebar {
     width: 100%;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    overflow: hidden;
+    // box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar {
     .tabs {
-    }
-}
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        overflow: hidden;
 
-.sidebar {
-    .tabs {
         .tab-profile {
             display: flex;
             align-items: center;
