@@ -378,6 +378,41 @@ ul li {
   background: transparent url(/images/bg.svg?a7ba8fcfb1f735a0bb3e6146cb42d1a3) no-repeat center center;
 }
 
+/* ================
+ Ads
+ ================ */
+
+.brand-item {
+  border: 1px solid #eee;
+  text-align: center;
+  margin: 1em;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.brand-item img {
+  width: 100px;
+  max-width: 100%;
+}
+
+.brand-item .brand-label {
+  color: #333;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 300;
+  font-weight: 550 !important;
+  margin-top: 8px;
+}
+
+.brand-item .brand-label:hover {
+  border: none !important;
+}
+
+.brand-item:hover {
+  transition: border-color 350ms;
+  border-color: #a5a5a5;
+}
+
 /* =====
     End MD styles
 ====== */
