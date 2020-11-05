@@ -11,4 +11,26 @@
 |
 */
 
+use Goutte\Client;
 use Modules\User\Http\Controllers\Home\HomeController;
+use Symfony\Component\HttpClient\HttpClient;
+
+Route::get('/curl', function () {
+
+    $cli = new Client(HttpClient::create(['timeout' => 60]));
+
+    // $response = $cli->request('GET', 'https://www.recycledevice.com/sell-mobile');
+
+    // $brands = [];
+
+    // $response->filter('.brand-list')->each(function ($node) use (&$brands) {
+
+    //     $brands = explode(' ', $node->text());
+    // });
+
+    
+
+    $response = $cli->request('GET', 'https://www.recycledevice.com/sell-mobile');
+
+
+});
