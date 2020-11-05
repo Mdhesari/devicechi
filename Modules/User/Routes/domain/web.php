@@ -20,9 +20,9 @@ use Modules\User\Http\Controllers\UserController;
 
 Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
 
-Route::get('/', [HomeController::class, 'index'])->name('user.home');
-
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
+
+Route::get('/', [HomeController::class, 'index'])->name('user.home');
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 
