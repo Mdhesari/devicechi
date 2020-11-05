@@ -1,6 +1,7 @@
 <template>
     <AuthLayout>
         <section class="wizard">
+            <b-container>
                 <div class="step-indicator">
                     <div class="indicator-line">
                         <div class="text-center">
@@ -98,6 +99,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-content">
+                    <div class="card wizard-card">
+                        <div class="card-body">
+                            <form @submit.prevent>
+                                <input type="submit" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </b-container>
         </section>
     </AuthLayout>
 </template>

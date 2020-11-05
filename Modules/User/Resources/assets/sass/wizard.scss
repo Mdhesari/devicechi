@@ -80,25 +80,25 @@
             float: left;
             border: 5px solid $ls-color-gray--light;
             padding: 0px 5px;
-            height: 21px;
-            width: 21px;
+            height: 24px;
+            width: 24px;
             background: $ls-color-gray--light;
 
             &.active {
-                border: 5px solid #5851d8;
+                border: 5px solid #fba47b;
                 background: #ffffff;
                 border-radius: 50%;
-                height: 21px;
-                width: 21px;
+                height: 24px;
+                width: 24px;
             }
 
             &.completed {
                 padding: 0px;
-                background: #5851d8;
-                border: 5px solid #5851d8;
+                background: #fba47b;
+                border: 5px solid #fba47b;
                 border-radius: 50%;
-                height: 21px;
-                width: 21px;
+                height: 24px;
+                width: 24px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
