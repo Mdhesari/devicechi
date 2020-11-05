@@ -18,7 +18,7 @@ use Modules\User\Http\Controllers\Auth\VerificationController;
 use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserController;
 
-Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
+Route::middleware(['auth:sanctum'])->name('user.')->group(__DIR__ . '/web/auth.php');
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
@@ -32,8 +32,4 @@ Route::get('/', [HomeController::class, 'index'])->name('user.home');
 
     Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
 
-    Route::name('ad.')->group(function () {
-
-        Route::get('/ads/create', [AdCreateController::class, 'show'])->name('create');
-    });
 });

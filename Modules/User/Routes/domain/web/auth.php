@@ -11,5 +11,11 @@
 |
 */
 
+use Modules\User\Http\Controllers\Ad\AdCreateController;
 
-Route::get('/dashboard', 'UserController@index')->name('user.dashboard');
+Route::get('/dashboard', 'UserController@index')->name('dashboard');
+
+Route::name('ad.')->group(function () {
+
+    Route::get('/ads/create', [AdCreateController::class, 'show'])->name('create');
+});

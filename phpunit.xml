@@ -10,9 +10,9 @@
 
         <!-- Modules -->
         <!-- User -->
-        <!-- <testsuite name="Feature">
+        <testsuite name="Feature">
             <directory suffix="Test.php">./Modules/User/Tests/Feature/Ad</directory>
-        </testsuite> -->
+        </testsuite>
         <testsuite name="Unit">
             <directory suffix="Test.php">./Modules/User/Tests/Unit/Ad</directory>
         </testsuite>

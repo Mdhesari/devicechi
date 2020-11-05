@@ -1,6 +1,9 @@
 <template>
   <div class="create-ad">
-    <div class="container"></div>
+  <b-container>
+    <h1>Create new ad</h1>
+    <p>hi</p>
+  </b-container>
   </div>
 </template>
 
