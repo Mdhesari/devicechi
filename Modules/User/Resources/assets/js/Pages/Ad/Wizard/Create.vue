@@ -1,18 +1,109 @@
 <template>
     <AuthLayout>
-        <div class="create-ad">
-            <b-container>
-                <h1>
-                {{ $t.get('ads.create.title')) }}
-                </h1>
-                <p>hi</p>
-            </b-container>
-        </div>
+        <section class="wizard">
+                <div class="step-indicator">
+                    <div class="indicator-line">
+                        <div class="text-center">
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 1,
+                                    completed: step > 1
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 1"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 2,
+                                    completed: step > 2
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 2"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 3,
+                                    completed: step > 3
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 3"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 4,
+                                    completed: step > 4
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 4"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 5,
+                                    completed: step > 5
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 5"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 6,
+                                    completed: step > 6
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 6"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 7,
+                                    completed: step > 7
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 7"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </AuthLayout>
 </template>
 
 <script>
-import AuthLayout from "../../Layouts/FrontAuthLayout";
+import AuthLayout from "../../../Layouts/FrontAuthLayout";
 
 export default {
     components: {
@@ -20,7 +111,8 @@ export default {
     },
     data() {
         return {
-            current: "step_1"
+            tab: "steb_1",
+            step: 1
         };
     }
 };

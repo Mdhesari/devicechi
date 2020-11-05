@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AuthLay  out from "../../Layouts/FrontAuthLayout";
+import AuthLayout from "../../Layouts/FrontAuthLayout";
 import Panel from "../../Section/Dashboard/Panel";
 export default {
   data() {

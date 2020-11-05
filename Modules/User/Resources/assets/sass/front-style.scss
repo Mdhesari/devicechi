@@ -1,3 +1,11 @@
+// Variables & Functions
+//----------------------------------
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import 'variables';
+
 $pallete: (
     "primary": #ff6704,
     "dark": #424242,
@@ -89,6 +97,8 @@ ul li {
 /* ========
     MD Styles
 ======= */
+
+@import "./wizard.scss";
 
 .btn-mobilesale {
     width: 100%;
