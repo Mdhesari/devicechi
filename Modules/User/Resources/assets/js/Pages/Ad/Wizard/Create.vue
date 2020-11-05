@@ -1,5 +1,5 @@
 <template>
-    <auth>
+    <AuthLayout>
         <section class="wizard">
             <b-container>
                 <div class="step-indicator">
@@ -99,26 +99,30 @@
                         </div>
                     </div>
                 </div>
+                <!-- Wizard steps -->
                 <div class="form-content">
                     <div class="card wizard-card">
                         <keep-alive>
-                            <component :is="tab" @next="setTab"> </component>
+                            <component :is="tab" @next="setTab"></component>
                         </keep-alive>
                     </div>
                 </div>
+                <!-- End wiazrd steps -->
             </b-container>
         </section>
-    </auth>
+    </AuthLayout>
 </template>
 
 <script>
 import AuthLayout from "../../../Layouts/FrontAuthLayout";
 import ChooseBrand from "./ChooseBrand";
+import ChooseModel from "./ChooseModel";
 
 export default {
     components: {
-        auth: AuthLayout,
-        step_1: ChooseBrand
+        AuthLayout: AuthLayout,
+        step_1: ChooseBrand,
+        step_2: ChooseModel
     },
     data() {
         return {
@@ -128,9 +132,9 @@ export default {
     },
     methods: {
         setTab() {
-            step++;
+            this.step++;
 
-            this.tab = "step_" + step;
+            this.tab = "step_" + this.step;
         }
     }
 };
