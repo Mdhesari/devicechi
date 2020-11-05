@@ -12,11 +12,7 @@ class AdCreateController extends Controller
     public function show()
     {
 
-        $routes = [
-            'ad' => [
-                'create' => route('user.ad.create')
-            ],
-        ];
+        $routes = [];
 
         return inertia('Ad/Wizard/Create', compact('routes'));
     }

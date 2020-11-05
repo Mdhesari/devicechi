@@ -1,6 +1,6 @@
 <template>
   <AuthLayout>
-    <Panel :user="user"></Panel>
+    <Panel :user="user" :routes="routes"></Panel>
   </AuthLayout>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       user: this.$inertia.page.props.user,
+      routes: this.$inertia.page.props.routes
     };
   },
   components: {

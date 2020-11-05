@@ -4,7 +4,7 @@
       <div class="row user-panel-main">
         <div class="col-md-4">
           <div class="sidebar">
-          <inertia-link href="ads/create" class="btn btn-success btn-rounded-high btn-mobilesale">{{
+          <inertia-link :href="routes.ad.create" class="btn btn-success btn-rounded-high btn-mobilesale">{{
               $t.get("ads.create.btn_title")
             }}</inertia-link>
             <ul class="tabs">
@@ -64,16 +64,7 @@
 
 <script>
 export default {
-  props: ["user"],
-  data() {
-    return {
-      routes: this.$inertia.page.props.routes,
-    };
-  },
+  props: ["user", "routes"],
 
-  mounted() {
-
-    console.log(this.routes)
-  }
 };
 </script>

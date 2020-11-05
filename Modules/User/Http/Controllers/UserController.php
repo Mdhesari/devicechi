@@ -22,8 +22,16 @@ class UserController extends Controller
      */
     public function index()
     {
+
+        $routes = [
+            'ad' => [
+                'create' => route('user.ad.create')
+            ],
+        ];
+
         return inertia('User/Profile', [
             'user' => auth()->user(),
+            'routes' => $routes,
         ]);
     }
 }
