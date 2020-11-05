@@ -26,7 +26,17 @@ Route::get('/curl', function () {
 
     $brands = [];
 
-    $response->filter('.brand-list .item')->each(function ($node) use (&$brands) {
+    $response->filter('.brand-list .item img')->each(function ($node) use (&$brands) {
+
+        $url = $node->attr('src');
+        $info = pathinfo($url);
+
+        $contents = file_get_contents($url);
+
+        $file = '/tmp/' . $info['basename'];
+        file_put_contents($file, $contents);
+
+        $res = move_uploaded_file($file, '/');
 
         $brands[] = $node->text();
     });
