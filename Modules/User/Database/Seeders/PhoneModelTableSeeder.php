@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
+use Modules\User\Exceptions\PhoneModelUnableToeSeedWithoutBrands;
 
 class PhoneModelTableSeeder extends Seeder
 {
@@ -7436,7 +7437,7 @@ class PhoneModelTableSeeder extends Seeder
 
             $brand = PhoneBrand::whereName($model['brand_name'])->first();
 
-            if (is_null($brand)) throw new Exception("Cannot create model with nulled brand");
+            if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("Cannot create model with nulled brand");
 
             $db_models[] = [
                 'brand_id' => $brand->id,
