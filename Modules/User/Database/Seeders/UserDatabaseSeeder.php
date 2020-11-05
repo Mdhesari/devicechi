@@ -16,6 +16,7 @@ class UserDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(BrandTableSeeder::class);
+        $this->call(PhoneBrandTableSeeder::class);
+        $this->call(PhoneModelTableSeeder::class);
     }
 }

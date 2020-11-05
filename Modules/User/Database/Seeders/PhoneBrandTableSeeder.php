@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\Brand;
 
-class BrandTableSeeder extends Seeder
+class PhoneBrandTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -66,6 +66,5 @@ class BrandTableSeeder extends Seeder
 
         DB::table('phone_brands')->insert($db_brands);
 
-        // $this->call("OthersTableSeeder");
     }
 }
