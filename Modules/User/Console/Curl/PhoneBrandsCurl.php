@@ -65,7 +65,7 @@ class PhoneBrandsCurl extends Command
     private function storeItems($response)
     {
 
-        $this->info('scrapping items...');
+        $this->info('Srapping items...');
 
         $type = $this->argument('type');
 
@@ -81,6 +81,8 @@ class PhoneBrandsCurl extends Command
             config([
                 'user.phone_brands' => $brands,
             ]);
+
+            $this->info('Running module:seed artisan command...');
 
             Artisan::call('module:seed User --class=PhoneBrandTableSeeder');
 
@@ -136,6 +138,8 @@ class PhoneBrandsCurl extends Command
             config([
                 'user.phone_brands_image' => $brands,
             ]);
+
+            $this->info('Running module:seed artisan command...');
 
             Artisan::call('module:seed User --class=PhoneBrandImageTableSeeder');
 
