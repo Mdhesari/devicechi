@@ -18,7 +18,7 @@ class PhoneBrandTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $brands = config('user.brands');
+        $brands = config('user.phone_brands');
 
         $db_brands = [];
 

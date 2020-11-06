@@ -18,7 +18,7 @@ class PhoneBrandsCurl extends Command
      *
      * @var string
      */
-    protected $signature = 'curl:phone_brands {type=log} {url=https://www.recycledevice.com/sell-mobile}';
+    protected $signature = 'curl:phone_brands {type=log} {--url=https://www.recycledevice.com/sell-mobile}';
 
     /**
      * The console command description.
@@ -46,7 +46,7 @@ class PhoneBrandsCurl extends Command
      */
     public function handle()
     {
-        $url = $this->argument('url');
+        $url = $this->option('url');
 
         $response = $this->cli->request('GET', $url);
 
@@ -76,7 +76,7 @@ class PhoneBrandsCurl extends Command
         if ($type == 'database') {
 
             config([
-                'user.brands' => $brands,
+                'user.phone_brands' => $brands,
             ]);
 
             $this->call("module:seed User --class=PhoneBrandTableSeeder");
