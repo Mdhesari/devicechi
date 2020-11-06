@@ -4,6 +4,7 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\User\Console\Curl\PhoneBrandsCurl;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Modules\User\Space\GeneratorVerification;
 use Modules\User\Space\UserDomainHandler;
@@ -30,7 +31,16 @@ class UserServiceProvider extends ServiceProvider
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
+        $this->registerArtisanCommands();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+    }
+
+    public function registerArtisanCommands()
+    {
+
+        $this->commands([
+            PhoneBrandsCurl::class,
+        ]);
     }
 
     /**

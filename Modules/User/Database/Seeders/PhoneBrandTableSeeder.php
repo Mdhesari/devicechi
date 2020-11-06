@@ -18,46 +18,11 @@ class PhoneBrandTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $brands = [
-            "10.or",
-            "Apple",
-            "Asus",
-            "Blackberry",
-            "Coolpad",
-            "Gionee",
-            "Google",
-            "Honor",
-            "HTC",
-            "Huawei",
-            "Infinix",
-            "InFocus",
-            "Intex",
-            "Karbonn",
-            "Lava",
-            "LeEco",
-            "Lenovo",
-            "LG",
-            "Lyf",
-            "Micromax",
-            "Motorola",
-            "Nokia",
-            "OnePlus",
-            "Oppo",
-            "Other",
-            "Panasonic",
-            "Poco",
-            "Realme",
-            "Redmi",
-            "Samsung",
-            "Sony",
-            "Tecno",
-            "Vivo",
-            "Xiaomi",
-            "Xolo",
-            "Yu",
-        ];
+        $brands = config('user.brands');
 
         $db_brands = [];
+
+        DB::table('phone_brands')->truncate();
 
         foreach ($brands as $brand) {
 
@@ -65,6 +30,5 @@ class PhoneBrandTableSeeder extends Seeder
         }
 
         DB::table('phone_brands')->insert($db_brands);
-
     }
 }

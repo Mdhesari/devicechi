@@ -18,32 +18,6 @@ use Modules\User\Http\Controllers\Home\HomeController;
 use Symfony\Component\DomCrawler\Link;
 use Symfony\Component\HttpClient\HttpClient;
 
-Route::get('/curl', function () {
-
-    $cli = new Client(HttpClient::create(['timeout' => 60]));
-
-    $response = $cli->request('GET', 'https://www.recycledevice.com/sell-mobile');
-
-    $brands = [];
-
-    $response->filter('.brand-list .item img')->each(function ($node) use (&$brands) {
-
-        $url = $node->attr('src');
-        $info = pathinfo($url);
-
-        $contents = file_get_contents($url);
-
-        $file = '/tmp/' . $info['basename'];
-        file_put_contents($file, $contents);
-
-        $res = move_uploaded_file($file, '/');
-
-        $brands[] = $node->text();
-    });
-
-    Log::info($brands);
-});
-
 Route::get('/curl-models', function () {
 
     $cli = new Client(HttpClient::create(['timeout' => 60]));
