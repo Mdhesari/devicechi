@@ -7450,4 +7450,6 @@ return [
         "Xolo",
         "Yu",
     ],
+
+    'phone_brands_image' => [],
 ];

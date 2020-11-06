@@ -2,6 +2,7 @@
 
 namespace Modules\User\Console\Curl;
 
+use Artisan;
 use Goutte\Client;
 use Illuminate\Console\Command;
 use Log;
@@ -79,7 +80,9 @@ class PhoneBrandsCurl extends Command
                 'user.phone_brands' => $brands,
             ]);
 
-            $this->call("module:seed User --class=PhoneBrandTableSeeder");
+            // $this->call("module:seed User --class=PhoneBrandTableSeeder");
+
+            Artisan::call('module:seed User --class=PhoneBrandTableSeeder');
 
             Log::info(PhoneBrand::all());
         } else {
@@ -123,7 +126,13 @@ class PhoneBrandsCurl extends Command
 
         if ($type == 'database') {
 
-            $this->info('db scrap images');
+            config([
+                'user.phone_brands_image' => $brands,
+            ]);
+
+            Artisan::call('module:seed User --class=PhoneBrandImageTableSeeder');
+
+            Log::info(PhoneBrand::all()->toArray());
         } else {
 
             Log::info($brands);
