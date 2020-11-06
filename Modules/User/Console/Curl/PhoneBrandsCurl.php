@@ -12,6 +12,8 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 
+use function PHPUnit\Framework\directoryExists;
+
 class PhoneBrandsCurl extends Command
 {
     /**
@@ -80,8 +82,6 @@ class PhoneBrandsCurl extends Command
                 'user.phone_brands' => $brands,
             ]);
 
-            // $this->call("module:seed User --class=PhoneBrandTableSeeder");
-
             Artisan::call('module:seed User --class=PhoneBrandTableSeeder');
 
             Log::info(PhoneBrand::all());
@@ -107,11 +107,18 @@ class PhoneBrandsCurl extends Command
 
             $brand = $info['filename'];
 
-            $path = 'images/brands/' . $info['basename'];
+            $dir = 'images/brands/';
+
+            $path = $dir . $info['basename'];
 
             $file = public_path($path);
 
             if (!file_exists($file)) {
+
+                if (!is_dir(public_path($dir))) {
+
+                    exec('mkdir ' . public_path($dir));
+                }
 
                 $result = $this->saveImage($file, $url);
 
