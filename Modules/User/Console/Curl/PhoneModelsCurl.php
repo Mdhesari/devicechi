@@ -2,6 +2,7 @@
 
 namespace Modules\User\Console\Curl;
 
+use Artisan;
 use Goutte\Client;
 use Illuminate\Console\Command;
 use Log;
@@ -92,9 +93,7 @@ class PhoneModelsCurl extends Command
                 'user.phone_models' => $db_models,
             ]);
 
-            $this->call('module:seed User --class=PhoneModelTableSeeder');
-
-            Log::info(PhoneModel::all()->toArray());
+            Artisan::call('module:seed User --class=PhoneModelTableSeeder');
         } else {
 
             Log::info($db_models);
