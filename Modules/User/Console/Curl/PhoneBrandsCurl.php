@@ -85,8 +85,6 @@ class PhoneBrandsCurl extends Command
             $this->info('Running module:seed artisan command...');
 
             Artisan::call('module:seed User --class=PhoneBrandTableSeeder');
-
-            Log::info(PhoneBrand::all());
         } else {
 
             Log::info($brands);

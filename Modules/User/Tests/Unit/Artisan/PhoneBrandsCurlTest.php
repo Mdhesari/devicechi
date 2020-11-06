@@ -46,4 +46,33 @@ class PhoneBrandsCurlTest extends TestCase
 
         $this->assertNotEquals(0, $phone_brands_count);
     }
+
+    public function test_if_config_is_updated_using_database()
+    {
+
+        config([
+            'user.phone_brands' => [],
+        ]);
+
+        $this->assertEmpty(config('user.phone_brands'));
+
+        $this->artisan('curl:phone_brands database')
+            ->expectsOutput('Successfully scrapped data and resources.');
+
+        $this->assertNotEmpty(config('user.phone_brands'));
+    }
+
+    /* Takes a lot of resources to consume */
+    // public function test_if_images_are_stored()
+    // {
+
+    //     exec('rm -r ' . public_path('images/brands'));
+
+    //     $this->assertFalse(file_exists(public_path('images/brands')));
+
+    //     $this->artisan('curl:phone_brands database')
+    //         ->expectsOutput('Successfully scrapped data and resources.');
+
+    //     $this->assertTrue(file_exists(public_path('images/brands')));
+    // }
 }
