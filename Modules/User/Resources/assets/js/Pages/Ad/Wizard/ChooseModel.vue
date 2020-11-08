@@ -1,16 +1,34 @@
 <template>
     <WizardStep>
         <form @submit.prevent>
-            <p class="form-title">{{ $t.get("ads.wizard.choose_model.title") }}</p>
+            <p class="form-title">
+                {{ $t.get("ads.wizard.choose_model.title") }}
+            </p>
             <p class="form-desc">
                 {{ $t.get("ads.wizard.choose_model.desc") }}
             </p>
-            <b-button
-            v-if="isContinue"
-            variant="secondary"
+
+            <inertia-link
+                :href="routes.ad.create"
+                class="btn btn-link text-secondary"
             >
-            {{ $t.get('ads.wizard.btn.continue') }}
-            </b-button>
+                {{ $t.get("global.back") }}
+            </inertia-link>
+
+            <div class="row brand-list">
+                <div
+                    class="col-md-2 brand-item"
+                    v-for="model in models"
+                    :key="model.id"
+                    :data-brand-id="model.id"
+                >
+                    <inertia-link href="#">
+                        <h4 class="brand-label">
+                            {{ model.name }}
+                        </h4>
+                    </inertia-link>
+                </div>
+            </div>
         </form>
     </WizardStep>
 </template>
@@ -24,7 +42,10 @@ export default {
     },
     data() {
         return {
-            isContinue: true,
+            brand: this.$inertia.page.props.brand,
+            models: this.$inertia.page.props.models,
+            routes: this.$inertia.page.props.routes,
+            isContinue: true
         };
     }
 };
