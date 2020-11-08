@@ -13,8 +13,9 @@
                     class="col-md-2 brand-item"
                     v-for="brand in brands"
                     :key="brand.id"
+                    :data-brand-id="brand.id"
                 >
-                    <a href="#">
+                    <inertia-link :href="routes.ad.create + '/' + brand.name">
                         <img
                             :src="current_root + '/' + brand.picture_path"
                             alt="Apple"
@@ -22,7 +23,7 @@
                         <h4 class="brand-label">
                             {{ brand.name }}
                         </h4>
-                    </a>
+                    </inertia-link>
                 </div>
             </div>
             <!--
@@ -46,20 +47,9 @@ export default {
             title: "",
             isContinue: true,
             brands: this.$inertia.page.props.phone_brands,
+            routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
         };
-    },
-    mounted() {
-        // alert("hif");
-
-        let items = Array.from(document.getElementsByClassName("brand-item"));
-
-        console.log(items);
-
-        items.forEach(item => {
-            item.addEventListener("click", this.next);
-        });
-
     },
     methods: {
         next() {

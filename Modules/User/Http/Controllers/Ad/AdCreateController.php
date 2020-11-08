@@ -14,7 +14,11 @@ class AdCreateController extends Controller
     public function show()
     {
 
-        $routes = [];
+        $routes = [
+            'ad' => [
+                'create' => route('user.ad.create')
+            ]
+        ];
 
         $step = 1;
 
