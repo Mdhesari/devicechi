@@ -11,11 +11,11 @@
         <!-- Modules -->
         <!-- User -->
         <testsuite name="Feature">
-            <!-- <directory suffix="Test.php">./Modules/User/Tests/Feature/</directory> -->
+            <directory suffix="Test.php">./Modules/User/Tests/Feature/Ad</directory>
         </testsuite>
-        <testsuite name="Unit">
+        <!-- <testsuite name="Unit">
             <directory suffix="Test.php">./Modules/User/Tests/Unit/Artisan</directory>
-        </testsuite>
+        </testsuite> -->
 
     </testsuites>
     <coverage processUncoveredFiles="true">

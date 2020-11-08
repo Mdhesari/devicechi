@@ -12,11 +12,13 @@
 */
 
 use Modules\User\Http\Controllers\Ad\AdCreateController;
+use Modules\User\Http\Controllers\Ad\AdStepController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
 Route::name('ad.')->group(function () {
 
-    Route::get('/sell', [AdCreateController::class, 'show'])->name('create');
+    Route::get('/ads/sell', [AdCreateController::class, 'show'])->name('create');
 
+    Route::get('/ads/sell/{phone_brand}', [AdStepController::class, 'chooseModel']);
 });

@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class PhoneBrand extends Model
 {
     protected $fillable = [];
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }

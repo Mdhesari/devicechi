@@ -26,7 +26,7 @@ Route::get('/', [HomeController::class, 'index'])->name('user.home');
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');  
 
     Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
