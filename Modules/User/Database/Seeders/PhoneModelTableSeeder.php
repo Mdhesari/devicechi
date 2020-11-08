@@ -34,7 +34,7 @@ class PhoneModelTableSeeder extends Seeder
             if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("Cannot create model with nulled brand");
 
             $db_models[] = [
-                'brand_id' => $brand->id,
+                'phone_brand_id' => $brand->id,
                 'name' => $model['name'],
             ];
         }

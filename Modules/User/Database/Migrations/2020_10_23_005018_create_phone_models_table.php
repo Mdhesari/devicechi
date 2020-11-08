@@ -17,7 +17,7 @@ class CreatePhoneModelsTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->foreignId('brand_id');
+            $table->foreignId('phone_brand_id');
         });
     }
 

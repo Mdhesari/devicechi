@@ -24,7 +24,7 @@ class CreateTest extends TestCase
     {
 
         $ad = new Ad;
-        $ad->model_id = 1;
+        $ad->phone_model_id = 1;
 
         $this->user->ads()->save($ad);
 
@@ -35,7 +35,7 @@ class CreateTest extends TestCase
     {
 
         $ad = new Ad;
-        $ad->model_id = 1;
+        $ad->phone_model_id = 1;
 
         $this->user->ads()->save($ad);
 
@@ -53,7 +53,7 @@ class CreateTest extends TestCase
     {
 
         $ad = new Ad;
-        $ad->model_id = 1;
+        $ad->phone_model_id  = 1;
 
         $this->user->ads()->save($ad);
 

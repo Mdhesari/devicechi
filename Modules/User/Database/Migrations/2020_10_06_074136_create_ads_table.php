@@ -19,7 +19,7 @@ class CreateAdsTable extends Migration
             $table->string('description')->nullable();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('city_id')->nullable();
-            $table->foreignId('model_id')->nullable();
+            $table->foreignId('phone_model_id')->nullable();
             $table->foreignId('model_variant_id')->nullable();
             $table->decimal('price', 12, 2)->nullable();
             $table->tinyInteger('age')->nullable(); // based on months

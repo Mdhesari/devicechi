@@ -16,7 +16,7 @@ class CreatePhoneVariantsTable extends Migration
         Schema::create('phone_variants', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('model_id');
+            $table->foreignId('phone_model_id');
             $table->string('ram', 8);
             $table->string('storage', 8);
         });
