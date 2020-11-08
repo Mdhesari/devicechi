@@ -11,6 +11,12 @@ class AdStepController extends Controller
 {
     public function chooseModel(PhoneBrand $brand)
     {
-        return $brand;
+        $route = [];
+
+        $models = $brand->models;
+
+        $step = 2;
+
+        return inertia('Ad/Wizard/Create', compact('route', 'models', 'brand', 'step'));
     }
 }

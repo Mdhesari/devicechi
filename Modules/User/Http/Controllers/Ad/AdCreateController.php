@@ -16,8 +16,10 @@ class AdCreateController extends Controller
 
         $routes = [];
 
+        $step = 1;
+
         $phone_brands = PhoneBrand::all();
         Log::info($phone_brands);
-        return inertia('Ad/Wizard/Create', compact('routes', 'phone_brands'));
+        return inertia('Ad/Wizard/Create', compact('routes', 'phone_brands', 'step'));
     }
 }

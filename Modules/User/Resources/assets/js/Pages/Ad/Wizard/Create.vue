@@ -126,9 +126,13 @@ export default {
     },
     data() {
         return {
-            tab: "step_1",
-            step: 1
+            step: this.$inertia.page.props.step
         };
+    },
+    computed: {
+        tab() {
+            return "step_" + this.step;
+        }
     },
     methods: {
         setTab() {
