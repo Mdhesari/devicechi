@@ -16,7 +16,7 @@
                 >
                     <a href="#">
                         <img
-                            src="https://cdn.recycledevice.com/brands/apple.png"
+                            :src="current_root + '/' + brand.picture_path"
                             alt="Apple"
                         />
                         <h4 class="brand-label">
@@ -24,8 +24,6 @@
                         </h4>
                     </a>
                 </div>
-
-               
             </div>
 
             <b-button v-if="isContinue" variant="secondary" type="submit">
@@ -46,7 +44,8 @@ export default {
         return {
             title: "",
             isContinue: true,
-            brands: this.$inertia.page.props.phone_brands
+            brands: this.$inertia.page.props.phone_brands,
+            current_root: this.$inertia.page.props.current_root
         };
     },
     mounted() {

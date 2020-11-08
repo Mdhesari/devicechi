@@ -19,6 +19,8 @@ class InertiaMiddleware
     public function handle(Request $request, Closure $next)
     {
 
+        Inertia::share('current_root', $request->root());
+
         if ($request->isSubDomain(RouteServiceProvider::DOMAIN)) {
 
             Inertia::setRootView('user::layouts.app');
