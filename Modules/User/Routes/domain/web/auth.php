@@ -17,5 +17,6 @@ Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
 Route::name('ad.')->group(function () {
 
-    Route::get('/ads/create', [AdCreateController::class, 'show'])->name('create');
+    Route::get('/sell', [AdCreateController::class, 'show'])->name('create');
+
 });

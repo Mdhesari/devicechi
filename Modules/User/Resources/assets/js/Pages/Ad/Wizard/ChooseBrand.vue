@@ -25,10 +25,11 @@
                     </a>
                 </div>
             </div>
-
+            <!--
             <b-button v-if="isContinue" variant="secondary" type="submit">
                 {{ $t.get("ads.wizard.btn.continue") }}
             </b-button>
+            -->
         </form>
     </WizardStep>
 </template>
@@ -51,7 +52,14 @@ export default {
     mounted() {
         // alert("hif");
 
-        console.log(this.$inertia.page.props);
+        let items = Array.from(document.getElementsByClassName("brand-item"));
+
+        console.log(items);
+
+        items.forEach(item => {
+            item.addEventListener("click", this.next);
+        });
+
     },
     methods: {
         next() {
