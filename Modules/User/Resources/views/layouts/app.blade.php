@@ -25,7 +25,6 @@
         window.fallback_locale = "{{ config('app.fallback_locale') }}"
         window.messages = @json($messages)
 
-        console.log(window.messages)
     </script>
     <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>

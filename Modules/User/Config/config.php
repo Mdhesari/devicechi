@@ -7451,5 +7451,186 @@ return [
         "Yu",
     ],
 
-    'phone_brands_image' => [],
+    'phone_brands_image' => array(
+
+        array(
+            'name' => '10.or',
+            'picture_path' => 'images/brands/10.or.png',
+        ),
+
+        array(
+            'name' => 'apple',
+            'picture_path' => 'images/brands/apple.png',
+        ),
+
+        array(
+            'name' => 'asus',
+            'picture_path' => 'images/brands/asus.png',
+        ),
+
+        array(
+            'name' => 'blackberry',
+            'picture_path' => 'images/brands/blackberry.png',
+        ),
+
+        array(
+            'name' => 'coolpad',
+            'picture_path' => 'images/brands/coolpad.png',
+        ),
+
+        array(
+            'name' => 'gionee',
+            'picture_path' => 'images/brands/gionee.png',
+        ),
+
+        array(
+            'name' => 'google',
+            'picture_path' => 'images/brands/google.png',
+        ),
+
+        array(
+            'name' => 'honor',
+            'picture_path' => 'images/brands/honor.png',
+        ),
+
+        array(
+            'name' => 'htc',
+            'picture_path' => 'images/brands/htc.png',
+        ),
+
+        array(
+            'name' => 'huawei',
+            'picture_path' => 'images/brands/huawei.png',
+        ),
+
+        array(
+            'name' => 'infinix',
+            'picture_path' => 'images/brands/infinix.png',
+        ),
+
+        array(
+            'name' => 'infocus',
+            'picture_path' => 'images/brands/infocus.png',
+        ),
+
+        array(
+            'name' => 'intex',
+            'picture_path' => 'images/brands/intex.png',
+        ),
+
+        array(
+            'name' => 'karbonn',
+            'picture_path' => 'images/brands/karbonn.png',
+        ),
+
+        array(
+            'name' => 'lava',
+            'picture_path' => 'images/brands/lava.png',
+        ),
+
+        array(
+            'name' => 'leeco',
+            'picture_path' => 'images/brands/leeco.png',
+        ),
+
+        array(
+            'name' => 'lenovo',
+            'picture_path' => 'images/brands/lenovo.png',
+        ),
+
+        array(
+            'name' => 'lg',
+            'picture_path' => 'images/brands/lg.png',
+        ),
+
+        array(
+            'name' => 'lyf',
+            'picture_path' => 'images/brands/lyf.png',
+        ),
+
+        array(
+            'name' => 'micromax',
+            'picture_path' => 'images/brands/micromax.png',
+        ),
+
+        array(
+            'name' => 'motorola',
+            'picture_path' => 'images/brands/motorola.png',
+        ),
+
+        array(
+            'name' => 'nokia',
+            'picture_path' => 'images/brands/nokia.png',
+        ),
+
+        array(
+            'name' => 'oneplus',
+            'picture_path' => 'images/brands/oneplus.png',
+        ),
+
+        array(
+            'name' => 'oppo',
+            'picture_path' => 'images/brands/oppo.png',
+        ),
+
+        array(
+            'name' => 'other',
+            'picture_path' => 'images/brands/other.png',
+        ),
+
+        array(
+            'name' => 'panasonic',
+            'picture_path' => 'images/brands/panasonic.png',
+        ),
+
+        array(
+            'name' => 'poco',
+            'picture_path' => 'images/brands/poco.png',
+        ),
+
+        array(
+            'name' => 'realme',
+            'picture_path' => 'images/brands/realme.png',
+        ),
+
+        array(
+            'name' => 'redmi',
+            'picture_path' => 'images/brands/redmi.png',
+        ),
+
+        array(
+            'name' => 'samsung',
+            'picture_path' => 'images/brands/samsung.png',
+        ),
+
+        array(
+            'name' => 'sony',
+            'picture_path' => 'images/brands/sony.png',
+        ),
+
+        array(
+            'name' => 'tecno',
+            'picture_path' => 'images/brands/tecno.png',
+        ),
+
+        array(
+            'name' => 'vivo',
+            'picture_path' => 'images/brands/vivo.png',
+        ),
+
+        array(
+            'name' => 'xiaomi',
+            'picture_path' => 'images/brands/xiaomi.png',
+        ),
+
+        array(
+            'name' => 'xolo',
+            'picture_path' => 'images/brands/xolo.png',
+        ),
+
+        array(
+            'name' => 'yu',
+            'picture_path' => 'images/brands/yu.png',
+        ),
+    ),
 ];

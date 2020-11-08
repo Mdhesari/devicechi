@@ -9,35 +9,23 @@
             </p>
 
             <div class="row brand-list">
-                <div class="col-md-2 brand-item">
+                <div
+                    class="col-md-2 brand-item"
+                    v-for="brand in brands"
+                    :key="brand.id"
+                >
                     <a href="#">
                         <img
                             src="https://cdn.recycledevice.com/brands/apple.png"
                             alt="Apple"
                         />
-                        <h4 class="brand-label">Apple</h4>
+                        <h4 class="brand-label">
+                            {{ brand.name }}
+                        </h4>
                     </a>
                 </div>
 
-                <div class="col-md-2 brand-item">
-                    <a href="#">
-                        <img
-                            src="https://cdn.recycledevice.com/brands/asus.png"
-                            alt="Asus"
-                        />
-                        <h4 class="brand-label">Apple</h4>
-                    </a>
-                </div>
-
-                <div class="col-md-2 brand-item">
-                    <a href="#">
-                        <img
-                            src="https://cdn.recycledevice.com/brands/huawei.png"
-                            alt="Apple"
-                        />
-                        <h4 class="brand-label">Apple</h4>
-                    </a>
-                </div>
+               
             </div>
 
             <b-button v-if="isContinue" variant="secondary" type="submit">
@@ -57,8 +45,14 @@ export default {
     data() {
         return {
             title: "",
-            isContinue: true
+            isContinue: true,
+            brands: this.$inertia.page.props.phone_brands
         };
+    },
+    mounted() {
+        // alert("hif");
+
+        console.log(this.$inertia.page.props);
     },
     methods: {
         next() {

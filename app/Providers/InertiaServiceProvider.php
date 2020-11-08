@@ -24,6 +24,9 @@ class InertiaServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        Inertia::share('site_url', config('app.url'));
+
         Inertia::setRootView('user::layouts.app');
     }
 }
