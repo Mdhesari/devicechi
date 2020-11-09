@@ -2,10 +2,13 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use App\Models\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Entities\PhoneBrand;
+use Modules\User\Entities\PhoneModel;
+use Modules\User\Exceptions\UserAdCreationFailed;
 
 class AdStepController extends Controller
 {
@@ -22,5 +25,34 @@ class AdStepController extends Controller
         $step = 2;
 
         return inertia('Ad/Wizard/Create', compact('routes', 'models', 'brand', 'step'));
+    }
+
+    public function chooseVariant(PhoneBrand $brand, PhoneModel $model)
+    {
+
+        $routes = [
+            'ad' => [
+                'create' => route('user.ad.create')
+            ]
+        ];
+
+        if (auth()->user()->hasUnCompleteAd()) {
+
+            return redirect()->route('user.ad.create');
+        }
+
+        $ad = new Ad;
+        $ad->phone_model_id = $model->id;
+
+        $result = auth()->user()->ads()->save($ad);
+
+        if (!$result) {
+            // failed
+            throw new UserAdCreationFailed;
+        }
+
+        $step = 3;
+
+        return $result;
     }
 }

@@ -22,7 +22,15 @@
                     :key="model.id"
                     :data-brand-id="model.id"
                 >
-                    <inertia-link href="#">
+                    <inertia-link
+                        :href="
+                            routes.ad.create +
+                                '/' +
+                                brand.name +
+                                '/' +
+                                model.name
+                        "
+                    >
                         <h4 class="brand-label">
                             {{ model.name }}
                         </h4>
@@ -44,8 +52,7 @@ export default {
         return {
             brand: this.$inertia.page.props.brand,
             models: this.$inertia.page.props.models,
-            routes: this.$inertia.page.props.routes,
-            isContinue: true
+            routes: this.$inertia.page.props.routes
         };
     }
 };

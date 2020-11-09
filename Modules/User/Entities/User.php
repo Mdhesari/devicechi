@@ -96,6 +96,12 @@ class User extends Authenticatable implements MustVerifyPhone
         return $this->hasMany(Ad::class);
     }
 
+    public function hasUnCompleteAd()
+    {
+
+        return $this->ads()->whereStatus(Ad::STATUS_UNCOMPLETED)->count() > 0;
+    }
+
     /**
      * Create a new factory instance for the model.
      *

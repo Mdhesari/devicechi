@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Core\Traits\HasDomain;
 use Modules\User\Entities\PhoneBrand;
+use Modules\User\Entities\PhoneModel;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         Route::model('phone_brand', PhoneBrand::class);
+        Route::model('phone_model', PhoneModel::class);
     }
 
     /**

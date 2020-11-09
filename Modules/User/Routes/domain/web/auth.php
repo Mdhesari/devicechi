@@ -20,5 +20,7 @@ Route::name('ad.')->group(function () {
 
     Route::get('/ads/sell', [AdCreateController::class, 'show'])->name('create');
 
-    Route::get('/ads/sell/{phone_brand}', [AdStepController::class, 'chooseModel']);
+    Route::get('/ads/sell/{phone_brand}/{phone_model}', [AdStepController::class, 'chooseVariant'])->name('step_phone_model');
+
+    Route::get('/ads/sell/{phone_brand}', [AdStepController::class, 'chooseModel'])->name('step_phone_brand');
 });
