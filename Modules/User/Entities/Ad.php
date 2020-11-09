@@ -28,9 +28,4 @@ class Ad extends Model
         return $query->whereNotNull('phone_model_variant_id');
     }
 
-    public function scopeHasUncompleteAd()
-    {
-
-        return $this->whereStatus(self::STATUS_UNCOMPLETED)->count() > 0;
-    }
 }

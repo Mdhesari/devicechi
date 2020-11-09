@@ -44,7 +44,7 @@ class AdStepController extends Controller
         }
 
 
-        if (!auth()->user()->ads()->hasUncompleteAd()) {
+        if (!auth()->user()->hasUncompleteAd()) {
             $ad = new Ad;
             $ad->phone_model_id = $model->id;
 
