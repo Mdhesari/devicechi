@@ -62,9 +62,9 @@ class PhoneModelsVariantCurl extends Command
 
         $models = PhoneModel::with('brand')->get();
 
-        if (empty($models)) {
+        if (count($models) < 1) {
 
-            $this->error('There are no models available!');
+            $this->error('There is no models available!');
             Log::error('No models available...');
             return 0;
         }
