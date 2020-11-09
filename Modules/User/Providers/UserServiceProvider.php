@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 use Modules\User\Console\Curl\PhoneBrandsCurl;
 use Modules\User\Console\Curl\PhoneModelsCurl;
+use Modules\User\Console\Curl\PhoneModelsVariantCurl;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Modules\User\Space\GeneratorVerification;
 use Modules\User\Space\UserDomainHandler;
@@ -42,6 +43,7 @@ class UserServiceProvider extends ServiceProvider
         $this->commands([
             PhoneBrandsCurl::class,
             PhoneModelsCurl::class,
+            PhoneModelsVariantCurl::class,
         ]);
     }
 

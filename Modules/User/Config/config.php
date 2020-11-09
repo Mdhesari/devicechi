@@ -7451,6 +7451,2877 @@ return [
         "Yu",
     ],
 
+    'phone_variants' => array(
+
+        array(
+            'model' => 'G2',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'G2',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'G',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'G',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'E',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'E',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'D2',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'D2',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'D',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'D',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6Z',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6Z',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6Z',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'Z30',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Z3',
+            'ram' => '1.5GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Motion',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Leap',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'KEY2',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Evolve',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'DTEK60',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'DTEK50',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Rogue',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Max',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A8',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'X1s',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'X1',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'S6s',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'S6',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'P7',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'P5W',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Max',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'M2',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'F9',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'F205',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'F103',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'F103',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'F10',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A1',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Pixel',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Pixel',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Play',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Play',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Holly',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Bee',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '9X',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '9X',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '9S',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '9N',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '9N',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '9N',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '9i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '9A',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '8X',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '8X',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '8X',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '8C',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '8C',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7X',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7X',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '7S',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '7C',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7C',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '7A',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '6X',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6X',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '5X',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '4X',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '4C',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '3X',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '3C',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '20i',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '20',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '10',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Butterfly',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '8S',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Y9s',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'S4',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'S4',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'M812',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'M680',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A3',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A2',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A1s',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Z92',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Z92',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Z80',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Z71',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Z66',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Z53',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Z50',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Z41',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'X81',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'X46',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'V2S',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Icon',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'EG932',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A97',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A82',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A79',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S930',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S920',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'S890',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'S860',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'S850',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'S820',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'S820',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S660',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S650',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S60',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'S580',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'P780',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'P70',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'P2',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'P2',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'K910L',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'K900',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'K9',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'K8',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A859',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A850',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A7700',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A706',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A7000',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A7',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A7',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A680',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A6000',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A536',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A526',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A5000',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'A5',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A5',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A328',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A319',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A2010',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'W30',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'W10',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Q7',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Q60',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Q6',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Magna',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'L90',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'G6',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'G5',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'F8',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'C459',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'C451',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '9',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '1',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'One',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'One',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Nord',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Nord',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Nord',
+            'ram' => '12GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '12GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '7T',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '7T',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '6T',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6T',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6T',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => '5T',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5T',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '3T',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '3T',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '3',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Reno',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'R5',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'R17',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'N1',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'K3',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'K3',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'K1',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F9',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F7',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F7',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F5',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'F5',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F3',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F1s',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'F1s',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'F17',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F17',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F15',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F15',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F11',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F11',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F1',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A9',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'A83',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A83',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A83',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A71',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A7',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A7',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A5s',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A5s',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A5s',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A57',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A52',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'A52',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'A52',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'A5',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A5',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A3s',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A3s',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A3s',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A37F',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A37',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A31',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A31',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'A1K',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A12',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'A12',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'A11K',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Smartphone',
+            'ram' => '- ',
+            'storage' => ' -',
+        ),
+
+        array(
+            'model' => 'T50',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'T41',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'T41',
+            'ram' => '512MB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'P81',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'P61',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'P55',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'P50',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'P41',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'P11',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'X3',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X3',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'X3',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'M2',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'M2',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F1',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'F1',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'F1',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'C3',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'C3',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'XT',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'XT',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'XT',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X3',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X3',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X2',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'X',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'U1',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'U1',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'U1',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'C3',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C3',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'C2',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'C2',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C2',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C15',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C15',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'C12',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C11',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'C1',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'C1',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7i',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '7i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6i',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5s',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '5s',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5i',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '3i',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '3i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '3',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '3',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '1',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '1',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '1',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y3',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y3',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y2',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y2',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y1',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y1',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Note',
+            'ram' => '2GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'K20',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'K20',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Go',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Go',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '9i',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '9i',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '9A',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '9A',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '9',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '9',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => '8A',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '8A',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '8',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '7A',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '7A',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '7',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6A',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6A',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '6',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '5A',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '5A',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '5',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '4A',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '4A',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '4',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '4',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => '4',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => '3S',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => '2',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => '1S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Z4',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'i7',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Z1x',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Z1x',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Z1x',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Z10',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y95',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y93',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y93',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y91i',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y91i',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y91i',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y91',
+            'ram' => '2GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y91',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y90',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y83',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y81i',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y81',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y81',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y71i',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y71',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y71',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y69',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y55S',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y55L',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y53i',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y53',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y51L',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y50',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Y31L',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y31',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Y30',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Y28',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Y27L',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y27L',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Y22',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Y21L',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y21',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Y20i',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y20',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y20',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y19',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Y17',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'Y15S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Y12',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Y12',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'Y11',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Xplay5',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X6S',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'X6',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'X50',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X50',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'X5',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'X3S',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'X21',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'V9',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'V7',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'V5',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'V20',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'V20',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'V19',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'V19',
+            'ram' => '8GB ',
+            'storage' => ' 256GB',
+        ),
+
+        array(
+            'model' => 'V17',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'V15',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'V11',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'V1',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'U20',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'U20',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'U20',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'U10',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'U10',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'U10',
+            'ram' => '3GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'S1',
+            'ram' => '4GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'S1',
+            'ram' => '6GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'S1',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'NEX',
+            'ram' => '8GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'ZX',
+            'ram' => '4GB ',
+            'storage' => ' 64GB',
+        ),
+
+        array(
+            'model' => 'ZX',
+            'ram' => '6GB ',
+            'storage' => ' 128GB',
+        ),
+
+        array(
+            'model' => 'X910',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'X500',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q900T',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q900S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q900',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q800',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q710S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q700S',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q700i',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q700',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q610S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q600S',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q600',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q520S',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q510S',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q500',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q3000',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Q2500',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q2100',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q2000L',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q2000',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q1200',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q1100',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q1020',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q1011',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q1010i',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Q1010',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Q1000S',
+            'ram' => '1GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Q1000',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Prime',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'One',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'LT900',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Era',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Black',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Black',
+            'ram' => '3GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'A700S',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A600',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A510S',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A500S',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A500L',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A500',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A1010',
+            'ram' => '512MB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'A1000S',
+            'ram' => '1GB ',
+            'storage' => ' 4GB',
+        ),
+
+        array(
+            'model' => 'Yutopia',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Yureka',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Yuphoria',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Yunique',
+            'ram' => '1GB ',
+            'storage' => ' 8GB',
+        ),
+
+        array(
+            'model' => 'Yunicorn',
+            'ram' => '4GB ',
+            'storage' => ' 32GB',
+        ),
+
+        array(
+            'model' => 'Ace',
+            'ram' => '2GB ',
+            'storage' => ' 16GB',
+        ),
+
+        array(
+            'model' => 'Ace',
+            'ram' => '3GB ',
+            'storage' => ' 32GB',
+        ),
+    ),
+
     'phone_brands_image' => array(
 
         array(
