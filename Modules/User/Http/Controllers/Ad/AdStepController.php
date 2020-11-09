@@ -53,6 +53,6 @@ class AdStepController extends Controller
 
         $step = 3;
 
-        return $result;
+        return 'success';
     }
 }

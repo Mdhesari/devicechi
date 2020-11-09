@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PhoneVariant extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['phone_model_id', 'ram', 'storage'];
 }
