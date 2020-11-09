@@ -117,12 +117,14 @@
 import AuthLayout from "../../../Layouts/FrontAuthLayout";
 import ChooseBrand from "./ChooseBrand";
 import ChooseModel from "./ChooseModel";
+import ChooseVariant from "./ChooseVariant";
 
 export default {
     components: {
         AuthLayout: AuthLayout,
         step_1: ChooseBrand,
-        step_2: ChooseModel
+        step_2: ChooseModel,
+        step_3: ChooseVariant
     },
     data() {
         return {

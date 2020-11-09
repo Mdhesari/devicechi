@@ -13,6 +13,24 @@ class Ad extends Model
     const STATUS_UNCOMPLETED = 3;
 
     protected $fillable = [
-        'title', 'description', 'phone_model_id', 'model_variant_id', 'is_multicard', 'meta_ad', 'city_id', 'price', 'age', 'location'
+        'title', 'description', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'city_id', 'price', 'age', 'location'
     ];
+
+    public function scopeUncompleted($query)
+    {
+
+        return $query->whereStatus(self::STATUS_UNCOMPLETED);
+    }
+
+    public function scopeHasPhoneVariant($query)
+    {
+
+        return $query->whereNotNull('phone_model_variant_id');
+    }
+
+    public function scopeHasUncompleteAd()
+    {
+
+        return $this->whereStatus(self::STATUS_UNCOMPLETED)->count() > 0;
+    }
 }

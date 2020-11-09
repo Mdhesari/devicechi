@@ -36,23 +36,28 @@ class AdStepController extends Controller
             ]
         ];
 
-        if (auth()->user()->hasUnCompleteAd()) {
+        $step = 3;
+
+        if (auth()->user()->hasUncompleteAd($step)) {
 
             return redirect()->route('user.ad.create');
         }
 
-        $ad = new Ad;
-        $ad->phone_model_id = $model->id;
 
-        $result = auth()->user()->ads()->save($ad);
+        if (!auth()->user()->ads()->hasUncompleteAd()) {
+            $ad = new Ad;
+            $ad->phone_model_id = $model->id;
 
-        if (!$result) {
-            // failed
-            throw new UserAdCreationFailed;
+            $result = auth()->user()->ads()->save($ad);
+
+            if (!$result) {
+                // failed
+                throw new UserAdCreationFailed;
+            }
         }
 
-        $step = 3;
+        $phone_model_variants = $model->variants;
 
-        return 'success';
+        return inertia('Ad/Wizard/Create', compact('routes', 'phone_model_variants', 'step'));
     }
 }

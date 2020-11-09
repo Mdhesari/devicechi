@@ -41,12 +41,12 @@ class CreateTest extends TestCase
 
         $ad = $this->user->ads()->whereStatus(3)->first();
 
-        $ad->model_variant_id = 1;
+        $ad->phone_model_variant_id = 1;
         $ad->save();
 
         $ad = $this->user->ads()->whereStatus(3)->first();
 
-        $this->assertNotNull($ad->model_variant_id);
+        $this->assertNotNull($ad->phone_model_variant_id);
     }
 
     public function test_if_can_finish_steps_go_to_pending_status()
@@ -59,7 +59,7 @@ class CreateTest extends TestCase
 
         $ad = $this->user->ads()->whereStatus(3)->first();
 
-        $ad->model_variant_id = 1;
+        $ad->phone_model_variant_id = 1;
         $ad->age = 30;
         $ad->price = 7650000;
         $ad->city_id = 1;
