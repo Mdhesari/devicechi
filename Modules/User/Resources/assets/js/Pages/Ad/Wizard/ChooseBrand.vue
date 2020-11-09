@@ -45,7 +45,6 @@ export default {
     data() {
         return {
             title: "",
-            isContinue: true,
             brands: this.$inertia.page.props.phone_brands,
             routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
