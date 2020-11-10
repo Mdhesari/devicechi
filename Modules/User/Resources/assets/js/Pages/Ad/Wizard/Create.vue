@@ -96,6 +96,45 @@
                                     class="icon-check"
                                 />
                             </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 8,
+                                    completed: step > 8
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 8"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 9,
+                                    completed: step > 9
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 9"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
+                            <div
+                                class="steps"
+                                :class="{
+                                    active: step === 10,
+                                    completed: step > 10
+                                }"
+                            >
+                                <b-icon
+                                    v-if="step > 10"
+                                    icon="check"
+                                    class="icon-check"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,13 +157,27 @@ import AuthLayout from "../../../Layouts/FrontAuthLayout";
 import ChooseBrand from "./ChooseBrand";
 import ChooseModel from "./ChooseModel";
 import ChooseVariant from "./ChooseVariant";
+import ChooseAccessory from "./ChooseAccessory";
+import ChooseAge from "./ChooseAge";
+import ChoosePrice from "./ChoosePrice";
+import UploadPictures from "./UploadPictures";
+import ChooseLocation from "./ChooseLocation";
+import ChooseContact from "./ChooseContact";
+import FinalInfo from "./FinalInfo";
 
 export default {
     components: {
         AuthLayout: AuthLayout,
         step_1: ChooseBrand,
         step_2: ChooseModel,
-        step_3: ChooseVariant
+        step_3: ChooseVariant,
+        step_4: ChooseAccessory,
+        step_5: ChooseAge,
+        step_6: ChoosePrice,
+        step_7: UploadPictures,
+        step_8: ChooseLocation,
+        step_9: ChooseContact,
+        step_10: FinalInfo
     },
     data() {
         return {
