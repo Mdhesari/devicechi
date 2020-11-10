@@ -33,7 +33,8 @@ class AdStepController extends Controller
         $routes = [
             'ad' => [
                 'create' => route('user.ad.create')
-            ]
+            ],
+            'storeVariant' => route('user.ad.step_store_variant')
         ];
 
         $step = 3;

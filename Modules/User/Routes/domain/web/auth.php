@@ -13,6 +13,7 @@
 
 use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Ad\AdStepController;
+use Modules\User\Http\Controllers\Ad\AdVariantController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
@@ -23,4 +24,6 @@ Route::name('ad.')->group(function () {
     Route::get('/ads/sell/{phone_brand}/{phone_model}', [AdStepController::class, 'chooseVariant'])->name('step_phone_model_variant');
 
     Route::get('/ads/sell/{phone_brand}', [AdStepController::class, 'chooseModel'])->name('step_phone_model');
+
+    Route::post('/ads/sell/store/variant', [AdVariantController::class, 'store'])->name('step_store_variant');
 });
