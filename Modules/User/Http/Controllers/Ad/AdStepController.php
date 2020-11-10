@@ -44,7 +44,6 @@ class AdStepController extends Controller
             return redirect()->route('user.ad.create');
         }
 
-
         if (!auth()->user()->hasUncompleteAd()) {
             $ad = new Ad;
             $ad->phone_model_id = $model->id;
