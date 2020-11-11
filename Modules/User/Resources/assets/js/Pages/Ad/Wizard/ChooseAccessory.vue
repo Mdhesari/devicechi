@@ -7,6 +7,8 @@
             <p class="form-desc">
                 {{ $t.get("ads.wizard.choose_accessory.desc") }}
             </p>
+
+            
         </form>
     </WizardStep>
 </template>

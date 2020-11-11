@@ -5,7 +5,6 @@ namespace Modules\User\Console\Curl;
 use ArithmeticError;
 use Artisan;
 use Goutte\Client;
-use Illuminate\Console\Command;
 use Log;
 use Modules\User\Entities\PhoneModel;
 use Symfony\Component\Console\Input\InputOption;

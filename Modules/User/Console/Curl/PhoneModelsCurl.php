@@ -4,7 +4,6 @@ namespace Modules\User\Console\Curl;
 
 use Artisan;
 use Goutte\Client;
-use Illuminate\Console\Command;
 use Log;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;

@@ -4,6 +4,7 @@ namespace Modules\User\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\User\Console\Curl\PhoneAccessoriesCurl;
 use Modules\User\Console\Curl\PhoneBrandsCurl;
 use Modules\User\Console\Curl\PhoneModelsCurl;
 use Modules\User\Console\Curl\PhoneModelsVariantCurl;
@@ -44,6 +45,7 @@ class UserServiceProvider extends ServiceProvider
             PhoneBrandsCurl::class,
             PhoneModelsCurl::class,
             PhoneModelsVariantCurl::class,
+            PhoneAccessoriesCurl::class
         ]);
     }
 

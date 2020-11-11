@@ -4,7 +4,6 @@ namespace Modules\User\Console\Curl;
 
 use Artisan;
 use Goutte\Client;
-use Illuminate\Console\Command;
 use Log;
 use Modules\User\Entities\PhoneBrand;
 use Symfony\Component\Console\Input\InputOption;
@@ -30,17 +29,6 @@ class PhoneBrandsCurl extends Command
      */
     protected $description = 'Curl all brands and store on db or log';
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->cli = new Client(HttpClient::create(['timeout' => 60]));
-
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.

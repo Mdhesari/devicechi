@@ -10504,4 +10504,28 @@ return [
             'picture_path' => 'images/brands/yu.png',
         ),
     ),
+
+    'phone_accessories' => array (
+         
+        array (
+          'title' => 'Original Box with same IMEI / Serial No',
+          'picture_path' => 'images/accessories/3.svg',
+        ),
+         
+        array (
+          'title' => 'Original Charger',
+          'picture_path' => 'images/accessories/1.svg',
+        ),
+         
+        array (
+          'title' => 'Original Earphones',
+          'picture_path' => 'images/accessories/2.svg',
+        ),
+         
+        array (
+          'title' => 'Valid Bill with same IMEI / Serial No',
+          'picture_path' => 'images/accessories/4.svg',
+        ),
+      )  
+      
 ];
