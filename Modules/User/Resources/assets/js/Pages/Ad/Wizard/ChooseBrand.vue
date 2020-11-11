@@ -26,11 +26,6 @@
                     </inertia-link>
                 </div>
             </div>
-            <!--
-            <b-button v-if="isContinue" variant="secondary" type="submit">
-                {{ $t.get("ads.wizard.btn.continue") }}
-            </b-button>
-            -->
         </form>
     </WizardStep>
 </template>
@@ -44,7 +39,6 @@ export default {
     },
     data() {
         return {
-            title: "",
             brands: this.$inertia.page.props.phone_brands,
             routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
@@ -52,7 +46,7 @@ export default {
     },
     methods: {
         next() {
-            this.$emit("next");
+            // this.$emit("next");
         }
     }
 };
