@@ -96,29 +96,10 @@ class User extends Authenticatable implements MustVerifyPhone
         return $this->hasMany(Ad::class);
     }
 
-    /**
-     * Check if has uncomplete ad
-     *
-     * @param  mixed $data
-     * @return void
-     */
-    public function hasUncompleteAd($data = null)
+    public function hasUncompleteAd()
     {
 
-        $result = false;
-
-        $query = $this->ads()->uncompleted();
-
-        switch ($data) {
-            case 3:
-                // choose variant step
-                $result = $query->hasPhoneVariant();
-                break;
-            default:
-                $result = $query;
-        }
-
-        return $result->count() > 0;
+        return $this->ads()->uncompleted()->count() > 0;
     }
 
     /**

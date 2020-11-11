@@ -8,12 +8,24 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
+use Modules\User\Entities\PhoneVariant;
 use Modules\User\Exceptions\UserAdCreationFailed;
+use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdStepController extends Controller
 {
+
+    protected $adRepository;
+
+    public function __construct(AdRepositoryInterface $adRepository)
+    {
+        $this->adRepository = $adRepository;
+    }
+
     public function chooseModel(PhoneBrand $brand)
     {
+        $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
+
         $routes = [
             'ad' => [
                 'create' => route('user.ad.create')
@@ -22,13 +34,17 @@ class AdStepController extends Controller
 
         $models = $brand->models;
 
-        $step = 2;
-
         return inertia('Ad/Wizard/Create', compact('routes', 'models', 'brand', 'step'));
     }
 
     public function chooseVariant(PhoneBrand $brand, PhoneModel $model)
     {
+        $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
+
+        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+
+            return redirect()->route('user.ad.create');
+        }
 
         $routes = [
             'ad' => [
@@ -37,23 +53,12 @@ class AdStepController extends Controller
             'storeVariant' => route('user.ad.step_store_variant')
         ];
 
-        $step = 3;
-
-        if (auth()->user()->hasUncompleteAd($step)) {
-
-            return redirect()->route('user.ad.create');
-        }
-
         if (!auth()->user()->hasUncompleteAd()) {
-            $ad = new Ad;
-            $ad->phone_model_id = $model->id;
 
-            $result = auth()->user()->ads()->save($ad);
-
-            if (!$result) {
-                // failed
-                throw new UserAdCreationFailed;
-            }
+            $this->adRepository->create([
+                'user_id' => auth()->id(),
+                'phone_model_id' => $model->id,
+            ]);
         }
 
         $phone_model_variants = $model->variants;

@@ -8,6 +8,8 @@ use Modules\User\Console\Curl\PhoneAccessoriesCurl;
 use Modules\User\Console\Curl\PhoneBrandsCurl;
 use Modules\User\Console\Curl\PhoneModelsCurl;
 use Modules\User\Console\Curl\PhoneModelsVariantCurl;
+use Modules\User\Repositories\Contracts\AdRepositoryInterface;
+use Modules\User\Repositories\Eloquent\AdRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Modules\User\Space\GeneratorVerification;
 use Modules\User\Space\UserDomainHandler;
@@ -60,8 +62,8 @@ class UserServiceProvider extends ServiceProvider
         $this->app->register(ViewServiceProvider::class);
 
         $this->app->bind(RouteServiceProvider::DOMAIN, UserDomainHandler::class);
-
         $this->app->bind(CodeVerificationGenerator::class, GeneratorVerification::class);
+        $this->app->bind(AdRepositoryInterface::class, AdRepository::class);
     }
 
     /**

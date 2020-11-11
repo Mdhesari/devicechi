@@ -48,18 +48,19 @@ class CreateTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_cant_see_choose_variant_if_already_have_uncomplete_ad()
+    public function test_cant_see_choose_variant_if_already_have_done_this_step()
     {
 
         $phone_brand = PhoneBrand::first();
 
-        $phone_model_name = $phone_brand->models()->first()->name;
+        $phone_model = $phone_brand->models()->first();
 
-        $url = route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_model_name]);
+        $this->user->ads()->create([
+            'phone_model_id' => $phone_model->id,
+            'phone_model_variant_id' => $phone_model->variants()->first()->id,
+        ]);
 
-        $response = $this->get($url);
-
-        $response->assertStatus(200);
+        $url = route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_model->name]);
 
         $response = $this->get($url);
 
