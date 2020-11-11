@@ -41,7 +41,9 @@ class CreateTest extends TestCase
 
         $phone_brand = PhoneBrand::first();
 
-        $response = $this->get(route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_brand->models()->first()->name]));
+        $phone_model_name = $phone_brand->models()->first()->name;
+
+        $response = $this->get(route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_model_name]));
 
         $response->assertStatus(200);
     }
@@ -51,7 +53,9 @@ class CreateTest extends TestCase
 
         $phone_brand = PhoneBrand::first();
 
-        $url = route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_brand->models()->first()->name]);
+        $phone_model_name = $phone_brand->models()->first()->name;
+
+        $url = route('user.ad.step_phone_model_variant', ['phone_brand' => $phone_brand->name, 'phone_model' => $phone_model_name]);
 
         $response = $this->get($url);
 
