@@ -36,7 +36,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
         $query = $user->ads()->uncompleted();
 
         switch ($step) {
-            case 3:
+            case AdRepositoryInterface::STEP_CHOOSE_VARIANT:
                 // choose variant step
                 $result = $query->hasPhoneVariant();
                 break;
