@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Log;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneVariant;
+use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdCreateController extends Controller
 {
@@ -21,7 +22,7 @@ class AdCreateController extends Controller
             ]
         ];
 
-        $step = 1;
+        $step = AdRepositoryInterface::STEP_CHOOSE_BRAND;
 
         $phone_brands = PhoneBrand::all();
 
