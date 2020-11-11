@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
 
-class PhoneMoodelVariantsCurlTest extends TestCase
+class PhoneModelsVariantsCurlTest extends TestCase
 {
     public function test_should_encounter_error_running_models_curl_without_brands()
     {
