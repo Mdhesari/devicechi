@@ -15,4 +15,4 @@ use Tightenco\Ziggy\Ziggy;
 Route::get('/routes', function (Request $request) {
 
     return response()->json(new Ziggy);
-});
+})->name('user.ziggy');

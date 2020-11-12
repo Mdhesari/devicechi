@@ -12,3 +12,6 @@
 */
 
 // silence is golden
+Route::get('/',function() {
+    return 'hg';
+})->name('hi');

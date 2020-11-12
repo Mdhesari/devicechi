@@ -1,56 +1,56 @@
 <template>
-  <b-row>
-    <confirm-modal
-      v-on:reset-form="onReset"
-      ref="confirmModal"
-      :verifyRoute="routes.user_auth_verify"
-    ></confirm-modal>
-    <b-col md="6">
-      <div class="vector">
-        <img
-          class="sale-vector"
-          src="../../img/vectors/sale-2.png"
-          alt="Sale Online | فروش آنلاین"
-        />
-      </div>
-    </b-col>
+    <b-row>
+        <confirm-modal
+            v-on:reset-form="onReset"
+            ref="confirmModal"
+            :verifyRoute="routes.user_auth_verify"
+        ></confirm-modal>
+        <b-col md="6">
+            <div class="vector">
+                <img
+                    class="sale-vector"
+                    src="../../img/vectors/sale-2.png"
+                    alt="Sale Online | فروش آنلاین"
+                />
+            </div>
+        </b-col>
 
-    <b-col md="6" class="text-right">
-      <b-form @submit="onSubmit" @reset="onReset" class="login-form">
-        <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
-          <b-button
-            :disabled="isLoading"
-            type="submit"
-            variant="secondary"
-            class="btn-login-submit d-inline-block"
-          >
-            <BIconArrowRight
-              v-show="!isLoading"
-              style="vertical-align: middle"
-            ></BIconArrowRight>
-            <b-spinner v-show="isLoading"></b-spinner>
-          </b-button>
-          <b-form-input
-            @focus="focusOnPhone"
-            @blur="!focusOnPhone"
-            v-model="form.phone"
-            type="tel"
-            minlength="6"
-            maxlength="10"
-            :disabled="isLoading"
-            class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
-          >
-          </b-form-input>
-          <b-form-input
-            disabled
-            v-model="form.phone_country_code"
-            class="input-phone-code input-light-silver border-0 text-center dir-ltr d-inline-block"
-          ></b-form-input>
-          <p class="m-2 text-danger">{{ form.error("phone") }}</p>
-        </b-form-group>
-      </b-form>
-    </b-col>
-  </b-row>
+        <b-col md="6" class="text-right">
+            <b-form @submit="onSubmit" @reset="onReset" class="login-form">
+                <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
+                    <b-button
+                        :disabled="isLoading"
+                        type="submit"
+                        variant="secondary"
+                        class="btn-login-submit d-inline-block"
+                    >
+                        <BIconArrowRight
+                            v-show="!isLoading"
+                            style="vertical-align: middle"
+                        ></BIconArrowRight>
+                        <b-spinner v-show="isLoading"></b-spinner>
+                    </b-button>
+                    <b-form-input
+                        @focus="focusOnPhone"
+                        @blur="!focusOnPhone"
+                        v-model="form.phone"
+                        type="tel"
+                        minlength="6"
+                        maxlength="10"
+                        :disabled="isLoading"
+                        class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
+                    >
+                    </b-form-input>
+                    <b-form-input
+                        disabled
+                        v-model="form.phone_country_code"
+                        class="input-phone-code input-light-silver border-0 text-center dir-ltr d-inline-block"
+                    ></b-form-input>
+                    <p class="m-2 text-danger">{{ form.error("phone") }}</p>
+                </b-form-group>
+            </b-form>
+        </b-col>
+    </b-row>
 </template>
 
 <script>
@@ -59,55 +59,60 @@ import ConfirmModal from "../Forms/ConfirmPhoneModal";
 import Axios from "axios";
 
 export default {
-  components: {
-    BIconArrowRight,
-    ConfirmModal,
-  },
+    components: {
+        BIconArrowRight,
+        ConfirmModal
+    },
 
-  data() {
-    return {
-      isLoading: false,
-      focusOnPhone: false,
-      routes: this.$inertia.page.props.routes,
-      form: this.$inertia.form(
-        {
-          phone: "",
-          phone_country_code: "+98",
+    data() {
+        return {
+            isLoading: false,
+            focusOnPhone: false,
+            routes: this.$inertia.page.props.routes,
+            form: this.$inertia.form(
+                {
+                    phone: "",
+                    phone_country_code: "+98"
+                },
+                {
+                    bag: "createUser",
+                    resetOnSuccess: false
+                }
+            )
+        };
+    },
+
+    mounted() {
+      alert(route('hi'))
+        // alert(route('user.ad.create'));
+    },
+
+    methods: {
+        onSubmit(e) {
+            e.preventDefault();
+
+            let auth_route = this.routes.user_auth;
+
+            this.isLoading = true;
+
+            let result = this.form
+                .post(auth_route, {
+                    preserveScroll: true
+                })
+                .then(response => {
+                    this.isLoading = false;
+                    if (this.$inertia.page.props.trigger_auth) {
+                        this.$refs.confirmModal.activateAuth(
+                            this.$inertia.page.props.phone
+                        );
+                    }
+                })
+                .catch(() => alert("error"));
         },
-        {
-          bag: "createUser",
-          resetOnSuccess: false,
+        onReset() {
+            this.$refs.confirmModal.deActivateAuth();
+            this.form.phone = "";
         }
-      ),
-    };
-  },
-
-  methods: {
-    onSubmit(e) {
-      e.preventDefault();
-
-      let auth_route = this.routes.user_auth;
-
-      this.isLoading = true;
-
-      let result = this.form
-        .post(auth_route, {
-          preserveScroll: true,
-        })
-        .then((response) => {
-          this.isLoading = false;
-          if (this.$inertia.page.props.trigger_auth) {
-            this.$refs.confirmModal.activateAuth(
-              this.$inertia.page.props.phone
-            );
-          }
-        })
-        .catch(() => alert("error"));
-    },
-    onReset() {
-      this.$refs.confirmModal.deActivateAuth();
-      this.form.phone = "";
-    },
-  },
+    }
 };
 </script>

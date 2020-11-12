@@ -29,10 +29,12 @@
     <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>
 
+    @routes
 
 </head>
 
 <body class="font-sans antialiased">
+
 
     @inertia
 
