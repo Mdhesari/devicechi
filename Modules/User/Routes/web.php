@@ -10,3 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Modules\User\Http\Controllers\Home\HomeController;
+
+Route::get('/', [HomeController::class, 'index'])->name('user.home');

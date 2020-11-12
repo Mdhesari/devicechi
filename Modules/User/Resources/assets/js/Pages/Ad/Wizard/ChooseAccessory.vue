@@ -22,7 +22,6 @@ export default {
     },
     data() {
         return {
-            routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
         };
     },

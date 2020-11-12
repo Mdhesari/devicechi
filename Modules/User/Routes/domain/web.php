@@ -22,14 +22,13 @@ Route::middleware(['auth:sanctum'])->name('user.')->group(__DIR__ . '/web/auth.p
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
-Route::get('/', [HomeController::class, 'index'])->name('user.home');
+    Route::get('/', [HomeController::class, 'index'])->name('user.home');
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 
-    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');  
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
 
     Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
     Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
-
 });

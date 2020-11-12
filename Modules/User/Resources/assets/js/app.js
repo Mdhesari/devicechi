@@ -31,13 +31,7 @@ Vue.use(IconsPlugin);
 
 Vue.mixin({
     methods: {
-        route,
-        tr: (key, rep, locale) =>
-            new Lang({
-                messages,
-                locale: default_locale,
-                fallback: fallback_locale
-            }).get(key, rep, locale)
+        route
     }
 });
 

@@ -43,7 +43,6 @@ export default {
                 age_id: 0
             }),
             ages: this.$inertia.page.props.phone_model_ages,
-            routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
         };
     },
@@ -51,7 +50,7 @@ export default {
         next(age_id) {
             this.form.age_id = age_id;
 
-            this.form.post(this.routes.storeAge);
+            this.form.post(route("user.ad.step_store_age"));
 
             // this.$emit("next");
         },

@@ -17,12 +17,7 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $data =  [
-            'routes' => [
-                'user_auth' => route('user.auth'),
-                'user_auth_verify' => route('user.verify')
-            ]
-        ];
+        $data = [];
 
         if ($message = session('trigger_auth')) {
 

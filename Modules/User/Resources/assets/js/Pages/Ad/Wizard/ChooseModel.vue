@@ -9,7 +9,7 @@
             </p>
 
             <inertia-link
-                :href="routes.ad.create"
+                :href="route('user.ad.create')"
                 class="btn btn-link text-secondary"
             >
                 {{ $t.get("global.back") }}
@@ -24,11 +24,10 @@
                 >
                     <inertia-link
                         :href="
-                            routes.ad.create +
-                                '/' +
-                                brand.name +
-                                '/' +
-                                model.name
+                            route('user.ad.step_phone_model_variant', {
+                                phone_brand: brand.name,
+                                phone_model: model.name
+                            })
                         "
                     >
                         <h4 class="brand-label">
@@ -51,8 +50,7 @@ export default {
     data() {
         return {
             brand: this.$inertia.page.props.brand,
-            models: this.$inertia.page.props.models,
-            routes: this.$inertia.page.props.routes
+            models: this.$inertia.page.props.models
         };
     }
 };

@@ -15,7 +15,13 @@
                     :key="brand.id"
                     :data-brand-id="brand.id"
                 >
-                    <inertia-link :href="routes.ad.create + '/' + brand.name">
+                    <inertia-link
+                        :href="
+                            route('user.ad.step_phone_model', {
+                                phone_brand: brand.name
+                            })
+                        "
+                    >
                         <img
                             :src="current_root + '/' + brand.picture_path"
                             alt="Apple"
@@ -40,7 +46,6 @@ export default {
     data() {
         return {
             brands: this.$inertia.page.props.phone_brands,
-            routes: this.$inertia.page.props.routes,
             current_root: this.$inertia.page.props.current_root
         };
     },

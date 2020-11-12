@@ -3,7 +3,6 @@
         <confirm-modal
             v-on:reset-form="onReset"
             ref="confirmModal"
-            :verifyRoute="routes.user_auth_verify"
         ></confirm-modal>
         <b-col md="6">
             <div class="vector">
@@ -68,7 +67,6 @@ export default {
         return {
             isLoading: false,
             focusOnPhone: false,
-            routes: this.$inertia.page.props.routes,
             form: this.$inertia.form(
                 {
                     phone: "",
@@ -81,22 +79,14 @@ export default {
             )
         };
     },
-
-    mounted() {
-      alert(route('hi'))
-        // alert(route('user.ad.create'));
-    },
-
     methods: {
         onSubmit(e) {
             e.preventDefault();
 
-            let auth_route = this.routes.user_auth;
-
             this.isLoading = true;
 
             let result = this.form
-                .post(auth_route, {
+                .post(route("user.auth"), {
                     preserveScroll: true
                 })
                 .then(response => {
