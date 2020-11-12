@@ -6,6 +6,7 @@ use App\Models\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
@@ -26,15 +27,14 @@ class AdStepController extends Controller
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
 
-        $routes = [
-            'ad' => [
-                'create' => route('user.ad.create')
-            ]
-        ];
+        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+
+            return redirect()->route('user.ad.step_phone_accessories');
+        }
 
         $models = $brand->models;
 
-        return inertia('Ad/Wizard/Create', compact('routes', 'models', 'brand', 'step'));
+        return inertia('Ad/Wizard/Create', compact('models', 'brand', 'step'));
     }
 
     public function chooseVariant(PhoneBrand $brand, PhoneModel $model)
@@ -43,15 +43,8 @@ class AdStepController extends Controller
 
         if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
 
-            return redirect()->route('user.ad.create');
-        }
-
-        $routes = [
-            'ad' => [
-                'create' => route('user.ad.create')
-            ],
-            'storeVariant' => route('user.ad.step_store_variant')
-        ];
+            return redirect()->route('user.ad.step_phone_accessories');
+        };
 
         if (!auth()->user()->hasUncompleteAd()) {
 
@@ -63,6 +56,20 @@ class AdStepController extends Controller
 
         $phone_model_variants = $model->variants;
 
-        return inertia('Ad/Wizard/Create', compact('routes', 'phone_model_variants', 'step'));
+        return inertia('Ad/Wizard/Create', compact('phone_model_variants', 'step'));
+    }
+
+    public function chooseAccessory(Request $request)
+    {
+        $step = AdRepositoryInterface::STEP_CHOOSE_ACCESSORY;
+
+        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+
+            return redirect()->route('user.ad.create');
+        }
+
+        $accessories = PhoneAccessory::all();
+
+        return inertia('Ad/Wizard/Create', compact('accessories', 'step'));
     }
 }

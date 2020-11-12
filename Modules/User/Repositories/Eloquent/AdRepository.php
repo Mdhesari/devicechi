@@ -40,10 +40,24 @@ class AdRepository extends Repository implements AdRepositoryInterface
                 // choose variant step
                 $result = $query->hasPhoneVariant();
                 break;
+            case AdRepositoryInterface::STEP_CHOOSE_ACCESSORY:
+                $uncompleted_ad = $query->first();
+                $result = $uncompleted_ad ? $uncompleted_ad->hasAccessories() : false;
+                break;
             default:
                 $result = $query;
         }
 
+        if (is_bool($result)) return $result;
+
         return $result->count() > 0;
+    }
+
+    public function saveAccessories($accessories, User $user)
+    {
+
+        $ad = $user->ads()->uncompleted()->firstOrFail();
+
+        return $ad->accessories()->sync($accessories);
     }
 }

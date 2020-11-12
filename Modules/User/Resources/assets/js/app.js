@@ -31,7 +31,10 @@ Vue.use(IconsPlugin);
 
 Vue.mixin({
     methods: {
-        route
+        route,
+        url: function(path) {
+            return this.$inertia.page.props.current_root + "/" + path;
+        }
     }
 });
 
