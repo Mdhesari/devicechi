@@ -4,12 +4,29 @@ namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Modules\User\Entities\PhoneBrand;
+use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
+use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
-class AdVariantController extends Controller
+class AdVariantController extends BaseAdController
 {
-    public function store(Request $request)
+
+    public function choose(PhoneModel $model)
+    {
+        $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
+
+        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+
+            return redirect()->route('user.ad.step_phone_accessories');
+        };
+
+        $phone_model_variants = $model->variants;
+
+        return inertia('Ad/Wizard/Create', compact('phone_model_variants', 'step', 'model'));
+    }
+
+    public function store(PhoneModel $model, Request $request)
     {
 
         $request->validate([
@@ -19,8 +36,8 @@ class AdVariantController extends Controller
         $ad = auth()->user()->ads()->uncompleted()->first();
 
         $ad->phone_model_variant_id = $request->variant_id;
-        $ad->save();
+        $result = $ad->save();
 
-        return 'ok';
+        return $result ? redirect()->route('user.ad.step_phone_accessories') : back();
     }
 }

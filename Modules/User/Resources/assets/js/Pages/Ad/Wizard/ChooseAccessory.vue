@@ -28,7 +28,7 @@
                 </b-form-checkbox>
             </div>
 
-            <b-button variant="secondary" @click="next">
+            <b-button variant="secondary" @click.preven="next">
                 {{ $t.get("global.next") }}
             </b-button>
         </form>
@@ -51,11 +51,11 @@ export default {
         };
     },
     methods: {
-        next(variant_id) {
+        next() {
             // this.$emit("next");
             console.log(this.selected);
 
-            this.$inertia.post(route("user.ad.step_store_accessories"), {
+            this.$inertia.post(route("user.ad.step_phone_accessories"), {
                 accessories: this.selected
             });
         }

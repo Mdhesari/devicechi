@@ -50,7 +50,7 @@ export default {
         next(age_id) {
             this.form.age_id = age_id;
 
-            this.form.post(route("user.ad.step_store_age"));
+            this.form.post(route("user.ad.step_phone_age"));
 
             // this.$emit("next");
         },

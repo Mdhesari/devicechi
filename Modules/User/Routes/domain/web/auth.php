@@ -13,22 +13,24 @@
 
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdCreateController;
-use Modules\User\Http\Controllers\Ad\AdStepController;
+use Modules\User\Http\Controllers\Ad\AdModelController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
 Route::name('ad.')->group(function () {
 
-    Route::get('/ads/sell', [AdCreateController::class, 'show'])->name('create');
+    Route::get('/ads/sell/mobile', [AdCreateController::class, 'show'])->name('create');
 
-    Route::get('/ads/sell/accessories', [AdStepController::class, 'chooseAccessory'])->name('step_phone_accessories');
+    Route::get('/ads/sell/mobile/accessories', [AdAccessoryController::class, 'choose'])->name('step_phone_accessories');
 
-    Route::get('/ads/sell/{phone_brand}/{phone_model}', [AdStepController::class, 'chooseVariant'])->name('step_phone_model_variant');
+    Route::post('/ads/sell/mobile/accessories', [AdAccessoryController::class, 'store']);
 
-    Route::get('/ads/sell/{phone_brand}', [AdStepController::class, 'chooseModel'])->name('step_phone_model');
+    Route::get('/ads/sell/mobile/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('step_phone_model_variant');
 
-    Route::post('/ads/sell/store/variant', [AdVariantController::class, 'store'])->name('step_store_variant');
+    Route::post('/ads/sell/mobile/{phone_model}/variants', [AdVariantController::class, 'store']);
 
-    Route::post('/ads/sell/store/accessories', [AdAccessoryController::class, 'store'])->name('step_store_accessories');
+    Route::get('/ads/sell/mobile/{phone_brand}', [AdModelController::class, 'choose'])->name('step_phone_model');
+
+    Route::post('/ads/sell/mobile/{phone_brand}', [AdModelController::class, 'store']);
 });

@@ -16,6 +16,7 @@
                     :data-brand-id="brand.id"
                 >
                     <inertia-link
+                        method="get"
                         :href="
                             route('user.ad.step_phone_model', {
                                 phone_brand: brand.name

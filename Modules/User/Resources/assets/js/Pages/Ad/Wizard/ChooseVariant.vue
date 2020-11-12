@@ -43,14 +43,19 @@ export default {
                 variant_id: 0
             }),
             variants: this.$inertia.page.props.phone_model_variants,
-            current_root: this.$inertia.page.props.current_root
+            current_root: this.$inertia.page.props.current_root,
+            model: this.$inertia.page.props.model
         };
     },
     methods: {
         next(variant_id) {
             this.form.variant_id = variant_id;
 
-            this.form.post(route("user.ad.step_store_variant"));
+            this.form.post(
+                route("user.ad.step_phone_model_variant", {
+                    phone_model: this.model.name
+                })
+            );
 
             // this.$emit("next");
         },

@@ -23,12 +23,15 @@
                     :data-brand-id="model.id"
                 >
                     <inertia-link
+                        method="post"
                         :href="
-                            route('user.ad.step_phone_model_variant', {
-                                phone_brand: brand.name,
-                                phone_model: model.name
+                            route('user.ad.step_phone_model', {
+                                phone_brand: brand.name
                             })
                         "
+                        :data="{
+                            phone_model: model.name
+                        }"
                     >
                         <h4 class="brand-label">
                             {{ model.name }}

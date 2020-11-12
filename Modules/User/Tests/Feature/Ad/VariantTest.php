@@ -35,7 +35,7 @@ class VariantTest extends TestCase
 
         $variant = $model->variants()->first();
 
-        $response = $this->post(route('user.ad.step_store_variant'), [
+        $response = $this->post(route('user.ad.step_choose_variant'), [
             'variant_id' => $variant->id,
         ]);
 

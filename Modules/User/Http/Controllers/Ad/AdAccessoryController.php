@@ -5,13 +5,27 @@ namespace Modules\User\Http\Controllers\Ad;
 use Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Exceptions\PhoneAccessoryIdNotFoundException;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
-class AdAccessoryController extends Controller
+class AdAccessoryController extends BaseAdController
 {
+
+    public function choose(Request $request)
+    {
+        $step = AdRepositoryInterface::STEP_CHOOSE_ACCESSORY;
+
+        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+
+            return redirect()->route('user.ad.create');
+        }
+
+        $accessories = PhoneAccessory::all();
+
+        return inertia('Ad/Wizard/Create', compact('accessories', 'step'));
+    }
+
     public function store(Request $request, AdRepositoryInterface $repository)
     {
 
