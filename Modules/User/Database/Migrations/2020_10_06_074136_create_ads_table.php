@@ -22,7 +22,7 @@ class CreateAdsTable extends Migration
             $table->foreignId('phone_model_id')->nullable();
             $table->foreignId('phone_model_variant_id')->nullable();
             $table->decimal('price', 12, 2)->nullable();
-            $table->tinyInteger('age')->nullable(); // based on months
+            $table->tinyInteger('age_id')->nullable(); // based on months
             $table->unsignedTinyInteger('status')->default(3); /* 0: unavailable, 1: available, 2: pending, 3: uncompleted */
             $table->text('location')->nullable();
             $table->json('meta_ad')->nullable();

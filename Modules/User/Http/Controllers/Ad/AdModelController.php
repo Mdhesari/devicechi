@@ -19,7 +19,7 @@ class AdModelController extends BaseAdController
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
 
-        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
+        if (!$this->adRepository->checkPreviousSteps($step, auth()->user())) {
 
             return redirect()->route('user.ad.step_phone_accessories');
         }

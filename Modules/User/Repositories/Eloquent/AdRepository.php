@@ -28,29 +28,58 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return $this->model->create($data);
     }
 
-    public function alreadyHaveDoneStep($step, User $user)
+    public function checkPreviousSteps($step, User $user)
     {
 
-        $result = false;
+        $result = [
+            'url' => null,
+        ];
+        $ad = $user->ads()->uncompleted()->first();
 
-        $query = $user->ads()->uncompleted();
+        if ($step > AdRepositoryInterface::STEP_CHOOSE_MODEL) {
 
-        switch ($step) {
-            case AdRepositoryInterface::STEP_CHOOSE_VARIANT:
-                // choose variant step
-                $result = $query->hasPhoneVariant();
-                break;
-            case AdRepositoryInterface::STEP_CHOOSE_ACCESSORY:
-                $uncompleted_ad = $query->first();
-                $result = $uncompleted_ad ? $uncompleted_ad->hasAccessories() : false;
-                break;
-            default:
-                $result = $query;
+            if (!$ad) {
+
+                $result['url'] = route('user.ad.create');
+                return $result;
+            }
         }
 
-        if (is_bool($result)) return $result;
+        if ($step >= AdRepositoryInterface::STEP_CHOOSE_VARIANT) {
+            if ($ad->missingPhoneModel()) {
 
-        return $result->count() > 0;
+                $result['url'] = route('user.ad.create');
+            }
+        }
+
+        if ($step >= AdRepositoryInterface::STEP_CHOOSE_ACCESSORY) {
+            if ($ad->missingPhoneModelVariant()) {
+
+                $result['url'] = route('user.ad.step_phone_model_variant', [
+                    'phone_model' => $ad->phoneModel->name,
+                ]);
+            }
+        }
+
+        if ($step >= AdRepositoryInterface::STEP_CHOOSE_AGE) {
+            // $result = $ad->missingPhoneAccessories();
+        }
+
+        if ($step >= AdRepositoryInterface::STEP_CHOOSE_PRICE) {
+            if ($ad->missingPhoneAge()) {
+
+                $result['url'] = route('user.ad.step_phone_age');
+            }
+        }
+
+        if ($step >= AdRepositoryInterface::STEP_UPLOAD_PICTURES) {
+            if ($ad->missingPrice()) {
+
+                $result['url'] = route('user.ad.step_price');
+            }
+        }
+
+        return $result;
     }
 
     public function saveAccessories($accessories, User $user)

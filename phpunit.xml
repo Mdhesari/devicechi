@@ -10,14 +10,14 @@
 
         <!-- Modules -->
         <!-- User -->
-        <testsuite name="Feature">
+        <!-- <testsuite name="Feature">
             <directory suffix="Test.php">./Modules/User/Tests/Feature/Api</directory>
-        </testsuite>
-        <!-- <testsuite name="Unit">
-            <file>./Modules/User/Tests/Unit/Artisan/PhoneAccessoriesCurlTest.php</file>
-
-            <directory suffix="Test.php">./Modules/User/Tests/Unit/Artisan</directory>
         </testsuite> -->
+        <testsuite name="Unit">
+            <!-- <file>./Modules/User/Tests/Unit/Artisan/PhoneAccessoriesCurlTest.php</file> -->
+
+            <directory suffix="Test.php">./Modules/User/Tests/Unit/Ad/Repository</directory>
+        </testsuite>
 
     </testsuites>
     <coverage processUncoveredFiles="true">

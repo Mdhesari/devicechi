@@ -4,6 +4,7 @@ namespace Modules\User\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Str;
 use User\Database\Factories\AdFactory;
 
 class Ad extends Model
@@ -31,16 +32,45 @@ class Ad extends Model
         return $query->whereNotNull('phone_model_variant_id');
     }
 
-    public function hasAccessories()
+    public function missingPhoneAccessories()
     {
 
-        return $this->accessories()->count() > 0;
+        return $this->accessories()->count() < 1;
+    }
+
+    public function missingPhoneModelVariant()
+    {
+
+        return is_null($this->phone_model_variant);
+    }
+
+    public function missingPhoneAge()
+    {
+
+        return is_null($this->age_id);
+    }
+
+    public function missingPhoneModel()
+    {
+
+        return is_null($this->phone_model_id);
+    }
+
+    public function missingPrice() {
+
+        return is_null($this->price);
     }
 
     public function accessories()
     {
 
         return $this->belongsToMany(PhoneAccessory::class, 'accessories_ad');
+    }
+
+    public function phoneModel()
+    {
+
+        return $this->belongsTo(PhoneModel::class);
     }
 
     /**
