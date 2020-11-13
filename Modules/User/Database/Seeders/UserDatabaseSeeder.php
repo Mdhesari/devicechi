@@ -22,5 +22,6 @@ class UserDatabaseSeeder extends Seeder
         $this->call(PhoneModelTableSeeder::class);
         $this->call(PhoneModelVariantsTableSeeder::class);
         $this->call(PhoneAccessoriesTableSeeder::class);
+        $this->call(PhoneAgesTableSeeder::class);
     }
 }

@@ -39,6 +39,6 @@ class AdAccessoryController extends BaseAdController
 
         $result = $repository->saveAccessories($acceesories, auth()->user());
 
-        return $result ? redirect('user.ad.step_choose_age') : redirect()->back();
+        return $result ? redirect()->route('user.ad.step_phone_age') : redirect()->back();
     }
 }

@@ -17,7 +17,7 @@ class Ad extends Model
     const STATUS_UNCOMPLETED = 3;
 
     protected $fillable = [
-        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'city_id', 'price', 'age', 'location'
+        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'city_id', 'price', 'phone_age_id', 'location'
     ];
 
     public function scopeUncompleted($query)
@@ -47,7 +47,7 @@ class Ad extends Model
     public function missingPhoneAge()
     {
 
-        return is_null($this->age_id);
+        return is_null($this->phone_age_id);
     }
 
     public function missingPhoneModel()

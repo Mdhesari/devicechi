@@ -7412,6 +7412,21 @@ return [
         ),
     ],
 
+    'phone_ages' => [
+        [
+            'from' => 1,
+            'to' => 6
+        ],
+        [
+            'from' => 6,
+            'to' => 12,
+        ],
+        [
+            'from' => 12,
+            'to' => '+'
+        ],
+    ],
+
     'phone_brands' => [
         "10.or",
         "Apple",
@@ -10505,27 +10520,27 @@ return [
         ),
     ),
 
-    'phone_accessories' => array (
-         
-        array (
-          'title' => 'Original Box with same IMEI / Serial No',
-          'picture_path' => 'images/accessories/3.svg',
+    'phone_accessories' => array(
+
+        array(
+            'title' => 'Original Box with same IMEI / Serial No',
+            'picture_path' => 'images/accessories/3.svg',
         ),
-         
-        array (
-          'title' => 'Original Charger',
-          'picture_path' => 'images/accessories/1.svg',
+
+        array(
+            'title' => 'Original Charger',
+            'picture_path' => 'images/accessories/1.svg',
         ),
-         
-        array (
-          'title' => 'Original Earphones',
-          'picture_path' => 'images/accessories/2.svg',
+
+        array(
+            'title' => 'Original Earphones',
+            'picture_path' => 'images/accessories/2.svg',
         ),
-         
-        array (
-          'title' => 'Valid Bill with same IMEI / Serial No',
-          'picture_path' => 'images/accessories/4.svg',
+
+        array(
+            'title' => 'Valid Bill with same IMEI / Serial No',
+            'picture_path' => 'images/accessories/4.svg',
         ),
-      )  
-      
+    )
+
 ];

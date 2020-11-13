@@ -54,9 +54,15 @@ export default {
         next() {
             // this.$emit("next");
 
-            this.$inertia.post(route("user.ad.step_phone_accessories"), {
-                accessories: this.selected
-            });
+            this.$inertia.post(
+                route("user.ad.step_phone_accessories"),
+                {
+                    accessories: this.selected
+                },
+                {
+                    preserveState: false
+                }
+            );
         }
     }
 };

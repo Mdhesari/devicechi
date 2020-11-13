@@ -16,14 +16,14 @@
                 <b-form-radio
                     class="mx-4"
                     name="phone_variant"
-                    v-for="age in ages"
+                    v-for="age in phone_ages"
                     :key="age.id"
                     :value="age.id"
                     size="lg"
                     inline
                     @change="next"
                 >
-                    {{ printVariantInfo(age) }}
+                    {{ printAgeInfo(age) }}
                 </b-form-radio>
             </b-form-group>
         </form>
@@ -42,8 +42,7 @@ export default {
             form: this.$inertia.form({
                 age_id: 0
             }),
-            ages: this.$inertia.page.props.phone_model_ages,
-            current_root: this.$inertia.page.props.current_root
+            phone_ages: this.getProp("phone_ages")
         };
     },
     methods: {
@@ -54,8 +53,8 @@ export default {
 
             // this.$emit("next");
         },
-        printVariantInfo(age) {
-            return age.ram + " / " + age.storage;
+        printAgeInfo(age) {
+            return age.from + " / " + age.to;
         }
     }
 };
