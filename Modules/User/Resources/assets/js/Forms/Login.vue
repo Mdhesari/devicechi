@@ -79,7 +79,6 @@ export default {
     methods: {
         onSubmit(e) {
             e.preventDefault();
-
             this.isLoading = true;
 
             let result = this.form
@@ -95,7 +94,7 @@ export default {
                         );
                     }
                 })
-                .catch(() => alert("error"));
+                .catch(err => console.log(err));
         },
         onReset() {
             this.$refs.confirmModal.deActivateAuth();

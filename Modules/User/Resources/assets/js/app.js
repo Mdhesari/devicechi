@@ -34,6 +34,9 @@ Vue.mixin({
         route,
         url: function(path) {
             return this.$inertia.page.props.current_root + "/" + path;
+        },
+        getProp: function(param) {
+            return this.$inertia.page.props[param];
         }
     }
 });
