@@ -53,13 +53,11 @@
 </template>
 
 <script>
-import { BIconArrowRight } from "bootstrap-vue";
 import ConfirmModal from "../Forms/ConfirmPhoneModal";
 import Axios from "axios";
 
 export default {
     components: {
-        BIconArrowRight,
         ConfirmModal
     },
 
