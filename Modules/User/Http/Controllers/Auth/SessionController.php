@@ -11,6 +11,7 @@ use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Log;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
@@ -67,9 +68,9 @@ class SessionController extends Controller
             ));
         }
 
-        $result = $this->sendVerification($user);
+        $this->sendVerification($user);
 
-        return back()->with('trigger_auth', $result);
+        return back()->with('trigger_auth', true);
     }
 
     /**
@@ -92,9 +93,7 @@ class SessionController extends Controller
         if (App::environment('testing'))
             session()->put('test_code', $code);
 
-        $result = $user->sendVerificationNotification($code);
-
-        return $result ? true : false;
+        $user->sendVerificationNotification($code);
     }
 
     /**

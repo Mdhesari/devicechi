@@ -89,6 +89,7 @@ export default {
                 })
                 .then(response => {
                     this.isLoading = false;
+                    alert(this.$inertia.page.props.trigger_auth)
                     if (this.$inertia.page.props.trigger_auth) {
                         this.$refs.confirmModal.activateAuth(
                             this.$inertia.page.props.phone
