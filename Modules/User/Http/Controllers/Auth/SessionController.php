@@ -49,7 +49,7 @@ class SessionController extends Controller
             'phone_country_code' => ['required']
         ])->validateWithBag('createUser');
 
-        $user = User::where('phone', $request->input('phone'))->first();
+        $user = User::wherePhone($request->input('phone'))->first();
 
         if (is_null($user)) {
 

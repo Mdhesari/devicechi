@@ -44,7 +44,7 @@ class VerificationController extends Controller
             // update user phone_verified_at column and return
             $this->guard->login($user, true);
 
-            return redirect()->route('user.dashboard')->with('ok', 1);
+            return redirect()->route('user.dashboard')->with('submit_status', 1);
         }
 
         return back()->withErrors([
