@@ -11,7 +11,7 @@ class CanRetrieveZiggyTest extends TestCase
     public function test_can_get_routes()
     {
 
-        $response = $this->get(route('api.user.ziggy'));
+        $response = $this->get(route('user.api.ziggy'));
 
         $response->assertSuccessful();
     }

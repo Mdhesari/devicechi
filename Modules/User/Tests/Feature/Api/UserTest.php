@@ -13,7 +13,7 @@ class UserTest extends TestCase
     public function test_should_not_get_user_without_login()
     {
 
-        $response = $this->get(route('api.auth.user'));
+        $response = $this->get(route('user.api.auth.user'));
 
         $response->assertRedirect();
     }
@@ -26,7 +26,7 @@ class UserTest extends TestCase
 
         Sanctum::actingAs($user);
 
-        $response = $this->get(route('api.auth.user'));
+        $response = $this->get(route('user.api.auth.user'));
 
         $response->assertSuccessful()
             ->assertSessionDoesntHaveErrors();
