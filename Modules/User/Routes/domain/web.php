@@ -22,7 +22,7 @@ Route::middleware(['auth:sanctum'])->name('user.')->group(__DIR__ . '/web/auth.p
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])->name('user.home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/login', [LoginController::class, 'index'])->name('login');
 

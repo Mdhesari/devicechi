@@ -1,48 +1,57 @@
 <template>
-  <!-- Header Content -->
-  <header class="header-site">
-    <!-- Back Cover Menu -->
-    <div
-      @click="showNavbar = false"
-      :class="{ active: showNavbar }"
-      class="dark-back"
-      id="darkBack"
-    ></div>
-    <div class="container">
-      <div class="right-side">
-        <button @click="showNavbar = true" class="burger-btn" id="burgerBtn">
-          <span class="rec"></span>
-          <span class="rec width18"></span>
-        </button>
+    <!-- Header Content -->
+    <header class="header-site">
+        <!-- Back Cover Menu -->
+        <div
+            @click="showNavbar = false"
+            :class="{ active: showNavbar }"
+            class="dark-back"
+            id="darkBack"
+        ></div>
+        <div class="container">
+            <div class="right-side">
+                <button
+                    @click="showNavbar = true"
+                    class="burger-btn"
+                    id="burgerBtn"
+                >
+                    <span class="rec"></span>
+                    <span class="rec width18"></span>
+                </button>
 
-        <a href="#" class="btn action-btn add-advertisment">
-          ورود یا ثبت نام
-        </a>
+                <a href="#" class="btn action-btn add-advertisment">
+                    ورود یا ثبت نام
+                </a>
 
-        <Navbar :class="{ navActive: showNavbar }"></Navbar>
-      </div>
+                <Navbar :class="{ navActive: showNavbar }"></Navbar>
+            </div>
 
-      <div class="left-side">
-        <!-- Logo -->
-        <div class="logo">
-          <img src="../../img/mobile-logo.png" alt="Mobile For Sales" />
+            <div class="left-side">
+                <!-- Logo -->
+                <div class="logo">
+                    <inertia-link :href="route('user.home')">
+                        <img
+                            src="../../img/mobile-logo.png"
+                            alt="Mobile For Sales"
+                        />
+                    </inertia-link>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </header>
+    </header>
 </template>
 
 <script>
 import Navbar from "./Navigation";
 
 export default {
-  data() {
-    return {
-      showNavbar: false,
-    };
-  },
-  components: {
-    Navbar,
-  },
+    data() {
+        return {
+            showNavbar: false
+        };
+    },
+    components: {
+        Navbar
+    }
 };
 </script>
