@@ -35,8 +35,6 @@ class AdVariantController extends BaseAdController
         $ad->phone_model_variant_id = $request->variant_id;
         $ad->save();
 
-        return response()->json([
-            'url' => route('user.ad.step_phone_accessories')
-        ]);
+        return redirect()->route('user.ad.step_phone_accessories');
     }
 }

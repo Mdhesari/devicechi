@@ -51,29 +51,28 @@ export default {
         next(variant_id) {
             this.form.variant_id = variant_id;
 
-            // this.form
+            this.form.post(
+                route("user.ad.step_phone_model_variant", {
+                    phone_model: this.model.name
+                }),
+                {
+                    preserveState: false
+                }
+            );
+
+            // axios
             //     .post(
             //         route("user.ad.step_phone_model_variant", {
             //             phone_model: this.model.name
-            //         })
+            //         }),
+            //         {
+            //             variant_id
+            //         }
             //     )
             //     .then(response => {
-            //         console.log(response);
-            //     });
-
-            axios
-                .post(
-                    route("user.ad.step_phone_model_variant", {
-                        phone_model: this.model.name
-                    }),
-                    {
-                        variant_id
-                    }
-                )
-                .then(response => {
-                    this.$inertia.visit(response.data.url);
-                })
-                .catch(err => console.log(err.response.data));
+            //         this.$inertia.visit(response.data.url);
+            //     })
+            //     .catch(err => console.log(err.response.data));
 
             // this.$emit("next");
         },
