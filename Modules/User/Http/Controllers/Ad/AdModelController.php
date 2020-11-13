@@ -19,10 +19,7 @@ class AdModelController extends BaseAdController
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
 
-        if (!$this->adRepository->checkPreviousSteps($step, auth()->user())) {
-
-            return redirect()->route('user.ad.step_phone_accessories');
-        }
+        $this->checkPreviousSteps($step);
 
         $models = $brand->models;
 
@@ -38,15 +35,19 @@ class AdModelController extends BaseAdController
 
         $phone_model = $request->phone_model;
 
-        if (!auth()->user()->hasUncompleteAd()) {
+        $ad = auth()->user()->ads()->uncompleted()->first();
+        $model = PhoneModel::whereName($phone_model)->first();
 
-            $model = PhoneModel::whereName($phone_model)->first();
+        if (!$ad) {
 
-            $this->adRepository->create([
+
+            $ad = $this->adRepository->create([
                 'user_id' => auth()->id(),
-                'phone_model_id' => $model->id,
             ]);
         }
+
+        $ad->phone_model_id = $model->id;
+        $ad->save();
 
         return redirect()->route('user.ad.step_phone_model_variant', [
             'phone_model' => $phone_model,

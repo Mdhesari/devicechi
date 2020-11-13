@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Modules\User\Exceptions\Http\PreviousStepRedirectHttpException;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -33,5 +35,18 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+
+    public function render($request, Throwable $e)
+    {
+
+        if ($e instanceof PreviousStepRedirectHttpException) {
+
+            $url = $e->getUrl();
+
+            return redirect($url);
+        }
+
+        return parent::render($request, $e);
     }
 }

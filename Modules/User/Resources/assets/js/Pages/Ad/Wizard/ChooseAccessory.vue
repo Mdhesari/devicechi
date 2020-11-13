@@ -53,7 +53,6 @@ export default {
     methods: {
         next() {
             // this.$emit("next");
-            console.log(this.selected);
 
             this.$inertia.post(route("user.ad.step_phone_accessories"), {
                 accessories: this.selected

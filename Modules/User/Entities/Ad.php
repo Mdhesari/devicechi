@@ -41,7 +41,7 @@ class Ad extends Model
     public function missingPhoneModelVariant()
     {
 
-        return is_null($this->phone_model_variant);
+        return is_null($this->phone_model_variant_id);
     }
 
     public function missingPhoneAge()
@@ -56,7 +56,8 @@ class Ad extends Model
         return is_null($this->phone_model_id);
     }
 
-    public function missingPrice() {
+    public function missingPrice()
+    {
 
         return is_null($this->price);
     }

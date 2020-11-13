@@ -7,8 +7,10 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Entities\PhoneAccessory;
+use Modules\User\Exceptions\Http\PreviousStepRedirectHttpException;
 use Modules\User\Exceptions\PhoneAccessoryIdNotFoundException;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BaseAdController extends Controller
 {
@@ -19,14 +21,15 @@ class BaseAdController extends Controller
         $this->adRepository = $adRepository;
     }
 
-    public function checkPreviousSteps($step, $user)
+    public function checkPreviousSteps($step)
     {
 
-        $result = $this->adRepository->checkPreviousSteps($step, $user);
+        $result = $this->adRepository->checkPreviousSteps($step, auth()->user());
 
         if ($result['url']) {
 
-            return redirect($result['url']);
+            throw new PreviousStepRedirectHttpException($result['url']);
+            // redirect($result['url']);
         }
     }
 }

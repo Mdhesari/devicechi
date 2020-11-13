@@ -16,7 +16,7 @@ class AdVariantController extends BaseAdController
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
 
-        $this->checkPreviousSteps($step, auth()->user());
+        $this->checkPreviousSteps($step);
 
         $phone_model_variants = $model->variants;
 
@@ -33,8 +33,10 @@ class AdVariantController extends BaseAdController
         $ad = auth()->user()->ads()->uncompleted()->first();
 
         $ad->phone_model_variant_id = $request->variant_id;
-        $result = $ad->save();
+        $ad->save();
 
-        return $result ? redirect()->route('user.ad.step_phone_accessories') : back();
+        return response()->json([
+            'url' => route('user.ad.step_phone_accessories')
+        ]);
     }
 }
