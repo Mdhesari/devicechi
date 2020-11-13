@@ -33,6 +33,6 @@ class AdAgeController extends BaseAdController
         $ad->phone_age_id = $request->age_id;
         $ad->save();
 
-        return redirect()->route('user.ad.create');
+        return redirect()->route('user.ad.step_phone_price');
     }
 }

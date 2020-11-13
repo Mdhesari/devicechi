@@ -19,6 +19,12 @@ return [
         'btn_title' => 'ایجاد آگهی جدید',
     ],
 
+    'form' => [
+        'label' => [
+            'price' => 'قیمت',
+        ]
+    ],
+
     'wizard' => [
         'choose_brand' => [
             'title' => 'انتخاب برند',
@@ -33,6 +39,11 @@ return [
         'choose_variant' => [
             'title' => 'انتخاب رم و حافظه',
             'desc' => 'رم و حافظه دستگاه خود را انتخاب کنید.',
+        ],
+
+        'choose_price' => [
+            'title' => 'قیمت گذاری',
+            'desc' => 'لطفا برای دستگاه خود قیمت گذاری کنید.',
         ],
 
         'choose_accessory' => [
