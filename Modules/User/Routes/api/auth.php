@@ -13,5 +13,5 @@
 
 
 Route::get('/user', function (Request $request) {
-    return $request->user();
-});
+    return auth()->user();
+})->name('user');

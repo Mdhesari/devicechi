@@ -28,6 +28,6 @@ class CreateAccessoriesAd extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('');
+        Schema::dropIfExists('accessories_ad');
     }
 }
