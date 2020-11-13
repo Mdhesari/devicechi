@@ -21,4 +21,18 @@ class AdAgeController extends BaseAdController
 
         return inertia('Ad/Wizard/Create', compact('phone_ages', 'step'));
     }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'age_id' => 'required|exists:phone_ages,id'
+        ]);
+
+        $ad = auth()->user()->ads()->uncompleted()->first();
+
+        $ad->phone_age_id = $request->age_id;
+        $ad->save();
+
+        return redirect()->route('user.ad.create');
+    }
 }

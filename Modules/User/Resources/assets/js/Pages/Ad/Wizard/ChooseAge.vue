@@ -49,7 +49,9 @@ export default {
         next(age_id) {
             this.form.age_id = age_id;
 
-            this.form.post(route("user.ad.step_phone_age"));
+            this.form.post(route("user.ad.step_phone_age"), {
+                preserveState: false
+            });
 
             // this.$emit("next");
         },

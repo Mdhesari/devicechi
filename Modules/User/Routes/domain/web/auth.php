@@ -29,6 +29,8 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
     Route::get('/age', [AdAgeController::class, 'choose'])->name('step_phone_age');
 
+    Route::post('/age', [AdAgeController::class, 'store']);
+
     Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('step_phone_model_variant');
 
     Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);
