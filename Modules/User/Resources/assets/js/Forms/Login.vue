@@ -16,7 +16,10 @@
 
         <b-col md="6" class="text-right">
             <b-form @submit="onSubmit" @reset="onReset" class="login-form">
-                <b-form-group class="phone_number" label="رایگان ثبت نام کنید!">
+                <b-form-group
+                    class="phone_number"
+                    :label="__('login.form.label')"
+                >
                     <b-button
                         :disabled="isLoading"
                         type="submit"

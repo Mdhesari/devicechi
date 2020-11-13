@@ -7,7 +7,7 @@
                         <inertia-link
                             :href="route('user.ad.create')"
                             class="btn btn-success btn-rounded-high btn-mobilesale"
-                            >{{ $t.get("ads.create.btn_title") }}</inertia-link
+                            >{{ __("ads.create.btn_title") }}</inertia-link
                         >
                         <ul class="tabs">
                             <li class="tab-profile">

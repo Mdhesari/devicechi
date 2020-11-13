@@ -37,6 +37,9 @@ Vue.mixin({
         },
         getProp: function(param) {
             return this.$inertia.page.props[param];
+        },
+        __: function(name, replace) {
+            return this.$t.get(name, replace);
         }
     }
 });

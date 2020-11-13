@@ -3,10 +3,10 @@
     <b-container fluid="md">
       <div class="home-title">
         <h1>
-          {{ $t.get("home.intro.title") }}
+          {{ __("home.intro.title") }}
         </h1>
         <h2 class="sub-title text-muted">
-          {{ $t.get("home.intro.desc") }}
+          {{ __("home.intro.desc") }}
         </h2>
       </div>
     </b-container>

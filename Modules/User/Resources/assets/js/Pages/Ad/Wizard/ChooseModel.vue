@@ -2,17 +2,17 @@
     <WizardStep>
         <form @submit.prevent>
             <p class="form-title">
-                {{ $t.get("ads.wizard.choose_model.title") }}
+                {{ __("ads.wizard.choose_model.title") }}
             </p>
             <p class="form-desc">
-                {{ $t.get("ads.wizard.choose_model.desc") }}
+                {{ __("ads.wizard.choose_model.desc") }}
             </p>
 
             <inertia-link
                 :href="route('user.ad.create')"
                 class="btn btn-link text-secondary"
             >
-                {{ $t.get("global.back") }}
+                {{ __("global.back") }}
             </inertia-link>
 
             <div class="row brand-list">

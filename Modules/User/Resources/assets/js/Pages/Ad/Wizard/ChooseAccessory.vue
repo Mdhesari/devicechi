@@ -2,10 +2,10 @@
     <WizardStep>
         <form @submit.prevent="next">
             <p class="form-title">
-                {{ $t.get("ads.wizard.choose_accessory.title") }}
+                {{ __("ads.wizard.choose_accessory.title") }}
             </p>
             <p class="form-desc">
-                {{ $t.get("ads.wizard.choose_accessory.desc") }}
+                {{ __("ads.wizard.choose_accessory.desc") }}
             </p>
 
             <div class="row list-accessories">
@@ -23,13 +23,13 @@
                         :alt="accessory.title"
                     />
                     <h5 class="accessory-title mt-2">
-                        {{ $t.get("accessories." + accessory.title) }}
+                        {{ __("accessories." + accessory.title) }}
                     </h5>
                 </b-form-checkbox>
             </div>
 
             <b-button variant="secondary" @click.preven="next">
-                {{ $t.get("global.next") }}
+                {{ __("global.next") }}
             </b-button>
         </form>
     </WizardStep>

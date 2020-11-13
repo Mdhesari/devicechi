@@ -2,10 +2,10 @@
     <WizardStep>
         <form @submit.prevent="next">
             <p class="form-title">
-                {{ $t.get("ads.wizard.final_info.title") }}
+                {{ __("ads.wizard.final_info.title") }}
             </p>
             <p class="form-desc">
-                {{ $t.get("ads.wizard.final_info.desc") }}
+                {{ __("ads.wizard.final_info.desc") }}
             </p>
         </form>
     </WizardStep>
