@@ -30,4 +30,13 @@ interface AdRepositoryInterface
      * @return mixed
      */
     public function create($data);
+
+    /**
+     * Check previous ad create steps
+     *
+     * @param  int $step
+     * @param  mixed $user
+     * @return void
+     */
+    public function checkPreviousSteps(int $step, $user);
 }

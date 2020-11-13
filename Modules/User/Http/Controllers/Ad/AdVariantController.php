@@ -16,10 +16,7 @@ class AdVariantController extends BaseAdController
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
 
-        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
-
-            return redirect()->route('user.ad.step_phone_accessories');
-        };
+        $this->checkPreviousSteps($step, auth()->user());
 
         $phone_model_variants = $model->variants;
 

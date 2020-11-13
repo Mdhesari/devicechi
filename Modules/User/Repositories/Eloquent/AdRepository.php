@@ -5,6 +5,7 @@ namespace Modules\User\Repositories\Eloquent;
 use Auth;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\StatefulGuard;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\User;
@@ -28,7 +29,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return $this->model->create($data);
     }
 
-    public function checkPreviousSteps($step, User $user)
+    public function checkPreviousSteps(int $step, $user)
     {
 
         $result = [

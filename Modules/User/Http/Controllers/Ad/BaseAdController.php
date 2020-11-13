@@ -18,4 +18,15 @@ class BaseAdController extends Controller
     {
         $this->adRepository = $adRepository;
     }
+
+    public function checkPreviousSteps($step, $user)
+    {
+
+        $result = $this->adRepository->checkPreviousSteps($step, $user);
+
+        if ($result['url']) {
+
+            return redirect($result['url']);
+        }
+    }
 }

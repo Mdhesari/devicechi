@@ -16,10 +16,7 @@ class AdAccessoryController extends BaseAdController
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_ACCESSORY;
 
-        if ($this->adRepository->alreadyHaveDoneStep($step, auth()->user())) {
-
-            return redirect()->route('user.ad.create');
-        }
+        $this->checkPreviousSteps($step, auth()->user());
 
         $accessories = PhoneAccessory::all();
 
