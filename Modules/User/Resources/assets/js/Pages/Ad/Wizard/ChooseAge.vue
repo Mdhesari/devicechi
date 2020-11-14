@@ -12,7 +12,7 @@
                 <p class="m-2 text-danger">{{ form.error("age_id") }}</p>
             </div>
 
-            <b-form-group class="text-center">
+            <b-form-group class="text-center mobile-radio-form-group">
                 <b-form-radio
                     class="mx-4"
                     name="phone_variant"

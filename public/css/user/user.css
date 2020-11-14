@@ -227,6 +227,19 @@ ul li {
   direction: rtl !important;
 }
 
+label {
+  cursor: pointer;
+}
+
+.mobile-radio-form-group label {
+  background-color: #fbf37b78;
+  color: #333;
+  padding: 16px 18px;
+  font-size: 18px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
 .btn-mobilesale {
   width: 100%;
   border-radius: 50px;

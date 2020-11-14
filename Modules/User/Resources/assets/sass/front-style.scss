@@ -22,7 +22,8 @@ $pallete: (
     "light_yellow": #fff6e7,
     "orange_back": #fb7ba2,
     "green_second": #6ab070,
-    "yellow_second": #fccb0f
+    "yellow_second": #fccb0f,
+    "light_gold": #fbf37b78
 );
 
 @mixin box-shadow($type) {
@@ -102,6 +103,21 @@ ul li {
 
 .rtl {
     direction: rtl !important;
+}
+
+label {
+    cursor: pointer;
+}
+
+.mobile-radio-form-group {
+    label {
+        background-color: pallete("light_gold");
+        color: #333;
+        padding: 16px 18px;
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 }
 
 .btn-mobilesale {
