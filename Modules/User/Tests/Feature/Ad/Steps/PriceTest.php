@@ -40,7 +40,7 @@ class PriceTest extends TestCase
 
         $ad->refresh();
 
-        $response->assertRedirect(route('user.ad.create'));
+        $response->assertRedirect(route('user.ad.step_phone_pictures'));
 
         $this->assertEquals($price, $ad->price);
     }
@@ -63,7 +63,7 @@ class PriceTest extends TestCase
 
         $ad->refresh();
 
-        $response->assertRedirect(route('user.ad.create'));
+        $response->assertRedirect(route('user.ad.step_phone_pictures'));
 
         $this->assertEquals($price, $ad->price);
     }
