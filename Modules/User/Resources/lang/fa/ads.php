@@ -22,7 +22,12 @@ return [
     'form' => [
         'label' => [
             'price' => 'قیمت',
-        ]
+            'age' => [
+                'min' => 'کمتر از :month ماه',
+                'max' => 'بیشتر از :month ماه',
+                'between' => ':min - :max ماه'
+            ]
+        ],
     ],
 
     'wizard' => [

@@ -56,7 +56,24 @@ export default {
             // this.$emit("next");
         },
         printAgeInfo(age) {
-            return age.from + " / " + age.to;
+            let txt = "";
+
+            if (age.from == "-") {
+                txt = this.__("ads.form.label.age.min", {
+                    month: age.to
+                });
+            } else if (age.to == "+") {
+                txt = this.__("ads.form.label.age.max", {
+                    month: age.from
+                });
+            } else {
+                txt = this.__("ads.form.label.age.between", {
+                    min: age.from,
+                    max: age.to
+                });
+            }
+
+            return txt;
         }
     }
 };

@@ -7414,6 +7414,10 @@ return [
 
     'phone_ages' => [
         [
+            'from' => '-',
+            'to' => 1,
+        ],
+        [
             'from' => 1,
             'to' => 6
         ],
