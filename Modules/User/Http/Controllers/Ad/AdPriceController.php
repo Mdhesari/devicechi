@@ -6,13 +6,12 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Log;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdPriceController extends BaseAdController
 {
     public function choose(Request $request)
     {
-        $step = AdRepositoryInterface::STEP_CHOOSE_PRICE;
+        $step = BaseAdController::STEP_CHOOSE_PRICE;
 
         $this->checkPreviousSteps($step);
 

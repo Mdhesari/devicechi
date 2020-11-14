@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdVariantController extends BaseAdController
 {
 
     public function choose(PhoneModel $model)
     {
-        $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
+        $step = BaseAdController::STEP_CHOOSE_VARIANT;
 
         $this->checkPreviousSteps($step);
 

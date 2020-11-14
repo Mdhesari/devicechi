@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\User;
+use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdRepositoryTest extends TestCase
@@ -27,7 +28,7 @@ class AdRepositoryTest extends TestCase
     public function test_step_choose_model()
     {
 
-        $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
+        $step = BaseAdController::STEP_CHOOSE_MODEL;
 
         $result = $this->repository->checkPreviousSteps($step, $this->user);
 
@@ -39,7 +40,7 @@ class AdRepositoryTest extends TestCase
     public function test_step_choose_variant_without_model_should_return_uri()
     {
 
-        $step = AdRepositoryInterface::STEP_CHOOSE_VARIANT;
+        $step = BaseAdController::STEP_CHOOSE_VARIANT;
 
         $result = $this->repository->checkPreviousSteps($step, $this->user);
 
@@ -58,7 +59,7 @@ class AdRepositoryTest extends TestCase
             'phone_model_id' => $phone_model->id,
         ]);
 
-        $step = AdRepositoryInterface::STEP_CHOOSE_AGE;
+        $step = BaseAdController::STEP_CHOOSE_AGE;
 
         $result = $this->repository->checkPreviousSteps($step, $this->user);
 

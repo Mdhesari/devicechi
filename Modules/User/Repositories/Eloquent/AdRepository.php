@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\User;
+use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdRepository extends Repository implements AdRepositoryInterface
@@ -37,7 +38,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
         ];
         $ad = $user->ads()->uncompleted()->first();
 
-        if ($step > AdRepositoryInterface::STEP_CHOOSE_MODEL) {
+        if ($step > BaseAdController::STEP_CHOOSE_MODEL) {
 
             if (!$ad) {
 
@@ -46,14 +47,14 @@ class AdRepository extends Repository implements AdRepositoryInterface
             }
         }
 
-        if ($step >= AdRepositoryInterface::STEP_CHOOSE_VARIANT) {
+        if ($step >= BaseAdController::STEP_CHOOSE_VARIANT) {
             if ($ad->missingPhoneModel()) {
 
                 $result['url'] = route('user.ad.create');
             }
         }
 
-        if ($step >= AdRepositoryInterface::STEP_CHOOSE_ACCESSORY) {
+        if ($step >= BaseAdController::STEP_CHOOSE_ACCESSORY) {
             if ($ad->missingPhoneModelVariant()) {
 
                 $result['url'] = route('user.ad.step_phone_model_variant', [
@@ -62,18 +63,18 @@ class AdRepository extends Repository implements AdRepositoryInterface
             }
         }
 
-        if ($step >= AdRepositoryInterface::STEP_CHOOSE_AGE) {
+        if ($step >= BaseAdController::STEP_CHOOSE_AGE) {
             // $result = $ad->missingPhoneAccessories();
         }
 
-        if ($step >= AdRepositoryInterface::STEP_CHOOSE_PRICE) {
+        if ($step >= BaseAdController::STEP_CHOOSE_PRICE) {
             if ($ad->missingPhoneAge()) {
 
                 $result['url'] = route('user.ad.step_phone_age');
             }
         }
 
-        if ($step >= AdRepositoryInterface::STEP_UPLOAD_PICTURES) {
+        if ($step >= BaseAdController::STEP_UPLOAD_PICTURES) {
             if ($ad->missingPrice()) {
 
                 $result['url'] = route('user.ad.step_price');

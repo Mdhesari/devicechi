@@ -5,13 +5,12 @@ namespace Modules\User\Http\Controllers\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdPictureController extends BaseAdController
 {
     public function choose(Request $request)
     {
-        $step = AdRepositoryInterface::STEP_UPLOAD_PICTURES;
+        $step = BaseAdController::STEP_UPLOAD_PICTURES;
 
         $this->checkPreviousSteps($step);
 

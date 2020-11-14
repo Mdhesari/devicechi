@@ -14,7 +14,7 @@ class AdAccessoryController extends BaseAdController
 
     public function choose(Request $request)
     {
-        $step = AdRepositoryInterface::STEP_CHOOSE_ACCESSORY;
+        $step = BaseAdController::STEP_CHOOSE_ACCESSORY;
 
         $this->checkPreviousSteps($step);
 

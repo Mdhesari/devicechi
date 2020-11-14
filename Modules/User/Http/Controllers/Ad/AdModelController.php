@@ -10,14 +10,13 @@ use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
 use Modules\User\Exceptions\UserAdCreationFailed;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdModelController extends BaseAdController
 {
 
     public function choose(PhoneBrand $brand)
     {
-        $step = AdRepositoryInterface::STEP_CHOOSE_MODEL;
+        $step = BaseAdController::STEP_CHOOSE_MODEL;
 
         $this->checkPreviousSteps($step);
 
