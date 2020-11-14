@@ -30,7 +30,7 @@ class AdVariantController extends BaseAdController
             'variant_id' => 'required|exists:phone_variants,id'
         ]);
 
-        $ad = auth()->user()->ads()->uncompleted()->first();
+        $ad = $this->adRepository->getUserUncompletedAd();
 
         $ad->phone_model_variant_id = $request->variant_id;
         $ad->save();

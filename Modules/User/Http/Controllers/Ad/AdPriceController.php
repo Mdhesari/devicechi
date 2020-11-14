@@ -32,12 +32,10 @@ class AdPriceController extends BaseAdController
             'digits_between' => __('user::ads.form.error.price.invalid')
         ]);
 
-        $ad = auth()->user()->ads()->uncompleted()->first();
+        $ad = $this->adRepository->getUserUncompletedAd();
 
         $ad->price = $request->price;
         $ad->save();
-
-        Log::info(auth()->user()->ads()->uncompleted()->get());
 
         return redirect()->route('user.ad.create');
     }

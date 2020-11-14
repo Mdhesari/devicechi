@@ -28,7 +28,7 @@ class AdAgeController extends BaseAdController
             'age_id' => 'required|exists:phone_ages,id'
         ]);
 
-        $ad = auth()->user()->ads()->uncompleted()->first();
+        $ad = $this->adRepository->getUserUncompletedAd();
 
         $ad->phone_age_id = $request->age_id;
         $ad->save();
