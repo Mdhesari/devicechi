@@ -24,9 +24,8 @@ class AdPriceController extends BaseAdController
 
     public function store(Request $request)
     {
-
         $request->validate([
-            'price' => 'required|min:1|digits_between:1,10'
+            'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i']
         ], [
             'digits_between' => __('user::ads.form.error.price.invalid')
         ]);
