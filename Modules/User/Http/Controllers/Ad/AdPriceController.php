@@ -10,15 +10,14 @@ use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdPriceController extends BaseAdController
 {
-    public function choose()
+    public function choose(Request $request)
     {
         $step = AdRepositoryInterface::STEP_CHOOSE_PRICE;
 
         $this->checkPreviousSteps($step);
 
         $ad = $this->adRepository->getUserUncompletedAd();
-
-        $price = $ad->price;
+        $price = is_null($request->old('price')) ? $ad->price ?? '' : $request->old('price');
 
         return inertia('Ad/Wizard/Create', compact('step', 'price'));
     }

@@ -66,6 +66,8 @@ export default {
             // this.$emit("next");
         },
         formatPrice(price, dec) {
+            if (price.length < 1) return price;
+
             return (price = Math.abs(price).toFixed(dec || 0));
         },
         calculatePrice(price = null, getPrice = false) {
