@@ -364,11 +364,21 @@ input[type="number"] {
 }
 
 .brand-item {
-    border: 1px solid #eee;
     text-align: center;
-    margin: 1em;
-    padding: 8px;
-    border-radius: 8px;
+
+    a {
+        display: inline-block;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 8px;
+        margin:10px 0;
+
+        &:hover {
+            transition: border-color 350ms;
+            border-color: #a5a5a5;
+            text-decoration: none;
+        }
+    }
 
     img {
         width: 100px;
@@ -386,11 +396,6 @@ input[type="number"] {
         &:hover {
             border: none !important;
         }
-    }
-
-    &:hover {
-        transition: border-color 350ms;
-        border-color: #a5a5a5;
     }
 }
 /* =====
