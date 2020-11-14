@@ -36,6 +36,8 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
         Route::get('/price', [AdPriceController::class, 'choose'])->name('price');
 
+        Route::post('/price', [AdPriceController::class, 'store']);
+
         Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
         Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);

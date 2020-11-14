@@ -18,16 +18,22 @@
                     v-model="form.price"
                     type="number"
                     required
+                    maxlength="10"
                     @keyup="calculatePrice"
                     :placeholder="__('ads.form.placeholder.price')"
                 ></b-form-input>
+                <p class="text-danger" v-text="form.error('price')"></p>
                 <small
                     class="form-text text-muted"
                     v-text="calculated_price"
                 ></small>
             </b-form-group>
 
-            <b-button variant="secondary" @click.preven="next">
+            <b-button
+                variant="secondary"
+                @click.preven="next"
+                :disabled="isInvalid"
+            >
                 {{ __("global.next") }}
             </b-button>
         </form>
@@ -44,21 +50,48 @@ export default {
     data() {
         return {
             form: this.$inertia.form({
-                price: ""
+                price: this.formatPrice(this.getProp("price"))
             }),
-            calculated_price: "",
+            isInvalid: false,
+            calculated_price: this.calculatePrice(this.getProp("price"), true),
             current_root: this.$inertia.page.props.current_root
         };
     },
     methods: {
-        next(variant_id) {
+        next(ev) {
+            this.form.post(route("user.ad.step_phone_price"), {
+                preserveState: false
+            });
+
             // this.$emit("next");
         },
-        calculatePrice() {
-            if (Number(this.form.price) > 0)
-                this.calculated_price =
-                    this.formatMoney(this.form.price) + " تومان";
-            else this.calculated_price = "";
+        formatPrice(price, dec) {
+            return (price = Math.abs(price).toFixed(dec || 0));
+        },
+        calculatePrice(price = null, getPrice = false) {
+            if (isNaN(price)) {
+                price = this.form.price;
+            }
+            if (Number(price) > 0) {
+                price = this.formatPrice(price);
+                if (price.length > 10) {
+                    this.isInvalid = true;
+                    this.calculated_price = this.__(
+                        "ads.form.error.price.invalid"
+                    );
+                    return 0;
+                }
+
+                this.isInvalid = false;
+
+                let result = this.formatMoney(price) + " تومان";
+
+                if (getPrice) {
+                    return result;
+                }
+
+                this.calculated_price = result;
+            } else this.calculated_price = "";
         }
     }
 };
