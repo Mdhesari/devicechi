@@ -1,5 +1,5 @@
 <template>
-    <WizardStep>
+    <WizardStep :backLink="route('user.ad.create')">
         <form @submit.prevent>
             <p class="form-title">
                 {{ __("ads.wizard.choose_model.title") }}
@@ -7,13 +7,6 @@
             <p class="form-desc">
                 {{ __("ads.wizard.choose_model.desc") }}
             </p>
-
-            <inertia-link
-                :href="route('user.ad.create')"
-                class="btn btn-link text-secondary"
-            >
-                {{ __("global.back") }}
-            </inertia-link>
 
             <div class="row justify-content-center model-list">
                 <div

@@ -20,7 +20,12 @@ class AdAccessoryController extends BaseAdController
 
         $accessories = PhoneAccessory::all();
 
-        return inertia('Ad/Wizard/Create', compact('accessories', 'step'));
+        $phone_model = tap($this->adRepository->getUserUncompletedAd(), function ($ad) {
+
+            return $ad->phoneModel;
+        });
+
+        return inertia('Ad/Wizard/Create', compact('accessories', 'step', 'phone_model'));
     }
 
     public function store(Request $request, AdRepositoryInterface $repository)

@@ -223,6 +223,20 @@ ul li {
   background-color: #FB7178;
 }
 
+.btn-backlink {
+  position: absolute;
+  left: 3%;
+  top: 2em;
+}
+
+.btn-backlink:hover {
+  text-decoration: none;
+}
+
+.btn-backlink:focus {
+  box-shadow: none;
+}
+
 .rtl {
   direction: rtl !important;
 }
@@ -430,7 +444,7 @@ input[type=number] {
   display: inline-block;
   border: 1px solid #eee;
   text-align: center;
-  margin: 15px 5px;
+  margin: 15px;
   padding: 12px 16px;
   border-radius: 3px;
 }

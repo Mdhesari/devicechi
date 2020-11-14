@@ -99,8 +99,20 @@ ul li {
 /* ========
     MD Styles
 ======= */
-
 @import "./wizard.scss";
+.btn-backlink {
+    position: absolute;
+    left: 3%;
+    top: 2em;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}
 
 .rtl {
     direction: rtl !important;
@@ -320,7 +332,7 @@ input[type="number"] {
         display: inline-block;
         border: 1px solid #eee;
         text-align: center;
-        margin: 15px 5px;
+        margin: 15px;
         padding: 12px 16px;
         border-radius: 3px;
 

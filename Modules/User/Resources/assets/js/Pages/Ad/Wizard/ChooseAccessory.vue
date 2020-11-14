@@ -1,5 +1,11 @@
 <template>
-    <WizardStep>
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_model_variant', {
+                phone_model
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_accessory.title") }}
@@ -47,7 +53,8 @@ export default {
             selected: [],
             props: this.$inertia.page.props,
             accessories: this.$inertia.page.props.accessories,
-            current_root: this.$inertia.page.props.current_root
+            current_root: this.$inertia.page.props.current_root,
+            phone_model: this.getProp("phone_model")
         };
     },
     methods: {

@@ -20,7 +20,9 @@ class AdVariantController extends BaseAdController
 
         $phone_model_variants = $model->variants;
 
-        return inertia('Ad/Wizard/Create', compact('phone_model_variants', 'step', 'model'));
+        $brand = $model->brand;
+
+        return inertia('Ad/Wizard/Create', compact('phone_model_variants', 'step', 'model', 'brand'));
     }
 
     public function store(PhoneModel $model, Request $request)
