@@ -10,7 +10,7 @@
 
             <div class="row brand-list">
                 <div
-                    class="col-md-2 brand-item"
+                    class="col-6 col-sm-4 col-md-3 col-lg-2 brand-item"
                     v-for="brand in brands"
                     :key="brand.id"
                     :data-brand-id="brand.id"
