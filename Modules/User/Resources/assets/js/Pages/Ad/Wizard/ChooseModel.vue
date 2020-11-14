@@ -15,9 +15,9 @@
                 {{ __("global.back") }}
             </inertia-link>
 
-            <div class="row brand-list">
+            <div class="row justify-content-center model-list">
                 <div
-                    class="col-md-2 brand-item"
+                    class="model-item"
                     v-for="model in models"
                     :key="model.id"
                     :data-brand-id="model.id"
@@ -33,9 +33,9 @@
                             phone_model: model.name
                         }"
                     >
-                        <h4 class="brand-label">
+                        <strong class="model-label">
                             {{ model.name }}
-                        </h4>
+                        </strong>
                     </inertia-link>
                 </div>
             </div>
