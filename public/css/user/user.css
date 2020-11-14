@@ -231,6 +231,37 @@ label {
   cursor: pointer;
 }
 
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.wizard-step form > .btn.btn-secondary {
+  width: 100px;
+  margin: 0 auto;
+  margin-top: 0px;
+  display: block;
+  overflow: hidden;
+  margin-top: 4em;
+}
+
+.wizard-step .form-control {
+  height: calc(2.5em + 0.75rem + 2px);
+  background-color: #f0f0f0;
+  color: #495057;
+  border-radius: 3px;
+  border: none;
+}
+
 .mobile-radio-form-group label {
   background-color: #fbf37b78;
   color: #333;

@@ -28,6 +28,9 @@ return [
                 'between' => ':min - :max ماه'
             ]
         ],
+        'placeholder' => [
+            'price' => 'قیمت را وارد کنید.'
+        ]
     ],
 
     'wizard' => [
