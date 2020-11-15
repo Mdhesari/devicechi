@@ -39,6 +39,7 @@ export default {
     },
     data() {
         return {
+            isLoading: false,
             form: this.$inertia.form({
                 age_id: 0
             }),
@@ -47,11 +48,18 @@ export default {
     },
     methods: {
         next(age_id) {
+            if (this.isLoading) return;
+
+            this.isLoading = true;
             this.form.age_id = age_id;
 
-            this.form.post(route("user.ad.step_phone_age"), {
-                preserveState: false
-            });
+            this.form
+                .post(route("user.ad.step_phone_age"), {
+                    preserveState: false
+                })
+                .then(response => {
+                    this.isLoading = false;
+                });
 
             // this.$emit("next");
         },

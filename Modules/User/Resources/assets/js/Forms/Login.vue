@@ -102,8 +102,10 @@ export default {
                 .then(response => {
                     this.isLoading = false;
 
-                    if (this.$props.trigger_auth) {
-                        this.$refs.confirmModal.activateAuth(this.$props.phone);
+                    if (this.getProp("trigger_auth")) {
+                        this.$refs.confirmModal.activateAuth(
+                            this.getProp("phone")
+                        );
                     }
                 })
                 .catch(err => console.log(err));

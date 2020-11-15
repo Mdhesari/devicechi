@@ -14,6 +14,7 @@
                 label-for="phone-price"
             >
                 <b-form-input
+                    :disabled="isLoading"
                     id="phone-price"
                     v-model="form.price"
                     type="number"
@@ -49,6 +50,7 @@ export default {
     },
     data() {
         return {
+            isLoading: false,
             form: this.$inertia.form({
                 price: this.formatPrice(this.getProp("price"))
             }),
@@ -59,9 +61,14 @@ export default {
     },
     methods: {
         next(ev) {
-            this.form.post(route("user.ad.step_phone_price"), {
-                preserveState: false
-            });
+            this.isLoading = true;
+            this.form
+                .post(route("user.ad.step_phone_price"), {
+                    preserveState: false
+                })
+                .then(response => {
+                    this.isLoading = false;
+                });
 
             // this.$emit("next");
         },

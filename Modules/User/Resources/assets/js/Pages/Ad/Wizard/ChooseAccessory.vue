@@ -16,6 +16,7 @@
 
             <div class="row list-accessories">
                 <b-form-checkbox
+                    :disabled="isLoading"
                     class="col-12 col-md-3 text-center"
                     v-for="(accessory, index) in accessories"
                     :key="accessory.id"
@@ -50,6 +51,7 @@ export default {
     },
     data() {
         return {
+            isLoading: false,
             selected: [],
             accessories: this.getProp("accessories"),
             current_root: this.getProp("current_root"),
@@ -60,15 +62,21 @@ export default {
         next() {
             // this.$emit("next");
 
-            this.$inertia.post(
-                route("user.ad.step_phone_accessories"),
-                {
-                    accessories: this.selected
-                },
-                {
-                    preserveState: false
-                }
-            );
+            this.isLoading = true;
+
+            this.$inertia
+                .post(
+                    route("user.ad.step_phone_accessories"),
+                    {
+                        accessories: this.selected
+                    },
+                    {
+                        preserveState: false
+                    }
+                )
+                .then(response => {
+                    this.isLoading = false;
+                });
         }
     }
 };
