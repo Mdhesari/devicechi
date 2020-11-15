@@ -26,7 +26,7 @@ return [
                 'min' => 'کمتر از :month ماه',
                 'max' => 'بیشتر از :month ماه',
                 'between' => ':min - :max ماه'
-            ]
+            ],
         ],
         'placeholder' => [
             'price' => 'قیمت را وارد کنید.',

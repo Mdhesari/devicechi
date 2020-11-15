@@ -33,6 +33,13 @@
                     :key="index"
                 >
                     <img class="fluid" :src="picture.url" alt="Image" />
+                    <div class="actions">
+                        <b-button
+                            variant="outline-danger"
+                            @click="removePicture(picture)"
+                            >Danger</b-button
+                        >
+                    </div>
                 </b-col>
             </b-row>
 
@@ -68,21 +75,40 @@ export default {
             // this.$emit("next");
         },
         updatePhotoList(ev) {
-            if (this.pictures.length >= 9) {
+            const files = ev.target.files;
+
+            if (this.pictures.length >= 9 || files.length >= 9) {
                 this.picture_error = this.__("ads.form.error.pictures.max");
                 return false;
             }
 
             this.picture_error = null;
-            const files = ev.target.files;
 
             for (let i = 0; i < files.length; i++) {
                 this.form.pictures.push(files[i]);
 
                 this.pictures.push({
-                    url: URL.createObjectURL(files[i])
+                    url: URL.createObjectURL(files[i]),
+                    file: files[i]
                 });
             }
+        },
+        removePicture(picture) {
+            let is_blob = "file" in picture;
+            console.log(this.form.pictures, is_blob);
+            if (is_blob) {
+                this.form.pictures = this.form.pictures.filter((el, index) => {
+                    return (
+                        el.name != picture.file.name &&
+                        el.lastModified != picture.file.lastModified
+                    );
+                });
+            }
+            console.log(this.form.pictures);
+
+            this.pictures = this.pictures.filter(el => {
+                return el.url != picture.url;
+            });
         }
     }
 };
