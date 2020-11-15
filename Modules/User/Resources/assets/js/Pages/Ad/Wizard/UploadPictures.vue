@@ -61,10 +61,7 @@ export default {
     },
     methods: {
         next(ev) {
-            // upload pictures
             // go to next step
-            console.log(this.form.pictures);
-
             this.form.post(route("user.ad.step_phone_pictures"), {
                 peserveState: false
             });
@@ -75,6 +72,7 @@ export default {
                 this.picture_error = this.__("ads.form.error.pictures.max");
                 return false;
             }
+
             this.picture_error = null;
             const files = ev.target.files;
 
