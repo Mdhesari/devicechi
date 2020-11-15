@@ -5,6 +5,10 @@ namespace Modules\User\Http\Controllers\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Log;
+use Modules\User\Entities\AdPicture;
+use Modules\User\Space\Contracts\StoresAdPicture;
+use Storage;
 
 class AdPictureController extends BaseAdController
 {
@@ -14,24 +18,54 @@ class AdPictureController extends BaseAdController
 
         $this->checkPreviousSteps($step);
 
-        $ad = $this->adRepository->getUserUncompletedAd();;
-
-        return inertia('Ad/Wizard/Create', compact('step'));
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i']
-        ], [
-            'digits_between' => __('user::ads.form.error.price.invalid')
-        ]);
-
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        $ad->price = $request->price;
-        $ad->save();
+        $pictures = $ad->pictures;
 
-        return redirect()->route('user.ad.create');
+        return inertia('Ad/Wizard/Create', compact('step', 'pictures'));
+    }
+
+    public function store(Request $request, StoresAdPicture $driver)
+    {
+        $ad = $this->adRepository->getUserUncompletedAd();;
+
+        $pictures_count = $ad->pictures()->count();
+        $pictures_validation = ['array'];
+
+        if ($pictures_count > 0) {
+
+            $entire_pictures_count = 9 - $pictures_count;
+            $pictures_validation[] = 'max:' . $entire_pictures_count;
+
+            if ($entire_pictures_count > 6) {
+
+                $pictures_validation[] = 'min:' . ($entire_pictures_count - 6);
+            }
+        } else {
+
+            $pictures_validation[] = 'min:3';
+            $pictures_validation[] = 'max:9';
+        }
+
+        $request->validate([
+            'pictures' => $pictures_validation,
+            'pictures.*' => ['image', 'mimes:png,jpg,jpeg', 'max:5120']
+        ], [
+            'pictures.max' => __('user::ads.form.error.pictures.max'),
+        ]);
+
+        $pictures = $request->pictures;
+
+        foreach ($pictures as $picture) {
+
+            $path = $driver->store($picture, $ad);
+
+            $picture = new AdPicture;
+            $picture->url = $path;
+
+            $ad->pictures()->save($picture);
+        }
+
+        return redirect()->route('user.ad.step_phone_price');
     }
 }

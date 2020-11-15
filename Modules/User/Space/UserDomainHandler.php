@@ -13,6 +13,6 @@ class UserDomainHandler implements DomainHanler
      */
     public function getGuestRedirectRoute(): string
     {
-        return route('user.login');
+        return route('user.home');
     }
 }

@@ -74,6 +74,12 @@ class Ad extends Model
         return $this->belongsTo(PhoneModel::class);
     }
 
+    public function pictures()
+    {
+
+        return $this->hasMany(AdPicture::class);
+    }
+
     /**
      * Create a new factory instance for the model.
      *

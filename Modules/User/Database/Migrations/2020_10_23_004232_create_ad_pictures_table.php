@@ -17,8 +17,8 @@ class CreateAdPicturesTable extends Migration
             $table->id();
 
             $table->foreignId('ad_id');
-            $table->string('location');
-            $table->json('meta_picture');
+            $table->string('url');
+            $table->json('meta_picture')->nullable();
             $table->timestamps();
         });
     }

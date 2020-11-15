@@ -11,7 +11,9 @@ use Modules\User\Console\Curl\PhoneModelsVariantCurl;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Modules\User\Space\Contracts\StoresAdPicture;
 use Modules\User\Space\GeneratorVerification;
+use Modules\User\Space\StoreAdPicture;
 use Modules\User\Space\UserDomainHandler;
 
 class UserServiceProvider extends ServiceProvider
@@ -62,6 +64,7 @@ class UserServiceProvider extends ServiceProvider
         $this->app->register(ViewServiceProvider::class);
 
         $this->app->bind(RouteServiceProvider::DOMAIN, UserDomainHandler::class);
+        $this->app->bind(StoresAdPicture::class, StoreAdPicture::class);
         $this->app->bind(CodeVerificationGenerator::class, GeneratorVerification::class);
         $this->app->bind(AdRepositoryInterface::class, AdRepository::class);
     }
@@ -75,10 +78,16 @@ class UserServiceProvider extends ServiceProvider
     {
         $this->publishes([
             module_path($this->moduleName, 'Config/config.php') => config_path($this->moduleNameLower . '.php'),
+            module_path($this->moduleName, 'Config/directories.php') => config_path($this->moduleNameLower . '.php'),
         ], 'config');
         $this->mergeConfigFrom(
             module_path($this->moduleName, 'Config/config.php'),
             $this->moduleNameLower
+        );
+
+        $this->mergeConfigFrom(
+            module_path($this->moduleName, 'Config/directories.php'),
+            $this->moduleNameLower . '_directories',
         );
     }
 
