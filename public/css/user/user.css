@@ -513,6 +513,19 @@ input[type=number] {
     End MD styles
 ====== */
 
+.browse-pictures-form .custom-file-label::after {
+  content: "";
+  display: none;
+}
+
+.upload-previews .preview-item {
+  padding: 10px;
+}
+
+.upload-previews img {
+  max-width: 100%;
+}
+
 .form-control {
   outline: none;
   box-shadow: none;

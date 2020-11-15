@@ -371,7 +371,7 @@ input[type="number"] {
         border: 1px solid #eee;
         padding: 14px;
         border-radius: 8px;
-        margin:10px 0;
+        margin: 10px 0;
 
         &:hover {
             transition: border-color 350ms;
@@ -401,6 +401,23 @@ input[type="number"] {
 /* =====
     End MD styles
 ====== */
+
+.browse-pictures-form {
+    .custom-file-label::after {
+        content: "";
+        display: none;
+    }
+}
+
+.upload-previews {
+    .preview-item {
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
 
 .form-control {
     outline: none;
