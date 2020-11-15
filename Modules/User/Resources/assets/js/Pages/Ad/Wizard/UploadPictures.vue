@@ -89,22 +89,22 @@ export default {
 
                 this.pictures.push({
                     url: URL.createObjectURL(files[i]),
-                    file: files[i]
+                    original_file: files[i]
                 });
             }
         },
         removePicture(picture) {
-            let is_blob = "file" in picture;
-            console.log(this.form.pictures, is_blob);
+            let is_blob = "original_file" in picture;
+
             if (is_blob) {
                 this.form.pictures = this.form.pictures.filter((el, index) => {
                     return (
-                        el.name != picture.file.name &&
-                        el.lastModified != picture.file.lastModified
+                        el.name != picture.original_file.name &&
+                        el.lastModified != picture.original_file.lastModified
                     );
                 });
+            } else {
             }
-            console.log(this.form.pictures);
 
             this.pictures = this.pictures.filter(el => {
                 return el.url != picture.url;
