@@ -35,7 +35,7 @@
                 </b-form-checkbox>
             </div>
 
-            <b-button variant="secondary" @click.preven="next">
+            <b-button variant="secondary" @click.prevent="next">
                 {{ __("global.next") }}
             </b-button>
         </form>

@@ -32,7 +32,7 @@
                 </b-col>
             </b-row>
 
-            <b-button variant="secondary" @click.preven="next">
+            <b-button variant="secondary" @click.prevent="next">
                 {{ __("global.next") }}
             </b-button>
         </form>
@@ -55,7 +55,7 @@ export default {
         };
     },
     methods: {
-        next(variant_id) {
+        next(ev) {
             // upload pictures
             // go to next step
             // this.$emit("next");

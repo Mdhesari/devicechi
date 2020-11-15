@@ -32,7 +32,7 @@
 
             <b-button
                 variant="secondary"
-                @click.preven="next"
+                @click.prevent="next"
                 :disabled="isInvalid"
             >
                 {{ __("global.next") }}
