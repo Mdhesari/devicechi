@@ -11176,6 +11176,7 @@ a.text-dark:focus {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
+  flex-shrink: 0;
   width: 2.5rem;
   height: 2.5rem;
   font-size: inherit;
@@ -11268,7 +11269,7 @@ a.text-dark:focus {
   border-radius: 10em;
   font-size: 70%;
   font-weight: 700;
-  z-index: 5;
+  z-index: 1;
 }
 
 .b-avatar-sm {
@@ -11308,7 +11309,7 @@ a.text-dark:focus {
 
 .b-avatar-group a.b-avatar:hover:not(.disabled):not(disabled),
 .b-avatar-group .btn.b-avatar:hover:not(.disabled):not(disabled) {
-  z-index: 3;
+  z-index: 1;
 }
 
 .b-calendar {
@@ -12130,6 +12131,16 @@ input[type=color].form-control:disabled {
 
 .form-control-lg .b-form-tag {
   line-height: 1.5;
+}
+
+.media-aside {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.media-aside-right {
+  margin-right: 0;
+  margin-left: 1rem;
 }
 
 .modal-backdrop {

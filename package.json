@@ -14,10 +14,10 @@
         "@inertiajs/inertia-vue": "^0.1.2",
         "@tailwindcss/ui": "^0.1.3",
         "axios": "^0.19",
-        "bootstrap-vue": "^2.18.1",
+        "bootstrap-vue": "^2.19.0",
         "cross-env": "^7.0",
         "laravel-jetstream": "^0.0.3",
-        "laravel-mix": "^5.0.7",
+        "laravel-mix": "^5.0.9",
         "lodash": "^4.17.19",
         "portal-vue": "^2.1.7",
         "postcss-import": "^12.0.1",
@@ -31,6 +31,7 @@
     "dependencies": {
         "@inertiajs/progress": "^0.2.2",
         "lang.js": "^1.1.14",
-        "moment": "^2.29.1"
+        "moment": "^2.29.1",
+        "vue-cropperjs": "^4.1.0"
     }
 }

@@ -46,8 +46,8 @@ export default {
     },
     data() {
         return {
-            brands: this.$inertia.page.props.phone_brands,
-            current_root: this.$inertia.page.props.current_root
+            brands: this.getProp("phone_brands"),
+            current_root: this.getProp("current_root")
         };
     },
     methods: {

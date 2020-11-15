@@ -102,10 +102,8 @@ export default {
                 .then(response => {
                     this.isLoading = false;
 
-                    if (this.$inertia.page.props.trigger_auth) {
-                        this.$refs.confirmModal.activateAuth(
-                            this.$inertia.page.props.phone
-                        );
+                    if (this.$props.trigger_auth) {
+                        this.$refs.confirmModal.activateAuth(this.$props.phone);
                     }
                 })
                 .catch(err => console.log(err));

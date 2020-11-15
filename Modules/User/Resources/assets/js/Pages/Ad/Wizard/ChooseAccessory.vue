@@ -51,9 +51,8 @@ export default {
     data() {
         return {
             selected: [],
-            props: this.$inertia.page.props,
-            accessories: this.$inertia.page.props.accessories,
-            current_root: this.$inertia.page.props.current_root,
+            accessories: this.getProp("accessories"),
+            current_root: this.getProp("current_root"),
             phone_model: this.getProp("phone_model")
         };
     },

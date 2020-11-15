@@ -48,9 +48,9 @@ export default {
             form: this.$inertia.form({
                 variant_id: 0
             }),
-            variants: this.$inertia.page.props.phone_model_variants,
-            current_root: this.$inertia.page.props.current_root,
-            model: this.$inertia.page.props.model,
+            variants: this.getProp("phone_model_variants"),
+            current_root: this.getProp("current_root"),
+            model: this.getProp("model"),
             brand: this.getProp("brand")
         };
     },

@@ -45,8 +45,8 @@ export default {
     },
     data() {
         return {
-            brand: this.$inertia.page.props.brand,
-            models: this.$inertia.page.props.models
+            brand: this.getProp("brand"),
+            models: this.getProp("models")
         };
     }
 };

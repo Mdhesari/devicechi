@@ -20,7 +20,7 @@ export default {
     },
     data() {
         return {
-            current_root: this.$inertia.page.props.current_root
+            current_root: this.getProp("current_root")
         };
     },
     methods: {

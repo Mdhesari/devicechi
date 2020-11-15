@@ -179,11 +179,7 @@ export default {
         step_9: ChooseContact,
         step_10: FinalInfo
     },
-    data() {
-        return {
-            step: this.$inertia.page.props.step
-        };
-    },
+    props: ["step"],
     computed: {
         tab() {
             return "step_" + this.step;
