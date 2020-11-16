@@ -147,6 +147,7 @@ return [
     */
 
     'attributes' => [
+        'pictures' => 'تصاویر',
         'name' => 'نام',
         'username' => 'نام کاربری',
         'email' => 'ایمیل',

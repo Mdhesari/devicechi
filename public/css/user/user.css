@@ -513,6 +513,48 @@ input[type=number] {
     End MD styles
 ====== */
 
+.browse-pictures-form .upload-previews .preview-item {
+  cursor: pointer;
+}
+
+.browse-pictures-form .upload-previews .preview-item img {
+  box-shadow: 2px 2px 9px 0px;
+  transition: all 500ms;
+}
+
+.browse-pictures-form .upload-previews .preview-item:hover .actions {
+  display: block;
+}
+
+.browse-pictures-form .upload-previews .preview-item:hover img {
+  transition: all 500ms;
+  opacity: 0.7;
+}
+
+.browse-pictures-form .upload-previews .actions {
+  display: none;
+}
+
+.browse-pictures-form .upload-previews .actions .btn-delete {
+  box-shadow: none;
+  outline: none;
+  position: absolute;
+  top: -27px;
+  background: transparent;
+  color: #424242;
+  border: none;
+  right: -9px;
+}
+
+.browse-pictures-form .upload-previews .actions .btn-delete:hover {
+  color: #ff623d;
+}
+
+.browse-pictures-form .upload-previews .actions .btn-delete:ative,
+.browse-pictures-form .upload-previews .actions .btn-delete:focus {
+  box-shadow: none;
+}
+
 .browse-pictures-form .custom-file-label::after {
   content: "";
   display: none;

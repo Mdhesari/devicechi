@@ -14331,6 +14331,12 @@ input[type=color].form-control:disabled {
   direction: ltr !important;
 }
 
+.btn:focus,
+.btn:active {
+  box-shadow: none !important;
+  outline: none;
+}
+
 .btn-secondary {
   color: #fff;
   background-color: #131313;

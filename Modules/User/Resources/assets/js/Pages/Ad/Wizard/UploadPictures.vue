@@ -10,7 +10,6 @@
 
             <b-form-group class="picture-upload-input">
                 <b-form-file
-                    :disabled="picture_error ? true : false"
                     accept="image/jpeg, image/jpg, image/png"
                     ref="pictures"
                     @change="updatePhotoList"
@@ -19,7 +18,7 @@
                     :drop-placeholder="__('ads.form.placeholder.upload.drop')"
                 ></b-form-file>
                 <p class="text-danger">
-                    {{ picture_error || form.errors.pictures }}
+                    {{ picture_error ? picture_error : form.error("pictures") }}
                 </p>
             </b-form-group>
 
@@ -33,12 +32,22 @@
                     :key="index"
                 >
                     <img class="fluid" :src="picture.url" alt="Image" />
+                    <b-progress
+                        v-if="picture.id && picture.id == progress_id"
+                        :value="progress_value"
+                        :max="100"
+                        animated
+                    ></b-progress>
                     <div class="actions">
                         <b-button
-                            variant="outline-danger"
-                            @click="removePicture(picture)"
-                            >Danger</b-button
+                        class="btn-delete"
+                        @click="removePicture(picture)"
                         >
+                            <b-icon
+                                icon="x-circle-fill"
+                                aria-hidden="true"
+                            ></b-icon>
+                        </b-button>
                     </div>
                 </b-col>
             </b-row>
@@ -59,6 +68,8 @@ export default {
     },
     data() {
         return {
+            progress_id: null,
+            progress_value: 0,
             pictures: this.getProp("pictures"),
             form: this.$inertia.form({
                 pictures: []
@@ -70,7 +81,8 @@ export default {
         next(ev) {
             // go to next step
             this.form.post(route("user.ad.step_phone_pictures"), {
-                peserveState: false
+                peserveState: false,
+                preserveScroll: true
             });
             // this.$emit("next");
         },
@@ -93,7 +105,17 @@ export default {
                 });
             }
         },
-        removePicture(picture) {
+        progressTimer() {
+            let vm = this;
+
+            let setIntervalRef = setInterval(function() {
+                vm.progress_value += 20;
+                if (vm.progress_value >= 100) {
+                    clearInterval(setIntervalRef);
+                }
+            }, 50);
+        },
+        async removePicture(picture) {
             let is_blob = "original_file" in picture;
 
             if (is_blob) {
@@ -104,6 +126,21 @@ export default {
                     );
                 });
             } else {
+                this.progress_id = picture.id;
+                this.progressTimer();
+
+                const response = await axios.post(
+                    route("user.ad.step_phone_delete_picture"),
+                    {
+                        _method: "DELETE",
+                        picture_id: picture.id
+                    }
+                );
+
+                if (response.data.status) {
+                    this.progress_value = 0;
+                    this.progress_id = null;
+                }
             }
 
             this.pictures = this.pictures.filter(el => {

@@ -403,6 +403,51 @@ input[type="number"] {
 ====== */
 
 .browse-pictures-form {
+    .upload-previews {
+        .preview-item {
+            cursor: pointer;
+
+            img {
+                box-shadow: 2px 2px 9px 0px;
+                transition: all 500ms;
+            }
+
+            &:hover {
+                .actions {
+                    display: block;
+                }
+
+                img {
+                    transition: all 500ms;
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        .actions {
+            display: none;
+            .btn-delete {
+                box-shadow: none;
+                outline: none;
+                position: absolute;
+                top: -27px;
+                background: transparent;
+                color: pallete("dark");
+                border: none;
+                right: -9px;
+
+                &:hover {
+                    color: pallete("red");
+                }
+
+                &:ative,
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
     .custom-file-label::after {
         content: "";
         display: none;

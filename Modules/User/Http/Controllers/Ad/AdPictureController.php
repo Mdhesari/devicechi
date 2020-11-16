@@ -51,7 +51,8 @@ class AdPictureController extends BaseAdController
             'pictures' => $pictures_validation,
             'pictures.*' => ['image', 'mimes:png,jpg,jpeg', 'max:5120']
         ], [
-            'pictures.max' => __('user::ads.form.error.pictures.max'),
+            'max' => __('user::ads.form.error.pictures.max'),
+            'min' => __('user::ads.form.error.pictures.min'),
         ]);
 
         $pictures = $request->pictures;
@@ -67,5 +68,19 @@ class AdPictureController extends BaseAdController
         }
 
         return redirect()->route('user.ad.step_phone_price');
+    }
+
+    public function delete(Request $request)
+    {
+
+        $request->validate([
+            'picture_id' => ['required', 'exists:ad_pictures,id'],
+        ]);
+
+        $status = AdPicture::whereId($request->picture_id)->delete();
+
+        return response()->json([
+            'status' => $status,
+        ]);
     }
 }
