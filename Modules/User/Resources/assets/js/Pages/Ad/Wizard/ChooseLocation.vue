@@ -90,10 +90,19 @@ export default {
         next(ev) {
             // this.$emit("next");
         },
-        loadCityStates() {
-            let city_id = this.form.city;
+        loadCityStates(id) {
+            this.form.state = null;
 
-            //
+            let city = this.allCities.find(city => {
+                return city.id === id;
+            });
+
+            city.states.forEach(state => {
+                this.states.push({
+                    value: state.id,
+                    text: state.name
+                });
+            });
         }
     }
 };

@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Log;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
+use Modules\User\Entities\CityState;
 use Modules\User\Entities\Country;
 use Modules\User\Space\Contracts\StoresAdPicture;
 use Storage;
