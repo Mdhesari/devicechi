@@ -144,7 +144,19 @@ input[type="number"] {
         margin-top: 4em;
     }
 
+    input,
+    select,
     .form-control {
+        box-shadow: none;
+        &:hover,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .form-control,
+    select,
+    .picture-upload-input label {
         height: calc(2.5em + 0.75rem + 2px);
         background-color: pallete("light_gray");
         color: #495057;

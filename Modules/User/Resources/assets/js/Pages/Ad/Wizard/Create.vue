@@ -27,7 +27,11 @@
                 <div class="form-content">
                     <div class="card wizard-card">
                         <keep-alive>
-                            <component :is="tab" @next="setTab"></component>
+                            <component
+                                :step="step"
+                                :is="tab"
+                                @next="setTab"
+                            ></component>
                         </keep-alive>
                     </div>
                 </div>

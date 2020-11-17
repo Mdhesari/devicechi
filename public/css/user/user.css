@@ -268,7 +268,24 @@ input[type=number] {
   margin-top: 4em;
 }
 
+.wizard-step input,
+.wizard-step select,
 .wizard-step .form-control {
+  box-shadow: none;
+}
+
+.wizard-step input:hover,
+.wizard-step input:focus,
+.wizard-step select:hover,
+.wizard-step select:focus,
+.wizard-step .form-control:hover,
+.wizard-step .form-control:focus {
+  box-shadow: none;
+}
+
+.wizard-step .form-control,
+.wizard-step select,
+.wizard-step .picture-upload-input label {
   height: calc(2.5em + 0.75rem + 2px);
   background-color: #f0f0f0;
   color: #495057;
