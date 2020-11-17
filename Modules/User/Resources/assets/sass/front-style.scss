@@ -135,6 +135,14 @@ input[type="number"] {
 }
 
 .wizard-step {
+    .picture-upload-input {
+        label {
+            text-align: center;
+            padding: 16px;
+            height: auto !important;
+        }
+    }
+
     form > .btn.btn-secondary {
         width: 100px;
         margin: 0 auto;
@@ -146,11 +154,12 @@ input[type="number"] {
 
     input,
     select,
-    .form-control {
+    .form-control,
+    label {
         box-shadow: none;
         &:hover,
         &:focus {
-            box-shadow: none;
+            box-shadow: none !important;
         }
     }
 
@@ -417,6 +426,7 @@ input[type="number"] {
 .browse-pictures-form {
     .upload-previews {
         .preview-item {
+            padding: 1em;
             cursor: pointer;
 
             img {
@@ -437,6 +447,8 @@ input[type="number"] {
         }
 
         .actions {
+            position: absolute;
+            top: 0;
             display: none;
             .btn-delete {
                 box-shadow: none;

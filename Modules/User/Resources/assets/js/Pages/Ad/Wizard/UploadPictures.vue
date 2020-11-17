@@ -49,7 +49,11 @@
                 </b-col>
             </b-row>
 
-            <b-button variant="secondary" @click.prevent="next">
+            <b-button
+                v-if="pictures.length >= 3"
+                variant="secondary"
+                @click.prevent="next"
+            >
                 {{ __("global.next") }}
             </b-button>
         </form>

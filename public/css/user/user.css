@@ -259,6 +259,12 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.wizard-step .picture-upload-input label {
+  text-align: center;
+  padding: 16px;
+  height: auto !important;
+}
+
 .wizard-step form > .btn.btn-secondary {
   width: 100px;
   margin: 0 auto;
@@ -270,7 +276,8 @@ input[type=number] {
 
 .wizard-step input,
 .wizard-step select,
-.wizard-step .form-control {
+.wizard-step .form-control,
+.wizard-step label {
   box-shadow: none;
 }
 
@@ -279,8 +286,10 @@ input[type=number] {
 .wizard-step select:hover,
 .wizard-step select:focus,
 .wizard-step .form-control:hover,
-.wizard-step .form-control:focus {
-  box-shadow: none;
+.wizard-step .form-control:focus,
+.wizard-step label:hover,
+.wizard-step label:focus {
+  box-shadow: none !important;
 }
 
 .wizard-step .form-control,
@@ -531,6 +540,7 @@ input[type=number] {
 ====== */
 
 .browse-pictures-form .upload-previews .preview-item {
+  padding: 1em;
   cursor: pointer;
 }
 
@@ -549,6 +559,8 @@ input[type=number] {
 }
 
 .browse-pictures-form .upload-previews .actions {
+  position: absolute;
+  top: 0;
   display: none;
 }
 
