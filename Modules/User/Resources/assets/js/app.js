@@ -34,7 +34,11 @@ Vue.use(VueToastr);
 Vue.mixin({
     methods: {
         route,
-        $to(title, message = "", type = "e") {
+        $to(
+            title,
+            message = "",
+            type = "e" /* s: success, e: error, w:warning, i: information */
+        ) {
             if (!title) return this.$toastr;
 
             return this.$toastr[type](title, message);
