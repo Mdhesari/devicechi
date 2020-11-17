@@ -62,7 +62,7 @@ export default {
             states: [
                 {
                     value: null,
-                    text: this.__("ads.form.placeholder.location.city")
+                    text: this.__("ads.form.placeholder.location.state_loading")
                 }
             ]
         };
@@ -89,20 +89,33 @@ export default {
     methods: {
         next(ev) {
             // this.$emit("next");
+            console.log(this.form.city, this.form.state);
         },
-        loadCityStates(id) {
+        async loadCityStates(id) {
             this.form.state = null;
 
-            let city = this.allCities.find(city => {
-                return city.id === id;
-            });
+            this.states[0].text = this.__(
+                "ads.form.placeholder.location.state_loading"
+            );
 
-            city.states.forEach(state => {
-                this.states.push({
-                    value: state.id,
-                    text: state.name
+            const response = await axios.get(
+                route("user.ad.step_phone_location.states", {
+                    city: id
+                })
+            );
+
+            if (response.status == 200 && response.data.status) {
+                this.states[0].text = this.__(
+                    "ads.form.placeholder.location.state"
+                );
+
+                response.data.states.forEach(state => {
+                    this.states.push({
+                        value: state.id,
+                        text: state.name
+                    });
                 });
-            });
+            }
         }
     }
 };

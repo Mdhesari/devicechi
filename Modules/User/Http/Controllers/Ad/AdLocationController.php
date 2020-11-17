@@ -25,7 +25,7 @@ class AdLocationController extends BaseAdController
 
         $user_country = Country::whereName(config('user.default_country'))->first();
 
-        $cities = City::with('states')->whereCountryId($user_country->id)->get();
+        $cities = City::whereCountryId($user_country->id)->get();
 
         return inertia('Ad/Wizard/Create', compact('step', 'cities'));
     }
@@ -33,5 +33,16 @@ class AdLocationController extends BaseAdController
     public function store(Request $request, StoresAdPicture $driver)
     {
         //
+    }
+
+    public function getState(City $city)
+    {
+
+        $states = $city->states;
+
+        return response()->json([
+            'status' => true,
+            'states' => $states,
+        ]);
     }
 }
