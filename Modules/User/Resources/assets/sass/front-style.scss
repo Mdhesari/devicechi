@@ -135,11 +135,16 @@ input[type="number"] {
 }
 
 .wizard-step {
+    .icon-upload-label {
+        display: block;
+        text-align: center;
+        padding: 50px;
+        font-size: 26px;
+    }
+
     .picture-upload-input {
-        label {
-            text-align: center;
-            padding: 16px;
-            height: auto !important;
+        label.custom-file-label {
+            display: none;
         }
     }
 
@@ -164,9 +169,13 @@ input[type="number"] {
     }
 
     .form-control,
-    select,
-    .picture-upload-input label {
+    select {
         height: calc(2.5em + 0.75rem + 2px);
+    }
+
+    .form-control,
+    select,
+    label.icon-upload-label {
         background-color: pallete("light_gray");
         color: #495057;
         border-radius: 3px;
@@ -423,6 +432,19 @@ input[type="number"] {
     End MD styles
 ====== */
 
+.active-progress {
+    animation: picture_progress 4s ease-in;
+}
+
+@keyframes picture_progress {
+    from {
+        width: 20% !important;
+    }
+    to {
+        width: 100% !important;
+    }
+}
+
 .browse-pictures-form {
     .upload-previews {
         .preview-item {
@@ -435,10 +457,6 @@ input[type="number"] {
             }
 
             &:hover {
-                .actions {
-                    display: block;
-                }
-
                 img {
                     transition: all 500ms;
                     opacity: 0.7;
@@ -449,19 +467,28 @@ input[type="number"] {
         .actions {
             position: absolute;
             top: 0;
-            display: none;
             .btn-delete {
                 box-shadow: none;
                 outline: none;
                 position: absolute;
-                top: -27px;
+                top: -24px;
+                cursor: grab;
                 background: transparent;
-                color: pallete("dark");
+                color: pallete("red");
                 border: none;
-                right: -9px;
+                right: -6px;
+                padding: 0;
+                border-radius: 50%;
+                overflow: hidden;
+
+                svg {
+                    background-color: pallete("dark");
+                    vertical-align: middle;
+                    border-radius: 50%;
+                }
 
                 &:hover {
-                    color: pallete("red");
+                    color: pallete("white_2");
                 }
 
                 &:ative,

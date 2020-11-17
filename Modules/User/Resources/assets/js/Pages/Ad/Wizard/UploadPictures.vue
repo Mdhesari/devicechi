@@ -9,12 +9,16 @@
             </p>
 
             <b-form-group class="picture-upload-input">
+                <label class="icon-upload-label" @click="openFileDialog">
+                    <span class="mx-2">{{ label_text }}</span>
+                    <b-icon-upload></b-icon-upload>
+                </label>
                 <b-form-file
                     accept="image/*"
+                    id="picture-upload-input-file"
                     ref="pictures"
                     @change="updatePhotoList"
                     multiple
-                    :placeholder="label_text"
                     :drop-placeholder="__('ads.form.placeholder.upload.drop')"
                 ></b-form-file>
             </b-form-group>
@@ -30,13 +34,17 @@
                 >
                     <img class="fluid" :src="picture.url" alt="Image" />
                     <b-progress
-                        v-if="picture.id && picture.id == progress_id"
+                        v-if="picture.id && progress_ids.includes(picture.id)"
                         :value="progress_value"
                         :max="100"
+                        variant="danger"
                         animated
                     ></b-progress>
                     <div class="actions">
                         <b-button
+                            :disabled="
+                                picture.id && progress_ids.includes(picture.id)
+                            "
                             class="btn-delete"
                             @click="removePicture(picture)"
                         >
@@ -62,6 +70,7 @@
 
 <script>
 import WizardStep from "../../../Components/WizardStep";
+import Vue from "vue";
 
 export default {
     components: {
@@ -69,7 +78,7 @@ export default {
     },
     data() {
         return {
-            progress_id: null,
+            progress_ids: [],
             progress_value: 0,
             pictures: this.getProp("pictures"),
             form: this.$inertia.form({
@@ -91,9 +100,14 @@ export default {
                 .then(response => {
                     let error = null;
 
+                    console.log(this.$inertia.page);
+
                     if ((error = this.form.error("pictures"))) {
                         this.$to(error);
                     }
+                })
+                .catch(error => {
+                    console.log(error);
                 });
             // this.$emit("next");
         },
@@ -113,7 +127,11 @@ export default {
                 result = false;
             }
 
-            if (file.type != "image/png") {
+            if (
+                file.type != "image/png" &&
+                file.type != "image/png" &&
+                file.type != "image/jpeg"
+            ) {
                 this.$to(
                     this.__("global.errors.ad.pictures.upload_type.title"),
                     this.__("global.errors.ad.pictures.upload_type.desc", {
@@ -125,13 +143,6 @@ export default {
 
             return result;
         },
-        resetFileInputLabel() {
-            const label = document.querySelector(
-                ".b-form-file .custom-file-label"
-            );
-
-            label.textContent = this.label_text;
-        },
         updatePhotoList(ev) {
             const files = ev.target.files;
 
@@ -141,8 +152,6 @@ export default {
                 this.$to(this.__("ads.form.error.pictures.max"));
                 return false;
             }
-
-            this.resetFileInputLabel();
 
             for (let i = 0; i < files.length; i++) {
                 const validation_result = this.validateUploadedPicture(
@@ -180,7 +189,7 @@ export default {
                     );
                 });
             } else {
-                this.progress_id = picture.id;
+                this.progress_ids.push(picture.id);
                 this.progressTimer();
 
                 const response = await axios.post(
@@ -191,15 +200,21 @@ export default {
                     }
                 );
 
-                if (response.data.status) {
+                if (response.status == 200 && response.data.status) {
                     this.progress_value = 0;
-                    this.progress_id = null;
+
+                    this.progress_ids = this.progress_ids.filter(id => {
+                        return id !== picture.id;
+                    });
                 }
             }
 
             this.pictures = this.pictures.filter(el => {
                 return el.url != picture.url;
             });
+        },
+        openFileDialog() {
+            this.$refs.pictures.$el.childNodes[0].click();
         }
     }
 };

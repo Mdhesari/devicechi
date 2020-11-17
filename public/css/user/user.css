@@ -259,10 +259,15 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.wizard-step .picture-upload-input label {
+.wizard-step .icon-upload-label {
+  display: block;
   text-align: center;
-  padding: 16px;
-  height: auto !important;
+  padding: 50px;
+  font-size: 26px;
+}
+
+.wizard-step .picture-upload-input label.custom-file-label {
+  display: none;
 }
 
 .wizard-step form > .btn.btn-secondary {
@@ -293,9 +298,13 @@ input[type=number] {
 }
 
 .wizard-step .form-control,
-.wizard-step select,
-.wizard-step .picture-upload-input label {
+.wizard-step select {
   height: calc(2.5em + 0.75rem + 2px);
+}
+
+.wizard-step .form-control,
+.wizard-step select,
+.wizard-step label.icon-upload-label {
   background-color: #f0f0f0;
   color: #495057;
   border-radius: 3px;
@@ -539,6 +548,31 @@ input[type=number] {
     End MD styles
 ====== */
 
+.active-progress {
+  -webkit-animation: picture_progress 4s ease-in;
+          animation: picture_progress 4s ease-in;
+}
+
+@-webkit-keyframes picture_progress {
+  from {
+    width: 20% !important;
+  }
+
+  to {
+    width: 100% !important;
+  }
+}
+
+@keyframes picture_progress {
+  from {
+    width: 20% !important;
+  }
+
+  to {
+    width: 100% !important;
+  }
+}
+
 .browse-pictures-form .upload-previews .preview-item {
   padding: 1em;
   cursor: pointer;
@@ -549,10 +583,6 @@ input[type=number] {
   transition: all 500ms;
 }
 
-.browse-pictures-form .upload-previews .preview-item:hover .actions {
-  display: block;
-}
-
 .browse-pictures-form .upload-previews .preview-item:hover img {
   transition: all 500ms;
   opacity: 0.7;
@@ -561,22 +591,32 @@ input[type=number] {
 .browse-pictures-form .upload-previews .actions {
   position: absolute;
   top: 0;
-  display: none;
 }
 
 .browse-pictures-form .upload-previews .actions .btn-delete {
   box-shadow: none;
   outline: none;
   position: absolute;
-  top: -27px;
+  top: -24px;
+  cursor: -webkit-grab;
+  cursor: grab;
   background: transparent;
-  color: #424242;
+  color: #ff623d;
   border: none;
-  right: -9px;
+  right: -6px;
+  padding: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.browse-pictures-form .upload-previews .actions .btn-delete svg {
+  background-color: #424242;
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 .browse-pictures-form .upload-previews .actions .btn-delete:hover {
-  color: #ff623d;
+  color: #f9fbff;
 }
 
 .browse-pictures-form .upload-previews .actions .btn-delete:ative,
