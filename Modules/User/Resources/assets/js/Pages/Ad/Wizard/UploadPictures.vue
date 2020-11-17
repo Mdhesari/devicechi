@@ -71,7 +71,6 @@ export default {
             form: this.$inertia.form({
                 pictures: []
             }),
-            picture_error: null,
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
             files_limit_count: 9,
             label_text: this.__("ads.form.placeholder.upload.init")
@@ -79,7 +78,6 @@ export default {
     },
     methods: {
         next(ev) {
-            this.picture_error = null;
             // go to next step
             this.form
                 .post(route("user.ad.step_phone_pictures"), {
@@ -141,8 +139,6 @@ export default {
             }
 
             this.resetFileInputLabel();
-
-            this.picture_error = "";
 
             for (let i = 0; i < files.length; i++) {
                 const validation_result = this.validateUploadedPicture(
