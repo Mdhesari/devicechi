@@ -20,6 +20,7 @@ use Modules\User\Http\Controllers\Ad\AdModelController;
 use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
+use Modules\User\Http\Controllers\Ad\BaseAdController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
@@ -28,6 +29,8 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
     Route::get('/', [AdCreateController::class, 'show'])->name('create');
 
     Route::name('step_phone_')->group(function () {
+
+        Route::get('/routes/steps/{step}', [BaseAdController::class, 'getStepRoute'])->name('routes');
 
         Route::get('/accessories', [AdAccessoryController::class, 'choose'])->name('accessories');
 

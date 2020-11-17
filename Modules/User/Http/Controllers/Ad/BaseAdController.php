@@ -44,4 +44,92 @@ class BaseAdController extends Controller
             // redirect($result['url']);
         }
     }
+
+    public function getStepRoute(int $step, Request $request)
+    {
+
+        $params = $request->input('params', []);
+
+        $result = $this->evaluateStepRoute($step, $params);
+
+        return response()->json([
+            'status' => true,
+            'data' => $result,
+        ]);
+    }
+
+    public function getAllSteps()
+    {
+
+        $steps = [
+            self::STEP_CHOOSE_BRAND,
+            self::STEP_CHOOSE_MODEL,
+            self::STEP_CHOOSE_VARIANT,
+            self::STEP_CHOOSE_ACCESSORY,
+            self::STEP_CHOOSE_AGE,
+            self::STEP_CHOOSE_PRICE,
+            self::STEP_UPLOAD_PICTURES,
+            self::STEP_CHOOSE_LOCATION,
+            self::STEP_CHOOSE_CONTACT,
+            self::STEP_FINALINFO,
+        ];
+
+        return $steps;
+    }
+
+    protected function evaluateStepRoute($step, $params = [])
+    {
+
+        $back = null;
+        $current = null;
+
+        switch ($step) {
+
+            case self::STEP_CHOOSE_BRAND:
+                $current = 'user.ad.create';
+                break;
+            case self::STEP_CHOOSE_MODEL:
+                $current = 'user.ad.step_phone_model';
+                $back = 'user.ad.create';
+                break;
+            case self::STEP_CHOOSE_VARIANT:
+                $current = 'user.ad.step_phone_model_variant';
+                $back = 'user.ad.step_phone_model';
+                break;
+            case self::STEP_CHOOSE_ACCESSORY:
+                $current = 'user.ad.step_phone_accessories';
+                $back = 'user.ad.step_phone_model_variant';
+                break;
+            case self::STEP_CHOOSE_AGE:
+                $current = 'user.ad.step_phone_age';
+                $back = 'user.ad.step_phone_accessories';
+                break;
+            case self::STEP_CHOOSE_PRICE:
+                $current = 'user.ad.step_phone_price';
+                $back = 'user.ad.step_phone_age';
+                break;
+            case self::STEP_UPLOAD_PICTURES:
+                $current = 'user.ad.step_phone_pictures';
+                $back = 'user.ad.step_phone_price';
+                break;
+            case self::STEP_CHOOSE_LOCATION:
+                $current = 'user.ad.step_phone_location';
+                $back = 'user.ad.step_phone_pictures';
+                break;
+            case self::STEP_CHOOSE_CONTACT:
+                $current = 'user.ad.step_phone_contact';
+                $back = 'user.ad.step_phone_location';
+                break;
+            default:
+                $current = 'user.ad.create';
+                $back = 'user.ad.step_phone_contact';
+                break;
+        }
+
+        return [
+            'step' => $step,
+            'current' => $current ? route($current, $params) : $current,
+            'back' => $back ? route($back, $params) : $back,
+        ];
+    }
 }

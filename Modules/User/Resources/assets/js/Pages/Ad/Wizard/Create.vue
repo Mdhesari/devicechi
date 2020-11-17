@@ -1,136 +1,21 @@
 <template>
-    <AuthLayout>
+    <authLayout>
         <section class="wizard">
             <b-container>
                 <div class="step-indicator">
                     <div class="indicator-line">
                         <div class="text-center">
                             <div
+                                v-for="(i_step, index) in all_steps"
+                                :key="index"
                                 class="steps"
                                 :class="{
-                                    active: step === 1,
-                                    completed: step > 1
+                                    active: step === i_step,
+                                    completed: step > i_step
                                 }"
                             >
                                 <b-icon
-                                    v-if="step > 1"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 2,
-                                    completed: step > 2
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 2"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 3,
-                                    completed: step > 3
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 3"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 4,
-                                    completed: step > 4
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 4"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 5,
-                                    completed: step > 5
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 5"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 6,
-                                    completed: step > 6
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 6"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 7,
-                                    completed: step > 7
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 7"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 8,
-                                    completed: step > 8
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 8"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 9,
-                                    completed: step > 9
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 9"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                            <div
-                                class="steps"
-                                :class="{
-                                    active: step === 10,
-                                    completed: step > 10
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > 10"
+                                    v-if="step > i_step"
                                     icon="check"
                                     class="icon-check"
                                 />
@@ -149,7 +34,7 @@
                 <!-- End wiazrd steps -->
             </b-container>
         </section>
-    </AuthLayout>
+    </authLayout>
 </template>
 
 <script>
@@ -179,7 +64,7 @@ export default {
         step_9: ChooseContact,
         step_10: FinalInfo
     },
-    props: ["step"],
+    props: ["step", "all_steps"],
     computed: {
         tab() {
             return "step_" + this.step;
