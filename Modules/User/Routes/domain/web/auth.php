@@ -13,6 +13,7 @@
 
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdAgeController;
+use Modules\User\Http\Controllers\Ad\AdContactController;
 use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Ad\AdLocationController;
 use Modules\User\Http\Controllers\Ad\AdModelController;
@@ -51,6 +52,8 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
         Route::post('/location', [AdLocationController::class, 'store']);
 
         Route::get('/location/states/{city}', [AdLocationController::class, 'getState'])->name('location.states');
+
+        Route::get('/contact', [AdContactController::class, 'choose'])->name('contact');
 
         Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
