@@ -30,9 +30,19 @@ class AdLocationController extends BaseAdController
         return inertia('Ad/Wizard/Create', compact('step', 'cities'));
     }
 
-    public function store(Request $request, StoresAdPicture $driver)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'city' => ['required', 'numeric', 'exists:cities,id'],
+            'state' => ['required', 'numeric', 'exists:city_states,id'],
+        ]);
+
+        $ad = $this->adRepository->getUserUncompletedAd();
+
+        $ad->state_id = $request->state;
+        $ad->save();
+
+        return redirect()->route('user.ad.step_phone_pictures');
     }
 
     public function getState(City $city)

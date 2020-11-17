@@ -62,7 +62,7 @@ class CreateTest extends TestCase
         $ad->phone_model_variant_id = 1;
         $ad->age = 30;
         $ad->price = 7650000;
-        $ad->city_id = 1;
+        $ad->state_id = 1;
         $ad->location = 'Iran, Tehran, Ekbatan phase 1';
         $ad->title = 'فروش گوشی اپل 5s';
         $ad->description = 'تازه خریدم و از اندروید بیشتر خوشم میاد.';

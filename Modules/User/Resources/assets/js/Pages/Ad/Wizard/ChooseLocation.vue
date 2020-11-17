@@ -89,7 +89,24 @@ export default {
     methods: {
         next(ev) {
             // this.$emit("next");
-            console.log(this.form.city, this.form.state);
+
+            this.form
+                .post(this.route("user.ad.step_phone_location"), {
+                    preserveScroll: true
+                })
+                .then(response => {
+                    if (this.form.error("city")) {
+                        this.$to(
+                            this.__("ads.form.error.location.city.title"),
+                            this.__("ads.form.error.location.city.desc")
+                        );
+                    } else if (this.form.error("state")) {
+                        this.$to(
+                            this.__("ads.form.error.location.state.title"),
+                            this.__("ads.form.error.location.state.desc")
+                        );
+                    }
+                });
         },
         async loadCityStates(id) {
             this.form.state = null;

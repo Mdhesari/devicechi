@@ -18,7 +18,8 @@ class CreateAdsTable extends Migration
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('city_id')->nullable();
+
+            $table->foreignId('state_id')->nullable();
             $table->foreignId('phone_model_id')->nullable();
             $table->foreignId('phone_model_variant_id')->nullable();
             $table->decimal('price', 12, 2)->nullable();
