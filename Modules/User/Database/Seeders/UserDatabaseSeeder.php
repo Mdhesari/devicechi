@@ -17,6 +17,7 @@ class UserDatabaseSeeder extends Seeder
         Model::unguard();
 
         \Modules\User\Entities\User::factory(10)->create();
+        $this->call(CountryStatesTableSeeder::class);
         $this->call(PhoneBrandTableSeeder::class);
         $this->call(PhoneBrandImageTableSeeder::class);
         $this->call(PhoneModelTableSeeder::class);
