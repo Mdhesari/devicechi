@@ -14,6 +14,7 @@
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdAgeController;
 use Modules\User\Http\Controllers\Ad\AdCreateController;
+use Modules\User\Http\Controllers\Ad\AdLocationController;
 use Modules\User\Http\Controllers\Ad\AdModelController;
 use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
@@ -43,7 +44,11 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
         Route::post('/pictures', [AdPictureController::class, 'store']);
 
-        Route::delete('/pictures', [AdPictureController::class, 'delete'])->name('delete_picture');
+        Route::delete('/pictures', [AdPictureController::class, 'delete']);
+
+        Route::get('/location', [AdLocationController::class, 'choose'])->name('location');
+
+        Route::post('/location', [AdLocationController::class, 'store']);
 
         Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 

@@ -180,7 +180,7 @@ export default {
                 this.progressTimer();
 
                 const response = await axios.post(
-                    route("user.ad.step_phone_delete_picture"),
+                    route("user.ad.step_phone_pictures"),
                     {
                         _method: "DELETE",
                         picture_id: picture.id

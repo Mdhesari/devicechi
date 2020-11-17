@@ -69,7 +69,7 @@ class AdPictureController extends BaseAdController
             $ad->pictures()->save($picture);
         }
 
-        return redirect()->route('user.ad.step_phone_price');
+        return redirect()->route('user.ad.step_phone_location');
     }
 
     public function delete(Request $request)
