@@ -10,16 +10,13 @@
 
             <b-form-group class="picture-upload-input">
                 <b-form-file
-                    accept="image/jpeg, image/jpg, image/png"
+                    accept="image/*"
                     ref="pictures"
                     @change="updatePhotoList"
                     multiple
-                    :placeholder="__('ads.form.placeholder.upload.init')"
+                    :placeholder="label_text"
                     :drop-placeholder="__('ads.form.placeholder.upload.drop')"
                 ></b-form-file>
-                <p class="text-danger">
-                    {{ picture_error ? picture_error : form.error("pictures") }}
-                </p>
             </b-form-group>
 
             <b-row class="upload-previews" v-if="pictures.length > 0">
@@ -40,8 +37,8 @@
                     ></b-progress>
                     <div class="actions">
                         <b-button
-                        class="btn-delete"
-                        @click="removePicture(picture)"
+                            class="btn-delete"
+                            @click="removePicture(picture)"
                         >
                             <b-icon
                                 icon="x-circle-fill"
@@ -74,29 +71,86 @@ export default {
             form: this.$inertia.form({
                 pictures: []
             }),
-            picture_error: null
+            picture_error: null,
+            ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
+            files_limit_count: 9,
+            label_text: this.__("ads.form.placeholder.upload.init")
         };
     },
     methods: {
         next(ev) {
+            this.picture_error = null;
             // go to next step
-            this.form.post(route("user.ad.step_phone_pictures"), {
-                peserveState: false,
-                preserveScroll: true
-            });
+            this.form
+                .post(route("user.ad.step_phone_pictures"), {
+                    peserveState: false,
+                    preserveScroll: true
+                })
+                .then(response => {
+                    let error = null;
+
+                    if ((error = this.form.error("pictures"))) {
+                        this.$to(error);
+                    }
+                });
             // this.$emit("next");
+        },
+        validateUploadedPicture(file) {
+            let result = true;
+
+            const file_size_in_MB = (file.size / 1024 / 1024).toFixed(2);
+
+            if (file_size_in_MB > this.ad_picture_size_limit) {
+                this.$to(
+                    this.__("global.errors.ad.pictures.upload_limit.title"),
+                    this.__("global.errors.ad.pictures.upload_limit.desc", {
+                        max: this.ad_picture_size_limit
+                    })
+                );
+
+                result = false;
+            }
+
+            if (file.type != "image/png") {
+                this.$to(
+                    this.__("global.errors.ad.pictures.upload_type.title"),
+                    this.__("global.errors.ad.pictures.upload_type.desc", {
+                        max: this.ad_picture_size_limit
+                    })
+                );
+                result = false;
+            }
+
+            return result;
+        },
+        resetFileInputLabel() {
+            const label = document.querySelector(
+                ".b-form-file .custom-file-label"
+            );
+
+            label.textContent = this.label_text;
         },
         updatePhotoList(ev) {
             const files = ev.target.files;
 
-            if (this.pictures.length >= 9 || files.length >= 9) {
-                this.picture_error = this.__("ads.form.error.pictures.max");
+            const all_pictures_count = this.pictures.length + files.length;
+
+            if (all_pictures_count >= this.files_limit_count) {
+                this.$to(this.__("ads.form.error.pictures.max"));
                 return false;
             }
 
-            this.picture_error = null;
+            this.resetFileInputLabel();
+
+            this.picture_error = "";
 
             for (let i = 0; i < files.length; i++) {
+                const validation_result = this.validateUploadedPicture(
+                    files[i]
+                );
+
+                if (!validation_result) continue;
+
                 this.form.pictures.push(files[i]);
 
                 this.pictures.push({

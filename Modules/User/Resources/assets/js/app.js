@@ -2,6 +2,7 @@ require("./bootstrap");
 
 import Vue from "vue";
 import Lang from "lang.js";
+import VueToastr from "vue-toastr";
 
 import { InertiaApp } from "@inertiajs/inertia-vue";
 import { InertiaForm } from "laravel-jetstream";
@@ -28,17 +29,23 @@ Vue.use(InertiaForm);
 Vue.use(PortalVue);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
+Vue.use(VueToastr);
 
 Vue.mixin({
     methods: {
         route,
-        url: function(path) {
+        $to(title, message = "", type = "e") {
+            if (!title) return this.$toastr;
+
+            return this.$toastr[type](title, message);
+        },
+        url(path) {
             return this.$inertia.page.props.current_root + "/" + path;
         },
-        getProp: function(param) {
+        getProp(param) {
             return this.$inertia.page.props[param];
         },
-        __: function(name, replace) {
+        __(name, replace) {
             return this.$t.get(name, replace);
         },
         formatMoney(amount, decimalCount = 0, decimal = ".", thousands = ",") {
@@ -67,6 +74,10 @@ Vue.mixin({
                         : "")
                 );
             } catch (e) {
+                this.$to(
+                    __("global.errors.common.title"),
+                    __("global.errors.common.desc")
+                );
                 console.log(e);
             }
         }

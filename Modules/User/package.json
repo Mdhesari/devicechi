@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "@inertiajs/progress": "^0.2.2",
-        "lang.js": "^1.1.14"
+        "lang.js": "^1.1.14",
+        "vue-toastr": "^2.1.2"
     }
 }

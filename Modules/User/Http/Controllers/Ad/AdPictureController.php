@@ -22,7 +22,9 @@ class AdPictureController extends BaseAdController
 
         $pictures = $ad->pictures;
 
-        return inertia('Ad/Wizard/Create', compact('step', 'pictures'));
+        $ad_picture_size_limit = config('user.ad_picture_size_limit');
+
+        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit'));
     }
 
     public function store(Request $request, StoresAdPicture $driver)
