@@ -12,4 +12,10 @@ class City extends Model
     public $timestamps = false;
 
     protected $fillable = [];
+
+    public function states()
+    {
+
+        return $this->hasMany(CityState::class);
+    }
 }

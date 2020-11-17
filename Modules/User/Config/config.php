@@ -5,6 +5,8 @@ return [
     'verification_length' => 5,
     'ad_picture_size_limit' => 5, // MB
 
+    'default_country' => 'Iran',
+
     'phone_models' => [
 
         array(

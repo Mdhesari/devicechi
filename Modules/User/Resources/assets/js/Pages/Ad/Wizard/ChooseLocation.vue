@@ -9,19 +9,33 @@
             </p>
 
             <b-form-group
-                id="input-group-1"
+                id="input-group-cities"
                 :label="__('ads.form.label.location.city')"
-                label-for="phone-location"
+                label-for="phone-city"
             >
                 <b-form-select
-                    id="phone-location"
-                    v-model="selectedCity"
+                    id="phone-city"
+                    v-model="form.city"
                     :options="cities"
+                    @change="loadCityStates"
+                ></b-form-select>
+            </b-form-group>
+
+            <b-form-group
+                v-if="form.city"
+                id="input-group-states"
+                :label="__('ads.form.label.location.state')"
+                label-for="phone-state"
+            >
+                <b-form-select
+                    id="phone-state"
+                    v-model="form.state"
+                    :options="states"
                 ></b-form-select>
             </b-form-group>
 
             <b-button
-                v-if="selectedCity !== null"
+                v-if="form.state"
                 variant="secondary"
                 @click.prevent="next"
             >
@@ -41,25 +55,45 @@ export default {
     data() {
         return {
             form: this.$inertia.form({
-                city: "",
-                state: ""
+                city: null,
+                state: null
             }),
-            selectedCity: null,
-            cities: [
+            allCities: this.getProp("cities"),
+            states: [
                 {
                     value: null,
                     text: this.__("ads.form.placeholder.location.city")
-                },
-                {
-                    value: "tehran",
-                    text: "تهران"
                 }
             ]
         };
     },
+    computed: {
+        cities() {
+            let cities = [
+                {
+                    value: null,
+                    text: this.__("ads.form.placeholder.location.city")
+                }
+            ];
+
+            this.allCities.forEach(city => {
+                cities.push({
+                    value: city.id,
+                    text: city.name
+                });
+            });
+
+            return cities;
+        }
+    },
     methods: {
         next(ev) {
             // this.$emit("next");
+        },
+        loadCityStates() {
+            let city_id = this.form.city;
+
+            //
         }
     }
 };
