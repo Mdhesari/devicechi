@@ -31,6 +31,7 @@
             </b-form-group>
 
             <b-button
+                v-if="Number(form.price) ? form.price > 0 : false"
                 variant="secondary"
                 @click.prevent="next"
                 :disabled="isInvalid"
