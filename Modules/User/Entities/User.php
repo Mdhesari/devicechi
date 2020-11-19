@@ -9,6 +9,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Space\Contracts\MustVerifyPhone;
 use User\Database\Factories\UserFactory;
@@ -94,6 +95,34 @@ class User extends Authenticatable implements MustVerifyPhone
     {
 
         return $this->hasMany(Ad::class);
+    }
+
+    /**
+     * Get user contacts
+     *
+     * @return array
+     */
+    public function getContacts(): array
+    {
+
+        $contacts = [];
+
+        if ($this->phone)
+            $contacts[] = [
+                'name' => AdContactType::TYPE_PHONE,
+                'value' => $this->phone,
+                'data' => [
+                    'phone_country_code' => $this->phone_country_code
+                ],
+            ];
+
+        if ($this->email)
+            $contacts[] = [
+                'name' => AdContactType::TYPE_EMAIL,
+                'value' => $this->phone,
+            ];
+
+        return $contacts;
     }
 
     public function hasUncompleteAd()

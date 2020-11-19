@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Log;
+use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
 use Modules\User\Entities\CityState;
@@ -23,7 +24,16 @@ class AdContactController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        return inertia('Ad/Wizard/Create', compact('step'));
+        $contact_types = AdContactType::all();
+
+        $contacts = $ad->contacts->toArray();
+
+        if (empty($contacts)) {
+
+            $contacts = auth()->user()->getContacts();
+        }
+
+        return inertia('Ad/Wizard/Create', compact('step', 'contacts', 'contact_types'));
     }
 
     public function store(Request $request)

@@ -20,7 +20,8 @@ export default {
     },
     data() {
         return {
-            current_root: this.getProp("current_root")
+            contacts: this.getProp("contacts"),
+            contact_types: this.getProp("contact_types")
         };
     },
     methods: {

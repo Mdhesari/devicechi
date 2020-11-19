@@ -4,6 +4,7 @@ namespace Modules\User\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Entities\Ad\AdContact;
 use Str;
 use User\Database\Factories\AdFactory;
 
@@ -78,6 +79,12 @@ class Ad extends Model
     {
 
         return $this->hasMany(AdPicture::class);
+    }
+
+    public function contacts()
+    {
+
+        return $this->hasMany(AdContact::class);
     }
 
     /**

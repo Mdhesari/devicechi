@@ -9,5 +9,8 @@ class AdContactType extends Model
 {
     use HasFactory;
 
+    const TYPE_EMAIL = 'email';
+    const TYPE_PHONE = 'phone';
+
     protected $fillable = ['name', 'description'];
 }
