@@ -4,6 +4,8 @@ namespace Modules\User\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Database\Seeders\Ad\AdContactTypeTableSeeder;
+use Modules\User\Entities\Ad\AdContactType;
 
 class UserDatabaseSeeder extends Seeder
 {
@@ -17,12 +19,16 @@ class UserDatabaseSeeder extends Seeder
         Model::unguard();
 
         \Modules\User\Entities\User::factory(10)->create();
-        $this->call(CountryStatesTableSeeder::class);
-        $this->call(PhoneBrandTableSeeder::class);
-        $this->call(PhoneBrandImageTableSeeder::class);
-        $this->call(PhoneModelTableSeeder::class);
-        $this->call(PhoneModelVariantsTableSeeder::class);
-        $this->call(PhoneAccessoriesTableSeeder::class);
-        $this->call(PhoneAgesTableSeeder::class);
+
+        $this->call([
+            CountryStatesTableSeeder::class,
+            PhoneBrandTableSeeder::class,
+            PhoneBrandImageTableSeeder::class,
+            PhoneModelTableSeeder::class,
+            PhoneModelVariantsTableSeeder::class,
+            PhoneAccessoriesTableSeeder::class,
+            PhoneAgesTableSeeder::class,
+            AdContactTypeTableSeeder::class,
+        ]);
     }
 }

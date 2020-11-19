@@ -7,6 +7,17 @@ return [
 
     'default_country' => 'Iran',
 
+    'contact_types' => [
+        [
+            'name' => 'email',
+            'description' => 'Email address'
+        ],
+        [
+            'name' => 'phone',
+            'description' => 'Phone number'
+        ],
+    ],
+
     'phone_models' => [
 
         array(
