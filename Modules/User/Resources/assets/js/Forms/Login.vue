@@ -84,17 +84,6 @@ export default {
             e.preventDefault();
             this.isLoading = true;
 
-            // let result = axios
-            //     .post(route("user.auth"), this.form)
-            //     .then(response => {
-            //         this.isLoading = false;
-
-            //         console.log(this.form);
-
-            //         console.log(response);
-            //     })
-            //     .catch(err => console.log(err.response));
-
             let result = this.form
                 .post(route("user.auth"), {
                     preserveScroll: true
