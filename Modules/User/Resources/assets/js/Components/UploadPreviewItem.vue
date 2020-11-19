@@ -2,7 +2,7 @@
     <b-col class="preview-item" sm="6" md="4" lg="2">
         <img class="fluid" :src="picture.url" alt="Uploaded Picture" />
         <b-progress
-            v-if="progress_active"
+            v-if="progress_id === picture.id"
             :value="progress_value"
             :max="100"
             variant="danger"
@@ -10,7 +10,7 @@
         ></b-progress>
         <div class="actions">
             <b-button
-                :disabled="progress_active"
+                :disabled="progress_id === picture.id"
                 class="btn-delete"
                 @click="removePicture(picture)"
             >
@@ -26,7 +26,7 @@ export default {
     data() {
         return {
             progress_value: 20,
-            progress_active: false
+            progress_id: null
         };
     },
     methods: {
@@ -42,13 +42,14 @@ export default {
         },
         startProgressBar() {
             this.progress_value = 20;
-            this.progress_active = true;
+            this.progress_id = true;
 
             this.progressTimer();
         },
         removePicture(picture) {
+            this.progress_id = picture.id;
             this.startProgressBar();
-            this.$emit("removePicture", picture);
+            this.$emit("removePicture");
         }
     }
 };
