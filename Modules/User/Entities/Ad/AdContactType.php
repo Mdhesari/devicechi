@@ -12,5 +12,20 @@ class AdContactType extends Model
     const TYPE_EMAIL = 'email';
     const TYPE_PHONE = 'phone';
 
-    protected $fillable = ['name', 'description'];
+    public $timestamps = false;
+
+    protected $casts = [
+        "data" => "array",
+    ];
+
+    protected $fillable = ['name', 'description', 'data'];
+
+    public function getDescriptionAttribute($description)
+    {
+
+        $trans_key = "user::contacts.types.descriptions.$description";
+        $trans_value = trans($trans_key);
+
+        return $trans_value == $trans_key ? $description : $trans_value;
+    }
 }

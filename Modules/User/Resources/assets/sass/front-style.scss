@@ -100,6 +100,11 @@ ul li {
     MD Styles
 ======= */
 @import "./wizard.scss";
+
+.vertical-middle {
+    vertical-align: middle !important;
+}
+
 .btn-backlink {
     position: absolute;
     left: 3%;
@@ -135,6 +140,28 @@ input[type="number"] {
 }
 
 .wizard-step {
+    .list-contacts {
+        .list-item-content {
+            .content-value {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            svg {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .btn-add-contact {
+        font-size: 24px !important;
+    }
+
+    .dropdown-contact-item a {
+        padding: 1rem 2rem;
+        text-align: right;
+    }
+
     .icon-upload-label {
         display: block;
         text-align: center;

@@ -17,7 +17,8 @@ class CreateAdContactTypesTable extends Migration
             $table->id();
 
             $table->string('name', 16);
-            $table->string('description', 64);
+            $table->string('description');
+            $table->json('data')->nullable();
         });
     }
 

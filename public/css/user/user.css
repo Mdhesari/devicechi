@@ -223,6 +223,10 @@ ul li {
   background-color: #FB7178;
 }
 
+.vertical-middle {
+  vertical-align: middle !important;
+}
+
 .btn-backlink {
   position: absolute;
   left: 3%;
@@ -257,6 +261,24 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.wizard-step .list-contacts .list-item-content .content-value {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.wizard-step .list-contacts .list-item-content svg {
+  font-size: 24px;
+}
+
+.wizard-step .btn-add-contact {
+  font-size: 24px !important;
+}
+
+.wizard-step .dropdown-contact-item a {
+  padding: 1rem 2rem;
+  text-align: right;
 }
 
 .wizard-step .icon-upload-label {

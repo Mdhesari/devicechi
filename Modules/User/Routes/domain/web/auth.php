@@ -58,9 +58,9 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
         Route::get('/location/states/{city}', [AdLocationController::class, 'getState'])->name('location.states');
 
-        Route::get('/contacts', [AdContactController::class, 'choose'])->name('contact');
+        Route::get('/contact', [AdContactController::class, 'choose'])->name('contact');
 
-        Route::post('/contacts', [AdContactController::class, 'store']);
+        Route::post('/contact', [AdContactController::class, 'store']);
 
         Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 

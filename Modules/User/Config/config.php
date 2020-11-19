@@ -10,7 +10,10 @@ return [
     'contact_types' => [
         [
             'name' => 'email',
-            'description' => 'Email address'
+            'description' => 'Email address',
+            'data' => [
+                'icon' => 'envelope',
+            ],
         ],
         [
             'name' => 'phone',

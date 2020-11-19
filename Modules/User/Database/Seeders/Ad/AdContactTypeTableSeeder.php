@@ -21,6 +21,15 @@ class AdContactTypeTableSeeder extends Seeder
 
         AdContactType::truncate();
 
-        AdContactType::insert($contact_types);
+        foreach ($contact_types as $arr) {
+
+            $type = new AdContactType;
+            $type->name = $arr['name'];
+            $type->description = $arr['description'];
+            $type->data = isset($arr['data']) ? $arr['data'] : [];
+            $type->save();
+        }
+
+        // AdContactType::create($contact_types);
     }
 }

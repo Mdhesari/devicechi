@@ -21,4 +21,21 @@ class AdContact extends Model
 
         return $this->belongsTo(Ad::class);
     }
+
+    public function type()
+    {
+
+        return $this->belongsTo(AdContactType::class);
+    }
+
+    public function getValueAttribute($value)
+    {
+
+        if ($code = $this->data->phone_country_code) {
+
+            $value = "+$code $value";
+        }
+
+        return $value;
+    }
 }

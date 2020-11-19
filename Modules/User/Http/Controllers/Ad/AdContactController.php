@@ -26,7 +26,7 @@ class AdContactController extends BaseAdController
 
         $contact_types = AdContactType::all();
 
-        $contacts = $ad->contacts->toArray();
+        $contacts = $ad->contacts()->with('type')->get()->toArray();
 
         if (empty($contacts)) {
 
