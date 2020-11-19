@@ -24,37 +24,12 @@
             </b-form-group>
 
             <b-row class="upload-previews" v-if="pictures.length > 0">
-                <b-col
-                    class="preview-item"
-                    sm="6"
-                    md="4"
-                    lg="2"
+                <UploadPreviewItem
                     v-for="(picture, index) in pictures"
                     :key="index"
-                >
-                    <img class="fluid" :src="picture.url" alt="Image" />
-                    <b-progress
-                        v-if="picture.id && progress_ids.includes(picture.id)"
-                        :value="progress_value"
-                        :max="100"
-                        variant="danger"
-                        animated
-                    ></b-progress>
-                    <div class="actions">
-                        <b-button
-                            :disabled="
-                                picture.id && progress_ids.includes(picture.id)
-                            "
-                            class="btn-delete"
-                            @click="removePicture(picture)"
-                        >
-                            <b-icon
-                                icon="x-circle-fill"
-                                aria-hidden="true"
-                            ></b-icon>
-                        </b-button>
-                    </div>
-                </b-col>
+                    :picture="picture"
+                    @removePicture="removePicture(picture)"
+                />
             </b-row>
 
             <b-button
@@ -70,23 +45,23 @@
 
 <script>
 import WizardStep from "../../../Components/WizardStep";
-import Vue from "vue";
+import UploadPreviewItem from "../../../Components/UploadPreviewItem";
 
 export default {
     components: {
-        WizardStep
+        WizardStep,
+        UploadPreviewItem
     },
     data() {
         return {
-            progress_ids: [],
-            progress_value: 0,
             pictures: this.getProp("pictures"),
             form: this.$inertia.form({
                 pictures: []
             }),
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
             files_limit_count: 9,
-            label_text: this.__("ads.form.placeholder.upload.init")
+            label_text: this.__("ads.form.placeholder.upload.init"),
+            validFileTypes: ["image/png", "image/jpg"]
         };
     },
     methods: {
@@ -100,14 +75,12 @@ export default {
                 .then(response => {
                     let error = null;
 
-                    console.log(this.$inertia.page);
-
                     if ((error = this.form.error("pictures"))) {
                         this.$to(error);
                     }
                 })
                 .catch(error => {
-                    console.log(error);
+                    this.$to(this.__("global.errors.common"));
                 });
             // this.$emit("next");
         },
@@ -127,11 +100,7 @@ export default {
                 result = false;
             }
 
-            if (
-                file.type != "image/png" &&
-                file.type != "image/png" &&
-                file.type != "image/jpeg"
-            ) {
+            if (!this.validFileTypes.includes(file.type)) {
                 this.$to(
                     this.__("global.errors.ad.pictures.upload_type.title"),
                     this.__("global.errors.ad.pictures.upload_type.desc", {
@@ -168,16 +137,6 @@ export default {
                 });
             }
         },
-        progressTimer() {
-            let vm = this;
-
-            let setIntervalRef = setInterval(function() {
-                vm.progress_value += 20;
-                if (vm.progress_value >= 100) {
-                    clearInterval(setIntervalRef);
-                }
-            }, 50);
-        },
         async removePicture(picture) {
             let is_blob = "original_file" in picture;
 
@@ -189,9 +148,6 @@ export default {
                     );
                 });
             } else {
-                this.progress_ids.push(picture.id);
-                this.progressTimer();
-
                 const response = await axios.post(
                     route("user.ad.step_phone_pictures"),
                     {
@@ -201,11 +157,9 @@ export default {
                 );
 
                 if (response.status == 200 && response.data.status) {
-                    this.progress_value = 0;
-
-                    this.progress_ids = this.progress_ids.filter(id => {
-                        return id !== picture.id;
-                    });
+                    // success
+                } else {
+                    // error
                 }
             }
 

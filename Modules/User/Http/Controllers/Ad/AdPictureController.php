@@ -72,14 +72,25 @@ class AdPictureController extends BaseAdController
         return redirect()->route('user.ad.step_phone_location');
     }
 
-    public function delete(Request $request)
+    public function delete(Request $request, StoresAdPicture $storeDriver)
     {
 
         $request->validate([
             'picture_id' => ['required', 'exists:ad_pictures,id'],
         ]);
 
-        $status = AdPicture::whereId($request->picture_id)->delete();
+        $picture = AdPicture::find($request->picture_id);
+
+        $picture_url = $picture->getAttributes()['url'];
+
+        $status = $picture->delete();
+
+        if ($status) {
+
+            $result = $storeDriver->deleteStoredPicture($picture_url);
+            $status = $result;
+        }
+
 
         return response()->json([
             'status' => $status,
