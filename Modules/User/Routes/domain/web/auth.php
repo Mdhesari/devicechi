@@ -24,6 +24,8 @@ use Modules\User\Http\Controllers\Ad\BaseAdController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
+Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+
 Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
     Route::get('/', [AdCreateController::class, 'show'])->name('create');
