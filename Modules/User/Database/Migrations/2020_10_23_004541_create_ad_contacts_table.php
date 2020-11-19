@@ -17,7 +17,7 @@ class CreateAdContactsTable extends Migration
             $table->id();
 
             $table->foreignId('ad_id');
-            $table->foreignId('type_id');
+            $table->foreignId('contact_type_id');
             $table->string('value', 64);
             $table->timestamps();
         });
