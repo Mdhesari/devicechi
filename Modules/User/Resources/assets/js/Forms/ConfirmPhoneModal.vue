@@ -42,12 +42,10 @@
 </template>
 
 <script>
-import Axios from "axios";
 export default {
     props: {
         digitsCount: {
             default: 5,
-            confirmation_code: ""
         }
     },
 
