@@ -61,7 +61,7 @@ export default {
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
             files_limit_count: 9,
             label_text: this.__("ads.form.placeholder.upload.init"),
-            validFileTypes: ["image/png", "image/jpg", "image/jpg"]
+            validFileTypes: ["image/png", "image/jpg", "image/jpeg"]
         };
     },
     methods: {
