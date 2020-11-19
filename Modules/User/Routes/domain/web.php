@@ -19,3 +19,16 @@ use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserController;
 
 Route::middleware('auth:sanctum')->name('user.')->group(__DIR__ . '/web/auth.php');
+
+Route::middleware('guest:sanctum')->name('user.')->group(function () {
+
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+    Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+
+    Route::post('/auth', [SessionController::class, 'store'])->name('auth');
+
+    Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
+});
