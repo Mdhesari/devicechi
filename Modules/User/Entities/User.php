@@ -111,11 +111,8 @@ class User extends Authenticatable implements MustVerifyPhone
             $contacts[] = [
                 'type' => [
                     'name' => AdContactType::TYPE_PHONE,
-                    'data' => [
-                        'phone_country_code' => $this->phone_country_code
-                    ],
                 ],
-                'value' => $this->phone,
+                'value' => "+" . $this->phone_country_code . " " . $this->phone,
             ];
 
         if ($this->email)

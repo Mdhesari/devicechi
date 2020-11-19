@@ -245,6 +245,10 @@ ul li {
   direction: rtl !important;
 }
 
+.ltr {
+  direction: ltr !important;
+}
+
 label {
   cursor: pointer;
 }

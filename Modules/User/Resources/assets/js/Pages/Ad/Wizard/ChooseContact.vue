@@ -19,7 +19,12 @@
                             :icon="renderContactTypeIcon(contact.type)"
                             class="vertical-middle"
                         ></b-icon>
-                        <span class="content-value">
+                        <span
+                            class="content-value"
+                            :class="{
+                                ltr: contact.type.name == 'phone'
+                            }"
+                        >
                             {{ contact.value }}
                         </span>
                     </p>
