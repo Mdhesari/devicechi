@@ -10,7 +10,7 @@ class AdContact extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['value', 'data'];
+    protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data'];
 
     protected $casts = [
         'data' => 'array',
@@ -25,13 +25,13 @@ class AdContact extends Model
     public function type()
     {
 
-        return $this->belongsTo(AdContactType::class);
+        return $this->belongsTo(AdContactType::class, 'contact_type_id');
     }
 
     public function getValueAttribute($value)
     {
 
-        if ($code = $this->data->phone_country_code) {
+        if ($code = $this->data['phone_country_code']) {
 
             $value = "+$code $value";
         }

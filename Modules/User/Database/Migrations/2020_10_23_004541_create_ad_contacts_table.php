@@ -21,6 +21,8 @@ class CreateAdContactsTable extends Migration
             $table->string('value');
             $table->json('data')->nullable();
             $table->timestamps();
+
+            $table->unique(['ad_id', 'value']);
         });
     }
 

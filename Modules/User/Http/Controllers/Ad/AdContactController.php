@@ -12,12 +12,13 @@ use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\Country;
+use Modules\User\Repositories\Eloquent\AdContactRepository;
 use Modules\User\Space\Contracts\StoresAdPicture;
 use Storage;
 
 class AdContactController extends BaseAdController
 {
-    public function choose(Request $request)
+    public function choose(Request $request, AdContactRepository $adContactRepository)
     {
         $step = BaseAdController::STEP_CHOOSE_CONTACT;
 
@@ -27,12 +28,7 @@ class AdContactController extends BaseAdController
 
         $contact_types = AdContactType::all();
 
-        $contacts = $ad->contacts()->with('type')->get()->toArray();
-
-        if (empty($contacts)) {
-
-            $contacts = auth()->user()->getContacts();
-        }
+        $contacts = $adContactRepository->getContacts($ad);
 
         return inertia('Ad/Wizard/Create', compact('step', 'contacts', 'contact_types'));
     }
