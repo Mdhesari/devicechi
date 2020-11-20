@@ -128,6 +128,11 @@ export default {
             ev.stopPropagation();
             this.isLoading = true;
 
+            if (this.input_data.value.length < 1) {
+                this.$to(this.__("ads.form.error.contact.value.title"));
+                return 0;
+            }
+
             axios
                 .post(route("user.ad.step_phone_contact.add"), {
                     contact_type: this.input_data.type,
@@ -141,18 +146,19 @@ export default {
                             "s"
                         );
                         this.contacts.push(response.data.contact);
-                    } else if (this.getProp("errors")) {
-                        console.log(this.getProp("errors"));
+                        this.HideContactInput();
                     }
                 })
                 .catch(error => {
-                    console.log(error);
+                    const errors = error.response.data.errors;
+
+                    errors.value.forEach(val => {
+                        this.$to(val);
+                    });
                 })
                 .finally(() => {
                     this.isLoading = false;
                 });
-
-            this.HideContactInput();
         },
         showContactInput(contact_type) {
             this.input_data.value = "";
