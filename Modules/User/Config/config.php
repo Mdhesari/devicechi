@@ -13,11 +13,18 @@ return [
             'description' => 'Email address',
             'data' => [
                 'icon' => 'envelope',
+                'input' => 'email',
+                'placeholder' => 'ex : md@gmail.com',
             ],
         ],
         [
             'name' => 'phone',
-            'description' => 'Phone number'
+            'description' => 'Phone number',
+            'data' => [
+                'icon' => 'phone',
+                'input' => 'tel',
+                'placeholder' => 'ex : 989370038157',
+            ],
         ],
     ],
 

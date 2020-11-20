@@ -15,3 +15,5 @@ yarn-error.log
 _ide_helper.php
 storage/*
 public/fonts/
+public/css
+public/js

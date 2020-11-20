@@ -145,14 +145,31 @@ input[type="number"] {
 
 .wizard-step {
     .list-contacts {
-        .list-item-content {
-            .content-value {
-                display: inline-block;
-                vertical-align: middle;
+        .list-contacts-item {
+            overflow: hidden;
+            .btn-del-contact {
+                position: absolute;
+                transition: all 150ms linear;
+                bottom: -3em;
+                left: -3em;
             }
 
-            svg {
-                font-size: 24px;
+            &:hover .btn-del-contact {
+                transition: all 150ms linear;
+                display: block;
+                left: 1em;
+                bottom: 0.3em;
+            }
+
+            .list-item-content {
+                .content-value {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                svg {
+                    font-size: 24px;
+                }
             }
         }
     }

@@ -267,12 +267,30 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
-.wizard-step .list-contacts .list-item-content .content-value {
+.wizard-step .list-contacts .list-contacts-item {
+  overflow: hidden;
+}
+
+.wizard-step .list-contacts .list-contacts-item .btn-del-contact {
+  position: absolute;
+  transition: all 150ms linear;
+  bottom: -3em;
+  left: -3em;
+}
+
+.wizard-step .list-contacts .list-contacts-item:hover .btn-del-contact {
+  transition: all 150ms linear;
+  display: block;
+  left: 1em;
+  bottom: 0.3em;
+}
+
+.wizard-step .list-contacts .list-contacts-item .list-item-content .content-value {
   display: inline-block;
   vertical-align: middle;
 }
 
-.wizard-step .list-contacts .list-item-content svg {
+.wizard-step .list-contacts .list-contacts-item .list-item-content svg {
   font-size: 24px;
 }
 

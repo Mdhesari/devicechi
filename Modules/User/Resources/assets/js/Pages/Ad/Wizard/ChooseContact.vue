@@ -12,7 +12,7 @@
                 <b-list-group-item
                     v-for="(contact, index) in contacts"
                     :key="index"
-                    class="d-flex justify-content-between align-items-center"
+                    class="list-contacts-item d-flex justify-content-between align-items-center"
                 >
                     <p class="list-item-content m-0">
                         <b-icon
@@ -29,7 +29,10 @@
                         </span>
                     </p>
 
-                    <b-button variant="link" class="text-danger">
+                    <b-button
+                        variant="link"
+                        class="text-danger btn-del-contact"
+                    >
                         <b-icon
                             icon="x-circle"
                             class="vertical-middle"
@@ -37,6 +40,23 @@
                     </b-button>
                 </b-list-group-item>
             </b-list-group>
+
+            <b-form-group class="mt-2">
+                <b-form v-if="input_data.type" @submit.prevent="addContact">
+                    <b-form-group :label="input_data.type.description">
+                        <b-form-input
+                            @keydown.esc="HideContactInput"
+                            :placeholder="input_data.type.data.placeholder"
+                            :type="
+                                input_data.type.data.input
+                                    ? input_data.type.data.input
+                                    : 'text'
+                            "
+                            v-model="input_data.value"
+                        ></b-form-input>
+                    </b-form-group>
+                </b-form>
+            </b-form-group>
 
             <b-dropdown
                 size="lg"
@@ -51,6 +71,7 @@
                     v-for="(contact_type, index) in contact_types"
                     :key="index"
                     class="dropdown-contact-item"
+                    @click="showContactInput(contact_type)"
                 >
                     <b-icon
                         :icon="renderContactTypeIcon(contact_type)"
@@ -59,6 +80,15 @@
                     {{ contact_type.description }}
                 </b-dropdown-item>
             </b-dropdown>
+
+            <b-button
+                v-if="contacts.length > 0"
+                variant="secondary"
+                @click.prevent="next"
+                :disabled="isInvalid"
+            >
+                {{ __("global.next") }}
+            </b-button>
         </form>
     </WizardStep>
 </template>
@@ -73,12 +103,20 @@ export default {
     data() {
         return {
             contacts: this.getProp("contacts"),
-            contact_types: this.getProp("contact_types")
+            contact_types: this.getProp("contact_types"),
+            input_data: {
+                value: "",
+                type: null
+            },
+            isInvalid: false
         };
     },
     methods: {
-        next(variant_id) {
-            // this.$emit("next");
+        next(ev) {
+            console.log(this.contacts);
+            this.$inertia.post(route("user.ad.step_phone_contact"), {
+                contacts: this.contacts
+            });
         },
         renderContactTypeIcon(contact_type) {
             if (contact_type.data) {
@@ -86,6 +124,22 @@ export default {
             }
 
             return contact_type.name;
+        },
+        addContact(ev) {
+            this.contacts.push(this.input_data);
+
+            this.HideContactInput();
+        },
+        showContactInput(contact_type) {
+            this.input_data.value = "";
+
+            this.input_data.type = contact_type;
+        },
+        HideContactInput() {
+            this.input_data = {
+                value: "",
+                type: null
+            };
         }
     }
 };

@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Log;
+use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
@@ -38,7 +39,26 @@ class AdContactController extends BaseAdController
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'contacts' => ['required', 'array', 'min:1'],
+            'contacts.*.type' => ['required'],
+        ]);
+
+        $ad = $this->adRepository->getUserUncompletedAd();
+
+        $contacts = $request->contacts;
+
+        $all_contacts = [];
+
+        foreach ($contacts as $contact) {
+
+            $all_contacts[]['contact_type_id'] = $contact['type']['id'];
+            $all_contacts[]['value'] = $contact['value'];
+        }
+
+        $result = $ad->contacts()->create($all_contacts);
+
+        Log::info($result);
 
         return redirect()->route('user.ad.step_phone_pictures');
     }
