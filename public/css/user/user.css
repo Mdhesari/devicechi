@@ -274,7 +274,7 @@ input[type=number] {
 .wizard-step .list-contacts .list-contacts-item .btn-del-contact {
   position: absolute;
   transition: all 150ms linear;
-  bottom: -3em;
+  bottom: 0.3em;
   left: -3em;
 }
 
@@ -282,7 +282,6 @@ input[type=number] {
   transition: all 150ms linear;
   display: block;
   left: 1em;
-  bottom: 0.3em;
 }
 
 .wizard-step .list-contacts .list-contacts-item .list-item-content .content-value {

@@ -150,7 +150,7 @@ input[type="number"] {
             .btn-del-contact {
                 position: absolute;
                 transition: all 150ms linear;
-                bottom: -3em;
+                bottom: 0.3em;
                 left: -3em;
             }
 
@@ -158,7 +158,6 @@ input[type="number"] {
                 transition: all 150ms linear;
                 display: block;
                 left: 1em;
-                bottom: 0.3em;
             }
 
             .list-item-content {

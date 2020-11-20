@@ -9,36 +9,11 @@
             </p>
 
             <b-list-group class="list-contacts">
-                <b-list-group-item
+                <ContactListItem
                     v-for="(contact, index) in contacts"
                     :key="index"
-                    class="list-contacts-item d-flex justify-content-between align-items-center"
-                >
-                    <p class="list-item-content m-0">
-                        <b-icon
-                            :icon="renderContactTypeIcon(contact.type)"
-                            class="vertical-middle"
-                        ></b-icon>
-                        <span
-                            class="content-value"
-                            :class="{
-                                ltr: contact.type.name == 'phone'
-                            }"
-                        >
-                            {{ contact.value }}
-                        </span>
-                    </p>
-
-                    <b-button
-                        variant="link"
-                        class="text-danger btn-del-contact"
-                    >
-                        <b-icon
-                            icon="x-circle"
-                            class="vertical-middle"
-                        ></b-icon>
-                    </b-button>
-                </b-list-group-item>
+                    :contact="contact"
+                />
             </b-list-group>
 
             <b-form-group class="mt-2">
@@ -95,10 +70,13 @@
 
 <script>
 import WizardStep from "../../../Components/WizardStep";
+import ContactListItem from "../../../Components/ContactListItem";
+import ContactTypeMixin from "../../../Mixins/ContactTypeMixin.js";
 
 export default {
     components: {
-        WizardStep
+        WizardStep,
+        ContactListItem
     },
     data() {
         return {
@@ -111,19 +89,13 @@ export default {
             isInvalid: false
         };
     },
+    mixins: [ContactTypeMixin],
     methods: {
         next(ev) {
             console.log(this.contacts);
             this.$inertia.post(route("user.ad.step_phone_contact"), {
                 contacts: this.contacts
             });
-        },
-        renderContactTypeIcon(contact_type) {
-            if (contact_type.data) {
-                if (contact_type.data.icon) return contact_type.data.icon;
-            }
-
-            return contact_type.name;
         },
         addContact(ev) {
             this.contacts.push(this.input_data);
