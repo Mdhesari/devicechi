@@ -13,6 +13,8 @@
                     v-for="(contact, index) in contacts"
                     :key="index"
                     :contact="contact"
+                    :isLoading="isLoading"
+                    @deleteContact="deleteContact(contact)"
                 />
             </b-list-group>
 
@@ -37,7 +39,7 @@
                 </b-form-group>
                 <b-button-group v-if="input_data.type">
                     <b-button pill @click="addContact" variant="primary">
-                        {{ __("global.save") }} Enter
+                        {{ __("global.save") }}
                     </b-button>
                     <b-button
                         @click="HideContactInput"
@@ -48,7 +50,6 @@
                             icon="x-circle-fill"
                             class="vertical-middle"
                         ></b-icon>
-                        ESC
                     </b-button>
                 </b-button-group>
             </b-form-group>
@@ -81,7 +82,7 @@
                 v-if="contacts.length > 0"
                 variant="secondary"
                 @click.prevent="next"
-                :disabled="isInvalid"
+                :disabled="isLoading"
             >
                 {{ __("global.next") }}
             </b-button>
@@ -107,7 +108,6 @@ export default {
                 value: "",
                 type: null
             },
-            isInvalid: false,
             isLoading: false
         };
     },
@@ -147,6 +147,33 @@ export default {
                         );
                         this.contacts.push(response.data.contact);
                         this.HideContactInput();
+                    }
+                })
+                .catch(error => {
+                    const errors = error.response.data.errors;
+
+                    errors.value.forEach(val => {
+                        this.$to(val);
+                    });
+                })
+                .finally(() => {
+                    this.isLoading = false;
+                });
+        },
+        deleteContact(contact) {
+            this.isLoading = true;
+            axios
+                .post(route("user.ad.step_phone_contact.delete"), {
+                    _method: "delete",
+                    contact_id: contact.id
+                })
+                .then(response => {
+                    if (response.data.status) {
+                        this.$to(
+                            this.__("ads.form.success.contact.delete.title"),
+                            this.__("ads.form.success.contact.delete.desc")
+                        );
+                        this.contacts = response.data.contacts;
                     }
                 })
                 .catch(error => {

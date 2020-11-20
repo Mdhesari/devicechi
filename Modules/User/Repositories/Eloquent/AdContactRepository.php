@@ -47,6 +47,12 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         return $this->model->create($data);
     }
 
+    public function delete($id)
+    {
+
+        return $this->model->whereId($id)->delete();
+    }
+
     public function getContacts($ad)
     {
 

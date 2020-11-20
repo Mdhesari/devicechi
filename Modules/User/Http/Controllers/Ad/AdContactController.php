@@ -94,4 +94,24 @@ class AdContactController extends BaseAdController
             'contact' => $result
         ]);
     }
+
+    public function remove(Request $request, AdContactRepositoryInterface $adContactRepository)
+    {
+
+        $request->validate([
+            'contact_id' => ['required', 'exists:ad_contacts,id']
+        ]);
+
+        $result = $adContactRepository->delete($request->contact_id);
+
+        $ad = $this->adRepository->getUserUncompletedAd();
+
+        $contacts = $adContactRepository->getContacts($ad);
+
+        return response()->json([
+            'status' => boolval($result),
+            'result' => $request,
+            'contacts' => $contacts,
+        ]);
+    }
 }

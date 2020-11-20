@@ -64,6 +64,8 @@ Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
 
         Route::post('/contact/add', [AdContactController::class, 'add'])->name('contact.add');
 
+        Route::delete('/contact/remove', [AdContactController::class, 'remove'])->name('contact.delete');
+
         Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
         Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);

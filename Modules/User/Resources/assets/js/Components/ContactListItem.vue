@@ -17,7 +17,12 @@
             </span>
         </p>
 
-        <b-button variant="link" class="text-danger btn-del-contact">
+        <b-button
+            :disabled="isLoading"
+            variant="link"
+            class="text-danger btn-del-contact"
+            @click="deleteContact"
+        >
             <b-icon icon="x-circle" class="vertical-middle"></b-icon>
         </b-button>
     </b-list-group-item>
@@ -27,7 +32,12 @@
 import ContactTypeMixin from "../Mixins/ContactTypeMixin";
 
 export default {
-    props: ["contact"],
-    mixins: [ContactTypeMixin]
+    props: ["contact", "isLoading"],
+    mixins: [ContactTypeMixin],
+    methods: {
+        deleteContact() {
+            this.$emit("deleteContact");
+        }
+    }
 };
 </script>
