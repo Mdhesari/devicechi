@@ -8,6 +8,7 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Log;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
@@ -33,14 +34,17 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
 
     public function create($data)
     {
-        $data = Arr::wrap($data);
 
-        $data_db = [];
+        if (isset($data[0]) && is_array($data[0])) {
+            $data_db = [];
 
-        foreach ($data as $row)
-            $data_db[] = $this->model->create($row);
+            foreach ($data as $row)
+                $data_db[] = $this->model->create($row);
 
-        return $data_db;
+            return $data_db;
+        }
+
+        return $this->model->create($data);
     }
 
     public function getContacts($ad)

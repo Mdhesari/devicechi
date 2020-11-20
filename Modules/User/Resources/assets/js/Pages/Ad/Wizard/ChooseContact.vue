@@ -1,6 +1,6 @@
 <template>
     <WizardStep :backLink="route('user.ad.step_phone_contact')">
-        <form @submit.prevent="next">
+        <form @keyup.enter.stop.prevent @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_contact.title") }}
             </p>
@@ -17,20 +17,22 @@
             </b-list-group>
 
             <b-form-group class="mt-2">
-                <b-form v-if="input_data.type" @submit.prevent="addContact">
-                    <b-form-group :label="input_data.type.description">
-                        <b-form-input
-                            @keydown.esc="HideContactInput"
-                            :placeholder="input_data.type.data.placeholder"
-                            :type="
-                                input_data.type.data.input
-                                    ? input_data.type.data.input
-                                    : 'text'
-                            "
-                            v-model="input_data.value"
-                        ></b-form-input>
-                    </b-form-group>
-                </b-form>
+                <b-form-group
+                    v-if="input_data.type"
+                    :label="input_data.type.description"
+                >
+                    <b-form-input
+                        @keyup.enter="addContact"
+                        @keydown.esc="HideContactInput"
+                        :placeholder="input_data.type.data.placeholder"
+                        :type="
+                            input_data.type.data.input
+                                ? input_data.type.data.input
+                                : 'text'
+                        "
+                        v-model="input_data.value"
+                    ></b-form-input>
+                </b-form-group>
             </b-form-group>
 
             <b-dropdown
@@ -86,25 +88,49 @@ export default {
                 value: "",
                 type: null
             },
-            isInvalid: false
+            isInvalid: false,
+            isLoading: false
         };
     },
     mixins: [ContactTypeMixin],
     methods: {
         next(ev) {
-            console.log(this.contacts);
+            if (this.isLoading && this.input_data.type !== null) return 0;
+
             this.$inertia.post(route("user.ad.step_phone_contact"), {
                 contacts: this.contacts
             });
         },
         addContact(ev) {
-            this.contacts.push(this.input_data);
+            // in order to prevent event bubbling...
+            ev.preventDefault();
+            ev.stopPropagation();
+            this.isLoading = true;
 
-            this.HideContactInput();
+            axios
+                .post(route("user.ad.step_phone_contact.add"), {
+                    contact_type: this.input_data.type,
+                    value: this.input_data.value
+                })
+                .then(response => {
+                    if (response.data.status) {
+                        this.$to(
+                            this.__("ads.form.success.contact.add.title"),
+                            "",
+                            "s"
+                        );
+                        this.contacts.push(response.data.contact);
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    this.isLoading = false;
+                });
         },
         showContactInput(contact_type) {
             this.input_data.value = "";
-
             this.input_data.type = contact_type;
         },
         HideContactInput() {
