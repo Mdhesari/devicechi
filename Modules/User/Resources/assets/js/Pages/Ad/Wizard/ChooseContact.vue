@@ -1,6 +1,6 @@
 <template>
     <WizardStep :backLink="route('user.ad.step_phone_contact')">
-        <form @keyup.enter.stop.prevent @submit.prevent="next">
+        <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_contact.title") }}
             </p>
@@ -22,9 +22,11 @@
                     :label="input_data.type.description"
                 >
                     <b-form-input
-                        @keyup.enter="addContact"
+                        @keydown.enter="addContact"
                         @keydown.esc="HideContactInput"
+                        required
                         :placeholder="input_data.type.data.placeholder"
+                        ref="input"
                         :type="
                             input_data.type.data.input
                                 ? input_data.type.data.input
@@ -33,6 +35,22 @@
                         v-model="input_data.value"
                     ></b-form-input>
                 </b-form-group>
+                <b-button-group v-if="input_data.type">
+                    <b-button pill @click="addContact" variant="primary">
+                        {{ __("global.save") }} Enter
+                    </b-button>
+                    <b-button
+                        @click="HideContactInput"
+                        variant="link"
+                        class="text-danger"
+                    >
+                        <b-icon
+                            icon="x-circle-fill"
+                            class="vertical-middle"
+                        ></b-icon>
+                        ESC
+                    </b-button>
+                </b-button-group>
             </b-form-group>
 
             <b-dropdown
@@ -40,6 +58,7 @@
                 no-caret
                 variant="link"
                 class="btn-add-contact"
+                v-if="input_data.type === null"
             >
                 <template #button-content>
                     <b-icon icon="plus-square-fill"></b-icon>
@@ -95,7 +114,9 @@ export default {
     mixins: [ContactTypeMixin],
     methods: {
         next(ev) {
-            if (this.isLoading && this.input_data.type !== null) return 0;
+            const keyCode = event.which || event.keyCode || 0;
+
+            if (keyCode != 1) return false;
 
             this.$inertia.post(route("user.ad.step_phone_contact"), {
                 contacts: this.contacts
@@ -120,6 +141,8 @@ export default {
                             "s"
                         );
                         this.contacts.push(response.data.contact);
+                    } else if (this.getProp("errors")) {
+                        console.log(this.getProp("errors"));
                     }
                 })
                 .catch(error => {
@@ -128,6 +151,8 @@ export default {
                 .finally(() => {
                     this.isLoading = false;
                 });
+
+            this.HideContactInput();
         },
         showContactInput(contact_type) {
             this.input_data.value = "";

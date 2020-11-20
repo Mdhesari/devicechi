@@ -155,7 +155,7 @@ input[type="number"] {
             }
 
             &:hover .btn-del-contact {
-                transition: all 150ms linear;
+                transition: all 150ms linear 150ms;
                 display: block;
                 left: 1em;
             }

@@ -30,6 +30,9 @@ return [
             'location' => [
                 'city' => 'شهر',
                 'state' => 'منطقه',
+            ],
+            'contact' => [
+                'add' => 'اضافه کردن به اطلاعات تماس'
             ]
         ],
         'placeholder' => [
