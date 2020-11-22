@@ -42,7 +42,7 @@ class AdLocationController extends BaseAdController
         $ad->state_id = $request->state;
         $ad->save();
 
-        return redirect()->route('<user class="ad step_phone_contact"></user>');
+        return redirect()->route('user.ad.step_phone_contact');
     }
 
     public function getState(City $city)

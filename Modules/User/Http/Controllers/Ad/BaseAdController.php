@@ -36,13 +36,7 @@ class BaseAdController extends Controller
     public function checkPreviousSteps($step)
     {
 
-        $result = $this->adRepository->checkPreviousSteps($step, auth()->user());
-
-        if ($result['url']) {
-
-            throw new PreviousStepRedirectHttpException($result['url']);
-            // redirect($result['url']);
-        }
+        return $this->adRepository->checkPreviousSteps($step, auth()->user());
     }
 
     public function getStepRoute(int $step, Request $request)

@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use Closure;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
