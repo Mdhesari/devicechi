@@ -171,7 +171,8 @@ export default {
                     if (response.data.status) {
                         this.$to(
                             this.__("ads.form.success.contact.delete.title"),
-                            this.__("ads.form.success.contact.delete.desc")
+                            this.__("ads.form.success.contact.delete.desc"),
+                            "s"
                         );
                         this.contacts = response.data.contacts;
                     }
