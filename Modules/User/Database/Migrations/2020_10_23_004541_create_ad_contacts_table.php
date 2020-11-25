@@ -19,6 +19,7 @@ class CreateAdContactsTable extends Migration
             $table->foreignId('ad_id');
             $table->foreignId('contact_type_id');
             $table->string('value');
+            $table->timestamp('value_verified_at')->nullable();
             $table->json('data')->nullable();
             $table->timestamps();
 
