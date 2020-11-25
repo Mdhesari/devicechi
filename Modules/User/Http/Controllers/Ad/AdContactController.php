@@ -128,12 +128,12 @@ class AdContactController extends BaseAdController
             'status' => false,
         ];
 
-        $pipelines = config('contacts.add.pipelines', [
+        $pipelines = config('contact.verify.pipelines', [
             AdContactEmailVerificationPipeline::class,
             AdContactPhoneVerificationPipeline::class,
         ]);
 
-        $response = app(Pipeline::class)
+        $data = app(Pipeline::class)
             ->send($data)
             ->through($pipelines)
             ->via('send')
@@ -142,7 +142,7 @@ class AdContactController extends BaseAdController
                 return $data;
             });
 
-        if ($response['status']) {
+        if ($data['status']) {
 
             return response()->json([
                 'confirmation_send_status' => true,
