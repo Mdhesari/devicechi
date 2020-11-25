@@ -19,4 +19,12 @@ interface AdContactRepositoryInterface
      * @return mixed
      */
     public function create($data);
+
+    /**
+     * First or Create ad
+     *
+     * @param  mixed $data
+     * @return mixed
+     */
+    public function firstOrCreate($data);
 }

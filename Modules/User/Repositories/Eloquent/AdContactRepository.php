@@ -122,4 +122,10 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
 
         return $data;
     }
+
+    public function firstOrCreate($data)
+    {
+
+        return $this->model->firstOrCreate($data);
+    }
 }

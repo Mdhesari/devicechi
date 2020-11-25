@@ -188,9 +188,11 @@ export default {
                 .catch(error => {
                     const errors = error.response.data.errors;
 
-                    errors.value.forEach(val => {
-                        this.$to(val);
-                    });
+                    console.log(error.response.data);
+                    if (errors)
+                        errors.value.forEach(val => {
+                            this.$to(val);
+                        });
                 })
                 .finally(() => {
                     this.isLoading = false;

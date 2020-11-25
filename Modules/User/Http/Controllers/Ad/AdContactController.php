@@ -37,26 +37,7 @@ class AdContactController extends BaseAdController
 
     public function store(Request $request)
     {
-        $request->validate([
-            'contacts' => ['required', 'array', 'min:1'],
-            'contacts.*.type' => ['required'],
-        ]);
 
-        $ad = $this->adRepository->getUserUncompletedAd();
-
-        $contacts = $request->contacts;
-
-        $all_contacts = [];
-
-        foreach ($contacts as $contact) {
-
-            $all_contacts[]['contact_type_id'] = $contact['type']['id'];
-            $all_contacts[]['value'] = $contact['value'];
-        }
-
-        $result = $ad->contacts()->create($all_contacts);
-
-        Log::info($result);
 
         return redirect()->route('user.ad.step_phone_pictures');
     }
@@ -74,24 +55,27 @@ class AdContactController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        $status = false;
-
-        $result = $adContactRepository->create([
+        $ad_contact = $adContactRepository->firstOrCreate([
             'contact_type_id' => $request->contact_type['id'],
             'ad_id' => $ad->id,
             'value' => $request->value
         ]);
+        
 
-        $result = $result->with('type')->find($result->id);
+        /* TODO : 
+        1. create contact
+        2. send verification code 
 
-        if ($result) {
+        -> 2 
+        1. verify code 
+        2. add latest timestamp to value_verified_at
+        */
 
-            $status = true;
-        }
+        $ad_contact = $ad_contact->with('type')->find($ad_contact->id);
 
         return response()->json([
-            'status' => $status,
-            'contact' => $result
+            'status' => boolval($ad_contact),
+            'contact' => $ad_contact
         ]);
     }
 
