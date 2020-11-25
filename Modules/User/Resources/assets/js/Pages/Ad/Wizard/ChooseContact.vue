@@ -161,6 +161,14 @@ export default {
                 });
         },
         deleteContact(contact) {
+            if (this.contacts.length < 2) {
+                this.$to(
+                    this.__("ads.form.error.contact.limitDelete.title"),
+                    this.__("ads.form.error.contact.limitDelete.desc")
+                );
+                return 0;
+            }
+
             this.isLoading = true;
             axios
                 .post(route("user.ad.step_phone_contact.delete"), {
