@@ -2,27 +2,7 @@
     <authLayout>
         <section class="wizard">
             <b-container>
-                <div class="step-indicator">
-                    <div class="indicator-line">
-                        <div class="text-center">
-                            <div
-                                v-for="(i_step, index) in all_steps"
-                                :key="index"
-                                class="steps"
-                                :class="{
-                                    active: step === i_step,
-                                    completed: step > i_step
-                                }"
-                            >
-                                <b-icon
-                                    v-if="step > i_step"
-                                    icon="check"
-                                    class="icon-check"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <StepsIndicator :steps="all_steps" :step="step" />
                 <!-- Wizard steps -->
                 <div class="form-content">
                     <div class="card wizard-card">
@@ -53,10 +33,12 @@ import UploadPictures from "./UploadPictures";
 import ChooseLocation from "./ChooseLocation";
 import ChooseContact from "./ChooseContact";
 import FinalInfo from "./FinalInfo";
+import StepsIndicator from "../../../Components/StepsIndicator";
 
 export default {
     components: {
         AuthLayout: AuthLayout,
+        StepsIndicator: StepsIndicator,
         step_1: ChooseBrand,
         step_2: ChooseModel,
         step_3: ChooseVariant,
