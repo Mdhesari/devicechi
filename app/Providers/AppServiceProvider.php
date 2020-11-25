@@ -24,7 +24,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Fortify::ignoreRoutes();
 
-        if ($this->app->isLocal()) {
+        if ($this->app->environment('local')) {
+            $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
         }
     }
