@@ -1,5 +1,5 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_contact')">
+    <WizardStep :backLink="route('user.ad.step_phone_location')">
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_contact.title") }}
@@ -147,6 +147,10 @@ export default {
                         );
                         this.contacts.push(response.data.contact);
                         this.HideContactInput();
+                    }
+
+                    if (response.data.confirmation_send_status) {
+                        this.$to(this.__("ok"), "", "s");
                     }
                 })
                 .catch(error => {
