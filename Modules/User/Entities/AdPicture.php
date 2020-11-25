@@ -4,6 +4,7 @@ namespace Modules\User\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Modules\User\Database\factories\AdPictureFactory;
 use Storage;
 
 class AdPicture extends Model
@@ -18,5 +19,15 @@ class AdPicture extends Model
     {
 
         return Storage::url($url);
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return new AdPictureFactory;
     }
 }

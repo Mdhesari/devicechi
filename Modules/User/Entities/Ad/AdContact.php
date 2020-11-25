@@ -4,17 +4,37 @@ namespace Modules\User\Entities\Ad;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 use Modules\User\Entities\Ad;
+use Modules\User\Notifications\ContactCodeVerificationNotification;
+use Modules\User\Space\Contracts\AdContactMustVerifyValue;
+use User\Database\Factories\AdFactory;
 
-class AdContact extends Model
+class AdContact extends Model implements AdContactMustVerifyValue
 {
-    use HasFactory;
+    use HasFactory,
+        Notifiable;
+
+    const VERIFICATION_SESSION = 'ad_contact_verification_code';
 
     protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data'];
 
     protected $casts = [
         'data' => 'array',
     ];
+
+    protected $verification_code;
+
+    public function setVerificationCode($code)
+    {
+
+        $this->verification_code = $code;
+    }
+
+    public function getVerificationCode()
+    {
+        return $this->verification_code;
+    }
 
     public function ad()
     {
@@ -37,5 +57,16 @@ class AdContact extends Model
         }
 
         return $value;
+    }
+
+    public function isNotVerified()
+    {
+
+        return is_null($this->value_verified_at);
+    }
+
+    public function sendVerification($data)
+    {
+        return $this->notify(new ContactCodeVerificationNotification($data));
     }
 }

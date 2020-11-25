@@ -2,8 +2,10 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use Hash;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 use Illuminate\Routing\Controller;
 use Log;
 use Modules\User\Entities\Ad\AdContact;
@@ -15,7 +17,10 @@ use Modules\User\Entities\Country;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
+use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Modules\User\Space\Contracts\StoresAdPicture;
+use Modules\User\Space\Pipelines\AdContact\AdContactEmailVerificationPipeline;
+use Modules\User\Space\Pipelines\AdContact\AdContactPhoneVerificationPipeline;
 use Storage;
 
 class AdContactController extends BaseAdController
@@ -60,11 +65,13 @@ class AdContactController extends BaseAdController
             'ad_id' => $ad->id,
             'value' => $request->value
         ]);
-        
+
+        if ($ad_contact->isNotVerified()) {
+
+            return $this->sendVerification($ad_contact);
+        }
 
         /* TODO : 
-        1. create contact
-        2. send verification code 
 
         -> 2 
         1. verify code 
@@ -96,6 +103,55 @@ class AdContactController extends BaseAdController
             'status' => boolval($result),
             'result' => $request,
             'contacts' => $contacts,
+        ]);
+    }
+
+    /**
+     * Send verification to intended user contact
+     *
+     * @param  mixed $ad_contact
+     * @return void
+     */
+    private function sendVerification($ad_contact)
+    {
+
+        $code = app(CodeVerificationGenerator::class)->generate();
+
+        $ad_contact->setVerificationCode($code);
+
+        session([
+            AdContact::VERIFICATION_SESSION => Hash::make($code),
+        ]);
+
+        $data = [
+            'ad_contact' => $ad_contact,
+            'status' => false,
+        ];
+
+        $pipelines = config('contacts.add.pipelines', [
+            AdContactEmailVerificationPipeline::class,
+            AdContactPhoneVerificationPipeline::class,
+        ]);
+
+        $response = app(Pipeline::class)
+            ->send($data)
+            ->through($pipelines)
+            ->via('send')
+            ->then(function ($data) {
+
+                return $data;
+            });
+
+        if ($response['status']) {
+
+            return response()->json([
+                'confirmation_send_status' => true,
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'error' => __('Something went wrong!'),
         ]);
     }
 }

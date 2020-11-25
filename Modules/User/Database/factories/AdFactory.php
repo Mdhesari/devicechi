@@ -23,6 +23,11 @@ class AdFactory extends Factory
     public function definition()
     {
         return [
+            'phone_model_id' => 1,
+            'phone_model_variant_id' => 1,
+            'price' => 120000,
+            'phone_age_id' => 1,
+            'state_id' => 1,
             'phone_model_id' => PhoneModel::first()->id,
             'user_id' => 1,
         ];
