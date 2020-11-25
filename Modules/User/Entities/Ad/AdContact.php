@@ -31,7 +31,7 @@ class AdContact extends Model
     public function getValueAttribute($value)
     {
 
-        if ($code = $this->data['phone_country_code']) {
+        if ($this->data && $code = $this->data['phone_country_code']) {
 
             $value = "+$code $value";
         }
