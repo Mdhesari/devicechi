@@ -58,62 +58,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 gallery-post links">
-                    <div class="swiper-container " id="mainHomeSlider">
-                        <div class="swiper-wrapper">
-                            <div
-                                class="swiper-slide main-gallery-bg main-img"
-                                style="background-image: url('https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80');"
-                            ></div>
-                            <div
-                                class="swiper-slide main-gallery-bg"
-                                style="background-image: url('img/1.jpg');"
-                            ></div>
-                        </div>
-                    </div>
-                    <div class="swiper-container gallery-thumbs ">
-                        <div class="swiper-wrapper">
-                            <div
-                                class="swiper-slide main-gallery-bg height100"
-                                style="background-image: url('https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80');"
-                            ></div>
-                            <div
-                                class="swiper-slide main-gallery-bg height100"
-                                style="background-image: url('img/1.jpg');"
-                            ></div>
-                        </div>
-                    </div>
-
-                    <div class="short-links">
-                        <div class="lable">
-                            <strong>لینک کوتاه</strong>
-                        </div>
-                        <span class="short-link">
-                            https://mobileforsale.com
-                            <button class="clip-board">
-                                <i class="fa fa-clone" aria-hidden="true"></i>
-                            </button>
-                        </span>
-                    </div>
-                    <div class="actions">
-                        <div class="call">
-                            <a href="tel:09190790979" class=" btn call-btn"
-                                >تماس با آگهی دهنده</a
-                            >
-                        </div>
-                        <div class="safe">
-                            راهنمای معاله امن
-                        </div>
-                    </div>
-                </div>
+                <AdPostGallery :pictures="ad.pictures" />
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import AdPostGallery from "./AdPostGallery";
+
 export default {
     props: ["ad"],
+    components: {
+        AdPostGallery
+    },
     methods: {
         printVariantInfo(variant) {
             return variant.storage + " / " + variant.ram;

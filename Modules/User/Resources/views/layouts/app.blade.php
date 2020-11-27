@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-rtl.css') }}">
 
     <link rel="stylesheet" href="{{ mix("css/user/user.css") }}">
+    <link rel="stylesheet" href="{{ mix("css/user/swiper.css") }}">
 
     <!-- Scripts -->
     <script>
@@ -29,6 +30,8 @@
     @routes
     <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 
 </head>

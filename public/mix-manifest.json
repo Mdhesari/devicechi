@@ -7,5 +7,6 @@
     "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
     "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css",
     "/css/user/normalize.css": "/css/user/normalize.css",
-    "/js/user/moment.js": "/js/user/moment.js"
+    "/js/user/moment.js": "/js/user/moment.js",
+    "/css/user/swiper.css": "/css/user/swiper.css"
 }

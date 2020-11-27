@@ -24,6 +24,10 @@ mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")
         __dirname + "/Resources/assets/sass/bootstrap-rtl.scss",
         "css/user/bootstrap-rtl.css"
     )
+    .sass(
+        __dirname + "/Resources/assets/sass/swiper.scss",
+        "css/user/swiper.css"
+    )
     .postCss(
         __dirname + "/Resources/assets/css/normalize.css",
         "css/user/normalize.css"
