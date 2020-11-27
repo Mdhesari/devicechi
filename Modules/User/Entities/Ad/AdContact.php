@@ -21,6 +21,7 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
     protected $casts = [
         'data' => 'array',
+        'value_verified_at' => 'date',
     ];
 
     protected $verification_code;
@@ -68,5 +69,13 @@ class AdContact extends Model implements AdContactMustVerifyValue
     public function sendVerification($data)
     {
         return $this->notify(new ContactCodeVerificationNotification($data));
+    }
+
+    public function setValueAsVerified()
+    {
+
+        return $this->forceFill([
+            'value_verified_at' => now(),
+        ])->save();
     }
 }

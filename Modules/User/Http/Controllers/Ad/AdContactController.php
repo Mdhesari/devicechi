@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use App;
 use Hash;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -14,6 +15,7 @@ use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\Country;
+use Modules\User\Http\Requests\Ad\AdContactVerifyRequest;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
@@ -70,24 +72,38 @@ class AdContactController extends BaseAdController
 
         $ad_contact->setVerificationCode($code);
 
+        if (App::environment('testing'))
+            session()->put('test_code', $code);
+
         session([
             AdContact::VERIFICATION_SESSION => Hash::make($code),
         ]);
 
         return $adContactRepository->sendVerification($ad_contact);
+    }
 
-        /* TODO : 
+    public function verify(AdContactVerifyRequest $request, AdContactRepository $adContactRepository)
+    {
 
-        -> 2 
-        1. verify code 
-        2. add latest timestamp to value_verified_at
-        */
+        $verification_code = $request->verification_code;
 
-        $ad_contact = $ad_contact->with('type')->find($ad_contact->id);
+        $hashed_value = session(AdContact::VERIFICATION_SESSION);
+
+        if (Hash::check($verification_code, $hashed_value)) {
+
+            $ad_contact = $adContactRepository->find($request->ad_contact_id);
+
+            $result = $ad_contact->setValueAsVerified();
+
+            return response()->json([
+                'status' => boolval($result),
+                'result' => $result,
+            ]);
+        }
 
         return response()->json([
-            'status' => boolval($ad_contact),
-            'contact' => $ad_contact
+            'status' => false,
+            'error' => __('user::ads.form.error.verify.title'),
         ]);
     }
 

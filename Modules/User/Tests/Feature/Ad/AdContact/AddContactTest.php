@@ -12,6 +12,7 @@ use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\User;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class AddContactTest extends TestCase
 {
@@ -30,6 +31,46 @@ class AddContactTest extends TestCase
     public function test_if_can_add_contact_and_get_verification_code()
     {
 
+        $response = $this->createAdIncludingAddContactResponse();
+
+        $response->assertSessionHas(AdContact::VERIFICATION_SESSION);
+
+        $response->assertJson([
+            'confirmation_send_status' => true,
+        ]);
+
+        $response->assertSuccessful();
+    }
+
+    public function test_if_can_verify_contact()
+    {
+
+        $response = $this->createAdIncludingAddContactResponse();
+
+        $response->assertSuccessful();
+
+        $verification_code = session('test_code');
+
+        $ad_contact = AdContact::first();
+
+        $this->assertTrue($ad_contact->isNotVerified());
+
+        $response = $this->put(route('user.ad.step_phone_contact.verify'), [
+            '_method' => 'put',
+            'ad_contact_id' => $ad_contact->id,
+            'verification_code' => $verification_code,
+        ]);
+
+        $ad_contact->refresh();
+
+        $this->assertFalse($ad_contact->isNotVerified());
+
+        $response->assertSuccessful();
+    }
+
+    private function createAdIncludingAddContactResponse()
+    {
+
         $ad = Ad::factory([
             'user_id' => $this->user->id,
         ])->create();
@@ -43,12 +84,6 @@ class AddContactTest extends TestCase
             'value' => 'mdhesari99@gmail.com',
         ]));
 
-        $response->assertSessionHas(AdContact::VERIFICATION_SESSION);
-
-        $response->assertJson([
-            'confirmation_send_status' => true,
-        ]);
-
-        $response->assertSuccessful();
+        return $response;
     }
 }
