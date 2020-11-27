@@ -66,7 +66,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
             $this->CreateUserContacts($ad->id);
         }
 
-        $contacts = $ad->contacts()->with('type')->get();
+        $contacts = $ad->contacts()->verified()->with('type')->get();
 
         return $contacts;
     }

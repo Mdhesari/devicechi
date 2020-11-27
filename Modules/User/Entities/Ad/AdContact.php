@@ -26,6 +26,12 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
     protected $verification_code;
 
+    public function scopeVerified($query)
+    {
+
+        return $query->whereNotNull('value_verified_at');
+    }
+
     public function setVerificationCode($code)
     {
 
