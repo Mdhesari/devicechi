@@ -48,11 +48,11 @@ class AdContactController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        if (!$ad->contacts()->count()) {
+        if (!$ad->contacts()->verified()->count()) {
 
             throw ValidationException::withMessages([
                 'contacts' => __('validation.required', [
-                    'attribute' => __('user::ads.form.attr.contacts')
+                    'attribute' => __('user::ads.form.attrs.contacts')
                 ])
             ]);
         }

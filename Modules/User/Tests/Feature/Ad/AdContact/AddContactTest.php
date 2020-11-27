@@ -36,7 +36,7 @@ class AddContactTest extends TestCase
         $response->assertSessionHas(AdContact::VERIFICATION_SESSION);
 
         $response->assertJson([
-            'confirmation_send_status' => true,
+            'status' => true,
         ]);
 
         $response->assertSuccessful();
@@ -66,6 +66,23 @@ class AddContactTest extends TestCase
         $this->assertFalse($ad_contact->isNotVerified());
 
         $response->assertSuccessful();
+    }
+
+
+    public function test_if_can_go_to_next_step_from_contact_without_stored_contacts()
+    {
+
+        $response = $this->createAdIncludingAddContactResponse();
+
+        $this->user->ads()->first()->contacts()->delete();
+
+        $this->user->push();
+
+        $response = $this->post(route('user.ad.step_phone_contact'));
+
+        $response->assertSessionHasErrors();
+
+        $response->assertRedirect();
     }
 
     private function createAdIncludingAddContactResponse()
