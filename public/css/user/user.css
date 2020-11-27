@@ -518,6 +518,85 @@ input[type=number] {
   background: transparent url(/images/bg.svg?a7ba8fcfb1f735a0bb3e6146cb42d1a3) no-repeat center center;
 }
 
+.actions-navbar {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: #f1f2f3;
+  border-radius: 30px;
+  overflow: hidden;
+  padding: 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.actions-navbar .btn {
+  padding: 18px 64px;
+  border: none;
+  border-radius: 0;
+  transition: all 350ms linear;
+}
+
+.actions-navbar .btn .label {
+  visibility: hidden;
+  display: inline-block;
+  transition: all 150ms linear;
+  opacity: 0;
+  position: absolute;
+}
+
+.actions-navbar .btn:hover {
+  opacity: 0.8;
+}
+
+.actions-navbar .btn:hover .label {
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+.actions-navbar .btn-save {
+  background-color: mediumseagreen;
+}
+
+.actions-navbar .btn-save:hover,
+.actions-navbar .btn-save:active,
+.actions-navbar .btn-save:focus {
+  background-color: mediumseagreen;
+}
+
+.actions-navbar .btn-delete {
+  background-color: #f43f5e;
+}
+
+.actions-navbar .btn-delete:hover,
+.actions-navbar .btn-delete:active,
+.actions-navbar .btn-delete:focus {
+  background-color: #f43f5e;
+}
+
+.actions-navbar .btn-back {
+  background-color: #f0f0f0;
+  color: #424242;
+}
+
+.actions-navbar .btn-back:hover,
+.actions-navbar .btn-back:active,
+.actions-navbar .btn-back:focus {
+  background-color: #f0f0f0;
+}
+
+.actions-navbar .btn-archive {
+  background-color: #727272;
+}
+
+.actions-navbar .btn-archive:hover,
+.actions-navbar .btn-archive:active,
+.actions-navbar .btn-archive:focus {
+  background-color: #727272;
+}
+
 /* ================
  Ads
  ================ */
