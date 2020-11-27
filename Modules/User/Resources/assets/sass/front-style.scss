@@ -220,6 +220,10 @@ input[type="number"] {
         height: calc(2.5em + 0.75rem + 2px);
     }
 
+    .ad-description-form .form-control {
+        height: calc(8.5em + 0.75rem + 2px);
+    }
+
     .form-control,
     select,
     label.icon-upload-label {
