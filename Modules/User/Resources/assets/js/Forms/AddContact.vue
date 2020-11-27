@@ -108,7 +108,7 @@ export default {
                             "",
                             "s"
                         );
-                        this.$emit("add_contact", response.data.contact);
+                        this.$emit("addContact", response.data.contact);
                         this.HideContactInput();
                     } else {
                         if (response.data.error) {
