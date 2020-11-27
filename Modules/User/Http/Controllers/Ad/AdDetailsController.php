@@ -29,6 +29,6 @@ class AdDetailsController extends BaseAdController
 
         $this->adRepository->updateDetails($request->all(), $ad);
 
-        return redirect()->route('user.ad.step_phone_contact');
+        return redirect()->route('user.ad.step_phone_demo');
     }
 }
