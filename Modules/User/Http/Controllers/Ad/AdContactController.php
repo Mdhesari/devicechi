@@ -62,7 +62,7 @@ class AdContactController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        $ad_contact = $adContactRepository->create([
+        $ad_contact = $adContactRepository->firstOrCreate([
             'contact_type_id' => $request->contact_type['id'],
             'ad_id' => $ad->id,
             'value' => $request->value
@@ -98,12 +98,13 @@ class AdContactController extends BaseAdController
             return response()->json([
                 'status' => boolval($result),
                 'result' => $result,
+                'contact' => $ad_contact,
             ]);
         }
 
         return response()->json([
             'status' => false,
-            'error' => __('user::ads.form.error.verify.title'),
+            'error' => __('user::ads.form.error.contact.verify.title'),
         ]);
     }
 

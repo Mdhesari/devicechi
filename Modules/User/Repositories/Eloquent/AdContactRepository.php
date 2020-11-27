@@ -165,7 +165,8 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         if ($data['status']) {
 
             return response()->json([
-                'confirmation_send_status' => true,
+                'status' => true,
+                'contact' => $ad_contact,
             ]);
         }
 

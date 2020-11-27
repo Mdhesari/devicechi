@@ -147,6 +147,7 @@ return [
     */
 
     'attributes' => [
+        'verification_code' => 'کد تایید',
         'pictures' => 'تصاویر',
         'name' => 'نام',
         'username' => 'نام کاربری',
