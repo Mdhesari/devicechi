@@ -40,7 +40,7 @@
             </b-form-group>
 
             <b-button variant="secondary" @click.prevent="next">
-                {{ __("global.next") }}
+                {{ __("ads.preview") }} <b-icon icon="eye-fill" class="vertical-middle"></b-icon>
             </b-button>
         </form>
     </WizardStep>

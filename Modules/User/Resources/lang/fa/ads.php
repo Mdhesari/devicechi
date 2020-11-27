@@ -14,6 +14,8 @@ return [
     |
     */
 
+    'finalSubmit' => 'ثبت نهایی',
+    'preview' => 'پیش نمایش',
     'create' => [
         'title' => 'ایجاد آگهی جدید',
         'btn_title' => 'ایجاد آگهی جدید',

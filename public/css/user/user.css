@@ -313,8 +313,8 @@ input[type=number] {
   display: none;
 }
 
-.wizard-step form > .btn.btn-secondary {
-  width: 100px;
+.wizard-step form > .btn {
+  min-width: 100px;
   margin: 0 auto;
   margin-top: 0px;
   display: block;
