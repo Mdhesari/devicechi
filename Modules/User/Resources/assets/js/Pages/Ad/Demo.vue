@@ -1,8 +1,20 @@
 <template>
     <authLayout>
         <section class="demo">
-            <SingleAd :ad="ad"></SingleAd>
-            <AdActionsGroup />
+            <b-container>
+                <div class="mt-4">
+                    <b-alert show variant="info">
+                        <h4 class="alert-heading">
+                            {{ __("ads.demo.warning.title") }}
+                        </h4>
+                        <p>
+                            {{ __("ads.demo.warning.desc") }}
+                        </p>
+                    </b-alert>
+                </div>
+                <SingleAd :ad="ad"></SingleAd>
+                <AdActionsGroup />
+            </b-container>
         </section>
     </authLayout>
 </template>
