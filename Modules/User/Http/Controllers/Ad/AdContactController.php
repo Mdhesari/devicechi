@@ -55,7 +55,7 @@ class AdContactController extends BaseAdController
             'contact_type.id' => ['exists:ad_contact_types,id'],
             'value' => ['required']
         ], [
-            'value.required' => trans("user::ads.form.error.contact.value.title"),
+            'value.required' => __("user::ads.form.error.contact.value.title"),
         ]);
 
         $ad = $this->adRepository->getUserUncompletedAd();
