@@ -27,4 +27,12 @@ interface AdContactRepositoryInterface
      * @return mixed
      */
     public function firstOrCreate($data);
+
+    /**
+     * Send verification to intended user contact
+     *
+     * @param  mixed $ad_contact
+     * @return void
+     */
+    public function sendVerification($ad_contact);
 }

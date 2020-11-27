@@ -4,10 +4,12 @@ namespace Modules\User\Repositories\Eloquent;
 
 use Arr;
 use Auth;
+use Hash;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Pipeline\Pipeline;
 use Log;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\Ad\AdContact;
@@ -15,6 +17,9 @@ use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Entities\User;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
+use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Modules\User\Space\Pipelines\AdContact\AdContactEmailVerificationPipeline;
+use Modules\User\Space\Pipelines\AdContact\AdContactPhoneVerificationPipeline;
 
 class AdContactRepository extends Repository implements AdContactRepositoryInterface
 {
@@ -127,5 +132,46 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
     {
 
         return $this->model->firstOrCreate($data);
+    }
+
+    /**
+     * Send verification to intended user contact
+     *
+     * @param  mixed $ad_contact
+     * @return void
+     */
+    public function sendVerification($ad_contact)
+    {
+
+        $data = [
+            'ad_contact' => $ad_contact,
+            'status' => false,
+        ];
+
+        $pipelines = config('contact.verify.pipelines', [
+            AdContactEmailVerificationPipeline::class,
+            AdContactPhoneVerificationPipeline::class,
+        ]);
+
+        $data = app(Pipeline::class)
+            ->send($data)
+            ->through($pipelines)
+            ->via('send')
+            ->then(function ($data) {
+
+                return $data;
+            });
+
+        if ($data['status']) {
+
+            return response()->json([
+                'confirmation_send_status' => true,
+            ]);
+        }
+
+        return response()->json([
+            'status' => false,
+            'error' => __('Something went wrong!'),
+        ]);
     }
 }

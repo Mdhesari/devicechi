@@ -60,16 +60,21 @@ class AdContactController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        $ad_contact = $adContactRepository->firstOrCreate([
+        $ad_contact = $adContactRepository->create([
             'contact_type_id' => $request->contact_type['id'],
             'ad_id' => $ad->id,
             'value' => $request->value
         ]);
 
-        if ($ad_contact->isNotVerified()) {
+        $code = app(CodeVerificationGenerator::class)->generate();
 
-            return $this->sendVerification($ad_contact);
-        }
+        $ad_contact->setVerificationCode($code);
+
+        session([
+            AdContact::VERIFICATION_SESSION => Hash::make($code),
+        ]);
+
+        return $adContactRepository->sendVerification($ad_contact);
 
         /* TODO : 
 
@@ -103,55 +108,6 @@ class AdContactController extends BaseAdController
             'status' => boolval($result),
             'result' => $request,
             'contacts' => $contacts,
-        ]);
-    }
-
-    /**
-     * Send verification to intended user contact
-     *
-     * @param  mixed $ad_contact
-     * @return void
-     */
-    private function sendVerification($ad_contact)
-    {
-
-        $code = app(CodeVerificationGenerator::class)->generate();
-
-        $ad_contact->setVerificationCode($code);
-
-        session([
-            AdContact::VERIFICATION_SESSION => Hash::make($code),
-        ]);
-
-        $data = [
-            'ad_contact' => $ad_contact,
-            'status' => false,
-        ];
-
-        $pipelines = config('contact.verify.pipelines', [
-            AdContactEmailVerificationPipeline::class,
-            AdContactPhoneVerificationPipeline::class,
-        ]);
-
-        $data = app(Pipeline::class)
-            ->send($data)
-            ->through($pipelines)
-            ->via('send')
-            ->then(function ($data) {
-
-                return $data;
-            });
-
-        if ($data['status']) {
-
-            return response()->json([
-                'confirmation_send_status' => true,
-            ]);
-        }
-
-        return response()->json([
-            'status' => false,
-            'error' => __('Something went wrong!'),
         ]);
     }
 }
