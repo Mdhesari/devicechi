@@ -40,7 +40,8 @@
             </b-form-group>
 
             <b-button variant="secondary" @click.prevent="next">
-                {{ __("ads.preview") }} <b-icon icon="eye-fill" class="vertical-middle"></b-icon>
+                {{ __("ads.preview") }}
+                <b-icon icon="eye-fill" class="vertical-middle"></b-icon>
             </b-button>
         </form>
     </WizardStep>
@@ -68,9 +69,7 @@ export default {
     },
     methods: {
         next() {
-            this.form.post(route("user.ad.step_phone_details"), {
-                preserveScroll: true
-            });
+            this.form.post(route("user.ad.step_phone_details"));
         }
     }
 };

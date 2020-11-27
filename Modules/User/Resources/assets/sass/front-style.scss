@@ -448,7 +448,7 @@ input[type="number"] {
         &:hover,
         &:active,
         &:focus {
-            background-color: rgb(60, 179, 113);
+            background-color: rgb(60, 179, 113) !important;
         }
     }
 
@@ -458,7 +458,7 @@ input[type="number"] {
         &:hover,
         &:active,
         &:focus {
-            background-color: #f43f5e;
+            background-color: #f43f5e !important;
         }
     }
 
@@ -468,7 +468,7 @@ input[type="number"] {
         &:hover,
         &:active,
         &:focus {
-            background-color: pallete("light_gray");
+            background-color: pallete("light_gray") !important;
         }
         color: pallete("dark");
     }
@@ -479,7 +479,7 @@ input[type="number"] {
         &:hover,
         &:active,
         &:focus {
-            background-color: pallete("dark_gray");
+            background-color: pallete("dark_gray") !important;
         }
     }
 }

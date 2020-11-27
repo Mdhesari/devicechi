@@ -19,7 +19,7 @@
                 </span>
                 <b-icon class="vertical-middle" icon="pencil-square"></b-icon>
             </b-button>
-            <b-button class="btn-back">
+            <b-button class="btn-back" @click="getBack">
                 <span class="label">
                     {{ __("ads.actions.back") }}
                 </span>
@@ -30,5 +30,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        getBack() {
+
+            this.$inertia.visit(route("user.ad.step_phone_details"))
+        }
+    }
+};
 </script>

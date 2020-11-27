@@ -564,7 +564,7 @@ input[type=number] {
 .actions-navbar .btn-save:hover,
 .actions-navbar .btn-save:active,
 .actions-navbar .btn-save:focus {
-  background-color: mediumseagreen;
+  background-color: mediumseagreen !important;
 }
 
 .actions-navbar .btn-delete {
@@ -574,7 +574,7 @@ input[type=number] {
 .actions-navbar .btn-delete:hover,
 .actions-navbar .btn-delete:active,
 .actions-navbar .btn-delete:focus {
-  background-color: #f43f5e;
+  background-color: #f43f5e !important;
 }
 
 .actions-navbar .btn-back {
@@ -585,7 +585,7 @@ input[type=number] {
 .actions-navbar .btn-back:hover,
 .actions-navbar .btn-back:active,
 .actions-navbar .btn-back:focus {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
 }
 
 .actions-navbar .btn-archive {
@@ -595,7 +595,7 @@ input[type=number] {
 .actions-navbar .btn-archive:hover,
 .actions-navbar .btn-archive:active,
 .actions-navbar .btn-archive:focus {
-  background-color: #727272;
+  background-color: #727272 !important;
 }
 
 /* ================

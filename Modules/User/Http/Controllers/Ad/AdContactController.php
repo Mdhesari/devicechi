@@ -66,7 +66,7 @@ class AdContactController extends BaseAdController
         $request->validate([
             'contact_type' => ['required'],
             'contact_type.id' => ['exists:ad_contact_types,id'],
-            'value' => ['required', 'unique:ad_contacts,value,except,id']
+            'value' => ['required'] // 'unique:ad_contacts,value,except,id'
         ], [
             'value.required' => __("user::ads.form.error.contact.value.title"),
             'value.unique' => __("user::ads.form.error.contact.duplicate.title")
@@ -107,7 +107,7 @@ class AdContactController extends BaseAdController
 
             $result = $ad_contact->setValueAsVerified();
 
-            $ad_contact = $ad_contact->with('type')->first();
+            $ad_contact = $ad_contact->with('type')->find($ad_contact->id);
 
             return response()->json([
                 'status' => boolval($result),
