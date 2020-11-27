@@ -64,13 +64,13 @@ export default {
             if (keyCode != 1) return false;
 
             this.$inertia
-                .post(route("user.ad.step_phone_contact"), {
-                    contacts: this.contacts
-                })
+                .post(route("user.ad.step_phone_contact"))
                 .then(response => {
-                    if (this.error("contacts")) {
-                        this.$to(this.error("contacts"));
-                    }
+                    console.log(this.$inertia.page.props);
+
+                    // if (this.$inertia.error("contacts")) {
+                    //     this.$to(this.error("contacts"));
+                    // }
                 });
         },
         addContact(contact) {

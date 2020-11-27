@@ -1,5 +1,5 @@
 <template>
-    <WizardStep>
+    <WizardStep :backLink="route('user.ad.step_phone_contact')">
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.final_info.title") }}

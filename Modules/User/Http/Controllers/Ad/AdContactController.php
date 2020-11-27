@@ -57,7 +57,7 @@ class AdContactController extends BaseAdController
             ]);
         }
 
-        return redirect()->route('user.ad.step_phone_pictures');
+        return redirect()->route('user.ad.step_phone_details');
     }
 
     public function add(Request $request, AdContactRepositoryInterface $adContactRepository)
