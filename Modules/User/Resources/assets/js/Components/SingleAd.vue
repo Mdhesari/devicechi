@@ -58,7 +58,9 @@
                         </div>
                     </div>
                 </div>
-                <AdPostGallery :pictures="ad.pictures" />
+                <div class="col-12 col-lg-6 gallery-post links">
+                    <AdPostGallery :pictures="ad.pictures" /> 
+                </div>
             </div>
         </div>
     </section>

@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-lg-6 gallery-post links">
+    <div class="links">
         <div class="swiper-container " id="mainHomeSlider">
             <SwiperWrapper>
                 <SwiperSlide
