@@ -5,6 +5,7 @@ namespace Modules\User\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\Ad\AdContact;
+use Modules\User\Exceptions\PhoneBrandNotFound;
 use Str;
 use User\Database\Factories\AdFactory;
 
@@ -85,6 +86,12 @@ class Ad extends Model
     {
 
         return $this->hasMany(AdContact::class);
+    }
+
+    public function variant()
+    {
+
+        return $this->belongsTo(PhoneVariant::class, 'phone_model_variant_id');
     }
 
     /**

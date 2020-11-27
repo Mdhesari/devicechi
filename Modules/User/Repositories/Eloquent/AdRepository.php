@@ -97,6 +97,12 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return auth()->user()->ads()->uncompleted()->first();
     }
 
+    public function getUserUncompletedAdWith(array $with)
+    {
+
+        return auth()->user()->ads()->with($with)->uncompleted()->first();
+    }
+
     public function updateDetails(array $data, $ad)
     {
 

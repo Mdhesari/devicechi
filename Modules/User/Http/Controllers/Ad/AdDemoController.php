@@ -13,7 +13,7 @@ class AdDemoController extends BaseAdController
 {
     public function show()
     {
-        $ad = $this->adRepository->getUserUncompletedAd();
+        $ad = $this->adRepository->getUserUncompletedAdWith(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
 
         return inertia('Ad/Demo', compact('ad'));
     }

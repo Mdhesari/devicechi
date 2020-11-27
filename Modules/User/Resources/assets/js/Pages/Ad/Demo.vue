@@ -1,19 +1,19 @@
 <template>
     <authLayout>
         <section class="demo">
-            <b-container>
-                <h1>Demo Ad</h1>
-            </b-container>
+            <SingleAd :ad="ad"></SingleAd>
         </section>
     </authLayout>
 </template>
 
 <script>
 import AuthLayout from "../../Layouts/FrontAuthLayout";
+import SingleAd from "../../Components/SingleAd";
 
 export default {
     components: {
-        AuthLayout
+        AuthLayout,
+        SingleAd
     },
     props: ["ad"]
 };
