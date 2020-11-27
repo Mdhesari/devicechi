@@ -20,6 +20,9 @@ return [
     ],
 
     'form' => [
+        'attrs' => [
+            'contacts' => 'اطلاعات تماس',
+        ],
         'label' => [
             'price' => 'قیمت',
             'age' => [

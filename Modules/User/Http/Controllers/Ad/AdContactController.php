@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Pipeline\Pipeline;
 use Illuminate\Routing\Controller;
+use Illuminate\Validation\ValidationException;
 use Log;
 use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
@@ -45,6 +46,16 @@ class AdContactController extends BaseAdController
     public function store(Request $request)
     {
 
+        $ad = $this->adRepository->getUserUncompletedAd();
+
+        if (!$ad->contacts()->count()) {
+
+            throw ValidationException::withMessages([
+                'contacts' => __('validation.required', [
+                    'attribute' => __('user::ads.form.attr.contacts')
+                ])
+            ]);
+        }
 
         return redirect()->route('user.ad.step_phone_pictures');
     }

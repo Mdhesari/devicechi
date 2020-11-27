@@ -63,9 +63,15 @@ export default {
 
             if (keyCode != 1) return false;
 
-            this.$inertia.post(route("user.ad.step_phone_contact"), {
-                contacts: this.contacts
-            });
+            this.$inertia
+                .post(route("user.ad.step_phone_contact"), {
+                    contacts: this.contacts
+                })
+                .then(response => {
+                    if (this.error("contacts")) {
+                        this.$to(this.error("contacts"));
+                    }
+                });
         },
         addContact(contact) {
             this.contacts.push(contact);

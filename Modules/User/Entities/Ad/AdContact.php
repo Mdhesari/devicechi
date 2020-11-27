@@ -17,7 +17,7 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
     const VERIFICATION_SESSION = 'ad_contact_verification_code';
 
-    protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data'];
+    protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data','value_verified_at'];
 
     protected $casts = [
         'data' => 'array',
@@ -60,7 +60,7 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
         if ($this->data && $code = $this->data['phone_country_code']) {
 
-            $value = "+$code $value";
+            $value = "+{$code}{$value}";
         }
 
         return $value;

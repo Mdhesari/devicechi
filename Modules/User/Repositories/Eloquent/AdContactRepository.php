@@ -60,10 +60,9 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
 
     public function getContacts($ad)
     {
-
         if ($ad->contacts()->count() < 1) {
 
-            $this->CreateUserContacts($ad->id);
+            $this->createUserContact($ad->id);
         }
 
         $contacts = $ad->contacts()->verified()->with('type')->get();
@@ -71,7 +70,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         return $contacts;
     }
 
-    public function CreateUserContacts($ad_id)
+    public function createUserContact($ad_id)
     {
 
         $contacts = [];
@@ -106,6 +105,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
             "value" => $user->phone,
+            "value_verified_at" => $user->phone_verified_at,
             "data" => [
                 "phone_country_code" => $user->phone_country_code,
             ],
@@ -122,6 +122,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         $data = [
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
+            "value_verified_at" => $user->phone_verified_at,
             "value" => $user->email,
         ];
 
