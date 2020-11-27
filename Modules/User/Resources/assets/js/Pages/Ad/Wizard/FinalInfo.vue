@@ -58,12 +58,19 @@ export default {
             form: this.$inertia.form({
                 title: null,
                 description: null
-            })
+            }),
+            ad: this.getProp("ad")
         };
+    },
+    mounted() {
+        this.form.title = this.ad.title;
+        this.form.description = this.ad.description;
     },
     methods: {
         next() {
-            this.form.post(route("user.ad.step_phone_details"));
+            this.form.post(route("user.ad.step_phone_details"), {
+                preserveScroll: true
+            });
         }
     }
 };
