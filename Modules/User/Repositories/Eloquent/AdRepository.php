@@ -25,6 +25,7 @@ use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
 use Modules\User\Space\Pipelines\Ad\AgePipeline;
 use Modules\User\Space\Pipelines\Ad\ContactPipeline;
+use Modules\User\Space\Pipelines\Ad\DemoPipeline;
 use Modules\User\Space\Pipelines\Ad\FinalPipeline;
 use Modules\User\Space\Pipelines\Ad\LocationPipeline;
 use Modules\User\Space\Pipelines\Ad\ModelPipeline;
@@ -79,6 +80,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
             LocationPipeline::class,
             ContactPipeline::class,
             FinalPipeline::class,
+            DemoPipeline::class,
         ];
 
         $ad = $user->ads()->uncompleted()->first();

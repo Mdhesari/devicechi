@@ -13,10 +13,6 @@ class AgePipeline implements ValidatesAdStep
     {
         extract($data);
 
-        if ($step >= BaseAdController::STEP_CHOOSE_AGE) {
-            // $result = $ad->missingPhoneAccessories();
-        }
-
         return $next($data);
     }
 }

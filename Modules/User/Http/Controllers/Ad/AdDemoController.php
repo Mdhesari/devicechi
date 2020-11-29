@@ -16,12 +16,12 @@ class AdDemoController extends BaseAdController
 
     public function show()
     {
+
+        $step = BaseAdController::DEMO;
+
+        $this->checkPreviousSteps($step);
+
         $ad = $this->adRepository->getUserUncompletedAdWith(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
-
-        if (is_null($ad->title) || is_null($ad->description)) {
-
-            return redirect()->route('user.ad.step_phone_details');
-        }
 
         return inertia('Ad/Demo', compact('ad'));
     }

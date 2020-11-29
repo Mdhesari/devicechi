@@ -7,20 +7,17 @@ use Modules\User\Exceptions\Http\PreviousStepRedirectHttpException;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Space\Contracts\ValidatesAdStep;
 
-class LocationPipeline implements ValidatesAdStep
+class DemoPipeline implements ValidatesAdStep
 {
 
     public function validate($data, Closure $next)
     {
-
         extract($data);
 
-        if ($step >= BaseAdController::STEP_CHOOSE_LOCATION) {
-            if ($ad->pictures()->count() < 1) {
+        if ($step >= BaseAdController::DEMO) {
+            if ($ad->missingDetails()) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_model_location', [
-                    'phone_model' => $ad->phoneModel->name,
-                ]));
+                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_details'));
             }
         }
 

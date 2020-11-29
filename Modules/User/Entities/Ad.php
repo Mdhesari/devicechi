@@ -75,6 +75,18 @@ class Ad extends Model
         return is_null($this->phone_model_id);
     }
 
+    public function missingDetails()
+    {
+
+        return is_null($this->title) || is_null($this->description);
+    }
+
+    public function missingState()
+    {
+
+        return is_null($this->state_id);
+    }
+
     public function missingPrice()
     {
 

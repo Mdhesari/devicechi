@@ -25,6 +25,7 @@ class BaseAdController extends Controller
     const STEP_CHOOSE_LOCATION = 8;
     const STEP_CHOOSE_CONTACT = 9;
     const STEP_FINALINFO = 10;
+    const DEMO = 11;
 
     protected $adRepository;
 
