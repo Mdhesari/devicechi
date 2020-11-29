@@ -80,6 +80,12 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
             Route::get('/demo', [AdDemoController::class, 'show'])->name('demo');
 
+            Route::put('/demo/publish', [AdDemoController::class, 'publish'])->name('demo.publish');
+
+            Route::put('/demo/delete', [AdDemoController::class, 'delete'])->name('demo.delete');
+
+            Route::put('/demo/archive', [AdDemoController::class, 'archive'])->name('demo.archive');
+
             Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
             Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);

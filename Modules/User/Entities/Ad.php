@@ -23,6 +23,22 @@ class Ad extends Model
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location'
     ];
 
+    public function publish()
+    {
+
+        $this->forceFill([
+            'status' => self::STATUS_PENDING,
+        ])->save();
+    }
+
+    public function archive()
+    {
+
+        $this->forceFill([
+            'is_archive' => true,
+        ])->save();
+    }
+
     public function scopeUncompleted($query)
     {
 

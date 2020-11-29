@@ -43,4 +43,28 @@ interface AdRepositoryInterface
      * @return void
      */
     public function get(array $data = []);
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function publish($ad);
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function delete($ad);
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function archive($ad);
 }

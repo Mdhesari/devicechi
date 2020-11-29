@@ -13,7 +13,7 @@
                     </b-alert>
                 </div>
                 <SingleAd :ad="ad"></SingleAd>
-                <AdActionsGroup />
+                <AdActionsGroup :ad="ad" />
             </b-container>
         </section>
     </authLayout>

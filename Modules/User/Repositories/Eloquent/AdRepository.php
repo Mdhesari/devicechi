@@ -3,6 +3,7 @@
 namespace Modules\User\Repositories\Eloquent;
 
 use Auth;
+use Hamcrest\Type\IsInteger;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Database\Eloquent\Model;
@@ -48,6 +49,16 @@ class AdRepository extends Repository implements AdRepositoryInterface
     {
 
         return $this->model->where($data)->get();
+    }
+
+    public function getUserAds(array $data = [])
+    {
+
+        $data = array_merge([
+            'user_id' => auth()->id(),
+        ], $data);
+
+        return $this->model->with('pictures')->where($data)->get();
     }
 
     public function create($data)
@@ -126,5 +137,54 @@ class AdRepository extends Repository implements AdRepositoryInterface
             'uncompleted' => Ad::STATUS_UNCOMPLETED,
             'rejected' => Ad::STATUS_REJECTED,
         ];
+    }
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function publish($ad)
+    {
+
+        if (!is_object($ad)) {
+
+            $ad = $this->find($ad);
+        }
+
+        return $ad->publish();
+    }
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function delete($ad)
+    {
+        if (!is_object($ad)) {
+
+            $ad = $this->find($ad);
+        }
+
+        return $ad->delete();
+    }
+
+    /**
+     * Set ad status as pending
+     *
+     * @param  int|\Modules\User\Entities\Ad $ad
+     * @return mixed
+     */
+    public function archive($ad)
+    {
+        if (!is_object($ad)) {
+
+            $ad = $this->find($ad);
+        }
+
+        return $ad->archive();
     }
 }

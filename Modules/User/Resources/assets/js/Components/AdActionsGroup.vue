@@ -1,19 +1,19 @@
 <template>
     <div class="actions-navbar">
         <b-button-group>
-            <b-button class="btn-save">
+            <b-button class="btn-save" @click="publishAd">
                 <span class="label">
                     {{ __("ads.actions.save") }}
                 </span>
                 <b-icon class="vertical-middle" icon="check-circle"></b-icon>
             </b-button>
-            <b-button class="btn-delete">
+            <b-button class="btn-delete" @click="deleteAd">
                 <span class="label">
                     {{ __("ads.actions.delete") }}
                 </span>
                 <b-icon class="vertical-middle" icon="trash-fill"></b-icon>
             </b-button>
-            <b-button class="btn-archive">
+            <b-button class="btn-archive" @click="archiveAd">
                 <span class="label">
                     {{ __("ads.actions.archive") }}
                 </span>
@@ -31,10 +31,28 @@
 
 <script>
 export default {
+    props: ["ad"],
     methods: {
         getBack() {
-
-            this.$inertia.visit(route("user.ad.step_phone_details"))
+            this.$inertia.visit(route("user.ad.step_phone_details"));
+        },
+        publishAd() {
+            this.$inertia.post(route("user.ad.step_phone_demo.publish"), {
+                _method: "PUT",
+                ad: this.ad
+            });
+        },
+        deleteAd() {
+            this.$inertia.post(route("user.ad.step_phone_demo.delete"), {
+                _method: "PUT",
+                ad: this.ad
+            });
+        },
+        archiveAd() {
+            this.$inertia.post(route("user.ad.step_phone_demo.archive"), {
+                _method: "PUT",
+                ad: this.ad
+            });
         }
     }
 };

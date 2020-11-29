@@ -12,7 +12,7 @@ class AdMainController extends BaseAdController
 
     public function get(Request $request)
     {
-        $ads = $request->user()->ads()->with('pictures')->get();
+        $ads = $this->adRepository->getUserAds();
 
         return response()->json([
             'ads' => $ads,
@@ -21,8 +21,9 @@ class AdMainController extends BaseAdController
 
     public function getStatus($status, Request $request)
     {
-
-        $ads = $request->user()->ads()->whereStatus(intval($status))->get();
+        $ads = $this->adRepository->getUserAds([
+            'status' => intval($status),
+        ]);
 
         return response()->json([
             'ad_status' => $status,
