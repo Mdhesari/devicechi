@@ -18,6 +18,7 @@ class Ad extends Model
     const STATUS_PENDING = 2;
     const STATUS_UNCOMPLETED = 3;
     const STATUS_UNAVAILABLE = 4;
+    const STATUS_ARCHIVE = 5;
 
     protected $fillable = [
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location'
@@ -35,7 +36,7 @@ class Ad extends Model
     {
 
         $this->forceFill([
-            'is_archive' => true,
+            'status' => self::STATUS_ARCHIVE,
         ])->save();
     }
 

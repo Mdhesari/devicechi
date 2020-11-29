@@ -19,7 +19,6 @@ class CreateAdsTable extends Migration
             $table->longText('description')->nullable();
             $table->foreignId('user_id')->constrained();
 
-            $table->boolean('is_archive')->default(false);
             $table->foreignId('state_id')->nullable();
             $table->foreignId('phone_model_id')->nullable();
             $table->foreignId('phone_model_variant_id')->nullable();
