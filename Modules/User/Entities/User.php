@@ -65,6 +65,12 @@ class User extends Authenticatable implements MustVerifyPhone
         'profile_photo_url',
     ];
 
+    public function getNameAttribute($value)
+    {
+
+        return __($value);
+    }
+
     public function hasVerifiedPhone()
     {
 
