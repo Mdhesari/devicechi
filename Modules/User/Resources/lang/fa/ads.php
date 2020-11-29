@@ -16,6 +16,37 @@ return [
 
     'finalSubmit' => 'ثبت نهایی',
     'preview' => 'پیش نمایش',
+    'defaults' => [
+        'title' => 'بدون عنوان',
+    ],
+    'status' => [
+        /* rejected */
+        [
+            'label' => 'رد شده',
+            'class' => 'bg-success'
+        ],
+        /* accepted */
+        [
+            'label' => 'تایید شده',
+            'class' => 'bg-success',
+        ],
+        /* Pending */
+        [
+            'label' => 'در انتظار تایید',
+            'class' => 'bg-info',
+        ],
+        /* UNCOMPLETED */
+        [
+            'label' => 'نا تمام',
+            'class' => 'bg-warning',
+        ],
+        /* UNAVAILABLE */
+        [
+            'label' => 'منقضی شده ',
+            'class' => 'bg-secondary',
+        ],
+
+    ],
     'create' => [
         'title' => 'ایجاد آگهی جدید',
         'btn_title' => 'ایجاد آگهی جدید',

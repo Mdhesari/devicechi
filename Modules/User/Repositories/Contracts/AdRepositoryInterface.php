@@ -28,4 +28,19 @@ interface AdRepositoryInterface
      * @return void
      */
     public function checkPreviousSteps(int $step, $user);
+
+    /**
+     * Get all status from ad entitiy
+     *
+     * @return array
+     */
+    public function getAllStatus(): array;
+
+    /**
+     * Get using where $data
+     *
+     * @param  mixed $data
+     * @return void
+     */
+    public function get(array $data = []);
 }

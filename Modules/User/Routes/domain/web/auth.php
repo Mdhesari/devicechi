@@ -11,6 +11,7 @@
 |
 */
 
+use Composer\Package\RootPackage;
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdAgeController;
 use Modules\User\Http\Controllers\Ad\AdContactController;
@@ -18,6 +19,7 @@ use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Ad\AdDemoController;
 use Modules\User\Http\Controllers\Ad\AdDetailsController;
 use Modules\User\Http\Controllers\Ad\AdLocationController;
+use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Ad\AdModelController;
 use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
@@ -28,60 +30,70 @@ Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
 Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
 
-Route::prefix('/ads/sell/mobile')->name('ad.')->group(function () {
+Route::prefix('/ads')->name('ad.')->group(function () {
 
-    Route::get('/', [AdCreateController::class, 'show'])->name('create');
+    Route::prefix('/sell/mobile')->group(function () {
 
-    Route::name('step_phone_')->group(function () {
+        Route::get('/', [AdCreateController::class, 'show'])->name('create');
 
-        Route::get('/routes/steps/{step}', [BaseAdController::class, 'getStepRoute'])->name('routes');
+        Route::name('step_phone_')->group(function () {
 
-        Route::get('/accessories', [AdAccessoryController::class, 'choose'])->name('accessories');
+            Route::get('/routes/steps/{step}', [BaseAdController::class, 'getStepRoute'])->name('routes');
 
-        Route::post('/accessories', [AdAccessoryController::class, 'store']);
+            Route::get('/accessories', [AdAccessoryController::class, 'choose'])->name('accessories');
 
-        Route::get('/age', [AdAgeController::class, 'choose'])->name('age');
+            Route::post('/accessories', [AdAccessoryController::class, 'store']);
 
-        Route::post('/age', [AdAgeController::class, 'store']);
+            Route::get('/age', [AdAgeController::class, 'choose'])->name('age');
 
-        Route::get('/price', [AdPriceController::class, 'choose'])->name('price');
+            Route::post('/age', [AdAgeController::class, 'store']);
 
-        Route::post('/price', [AdPriceController::class, 'store']);
+            Route::get('/price', [AdPriceController::class, 'choose'])->name('price');
 
-        Route::get('/pictures', [AdPictureController::class, 'choose'])->name('pictures');
+            Route::post('/price', [AdPriceController::class, 'store']);
 
-        Route::post('/pictures', [AdPictureController::class, 'store']);
+            Route::get('/pictures', [AdPictureController::class, 'choose'])->name('pictures');
 
-        Route::delete('/pictures', [AdPictureController::class, 'delete']);
+            Route::post('/pictures', [AdPictureController::class, 'store']);
 
-        Route::get('/location', [AdLocationController::class, 'choose'])->name('location');
+            Route::delete('/pictures', [AdPictureController::class, 'delete']);
 
-        Route::post('/location', [AdLocationController::class, 'store']);
+            Route::get('/location', [AdLocationController::class, 'choose'])->name('location');
 
-        Route::get('/location/states/{city}', [AdLocationController::class, 'getState'])->name('location.states');
+            Route::post('/location', [AdLocationController::class, 'store']);
 
-        Route::get('/contact', [AdContactController::class, 'choose'])->name('contact');
+            Route::get('/location/states/{city}', [AdLocationController::class, 'getState'])->name('location.states');
 
-        Route::post('/contact', [AdContactController::class, 'store']);
+            Route::get('/contact', [AdContactController::class, 'choose'])->name('contact');
 
-        Route::post('/contact/add', [AdContactController::class, 'add'])->name('contact.add');
+            Route::post('/contact', [AdContactController::class, 'store']);
 
-        Route::delete('/contact/remove', [AdContactController::class, 'remove'])->name('contact.delete');
+            Route::post('/contact/add', [AdContactController::class, 'add'])->name('contact.add');
 
-        Route::put('/contact/verify', [AdContactController::class, 'verify'])->name('contact.verify');
+            Route::delete('/contact/remove', [AdContactController::class, 'remove'])->name('contact.delete');
 
-        Route::get('/details', [AdDetailsController::class, 'choose'])->name('details');
+            Route::put('/contact/verify', [AdContactController::class, 'verify'])->name('contact.verify');
 
-        Route::post('/details', [AdDetailsController::class, 'store']);
+            Route::get('/details', [AdDetailsController::class, 'choose'])->name('details');
 
-        Route::get('/demo', [AdDemoController::class, 'show'])->name('demo');
+            Route::post('/details', [AdDetailsController::class, 'store']);
 
-        Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
+            Route::get('/demo', [AdDemoController::class, 'show'])->name('demo');
 
-        Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);
+            Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
-        Route::get('/{phone_brand}', [AdModelController::class, 'choose'])->name('model');
+            Route::post('/{phone_model}/variants', [AdVariantController::class, 'store']);
 
-        Route::post('/{phone_brand}', [AdModelController::class, 'store']);
+            Route::get('/{phone_brand}', [AdModelController::class, 'choose'])->name('model');
+
+            Route::post('/{phone_brand}', [AdModelController::class, 'store']);
+        });
     });
+
+    Route::get('/get', [AdMainController::class, 'get'])->name('get');
+
+    Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
+});
+
+Route::prefix('/profile')->name('profile.')->group(function () {
 });

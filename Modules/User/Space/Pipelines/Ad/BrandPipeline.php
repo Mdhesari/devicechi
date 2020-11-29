@@ -8,7 +8,7 @@ use Modules\User\Space\Contracts\ValidatesAdStep;
 class BrandPipeline implements ValidatesAdStep
 {
 
-    public function validate($ad, Closure $next)
+    public function validate($data, Closure $next)
     {
 
         return $next($data);

@@ -44,6 +44,12 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return $this->model->find($id);
     }
 
+    public function get(array $data = [])
+    {
+
+        return $this->model->where($data)->get();
+    }
+
     public function create($data)
     {
         return $this->model->create($data);
@@ -109,5 +115,16 @@ class AdRepository extends Repository implements AdRepositoryInterface
         $ad->title = $data['title'];
         $ad->description = $data['description'];
         return $ad->save();
+    }
+
+    public function getAllStatus(): array
+    {
+        return [
+            'available' => Ad::STATUS_AVAILABLE,
+            'unavailable' => Ad::STATUS_UNAVAILABLE,
+            'pending' => Ad::STATUS_PENDING,
+            'uncompleted' => Ad::STATUS_UNCOMPLETED,
+            'rejected' => Ad::STATUS_REJECTED,
+        ];
     }
 }

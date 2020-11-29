@@ -43,7 +43,9 @@ Vue.mixin({
 
             return this.$toastr[type](message, title);
         },
-        url(path) {
+        url(path = "") {
+            if (path.charAt(0) == "/") path = path.substr(1);
+
             return this.$inertia.page.props.current_root + "/" + path;
         },
         getProp(param) {

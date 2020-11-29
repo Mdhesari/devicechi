@@ -11,7 +11,9 @@
         <!-- Modules -->
         <!-- User -->
         <testsuite name="Feature">
-            <directory suffix="Test.php">./Modules/User/Tests/Feature/Ad/AdContact</directory>
+            <!-- <directory suffix="Test.php">./Modules/User/Tests/Feature/Ad</directory> -->
+            <file>./Modules/User/Tests/Feature/Ad/AdGetTest.php</file>
+
         </testsuite>
         <testsuite name="Unit">
             <!-- <file>./Modules/User/Tests/Unit/Artisan/PhoneAccessoriesCurlTest.php</file> -->

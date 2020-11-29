@@ -13,10 +13,11 @@ class Ad extends Model
 {
     use HasFactory;
 
-    const STATUS_UNAVAILABLE = 0;
+    const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
     const STATUS_PENDING = 2;
     const STATUS_UNCOMPLETED = 3;
+    const STATUS_UNAVAILABLE = 4;
 
     protected $fillable = [
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location'
