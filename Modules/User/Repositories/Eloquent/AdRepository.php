@@ -138,6 +138,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
             'pending' => Ad::STATUS_PENDING,
             'uncompleted' => Ad::STATUS_UNCOMPLETED,
             'rejected' => Ad::STATUS_REJECTED,
+            'archived' => Ad::STATUS_ARCHIVE,
         ];
     }
 

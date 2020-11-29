@@ -95,6 +95,21 @@
                                     >
                                 </div>
                             </li>
+
+                            <li
+                                class="tab-item"
+                                :class="renderItemClass(allStatus.archived)"
+                            >
+                                <div class="tab-item-content">
+                                    <a
+                                        @click.prevent="
+                                            updateAds(allStatus.archived)
+                                        "
+                                        href="#"
+                                        >آگهی های پیش نویس</a
+                                    >
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
