@@ -18,7 +18,9 @@ class AdAgeController extends BaseAdController
 
         $phone_ages = PhoneAge::all();
 
-        return inertia('Ad/Wizard/Create', compact('phone_ages', 'step'));
+        $ad = $this->adRepository->getUserUncompletedAd();
+
+        return inertia('Ad/Wizard/Create', compact('phone_ages', 'step', 'ad'));
     }
 
     public function store(Request $request)
@@ -29,7 +31,7 @@ class AdAgeController extends BaseAdController
 
         $ad = $this->adRepository->getUserUncompletedAd();
 
-        $ad->phone_age_id = $request->age_id;
+        $ad->phone_age_id = intval($request->age_id);
         $ad->save();
 
         return redirect()->route('user.ad.step_phone_price');

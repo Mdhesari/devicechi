@@ -19,13 +19,24 @@
                     v-for="age in phone_ages"
                     :key="age.id"
                     :value="age.id"
+                    :disabled="isLoading"
+                    v-model="form.age_id"
                     size="lg"
                     inline
-                    @change="next"
+                    @change="nextUsingChange"
                 >
                     {{ printAgeInfo(age) }}
                 </b-form-radio>
             </b-form-group>
+
+            <b-button
+                v-if="form.age_id"
+                :disabled="isLoading"
+                variant="secondary"
+                @click.prevent="next"
+            >
+                {{ __("global.next") }}
+            </b-button>
         </form>
     </WizardStep>
 </template>
@@ -40,18 +51,22 @@ export default {
     data() {
         return {
             isLoading: false,
-            form: this.$inertia.form({
-                age_id: 0
-            }),
-            phone_ages: this.getProp("phone_ages")
+            phone_ages: this.getProp("phone_ages"),
+            ad: this.getProp("ad")
         };
     },
+    computed: {
+        form() {
+            return this.$inertia.form({
+                age_id: this.ad.phone_age_id ? this.ad.phone_age_id : null
+            });
+        }
+    },
     methods: {
-        next(age_id) {
+        next() {
             if (this.isLoading) return;
 
             this.isLoading = true;
-            this.form.age_id = age_id;
 
             this.form
                 .post(route("user.ad.step_phone_age"), {
@@ -62,6 +77,11 @@ export default {
                 });
 
             // this.$emit("next");
+        },
+        nextUsingChange(age_id) {
+            this.form.age_id = age_id;
+
+            this.next();
         },
         printAgeInfo(age) {
             let txt = "";

@@ -29,6 +29,8 @@ class UserController extends Controller
 
         $all_status = $adRepository->getAllStatus();
 
-        return inertia('User/Profile', compact('user', 'all_status'));
+        $success_session = session('success');
+
+        return inertia('User/Profile', compact('success_session', 'user', 'all_status'));
     }
 }

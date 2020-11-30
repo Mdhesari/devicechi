@@ -20,15 +20,25 @@ class AdAccessoryController extends BaseAdController
 
         $accessories = PhoneAccessory::all();
 
-        $phone_model = tap($this->adRepository->getUserUncompletedAd(), function ($ad) {
+        $ad = $this->adRepository->getUserUncompletedAd();
 
-            return $ad->phoneModel;
-        });
+        $phone_model = $ad->phoneModel;
 
-        return inertia('Ad/Wizard/Create', compact('accessories', 'step', 'phone_model'));
+        $selected_accessories = $ad->accessories->pluck('id')->toArray();
+        $selected = [];
+
+        foreach ($accessories as $acc) {
+
+            $value = in_array($acc->id, $selected_accessories);
+
+            if ($value)
+                $selected[$acc->id] = $acc->id;
+        }
+
+        return inertia('Ad/Wizard/Create', compact('accessories', 'selected', 'step', 'phone_model', 'ad'));
     }
 
-    public function store(Request $request, AdRepositoryInterface $repository)
+    public function store(Request $request)
     {
 
         $request->validate([
@@ -42,7 +52,7 @@ class AdAccessoryController extends BaseAdController
             return !is_null($value) && !empty($value) && PhoneAccessory::whereId($value)->count() > 0;
         });
 
-        $result = $repository->saveAccessories($acceesories, auth()->user());
+        $result = $this->adRepository->saveAccessories($acceesories, auth()->user());
 
         return $result ? redirect()->route('user.ad.step_phone_age') : redirect()->back();
     }

@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_model_variant', {
-                phone_model
+                phone_model: model.name
             })
         "
     >
@@ -21,7 +21,7 @@
                     v-for="(accessory, index) in accessories"
                     :key="accessory.id"
                     :name="'accessory_' + accessory.id"
-                    v-model="selected[index]"
+                    v-model="selected[accessory.id]"
                     :value="accessory.id"
                 >
                     <img
@@ -52,17 +52,22 @@ export default {
     data() {
         return {
             isLoading: false,
-            selected: [],
+            selected: this.getProp("selected"),
             accessories: this.getProp("accessories"),
             current_root: this.getProp("current_root"),
-            phone_model: this.getProp("phone_model")
+            model: this.getProp("phone_model")
         };
+    },
+    mounted() {
+        // this.selected = this.getProp("selected_accessories");
     },
     methods: {
         next() {
             // this.$emit("next");
 
             this.isLoading = true;
+
+            console.log(this.selected);
 
             this.$inertia
                 .post(
