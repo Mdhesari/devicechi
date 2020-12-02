@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Modules\Team\Entities\Team;
 use App\Policies\TeamPolicy;
+use Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -26,6 +27,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::before(function ($user, $ability) {
+
+            return $user->hasRole('super_admin') ? true : null;
+        });
     }
 }

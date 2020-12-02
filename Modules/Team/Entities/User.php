@@ -6,10 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\User\Entities\User as MainUser;
 use Spatie\Permission\Traits\HasRoles;
+use User\Database\Factories\UserFactory;
 
-class User extends MainUser
+class User extends Model
 {
     use HasFactory, HasRoles;
 
-    protected $fillable = [];
+    protected $guarded = [];
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return new UserFactory;
+    }
 }
