@@ -8,6 +8,32 @@
                 {{ __("ads.wizard.choose_brand.desc") }}
             </p>
 
+            <div class="row brand-user" v-if="ad_brand">
+                <h3>برند انتخاب شده :</h3>
+
+                <div
+                    class="col-6 col-sm-4 col-md-3 col-lg-2 brand-item"
+                    :data-brand-id="ad_brand.id"
+                >
+                    <inertia-link
+                        method="get"
+                        :href="
+                            route('user.ad.step_phone_model', {
+                                phone_brand: ad_brand.name
+                            })
+                        "
+                    >
+                        <img
+                            :src="url(ad_brand.picture_path)"
+                            :alt="ad_brand.name"
+                        />
+                        <h4 class="brand-label">
+                            {{ ad_brand.name }}
+                        </h4>
+                    </inertia-link>
+                </div>
+            </div>
+
             <div class="row brand-list">
                 <div
                     class="col-6 col-sm-4 col-md-3 col-lg-2 brand-item"
@@ -23,10 +49,7 @@
                             })
                         "
                     >
-                        <img
-                            :src="current_root + '/' + brand.picture_path"
-                            alt="Apple"
-                        />
+                        <img :src="url(brand.picture_path)" :alt="brand.name" />
                         <h4 class="brand-label">
                             {{ brand.name }}
                         </h4>
@@ -47,8 +70,18 @@ export default {
     data() {
         return {
             brands: this.getProp("phone_brands"),
-            current_root: this.getProp("current_root")
+            current_root: this.getProp("current_root"),
+            ad: this.getProp("ad")
         };
+    },
+    computed: {
+        ad_brand() {
+            const ad = this.ad;
+
+            if (!ad || !ad.phone_model) return null;
+
+            return ad.phone_model.brand;
+        }
     },
     methods: {
         next() {

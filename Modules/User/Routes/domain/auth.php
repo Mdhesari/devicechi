@@ -34,9 +34,9 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
     Route::prefix('/sell/mobile')->group(function () {
 
-        Route::get('/', [AdCreateController::class, 'show'])->name('create');
+        Route::get('/{ad?}', [AdCreateController::class, 'show'])->name('create');
 
-        Route::name('step_phone_')->group(function () {
+        Route::prefix('/process')->name('step_phone_')->group(function () {
 
             Route::get('/routes/steps/{step}', [BaseAdController::class, 'getStepRoute'])->name('routes');
 
