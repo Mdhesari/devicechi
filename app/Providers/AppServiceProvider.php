@@ -6,7 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
-use Illuminate\Http\Request as HttpRequest;
+use Illuminate\Http\Reques;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
@@ -38,7 +38,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        HttpRequest::macro('isSubDomain', function ($domain = null) {
+        Request::macro('isSubDomain', function ($domain = null) {
 
             $hostArr =  explode('.', $this->getHost());
 
