@@ -66,8 +66,22 @@ export default {
             }),
             allCities: this.getProp("cities"),
             allStates: this.getProp("states"),
+            states: [
+                {
+                    value: null,
+                    text: this.__("ads.form.placeholder.location.state_loading")
+                }
+            ],
             ad: this.getProp("ad")
         };
+    },
+    mounted() {
+        this.allStates.forEach(city => {
+            this.states.push({
+                value: city.id,
+                text: city.name
+            });
+        });
     },
     computed: {
         cities() {
@@ -86,23 +100,6 @@ export default {
             });
 
             return cities;
-        },
-        states() {
-            let states = [
-                {
-                    value: null,
-                    text: this.__("ads.form.placeholder.location.state_loading")
-                }
-            ];
-
-            this.allStates.forEach(state => {
-                states.push({
-                    value: state.id,
-                    text: state.name
-                });
-            });
-
-            return states;
         }
     },
     methods: {
