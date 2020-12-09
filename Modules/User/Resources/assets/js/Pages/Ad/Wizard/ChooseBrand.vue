@@ -9,7 +9,9 @@
             </p>
 
             <div class="row brand-user" v-if="ad_brand">
-                <h3>برند انتخاب شده :</h3>
+                <div class="col-12">
+                    <h3 v-html="__('ads.section.selection.brand')"></h3>
+                </div>
 
                 <div
                     class="col-6 col-sm-4 col-md-3 col-lg-2 brand-item"
@@ -19,7 +21,8 @@
                         method="get"
                         :href="
                             route('user.ad.step_phone_model', {
-                                phone_brand: ad_brand.name
+                                phone_brand: ad_brand.name,
+                                ad: ad.id ? ad.id : null
                             })
                         "
                     >

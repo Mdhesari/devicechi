@@ -24,4 +24,11 @@ class PhoneModel extends Model
 
         return $this->belongsTo(PhoneBrand::class, 'phone_brand_id');
     }
+
+    public function scopeExcludeModel($query, $ad)
+    {
+        if (is_null($ad) || !isset($ad->phoneModel)) return $query;
+
+        return $query->where('id', '!=', $ad->phoneModel->id);
+    }
 }

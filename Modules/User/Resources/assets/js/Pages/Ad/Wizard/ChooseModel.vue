@@ -8,6 +8,33 @@
                 {{ __("ads.wizard.choose_model.desc") }}
             </p>
 
+            <div class="row model-user" v-if="ad_model">
+                <div class="col-12">
+                    <h3 v-html="__('ads.section.selection.model')"></h3>
+                </div>
+
+                <div
+                    class="row justify-content-center model-list"
+                    :data-model-id="ad_model.id"
+                >
+                    <div class="model-item mx-4">
+                        <inertia-link
+                            method="post"
+                            :href="
+                                route('user.ad.step_phone_model', {
+                                    ad: ad.id ? ad.id : null,
+                                    phone_brand: brand.name
+                                })
+                            "
+                        >
+                            <strong class="model-label">
+                                {{ ad_model.name }}
+                            </strong>
+                        </inertia-link>
+                    </div>
+                </div>
+            </div>
+
             <div class="row justify-content-center model-list">
                 <div
                     class="model-item"
@@ -19,7 +46,8 @@
                         method="post"
                         :href="
                             route('user.ad.step_phone_model', {
-                                phone_brand: brand.name
+                                phone_brand: brand.name,
+                                ad: ad.id ? ad.id : null
                             })
                         "
                         :data="{
@@ -42,6 +70,15 @@ import WizardStep from "../../../Components/WizardStep";
 export default {
     components: {
         WizardStep
+    },
+    computed: {
+        ad_model() {
+            const ad = this.ad;
+
+            if (!ad || !ad.phone_model) return null;
+
+            return ad.phone_model;
+        }
     },
     data() {
         return {

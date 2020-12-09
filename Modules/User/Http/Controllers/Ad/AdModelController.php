@@ -14,18 +14,20 @@ use Modules\User\Exceptions\UserAdCreationFailed;
 class AdModelController extends BaseAdController
 {
 
-    public function choose(PhoneBrand $brand)
+    public function choose(PhoneBrand $brand, Ad $ad)
     {
         $step = BaseAdController::STEP_CHOOSE_MODEL;
 
         $this->checkPreviousSteps($step, $this->adRepository->getUserUncompletedAd());
 
-        $models = $brand->models;
+        if ($ad) $ad->load('phoneModel');
 
-        return inertia('Ad/Wizard/Create', compact('models', 'brand', 'step'));
+        $models = $brand->models()->excludeModel($ad)->get();
+
+        return inertia('Ad/Wizard/Create', compact('models', 'brand', 'step', 'ad'));
     }
 
-    public function store(PhoneBrand $brand, Request $request)
+    public function store(PhoneBrand $brand, Ad $ad, Request $request)
     {
 
         $request->validate([

@@ -5,7 +5,7 @@
             :href="backLink"
             class="btn btn-link text-secondary btn-backlink"
         >
-            {{ __("global.back") }}
+            {{ __("global.back") }} <b-icon icon="arrow-left" class="vertical-middle"></b-icon>
         </inertia-link>
         <slot></slot>
     </div>

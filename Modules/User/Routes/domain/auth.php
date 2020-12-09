@@ -93,9 +93,9 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
             Route::put('/demo/archive', [AdDemoController::class, 'archive'])->name('demo.archive');
 
-            Route::get('/{phone_brand}', [AdModelController::class, 'choose'])->name('model');
+            Route::get('/{phone_brand}/{ad?}', [AdModelController::class, 'choose'])->name('model');
 
-            Route::post('/{phone_brand}', [AdModelController::class, 'store']);
+            Route::post('/{phone_brand}/{ad?}', [AdModelController::class, 'store']);
         });
     });
 
