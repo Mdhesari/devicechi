@@ -33,7 +33,7 @@ class AdContactController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_CONTACT;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $contact_types = AdContactType::all();
 

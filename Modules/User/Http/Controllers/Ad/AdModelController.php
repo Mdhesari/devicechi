@@ -18,7 +18,7 @@ class AdModelController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_MODEL;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $this->adRepository->getUserUncompletedAd());
 
         $models = $brand->models;
 

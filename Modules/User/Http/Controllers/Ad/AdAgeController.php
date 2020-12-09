@@ -15,7 +15,7 @@ class AdAgeController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_AGE;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $phone_ages = PhoneAge::all();
 

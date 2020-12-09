@@ -17,7 +17,7 @@ class AdAccessoryController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_ACCESSORY;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $accessories = PhoneAccessory::all();
 

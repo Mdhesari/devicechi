@@ -14,7 +14,7 @@ class AdPriceController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_PRICE;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $price = is_null($request->old('price')) ? $ad->price ?? '' : $request->old('price');
 

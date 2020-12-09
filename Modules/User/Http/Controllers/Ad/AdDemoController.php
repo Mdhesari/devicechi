@@ -20,7 +20,7 @@ class AdDemoController extends BaseAdController
 
         $step = BaseAdController::DEMO;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $ad = $ad->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
 

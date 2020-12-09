@@ -18,7 +18,7 @@ class AdPictureController extends BaseAdController
     {
         $step = BaseAdController::STEP_UPLOAD_PICTURES;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $pictures = $ad->pictures;
 

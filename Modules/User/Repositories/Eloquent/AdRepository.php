@@ -67,7 +67,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return $this->model->create($data);
     }
 
-    public function checkPreviousSteps(int $step, $user)
+    public function checkPreviousSteps(int $step, $ad)
     {
 
         $pipelines = [
@@ -82,8 +82,6 @@ class AdRepository extends Repository implements AdRepositoryInterface
             FinalPipeline::class,
             DemoPipeline::class,
         ];
-
-        $ad = $user->ads()->uncompleted()->first();
 
         $data = [
             'step' => $step,

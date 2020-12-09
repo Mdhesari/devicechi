@@ -16,7 +16,7 @@ class AdVariantController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_VARIANT;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $phone_model_variants = $model->variants;
 

@@ -16,7 +16,7 @@ class AdDetailsController extends BaseAdController
     {
         $step = BaseAdController::STEP_FINALINFO;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         return inertia('Ad/Wizard/Create', compact('step', 'ad'));
     }

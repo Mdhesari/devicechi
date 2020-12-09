@@ -20,7 +20,7 @@ class AdLocationController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_LOCATION;
 
-        $this->checkPreviousSteps($step);
+        $this->checkPreviousSteps($step, $ad);
 
         $user_country = Country::whereName(config('user.default_country'))->first();
 

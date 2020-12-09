@@ -34,10 +34,10 @@ class BaseAdController extends Controller
         $this->adRepository = $adRepository;
     }
 
-    public function checkPreviousSteps($step)
+    public function checkPreviousSteps($step, $ad)
     {
 
-        return $this->adRepository->checkPreviousSteps($step, auth()->user());
+        return $this->adRepository->checkPreviousSteps($step, $ad);
     }
 
     public function getStepRoute(int $step, Request $request)
