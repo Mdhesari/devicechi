@@ -2,6 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_model', {
+                ad: ad.id,
                 phone_brand: brand.name
             })
         "
@@ -83,6 +84,7 @@ export default {
             this.form
                 .post(
                     route("user.ad.step_phone_model_variant", {
+                        ad: this.ad,
                         phone_model: this.model.name
                     })
                 )

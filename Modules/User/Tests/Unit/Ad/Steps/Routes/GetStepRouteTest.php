@@ -25,7 +25,7 @@ class GetStepRouteTest extends TestCase
    public function test_can_get_brand_step_route()
    {
 
-      $response = $this->get(route('user.ad.step_phone_routes', [
+      $response = $this->get(route('user.ad.routes', [
          'step' => BaseAdController::STEP_CHOOSE_BRAND,
       ]));
 

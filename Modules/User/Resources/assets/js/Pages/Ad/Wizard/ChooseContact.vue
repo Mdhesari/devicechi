@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_location')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_location', {
+                ad: ad.id
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_contact.title") }}
@@ -54,7 +60,8 @@ export default {
                 value: "",
                 type: null
             },
-            isLoading: false
+            isLoading: false,
+            ad: this.getProp("ad")
         };
     },
     methods: {
@@ -64,7 +71,11 @@ export default {
             if (keyCode != 1) return false;
 
             this.$inertia
-                .post(route("user.ad.step_phone_contact"))
+                .post(
+                    route("user.ad.step_phone_contact", {
+                        ad: this.ad.id
+                    })
+                )
                 .then(response => {
                     console.log(this.$inertia.page.props);
 
@@ -87,10 +98,15 @@ export default {
 
             this.isLoading = true;
             axios
-                .post(route("user.ad.step_phone_contact.delete"), {
-                    _method: "delete",
-                    contact_id: contact.id
-                })
+                .post(
+                    route("user.ad.step_phone_contact.delete", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        _method: "delete",
+                        contact_id: contact.id
+                    }
+                )
                 .then(response => {
                     if (response.data.status) {
                         this.$to(

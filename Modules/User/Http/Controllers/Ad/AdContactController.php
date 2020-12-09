@@ -10,6 +10,7 @@ use Illuminate\Pipeline\Pipeline;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
 use Log;
+use Modules\User\Entities\Ad;
 use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Entities\AdPicture;
@@ -28,25 +29,21 @@ use Storage;
 
 class AdContactController extends BaseAdController
 {
-    public function choose(Request $request, AdContactRepositoryInterface $adContactRepository)
+    public function choose(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
         $step = BaseAdController::STEP_CHOOSE_CONTACT;
 
         $this->checkPreviousSteps($step);
 
-        $ad = $this->adRepository->getUserUncompletedAd();
-
         $contact_types = AdContactType::all();
 
         $contacts = $adContactRepository->getContacts($ad);
 
-        return inertia('Ad/Wizard/Create', compact('step', 'contacts', 'contact_types'));
+        return inertia('Ad/Wizard/Create', compact('step', 'contacts', 'contact_types', 'ad'));
     }
 
-    public function store(Request $request)
+    public function store(Ad $ad, Request $request)
     {
-
-        $ad = $this->adRepository->getUserUncompletedAd();
 
         if (!$ad->contacts()->verified()->count()) {
 
@@ -57,10 +54,12 @@ class AdContactController extends BaseAdController
             ]);
         }
 
-        return redirect()->route('user.ad.step_phone_details');
+        return redirect()->route('user.ad.step_phone_details', [
+            'ad' => $ad,
+        ]);
     }
 
-    public function add(Request $request, AdContactRepositoryInterface $adContactRepository)
+    public function add(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
 
         $request->validate([
@@ -71,8 +70,6 @@ class AdContactController extends BaseAdController
             'value.required' => __("user::ads.form.error.contact.value.title"),
             'value.unique' => __("user::ads.form.error.contact.duplicate.title")
         ]);
-
-        $ad = $this->adRepository->getUserUncompletedAd();
 
         $ad_contact = $adContactRepository->firstOrCreate([
             'contact_type_id' => $request->contact_type['id'],
@@ -94,7 +91,7 @@ class AdContactController extends BaseAdController
         return $adContactRepository->sendVerification($ad_contact);
     }
 
-    public function verify(AdContactVerifyRequest $request, AdContactRepository $adContactRepository)
+    public function verify(Ad $ad, AdContactVerifyRequest $request, AdContactRepository $adContactRepository)
     {
 
         $verification_code = $request->verification_code;
@@ -121,7 +118,7 @@ class AdContactController extends BaseAdController
         ]);
     }
 
-    public function remove(Request $request, AdContactRepositoryInterface $adContactRepository)
+    public function remove(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
 
         $request->validate([
@@ -129,8 +126,6 @@ class AdContactController extends BaseAdController
         ]);
 
         $result = $adContactRepository->delete($request->contact_id);
-
-        $ad = $this->adRepository->getUserUncompletedAd();
 
         $contacts = $adContactRepository->getContacts($ad);
 

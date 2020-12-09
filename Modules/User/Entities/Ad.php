@@ -124,6 +124,12 @@ class Ad extends Model
         return $this->belongsTo(PhoneVariant::class, 'phone_model_variant_id');
     }
 
+    public function state()
+    {
+
+        return $this->belongsTo(CityState::class);
+    }
+
     /**
      * Create a new factory instance for the model.
      *

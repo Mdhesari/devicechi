@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_price')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_price', {
+                ad: ad.id
+            })
+        "
+    >
         <form class="browse-pictures-form" @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.upload_picture.title") }}
@@ -61,17 +67,23 @@ export default {
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
             files_limit_count: 9,
             label_text: this.__("ads.form.placeholder.upload.init"),
-            validFileTypes: ["image/png", "image/jpg", "image/jpeg"]
+            validFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+            ad: this.getProp("ad")
         };
     },
     methods: {
         next(ev) {
             // go to next step
             this.form
-                .post(route("user.ad.step_phone_pictures"), {
-                    peserveState: false,
-                    preserveScroll: true
-                })
+                .post(
+                    route("user.ad.step_phone_pictures", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        peserveState: false,
+                        preserveScroll: true
+                    }
+                )
                 .then(response => {
                     let error = null;
 

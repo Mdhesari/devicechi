@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Entities\Ad;
 use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
@@ -14,14 +15,14 @@ use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 class AdDemoController extends BaseAdController
 {
 
-    public function show()
+    public function show(Ad $ad)
     {
 
         $step = BaseAdController::DEMO;
 
         $this->checkPreviousSteps($step);
 
-        $ad = $this->adRepository->getUserUncompletedAdWith(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
+        $ad = $ad->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
 
         return inertia('Ad/Demo', compact('ad'));
     }

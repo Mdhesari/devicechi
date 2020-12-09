@@ -46,7 +46,8 @@ export default {
     data() {
         return {
             brand: this.getProp("brand"),
-            models: this.getProp("models")
+            models: this.getProp("models"),
+            ad: this.getProp("ad")
         };
     }
 };

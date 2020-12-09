@@ -102,14 +102,6 @@ class AdRepository extends Repository implements AdRepositoryInterface
         return $result;
     }
 
-    public function saveAccessories($accessories, User $user)
-    {
-
-        $ad = $user->ads()->uncompleted()->firstOrFail();
-
-        return $ad->accessories()->sync($accessories);
-    }
-
     public function getUserUncompletedAd()
     {
 

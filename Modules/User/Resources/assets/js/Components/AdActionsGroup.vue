@@ -34,7 +34,11 @@ export default {
     props: ["ad"],
     methods: {
         getBack() {
-            this.$inertia.visit(route("user.ad.step_phone_details"));
+            this.$inertia.visit(
+                route("user.ad.step_phone_details", {
+                    ad: this.ad.id
+                })
+            );
         },
         publishAd() {
             this.$inertia.post(route("user.ad.step_phone_demo.publish"), {

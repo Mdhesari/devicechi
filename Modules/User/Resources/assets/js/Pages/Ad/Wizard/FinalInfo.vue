@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_contact')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_contact', {
+                ad: ad.id
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.final_info.title") }}
@@ -69,7 +75,11 @@ export default {
     },
     methods: {
         next() {
-            this.form.post(route("user.ad.step_phone_details"));
+            this.form.post(
+                route("user.ad.step_phone_details", {
+                    ad: this.ad.id
+                })
+            );
         }
     }
 };

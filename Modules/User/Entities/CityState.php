@@ -12,4 +12,10 @@ class CityState extends Model
     public $timestamps = false;
 
     protected $fillable = [];
+
+    public function city()
+    {
+
+        return $this->belongsTo(City::class);
+    }
 }

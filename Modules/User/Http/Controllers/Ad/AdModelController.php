@@ -2,9 +2,9 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use App\Models\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Modules\User\Entities\Ad;
 use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
@@ -50,6 +50,7 @@ class AdModelController extends BaseAdController
         $ad->save();
 
         return redirect()->route('user.ad.step_phone_model_variant', [
+            'ad' => $ad,
             'phone_model' => $phone_model,
         ]);
     }

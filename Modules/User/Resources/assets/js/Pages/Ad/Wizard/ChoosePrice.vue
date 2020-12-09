@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_age')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_age', {
+                ad: ad.id
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_price.title") }}
@@ -57,16 +63,22 @@ export default {
             }),
             isInvalid: false,
             calculated_price: this.calculatePrice(this.getProp("price"), true),
-            current_root: this.$inertia.page.props.current_root
+            current_root: this.$inertia.page.props.current_root,
+            ad: this.getProp("ad")
         };
     },
     methods: {
         next(ev) {
             this.isLoading = true;
             this.form
-                .post(route("user.ad.step_phone_price"), {
-                    preserveState: false
-                })
+                .post(
+                    route("user.ad.step_phone_price", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        preserveState: false
+                    }
+                )
                 .then(response => {
                     this.isLoading = false;
                 });

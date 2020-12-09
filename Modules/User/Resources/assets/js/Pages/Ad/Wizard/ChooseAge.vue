@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_accessories')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_accessories', {
+                ad: ad.id
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_age.title") }}
@@ -69,9 +75,14 @@ export default {
             this.isLoading = true;
 
             this.form
-                .post(route("user.ad.step_phone_age"), {
-                    preserveState: false
-                })
+                .post(
+                    route("user.ad.step_phone_age", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        preserveState: false
+                    }
+                )
                 .then(response => {
                     this.isLoading = false;
                 });

@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers\Ad;
 use Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Modules\User\Entities\Ad;
 use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Exceptions\PhoneAccessoryIdNotFoundException;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
@@ -12,15 +13,13 @@ use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 class AdAccessoryController extends BaseAdController
 {
 
-    public function choose(Request $request)
+    public function choose(Ad $ad, Request $request)
     {
         $step = BaseAdController::STEP_CHOOSE_ACCESSORY;
 
         $this->checkPreviousSteps($step);
 
         $accessories = PhoneAccessory::all();
-
-        $ad = $this->adRepository->getUserUncompletedAd();
 
         $phone_model = $ad->phoneModel;
 
@@ -38,7 +37,7 @@ class AdAccessoryController extends BaseAdController
         return inertia('Ad/Wizard/Create', compact('accessories', 'selected', 'step', 'phone_model', 'ad'));
     }
 
-    public function store(Request $request)
+    public function store(Ad $ad, Request $request)
     {
 
         $request->validate([
@@ -52,8 +51,10 @@ class AdAccessoryController extends BaseAdController
             return !is_null($value) && !empty($value) && PhoneAccessory::whereId($value)->count() > 0;
         });
 
-        $result = $this->adRepository->saveAccessories($acceesories, auth()->user());
+        $result = $ad->accessories()->sync($acceesories);
 
-        return $result ? redirect()->route('user.ad.step_phone_age') : redirect()->back();
+        return $result ? redirect()->route('user.ad.step_phone_age', [
+            'ad' => $ad
+        ]) : redirect()->back();
     }
 }

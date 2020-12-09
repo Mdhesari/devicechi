@@ -1,5 +1,11 @@
 <template>
-    <WizardStep :backLink="route('user.ad.step_phone_pictures')">
+    <WizardStep
+        :backLink="
+            route('user.ad.step_phone_pictures', {
+                ad: ad.id
+            })
+        "
+    >
         <form @submit.prevent="next">
             <p class="form-title">
                 {{ __("ads.wizard.choose_location.title") }}
@@ -55,16 +61,12 @@ export default {
     data() {
         return {
             form: this.$inertia.form({
-                city: null,
-                state: null
+                city: this.getProp("city") ? this.getProp("city").id : null,
+                state: this.getProp("state") ? this.getProp("state").id : null
             }),
             allCities: this.getProp("cities"),
-            states: [
-                {
-                    value: null,
-                    text: this.__("ads.form.placeholder.location.state_loading")
-                }
-            ]
+            allStates: this.getProp("states"),
+            ad: this.getProp("ad")
         };
     },
     computed: {
@@ -84,6 +86,23 @@ export default {
             });
 
             return cities;
+        },
+        states() {
+            let states = [
+                {
+                    value: null,
+                    text: this.__("ads.form.placeholder.location.state_loading")
+                }
+            ];
+
+            this.allStates.forEach(state => {
+                states.push({
+                    value: state.id,
+                    text: state.name
+                });
+            });
+
+            return states;
         }
     },
     methods: {
@@ -91,9 +110,14 @@ export default {
             // this.$emit("next");
 
             this.form
-                .post(this.route("user.ad.step_phone_location"), {
-                    preserveScroll: true
-                })
+                .post(
+                    this.route("user.ad.step_phone_location", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        preserveScroll: true
+                    }
+                )
                 .then(response => {
                     if (this.form.error("city")) {
                         this.$to(
@@ -117,6 +141,7 @@ export default {
 
             const response = await axios.get(
                 route("user.ad.step_phone_location.states", {
+                    ad: this.ad.id,
                     city: id
                 })
             );

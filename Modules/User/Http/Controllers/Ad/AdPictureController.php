@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Log;
+use Modules\User\Entities\Ad;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Http\Requests\Ad\AdStorePictureRequest;
 use Modules\User\Space\Contracts\StoresAdPicture;
@@ -13,25 +14,21 @@ use Storage;
 
 class AdPictureController extends BaseAdController
 {
-    public function choose(Request $request)
+    public function choose(Ad $ad, Request $request)
     {
         $step = BaseAdController::STEP_UPLOAD_PICTURES;
 
         $this->checkPreviousSteps($step);
 
-        $ad = $this->adRepository->getUserUncompletedAd();
-
         $pictures = $ad->pictures;
 
         $ad_picture_size_limit = config('user.ad_picture_size_limit');
 
-        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit'));
+        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit', 'ad'));
     }
 
-    public function store(AdStorePictureRequest $request, StoresAdPicture $driver)
+    public function store(Ad $ad, AdStorePictureRequest $request, StoresAdPicture $driver)
     {
-        $ad = $this->adRepository->getUserUncompletedAd();
-
         $pictures = $request->pictures;
 
         foreach ($pictures as $picture) {
@@ -44,10 +41,12 @@ class AdPictureController extends BaseAdController
             $ad->pictures()->save($picture);
         }
 
-        return redirect()->route('user.ad.step_phone_location');
+        return redirect()->route('user.ad.step_phone_location',[
+            'ad' => $ad,
+        ]);
     }
 
-    public function delete(Request $request, StoresAdPicture $storeDriver)
+    public function delete(Ad $ad, Request $request, StoresAdPicture $storeDriver)
     {
 
         $request->validate([
