@@ -15,12 +15,18 @@ class PhoneBrand extends Model
         return 'name';
     }
 
-    public function scopeExcludeAd($query, $ad)
+    public static function scopeExcludeAd($query, $ad)
     {
 
         if (is_null($ad) || !isset($ad->phoneModel)) return $query;
 
         return $query->where('id', '!=', $ad->phoneModel->brand->id);
+    }
+
+    public static function scopeFilterSearch($query, $search)
+    {
+
+        return $query->where('Name', 'Like',  "%$search%");
     }
 
     public function models()

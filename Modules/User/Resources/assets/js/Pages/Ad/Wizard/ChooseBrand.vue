@@ -37,7 +37,29 @@
                 </div>
             </div>
 
-            <div class="row brand-list">
+            <b-form-group class="mb-4" label-for="input-formatter">
+                <b-form-input
+                    v-model="search"
+                    :placeholder="__('ads.form.placeholder.brands.search')"
+                    type="search"
+                    @keyup.delete="restoreBrands"
+                    @keyup="searchBrands"
+                ></b-form-input>
+            </b-form-group>
+
+            <div class="row brand-list" v-if="!isLoading">
+                <b-alert
+                    variant="warning"
+                    class="d-block mx-auto"
+                    :show="brands.length < 1"
+                >
+                    {{
+                        __("ads.form.warning.nothing.brands", {
+                            brand: search
+                        })
+                    }}
+                </b-alert>
+
                 <div
                     class="col-6 col-sm-4 col-md-3 col-lg-2 brand-item"
                     v-for="brand in brands"
@@ -59,22 +81,28 @@
                     </inertia-link>
                 </div>
             </div>
+
+            <Spinner v-if="isLoading" />
         </form>
     </WizardStep>
 </template>
 
 <script>
 import WizardStep from "../../../Components/WizardStep";
+import Spinner from "../../../Components/Spinner-progressing";
 
 export default {
     components: {
-        WizardStep
+        WizardStep,
+        Spinner
     },
     data() {
         return {
             brands: this.getProp("phone_brands"),
             current_root: this.getProp("current_root"),
-            ad: this.getProp("ad")
+            ad: this.getProp("ad"),
+            search: "",
+            isLoading: false
         };
     },
     computed: {
@@ -89,6 +117,33 @@ export default {
     methods: {
         next() {
             // this.$emit("next");
+        },
+        brandRequest(search = null) {
+            this.isLoading = true;
+
+            axios
+                .get(
+                    route("user.ad.get.brands", {
+                        search: search
+                    })
+                )
+                .then(response => {
+                    const data = response.data;
+
+                    if (data.brands) this.brands = data.brands;
+
+                    this.isLoading = false;
+                });
+        },
+        searchBrands() {
+            if (this.search.length < 3) return;
+
+            this.brandRequest(this.search);
+        },
+        restoreBrands() {
+            if (this.search.length > 3) return;
+
+            this.brandRequest();
         }
     }
 };
