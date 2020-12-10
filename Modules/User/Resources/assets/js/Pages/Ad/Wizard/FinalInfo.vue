@@ -45,6 +45,16 @@
                 <p class="text-danger" v-text="form.error('description')"></p>
             </b-form-group>
 
+            <b-form-group class="text-center mt-4">
+                <b-form-checkbox
+                    v-model="agreement_status"
+                    name="agreement_status-1"
+                >
+                    قوانین انتشار آگهی را مطالعه کرده ام و مسئولیت عدم رعایت
+                    قوانین را بر عهده میگیرم.
+                </b-form-checkbox>
+            </b-form-group>
+
             <b-button variant="secondary" @click.prevent="next">
                 {{ __("ads.preview") }}
                 <b-icon icon="eye-fill" class="vertical-middle"></b-icon>
@@ -66,7 +76,8 @@ export default {
                 title: null,
                 description: null
             }),
-            ad: this.getProp("ad")
+            ad: this.getProp("ad"),
+            agreement_status: false
         };
     },
     mounted() {
@@ -75,6 +86,12 @@ export default {
     },
     methods: {
         next() {
+            if (this.agreement_status) {
+                this.$to(
+                    __("ads.form.error.rule.title", "ads.form.error.rule.desc")
+                );
+            }
+
             this.form.post(
                 route("user.ad.step_phone_details", {
                     ad: this.ad.id

@@ -29,10 +29,11 @@ class AdVariantController extends BaseAdController
     {
 
         $request->validate([
-            'variant_id' => 'required|exists:phone_variants,id'
+            'variant_id' => 'required|exists:phone_variants,id',
         ]);
 
         $ad->phone_model_variant_id = $request->variant_id;
+        $ad->is_multicard = $request->boolean('is_multicard', false);
         $ad->save();
 
         return redirect()->route('user.ad.step_phone_accessories', [

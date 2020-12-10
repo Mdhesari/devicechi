@@ -36,8 +36,18 @@
                 </b-form-radio>
             </b-form-group>
 
+            <b-form-group class="text-center mt-4">
+                <b-form-checkbox
+                    id="checkbox-1"
+                    v-model="form.is_multicard"
+                    name="checkbox-1"
+                >
+                    {{ __("ads.form.label.multicard") }}
+                </b-form-checkbox>
+            </b-form-group>
+
             <b-button
-                v-if="form.variant_id"
+                v-if="form.variant_id != null"
                 :disabled="isLoading"
                 variant="secondary"
                 @click.prevent="next"
@@ -57,6 +67,10 @@ export default {
     },
     data() {
         return {
+            form: this.$inertia.form({
+                variant_id: null,
+                is_multicard: false
+            }),
             variants: this.getProp("phone_model_variants"),
             current_root: this.getProp("current_root"),
             model: this.getProp("model"),
@@ -65,17 +79,11 @@ export default {
             isLoading: false
         };
     },
-    computed: {
-        form() {
-            return this.$inertia.form({
-                variant_id: this.ad.phone_model_variant_id
-                    ? this.ad.phone_model_variant_id
-                    : null
-            });
-        }
-    },
     mounted() {
-        console.log(this.form.variant_id);
+        this.form.variant_id = this.ad.phone_model_variant_id
+            ? this.ad.phone_model_variant_id
+            : null;
+        this.form.is_multicard = Boolean(this.ad.is_multicard);
     },
     methods: {
         next() {
@@ -95,7 +103,7 @@ export default {
         nextUsingChange(variant_id) {
             this.form.variant_id = variant_id;
 
-            this.next();
+            console.log(this.form.variant_id);
         },
         printVariantInfo(variant) {
             return variant.ram + " / " + variant.storage;

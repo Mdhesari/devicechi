@@ -21,7 +21,7 @@ class Ad extends Model
     const STATUS_ARCHIVE = 5;
 
     protected $fillable = [
-        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_multicard', 'is_exchangeable',
+        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable',
     ];
 
     public function publish()
