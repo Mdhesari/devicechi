@@ -101,6 +101,8 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
     Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
 
+    Route::get('/get/models', [AdMainController::class, 'getModels'])->name('get.models');
+
     Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
 
     Route::get('/get', [AdMainController::class, 'get'])->name('get');

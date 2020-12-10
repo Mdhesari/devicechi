@@ -31,4 +31,10 @@ class PhoneModel extends Model
 
         return $query->where('id', '!=', $ad->phoneModel->id);
     }
+
+    public static function scopeFilterSearch($query, $search)
+    {
+
+        return $query->where('Name', 'Like',  "%$search%");
+    }
 }

@@ -126,10 +126,14 @@ return [
             'brands' => [
                 'search' => 'جستجو بین برند ها...',
             ],
+            'models' => [
+                'search' => 'جستجو بین برند ها...',
+            ],
         ],
         'warning' => [
             'nothing' => [
                 'brands' => 'هیچ برندی با عنوان :brand وجود ندارد.',
+                'models' => 'هیچ مدلی با عنوان :model_name وجود ندارد.',
             ],
         ],
         'success' => [
