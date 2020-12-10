@@ -90,7 +90,7 @@ return [
             'age' => [
                 'min' => 'کمتر از :month ماه',
                 'max' => 'بیشتر از :month ماه',
-                'between' => ':min - :max ماه'
+                'between' => ':min تا :max ماه'
             ],
             'location' => [
                 'city' => 'شهر',

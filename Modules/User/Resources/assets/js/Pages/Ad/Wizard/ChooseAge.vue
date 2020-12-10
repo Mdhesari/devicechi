@@ -91,8 +91,6 @@ export default {
         },
         nextUsingChange(age_id) {
             this.form.age_id = age_id;
-
-            this.next();
         },
         printAgeInfo(age) {
             let txt = "";
