@@ -68,7 +68,7 @@ export default {
             pictures_limit_count: this.getProp("ad_pictures_max_count"),
             pictures_min_count: this.getProp("ad_pictures_min_count"),
             label_text: this.__("ads.form.placeholder.upload.init"),
-            validFileTypes: ["image/png", "image/jpg", "image/jpeg"],
+            validFileTypes: this.getProp("ad_pictures_format"),
             ad: this.getProp("ad")
         };
     },

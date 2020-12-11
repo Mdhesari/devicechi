@@ -15,7 +15,8 @@ class AdDetailsRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:4'],
-            'description' => ['required', 'min:8']
+            'description' => ['required', 'min:8'],
+            'agreement_status' => ['required', 'accepted']
         ];
     }
 

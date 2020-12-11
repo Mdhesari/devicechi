@@ -26,7 +26,9 @@ class AdPictureController extends BaseAdController
         $ad_pictures_max_count = config('user.ad_pictures_max_count', 9);
         $ad_pictures_min_count = config('user.ad_pictures_min_count', 3);
 
-        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit', 'ad', 'ad_pictures_min_count', 'ad_pictures_max_count'));
+        $ad_pictures_format = config('user.ad_pictures_format');
+
+        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit', 'ad', 'ad_pictures_min_count', 'ad_pictures_max_count', 'ad_pictures_format'));
     }
 
     public function store(Ad $ad, AdStorePictureRequest $request, StoresAdPicture $driver)
