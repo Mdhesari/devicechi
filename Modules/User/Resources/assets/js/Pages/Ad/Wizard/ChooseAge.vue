@@ -67,11 +67,6 @@ export default {
     mounted() {
         this.form.age_id = this.ad.phone_age_id ? this.ad.phone_age_id : null;
     },
-    computed: {
-        form() {
-            return;
-        }
-    },
     methods: {
         next() {
             if (this.isLoading) return;
