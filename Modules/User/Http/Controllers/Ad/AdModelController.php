@@ -20,7 +20,9 @@ class AdModelController extends BaseAdController
 
         $this->checkPreviousSteps($step, $this->adRepository->getUserUncompletedAd());
 
-        if ($ad) $ad->load('phoneModel');
+        if ($ad) {
+            $ad->load('phoneModel');
+        }
 
         $models = $brand->models()->excludeModel($ad)->get();
 

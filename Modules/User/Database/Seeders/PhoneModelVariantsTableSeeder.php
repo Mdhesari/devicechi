@@ -5,6 +5,7 @@ namespace Modules\User\Database\Seeders;
 use DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Entities\PhoneModel;
 use Modules\User\Exceptions\PhoneVariantUnableToSeedWithoutModel;
 
 class PhoneModelVariantsTableSeeder extends Seeder
@@ -18,7 +19,9 @@ class PhoneModelVariantsTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $phone_variants = config('user.phone_variants');
+        // $phone_variants = config('user.phone_variants');
+
+        $phone_variants = json_decode(file_get_contents(public_path() . '/variants.json'), true);
 
         $db_model = [];
 
@@ -28,12 +31,12 @@ class PhoneModelVariantsTableSeeder extends Seeder
         DB::table('phone_variants')->truncate();
 
         foreach ($phone_variants as $variant) {
-
-            $model = DB::table('phone_models')->whereName($variant['model'])->first();
+            $model = DB::table('phone_models')->where('name', $variant['model'])->first();
 
             if (!$model) {
-                $this->error('unable to seed variants without model');
-                throw new PhoneVariantUnableToSeedWithoutModel;
+                dump($variant['model']);
+                // throw new PhoneVariantUnableToSeedWithoutModel;
+                continue;
             }
 
             $db_model[] = [

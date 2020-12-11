@@ -6,7 +6,9 @@ use ArithmeticError;
 use Artisan;
 use Goutte\Client;
 use Log;
+use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
+use Str;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\HttpClient\HttpClient;
@@ -59,9 +61,9 @@ class PhoneModelsVariantCurl extends Command
     private function storageRamAndStorage($url, $type)
     {
 
-        $models = PhoneModel::with('brand')->get();
+        $model_urls = $this->getModelsUrl($url);
 
-        if (count($models) < 1) {
+        if (count($model_urls) < 1) {
 
             $this->error('There is no models available!');
             Log::error('No models available...');
@@ -70,24 +72,31 @@ class PhoneModelsVariantCurl extends Command
 
         $db_data = [];
 
-        foreach ($models as $model) {
+        foreach ($model_urls as $data) {
 
-            $response = $this->cli->request('GET', $url . $model->brand->name . '/' . $model->name);
+            $url = "https://www.recycledevice.com/" . trim($data['url'], "/");
+
+            $model = $data['model'];
+
+            $this->info($url);
+
+            $response = $this->cli->request('GET', $url);
 
             $response->filter('.dev-details .cards2 .card')->each(function ($node) use (&$db_data, $model) {
-
                 $ramAndStorage = explode('/', $node->text());
 
                 $ram = $ramAndStorage[0];
                 $storage = $ramAndStorage[1];
 
                 $db_data[] = [
-                    'model' => $model->name,
+                    'model' => $model,
                     'ram' => $ram,
                     'storage' => $storage,
                 ];
             });
         }
+
+        file_put_contents(public_path() . '/variants.json', json_encode($db_data));
 
         if ($type == 'database') {
 
@@ -102,5 +111,45 @@ class PhoneModelsVariantCurl extends Command
 
             Log::info($db_data);
         }
+    }
+
+    private function getModelsUrl($url)
+    {
+
+
+        $brands = PhoneBrand::all();
+
+        $bar = $this->output->createProgressBar($brands->count());
+
+        if (count($brands) < 1) {
+
+            $this->error('There is no brands available!');
+            return 0;
+        }
+
+        $bar->start();
+
+        $this->info('Start scrapping phone brand items');
+
+        $urls = [];
+
+        foreach ($brands as $brand) {
+
+            $response = $this->cli->request('GET', $url . $brand->name);
+
+            $response->filter('.device-list .item a')->each(function ($node) use (&$urls, $brand) {
+
+                $urls[] = [
+                    'url' => $node->attr('href'),
+                    'model' => $node->text(),
+                ];
+            });
+
+            $bar->advance();
+        }
+
+        $bar->finish();
+
+        return $urls;
     }
 }

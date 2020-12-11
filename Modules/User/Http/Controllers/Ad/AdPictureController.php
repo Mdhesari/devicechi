@@ -41,6 +41,7 @@ class AdPictureController extends BaseAdController
 
             $picture = new AdPicture;
             $picture->url = $path;
+            $picture->is_active = $request->boolean(optional($picture)->is_active, false);
 
             $ad->pictures()->save($picture);
         }

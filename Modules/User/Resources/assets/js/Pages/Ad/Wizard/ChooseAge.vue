@@ -58,14 +58,18 @@ export default {
         return {
             isLoading: false,
             phone_ages: this.getProp("phone_ages"),
-            ad: this.getProp("ad")
+            ad: this.getProp("ad"),
+            form: this.$inertia.form({
+                age_id: null
+            })
         };
+    },
+    mounted() {
+        this.form.age_id = this.ad.phone_age_id ? this.ad.phone_age_id : null;
     },
     computed: {
         form() {
-            return this.$inertia.form({
-                age_id: this.ad.phone_age_id ? this.ad.phone_age_id : null
-            });
+            return;
         }
     },
     methods: {

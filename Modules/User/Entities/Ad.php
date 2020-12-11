@@ -40,6 +40,16 @@ class Ad extends Model
         ])->save();
     }
 
+    public function resetModel()
+    {
+
+        return $this->forceFill([
+            'phone_model_id' => null,
+            'phone_model_variant_id' => null,
+            'is_multicard' => false,
+        ])->save();
+    }
+
     public function scopeUncompleted($query)
     {
 

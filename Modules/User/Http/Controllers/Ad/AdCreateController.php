@@ -16,7 +16,10 @@ class AdCreateController extends BaseAdController
 
     public function show(Ad $ad = null)
     {
-        if ($ad) $ad->load('phoneModel.brand');
+        if ($ad) {
+            $ad->load('phoneModel.brand');
+            $ad->resetModel();
+        }
 
         $step = BaseAdController::STEP_CHOOSE_BRAND;
 

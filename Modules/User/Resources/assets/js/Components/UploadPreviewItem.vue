@@ -1,5 +1,8 @@
 <template>
     <b-col class="preview-item" sm="6" md="4" lg="2">
+        <div v-if="picture.is_active">
+            active
+        </div>
         <img class="fluid" :src="picture.url" alt="Uploaded Picture" />
         <b-progress
             v-if="progress_id === picture.id"

@@ -17,8 +17,8 @@ class CreatePhoneVariantsTable extends Migration
             $table->id();
 
             $table->foreignId('phone_model_id');
-            $table->string('ram', 8);
-            $table->string('storage', 8);
+            $table->string('ram', 32);
+            $table->string('storage', 32);
         });
     }
 

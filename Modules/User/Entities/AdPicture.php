@@ -11,9 +11,18 @@ class AdPicture extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'is_active' => 'boolean',
+    ];
+
     protected $table = 'ad_pictures';
 
-    protected $fillable = ['ad_id', 'url', 'meta_picture'];
+    protected $fillable = ['ad_id', 'url', 'meta_picture', 'is_active'];
 
     public function getUrlAttribute($url)
     {
