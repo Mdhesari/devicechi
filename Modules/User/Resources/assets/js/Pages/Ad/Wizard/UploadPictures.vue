@@ -39,7 +39,7 @@
             </b-row>
 
             <b-button
-                v-if="pictures.length >= 3"
+                v-if="pictures.length >= pictures_min_count"
                 variant="secondary"
                 @click.prevent="next"
             >
@@ -65,7 +65,8 @@ export default {
                 pictures: []
             }),
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
-            files_limit_count: 9,
+            pictures_limit_count: this.getProp("ad_pictures_max_count"),
+            pictures_min_count: this.getProp("ad_pictures_min_count"),
             label_text: this.__("ads.form.placeholder.upload.init"),
             validFileTypes: ["image/png", "image/jpg", "image/jpeg"],
             ad: this.getProp("ad")
@@ -129,7 +130,7 @@ export default {
 
             const all_pictures_count = this.pictures.length + files.length;
 
-            if (all_pictures_count >= this.files_limit_count) {
+            if (all_pictures_count >= this.pictures_limit_count) {
                 this.$to(this.__("ads.form.error.pictures.max"));
                 return false;
             }
@@ -161,7 +162,9 @@ export default {
                 });
             } else {
                 const response = await axios.post(
-                    route("user.ad.step_phone_pictures"),
+                    route("user.ad.step_phone_pictures", {
+                        ad: this.ad.id
+                    }),
                     {
                         _method: "DELETE",
                         picture_id: picture.id

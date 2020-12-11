@@ -4,6 +4,8 @@ return [
     'name' => 'User',
     'verification_length' => 5,
     'ad_picture_size_limit' => 5, // MB
+    'ad_pictures_max_count' => 9,
+    'ad_pictures_min_count' => 2,
 
     'default_country' => 'Iran',
 

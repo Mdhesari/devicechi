@@ -22,9 +22,11 @@ class AdPictureController extends BaseAdController
 
         $pictures = $ad->pictures;
 
-        $ad_picture_size_limit = config('user.ad_picture_size_limit');
+        $ad_picture_size_limit = config('user.ad_picture_size_limit', 5); // MB
+        $ad_pictures_max_count = config('user.ad_pictures_max_count', 9);
+        $ad_pictures_min_count = config('user.ad_pictures_min_count', 3);
 
-        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit', 'ad'));
+        return inertia('Ad/Wizard/Create', compact('step', 'pictures', 'ad_picture_size_limit', 'ad', 'ad_pictures_min_count', 'ad_pictures_max_count'));
     }
 
     public function store(Ad $ad, AdStorePictureRequest $request, StoresAdPicture $driver)
@@ -41,7 +43,7 @@ class AdPictureController extends BaseAdController
             $ad->pictures()->save($picture);
         }
 
-        return redirect()->route('user.ad.step_phone_location',[
+        return redirect()->route('user.ad.step_phone_location', [
             'ad' => $ad,
         ]);
     }
