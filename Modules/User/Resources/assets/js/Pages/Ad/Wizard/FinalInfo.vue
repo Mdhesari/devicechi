@@ -53,7 +53,7 @@
                     قوانین انتشار آگهی را مطالعه کرده ام و مسئولیت عدم رعایت
                     قوانین را بر عهده میگیرم.
                 </b-form-checkbox>
-                <p class="text-danger" v-text="form.error('agreement_status"')"></p>
+                <p class="text-danger" v-text="form.error('agreement_status')"></p>
             </b-form-group>
 
             <b-button variant="secondary" @click.prevent="next">
