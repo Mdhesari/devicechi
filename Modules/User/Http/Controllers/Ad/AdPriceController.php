@@ -18,18 +18,22 @@ class AdPriceController extends BaseAdController
 
         $price = is_null($request->old('price')) ? $ad->price ?? '' : $request->old('price');
 
+        $is_exchangeable = $ad->is_exchangeable;
+
         return inertia('Ad/Wizard/Create', compact('step', 'price', 'ad'));
     }
 
     public function store(Ad $ad, Request $request)
     {
         $request->validate([
-            'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i']
+            'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i'],
+            'is_exchangeable' => ['required']
         ], [
             'digits_between' => __('user::ads.form.error.price.invalid')
         ]);
 
         $ad->price = $request->price;
+        $ad->is_exchangeable = $request->boolean('is_exchangeable', false);
         $ad->save();
 
         return redirect()->route('user.ad.step_phone_pictures', [

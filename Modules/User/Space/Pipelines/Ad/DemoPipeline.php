@@ -17,7 +17,9 @@ class DemoPipeline implements ValidatesAdStep
         if ($step >= BaseAdController::DEMO) {
             if ($ad->missingDetails()) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_details'));
+                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_details', [
+                    'ad' => $ad,
+                ]));
             }
         }
 

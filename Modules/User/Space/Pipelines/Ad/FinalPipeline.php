@@ -17,7 +17,10 @@ class FinalPipeline implements ValidatesAdStep
         if ($step >= BaseAdController::STEP_FINALINFO) {
             if ($ad->contacts()->count() < 1) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_contact'));
+                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_contact', [
+                    'ad' => $ad,
+
+                ]));
             }
         }
 

@@ -14,6 +14,7 @@ use Modules\User\Entities\Ad\AdContactType;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Space\Contracts\MustVerifyPhone;
+use Storage;
 use User\Database\Factories\UserFactory;
 
 class User extends Authenticatable implements MustVerifyPhone
@@ -109,6 +110,12 @@ class User extends Authenticatable implements MustVerifyPhone
     {
 
         return $this->ads()->uncompleted()->count() > 0;
+    }
+
+    public function getProfilePhotoPathAttribute($value)
+    {
+
+        return is_null($value) ? asset('images/user.png') : Storage::url($value);
     }
 
     /**

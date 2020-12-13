@@ -18,7 +18,10 @@ class PricePipeline implements ValidatesAdStep
         if ($step >= BaseAdController::STEP_CHOOSE_PRICE) {
             if ($ad->missingPhoneAge()) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_age'));
+                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_age', [
+                    'ad' => $ad,
+
+                ]));
             }
         }
 

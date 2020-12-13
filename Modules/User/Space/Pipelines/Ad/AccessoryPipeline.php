@@ -19,6 +19,7 @@ class AccessoryPipeline implements ValidatesAdStep
             if ($ad->missingPhoneModelVariant()) {
 
                 throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_model_variant', [
+                    'ad' => $ad,
                     'phone_model' => $ad->phoneModel->name,
                 ]));
             }

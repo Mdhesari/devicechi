@@ -17,7 +17,9 @@ class VariantPipeline implements ValidatesAdStep
         if ($step >= BaseAdController::STEP_CHOOSE_VARIANT) {
             if ($ad->missingPhoneModel()) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.create'));
+                throw new PreviousStepRedirectHttpException(route('user.ad.create', [
+                    'ad' => $ad,
+                ]));
             }
         }
 

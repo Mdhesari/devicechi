@@ -36,6 +36,16 @@
                 ></small>
             </b-form-group>
 
+            <b-form-group class="text-center mt-4">
+                <b-form-checkbox
+                    id="is_exchangeable"
+                    v-model="form.is_exchangeable"
+                    name="is_exchangeable"
+                >
+                    {{ __("ads.form.label.exchangeable") }}
+                </b-form-checkbox>
+            </b-form-group>
+
             <b-button
                 v-if="Number(form.price) ? form.price > 0 : false"
                 variant="secondary"
@@ -59,7 +69,8 @@ export default {
         return {
             isLoading: false,
             form: this.$inertia.form({
-                price: this.formatPrice(this.getProp("price"))
+                price: this.formatPrice(this.getProp("price")),
+                is_exchangeable: Boolean(this.getProp("is_exchangeable"))
             }),
             isInvalid: false,
             calculated_price: this.calculatePrice(this.getProp("price"), true),

@@ -7,12 +7,17 @@
                         <inertia-link
                             :href="route('user.ad.create')"
                             class="btn btn-success btn-rounded-high btn-mobilesale"
-                            >{{ __("ads.create.btn_title") }}</inertia-link
                         >
+                            {{ __("ads.create.btn_title") }}
+                        </inertia-link>
+
                         <ul class="tabs">
                             <li class="tab-profile">
                                 <div class="avatar">
-                                    <img src="img/person" alt="" />
+                                    <img
+                                        :src="user.profile_photo_path"
+                                        :alt="user.name"
+                                    />
                                 </div>
                                 <div class="username">
                                     {{ user.name }}
@@ -122,20 +127,37 @@
                                 :key="ad.id"
                             >
                                 <div class="inner">
-                                    <div
-                                        class="thumbnail"
-                                        :style="
-                                            `background-image: url('${renderAdPicture(
-                                                ad
-                                            )}')`
+                                    <inertia-link
+                                        :href="
+                                            route('user.ad.step_phone_demo', {
+                                                ad: ad.id
+                                            })
                                         "
-                                    ></div>
+                                        class="title"
+                                    >
+                                        <div
+                                            class="thumbnail"
+                                            :style="
+                                                `background-image: url('${renderAdPicture(
+                                                    ad
+                                                )}')`
+                                            "
+                                        ></div>
+                                    </inertia-link>
+
                                     <div class="details">
-                                        <div class="title">
+                                        <inertia-link
+                                            :href="
+                                                route('user.ad.step_phone_demo', {
+                                                    ad: ad.id
+                                                })
+                                            "
+                                            class="title"
+                                        >
                                             <h2>
                                                 {{ renderTitle(ad.title) }}
                                             </h2>
-                                        </div>
+                                        </inertia-link>
                                         <div
                                             :class="
                                                 `status ${renderStatusClass(
@@ -159,8 +181,9 @@
                             :show="ads.length < 1"
                             variant="info"
                             class="text-center mt-4"
-                            >هیچ آگهی موجود نیست!</b-alert
                         >
+                            هیچ آگهی موجود نیست!
+                        </b-alert>
                     </div>
                 </div>
             </div>
@@ -199,8 +222,7 @@ export default {
             return url;
         },
         async updateAds(status, loadOnce = true) {
-            console.log(status == this.activeItem, status, this.activeItem);
-            if (loadOnce) if (status === this.activeItem) return 0;
+            if (loadOnce && status === this.activeItem) return 0;
 
             this.isLoading = true;
 
@@ -225,8 +247,6 @@ export default {
                     this.ads = response.data.ads;
                 }
             }
-
-            console.log(response);
         },
         renderItemClass(status = null) {
             return {

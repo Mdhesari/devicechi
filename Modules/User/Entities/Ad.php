@@ -24,6 +24,15 @@ class Ad extends Model
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable',
     ];
 
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'is_exchangeable' => 'boolean',
+    ];
+
     public function publish()
     {
 

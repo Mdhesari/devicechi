@@ -18,6 +18,7 @@ class ContactPipeline implements ValidatesAdStep
             if ($ad->missingState()) {
 
                 throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_model_location', [
+                    'ad' => $ad,
                     'phone_model' => $ad->phoneModel->name,
                 ]));
             }

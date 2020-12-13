@@ -19,7 +19,10 @@ class ModelPipeline implements ValidatesAdStep
 
             if (!$ad) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.create'));
+                throw new PreviousStepRedirectHttpException(route('user.ad.create', [
+                    'ad' => $ad,
+
+                ]));
                 return $result;
             }
         }

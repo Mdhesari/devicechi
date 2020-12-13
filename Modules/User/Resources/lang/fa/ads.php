@@ -105,6 +105,7 @@ return [
                 'description' => 'توضیحات'
             ],
             'multicard' => 'دستگاه چند سیم کارت را پشتیبانی میکند.',
+            'exchangeable' => 'مایل به معاوضه هستم'
         ],
         'placeholder' => [
             'price' => 'قیمت را وارد کنید.',
