@@ -89,18 +89,24 @@ export default {
             },
             ad_contact: null,
             isLoading: false,
-            save_btn_text: this.__("global.save")
+            save_btn_text: this.__("global.save"),
+            ad: this.getProp("ad")
         };
     },
     mixins: [ContactTypeMixin],
     methods: {
         verifyContact() {
             axios
-                .post(route("user.ad.step_phone_contact.verify"), {
-                    _method: "put",
-                    ad_contact_id: this.ad_contact.id,
-                    verification_code: this.input_data.verify_value
-                })
+                .post(
+                    route("user.ad.step_phone_contact.verify", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        _method: "put",
+                        ad_contact_id: this.ad_contact.id,
+                        verification_code: this.input_data.verify_value
+                    }
+                )
                 .then(response => {
                     if (response.data.status) {
                         this.$to(
@@ -145,10 +151,15 @@ export default {
             }
 
             axios
-                .post(route("user.ad.step_phone_contact.add"), {
-                    contact_type: this.input_data.type,
-                    value: this.input_data.value
-                })
+                .post(
+                    route("user.ad.step_phone_contact.add", {
+                        ad: this.ad.id
+                    }),
+                    {
+                        contact_type: this.input_data.type,
+                        value: this.input_data.value
+                    }
+                )
                 .then(response => {
                     if (response.data.status) {
                         this.$to(
