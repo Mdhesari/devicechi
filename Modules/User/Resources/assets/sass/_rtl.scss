@@ -2,10 +2,14 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
-rtl,
+.rtl,
 [dir="rtl"] {
     text-align: right;
     direction: rtl;
+
+    .dropdown-menu {
+        text-align: right !important;
+    }
 
     .nav {
         padding-right: 0;

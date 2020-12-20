@@ -1,5 +1,5 @@
 <template>
-    <AuthLayout>
+    <AuthLayout :user="user">
         <b-alert
             :show="success_session"
             variant="success"

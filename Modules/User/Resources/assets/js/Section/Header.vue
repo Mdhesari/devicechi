@@ -19,9 +19,15 @@
                     <span class="rec width18"></span>
                 </button>
 
-                <a href="#" class="btn action-btn add-advertisment">
+                <a
+                    v-if="user == null"
+                    href="#"
+                    class="btn action-btn add-advertisment"
+                >
                     ورود یا ثبت نام
                 </a>
+
+                <UserDropDown v-if="user" :user="user"></UserDropDown>
 
                 <Navbar :class="{ navActive: showNavbar }"></Navbar>
             </div>
@@ -43,15 +49,18 @@
 
 <script>
 import Navbar from "./Navigation";
+import UserDropDown from "../Components/UserDropDown";
 
 export default {
+    props: ["user"],
     data() {
         return {
             showNavbar: false
         };
     },
     components: {
-        Navbar
+        Navbar,
+        UserDropDown
     }
 };
 </script>

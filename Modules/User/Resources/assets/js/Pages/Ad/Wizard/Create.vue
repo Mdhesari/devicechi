@@ -1,5 +1,5 @@
 <template>
-    <authLayout>
+    <authLayout :user="user">
         <section class="wizard">
             <b-container>
                 <StepsIndicator :steps="all_steps" :step="step" />
@@ -50,7 +50,7 @@ export default {
         step_9: ChooseContact,
         step_10: FinalInfo
     },
-    props: ["step", "all_steps"],
+    props: ["step", "all_steps", "user"],
     computed: {
         tab() {
             return "step_" + this.step;

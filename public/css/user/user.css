@@ -59,6 +59,14 @@ ul li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
+svg {
+  vertical-align: middle;
+}
+
 /* ========
     MD Styles
 ======= */
@@ -222,6 +230,25 @@ ul li {
 
 .wizard .not-verified {
   background-color: #FB7178;
+}
+
+.header-site #profile-box .dropdown-item {
+  padding: 9px 25px;
+}
+
+.header-site #profile-box button {
+  bottom: 5px;
+  background-color: transparent;
+  border: none;
+}
+
+.header-site #profile-box button:after {
+  content: "";
+}
+
+.header-site #profile-box button .b-avatar {
+  width: 2.3rem;
+  height: 2.3rem;
 }
 
 .vertical-middle {

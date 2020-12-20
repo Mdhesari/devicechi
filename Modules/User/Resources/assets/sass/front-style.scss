@@ -97,10 +97,40 @@ ul li {
     list-style: none;
 }
 
+a {
+
+    text-decoration: none;
+}
+
+svg {
+    vertical-align: middle;
+}
+
 /* ========
     MD Styles
 ======= */
 @import "./wizard.scss";
+
+.header-site #profile-box {
+    .dropdown-item {
+        padding: 9px 25px;
+    }
+
+    button {
+        bottom: 5px ;
+        background-color: transparent;
+        border: none;
+
+        &:after {
+            content: "";
+        }
+
+        .b-avatar {
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+    }
+}
 
 .vertical-middle {
     vertical-align: middle !important;
@@ -1174,7 +1204,7 @@ input[type="number"] {
 }
 
 .blog .inner .details .title h2 {
-    color: pallete('dark');
+    color: pallete("dark");
     text-decoration: none;
     font-size: 20px;
 }

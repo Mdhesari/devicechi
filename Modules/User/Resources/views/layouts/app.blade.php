@@ -15,7 +15,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/user/normalize.css') }}">
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-vue.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/user/bootstrap-rtl.css') }}">
+    {{-- <link rel="stylesheet" href="{{ mix('css/user/bootstrap-rtl.css') }}"> --}}
 
     <link rel="stylesheet" href="{{ mix("css/user/user.css") }}">
     <link rel="stylesheet" href="{{ mix("css/user/swiper.css") }}">

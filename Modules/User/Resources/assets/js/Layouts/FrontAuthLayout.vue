@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <Header></Header>
-    <!-- Page Content -->
-    <main class="main-site">
-      <slot></slot>
-    </main>
+    <div>
+        <Header :user="user"></Header>
+        <!-- Page Content -->
+        <main class="main-site">
+            <slot></slot>
+        </main>
 
-    <Footer></Footer>
-  </div>
+        <Footer></Footer>
+    </div>
 </template>
 
 <script>
@@ -15,9 +15,10 @@ import Header from "../Section/Header";
 import Footer from "../Section/Footer";
 
 export default {
-  components: {
-    Header,
-    Footer,
-  },
+    props: ["user"],
+    components: {
+        Header,
+        Footer
+    }
 };
 </script>

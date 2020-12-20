@@ -1,5 +1,5 @@
 <template>
-    <authLayout>
+    <authLayout :user="user">
         <section class="demo">
             <b-container>
                 <div class="mt-4">
@@ -30,6 +30,6 @@ export default {
         SingleAd,
         AdActionsGroup
     },
-    props: ["ad"]
+    props: ["ad", "user"]
 };
 </script>
