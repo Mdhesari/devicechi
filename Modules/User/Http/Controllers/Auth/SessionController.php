@@ -4,6 +4,7 @@ namespace Modules\User\Http\Controllers\Auth;
 
 use App;
 use Hash;
+use Illuminate\Cache\RateLimiter;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -11,6 +12,7 @@ use Illuminate\Routing\Controller;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Session;
 use Validator;
 
 class SessionController extends Controller
@@ -36,7 +38,7 @@ class SessionController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(Request $request, RateLimiter $limiter)
     {
         Validator::make($request->all(), [
             'phone' => ['min:6', 'max:10', 'not_regex:/^0+/'],
@@ -47,13 +49,9 @@ class SessionController extends Controller
 
         if (is_null($user)) {
 
-            $phone = trim($request->phone);
-            $phone_code = intval($request->phone_country_code);
-
-            // user already have an account
             $user = User::create([
-                'phone' => $phone,
-                'phone_country_code' => $phone_code
+                'phone' => trim($request->phone),
+                'phone_country_code' => intval($request->phone_country_code)
             ]);
 
             event(new UserRegistered(
@@ -61,9 +59,30 @@ class SessionController extends Controller
             ));
         }
 
+        $key = make_mobile_limiter_key($user);
+
+        if ($limiter->tooManyAttempts($key, 1)) {
+
+            return back()->with([
+                'trigger_auth' => true,
+                'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
+            ]);
+        }
+
+        $limiter->hit($key, 120);
+
         $this->sendVerification($user);
 
-        return back()->with('trigger_auth', true);
+        return back()->with([
+            'trigger_auth' => true,
+            'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
+        ]);
+    }
+
+    private function getAvailableInRateLimiter(RateLimiter $limiter, $key)
+    {
+
+        return now()->addSeconds($limiter->availableIn($key))->diffInSeconds();
     }
 
     /**

@@ -2,6 +2,7 @@
     <b-row>
         <confirm-modal
             v-on:reset-form="onReset"
+            v-on:resend-login="sendLoginCode"
             ref="confirmModal"
         ></confirm-modal>
         <b-col md="6">
@@ -84,7 +85,10 @@ export default {
             e.preventDefault();
             this.isLoading = true;
 
-            let result = this.form
+            let result = this.sendLoginCode();
+        },
+        sendLoginCode() {
+            return this.form
                 .post(route("user.auth"), {
                     preserveScroll: true
                 })
@@ -93,7 +97,9 @@ export default {
 
                     if (this.getProp("trigger_auth")) {
                         this.$refs.confirmModal.activateAuth(
-                            this.getProp("phone")
+                            this.getProp("phone"),
+                            this.getProp("ratelimiter"),
+                            this.getProp("resend")
                         );
                     }
                 })

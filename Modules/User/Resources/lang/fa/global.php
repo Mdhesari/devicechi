@@ -22,6 +22,9 @@ return [
             'logout' => 'خروج'
         ],
     ],
+    'ratelimiter' => [
+        'login' => 'بعد از :ratelimiter ثانیه'
+    ],
     'errors' => [
         'common' => [
             'title' => 'مشکلی ناشناخته بوجود آمده است لطفا با پشتیبانی تماس بگیرید.',

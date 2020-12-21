@@ -30,6 +30,26 @@
                 value="تایید"
                 id="btn-submit-confirmation"
             />
+
+            <div class="info mt-2">
+                <span v-if="ratelimiter != null" class="text-info">
+                    {{
+                        __("global.ratelimiter.login", {
+                            ratelimiter: ratelimiter
+                        })
+                    }}
+                </span>
+                <b-button
+                    :disabled="ratelimiter != null"
+                    variant="info"
+                    @click="resend"
+                >
+                    <span v-if="resend" v-text="resend"></span>
+                    <span v-if="resend == null">
+                        {{ __("auth.resend.confirmation_code") }}
+                    </span>
+                </b-button>
+            </div>
         </form>
 
         <template #modal-footer class="text-center">
@@ -45,7 +65,7 @@
 export default {
     props: {
         digitsCount: {
-            default: 5,
+            default: 5
         }
     },
 
@@ -53,7 +73,9 @@ export default {
         return {
             isLoading: false,
             isActive: false,
+            ratelimiter: null,
             phone: "",
+            resend: null,
             form: this.$inertia.form({
                 code: 0
             })
@@ -61,8 +83,17 @@ export default {
     },
 
     methods: {
-        activateAuth(phone) {
+        activateAuth(phone, ratelimiter) {
             this.phone = phone;
+            this.ratelimiter = ratelimiter;
+
+            this.startRatelimiter();
+
+            if (this.resend) {
+                setTimeout(() => {
+                    this.resend = null;
+                }, 5000);
+            }
 
             this.isActive = true;
         },
@@ -131,6 +162,22 @@ export default {
         },
         changeNumber() {
             this.$emit("reset-form");
+        },
+        resend() {
+            this.resend = this.__("auth.login.confirmation_code_resent");
+            this.$emit("resend-login");
+        },
+        startRatelimiter() {
+            if (this.ratelimiter != null)
+                clearInterval(window.ratelimiterInterval);
+            window.ratelimiterInterval = setInterval(() => {
+                this.ratelimiter -= 1;
+
+                if (this.ratelimiter <= 0) {
+                    this.ratelimiter = null;
+                    clearInterval(window.ratelimiterInterval);
+                }
+            }, 1000);
         }
     }
 };

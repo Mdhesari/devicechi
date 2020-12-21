@@ -19,16 +19,14 @@ class HomeController extends Controller
 
         $data = [];
 
-        if ($message = session('trigger_auth')) {
-
+        if ($message = session('trigger_auth'))
             $data['trigger_auth'] = $message;
-        }
 
-        if ($phone = session('phone')) {
-
+        if ($phone = session('phone'))
             $data['phone'] = $phone;
-        }
 
+        if ($ratelimiter = session('ratelimiter'))
+            $data['ratelimiter'] = $ratelimiter;
 
         return Inertia::render('Home', $data);
     }

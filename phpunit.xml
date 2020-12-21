@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
-        <testsuite name="Unit-Team">
+        <!-- <testsuite name="Unit-Team">
             <directory suffix="Test.php">./Modules/Team/Tests/Unit</directory>
         </testsuite>
         <testsuite name="Feature-Team">
             <directory suffix="Test.php">./Modules/Team/Tests/Feature</directory>
-        </testsuite>
+        </testsuite> -->
 
         <!-- Modules -->
         <!-- User -->
         <testsuite name="Feature">
-            <!-- <directory suffix="Test.php">./Modules/User/Tests/Feature/Ad</directory> -->
-            <file>./Modules/User/Tests/Feature/Ad/AdGetTest.php</file>
+            <!-- <directory suffix="Test.php">./Modules/User/Tests/Feature/Auth/</directory> -->
+            <!-- <file>./Modules/User/Tests/Feature/Ad/AdGetTest.php</file> -->
+            <file>./Modules/User/Tests/Feature/Auth/SessionTest.php</file>
 
         </testsuite>
         <testsuite name="Unit">
