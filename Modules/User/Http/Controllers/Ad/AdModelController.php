@@ -25,7 +25,7 @@ class AdModelController extends BaseAdController
         return inertia('Ad/Wizard/Create', compact('models', 'brand', 'step', 'ad'));
     }
 
-    public function store(PhoneBrand $brand, Ad $ad, Request $request)
+    public function store(PhoneBrand $brand, Ad $ad = null, Request $request)
     {
 
         $request->validate([
@@ -40,7 +40,7 @@ class AdModelController extends BaseAdController
             // if user does not have an uncomplete ad we will create for them
 
             $ad = $this->adRepository->create([
-                'user_id' => auth()->id(),
+                'user_id' => $request->user()->id,
             ]);
         }
 
