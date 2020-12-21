@@ -34,8 +34,6 @@ class AdModelController extends BaseAdController
 
         $phone_model = $request->phone_model;
 
-        $ad = $this->adRepository->getUserUncompletedAd();
-
         $model = PhoneModel::whereName($phone_model)->first();
 
         if (!$ad) {
