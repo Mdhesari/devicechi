@@ -30,6 +30,6 @@ class CreateAdPicturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ads_pictures');
+        Schema::dropIfExists('ad_pictures');
     }
 }

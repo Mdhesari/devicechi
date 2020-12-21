@@ -2,10 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Log;
 use Modules\User\Entities\Ad;
 
 class AdPriceController extends BaseAdController
@@ -16,7 +13,7 @@ class AdPriceController extends BaseAdController
 
         $this->checkPreviousSteps($step, $ad);
 
-        $price = is_null($request->old('price')) ? $ad->price ?? '' : $request->old('price');
+        $price = $request->old('price', $ad->price);
 
         $is_exchangeable = $ad->is_exchangeable;
 

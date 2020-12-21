@@ -2,25 +2,8 @@
 
 namespace Modules\User\Repositories\Eloquent;
 
-use Auth;
-use Hamcrest\Type\IsInteger;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\StatefulGuard;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
 use Illuminate\Pipeline\Pipeline;
 use Modules\User\Entities\Ad;
-use Modules\User\Entities\User;
-use Modules\User\Http\Controllers\Ad\AdAccessoryController;
-use Modules\User\Http\Controllers\Ad\AdAgeController;
-use Modules\User\Http\Controllers\Ad\AdContactController;
-use Modules\User\Http\Controllers\Ad\AdCreateController;
-use Modules\User\Http\Controllers\Ad\AdLocationController;
-use Modules\User\Http\Controllers\Ad\AdModelController;
-use Modules\User\Http\Controllers\Ad\AdPictureController;
-use Modules\User\Http\Controllers\Ad\AdPriceController;
-use Modules\User\Http\Controllers\Ad\AdVariantController;
-use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
 use Modules\User\Space\Pipelines\Ad\AgePipeline;

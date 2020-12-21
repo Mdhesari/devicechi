@@ -2,17 +2,10 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Log;
 use Modules\User\Entities\Ad;
-use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\City;
-use Modules\User\Entities\CityState;
 use Modules\User\Entities\Country;
-use Modules\User\Space\Contracts\StoresAdPicture;
-use Storage;
 
 class AdLocationController extends BaseAdController
 {
@@ -27,6 +20,7 @@ class AdLocationController extends BaseAdController
         $cities = City::whereCountryId($user_country->id)->get();
 
         $state = $ad->state;
+
         $city = optional($state)->city;
 
         $states = optional($city)->states ?: [];

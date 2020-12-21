@@ -74,7 +74,6 @@ export default {
             }),
             isInvalid: false,
             calculated_price: this.calculatePrice(this.getProp("price"), true),
-            current_root: this.$inertia.page.props.current_root,
             ad: this.getProp("ad")
         };
     },

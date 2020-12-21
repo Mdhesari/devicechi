@@ -36,7 +36,7 @@
 
 </head>
 
-<body class="font-sans antialiased">
+<body>
 
 
     @inertia

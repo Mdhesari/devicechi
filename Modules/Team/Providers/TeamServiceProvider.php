@@ -3,7 +3,6 @@
 namespace Modules\Team\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Database\Eloquent\Factory;
 use Laravel\Fortify\Fortify;
 use Modules\Team\Space\TeamDomainHandler;
 

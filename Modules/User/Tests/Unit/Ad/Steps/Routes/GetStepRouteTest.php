@@ -3,8 +3,6 @@
 namespace Modules\User\Tests\Unit\Ad\Steps\Routes;
 
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Modules\User\Entities\User;
 use Modules\User\Http\Controllers\Ad\BaseAdController;

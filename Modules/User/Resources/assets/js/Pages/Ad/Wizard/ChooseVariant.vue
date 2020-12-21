@@ -72,7 +72,6 @@ export default {
                 is_multicard: false
             }),
             variants: this.getProp("phone_model_variants"),
-            current_root: this.getProp("current_root"),
             model: this.getProp("model"),
             brand: this.getProp("brand"),
             ad: this.getProp("ad"),

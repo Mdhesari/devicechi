@@ -2,12 +2,9 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
-use Modules\User\Entities\PhoneVariant;
 
 class AdVariantController extends BaseAdController
 {

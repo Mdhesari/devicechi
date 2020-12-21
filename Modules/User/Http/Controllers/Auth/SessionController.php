@@ -3,21 +3,14 @@
 namespace Modules\User\Http\Controllers\Auth;
 
 use App;
-use Auth;
-use Exception;
 use Hash;
-use Highlight\RegEx;
 use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Log;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
-use NunoMaduro\Collision\Adapters\Phpunit\State;
-use Response;
-use Str;
 use Validator;
 
 class SessionController extends Controller

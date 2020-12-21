@@ -55,7 +55,6 @@ export default {
             isLoading: false,
             selected: this.getProp("selected"),
             accessories: this.getProp("accessories"),
-            current_root: this.getProp("current_root"),
             model: this.getProp("phone_model"),
             ad: this.getProp("ad")
         };

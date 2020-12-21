@@ -2,15 +2,11 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-use Log;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Http\Requests\Ad\AdStorePictureRequest;
 use Modules\User\Space\Contracts\StoresAdPicture;
-use Storage;
 
 class AdPictureController extends BaseAdController
 {
@@ -69,7 +65,6 @@ class AdPictureController extends BaseAdController
             $result = $storeDriver->deleteStoredPicture($picture_url);
             $status = $result;
         }
-
 
         return response()->json([
             'status' => $status,

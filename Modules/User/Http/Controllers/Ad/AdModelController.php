@@ -2,14 +2,10 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
-use Modules\User\Entities\PhoneVariant;
-use Modules\User\Exceptions\UserAdCreationFailed;
 
 class AdModelController extends BaseAdController
 {
@@ -18,7 +14,7 @@ class AdModelController extends BaseAdController
     {
         $step = BaseAdController::STEP_CHOOSE_MODEL;
 
-        $this->checkPreviousSteps($step, $this->adRepository->getUserUncompletedAd());
+        $this->checkPreviousSteps($step, $ad);
 
         if ($ad) {
             $ad->load('phoneModel');

@@ -100,7 +100,6 @@ export default {
     data() {
         return {
             brands: this.getProp("phone_brands"),
-            current_root: this.getProp("current_root"),
             ad: this.getProp("ad"),
             search: "",
             isLoading: false

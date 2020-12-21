@@ -2,13 +2,9 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Exception;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdMainController extends BaseAdController
 {

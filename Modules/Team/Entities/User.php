@@ -4,7 +4,6 @@ namespace Modules\Team\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\User\Entities\User as MainUser;
 use Spatie\Permission\Traits\HasRoles;
 use User\Database\Factories\UserFactory;
 

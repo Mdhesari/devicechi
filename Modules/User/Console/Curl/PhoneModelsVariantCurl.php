@@ -2,15 +2,10 @@
 
 namespace Modules\User\Console\Curl;
 
-use ArithmeticError;
 use Artisan;
 use Goutte\Client;
 use Log;
 use Modules\User\Entities\PhoneBrand;
-use Modules\User\Entities\PhoneModel;
-use Str;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\HttpClient\HttpClient;
 
 class PhoneModelsVariantCurl extends Command

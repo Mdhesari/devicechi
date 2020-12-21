@@ -4,28 +4,15 @@ namespace Modules\User\Http\Controllers\Ad;
 
 use App;
 use Hash;
-use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
-use Illuminate\Pipeline\Pipeline;
-use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
-use Log;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
-use Modules\User\Entities\AdPicture;
-use Modules\User\Entities\City;
-use Modules\User\Entities\CityState;
-use Modules\User\Entities\Country;
 use Modules\User\Http\Requests\Ad\AdContactVerifyRequest;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
-use Modules\User\Space\Contracts\StoresAdPicture;
-use Modules\User\Space\Pipelines\AdContact\AdContactEmailVerificationPipeline;
-use Modules\User\Space\Pipelines\AdContact\AdContactPhoneVerificationPipeline;
-use Storage;
 
 class AdContactController extends BaseAdController
 {

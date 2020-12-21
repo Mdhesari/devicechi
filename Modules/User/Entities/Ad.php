@@ -5,8 +5,6 @@ namespace Modules\User\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Exceptions\PhoneBrandNotFound;
-use Str;
 use User\Database\Factories\AdFactory;
 
 class Ad extends Model
@@ -156,6 +154,6 @@ class Ad extends Model
      */
     protected static function newFactory()
     {
-        return new AdFactory();
+        return AdFactory::new();
     }
 }
