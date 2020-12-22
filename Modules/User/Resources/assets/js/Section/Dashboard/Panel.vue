@@ -1,6 +1,16 @@
 <template>
     <section class="user-panel-section">
         <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <inertia-link
+                        :href="route('user.ad.create')"
+                        class="btn btn-success btn-rounded-high btn-mobilesale"
+                    >
+                        {{ __("ads.create.btn_title") }}
+                    </inertia-link>
+                </div>
+            </div>
             <b-nav tabs class="mb-4">
                 <b-nav-item
                     v-for="(nav, index) in nav_items"
@@ -17,13 +27,6 @@
             <div class="row user-panel-main">
                 <div class="col-md-4">
                     <div class="sidebar">
-                        <inertia-link
-                            :href="route('user.ad.create')"
-                            class="btn btn-success btn-rounded-high btn-mobilesale"
-                        >
-                            {{ __("ads.create.btn_title") }}
-                        </inertia-link>
-
                         <ProfileTabs :user="user" :tabs="tabs"></ProfileTabs>
                     </div>
                 </div>
