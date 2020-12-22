@@ -69,6 +69,16 @@ class Ad extends Model
         return $query->whereNotNull('phone_model_variant_id');
     }
 
+    public function scopeFilterAd($query, $request)
+    {
+
+        if (!is_null($status = $request->query('status'))) $query = $query->whereStatus($status);
+
+        if ($search = $request->query('brand_id')) $query = $query->wherePhoneBrandId($search);
+
+        return $query;
+    }
+
     public function missingPhoneAccessories()
     {
 

@@ -31,6 +31,10 @@ class UserController extends Controller
 
         $success_session = session('success');
 
-        return inertia('User/Profile', compact('success_session', 'user', 'all_status'));
+        $tabs = [];
+
+        $nav_items = get_profile_nav_items();
+
+        return inertia('User/Profile', compact('success_session', 'user', 'tabs', 'nav_items'));
     }
 }

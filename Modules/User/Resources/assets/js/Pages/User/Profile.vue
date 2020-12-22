@@ -5,7 +5,9 @@
             variant="success"
             v-text="success_session"
         ></b-alert>
-        <Panel :user="user" :allStatus="all_status"></Panel>
+        <Panel :user="user" :tabs="tabs">
+            My content
+        </Panel>
     </AuthLayout>
 </template>
 
@@ -13,7 +15,7 @@
 import AuthLayout from "../../Layouts/FrontAuthLayout";
 import Panel from "../../Section/Dashboard/Panel";
 export default {
-    props: ["user", "all_status", "success_session"],
+    props: ["user", "tabs", "success_session"],
     components: {
         AuthLayout,
         Panel

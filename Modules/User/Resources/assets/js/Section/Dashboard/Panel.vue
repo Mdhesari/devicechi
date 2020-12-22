@@ -1,6 +1,19 @@
 <template>
     <section class="user-panel-section">
         <div class="container">
+            <b-nav tabs class="mb-4">
+                <b-nav-item
+                    v-for="(nav, index) in nav_items"
+                    :key="index"
+                    :active="nav.is_active"
+                >
+                    <inertia-Link
+                        :href="nav.route"
+                        v-text="nav.label"
+                    ></inertia-Link>
+                </b-nav-item>
+            </b-nav>
+
             <div class="row user-panel-main">
                 <div class="col-md-4">
                     <div class="sidebar">
@@ -11,179 +24,12 @@
                             {{ __("ads.create.btn_title") }}
                         </inertia-link>
 
-                        <ul class="tabs">
-                            <li class="tab-profile">
-                                <div class="avatar">
-                                    <img
-                                        :src="user.profile_photo_path"
-                                        :alt="user.name"
-                                    />
-                                </div>
-                                <div class="username">
-                                    {{ user.name }}
-                                </div>
-                            </li>
-                            <li class="tab-item" :class="renderItemClass(null)">
-                                <div class="tab-item-content">
-                                    <a href="#" @click.prevent="updateAds(null)"
-                                        >همه آگهی ها</a
-                                    >
-                                </div>
-                            </li>
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.available)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.available)
-                                        "
-                                        href="#"
-                                        >آگهی های ثبت شده</a
-                                    >
-                                </div>
-                            </li>
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.pending)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.pending)
-                                        "
-                                        href=""
-                                        >آگهی های در صف انتظار
-                                    </a>
-                                </div>
-                            </li>
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.rejected)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.rejected)
-                                        "
-                                        href=""
-                                        >آگهی های رد شده</a
-                                    >
-                                </div>
-                            </li>
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.unavailable)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.unavailable)
-                                        "
-                                        href="#"
-                                        >آگهی های منقضی شده</a
-                                    >
-                                </div>
-                            </li>
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.uncompleted)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.uncompleted)
-                                        "
-                                        href="#"
-                                        >آگهی های نا تمام</a
-                                    >
-                                </div>
-                            </li>
-
-                            <li
-                                class="tab-item"
-                                :class="renderItemClass(allStatus.archived)"
-                            >
-                                <div class="tab-item-content">
-                                    <a
-                                        @click.prevent="
-                                            updateAds(allStatus.archived)
-                                        "
-                                        href="#"
-                                        >آگهی های پیش نویس</a
-                                    >
-                                </div>
-                            </li>
-                        </ul>
+                        <ProfileTabs :user="user" :tabs="tabs"></ProfileTabs>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="content">
-                        <div class="row" v-if="ads && !isLoading">
-                            <div
-                                class="col-md-6 blog adver"
-                                v-for="ad in ads"
-                                :key="ad.id"
-                            >
-                                <div class="inner">
-                                    <inertia-link
-                                        :href="
-                                            route('user.ad.step_phone_demo', {
-                                                ad: ad.id
-                                            })
-                                        "
-                                        class="title"
-                                    >
-                                        <div
-                                            class="thumbnail"
-                                            :style="
-                                                `background-image: url('${renderAdPicture(
-                                                    ad
-                                                )}')`
-                                            "
-                                        ></div>
-                                    </inertia-link>
-
-                                    <div class="details">
-                                        <inertia-link
-                                            :href="
-                                                route('user.ad.step_phone_demo', {
-                                                    ad: ad.id
-                                                })
-                                            "
-                                            class="title"
-                                        >
-                                            <h2>
-                                                {{ renderTitle(ad.title) }}
-                                            </h2>
-                                        </inertia-link>
-                                        <div
-                                            :class="
-                                                `status ${renderStatusClass(
-                                                    ad.status
-                                                )}`
-                                            "
-                                        >
-                                            {{ renderStatusLabel(ad.status) }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="col-md-6"></div> -->
-                        </div>
-
-                        <spinner v-if="isLoading" />
-
-                        <!-- No Content -->
-                        <b-alert
-                            v-if="!isLoading"
-                            :show="ads.length < 1"
-                            variant="info"
-                            class="text-center mt-4"
-                        >
-                            هیچ آگهی موجود نیست!
-                        </b-alert>
+                        <slot></slot>
                     </div>
                 </div>
             </div>
@@ -193,77 +39,20 @@
 
 <script>
 import spinner from "../../Components/Spinner";
+import ProfileTabs from "../../Components/ProfileTabs";
 
 export default {
     components: {
-        spinner
+        spinner,
+        ProfileTabs
     },
-    props: ["user", "allStatus"],
+    props: ["user", "tabs"],
     data() {
         return {
-            ads: [],
-            activeItem: null,
-            isLoading: false
+            form: this.$inertia.form({}),
+            nav_items: this.getProp("nav_items")
         };
     },
-    mounted() {
-        this.updateAds(null, false);
-    },
-    methods: {
-        renderAdPicture(ad) {
-            let url = this.url("/images/default_ad_picture.png");
-
-            const pictures = ad.pictures;
-
-            if (pictures && pictures.length > 0) {
-                url = pictures[0].url;
-            }
-
-            return url;
-        },
-        async updateAds(status, loadOnce = true) {
-            if (loadOnce && status === this.activeItem) return 0;
-
-            this.isLoading = true;
-
-            let endpoint =
-                isNaN(status) || status == null
-                    ? route("user.ad.get")
-                    : route("user.ad.get.status", {
-                          status: status
-                      });
-
-            const response = await axios.get(endpoint);
-
-            response.request.onProgress = function() {};
-
-            if (response.status) {
-                this.isLoading = false;
-                if (response.status == 200) {
-                    this.activeItem = response.data.ad_status
-                        ? Number(response.data.ad_status)
-                        : null;
-
-                    this.ads = response.data.ads;
-                }
-            }
-        },
-        renderItemClass(status = null) {
-            return {
-                active: status == this.activeItem
-            };
-        },
-        renderStatusLabel(status) {
-            return this.__(`ads.status.${status}.label`);
-        },
-        renderStatusClass(status) {
-            return this.__(`ads.status.${status}.class`);
-        },
-        renderTitle(title) {
-            return title !== null && title.length > 0
-                ? title
-                : this.__("ads.defaults.title");
-        }
-    }
+    methods: {}
 };
 </script>
