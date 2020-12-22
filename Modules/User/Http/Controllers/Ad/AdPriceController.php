@@ -13,11 +13,11 @@ class AdPriceController extends BaseAdController
 
         $this->checkPreviousSteps($step, $ad);
 
-        $price = $request->old('price', $ad->price);
+        $price = $request->old('price', $ad->price ?? "");
 
         $is_exchangeable = $ad->is_exchangeable;
 
-        return inertia('Ad/Wizard/Create', compact('step', 'price', 'ad'));
+        return inertia('Ad/Wizard/Create', compact('step', 'price', 'ad', 'is_exchangeable'));
     }
 
     public function store(Ad $ad, Request $request)
