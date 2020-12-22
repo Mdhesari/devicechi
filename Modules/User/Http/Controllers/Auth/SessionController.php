@@ -12,7 +12,6 @@ use Illuminate\Routing\Controller;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
-use Session;
 use Validator;
 
 class SessionController extends Controller
