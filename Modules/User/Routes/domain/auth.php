@@ -25,11 +25,12 @@ use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
+use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\UserController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
-Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
+Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
 Route::prefix('/ads')->name('ad.')->group(function () {
 

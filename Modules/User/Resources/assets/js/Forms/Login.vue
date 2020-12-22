@@ -98,8 +98,7 @@ export default {
                     if (this.getProp("trigger_auth")) {
                         this.$refs.confirmModal.activateAuth(
                             this.getProp("phone"),
-                            this.getProp("ratelimiter"),
-                            this.getProp("resend")
+                            this.getProp("ratelimiter")
                         );
                     }
                 })

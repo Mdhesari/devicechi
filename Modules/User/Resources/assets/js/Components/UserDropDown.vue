@@ -12,20 +12,26 @@
         <b-dropdown-divider></b-dropdown-divider>
 
         <li class="dropdown-item">
-            <inertia-link
-                class="text-danger"
-                method="post"
-                :href="route('user.logout')"
-            >
-                <b-icon icon="power"></b-icon>
-                {{ __("global.user.profile.logout") }}
-            </inertia-link>
+            <form :action="route('user.session.logout')" method="post">
+                <input type="hidden" name="_token" :value="csrf" />
+                <b-button type="submit" variant="link" class="text-danger d-block">
+                    <b-icon icon="power"></b-icon>
+                    {{ __("global.user.profile.logout") }}
+                </b-button>
+            </form>
         </li>
     </b-dropdown>
 </template>
 
 <script>
 export default {
-    props: ["user"]
+    props: ["user"],
+    computed: {
+        csrf() {
+            return document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content");
+        }
+    }
 };
 </script>

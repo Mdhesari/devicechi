@@ -42,7 +42,7 @@
                 <b-button
                     :disabled="ratelimiter != null"
                     variant="info"
-                    @click="resend"
+                    @click="resend_code"
                 >
                     <span v-if="resend" v-text="resend"></span>
                     <span v-if="resend == null">
@@ -84,6 +84,7 @@ export default {
 
     methods: {
         activateAuth(phone, ratelimiter) {
+            console.log(phone)
             this.phone = phone;
             this.ratelimiter = ratelimiter;
 
@@ -163,7 +164,7 @@ export default {
         changeNumber() {
             this.$emit("reset-form");
         },
-        resend() {
+        resend_code() {
             this.resend = this.__("auth.login.confirmation_code_resent");
             this.$emit("resend-login");
         },
