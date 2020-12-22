@@ -112,5 +112,5 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
 Route::prefix('/profile')->name('profile.')->group(function () {
 
-    Route::put('/update', [UserController::class, 'update']);
+    Route::put('/update', [UserController::class, 'update'])->name('update');
 });

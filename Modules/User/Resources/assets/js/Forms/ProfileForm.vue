@@ -1,5 +1,8 @@
 <template>
     <div class="wizard-step">
+        <b-alert ref="alert" variant="success" :show="showAlert">
+            با موفقیت بروزرسانی شد...
+        </b-alert>
         <b-form @submit="onSubmit" @reset="onReset">
             <b-form-group
                 id="input-group-1"
@@ -13,6 +16,9 @@
                     :placeholder="__('profile.placeholder.name')"
                     required
                 ></b-form-input>
+                <div class="errors">
+                    <p class="text-danger">{{ form.error("name") }}</p>
+                </div>
             </b-form-group>
 
             <b-form-group
@@ -26,6 +32,9 @@
                     :placeholder="__('profile.placeholder.phone')"
                     required
                 ></b-form-input>
+                <div class="errors">
+                    <p class="text-danger">{{ form.error("phone") }}</p>
+                </div>
             </b-form-group>
 
             <b-form-group
@@ -37,8 +46,10 @@
                     id="input-2"
                     v-model="form.email"
                     :placeholder="__('profile.placeholder.email')"
-                    required
                 ></b-form-input>
+                <div class="errors">
+                    <p class="text-danger">{{ form.error("email") }}</p>
+                </div>
             </b-form-group>
 
             <b-form-group
@@ -50,7 +61,23 @@
                     id="input-2"
                     v-model="form.password"
                     :placeholder="__('profile.placeholder.password')"
-                    required
+                ></b-form-input>
+                <div class="errors">
+                    <p class="text-danger">{{ form.error("password") }}</p>
+                </div>
+            </b-form-group>
+
+            <b-form-group
+                id="input-group-2"
+                :label="__('profile.form.password_confirmation')"
+                label-for="input-2"
+            >
+                <b-form-input
+                    id="input-2"
+                    v-model="form.password_confirmation"
+                    :placeholder="
+                        __('profile.placeholder.password_confirmation')
+                    "
                 ></b-form-input>
             </b-form-group>
 
@@ -67,22 +94,37 @@ export default {
     data() {
         return {
             form: this.$inertia.form({
+                _method: "PUT",
                 name: this.user.name,
                 phone: this.user.phone,
                 phone_country_code: this.user.phone_country_code,
                 email: this.user.email,
                 password: "",
+                password_confirmation: "",
                 profile: null
             }),
-            isLoading: false
+            isLoading: false,
+            showAlert: false
         };
     },
     methods: {
         onSubmit(event) {
             event.preventDefault();
-            alert(JSON.stringify(this.form));
 
-            this.form.post(route(""))
+            this.form
+                .post(route("user.profile.update"), {
+                    preserveScroll: true,
+                    preserveState: true
+                })
+                .then(respone => {
+                    if (this.form.successful) {
+                        this.$to(
+                            "اطلاعات حساب کاربری با موفقیت بروزرسانی شد.",
+                            "",
+                            "s"
+                        );
+                    }
+                });
         },
         onReset(event) {
             event.preventDefault();

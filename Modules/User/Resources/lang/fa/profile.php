@@ -19,12 +19,16 @@ return [
         'phone' => 'شماره موبایل',
         'email' => 'ایمیل',
         'password' => 'رمز عبور',
+        "password_confirmation" => 'تایید رمز عبور',
     ],
 
     'placeholder' => [
         'name' => 'مثلا :‌ محمد',
+        "phone" => 'مثلا :‌ ۰۹۱۲۶۶۶۴۴۳۳',
         'email' => 'مثلا : mohamad@gmail.com',
-        'password' => 'بیشتر از ۸ رقم'
+        'password' => 'بیشتر از ۸ رقم',
+        "password_confirmation" => 'تایید رمز عبور',
+
     ]
 
 ];

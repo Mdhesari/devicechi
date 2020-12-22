@@ -44,7 +44,13 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'min:3'],
             'email' => ['nullable', 'email'],
-            'phone' => ['required', 'mobile'],
+            'phone' => ['required', 'not_regex:/^0+/'],
+            'phone_country_code' => ['required'],
+            'password' => ['nullable', 'min:8', 'confirmed']
         ]);
+
+        $request->user()->update($request->only('name', 'email'));
+
+        return back()->with('success', __(' Ok '));
     }
 }
