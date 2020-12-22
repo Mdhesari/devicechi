@@ -25,6 +25,7 @@ use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
+use Modules\User\Http\Controllers\UserController;
 
 Route::get('/dashboard', 'UserController@index')->name('dashboard');
 
@@ -109,4 +110,6 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 });
 
 Route::prefix('/profile')->name('profile.')->group(function () {
+
+    Route::put('/update', [UserController::class, 'update']);
 });

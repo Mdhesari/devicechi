@@ -37,4 +37,14 @@ class UserController extends Controller
 
         return inertia('User/Profile', compact('success_session', 'user', 'tabs', 'nav_items'));
     }
+
+    public function update(Request $request)
+    {
+
+        $request->validate([
+            'name' => ['required', 'min:3'],
+            'email' => ['nullable', 'email'],
+            'phone' => ['required', 'mobile'],
+        ]);
+    }
 }
