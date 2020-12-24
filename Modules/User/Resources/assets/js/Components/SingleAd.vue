@@ -11,9 +11,11 @@
                         </div>
                         <div class="publish-time">
                             <span>
-                                {{ ad.created_at }}
+                                {{ moment(ad.created_at).fromNow() }}
                             </span>
                             <span>در</span>
+                            <span v-text="ad.state.city.name"></span>
+                            <span>,</span>
                             <span v-text="ad.state.name"></span>
                         </div>
                         <div class="specs">
@@ -61,7 +63,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">
-                    <AdPostGallery :pictures="ad.pictures" /> 
+                    <AdPostGallery :pictures="ad.pictures" />
                 </div>
             </div>
         </div>

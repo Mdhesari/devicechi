@@ -10,6 +10,12 @@ import PortalVue from "portal-vue";
 import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import { InertiaProgress } from "@inertiajs/progress";
 
+import moment from "moment-jalaali";
+import fa from "moment/locale/fa";
+
+moment.locale("fa", fa);
+moment.loadPersian();
+
 const default_locale = window.default_locale;
 const fallback_locale = window.fallback_locale;
 const messages = window.messages;
@@ -86,6 +92,13 @@ Vue.mixin({
                 );
                 console.log(e);
             }
+        },
+        moment(data = null) {
+            // Todo :
+            // dynamic locale set
+            if (data === null) return moment();
+
+            return moment(data);
         }
     }
 });

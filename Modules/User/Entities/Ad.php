@@ -60,7 +60,7 @@ class Ad extends Model
     public function loadSingleRelations()
     {
 
-        $this->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant', 'state']);
+        $this->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant', 'state.city']);
     }
 
     public function scopeUncompleted($query)
