@@ -67,6 +67,7 @@
 import AuthLayout from "../../Layouts/FrontAuthLayout";
 import spinner from "../../Components/Spinner";
 import Panel from "../../Section/Dashboard/Panel";
+import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
 
 export default {
     components: {
@@ -75,6 +76,7 @@ export default {
         AuthLayout
     },
     props: ["user", "tabs"],
+    mixins: [AdPictureHelpers],
     data() {
         return {
             ads: this.getProp("ads"),
@@ -83,17 +85,6 @@ export default {
         };
     },
     methods: {
-        renderAdPicture(ad) {
-            let url = this.url("/images/default_ad_picture.png");
-
-            const pictures = ad.pictures;
-
-            if (pictures && pictures.length > 0) {
-                url = pictures[0].url;
-            }
-
-            return url;
-        },
         renderStatusLabel(status) {
             return this.__(`ads.status.${status}.label`);
         },

@@ -18,6 +18,7 @@ use Modules\User\Http\Controllers\Ad\AdContactController;
 use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Ad\AdDemoController;
 use Modules\User\Http\Controllers\Ad\AdDetailsController;
+use Modules\User\Http\Controllers\Ad\AdHomeController;
 use Modules\User\Http\Controllers\Ad\AdLocationController;
 use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Ad\AdModelController;
@@ -33,6 +34,8 @@ Route::get('/dashboard', 'UserController@index')->name('dashboard');
 Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
 Route::prefix('/ads')->name('ad.')->group(function () {
+
+    Route::get('/', [AdHomeController::class, 'index'])->name('home');
 
     Route::prefix('/sell/mobile')->group(function () {
 
