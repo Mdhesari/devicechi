@@ -22,7 +22,7 @@ class AdDemoController extends BaseAdController
 
         $this->checkPreviousSteps($step, $ad);
 
-        $ad = $ad->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
+        $ad->loadSingleRelations();
 
         return inertia('Ad/Demo', compact('ad'));
     }

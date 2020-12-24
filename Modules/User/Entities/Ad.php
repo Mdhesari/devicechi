@@ -57,6 +57,12 @@ class Ad extends Model
         ])->save();
     }
 
+    public function loadSingleRelations()
+    {
+
+        $this->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant', 'state']);
+    }
+
     public function scopeUncompleted($query)
     {
 

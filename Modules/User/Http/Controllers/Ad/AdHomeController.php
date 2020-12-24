@@ -47,7 +47,7 @@ class AdHomeController extends Controller
      */
     public function show(Ad $ad)
     {
-        $ad->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
+        $ad->loadSingleRelations();
 
         return inertia('Ad/Single', compact('ad'));
     }

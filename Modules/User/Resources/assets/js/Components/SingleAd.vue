@@ -13,6 +13,8 @@
                             <span>
                                 {{ ad.created_at }}
                             </span>
+                            <span>در</span>
+                            <span v-text="ad.state.name"></span>
                         </div>
                         <div class="specs">
                             <ul class="infos-phone">
