@@ -45,9 +45,11 @@ class AdHomeController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show(Ad $ad)
     {
-        return view('user::show');
+        $ad->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant']);
+
+        return inertia('Ad/Single', compact('ad'));
     }
 
     /**

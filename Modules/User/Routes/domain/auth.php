@@ -35,8 +35,6 @@ Route::post('/session/logout', [SessionController::class, 'destroy'])->name('ses
 
 Route::prefix('/ads')->name('ad.')->group(function () {
 
-    Route::get('/', [AdHomeController::class, 'index'])->name('home');
-
     Route::prefix('/sell/mobile')->group(function () {
 
         Route::get('/{ad?}', [AdCreateController::class, 'show'])->name('create');
@@ -111,6 +109,10 @@ Route::prefix('/ads')->name('ad.')->group(function () {
     Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
 
     Route::get('/get', [AdMainController::class, 'get'])->name('get');
+
+    Route::get('/', [AdHomeController::class, 'index'])->name('home');
+
+    Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
 });
 
 Route::prefix('/profile')->name('profile.')->group(function () {

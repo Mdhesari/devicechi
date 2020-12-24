@@ -2,7 +2,16 @@
     <div class="col-md-3 normal-ad">
         <div class="inner">
             <div class="tumbnail">
-                <img :src="renderAdPicture(ad)" :alt="ad.title" />
+                <inertia-link
+                    :href="
+                        route('user.ad.show', {
+                            ad: ad.id
+                        })
+                    "
+                    class="title"
+                >
+                    <img :src="renderAdPicture(ad)" :alt="ad.title" />
+                </inertia-link>
                 <div class="bookmark">
                     <i class="fa-bookmark far" aria-hidden="true"></i>
                 </div>
