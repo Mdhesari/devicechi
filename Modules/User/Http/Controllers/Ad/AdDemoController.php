@@ -2,15 +2,8 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneAge;
-use Modules\User\Entities\PhoneModel;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
-use Modules\User\Http\Requests\Ad\AdDetailsRequest;
-use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 
 class AdDemoController extends BaseAdController
 {
