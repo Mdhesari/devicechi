@@ -40,6 +40,7 @@ return [
     'dimensions' => 'ابعاد تصویر گزینه :attribute مجاز نمی باشد',
     'distinct' => 'گزینه :attribute دارای افزونگی داده می باشد',
     'email' => 'گزینه :attribute باید یک آدرس ایمیل صحیح باشد',
+    'mobile' => 'گزینه :attribute باید یک شماره موبایل صحیح باشد',
     'ends_with' => 'گزینه :attribute باید با یکی از این مقادیر پایان یابد، :values',
     'exists' => 'گزینه انتخاب شده :attribute صحیح نمی باشد',
     'file' => 'گزینه :attribute باید یک فایل باشد',

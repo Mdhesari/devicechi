@@ -38,16 +38,18 @@
                         v-model="form.phone"
                         type="tel"
                         minlength="6"
-                        maxlength="10"
+                        maxlength="11"
                         :disabled="isLoading"
                         class="input-phone-number mx-auto input-light-silver border-0 text-left dir-ltr d-inline-block"
                     >
                     </b-form-input>
+                    <!--
                     <b-form-input
                         disabled
                         v-model="form.phone_country_code"
                         class="input-phone-code input-light-silver border-0 text-center dir-ltr d-inline-block"
                     ></b-form-input>
+                    -->
                     <p class="m-2 text-danger">{{ form.error("phone") }}</p>
                 </b-form-group>
             </b-form>
@@ -74,7 +76,7 @@ export default {
                     phone_country_code: "+98"
                 },
                 {
-                    bag: "createUser",
+                    // bag: "createUser",
                     resetOnSuccess: false
                 }
             )

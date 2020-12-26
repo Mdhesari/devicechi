@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
+use Modules\User\Http\Requests\UserLoginRequest;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Validator;
 
@@ -37,13 +38,8 @@ class SessionController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request, RateLimiter $limiter)
+    public function store(UserLoginRequest $request, RateLimiter $limiter)
     {
-        Validator::make($request->all(), [
-            'phone' => ['min:6', 'max:10', 'not_regex:/^0+/'],
-            'phone_country_code' => ['required']
-        ])->validateWithBag('createUser');
-
         $user = User::wherePhone($request->input('phone'))->first();
 
         if (is_null($user)) {
