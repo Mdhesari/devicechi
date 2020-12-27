@@ -98,8 +98,12 @@ class AdRepository extends Repository implements AdRepositoryInterface
     public function updateDetails(array $data, $ad)
     {
 
+        $desc = $data['description'];
+
+        $desc = preg_replace('/\\n/', '<br>', $desc);
+
         $ad->title = $data['title'];
-        $ad->description = $data['description'];
+        $ad->description = $desc;
         return $ad->save();
     }
 

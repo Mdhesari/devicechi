@@ -61,10 +61,10 @@ class SessionController extends Controller
 
         if ($limiter->tooManyAttempts($key, 1)) {
 
-            throw new MFSValidationException(back()->with([
+            throw new MFSValidationException([
                 'trigger_auth' => true,
                 'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
-            ]));
+            ]);
         }
 
         $limiter->hit($key, config('user.mobile_rate_limit'));

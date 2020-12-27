@@ -161,6 +161,14 @@ export default {
                     }
                 )
                 .then(response => {
+                    console.log(response);
+
+                    if (response.data.errors) {
+                        let errors = response.data.errors;
+
+                        this.$to(errors.error);
+                    }
+
                     if (response.data.status) {
                         this.$to(
                             this.__("ads.form.success.contact.verify.title"),
@@ -172,12 +180,23 @@ export default {
                     }
                 })
                 .catch(error => {
+                    console.log(error);
+
                     if (error.response.data.errors) {
                         const errors = error.response.data.errors;
 
-                        errors.value.forEach(val => {
-                            this.$to(val);
-                        });
+                        console.log(errors);
+
+                        if (errors.value)
+                            errors.value.forEach(val => {
+                                this.$to(val);
+                            });
+                        else
+                            errors.forEach(val => {
+                                val.forEach(err => {
+                                    this.$to(err);
+                                });
+                            });
                     }
                 })
                 .finally(() => {

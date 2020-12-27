@@ -21,14 +21,15 @@ class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPip
 
             $limiter = app(RateLimiter::class);
 
-            $key = make_mobile_limiter_key($user);
+            $key = make_mobile_limiter_key($user, $ad_contact->value);
 
             if ($limiter->tooManyAttempts($key, 1)) {
 
-                throw new MFSValidationException(back()->with([
-                    'error' => __('Something Went Wrong!'),
-                    'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
-                ]));
+                throw new MFSValidationException([
+                    'error' => __('user::global.ratelimiter.global', [
+                        'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
+                    ]),
+                ]);
             }
 
             $limiter->hit($key, config('user.mobile_rate_limit'));
@@ -36,9 +37,16 @@ class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPip
             $ad_contact->sendVerification([
                 'channels' => 'mail',
             ]);
+
             $data['status'] = true;
         }
 
         return $next($data);
+    }
+
+    private function getAvailableInRateLimiter(RateLimiter $limiter, $key)
+    {
+
+        return now()->addSeconds($limiter->availableIn($key))->diffInSeconds();
     }
 }

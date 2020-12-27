@@ -6,6 +6,9 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MobileIran implements Rule
 {
+
+    public static $regex = '/(9|0)?9\d{9}/';
+
     /**
      * Create a new rule instance.
      *
@@ -25,7 +28,7 @@ class MobileIran implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/(9|0)?9\d{9}/', $value);
+        return preg_match(static::$regex, $value);
     }
 
     /**

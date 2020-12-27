@@ -2,26 +2,26 @@
 
 namespace App\Exceptions;
 
-use Exception;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class MFSValidationException extends Exception
+class MFSValidationException extends HttpException
 {
     /**
      * Route url
      *
      * @var string
      */
-    protected $url;
+    protected $errors;
 
-    public function __construct(string $url, string $message = null, \Throwable $previous = null, int $code = 0, array $headers = [])
+    public function __construct(array $errors, string $message = null, \Throwable $previous = null, int $code = 0, array $headers = [])
     {
-        $this->url = $url;
+        $this->errors = $errors;
         parent::__construct(200, $message, $previous, $headers, $code);
     }
 
-    public function getUrl()
+    public function getErrors()
     {
 
-        return $this->url;
+        return $this->errors;
     }
 }
