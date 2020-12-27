@@ -24,10 +24,13 @@ return [
                 'icon' => 'envelope',
                 'input' => 'email',
                 'placeholder' => 'ex : md@gmail.com',
+                'validation' => [
+                    'value' => ['required', 'email']
+                ],
+                'validation_attr' => [
+                    'value' => 'ایمیل'
+                ]
             ],
-            'validation' => [
-                'required', 'email'
-            ]
         ],
         [
             'name' => 'phone',
@@ -36,10 +39,13 @@ return [
                 'icon' => 'phone',
                 'input' => 'tel',
                 'placeholder' => 'ex : 989370038157',
+                'validation' => [
+                    'value' => ['required', 'regex:' . App\Rules\MobileIran::$regex]
+                ],
+                'validation_attr' => [
+                    'value' => 'موبایل'
+                ]
             ],
-            'validation' => [
-                'required', new App\Rules\MobileIran
-            ]
         ],
     ],
 

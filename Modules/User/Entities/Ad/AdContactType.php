@@ -18,7 +18,7 @@ class AdContactType extends Model
         "data" => "array",
     ];
 
-    protected $fillable = ['name', 'description', 'data'];
+    protected $fillable = ['name', 'description', 'data', 'validation'];
 
     public function getDescriptionAttribute($description)
     {

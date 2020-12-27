@@ -6,9 +6,9 @@
  * @param  App\Models\User\Entities\User $user
  * @return void
  */
-function make_mobile_limiter_key($user)
+function make_mobile_limiter_key($user, $mobile = null)
 {
-    return $user->id . '|' . $user->mobile . ':send_verification';
+    return $user->id . '|' . ($mobile ?? $user->mobile) . ':send_verification';
 }
 
 function get_profile_nav_items()

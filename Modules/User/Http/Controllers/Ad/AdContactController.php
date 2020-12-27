@@ -6,6 +6,7 @@ use App;
 use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use Log;
 use Modules\User\Entities\Ad;
 use Modules\User\Entities\Ad\AdContact;
 use Modules\User\Entities\Ad\AdContactType;
@@ -13,6 +14,7 @@ use Modules\User\Http\Requests\Ad\AdContactVerifyRequest;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Validator;
 
 class AdContactController extends BaseAdController
 {
@@ -51,7 +53,7 @@ class AdContactController extends BaseAdController
 
         $request->validate([
             'contact_type' => ['required'],
-            'contact_type.id' => ['exists:ad_contact_types,id'],
+            'contact_type.id' => ['required', 'exists:ad_contact_types,id'],
             'value' => ['required'] // 'unique:ad_contacts,value,except,id'
         ], [
             'value.required' => __("user::ads.form.error.contact.value.title"),
@@ -59,10 +61,12 @@ class AdContactController extends BaseAdController
         ]);
 
         $contact_type = AdContactType::find($request->contact_type['id']);
+        Log::info($contact_type);
+        if ($contact_type->data['validation']) {
 
-        if ($contact_type->validation) {
-
-            $request->validate($contact_type->validation);
+            Validator::validate([
+                'value' => $request->value,
+            ], $contact_type->data['validation'], [], $contact_type->data['validation_attr'] ?? []);
         }
 
         $ad_contact = $adContactRepository->firstOrCreate([

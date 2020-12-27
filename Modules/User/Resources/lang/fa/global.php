@@ -23,6 +23,7 @@ return [
         ],
     ],
     'ratelimiter' => [
+        'global' => 'محدودیت در درخواست، لطفا بعد از :ratelimiter ثانیه دوباره امتحان کنید.',
         'login' => 'بعد از :ratelimiter ثانیه'
     ],
     'errors' => [

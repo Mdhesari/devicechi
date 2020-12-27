@@ -163,6 +163,12 @@ class Ad extends Model
         return $this->belongsTo(CityState::class);
     }
 
+    public function user()
+    {
+
+        return $this->belongsTo(User::class);
+    }
+
     /**
      * Create a new factory instance for the model.
      *

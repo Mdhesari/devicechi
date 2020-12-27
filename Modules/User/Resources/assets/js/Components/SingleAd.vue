@@ -56,9 +56,8 @@
                             </ul>
                         </div>
                         <div class="des">
-                            <p>
-                                {{ ad.description }}
-                            </p>
+                            <h4>توضیحات</h4>
+                            <p v-html="ad.description"></p>
                         </div>
                     </div>
                 </div>
