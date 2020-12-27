@@ -38,7 +38,6 @@ class UserServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerTranslations();
-        $this->registerConfig();
         $this->registerViews();
         $this->registerArtisanCommands();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
@@ -62,6 +61,9 @@ class UserServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+        $this->registerConfig();
+
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(ViewServiceProvider::class);
 

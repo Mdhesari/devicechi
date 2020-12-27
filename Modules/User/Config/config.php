@@ -7,6 +7,9 @@ return [
     'ad_pictures_max_count' => 6,
     'ad_pictures_min_count' => 2,
 
+    'domain' => env('USER_DOMAIN', 'http://localhost'),
+    'prefix' => env('User_PREFIX', '/'),
+
     'mobile_rate_limit' => env('MOBILE_RATE_LIMIT', 120),
 
     'ad_pictures_format' => ["image/png", "image/jpg", "image/jpeg"],

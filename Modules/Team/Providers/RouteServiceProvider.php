@@ -39,6 +39,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->parseDomainUrl(config('team.domain'), config('team.prefix'));
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
@@ -54,18 +56,20 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
 
+        Route::domain($this->getDomain())
+            ->prefix($this->getPrefix())
+            ->middleware('web')
+            ->namespace($this->moduleNamespace)
+            ->group(module_path('Team', '/Routes/domain/web.php'));
+
         Route::domain(config('app.url'))
             ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Team', '/Routes/web.php'));
 
-        Route::domain($this->getDomain())
-            ->middleware('web')
-            ->namespace($this->moduleNamespace)
-            ->group(module_path('Team', '/Routes/domain/web.php'));
-
         // fortify
         Route::domain($this->getDomain())
+            ->prefix($this->getPrefix())
             ->middleware(config('fortify.middleware', ['web']))
             ->namespace($this->moduleNamespace)
             ->group(module_path('Team', '/Routes/domain/fortify/routes.php'));

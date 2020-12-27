@@ -44,6 +44,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+
+        $this->parseDomainUrl(config('user.domain'), config('user.prefix'));
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
@@ -59,6 +62,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::domain($this->getDomain())
+            ->prefix($this->getPrefix())
             ->middleware('web')
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/domain/web.php'));
@@ -78,7 +82,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
+        Route::domain($this->getDomain())
+            ->prefix($this->getPrefix() . '/api')
             ->name('user.api.')
             ->middleware('api')
             ->namespace($this->moduleNamespace)

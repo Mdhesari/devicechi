@@ -34,7 +34,6 @@ class TeamServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerTranslations();
-        $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
@@ -48,6 +47,8 @@ class TeamServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->registerConfig();
+
         $this->registerProviders();
         $this->app->bind(RouteServiceProvider::DOMAIN, TeamDomainHandler::class);
     }
