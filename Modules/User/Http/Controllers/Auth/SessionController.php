@@ -19,8 +19,6 @@ use Validator;
 
 class SessionController extends Controller
 {
-    use HasMobileRateLimit;
-
     protected $gurad;
 
     /**
