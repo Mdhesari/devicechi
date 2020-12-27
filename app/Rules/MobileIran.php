@@ -25,7 +25,7 @@ class MobileIran implements Rule
      */
     public function passes($attribute, $value)
     {
-        return preg_match('/(\+98|0)?9\d{9}/', $value);
+        return preg_match('/(9|0)?9\d{9}/', $value);
     }
 
     /**
@@ -35,6 +35,6 @@ class MobileIran implements Rule
      */
     public function message()
     {
-        return 'validation.mobile';
+        return __('validation.mobile');
     }
 }

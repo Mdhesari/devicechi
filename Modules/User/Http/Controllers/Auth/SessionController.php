@@ -19,7 +19,7 @@ use Validator;
 
 class SessionController extends Controller
 {
-    protected $gurad;
+    protected $guard;
 
     /**
      * code Generator
@@ -30,7 +30,7 @@ class SessionController extends Controller
 
     public function __construct(StatefulGuard $guard, CodeVerificationGenerator $generator)
     {
-        $this->gurad = $guard;
+        $this->guard = $guard;
         $this->codeGenerator = $generator;
     }
 
@@ -41,12 +41,14 @@ class SessionController extends Controller
      */
     public function store(UserLoginRequest $request, RateLimiter $limiter)
     {
-        $user = User::wherePhone($request->input('phone'))->first();
+        $mobile = trim(preg_replace('/^0/', '', $request->phone));
+
+        $user = User::wherePhone($mobile)->first();
 
         if (is_null($user)) {
 
             $user = User::create([
-                'phone' => trim($request->phone),
+                'phone' => $mobile,
                 'phone_country_code' => intval($request->phone_country_code)
             ]);
 
@@ -74,6 +76,40 @@ class SessionController extends Controller
             'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
         ]);
     }
+
+    /**
+     * Verify if user entered code is true
+     *
+     * @param  object $request
+     * @return mixed
+     */
+    public function verify(Request $request)
+    {
+        $request->validate([
+            'code' => 'required'
+        ]);
+
+        $hashed_verification_code = $request->session()->get('verification_code');
+
+        $phone = $request->session()->get('phone');
+
+        if (Hash::check($request->code, $hashed_verification_code) && $phone) {
+
+            $user = User::where('phone', $phone)->first();
+
+            $user->verifyPhoneNumberIfNotVerified();
+
+            // update user phone_verified_at column and return
+            $this->guard->login($user, true);
+
+            return redirect()->route('user.dashboard')->with('submit_status', 1);
+        }
+
+        return back()->withErrors([
+            'code' => __('auth.failed'),
+        ]);
+    }
+
 
     private function getAvailableInRateLimiter(RateLimiter $limiter, $key)
     {
@@ -113,7 +149,7 @@ class SessionController extends Controller
     public function destroy(Request $request)
     {
 
-        $this->gurad->logout();
+        $this->guard->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();

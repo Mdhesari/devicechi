@@ -14,7 +14,6 @@
 use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
-use Modules\User\Http\Controllers\Auth\VerificationController;
 use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserController;
 
@@ -30,5 +29,5 @@ Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
     Route::post('/auth', [SessionController::class, 'store'])->name('auth');
 
-    Route::post('/auth/validate', [VerificationController::class, 'verify'])->name('verify');
+    Route::post('/auth/validate', [SessionController::class, 'verify'])->name('verify');
 });

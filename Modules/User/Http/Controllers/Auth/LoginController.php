@@ -8,7 +8,8 @@ use Illuminate\Routing\Controller;
 
 class LoginController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         return 'User login route.';
     }
