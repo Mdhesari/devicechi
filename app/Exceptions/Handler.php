@@ -40,7 +40,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
 
-        if ($e instanceof PreviousStepRedirectHttpException) {
+        if ($e instanceof PreviousStepRedirectHttpException || $e instanceof MFSValidationException) {
 
             $url = $e->getUrl();
 

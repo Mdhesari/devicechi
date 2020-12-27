@@ -58,8 +58,15 @@ class AdContactController extends BaseAdController
             'value.unique' => __("user::ads.form.error.contact.duplicate.title")
         ]);
 
+        $contact_type = AdContactType::find($request->contact_type['id']);
+
+        if ($contact_type->validation) {
+
+            $request->validate($contact_type->validation);
+        }
+
         $ad_contact = $adContactRepository->firstOrCreate([
-            'contact_type_id' => $request->contact_type['id'],
+            'contact_type_id' => $contact_type->id,
             'ad_id' => $ad->id,
             'value' => $request->value
         ]);

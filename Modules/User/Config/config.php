@@ -7,6 +7,8 @@ return [
     'ad_pictures_max_count' => 6,
     'ad_pictures_min_count' => 2,
 
+    'mobile_rate_limit' => env('MOBILE_RATE_LIMIT', 120),
+
     'ad_pictures_format' => ["image/png", "image/jpg", "image/jpeg"],
 
     'default_country' => 'Iran',
@@ -20,6 +22,9 @@ return [
                 'input' => 'email',
                 'placeholder' => 'ex : md@gmail.com',
             ],
+            'validation' => [
+                'required', 'email'
+            ]
         ],
         [
             'name' => 'phone',
@@ -29,6 +34,9 @@ return [
                 'input' => 'tel',
                 'placeholder' => 'ex : 989370038157',
             ],
+            'validation' => [
+                'required', new App\Rules\MobileIran
+            ]
         ],
     ],
 

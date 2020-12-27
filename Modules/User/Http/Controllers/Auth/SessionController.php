@@ -3,6 +3,7 @@
 namespace Modules\User\Http\Controllers\Auth;
 
 use App;
+use App\Exceptions\MFSValidationException;
 use Hash;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Contracts\Auth\StatefulGuard;
@@ -13,10 +14,12 @@ use Modules\User\Entities\User;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Http\Requests\UserLoginRequest;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Modules\User\Space\Traits\HasMobileRateLimit;
 use Validator;
 
 class SessionController extends Controller
 {
+    use HasMobileRateLimit;
 
     protected $gurad;
 
@@ -58,13 +61,13 @@ class SessionController extends Controller
 
         if ($limiter->tooManyAttempts($key, 1)) {
 
-            return back()->with([
+            throw new MFSValidationException(back()->with([
                 'trigger_auth' => true,
                 'ratelimiter' => $this->getAvailableInRateLimiter($limiter, $key)
-            ]);
+            ]));
         }
 
-        $limiter->hit($key, 120);
+        $limiter->hit($key, config('user.mobile_rate_limit'));
 
         $this->sendVerification($user);
 
