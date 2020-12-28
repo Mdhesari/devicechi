@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Modules\Team\Http\Middleware;
 
-use Illuminate\Auth\Middleware\Authenticate as Middleware;
-use Modules\Core\Contracts\DomainHanler;
-use Route;
+use Closure;
+use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Http\Request;
 
-class Authenticate extends Middleware
+class TeamAuthenticate extends Authenticate
 {
-
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *

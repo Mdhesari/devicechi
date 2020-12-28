@@ -16,7 +16,6 @@ use Modules\User\Space\Contracts\CodeVerificationGenerator;
 use Modules\User\Space\Contracts\StoresAdPicture;
 use Modules\User\Space\GeneratorVerification;
 use Modules\User\Space\StoreAdPicture;
-use Modules\User\Space\UserDomainHandler;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -67,7 +66,6 @@ class UserServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(ViewServiceProvider::class);
 
-        $this->app->bind(RouteServiceProvider::DOMAIN, UserDomainHandler::class);
         $this->app->singleton(StoresAdPicture::class, StoreAdPicture::class);
         $this->app->bind(CodeVerificationGenerator::class, GeneratorVerification::class);
         $this->app->singleton(AdRepositoryInterface::class, AdRepository::class);

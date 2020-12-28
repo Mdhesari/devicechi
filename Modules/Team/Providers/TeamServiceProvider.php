@@ -4,7 +4,6 @@ namespace Modules\Team\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
-use Modules\Team\Space\TeamDomainHandler;
 
 class TeamServiceProvider extends ServiceProvider
 {
@@ -50,7 +49,6 @@ class TeamServiceProvider extends ServiceProvider
         $this->registerConfig();
 
         $this->registerProviders();
-        $this->app->bind(RouteServiceProvider::DOMAIN, TeamDomainHandler::class);
     }
 
     /**

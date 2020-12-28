@@ -25,7 +25,7 @@ class InertiaMiddleware
 
         Inertia::share('user', $request->user());
 
-        if ($request->isSubDomain(RouteServiceProvider::DOMAIN)) {
+        if ($request->isModuleDomain(config('user.domain'), config('user.prefix'))) {
 
             Inertia::setRootView('user::layouts.app');
         }

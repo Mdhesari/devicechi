@@ -170,6 +170,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\ModuleDomainProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -177,7 +178,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\InertiaServiceProvider::class,
-
     ],
 
     /*

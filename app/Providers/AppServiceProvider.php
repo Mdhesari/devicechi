@@ -37,28 +37,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        Request::macro('isSubDomain', function ($domain = null) {
-
-            $hostArr =  explode('.', $this->getHost());
-
-            if (count($hostArr) > 2) {
-                // uses sub domain
-
-                if (is_null($domain)) {
-
-                    return true;
-                }
-
-                if ($hostArr[0] == $domain) {
-
-                    return true;
-                }
-            }
-
-            return false;
-        });
-
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

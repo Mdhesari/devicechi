@@ -18,8 +18,8 @@ class InertiaMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        if ($request->isModuleDomain(config('team.domain'), config('team.prefix'))) {
 
-        if ($request->isSubDomain(RouteServiceProvider::DOMAIN)) {
             Inertia::setRootView('team::layouts.team');
         }
 

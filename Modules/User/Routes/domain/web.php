@@ -17,7 +17,7 @@ use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserController;
 
-Route::middleware('auth:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
+Route::middleware('auth.team:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
 

@@ -10,5 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', fn () => 'team');
 
-Route::middleware(['auth:sanctum'])->group(__DIR__ . '/web/auth.php');
+Route::middleware(['auth.team:sanctum'])->group(__DIR__ . '/auth.php');
+
+Route::get('/login', fn () => 'team login')->name('team.login');
