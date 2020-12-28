@@ -61,7 +61,7 @@ class AdContactController extends BaseAdController
         ]);
 
         $contact_type = AdContactType::find($request->contact_type['id']);
-        Log::info($contact_type);
+
         if ($contact_type->data['validation']) {
 
             Validator::validate([
