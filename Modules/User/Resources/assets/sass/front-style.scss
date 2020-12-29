@@ -5,6 +5,7 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "variables";
+@import "./fonts.scss";
 
 $pallete: (
     "primary": #ff6704,
@@ -39,21 +40,13 @@ $pallete: (
     @return map-get($pallete, $key);
 }
 
-/* FONT */
-@font-face {
-    font-family: IRANSans;
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/IRANSansWeb.eot");
-    src: url("../fonts/IRANSansWeb.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/IRANSansWeb.woff") format("woff"),
-        url("../fonts/IRANSansWeb.ttf") format("truetype");
-}
-
 /* general */
 body {
+    font-family: IRANSans, "Times New Roman", Times, serif;
     background-color: rgb(249, 251, 255);
     text-align: right;
+    color: pallete("dark");
+    direction: rtl;
 }
 
 p {
@@ -82,12 +75,6 @@ h6 {
     font-weight: bold !important;
 }
 
-body {
-    font-family: IRANSans !important;
-    color: pallete("dark");
-    direction: rtl;
-}
-
 ul {
     padding: 0;
     margin-bottom: 0;
@@ -98,7 +85,6 @@ ul li {
 }
 
 a {
-
     text-decoration: none;
 }
 
@@ -117,7 +103,7 @@ svg {
     }
 
     button {
-        bottom: 5px ;
+        bottom: 5px;
         background-color: transparent;
         border: none;
 

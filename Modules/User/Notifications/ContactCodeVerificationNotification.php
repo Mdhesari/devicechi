@@ -12,7 +12,6 @@ class ContactCodeVerificationNotification extends Notification
 {
     use Queueable;
 
-    protected $contact;
     protected $channels;
 
     /**
