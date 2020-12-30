@@ -4,17 +4,26 @@
             <b-avatar size="sm"></b-avatar>
         </template>
 
-        <b-dropdown-item :href="route('user.dashboard')">
-            <b-icon icon="gear"></b-icon>
-            {{ __("global.user.profile.title") }}
-        </b-dropdown-item>
+        <li role="presentation">
+            <inertia-Link class="dropdown-item" :href="route('user.dashboard')">
+                <b-icon icon="gear"></b-icon>
+                {{ __("global.user.profile.title") }}
+            </inertia-Link>
+        </li>
 
         <b-dropdown-divider></b-dropdown-divider>
 
-        <li class="dropdown-item">
-            <form :action="route('user.session.logout')" method="post">
+        <li role="presentation">
+            <form
+                :action="route('user.session.logout')"
+                method="post"
+            >
                 <input type="hidden" name="_token" :value="csrf" />
-                <b-button type="submit" variant="link" class="text-danger d-block">
+                <b-button
+                    type="submit"
+                    variant="link"
+                    class="text-danger d-block dropdown-item"
+                >
                     <b-icon icon="power"></b-icon>
                     {{ __("global.user.profile.logout") }}
                 </b-button>

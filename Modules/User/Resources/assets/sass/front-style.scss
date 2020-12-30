@@ -95,13 +95,17 @@ svg {
 /* ========
     MD Styles
 ======= */
+button {
+    text-decoration: none !important;
+}
+
 @import "./wizard.scss";
 
-.header-site #profile-box {
-    .dropdown-item {
-        padding: 9px 25px;
-    }
+.dropdown-menu {
+    text-align: right;
+}
 
+.header-site #profile-box {
     button {
         bottom: 5px;
         background-color: transparent;
