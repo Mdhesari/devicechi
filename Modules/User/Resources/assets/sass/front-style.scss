@@ -84,10 +84,6 @@ ul li {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-}
-
 svg {
     vertical-align: middle;
 }
@@ -95,7 +91,8 @@ svg {
 /* ========
     MD Styles
 ======= */
-button {
+button,
+a {
     text-decoration: none !important;
 }
 

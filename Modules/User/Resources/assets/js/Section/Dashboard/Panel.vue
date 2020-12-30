@@ -12,16 +12,18 @@
                 </div>
             </div>
             <b-nav tabs class="mb-4">
-                <b-nav-item
+                <li
+                    class="nav-item"
                     v-for="(nav, index) in nav_items"
                     :key="index"
-                    :active="nav.is_active"
                 >
                     <inertia-Link
+                        class="nav-link"
+                        :class="{ active: nav.is_active }"
                         :href="nav.route"
                         v-text="nav.label"
                     ></inertia-Link>
-                </b-nav-item>
+                </li>
             </b-nav>
 
             <div class="row user-panel-main">
