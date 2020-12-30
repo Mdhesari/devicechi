@@ -18,7 +18,7 @@ class PicturesPipeline implements ValidatesAdStep
         if ($step >= BaseAdController::STEP_UPLOAD_PICTURES) {
             if ($ad->missingPrice()) {
 
-                throw new PreviousStepRedirectHttpException(route('user.ad.step_price', [
+                throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_price', [
                     'ad' => $ad,
                 ]));
             }

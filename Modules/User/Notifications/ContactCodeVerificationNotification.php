@@ -12,6 +12,11 @@ class ContactCodeVerificationNotification extends Notification
 {
     use Queueable;
 
+    /**
+     * Notification channels
+     *
+     * @var mixed
+     */
     protected $channels;
 
     /**
@@ -32,7 +37,9 @@ class ContactCodeVerificationNotification extends Notification
      */
     public function via($notifiable)
     {
-        return $this->channels ?? [];
+        $this->channels = $this->channels ?? [];
+
+        return array_merge($this->channels, ['database']);
     }
 
     /**
@@ -44,12 +51,24 @@ class ContactCodeVerificationNotification extends Notification
     public function toMail($notifiable)
     {
 
-        Log::info("Code verification is {$notifiable->getVerificationCode()}, value is : {$notifiable->value}");
-
         return (new MailMessage)
             ->line('The introduction to the notification.')
             ->action('Notification Action', 'https://laravel.com')
             ->line('Thank you for using our application!');
+    }
+
+    /**
+     * Get the mail representation of the notification.
+     *
+     * @param mixed $notifiable
+     * @return string
+     */
+    public function toGhasedak($notifiable)
+    {
+
+        $message = '{MFS} Your verification code is ' . $notifiable->getVerificationCode();
+
+        return $message;
     }
 
     /**
@@ -60,6 +79,8 @@ class ContactCodeVerificationNotification extends Notification
      */
     public function toArray($notifiable)
     {
+        Log::info("Code verification is {$notifiable->getVerificationCode()}, value is : {$notifiable->value}");
+
         return [
             //
         ];

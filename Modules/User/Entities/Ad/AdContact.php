@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Modules\User\Entities\Ad;
+use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Notifications\ContactCodeVerificationNotification;
 use Modules\User\Space\Contracts\AdContactMustVerifyValue;
 use User\Database\Factories\AdFactory;
@@ -17,7 +18,7 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
     const VERIFICATION_SESSION = 'ad_contact_verification_code';
 
-    protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data','value_verified_at'];
+    protected $fillable = ['ad_id', 'contact_type_id', 'value', 'data', 'value_verified_at'];
 
     protected $casts = [
         'data' => 'array',
@@ -74,7 +75,7 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
     public function sendVerification($data)
     {
-        return $this->notify(new ContactCodeVerificationNotification($data));
+        return $this->notify(new CodeVerificatiNotification($data));
     }
 
     public function setValueAsVerified()
@@ -83,5 +84,17 @@ class AdContact extends Model implements AdContactMustVerifyValue
         return $this->forceFill([
             'value_verified_at' => now(),
         ])->save();
+    }
+
+    public function routeNotificationForSms()
+    {
+
+        return $this->value;
+    }
+
+    public function routeNotificationForMail()
+    {
+
+        return $this->value;
     }
 }

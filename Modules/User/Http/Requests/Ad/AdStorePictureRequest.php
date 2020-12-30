@@ -59,8 +59,12 @@ class AdStorePictureRequest extends FormRequest
     public function messages()
     {
         return [
-            'max' => __('user::ads.form.error.pictures.max'),
-            'min' => __('user::ads.form.error.pictures.min'),
+            'max' => __('user::ads.form.error.pictures.max', [
+                'limit' => config('user.ad_pictures_max_count'),
+            ]),
+            'min' => __('user::ads.form.error.pictures.min', [
+                'limit' => config('user.ad_pictures_min_count'),
+            ]),
         ];
     }
 

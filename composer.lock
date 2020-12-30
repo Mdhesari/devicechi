@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "56a1f26ec43e230b38840f471cd7ae2c",
+    "content-hash": "eaae4e2e1c5b39606c0d950316d3f689",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -665,6 +665,96 @@
                 }
             ],
             "time": "2020-10-22T13:57:20+00:00"
+        },
+        {
+            "name": "ghasedak/laravel",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ghasedakapi/ghasedak-laravel.git",
+                "reference": "da1e662833f2c98e11acdd818be92cc7e7eaa7d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ghasedakapi/ghasedak-laravel/zipball/da1e662833f2c98e11acdd818be92cc7e7eaa7d2",
+                "reference": "da1e662833f2c98e11acdd818be92cc7e7eaa7d2",
+                "shasum": ""
+            },
+            "require": {
+                "ghasedak/php": "v1.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ghasedak\\Laravel\\GhasedakServiceProvider"
+                    ],
+                    "aliases": {
+                        "Ghasedak": "Ghasedak\\Laravel\\GhasedakFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ghasedak\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rasoul Rahimii",
+                    "email": "RasoulRahimi93@gmail.com"
+                }
+            ],
+            "description": "Easy-to-use SDK for implementing Ghasedak SMS API in your Laravel projects.",
+            "time": "2020-10-12T11:21:02+00:00"
+        },
+        {
+            "name": "ghasedak/php",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ghasedakapi/ghasedak-php.git",
+                "reference": "a487875c607283177fc4cfd61a3b090d297f64d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ghasedakapi/ghasedak-php/zipball/a487875c607283177fc4cfd61a3b090d297f64d1",
+                "reference": "a487875c607283177fc4cfd61a3b090d297f64d1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ghasedak\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Abbas Hosseinpour",
+                    "email": "abdolzahra512@gmail.com"
+                }
+            ],
+            "description": "ghasedak sms gateway package for PHP",
+            "homepage": "https://github.com/ghasedakapi/ghasedak-php",
+            "keywords": [
+                "Ghasedak",
+                "api",
+                "notification",
+                "sms",
+                "sms-gateway"
+            ],
+            "time": "2020-10-06T13:19:05+00:00"
         },
         {
             "name": "graham-campbell/result-type",

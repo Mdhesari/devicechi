@@ -78,10 +78,10 @@ class User extends Authenticatable implements MustVerifyPhone
         return !is_null($this->phone_verified_at);
     }
 
-    public function sendVerificationNotification($code)
+    public function sendVerificationNotification($data)
     {
 
-        return $this->notify(new CodeVerificatiNotification($this, $code));
+        return $this->notify(new CodeVerificatiNotification($data));
     }
 
     public function verifyPhoneNumberIfNotVerified()

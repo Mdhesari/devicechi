@@ -16,7 +16,7 @@ class AdContactEmailVerificationPipeline implements AdContactSendVerificationPip
         if ($ad_contact->type->name == AdContactType::TYPE_EMAIL) {
 
             $ad_contact->sendVerification([
-                'channels' => 'mail',
+                'channels' => ['mail'],
             ]);
             $data['status'] = true;
         }

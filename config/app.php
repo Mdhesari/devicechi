@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
         App\Providers\InertiaServiceProvider::class,
+        App\Providers\SetupNotificationChannels::class
     ],
 
     /*

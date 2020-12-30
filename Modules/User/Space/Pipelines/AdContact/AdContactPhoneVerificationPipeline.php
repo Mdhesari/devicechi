@@ -35,7 +35,9 @@ class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPip
             $limiter->hit($key, config('user.mobile_rate_limit'));
 
             $ad_contact->sendVerification([
-                'channels' => 'mail',
+                'channels' => [
+                    'ghasedak',
+                ],
             ]);
 
             $data['status'] = true;

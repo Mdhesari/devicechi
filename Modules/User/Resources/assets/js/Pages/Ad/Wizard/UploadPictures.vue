@@ -130,8 +130,12 @@ export default {
 
             const all_pictures_count = this.pictures.length + files.length;
 
-            if (all_pictures_count >= this.pictures_limit_count) {
-                this.$to(this.__("ads.form.error.pictures.max"));
+            if (all_pictures_count > this.pictures_limit_count) {
+                this.$to(
+                    this.__("ads.form.error.pictures.max", {
+                        limit: this.pictures_limit_count
+                    })
+                );
                 return false;
             }
 
