@@ -1558,7 +1558,7 @@ input[type=number] {
   overflow: hidden;
 }
 
-.links .short-links {
+.short-links {
   border: 1px solid #727272;
   margin-top: 30px;
   padding: 20px;
@@ -1569,7 +1569,7 @@ input[type=number] {
   border-radius: 12px;
 }
 
-.short-links .clip-board {
+.clip-board {
   border: 0;
   background: 0;
 }

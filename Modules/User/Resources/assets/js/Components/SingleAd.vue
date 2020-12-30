@@ -18,6 +18,13 @@
                             <span>,</span>
                             <span v-text="ad.state.name"></span>
                         </div>
+                        <div class="actions my-4">
+                            <div class="call">
+                                <a href="tel:09190790979" class=" btn call-btn"
+                                    >تماس با آگهی دهنده</a
+                                >
+                            </div>
+                        </div>
                         <div class="specs">
                             <ul class="infos-phone">
                                 <li class="inner">
@@ -84,3 +91,20 @@ export default {
     }
 };
 </script>
+
+<!-- 
+
+ <div class="short-links">
+                            <div class="lable">
+                                <strong>لینک کوتاه</strong>
+                            </div>
+                            <span class="short-link">
+                                https://mobileforsale.com
+                                <button class="clip-board">
+                                    <i
+                                        class="fa fa-clone"
+                                        aria-hidden="true"
+                                    ></i>
+                                </button>
+                            </span>
+                        </div>
