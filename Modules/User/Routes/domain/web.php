@@ -27,7 +27,7 @@ Route::middleware('guest:sanctum')->name('user.')->group(function () {
 
     Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
 
-    Route::post('/auth', [SessionController::class, 'store'])->name('auth');
+    Route::middleware('english_numbers')->post('/auth', [SessionController::class, 'store'])->name('auth');
 
     Route::post('/auth/validate', [SessionController::class, 'verify'])->name('verify');
 });

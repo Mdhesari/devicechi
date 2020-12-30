@@ -55,7 +55,7 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
                 Route::get('/price', [AdPriceController::class, 'choose'])->name('price');
 
-                Route::post('/price', [AdPriceController::class, 'store']);
+                Route::middleware('english_numbers')->post('/price', [AdPriceController::class, 'store']);
 
                 Route::get('/pictures', [AdPictureController::class, 'choose'])->name('pictures');
 
@@ -73,11 +73,11 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
                 Route::post('/contact', [AdContactController::class, 'store']);
 
-                Route::post('/contact/add', [AdContactController::class, 'add'])->name('contact.add');
+                Route::middleware('english_numbers')->post('/contact/add', [AdContactController::class, 'add'])->name('contact.add');
 
                 Route::delete('/contact/remove', [AdContactController::class, 'remove'])->name('contact.delete');
 
-                Route::put('/contact/verify', [AdContactController::class, 'verify'])->name('contact.verify');
+                Route::middleware('english_numbers')->put('/contact/verify', [AdContactController::class, 'verify'])->name('contact.verify');
 
                 Route::get('/details', [AdDetailsController::class, 'choose'])->name('details');
 
@@ -117,5 +117,5 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
 Route::prefix('/profile')->name('profile.')->group(function () {
 
-    Route::put('/update', [UserController::class, 'update'])->name('update');
+    Route::middleware('english_numbers')->put('/update', [UserController::class, 'update'])->name('update');
 });
