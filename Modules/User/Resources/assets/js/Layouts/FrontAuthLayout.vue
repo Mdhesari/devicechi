@@ -1,8 +1,15 @@
 <template>
     <div>
         <Header :user="user"></Header>
+
         <!-- Page Content -->
         <main class="main-site">
+            <b-container>
+                <div class="alert alert-success" v-if="success">
+                    {{ success }}
+                </div>
+            </b-container>
+
             <slot></slot>
         </main>
 
@@ -19,6 +26,12 @@ export default {
     components: {
         Header,
         Footer
+    },
+    data() {
+        return {
+            success: this.getProp("success"),
+            error: this.getProp("error")
+        };
     }
 };
 </script>

@@ -16,7 +16,7 @@ class AdMainController extends BaseAdController
         // $ads = $this->adRepository->getUserAds($request);
         $ads = $request->user()->ads()->filterAd($request)->get();
 
-        $ads->load('pictures');
+        $ads->load('pictures', 'state.city');
 
         if ($request->wantsJson())
             return response()->json([

@@ -3,14 +3,14 @@
         <section class="demo">
             <b-container>
                 <div class="mt-4">
-                    <b-alert show variant="info">
+                    <div class="alert" :class="__(`ads.demo.${ad.status}.bg`)">
                         <h4 class="alert-heading">
-                            {{ __("ads.demo.warning.title") }}
+                            {{ __(`ads.demo.${ad.status}.title`) }}
                         </h4>
                         <p>
-                            {{ __("ads.demo.warning.desc") }}
+                            {{ __(`ads.demo.${ad.status}.desc`) }}
                         </p>
-                    </b-alert>
+                    </div>
                 </div>
                 <SingleAd :ad="ad"></SingleAd>
                 <AdActionsGroup :ad="ad" />

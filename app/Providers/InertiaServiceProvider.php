@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Inertia\Inertia;
+use Log;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Request;
 
@@ -29,6 +30,9 @@ class InertiaServiceProvider extends ServiceProvider
 
         Inertia::share('site_url', config('app.url'));
 
+        Inertia::share('success', function () {
+            return session('success');
+        });
         Inertia::share('all_steps', function (Request $request) {
 
             $BaseAdCtrl = app(BaseAdController::class);

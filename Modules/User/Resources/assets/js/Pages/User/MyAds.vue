@@ -23,25 +23,38 @@
                         </inertia-link>
 
                         <div class="details">
-                            <inertia-link
-                                :href="
-                                    route('user.ad.step_phone_demo', {
-                                        ad: ad.id
-                                    })
-                                "
-                                class="title"
-                            >
-                                <h2>
+                            <h4 class="text-dark">
+                                <inertia-link
+                                    :href="
+                                        route('user.ad.step_phone_demo', {
+                                            ad: ad.id
+                                        })
+                                    "
+                                    class="title"
+                                >
                                     {{ renderTitle(ad.title) }}
-                                </h2>
-                            </inertia-link>
-                            <div
+                                </inertia-link>
+                            </h4>
+                            <p class="price text-muted mt-4">
+                                {{ formatMoney(ad.price) }}
+                                <span>تومان</span>
+                            </p>
+                            <p class="publish-time text-muted" v-if="ad.state">
+                                <span>
+                                    {{ moment(ad.created_at).fromNow() }}
+                                </span>
+                                <span>در</span>
+                                <span v-text="ad.state.city.name"></span>
+                                <span>,</span>
+                                <span v-text="ad.state.name"></span>
+                            </p>
+                            <p
                                 :class="
                                     `status ${renderStatusClass(ad.status)}`
                                 "
                             >
                                 {{ renderStatusLabel(ad.status) }}
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>

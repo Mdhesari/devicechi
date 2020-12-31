@@ -1,5 +1,5 @@
 <template>
-    <div class="links">
+    <div>
         <div class="swiper-container " id="mainHomeSlider">
             <SwiperWrapper>
                 <SwiperSlide
@@ -18,12 +18,6 @@
                     class="swiper-slide main-gallery-bg height100"
                 ></SwiperSlide>
             </SwiperWrapper>
-        </div>
-
-        <div class="actions">
-            <div class="safe">
-                راهنمای معاله امن
-            </div>
         </div>
     </div>
 </template>

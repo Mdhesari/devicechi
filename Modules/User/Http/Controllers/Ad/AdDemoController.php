@@ -25,7 +25,7 @@ class AdDemoController extends BaseAdController
 
         $this->adRepository->publish($ad['id']);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.pending'));
+        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.pending'));
     }
 
     public function delete(AdDemoActionRequest $request)
@@ -34,7 +34,7 @@ class AdDemoController extends BaseAdController
 
         $this->adRepository->delete($ad['id']);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.delete'));
+        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.delete'));
     }
 
     public function archive(AdDemoActionRequest $request)
@@ -43,6 +43,6 @@ class AdDemoController extends BaseAdController
 
         $this->adRepository->archive($ad['id']);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.archive'));
+        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.archive'));
     }
 }
