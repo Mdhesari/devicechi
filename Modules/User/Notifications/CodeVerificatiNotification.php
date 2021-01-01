@@ -33,7 +33,7 @@ class CodeVerificatiNotification extends Notification
      */
     public function __construct($data)
     {
-        $this->channels = $data['channels'] ?? ['ghasedak'];
+        $this->channels = $data['channels'] ?? [];
         $this->code = $data['code'] ?? null;
     }
 

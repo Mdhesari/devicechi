@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Inertia\Inertia;
 use Log;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Entities\User;
 use Modules\User\Events\UserLoggedIn;
 use Modules\User\Events\UserRegistered;

@@ -3,7 +3,7 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Entities\City;
 use Modules\User\Entities\Country;
 

@@ -9,13 +9,13 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
-use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Entities\Ad\AdContactType;
+use Modules\User\Database\Factories\UserFactory;
+use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Space\Contracts\MustVerifyPhone;
 use Storage;
-use User\Database\Factories\UserFactory;
 
 class User extends Authenticatable implements MustVerifyPhone
 {
@@ -125,6 +125,6 @@ class User extends Authenticatable implements MustVerifyPhone
      */
     protected static function newFactory()
     {
-        return new UserFactory;
+        return UserFactory::new();
     }
 }

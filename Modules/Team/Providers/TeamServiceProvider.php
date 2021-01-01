@@ -2,6 +2,7 @@
 
 namespace Modules\Team\Providers;
 
+use Exception;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 

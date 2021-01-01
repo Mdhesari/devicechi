@@ -3,7 +3,7 @@
 namespace Modules\User\Space\Pipelines\AdContact;
 
 use Closure;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad\AdContactType;
 use Modules\User\Space\Contracts\AdContactSendVerificationPipeline;
 
 class AdContactEmailVerificationPipeline implements AdContactSendVerificationPipeline

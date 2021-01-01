@@ -3,7 +3,7 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 
 class AdPriceController extends BaseAdController
 {

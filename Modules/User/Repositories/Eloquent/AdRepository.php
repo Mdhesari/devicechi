@@ -3,7 +3,7 @@
 namespace Modules\User\Repositories\Eloquent;
 
 use Illuminate\Pipeline\Pipeline;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
 use Modules\User\Space\Pipelines\Ad\AgePipeline;
@@ -122,7 +122,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function publish($ad)
@@ -139,7 +139,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function delete($ad)
@@ -155,7 +155,7 @@ class AdRepository extends Repository implements AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function archive($ad)

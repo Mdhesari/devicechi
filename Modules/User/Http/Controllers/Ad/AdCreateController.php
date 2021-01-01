@@ -2,7 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Entities\PhoneBrand;
 
 class AdCreateController extends BaseAdController

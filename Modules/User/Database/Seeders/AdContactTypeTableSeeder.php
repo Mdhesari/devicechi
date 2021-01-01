@@ -2,9 +2,9 @@
 
 namespace Modules\User\Database\Seeders;
 
+use App\Models\Ad\AdContactType;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\User\Entities\Ad\AdContactType;
 
 class AdContactTypeTableSeeder extends Seeder
 {

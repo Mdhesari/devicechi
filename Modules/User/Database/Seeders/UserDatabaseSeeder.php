@@ -5,7 +5,7 @@ namespace Modules\User\Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Seeders\AdContactTypeTableSeeder;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad\AdContactType;
 
 class UserDatabaseSeeder extends Seeder
 {
