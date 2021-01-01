@@ -32,6 +32,6 @@ class Authenticate extends Middleware
     private function getRedirectRoute($request)
     {
 
-        return route('login');
+        return route('user.login');
     }
 }

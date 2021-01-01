@@ -50,7 +50,6 @@ class BladeServiceProvider extends ServiceProvider
                 if (is_array($value)) {
 
                     foreach ($value as $child_val) {
-                        Log::info($child_val);
 
                         if (Route::is($child_val)) $is_route = true;
                     }

@@ -18,7 +18,8 @@ class SetAdminAuthenticationProvider
     public function handle(Request $request, Closure $next)
     {
 
-        Config::set('auth.providers.users.model', \Modules\Admin\Entities\Admin::class);
+        Config::set('auth.defaults.guard', 'admin');
+        Config::set('auth.defaults.passwords', 'admins');
 
         return $next($request);
     }

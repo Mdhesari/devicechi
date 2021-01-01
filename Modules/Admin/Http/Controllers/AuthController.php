@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -13,7 +14,6 @@ use Modules\Admin\Entities\Admin;
 //TODO:Error handling
 class AuthController extends Controller
 {
-    public const HOME = 'dashboard';
     /**
      * Display a listing of the resource.
      * @param Request $request
@@ -24,7 +24,9 @@ class AuthController extends Controller
         $this->validator($request->all())->validate();
 
         $admin = $this->attempt($request->all());
-        \Auth::login($admin, $request->boolean('remember_me', false));
+
+        $this->guard()->login($admin, $request->boolean('remember_me', false));
+
         return redirect(route('dashboard'));
     }
     /**
@@ -41,7 +43,7 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        \Auth::logout();
+        $this->guard()->logout();
 
         $request->session()->invalidate();
 
@@ -78,5 +80,11 @@ class AuthController extends Controller
             ]);
         }
         return $admin;
+    }
+
+    public function guard()
+    {
+
+        return Auth::guard('admin');
     }
 }

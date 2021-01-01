@@ -20,6 +20,7 @@ use \Modules\Admin\Http\Controllers\AuthController;
 use Modules\Admin\Http\Controllers\HomeController;
 
 use Modules\Admin\Http\Controllers\ActivityLogController;
+use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\CategoryController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
@@ -132,6 +133,21 @@ Route::middleware('auth.admin')->group(function () {
         Route::get('/delete', [PaymentController::class, 'destroy'])->name('destroy');
     });
 
+    Route::prefix('ads')->name('admin.ads.')->group(function () {
+
+        Route::get('/', [AdController::class, 'index'])->name('list');
+
+        Route::get('/show/{ad}', [AdController::class, 'show'])->name('show');
+
+        Route::get('/add', [AdController::class, 'create'])->name('add');
+
+        Route::post('/add', [AdController::class, 'store']);
+
+        Route::get('/update', [AdController::class, 'update'])->name('update');
+
+        Route::get('/delete', [AdController::class, 'destroy'])->name('destroy');
+    });
+
     Route::prefix('category')->name('admin.category.')->group(function () {
 
         Route::get('/', [CategoryController::class, 'list'])->name('list');
@@ -155,5 +171,5 @@ Route::middleware('guest.admin')->group(function () {
     Route::get('login', [AuthController::class, 'loginForm'])->name('admin.login');
     Route::post('login', [AuthController::class, 'login']);
 
-    Route::get('register', [RegisterController::class, 'show'])->name('admin.register');
+    // Route::get('register', [RegisterController::class, 'show'])->name('admin.register');
 });

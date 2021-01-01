@@ -9,7 +9,7 @@ return [
             'title' => __(' Ads '),
             'model' => '\App\Models\Ad',
             'icon' => 'ion ion-ios-monitor',
-            'route' => 'user.ad.get',
+            'route' => 'admin.ads.list',
             'bg' => 'bg-info',
         ],
         [
