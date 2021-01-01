@@ -29,8 +29,6 @@ return [
         'css/admin/main.css',
         /*Persian Datepicker*/
         'css/admin/plugins/persian-datepicker/jquery.md.bootstrap.datetimepicker.style.css',
-        /*Webinar Show*/
-        'css/admin/dist/css/webinar-show.css',
         /*Custom Style*/
         'css/main.css'
     ]

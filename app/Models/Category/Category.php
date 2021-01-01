@@ -11,11 +11,6 @@ class Category extends Model
     use HasFactory, NodeTrait;
     protected $parentString = '';
     protected $guarded = ['id', 'created_at', 'updated_at '];
-    //-----------------Relations------------------//
-    public function webinars()
-    {
-        return $this->belongsToMany('App\Models\Webinar\Webianr');
-    }
     //-----------------Mutations------------------//
     public function getBreadcrumbAttribute()
     {

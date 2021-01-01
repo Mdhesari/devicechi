@@ -172,14 +172,12 @@ class UserController extends Controller
         $name = $user->name;
 
         $user->profile()->delete();
-        $user->webinars()->delete();
         $user->payments()->delete();
         $user->profile()->delete();
         $user->transactions()->delete();
         $user->files()->delete();
         $user->tickets()->sync([]);
         $user->favorites()->sync([]);
-        // $user->mutatedWebinars()->sync([]);
         $user->discounts()->sync([]);
         $user->resetPassword()->delete();
 

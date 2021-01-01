@@ -6,6 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
+use Modules\User\Entities\AdPicture;
+use Modules\User\Entities\CityState;
+use Modules\User\Entities\PhoneAccessory;
+use Modules\User\Entities\PhoneModel;
+use Modules\User\Entities\PhoneVariant;
 
 class Ad extends Model
 {

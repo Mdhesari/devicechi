@@ -2,11 +2,11 @@
 
 namespace Modules\Admin\Providers;
 
-use App\Space\Traits\HasDomain;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Admin\Entities\Admin;
 use Modules\Admin\Entities\User;
+use Modules\Core\Traits\HasDomain;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -80,10 +80,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map()
     {
 
-        $data = $this->parse_domain_url(config('admin.domain'), config('admin.prefix'));
-
-        $this->domain = $data['domain'];
-        $this->path = $data['path'];
+        $this->parseDomainUrl(config('admin.domain'), config('admin.prefix'));
 
         $this->mapApiRoutes();
 
@@ -99,10 +96,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-
-        Route::prefix($this->path)
+        Route::domain($this->getDomain())
+            ->prefix($this->getPrefix())
             ->middleware('web')
-            ->domain($this->domain)
             ->namespace($this->moduleNamespace)
             ->group(module_path('Admin', '/Routes/web.php'));
     }
@@ -117,8 +113,8 @@ class RouteServiceProvider extends ServiceProvider
     //TODO:domain must be read from config
     protected function mapApiRoutes()
     {
-        Route::prefix($this->path . '/api')
-            ->domain($this->domain)
+        Route::domain($this->getDomain())
+            ->prefix($this->getPrefix() . '/api')
             ->middleware('api')
             ->namespace($this->moduleNamespace)
             ->group(module_path('Admin', '/Routes/api.php'));

@@ -27,20 +27,8 @@ use Modules\Admin\Http\Controllers\Payment\PaymentController;
 use Modules\Admin\Http\Controllers\RegisterController;
 use Modules\Admin\Http\Controllers\RolePermissionController;
 use Modules\Admin\Http\Controllers\UserController;
-use Modules\Admin\Http\Controllers\Webinar\AdminWebinarController;
 
 Route::middleware('auth.admin')->group(function () {
-
-    Route::name('admin.')->group(function () {
-
-        // Route::prefix('webinar')->name('webinar.')->group(base_path() . '/routes/webinar/webinar_post_routes.php');
-
-        // Route::prefix('ticket')->name('ticket.')->group(base_path() . '/routes/webinar/ticket_post_routes.php');
-
-        // Route::prefix('lesson')->name('lesson.')->group(base_path() . '/routes/webinar/lesson_post_routes.php');
-
-        // Route::prefix('faq')->name('faq.')->group(base_path() . '/routes/webinar/faq_post_routes.php');
-    });
 
     // root endpoint
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
@@ -128,32 +116,7 @@ Route::middleware('auth.admin')->group(function () {
             Route::put('/restore/{admin}', [AdminController::class, 'restore'])->name('restore');
         });
     });
-    Route::prefix('webinars')->name('admin.webinars.')->group(function () {
 
-        Route::get('/', [AdminWebinarController::class, 'list'])->name('list');
-
-        Route::get('/add', [AdminWebinarController::class, 'create'])->name('add');
-
-        Route::get('/add/{id}', [AdminWebinarController::class, 'continueCreate'])->name('add.continue');
-
-        Route::get('/{webinar}', [AdminWebinarController::class, 'show'])->name('show');
-
-        Route::get('/edit/{webinar}', [AdminWebinarController::class, 'edit'])->name('edit');
-        
-        Route::post('/change-status/{webinar}', [AdminWebinarController::class, 'changeStatus'])->name('change-status');
-
-        Route::delete('/{webinar}', [AdminWebinarController::class, 'delete'])->name('destroy');
-    });
-    Route::prefix('medias')->name('admin.medias.')->group(function () {
-
-        Route::get('/', [AdminMediaController::class, 'list'])->name('list');
-
-        Route::get('/add', [AdminWebinarController::class, 'create'])->name('add');
-
-        Route::get('/edit/{webinar}', [AdminWebinarController::class, 'edit'])->name('edit');
-
-        Route::delete('/{webinar}', [AdminWebinarController::class, 'delete'])->name('destroy');
-    });
 
     Route::prefix('payments')->name('admin.payments.')->group(function () {
 

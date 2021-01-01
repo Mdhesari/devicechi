@@ -2,6 +2,7 @@
 
 namespace Modules\User\Entities;
 
+use App\Models\Ad;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -102,7 +103,6 @@ class User extends Authenticatable implements MustVerifyPhone
      */
     public function ads()
     {
-
         return $this->hasMany(Ad::class);
     }
 

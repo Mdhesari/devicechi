@@ -28,7 +28,7 @@ class CreatePaymentsTable extends Migration
             $table->foreignId('admin_id')->nullable()->constrained();
             $table->string('verified_code')->nullable(); // gateway verified code
 
-            // Todo : payments maybe for a specific resource like webinar
+            // Todo : payments maybe for a specific resource like ad
             $table->string('resource_type')->nullable();
             $table->unsignedBigInteger('resource_id')->nullable();
 

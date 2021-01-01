@@ -22,7 +22,7 @@ class CategoryController extends Controller
     protected $output;
     public function list(Request $request, CategoryGrid $categoryGrid)
     {
-        $page_title = __(' Webinar List ');
+        $page_title = __(' Category List ');
 
         $query = Category::query();
 

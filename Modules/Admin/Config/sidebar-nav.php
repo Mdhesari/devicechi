@@ -63,39 +63,6 @@ return [
             ]
         ],
         [
-            'label' => __(' Webinar Management '),
-            'permission' => 'read webinar',
-            [
-                'title' => __(' Webinar List '),
-                'route' => 'admin.webinars.list',
-                'route_params' => [],
-                'icon_class' => 'fa fa-tv'
-            ],
-            [
-                'title' => __(' Create Webinar '),
-                'route' => 'admin.webinars.add',
-                'route_params' => [],
-                'icon_class' => 'fa fa-plus nav-icon'
-            ],
-            
-        ],
-        [
-            'label' => __(' Category Management '),
-            'permission' => 'read webinar',
-            [
-                'title' => __(' Category List '),
-                'route' => 'admin.category.list',
-                'route_params' => [],
-                'icon_class' => 'fa fa-list'
-            ],
-            [
-                'title' => __(' Create Category '),
-                'route' => 'admin.category.add',
-                'route_params' => [],
-                'icon_class' => 'fa fa-plus nav-icon'
-            ],
-        ],
-        [
             'label' => __(' Payment Management '),
             'permission' => 'read payment',
             [
