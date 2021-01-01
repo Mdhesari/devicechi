@@ -174,6 +174,34 @@ class Ad extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getStatus()
+    {
+
+        switch ($this->status) {
+            case 0:
+                $status = __(" REJECTED ");
+                break;
+            case 1:
+                $status = __(" AVAILABLE ");
+                break;
+            case 2:
+                $status = __(" PENDING ");
+                break;
+            case 3:
+                $status = __(" UNCOMPLETED ");
+                break;
+            case 4:
+                $status = __(" UNAVAILABLE ");
+                break;
+            case 5:
+                $status = __(" ARCHIVE ");
+            default:
+                $status = __(" Invalid ");
+        }
+
+        return $status;
+    }
+
     /**
      * Create a new factory instance for the model.
      *
