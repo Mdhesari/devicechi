@@ -60,7 +60,6 @@ Route::middleware('auth.admin')->group(function () {
         });
 
         Route::middleware('can:create user')->group(function () {
-
             Route::get('/add', [UserController::class, 'create'])->name('add');
 
             Route::post('/add', [UserController::class, 'store']);

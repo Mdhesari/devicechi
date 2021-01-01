@@ -32,7 +32,7 @@ class MainUser extends User
     public function getImageAttribute($value)
     {
 
-        return is_null($value) ? asset('image/user.png') : $value;
+       return is_null($value) ? asset('images/user.png') : Storage::url($value);
     }
 
     /**

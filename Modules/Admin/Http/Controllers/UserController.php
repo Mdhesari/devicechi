@@ -17,15 +17,12 @@ use Session;
 
 class UserController extends Controller
 {
-
-
     /**
      * Show the form for creating a new resource.
      * @return Renderable
      */
     public function create()
     {
-
         $page_title = __(' Submit User ');
 
         return view('admin::users.create', compact('page_title'));
@@ -49,7 +46,7 @@ class UserController extends Controller
 
         $user = User::create([
             'name' => $request->name,
-            'mobile' => $request->mobile,
+            'phone' => $request->mobile,
             'password' => Hash::make($request->password),
         ]);
 
@@ -108,7 +105,7 @@ class UserController extends Controller
 
         $data = [
             'name' => $request->name,
-            'mobile' => $request->mobile,
+            'phone' => $request->mobile,
         ];
 
         $email_password = $request->boolean('email_password');

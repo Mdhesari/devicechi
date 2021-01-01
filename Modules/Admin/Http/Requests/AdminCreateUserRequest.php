@@ -15,7 +15,7 @@ class AdminCreateUserRequest extends FormRequest
     {
         return [
             'name' => ['min:3', 'string', 'max:255'],
-            'mobile' => ['required', 'min:6', 'string', 'max:255', 'unique:users,mobile'],
+            'mobile' => ['required', 'min:6', 'string', 'max:255', 'unique:users,phone'],
             'password' => ['bail', 'confirmed', 'min:8', 'required_without:email_password'],
         ];
     }
