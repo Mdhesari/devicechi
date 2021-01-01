@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
+use Illuminate\Notifications\Notifiable;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\PhoneAccessory;
@@ -14,7 +15,7 @@ use Modules\User\Entities\PhoneVariant;
 
 class Ad extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
@@ -24,7 +25,7 @@ class Ad extends Model
     const STATUS_ARCHIVE = 5;
 
     protected $fillable = [
-        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable',
+        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable', 'meta_data'
     ];
 
     /**
@@ -34,7 +35,14 @@ class Ad extends Model
      */
     protected $casts = [
         'is_exchangeable' => 'boolean',
+        'meta_ad' => 'array'
     ];
+
+    public function isPublished()
+    {
+
+        return $this->status !== self::STATUS_UNCOMPLETED;
+    }
 
     public function publish()
     {
@@ -52,6 +60,35 @@ class Ad extends Model
         ])->save();
     }
 
+    public function accept()
+    {
+        return $this->forceFill([
+            'status' => static::STATUS_AVAILABLE,
+        ])->save();
+    }
+
+    public function ignore($description)
+    {
+        return $this->forceFill([
+            'status' => static::STATUS_REJECTED,
+            'meta_ad' => [
+                'reject_description' => $description,
+            ],
+        ])->save();
+    }
+
+    public function isAccepted()
+    {
+
+        return $this->status === self::STATUS_AVAILABLE;
+    }
+
+    public function isIgnored()
+    {
+
+        return $this->status === self::STATUS_REJECTED;
+    }
+
     public function resetModel()
     {
 
@@ -60,6 +97,18 @@ class Ad extends Model
             'phone_model_variant_id' => null,
             'is_multicard' => false,
         ])->save();
+    }
+
+    public function getHelpAttribute($value)
+    {
+        $help = "";
+
+        if ($this->isIgnored()) {
+
+            $help = optional($this->meta_ad)['reject_description'];
+        }
+
+        return $help ?? "";
     }
 
     public function loadSingleRelations()
@@ -171,7 +220,7 @@ class Ad extends Model
     public function user()
     {
 
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(MainUser::class);
     }
 
     public function getStatus()
@@ -200,6 +249,12 @@ class Ad extends Model
         }
 
         return $status;
+    }
+
+    public function getIsMulticardAttribute($value)
+    {
+
+        return $value ? __(" Yes ") : __(" No ");
     }
 
     /**

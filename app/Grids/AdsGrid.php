@@ -69,7 +69,8 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"filter" => [
 					"enabled" => true,
 					"operator" => "="
-				]
+				],
+				"raw" => true,
 			],
 			"user_id" => [
 				"filter" => [
@@ -117,27 +118,40 @@ class AdsGrid extends Grid implements AdsGridInterface
 				],
 				"presenter" => function ($columnData, $columnName) {
 
-					return optional($columnData->state)->name ?? __(" Nothing ");
+					if (is_null($columnData->state)) return __(" Nothing ");
+
+					return $columnData->state->city->name . ', ' . $columnData->state->name;
 				},
 				"export" => false
 			],
-			"price" => [
-				"search" => [
-					"enabled" => true
+			'price' => [
+				'label' => __(' Price '),
+				'filter' => [
+					'enabled' => true,
+					'operator' => '=',
 				],
-				"filter" => [
-					"enabled" => true,
-					"operator" => "="
-				]
+				'presenter' => function ($columnData, $columnName) {
+
+					return number_format($columnData->price) . ' تومان ';
+				}
 			],
-			"location" => [
-				"search" => [
-					"enabled" => true
-				],
+			"user" => [
+				"label" => __(" User "),
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
-				]
+					"operator" => "=",
+				],
+				"presenter" => function ($columnData, $columnName) {
+
+					if (is_null($columnData->user)) return __(' No User ');
+
+					$route = route('admin.users.show', [
+						'user' => $columnData->user->id,
+					]);
+
+					return '<a href="' . $route . '" class="btn btn-link text-primary">' . $columnData->user->name . '</a>';
+				},
+				"raw" => true,
 			],
 			"status" => [
 				"search" => [

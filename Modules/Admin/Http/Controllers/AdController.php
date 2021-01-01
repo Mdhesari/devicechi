@@ -2,7 +2,10 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Events\UserAdAccepted;
+use App\Events\UserAdIgnored;
 use App\Grids\AdsGrid;
+use App\Grids\AdsSingleGrid;
 use App\Models\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
@@ -49,9 +52,23 @@ class AdController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show(Ad $ad, AdsSingleGrid $adsSingleGrid, Request $request)
     {
-        // return view('admin::show');
+        $query = Ad::query();
+
+        $query->whereId($ad->id);
+
+        $grid = $adsSingleGrid->create(compact('request', 'query'));
+
+        $columns = $grid->getProcessedColumns();
+        $item = collect($grid->getData()->items())->first();
+
+        return view('admin::ads.show', compact(
+            'ad',
+            'item',
+            'columns',
+            'grid'
+        ));
     }
 
     /**
@@ -83,5 +100,27 @@ class AdController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function accept(Ad $ad)
+    {
+        $ad->accept();
+
+        event(new UserAdAccepted($ad));
+
+        return back()->with('success', __(' آگهی با موفقیت انتشار داده شد.'));
+    }
+
+    public function ignore(Ad $ad, Request $request)
+    {
+        $request->validate([
+            'description' => ['required'],
+        ]);
+
+        $ad->ignore($request->description);
+
+        event(new UserAdIgnored($ad));
+
+        return back()->with('success', __(' آگهی با موفقیت رد شد.'));
     }
 }

@@ -11,6 +11,13 @@
                             {{ __(`ads.demo.${ad.status}.desc`) }}
                         </p>
                     </div>
+
+                    <div class="alert alert-light" v-if="help.length > 1">
+                        <h4 class="alert-heading">
+                            پشتیبانی :‌
+                        </h4>
+                        {{ help }}
+                    </div>
                 </div>
                 <SingleAd :ad="ad"></SingleAd>
                 <AdActionsGroup :ad="ad" />
@@ -30,6 +37,6 @@ export default {
         SingleAd,
         AdActionsGroup
     },
-    props: ["ad", "user"]
+    props: ["ad", "user", "help"]
 };
 </script>

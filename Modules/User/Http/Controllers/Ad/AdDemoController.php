@@ -16,7 +16,10 @@ class AdDemoController extends BaseAdController
         $this->checkPreviousSteps($step, $ad);
 
         $ad->loadSingleRelations();
-        return inertia('Ad/Demo', compact('ad'));
+
+        $help = $ad->help;
+
+        return inertia('Ad/Demo', compact('ad', 'help'));
     }
 
     public function publish(AdDemoActionRequest $request)

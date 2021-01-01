@@ -11,6 +11,7 @@
 |
 */
 
+use App\Models\Ad\AdContact;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Row;
 use Modules\Admin\Entities\Admin;
@@ -146,6 +147,10 @@ Route::middleware('auth.admin')->group(function () {
         Route::get('/update', [AdController::class, 'update'])->name('update');
 
         Route::get('/delete', [AdController::class, 'destroy'])->name('destroy');
+
+        Route::put('/update/accept/{ad}', [AdController::class, 'accept'])->name('accept');
+
+        Route::put('/update/ignore/{ad}', [AdController::class, 'ignore'])->name('ignore');
     });
 
     Route::prefix('category')->name('admin.category.')->group(function () {
