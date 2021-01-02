@@ -84,7 +84,7 @@ class CodeVerificatiNotification extends Notification
      */
     public function toArray($notifiable)
     {
-        Log::info('Mobileforsale.ir : Your verification code is ' . $this->getCode($notifiable) . ', number requested : ' . $notifiable->routeNotificationFor('sms', $this) ?? $notifiable->phone);
+        Log::info('Mobileforsale.ir : Your verification code is ' . $this->getCode($notifiable) . ', number requested : ' . ($notifiable->routeNotificationFor('sms', $this) ?? $notifiable->phone));
 
         return [
             'code' => $this->getCode($notifiable),

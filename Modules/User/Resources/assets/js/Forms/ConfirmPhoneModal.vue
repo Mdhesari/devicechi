@@ -113,7 +113,7 @@ export default {
                 confirmation_code += input.value;
             });
 
-            confirmation_code = Number(confirmation_code);
+            confirmation_code = Number(this.fixGivenNumber(confirmation_code));
 
             this.form.code = confirmation_code;
 
