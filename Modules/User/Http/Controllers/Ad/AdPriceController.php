@@ -24,7 +24,7 @@ class AdPriceController extends BaseAdController
     {
         $request->validate([
             'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i'],
-            'is_exchangeable' => ['required']
+            'is_exchangeable' => ['nullable']
         ], [
             'digits_between' => __('user::ads.form.error.price.invalid')
         ]);

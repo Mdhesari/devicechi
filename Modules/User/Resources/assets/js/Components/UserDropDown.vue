@@ -11,13 +11,17 @@
             </inertia-Link>
         </li>
 
+        <li role="presentation">
+            <inertia-Link class="dropdown-item" :href="route('user.ad.get')">
+                <b-icon icon="gear"></b-icon>
+                {{ __("global.user.profile.my_ads") }}
+            </inertia-Link>
+        </li>
+
         <b-dropdown-divider></b-dropdown-divider>
 
         <li role="presentation">
-            <form
-                :action="route('user.session.logout')"
-                method="post"
-            >
+            <form :action="route('user.session.logout')" method="post">
                 <input type="hidden" name="_token" :value="csrf" />
                 <b-button
                     type="submit"

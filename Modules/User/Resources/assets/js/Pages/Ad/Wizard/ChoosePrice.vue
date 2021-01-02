@@ -86,7 +86,8 @@ export default {
                         ad: this.ad.id
                     }),
                     {
-                        preserveState: false
+                        preserveState: false,
+                        preserveScroll: true
                     }
                 )
                 .then(response => {

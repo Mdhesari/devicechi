@@ -38,6 +38,8 @@
                 />
             </b-row>
 
+            
+
             <b-button
                 v-if="pictures.length >= pictures_min_count"
                 variant="secondary"

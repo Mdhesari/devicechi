@@ -19,7 +19,8 @@ return [
     'user' => [
         'profile' => [
             'title' => 'حساب کاربری',
-            'logout' => 'خروج'
+            'logout' => 'خروج',
+            'my_ads' => 'آگهی ها من'
         ],
     ],
     'ratelimiter' => [
