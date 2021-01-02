@@ -12,6 +12,7 @@
         >
             <div class="inputs">
                 <input
+                class="form-control"
                     type="text"
                     required
                     v-for="digit in digitsCount"
