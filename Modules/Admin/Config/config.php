@@ -73,5 +73,10 @@ return [
         'read payment',
         'update payment',
         'delete payment',
+        'create ad',
+        'read ad',
+        'update ad',
+        'delete ad',
+
     ]
 ];

@@ -27,6 +27,16 @@ return [
             ],
         ],
         [
+            'label' =>  __(' Ads Management '),
+            'permission' => 'read ad',
+            [
+                'title' => __(' Ads List '),
+                'route' => 'admin.ads.list',
+                'route_params' => [],
+                'icon_class' => 'fa fa-users nav-icon'
+            ],
+        ],
+        [
             'label' => __(' Admin Management '),
             'permission' => 'read admin',
             [
