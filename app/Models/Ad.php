@@ -285,7 +285,7 @@ class Ad extends Model
         return $status;
     }
 
-    public function getIsMulticardAttribute($value)
+    public function getMulticardInfoAttribute($value)
     {
 
         return $value ? __(" Yes ") : __(" No ");

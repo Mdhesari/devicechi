@@ -109,7 +109,11 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"filter" => [
 					"enabled" => true,
 					"operator" => "="
-				]
+				],
+				"presenter" => function ($columnData, $columnName) {
+
+					return $columnData->multicardInfo;
+				},
 			],
 			"state" => [
 				"filter" => [

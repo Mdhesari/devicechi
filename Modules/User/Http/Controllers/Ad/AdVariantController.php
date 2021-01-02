@@ -16,7 +16,6 @@ class AdVariantController extends BaseAdController
         $this->checkPreviousSteps($step, $ad);
 
         $phone_model_variants = $model->variants;
-
         $brand = $model->brand;
 
         return inertia('Ad/Wizard/Create', compact('phone_model_variants', 'step', 'model', 'brand', 'ad'));
