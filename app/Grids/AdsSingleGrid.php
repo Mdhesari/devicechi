@@ -17,17 +17,41 @@ class AdsSingleGrid extends AdsGrid
 	{
 		parent::setColumns();
 		$this->columns = array_merge($this->columns, [
-			'price' => [
-				'label' => __(' Price '),
+			'accessories' => [
+				'label' => __(" Accessories "),
 				'filter' => [
-					'enabled' => true,
-					'operator' => '=',
+					'enabled' => false,
 				],
 				'presenter' => function ($columnData, $columnName) {
 
-					return number_format($columnData->price) . ' تومان ';
-				}
-			]
+					return join(" </br> ", $columnData->accessories()->pluck('title')->toArray());
+				},
+				'raw' => true,
+			],
+			'contacts' => [
+				'label' => __(" Contacts "),
+				'filter' => [
+					'enabled' => false,
+				],
+				'presenter' => function ($columnData, $columnName) {
+
+					return join(" </br> ", $columnData->contacts()->pluck('value')->toArray());
+				},
+				'raw' => true,
+			],
+			"age" => [
+				"search" => [
+					"enabled" => true
+				],
+				"filter" => [
+					"enabled" => true,
+					"operator" => "="
+				],
+				"presenter" => function ($columnData, $columnName) {
+
+					return $columnData->getAgeInfo();
+				},
+			],
 		]);
 	}
 }

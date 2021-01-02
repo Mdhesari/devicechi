@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\PhoneAccessory;
+use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
 
@@ -221,6 +222,39 @@ class Ad extends Model
     {
 
         return $this->belongsTo(MainUser::class);
+    }
+
+    public function age()
+    {
+
+        return $this->belongsTo(PhoneAge::class,'phone_age_id');
+    }
+
+    public function getAgeInfo()
+    {
+
+        $text = "";
+
+        $age = $this->age;
+
+        if (is_null($age)) return $text;
+
+        if ($age->from == "-") {
+            $text = trans("user::ads.form.label.age.min", [
+                'month' => $age->from
+            ]);
+        } else if ($age->to == "+") {
+            $text = trans("user::ads.form.label.age.max", [
+                'month' => $age->to
+            ]);
+        } else {
+            $text = trans("user::ads.form.label.age.between", [
+                'min' => $age->from,
+                'max' => $age->to
+            ]);
+        }
+
+        return $text;
     }
 
     public function getStatus()
