@@ -17,7 +17,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
 
-                    <section class="row ad-pictures">
+                    <div class="row ad-pictures">
                         @foreach ($ad->pictures as $picture)
 
                         <div class="picture m-2">
@@ -25,7 +25,15 @@
                         </div>
 
                         @endforeach
-                    </section>
+                    </div>
+
+                    <div class="toolbar">
+                        <a href="{{ route("admin.ads.export",[
+                            'ad' => $ad,
+                        ]) }}" class="btn btn-outline-info">
+                            @lang(' Export Instagram Post ')
+                        </a>
+                    </div>
 
                     <table class="table">
                         <thead>

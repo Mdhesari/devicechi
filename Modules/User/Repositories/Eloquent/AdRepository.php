@@ -4,6 +4,9 @@ namespace Modules\User\Repositories\Eloquent;
 
 use Illuminate\Pipeline\Pipeline;
 use App\Models\Ad;
+use Image;
+use Intervention\Image\ImageManager;
+use Modules\User\Entities\AdPicture;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
 use Modules\User\Space\Pipelines\Ad\AgePipeline;
@@ -15,12 +18,23 @@ use Modules\User\Space\Pipelines\Ad\ModelPipeline;
 use Modules\User\Space\Pipelines\Ad\PicturesPipeline;
 use Modules\User\Space\Pipelines\Ad\PricePipeline;
 use Modules\User\Space\Pipelines\Ad\VariantPipeline;
+use Storage;
+use Str;
 
-class AdRepository extends Repository implements AdRepositoryInterface
+class AdRepository extends Repository implements
+    AdRepositoryInterface
 {
+
+    protected $export_dir = null;
 
     public function __construct(Ad $adModel)
     {
+        $this->model = $adModel;
+    }
+
+    public function setModel(Ad $adModel)
+    {
+
         $this->model = $adModel;
     }
 
@@ -166,5 +180,72 @@ class AdRepository extends Repository implements AdRepositoryInterface
         }
 
         return $ad->archive();
+    }
+
+    public function createCaptionFile()
+    {
+
+        $ad = $this->model;
+
+        $template = Str::of(config('admin.instagram.templates.post'));
+
+        $text = $template->replace(':brand_model', $ad->phoneModel->name . ', ' . $ad->phoneModel->brand->name)
+            ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
+            ->replace(':variants', $ad->variant->storage . 'حافظه')
+            ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
+            ->replace(':price', $ad->getFormattedPrice())
+            ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
+            ->replace(':status', trans($ad->getStatus()))
+            ->replace(':title', $ad->title)
+            ->replace(':description', $ad->description)
+            ->replace('<br>', "\n");
+
+        $path = $this->getExportDirName($ad)
+            ->append('/caption.txt');
+
+        Storage::put($path, $text);
+
+        return strval($path);
+    }
+
+    public function renderPicturesToExport($quality = 90)
+    {
+
+        $pictures = $this->model->pictures()->latest()->get();
+
+        foreach ($pictures as $picture) {
+
+            $image = Storage::path($picture->getAttributes()['url']);
+
+            $export_src = pathinfo($image);
+
+            $dirname = $export_src['dirname'] . '/exports';
+
+            $full_path = Str::of($dirname)
+                ->append('/1080-1080-')
+                ->append($export_src['basename']);
+
+            if (file_exists($full_path)) continue;
+
+            // edit size and add template
+            $img = Image::make($image)->resize(1080, 1080)->insert(public_path('images/template-1.png'));
+
+            if (!is_dir($dirname)) {
+
+                mkdir($dirname);
+            }
+
+            // get new saved image
+            $img->save($full_path, $quality);
+        }
+    }
+
+    public function getExportDirName()
+    {
+        if ($this->export_dir) return $this->export_dir;
+
+        return $this->export_dir = Str::of(config('user_directories.ads.export'))
+            ->replace(':user_id', $this->model->user->id)
+            ->replace(':ad_id', $this->model->id);
     }
 }

@@ -70,3 +70,30 @@ function random_password()
     }
     return implode($pass); //turn the array into a string
 }
+
+function store_dir_to_zip($path, $zip_file = 'archive.zip')
+{
+
+    $zip_file = pathinfo($path)['dirname'] . '/' . trim($zip_file, '/');
+
+    $zip = new ZipArchive;
+    $zip->open($zip_file, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+    $files = new RecursiveDirectoryIterator($path);
+
+    foreach ($files as $file) {
+
+        if (!$file->isDir()) {
+
+            $file_path = $file->getRealPath();
+
+            $zip->addFile($file_path, $file->getBasename());
+        }
+    }
+
+    $zip->close();
+
+    ob_clean();
+
+    return $zip_file;
+}

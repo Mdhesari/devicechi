@@ -227,7 +227,7 @@ class Ad extends Model
     public function age()
     {
 
-        return $this->belongsTo(PhoneAge::class,'phone_age_id');
+        return $this->belongsTo(PhoneAge::class, 'phone_age_id');
     }
 
     public function getAgeInfo()
@@ -255,6 +255,11 @@ class Ad extends Model
         }
 
         return $text;
+    }
+
+    public function getFormattedPrice()
+    {
+        return number_format($this->price) . ' تومان ';
     }
 
     public function getStatus()

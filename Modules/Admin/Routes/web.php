@@ -22,6 +22,7 @@ use Modules\Admin\Http\Controllers\HomeController;
 
 use Modules\Admin\Http\Controllers\ActivityLogController;
 use Modules\Admin\Http\Controllers\AdController;
+use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\CategoryController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
@@ -137,6 +138,8 @@ Route::middleware('auth.admin')->group(function () {
     Route::prefix('ads')->name('admin.ads.')->group(function () {
 
         Route::get('/', [AdController::class, 'index'])->name('list');
+
+        Route::get('/export/{ad}', [AdExportController::class, 'index'])->name('export');
 
         Route::get('/show/{ad}', [AdController::class, 'show'])->name('show');
 

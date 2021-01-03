@@ -231,7 +231,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        "ExportLocalization" => "KgBot\\LaravelLocalization\\Facades\\ExportLocalizations"
+        "ExportLocalization" => "KgBot\\LaravelLocalization\\Facades\\ExportLocalizations",
+        'Image' => Intervention\Image\Facades\Image::class
 
     ],
 
