@@ -1,31 +1,39 @@
 <template>
     <div class="col-md-3 normal-ad">
-        <div class="inner">
-            <div class="tumbnail">
-                <inertia-link
-                    :href="
-                        route('user.ad.show', {
-                            ad: ad.id
-                        })
-                    "
-                    class="title"
-                >
+        <inertia-link
+            :href="
+                route('user.ad.show', {
+                    ad: ad.id
+                })
+            "
+        >
+            <div class="inner">
+                <div class="thumbnail">
                     <img :src="renderAdPicture(ad)" :alt="ad.title" />
-                </inertia-link>
-                <div class="bookmark">
-                    <i class="fa-bookmark far" aria-hidden="true"></i>
+                    <div class="bookmark">
+                        <i class="fa-bookmark far" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="details">
+                    <h5 class="ad-name ">
+                        {{ ad.title }}
+                    </h5>
+                    <div class="ad-price text-muted mt-4">
+                        {{ formatMoney(ad.price) }}
+                        <span>تومان</span>
+                    </div>
+                    <p class="publish-time text-muted" v-if="ad.state">
+                        <span>
+                            {{ moment(ad.created_at).fromNow() }}
+                        </span>
+                        <span>در</span>
+                        <span v-text="ad.state.city.name"></span>
+                        <span>,</span>
+                        <span v-text="ad.state.name"></span>
+                    </p>
                 </div>
             </div>
-            <div class="details">
-                <div class="ad-name">
-                    {{ ad.title }}
-                </div>
-                <div class="ad-price">
-                    <span>{{ ad.price }}</span>
-                    هزارتومان
-                </div>
-            </div>
-        </div>
+        </inertia-link>
     </div>
 </template>
 

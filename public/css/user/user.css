@@ -1069,27 +1069,28 @@ input[type=number] {
   overflow: hidden;
   position: relative;
   margin-bottom: 30px;
+  transition: all 350ms;
+}
+
+.ad .inner:hover {
+  opacity: 0.8;
 }
 
 .ad .inner::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background: linear-gradient(to top, black, transparent);
   opacity: 0.2;
 }
 
-.ad .inner .ad-img > a {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-position: center center;
+.ad .ad-img {
   background-size: cover;
+  display: block;
+  border-radius: 26px;
 }
 
 .ad .inner .bookmark {
@@ -1347,6 +1348,7 @@ input[type=number] {
   position: relative;
   background-size: cover;
   background-position: center center;
+  z-index: 13;
 }
 
 .blog .inner .details {
@@ -1624,11 +1626,11 @@ input[type=number] {
   position: relative;
 }
 
-.single-blog-inner .tumbnail {
+.single-blog-inner .thumbnail {
   margin-bottom: 30px;
 }
 
-.single-blog-inner .tumbnail img {
+.single-blog-inner .thumbnail img {
   max-width: 100%;
   height: auto;
   border-radius: 20px;
@@ -2113,7 +2115,19 @@ input[type=number] {
   color: #b3b3b3;
 }
 
-.normal-ads .inner .tumbnail {
+.normal-ads .inner {
+  width: 200px;
+}
+
+.normal-ads .inner .ad-name {
+  color: #727272;
+}
+
+.normal-ads .inner:hover .ad-name {
+  color: #424242;
+}
+
+.normal-ads .inner .thumbnail {
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -2121,9 +2135,15 @@ input[type=number] {
   -o-border-radius: 20px;
   overflow: hidden;
   position: relative;
+  transition: 350ms;
+  height: 200px;
 }
 
-.normal-ads .inner .tumbnail img {
+.normal-ads .inner:hover .thumbnail {
+  opacity: 0.8;
+}
+
+.normal-ads .inner .thumbnail img {
   width: 100%;
 }
 
@@ -2134,26 +2154,22 @@ input[type=number] {
   position: relative;
   top: -25px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  z-index: -1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 125px;
+  min-height: 125px;
   font-size: 14px;
 }
 
-.normal-ads .inner .tumbnail .bookmark {
+.normal-ads .inner .thumbnail .bookmark {
   position: absolute;
   top: 20px;
   left: 20px;
 }
 
-.normal-ads .inner .tumbnail .bookmark i {
+.normal-ads .inner .thumbnail .bookmark i {
   color: #ffffff;
   font-size: 20px;
 }
 
-.normal-ads .inner .tumbnail .bookmark i:hover {
+.normal-ads .inner .thumbnail .bookmark i:hover {
   font-weight: 600;
 }
 

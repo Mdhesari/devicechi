@@ -893,27 +893,29 @@ input[type="number"] {
     overflow: hidden;
     position: relative;
     margin-bottom: 30px;
+    transition: all 350ms;
+
+    &:hover {
+
+        opacity: .8;
+    }
 }
 
 .ad .inner::after {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0), transparent);
     opacity: 0.2;
 }
 
-.ad .inner .ad-img > a {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-position: center center;
+.ad .ad-img {
     background-size: cover;
+    display: block;
+    border-radius: 26px;
 }
 
 .ad .inner .bookmark {
@@ -1176,6 +1178,7 @@ input[type="number"] {
     position: relative;
     background-size: cover;
     background-position: center center;
+    z-index: 13;
 }
 
 .blog .inner .details {
@@ -1534,13 +1537,13 @@ input[type="number"] {
 }
 
 .single-blog-inner {
-    .tumbnail {
+    .thumbnail {
         margin-bottom: 30px;
     }
 }
 
 .single-blog-inner {
-    .tumbnail {
+    .thumbnail {
         img {
             max-width: 100%;
             height: auto;
@@ -2212,8 +2215,20 @@ input[type="number"] {
 }
 
 .normal-ads {
+
     .inner {
-        .tumbnail {
+        width: 200px;
+
+        .ad-name {
+    color: pallete('dark_gray');
+
+        }
+
+        &:hover .ad-name{
+            color: pallete('dark');
+        }
+
+        .thumbnail {
             border-radius: 20px;
             -webkit-border-radius: 20px;
             -moz-border-radius: 20px;
@@ -2221,13 +2236,20 @@ input[type="number"] {
             -o-border-radius: 20px;
             overflow: hidden;
             position: relative;
+            transition: 350ms;
+            height:200px;
+        }
+
+        &:hover .thumbnail{
+
+            opacity: .8;
         }
     }
 }
 
 .normal-ads {
     .inner {
-        .tumbnail {
+        .thumbnail {
             img {
                 width: 100%;
             }
@@ -2244,11 +2266,7 @@ input[type="number"] {
             position: relative;
             top: -25px;
             box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-            z-index: -1;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 125px;
+            min-height: 125px;
             font-size: 14px;
         }
     }
@@ -2256,7 +2274,7 @@ input[type="number"] {
 
 .normal-ads {
     .inner {
-        .tumbnail {
+        .thumbnail {
             .bookmark {
                 position: absolute;
                 top: 20px;
@@ -2268,7 +2286,7 @@ input[type="number"] {
 
 .normal-ads {
     .inner {
-        .tumbnail {
+        .thumbnail {
             .bookmark {
                 i {
                     color: pallete("white");
@@ -2281,7 +2299,7 @@ input[type="number"] {
 
 .normal-ads {
     .inner {
-        .tumbnail {
+        .thumbnail {
             .bookmark {
                 i:hover {
                     font-weight: 600;
