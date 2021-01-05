@@ -29,8 +29,6 @@ use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\UserController;
 
-Route::get('/dashboard', 'UserController@index')->name('dashboard');
-
 Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
 Route::prefix('/ads')->name('ad.')->group(function () {
@@ -102,17 +100,22 @@ Route::prefix('/ads')->name('ad.')->group(function () {
         });
     });
 
+    Route::get('/', [AdHomeController::class, 'index'])->name('home');
+
     Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
 
     Route::get('/get/models', [AdMainController::class, 'getModels'])->name('get.models');
 
     Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
 
-    Route::get('/get', [AdMainController::class, 'get'])->name('get');
-
-    Route::get('/', [AdHomeController::class, 'index'])->name('home');
-
     Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
+});
+
+Route::prefix('/dashboard')->group(function () {
+
+    Route::get('/', 'UserController@index')->name('dashboard');
+
+    Route::get('/ads', [AdMainController::class, 'get'])->name('ad.get');
 });
 
 Route::prefix('/profile')->name('profile.')->group(function () {
