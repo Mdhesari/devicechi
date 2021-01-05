@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\User;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Modules\Main\Database\Factories\UserFactory;
+use Modules\User\Entities\City;
 use Spatie\Permission\Traits\HasRoles;
 use Storage;
 
@@ -64,5 +65,11 @@ class MainUser extends User
     public function setPasswordAttribute($value)
     {
         return $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
+    }
+
+    public function city()
+    {
+
+        return $this->belongsTo(City::class);
     }
 }

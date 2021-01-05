@@ -12,8 +12,9 @@
         >
             <div class="inputs">
                 <input
-                class="form-control"
+                    class="form-control"
                     type="text"
+                    autocomplete="off"
                     required
                     v-for="digit in digitsCount"
                     :key="digit"
@@ -85,7 +86,7 @@ export default {
 
     methods: {
         activateAuth(phone, ratelimiter) {
-            console.log(phone)
+            console.log(phone);
             this.phone = phone;
             this.ratelimiter = ratelimiter;
 

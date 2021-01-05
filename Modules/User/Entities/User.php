@@ -33,7 +33,7 @@ class User extends MainUser implements MustVerifyPhone
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'phone_country_code'
+        'name', 'email', 'password', 'phone', 'phone_country_code', 'city_id'
     ];
 
     /**

@@ -1,16 +1,9 @@
 <template>
     <div class="wizard-step">
-        <b-alert ref="alert" variant="success" :show="showAlert">
-            با موفقیت بروزرسانی شد...
-        </b-alert>
-        <b-form @submit="onSubmit" @reset="onReset">
-            <b-form-group
-                id="input-group-1"
-                :label="__('profile.form.name')"
-                label-for="input-1"
-            >
+        <b-form @submit="onSubmit">
+            <b-form-group :label="__('profile.form.name')" label-for="name">
                 <b-form-input
-                    id="input-1"
+                    id="name"
                     v-model="form.name"
                     type="text"
                     :placeholder="__('profile.placeholder.name')"
@@ -21,13 +14,10 @@
                 </div>
             </b-form-group>
 
-            <b-form-group
-                id="input-group-2"
-                :label="__('profile.form.phone')"
-                label-for="input-2"
-            >
+            <b-form-group :label="__('profile.form.phone')" label-for="phone">
                 <b-form-input
-                    id="input-2"
+                    type="number"
+                    id="phone"
                     v-model="form.phone"
                     :placeholder="__('profile.placeholder.phone')"
                     required
@@ -44,12 +34,22 @@
             </b-form-group>
 
             <b-form-group
-                id="input-group-2"
+                :label="__('ads.form.label.location.city')"
+                label-for="city"
+            >
+                <b-form-select
+                    id="city"
+                    v-model="form.city_id"
+                    :options="cities"
+                ></b-form-select>
+            </b-form-group>
+
+            <b-form-group
                 :label="__('profile.form.password')"
-                label-for="input-2"
+                label-for="password"
             >
                 <b-form-input
-                    id="input-2"
+                    id="password"
                     v-model="form.password"
                     :placeholder="__('profile.placeholder.password')"
                 ></b-form-input>
@@ -65,12 +65,11 @@
             </b-form-group>
 
             <b-form-group
-                id="input-group-2"
                 :label="__('profile.form.password_confirmation')"
-                label-for="input-2"
+                label-for="password_confirmation"
             >
                 <b-form-input
-                    id="input-2"
+                    id="password_confirmation"
                     v-model="form.password_confirmation"
                     :placeholder="
                         __('profile.placeholder.password_confirmation')
@@ -90,17 +89,7 @@ export default {
     props: ["user"],
     data() {
         return {
-            form: null,
-            isLoading: false,
-            showAlert: false
-        };
-    },
-    mounted() {
-        this.setupForm();
-    },
-    methods: {
-        setupForm() {
-            this.form = this.$inertia.form({
+            form: this.$inertia.form({
                 _method: "PUT",
                 name: this.user.name,
                 phone: this.user.phone,
@@ -108,40 +97,50 @@ export default {
                 email: this.user.email,
                 password: "",
                 password_confirmation: "",
-                profile: null
+                profile: this.user.profile_photo_path,
+                city_id: this.user.city?.id || null
+            }),
+            isLoading: false,
+            allCities: this.getProp("cities")
+        };
+    },
+    computed: {
+        cities() {
+            let _cities = [
+                {
+                    value: null,
+                    text: this.__("ads.form.placeholder.location.city")
+                }
+            ];
+
+            this.allCities.forEach(city => {
+                _cities.push({
+                    value: city.id,
+                    text: city.name
+                });
             });
-        },
+
+            return _cities;
+        }
+    },
+    methods: {
         onSubmit(event) {
             event.preventDefault();
 
             this.form
                 .post(route("user.profile.update"), {
                     preserveScroll: true,
-                    preserveState: true
+                    preserveState: false
                 })
                 .then(respone => {
-                    if (this.form.successful) {
-                        this.$to(
+                    if (this.$page.flash.toSuccess) {
+                        let res = this.$to(
                             "اطلاعات حساب کاربری با موفقیت بروزرسانی شد.",
                             "",
                             "s"
                         );
-                        this.setupForm();
                     }
                 });
-        },
-        onReset(event) {
-            event.preventDefault();
-            // Reset our form values
-            this.form.email = "";
-            this.form.name = "";
-            this.form.food = null;
-            this.form.checked = [];
-            // Trick to reset/clear native browser form validation state
-            this.show = false;
-            this.$nextTick(() => {
-                this.show = true;
-            });
         }
     }
 };

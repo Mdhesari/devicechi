@@ -148,5 +148,14 @@ new Vue({
                 initialPage: JSON.parse(app.dataset.page),
                 resolveComponent: name => require(`./Pages/${name}`).default
             }
-        })
+        }),
+    //app.js
+    mounted() {
+        window.addEventListener("popstate", () => {
+            this.$inertia.reload({
+                preserveScroll: true,
+                preserveState: false
+            });
+        });
+    }
 }).$mount(app);

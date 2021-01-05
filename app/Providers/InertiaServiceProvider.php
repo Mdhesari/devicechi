@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use Log;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Request;
+use Session;
 
 class InertiaServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,17 @@ class InertiaServiceProvider extends ServiceProvider
         Inertia::share('success', function () {
             return session('success');
         });
+
+        Inertia::share('flash', function () {
+
+            return [
+                'success' => session('success'),
+                'error' => session('error'),
+                'toSuccess' => session('toSuccess'),
+                'toError' => session('toError'),
+            ];
+        });
+
         Inertia::share('all_steps', function (Request $request) {
 
             $BaseAdCtrl = app(BaseAdController::class);
