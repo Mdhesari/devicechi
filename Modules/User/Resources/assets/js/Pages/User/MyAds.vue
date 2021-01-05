@@ -2,62 +2,23 @@
     <AuthLayout :user="user">
         <Panel :user="user" :tabs="tabs">
             <div class="row" v-if="ads && !isLoading">
-                <div class="col-md-6 blog adver" v-for="ad in ads" :key="ad.id">
-                    <div class="inner">
+                <div class="row normal-ads">
+                    <NormalAd v-for="ad in ads" :key="ad.id" :ad="ad">
+                        <p :class="`status ${renderStatusClass(ad.status)}`">
+                            {{ renderStatusLabel(ad.status) }}
+                        </p>
                         <inertia-link
                             :href="
                                 route('user.ad.step_phone_demo', {
                                     ad: ad.id
                                 })
                             "
-                            class="title"
                         >
-                            <div
-                                class="thumbnail"
-                                :style="
-                                    `background-image: url('${renderAdPicture(
-                                        ad
-                                    )}')`
-                                "
-                            ></div>
+                            ویرایش آگهی
                         </inertia-link>
-
-                        <div class="details">
-                            <h4 class="text-dark">
-                                <inertia-link
-                                    :href="
-                                        route('user.ad.step_phone_demo', {
-                                            ad: ad.id
-                                        })
-                                    "
-                                    class="title"
-                                >
-                                    {{ renderTitle(ad.title) }}
-                                </inertia-link>
-                            </h4>
-                            <p class="price text-muted mt-4">
-                                {{ formatMoney(ad.price) }}
-                                <span>تومان</span>
-                            </p>
-                            <p class="publish-time text-muted" v-if="ad.state">
-                                <span>
-                                    {{ moment(ad.created_at).fromNow() }}
-                                </span>
-                                <span>در</span>
-                                <span v-text="ad.state.city.name"></span>
-                                <span>,</span>
-                                <span v-text="ad.state.name"></span>
-                            </p>
-                            <p
-                                :class="
-                                    `status ${renderStatusClass(ad.status)}`
-                                "
-                            >
-                                {{ renderStatusLabel(ad.status) }}
-                            </p>
-                        </div>
-                    </div>
+                    </NormalAd>
                 </div>
+
                 <!-- <div class="col-md-6"></div> -->
             </div>
 
@@ -81,12 +42,14 @@ import AuthLayout from "../../Layouts/FrontAuthLayout";
 import spinner from "../../Components/Spinner";
 import Panel from "../../Section/Dashboard/Panel";
 import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
+import NormalAd from "../../Components/Ads/NormalAd";
 
 export default {
     components: {
         spinner,
         Panel,
-        AuthLayout
+        AuthLayout,
+        NormalAd
     },
     props: ["user", "tabs"],
     mixins: [AdPictureHelpers],

@@ -31,6 +31,7 @@
                         <span>,</span>
                         <span v-text="ad.state.name"></span>
                     </p>
+                    <slot></slot>
                 </div>
             </div>
         </inertia-link>

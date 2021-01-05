@@ -2183,16 +2183,7 @@ input[type="number"] {
 .adver {
     .inner {
         .details {
-            .status {
-                display: inline-block;
-                padding: 4px 8px;
-                border-radius: 6px;
-                font-size: 12px;
-                color: pallete("white");
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
+          
         }
     }
 
@@ -2209,6 +2200,16 @@ input[type="number"] {
 
 /*Home Redesign*/
 .normal-ads {
+    .status {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        color: pallete("white");
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
     .inner {
         color: pallete("gray");
     }

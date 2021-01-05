@@ -2088,17 +2088,6 @@ input[type=number] {
   margin-bottom: 16px;
 }
 
-.adver .inner .details .status {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #ffffff;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .adver .accept-back {
   background-color: #6ab070;
 }
@@ -2110,6 +2099,17 @@ input[type=number] {
 /*Sidebar*/
 
 /*Home Redesign*/
+
+.normal-ads .status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 .normal-ads .inner {
   color: #b3b3b3;
