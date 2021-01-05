@@ -29,6 +29,11 @@ class Ad extends Model
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable', 'meta_data'
     ];
 
+    protected $appends = [
+        'is_multicard_read',
+        'is_exchangeable_read',
+    ];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -38,6 +43,17 @@ class Ad extends Model
         'is_exchangeable' => 'boolean',
         'meta_ad' => 'array'
     ];
+
+    public function getIsMulticardReadAttribute()
+    {
+        return boolval($this->is_multicard) ? __(' Yes ') : __(' No ');
+    }
+
+    public function getIsExchangeableReadAttribute()
+    {
+
+        return $this->is_exchangeable ? __(' Yes ') : __(' No ');
+    }
 
     public function isPublished()
     {

@@ -28,7 +28,7 @@
                         <div class="specs">
                             <ul class="infos-phone">
                                 <li class="inner">
-                                    <div class="title">قیمت :</div>
+                                    <div class="title">قیمت</div>
                                     <div class="value">
                                         {{ formatMoney(ad.price) }}
                                         <span>تومان</span>
@@ -36,14 +36,11 @@
                                 </li>
                                 <!--
                                 <li class="inner">
-                                    <div class="title">رنگ :</div>
+                                    <div class="title">رنگ</div>
                                     <div class="value">سیلور</div>
                                 </li>
                                 -->
-                                <li class="inner">
-                                    <div class="title">حافظه داخلی :</div>
-                                    <div class="value">64 گیگابایت</div>
-                                </li>
+
                                 <li class="inner">
                                     <div class="title">حافظه داخلی / رم</div>
                                     <div class="value">
@@ -51,13 +48,33 @@
                                     </div>
                                 </li>
                                 <li class="inner">
-                                    <div class="title">وضعیت :</div>
+                                    <div class="title">وضعیت</div>
                                     <div class="value">موجود</div>
                                 </li>
                                 <li class="inner">
-                                    <div class="title">برند :</div>
+                                    <div class="title">برند</div>
                                     <div class="value">
                                         {{ ad.phone_model.brand.name }}
+                                    </div>
+                                </li>
+                                <li class="inner">
+                                    <div class="title">مدل</div>
+                                    <div class="value">
+                                        {{ ad.phone_model.name }}
+                                    </div>
+                                </li>
+                                <li class="inner">
+                                    <div class="title">
+                                        پشتیبانی از چند سیمکارت
+                                    </div>
+                                    <div class="value">
+                                        {{ ad.is_multicard_read }}
+                                    </div>
+                                </li>
+                                <li class="inner">
+                                    <div class="title">قابل معاوضه</div>
+                                    <div class="value">
+                                        {{ ad.is_exchangeable_read }}
                                     </div>
                                 </li>
                             </ul>
@@ -66,6 +83,7 @@
                             <h4>توضیحات</h4>
                             <p v-html="ad.description"></p>
                         </div>
+                        <HamtaAlert />
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">
@@ -78,11 +96,13 @@
 
 <script>
 import AdPostGallery from "./AdPostGallery";
+import HamtaAlert from "../Section/HamtaAlert";
 
 export default {
     props: ["ad"],
     components: {
-        AdPostGallery
+        AdPostGallery,
+        HamtaAlert
     },
     methods: {
         printVariantInfo(variant) {
@@ -91,20 +111,3 @@ export default {
     }
 };
 </script>
-
-<!-- 
-
- <div class="short-links">
-                            <div class="lable">
-                                <strong>لینک کوتاه</strong>
-                            </div>
-                            <span class="short-link">
-                                https://mobileforsale.com
-                                <button class="clip-board">
-                                    <i
-                                        class="fa fa-clone"
-                                        aria-hidden="true"
-                                    ></i>
-                                </button>
-                            </span>
-                        </div>
