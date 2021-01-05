@@ -31,6 +31,6 @@ class TeamAuthenticate extends Authenticate
     private function getRedirectRoute($request)
     {
 
-        return route('login');
+        return route('admin.login');
     }
 }

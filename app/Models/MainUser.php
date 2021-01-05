@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Model\Payment\Discount;
 use App\Model\Payment\Payment;
+use Hash;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
@@ -32,7 +33,7 @@ class MainUser extends User
     public function getImageAttribute($value)
     {
 
-       return is_null($value) ? asset('images/user.png') : Storage::url($value);
+        return is_null($value) ? asset('images/user.png') : Storage::url($value);
     }
 
     /**
@@ -58,5 +59,10 @@ class MainUser extends User
     {
 
         return $this->name . ' | ' . $this->mobile;
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        return $this->attributes['password'] = Hash::needsRehash($value) ? Hash::make($value) : $value;
     }
 }

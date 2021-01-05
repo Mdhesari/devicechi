@@ -4,7 +4,6 @@ namespace Modules\User\Entities;
 
 use App\Models\Ad;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
@@ -13,12 +12,13 @@ use Laravel\Sanctum\HasApiTokens;
 use Modules\User\Database\Factories\UserFactory;
 use App\Models\Ad\AdContact;
 use App\Models\Ad\AdContactType;
+use App\Models\MainUser;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Space\Contracts\MustVerifyPhone;
 use Storage;
 
-class User extends Authenticatable implements MustVerifyPhone
+class User extends MainUser implements MustVerifyPhone
 {
     use HasApiTokens;
     use HasFactory;
@@ -95,6 +95,26 @@ class User extends Authenticatable implements MustVerifyPhone
             ])->save();
         }
     }
+
+    public function setPhoneUnverified()
+    {
+
+        if ($this->hasVerifiedPhone()) {
+
+            $this->forceFill([
+                'phone_verified_at' => null,
+            ])->save();
+        }
+    }
+
+    public function setNewPassword($password)
+    {
+
+        $this->forceFill([
+            'password' => $password,
+        ])->save();
+    }
+
 
     /**
      * Get user ads

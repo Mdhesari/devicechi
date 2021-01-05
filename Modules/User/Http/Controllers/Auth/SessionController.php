@@ -41,7 +41,7 @@ class SessionController extends Controller
      */
     public function store(UserLoginRequest $request, RateLimiter $limiter)
     {
-        $mobile = trim(preg_replace('/^0/', '', $request->phone));
+        $mobile = format_user_mobile($request->input('phone'));
 
         $user = User::wherePhone($mobile)->first();
 
@@ -52,9 +52,7 @@ class SessionController extends Controller
                 'phone_country_code' => intval($request->phone_country_code)
             ]);
 
-            event(new UserRegistered(
-                $user,
-            ));
+            event(new UserRegistered($user));
         }
 
         $key = make_mobile_limiter_key($user);

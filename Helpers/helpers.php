@@ -97,3 +97,9 @@ function store_dir_to_zip($path, $zip_file = 'archive.zip')
 
     return $zip_file;
 }
+
+function format_user_mobile($mobile)
+{
+
+    return trim(preg_replace('/^0/', '', $mobile));
+}
