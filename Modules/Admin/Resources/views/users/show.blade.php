@@ -74,7 +74,7 @@
                                         </label>
 
                                         <div class="col-sm-10">
-                                            <input value="{{ $user->mobile }}" name="mobile" type="tel"
+                                            <input value="{{ $user->phone }}" name="mobile" type="tel"
                                                 class="form-control" id="inputMobile" placeholder="@lang(' Mobile ')">
                                         </div>
                                         @error('mobile')
