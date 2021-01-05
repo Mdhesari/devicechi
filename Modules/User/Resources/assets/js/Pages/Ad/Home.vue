@@ -26,7 +26,7 @@
                 <div class="search-bar">
                     <input type="text" placeholder="دنبال چه گوشی می گردی " />
                     <button type="button" class="icon">
-                        <img src="img/search.svg" alt="" />
+                        <img src="../../../img/search.svg" alt="Search" />
                     </button>
                 </div>
                 <!-- <div class="filter-bar">
@@ -55,72 +55,7 @@
                     </h3>
                 </div>
                 <div class="row ads-holder">
-                    <div class="col-md-4 ad">
-                        <div class="inner">
-                            <div class="ad-img">
-                                <a
-                                    href="#"
-                                    style="background-image: url('img/1.jpg');"
-                                ></a>
-                            </div>
-                            <div class="bookmark">
-                                <i class="fa-bookmark far "></i>
-                            </div>
-                            <div class="ad-content">
-                                <div class="ad-name">
-                                    آیفون 6
-                                </div>
-                                <div class="ad-price">
-                                    <span>2000,000</span>
-                                    هزارتومان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ad">
-                        <div class="inner">
-                            <div class="ad-img">
-                                <a
-                                    href="#"
-                                    style="background-image: url('img/1.jpg');"
-                                ></a>
-                            </div>
-                            <div class="bookmark">
-                                <i class="fa-bookmark far "></i>
-                            </div>
-                            <div class="ad-content">
-                                <div class="ad-name">
-                                    آیفون 6
-                                </div>
-                                <div class="ad-price">
-                                    <span>2000,000</span>
-                                    هزارتومان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 ad">
-                        <div class="inner">
-                            <div class="ad-img">
-                                <a
-                                    href="#"
-                                    style="background-image: url('img/1.jpg');"
-                                ></a>
-                            </div>
-                            <div class="bookmark">
-                                <i class="fa-bookmark far "></i>
-                            </div>
-                            <div class="ad-content">
-                                <div class="ad-name">
-                                    آیفون 6
-                                </div>
-                                <div class="ad-price">
-                                    <span>2000,000</span>
-                                    هزارتومان
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ProAd v-for="ad in ads" :key="ad.id" :ad="ad"></ProAd>
                 </div>
             </div>
         </section>
@@ -146,11 +81,13 @@
 <script>
 import AuthLayout from "../../Layouts/FrontAuthLayout";
 import NormalAd from "../../Components/Ads/NormalAd";
+import ProAd from "../../Components/Ads/ProAd";
 
 export default {
     components: {
         AuthLayout,
-        NormalAd
+        NormalAd,
+        ProAd
     },
     props: ["ads", "user"]
 };
