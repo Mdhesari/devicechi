@@ -339,6 +339,14 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.list-group.contacts {
+  width: 400px;
+}
+
+.list-group.contacts .list-group-item {
+  background-color: transparent;
+}
+
 .wizard-step .list-contacts .list-contacts-item {
   overflow: hidden;
 }
@@ -1580,16 +1588,11 @@ input[type=number] {
   margin-top: 30px;
 }
 
-.actions .call {
-  width: 47%;
-  text-align: center;
-}
-
 .actions .call .call-btn {
   color: #ffffff;
   background-color: #73b479;
-  width: 100%;
-  padding: 8px;
+  width: 200px;
+  padding: 16px;
   border-radius: 12px;
 }
 

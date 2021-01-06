@@ -133,4 +133,12 @@ class AdContactController extends BaseAdController
             'contacts' => $contacts,
         ]);
     }
+
+    public function get(Ad $ad)
+    {
+
+        return response()->json([
+            'contacts' => $ad->contacts->load('type'),
+        ]);
+    }
 }

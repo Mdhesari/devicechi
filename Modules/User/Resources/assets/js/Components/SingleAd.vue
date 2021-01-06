@@ -19,11 +19,7 @@
                             <span v-text="ad.state.name"></span>
                         </div>
                         <div class="actions my-4">
-                            <div class="call">
-                                <a href="tel:09190790979" class=" btn call-btn"
-                                    >تماس با آگهی دهنده</a
-                                >
-                            </div>
+                            <GetContactList :ad="ad"></GetContactList>
                         </div>
                         <div class="specs">
                             <ul class="infos-phone">
@@ -97,12 +93,14 @@
 <script>
 import AdPostGallery from "./AdPostGallery";
 import HamtaAlert from "../Section/HamtaAlert";
+import GetContactList from "../Section/ContactList";
 
 export default {
     props: ["ad"],
     components: {
         AdPostGallery,
-        HamtaAlert
+        HamtaAlert,
+        GetContactList
     },
     methods: {
         printVariantInfo(variant) {

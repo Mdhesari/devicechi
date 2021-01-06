@@ -29,7 +29,8 @@ return [
                 ],
                 'validation_attr' => [
                     'value' => 'ایمیل'
-                ]
+                ],
+                'href' => 'mailto'
             ],
         ],
         [
@@ -44,7 +45,8 @@ return [
                 ],
                 'validation_attr' => [
                     'value' => 'موبایل'
-                ]
+                ],
+                'href' => 'tel'
             ],
         ],
     ],

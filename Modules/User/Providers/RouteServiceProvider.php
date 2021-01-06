@@ -90,7 +90,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(module_path('User', '/Routes/api/api.php'));
 
         Route::prefix('api')
-            ->name('user.api.auth.')
+            ->name('user.api.')
             ->middleware(['api', 'auth.user:sanctum'])
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/api/auth.php'));

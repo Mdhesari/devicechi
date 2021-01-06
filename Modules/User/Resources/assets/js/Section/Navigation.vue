@@ -4,7 +4,7 @@
     <!-- Navigation Links -->
     <ul>
       <li>
-      <inertia-link :href="route('user.ads')">صفحه اصلی</inertia-link>
+      <inertia-link href="#">صفحه اصلی</inertia-link>
       </li>
       <li>
       <inertia-link href="#">تماس با ما</inertia-link>

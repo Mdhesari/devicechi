@@ -11,8 +11,12 @@
 |
 */
 
+use Modules\User\Http\Controllers\Ad\AdContactController;
 use Tightenco\Ziggy\Ziggy;
+
 Route::get('/routes', function (Request $request) {
 
     return response()->json(new Ziggy);
 })->name('ziggy');
+
+Route::get('/get/contacts/{ad}', [AdContactController::class, 'get'])->name('ad.contacts.get');
