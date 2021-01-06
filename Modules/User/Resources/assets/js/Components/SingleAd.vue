@@ -20,6 +20,16 @@
                         </div>
                         <div class="actions my-4">
                             <GetContactList :ad="ad"></GetContactList>
+                            <div class="btn-group btn-dock">
+                                <ShareButton
+                                    :shareUrl="
+                                        route('user.ad.show.short-link', {
+                                            ad: ad.id
+                                        })
+                                    "
+                                ></ShareButton>
+                                <SaveButton :ad="ad"></SaveButton>
+                            </div>
                         </div>
                         <div class="specs">
                             <ul class="infos-phone">
@@ -80,6 +90,7 @@
                             <p v-html="ad.description"></p>
                         </div>
                         <HamtaAlert />
+                        
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">
@@ -94,13 +105,17 @@
 import AdPostGallery from "./AdPostGallery";
 import HamtaAlert from "../Section/HamtaAlert";
 import GetContactList from "../Section/ContactList";
+import ShareButton from "../Components/ShareButton";
+import SaveButton from "../Components/SaveButton";
 
 export default {
     props: ["ad"],
     components: {
         AdPostGallery,
         HamtaAlert,
-        GetContactList
+        GetContactList,
+        ShareButton,
+        SaveButton
     },
     methods: {
         printVariantInfo(variant) {

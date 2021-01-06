@@ -58,8 +58,12 @@
 
 /* general */
 
-body {
+body,
+.tooltip-inner {
   font-family: IRANSans, "Times New Roman", Times, serif;
+}
+
+body {
   background-color: #f9fbff;
   text-align: right;
   color: #424242;
@@ -1586,6 +1590,16 @@ input[type=number] {
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
+}
+
+.actions .btn-dock {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.actions .btn-dock .btn:hover {
+  color: #fb7ba2;
 }
 
 .actions .call .call-btn {

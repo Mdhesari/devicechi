@@ -41,8 +41,12 @@ $pallete: (
 }
 
 /* general */
-body {
+body,
+.tooltip-inner {
     font-family: IRANSans, "Times New Roman", Times, serif;
+}
+
+body {
     background-color: rgb(249, 251, 255);
     text-align: right;
     color: pallete("dark");
@@ -162,12 +166,11 @@ input[type="number"] {
 }
 
 .list-group.contacts {
+    width: 400px;
 
-width: 400px;
-
-.list-group-item {
-    background-color: transparent;
-}
+    .list-group-item {
+        background-color: transparent;
+    }
 }
 
 .wizard-step {
@@ -905,8 +908,7 @@ width: 400px;
     transition: all 350ms;
 
     &:hover {
-
-        opacity: .8;
+        opacity: 0.8;
     }
 }
 
@@ -1493,8 +1495,17 @@ width: 400px;
     margin-top: 30px;
 }
 
-
 .actions {
+    .btn-dock {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        .btn:hover {
+            color: pallete("orange_back");
+        }
+    }
+
     .call {
         .call-btn {
             color: pallete("white");
@@ -2186,7 +2197,6 @@ width: 400px;
 .adver {
     .inner {
         .details {
-          
         }
     }
 
@@ -2219,17 +2229,15 @@ width: 400px;
 }
 
 .normal-ads {
-
     .inner {
         width: 200px;
 
         .ad-name {
-    color: pallete('dark_gray');
-
+            color: pallete("dark_gray");
         }
 
-        &:hover .ad-name{
-            color: pallete('dark');
+        &:hover .ad-name {
+            color: pallete("dark");
         }
 
         .thumbnail {
@@ -2241,12 +2249,11 @@ width: 400px;
             overflow: hidden;
             position: relative;
             transition: 350ms;
-            height:200px;
+            height: 200px;
         }
 
-        &:hover .thumbnail{
-
-            opacity: .8;
+        &:hover .thumbnail {
+            opacity: 0.8;
         }
     }
 }

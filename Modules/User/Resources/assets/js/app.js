@@ -12,6 +12,7 @@ import { InertiaProgress } from "@inertiajs/progress";
 
 import moment from "moment-jalaali";
 import fa from "moment/locale/fa";
+import VueClipboard from "vue-clipboard2";
 
 moment.locale("fa", fa);
 moment.loadPersian();
@@ -36,6 +37,7 @@ Vue.use(PortalVue);
 Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueToastr);
+Vue.use(VueClipboard);
 
 Vue.mixin({
     methods: {
