@@ -18,7 +18,7 @@
                         {{ ad.title }}
                     </div>
                     <div class="ad-price">
-                        <span>{{ ad.price }}</span>
+                        <span>{{ formatMoney(ad.price) }}</span>
                         هزارتومان
                     </div>
                 </div>
