@@ -329,6 +329,8 @@ class Ad extends Model
     public function generateShortLink()
     {
 
+        if(is_null($this->title)) return;
+
         $shortLink = $this->shortLink()->firstOrCreate([
             'link' => route('user.ad.show', [
                 'ad' => $this

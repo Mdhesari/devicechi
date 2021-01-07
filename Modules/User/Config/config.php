@@ -30,7 +30,7 @@ return [
                 'validation_attr' => [
                     'value' => 'ایمیل'
                 ],
-                'href' => 'mailto'
+                'href' => 'mail'
             ],
         ],
         [

@@ -22,7 +22,7 @@ class AdPictureFactory extends Factory
     public function definition()
     {
         return [
-            'url' => 'https://source.unsplash.com/random',
+            'url' => 'https://source.unsplash.com/1600x900/?mobile',
         ];
     }
 
