@@ -11,4 +11,6 @@
 |
 */
 
-// silence is golden
+use App\Http\Controllers\ShortLinkController;
+
+Route::get('p/{code}', [ShortLinkController::class, 'show'])->name('shortlink');

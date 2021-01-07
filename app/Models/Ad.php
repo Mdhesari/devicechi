@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
 use Illuminate\Notifications\Notifiable;
+use Log;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\PhoneAccessory;
@@ -32,6 +33,7 @@ class Ad extends Model
     protected $appends = [
         'is_multicard_read',
         'is_exchangeable_read',
+        'short_url',
     ];
 
     /**
@@ -47,6 +49,12 @@ class Ad extends Model
     public function getIsMulticardReadAttribute()
     {
         return boolval($this->is_multicard) ? __(' Yes ') : __(' No ');
+    }
+
+    public function getShortUrlAttribute()
+    {
+
+        return $this->generateShortLink();
     }
 
     public function getIsExchangeableReadAttribute()
@@ -310,6 +318,28 @@ class Ad extends Model
     {
 
         return $value ? __(" Yes ") : __(" No ");
+    }
+
+    public function shortLink()
+    {
+
+        return $this->morphOne(ShortLink::class, 'shorttable');
+    }
+
+    public function generateShortLink()
+    {
+
+        $shortLink = $this->shortLink()->firstOrCreate([
+            'link' => route('user.ad.show', [
+                'ad' => $this
+            ]),
+        ]);
+
+        $code = $shortLink->getAttributes()['code'];
+
+        return route('shortlink', [
+            'code' => $code
+        ]);
     }
 
     /**

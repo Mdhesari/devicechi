@@ -22,11 +22,7 @@
                             <GetContactList :ad="ad"></GetContactList>
                             <div class="btn-group btn-dock">
                                 <ShareButton
-                                    :shareUrl="
-                                        route('user.ad.show.short-link', {
-                                            ad: ad.id
-                                        })
-                                    "
+                                    :shareUrl="ad.short_url"
                                 ></ShareButton>
                                 <SaveButton :ad="ad"></SaveButton>
                             </div>
@@ -90,7 +86,6 @@
                             <p v-html="ad.description"></p>
                         </div>
                         <HamtaAlert />
-                        
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">

@@ -29,6 +29,7 @@ class UserDatabaseSeeder extends Seeder
             PhoneAccessoriesTableSeeder::class,
             PhoneAgesTableSeeder::class,
             AdContactTypeTableSeeder::class,
+            AdTableSeeder::class,
         ]);
     }
 }

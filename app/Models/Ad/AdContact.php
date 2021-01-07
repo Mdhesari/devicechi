@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Ad;
+use Modules\User\Database\Factories\AdContactFactory;
 use Modules\User\Notifications\CodeVerificatiNotification;
-use Modules\User\Notifications\ContactCodeVerificationNotification;
 use Modules\User\Space\Contracts\AdContactMustVerifyValue;
-use User\Database\Factories\AdFactory;
 
 class AdContact extends Model implements AdContactMustVerifyValue
 {
@@ -96,5 +95,15 @@ class AdContact extends Model implements AdContactMustVerifyValue
     {
 
         return $this->value;
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return new AdContactFactory;
     }
 }

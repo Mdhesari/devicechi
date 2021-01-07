@@ -1516,6 +1516,7 @@ input[type=number] {
 }
 
 .single-post .heading {
+  width: 85%;
   margin-bottom: 16px;
 }
 

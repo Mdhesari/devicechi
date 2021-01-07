@@ -4,7 +4,7 @@ namespace Modules\User\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\User\Database\factories\AdPictureFactory;
+use Modules\User\Database\Factories\AdPictureFactory;
 use Storage;
 
 class AdPicture extends Model
@@ -26,6 +26,10 @@ class AdPicture extends Model
 
     public function getUrlAttribute($url)
     {
+
+        $urlArr = parse_url($url);
+
+        if (isset($urlArr['scheme'])) return $url;
 
         return Storage::url($url);
     }
