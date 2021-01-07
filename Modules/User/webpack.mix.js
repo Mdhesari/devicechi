@@ -10,6 +10,8 @@ mix.disableSuccessNotifications();
 
 mix.setPublicPath("../../public").mergeManifest();
 
+mix.browserSync('localhost');
+
 mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")
     .js(__dirname + "/Resources/assets/js/libs/moment.js", "js/user/moment.js")
     .sass(
@@ -19,10 +21,6 @@ mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")
     .sass(
         __dirname + "/Resources/assets/sass/bootstrap-vue.scss",
         "css/user/bootstrap-vue.css"
-    )
-    .sass(
-        __dirname + "/Resources/assets/sass/bootstrap-rtl.scss",
-        "css/user/bootstrap-rtl.css"
     )
     .sass(
         __dirname + "/Resources/assets/sass/swiper.scss",

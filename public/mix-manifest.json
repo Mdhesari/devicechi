@@ -8,5 +8,7 @@
     "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css",
     "/css/user/normalize.css": "/css/user/normalize.css",
     "/js/user/moment.js": "/js/user/moment.js",
-    "/css/user/swiper.css": "/css/user/swiper.css"
+    "/css/user/swiper.css": "/css/user/swiper.css",
+    "/js/user/manifest.js": "/js/user/manifest.js",
+    "/js/user/vendor.js": "/js/user/vendor.js"
 }
