@@ -66,7 +66,7 @@ class Ad extends Model
     public function isPublished()
     {
 
-        return $this->status !== self::STATUS_UNCOMPLETED;
+        return $this->status === self::STATUS_AVAILABLE;
     }
 
     public function publish()

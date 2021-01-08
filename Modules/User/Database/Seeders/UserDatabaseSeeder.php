@@ -18,6 +18,11 @@ class UserDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
+        \Modules\User\Entities\User::factory()->create([
+            'phone' => '9370038157',
+            'phone_country_code' => '+98'
+        ]);
+
         \Modules\User\Entities\User::factory(10)->create();
 
         $this->call([

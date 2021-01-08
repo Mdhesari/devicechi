@@ -23,7 +23,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'phone' => join(['+98', rand(3, 9), rand(30, 40), rand(1000, 9999), rand(10, 99), rand(10, 99)]),
+            'phone' => '9' . rand(1111111111, 9999999999),
             'remember_token' => Str::random(10),
         ];
     }

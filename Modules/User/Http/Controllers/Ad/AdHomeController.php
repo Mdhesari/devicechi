@@ -49,6 +49,11 @@ class AdHomeController extends Controller
     {
         $ad->loadSingleRelations();
 
+        if (!$ad->isPublished())
+            return redirect()->route('user.ad.step_phone_demo', [
+                'ad' => $ad,
+            ]);
+
         return inertia('Ad/Single', compact('ad'));
     }
 

@@ -13,7 +13,7 @@
 
         <li role="presentation">
             <inertia-Link class="dropdown-item" :href="route('user.ad.get')">
-                <b-icon icon="gear"></b-icon>
+                <b-icon icon="newspaper"></b-icon>
                 {{ __("global.user.profile.my_ads") }}
             </inertia-Link>
         </li>

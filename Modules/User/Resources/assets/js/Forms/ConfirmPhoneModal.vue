@@ -33,22 +33,22 @@
                 id="btn-submit-confirmation"
             />
 
-            <div class="info mt-2">
-                <span v-if="ratelimiter != null" class="text-info">
-                    {{
-                        __("global.ratelimiter.login", {
-                            ratelimiter: ratelimiter
-                        })
-                    }}
-                </span>
+            <div class="info mt-2 pt-4 rtl">
                 <b-button
                     :disabled="ratelimiter != null"
-                    variant="info"
+                    variant="link"
                     @click="resend_code"
                 >
                     <span v-if="resend" v-text="resend"></span>
                     <span v-if="resend == null">
                         {{ __("auth.resend.confirmation_code") }}
+                    </span>
+                    <span v-if="ratelimiter != null" class="text-info">
+                        {{
+                            __("global.ratelimiter.login", {
+                                ratelimiter: ratelimiter
+                            })
+                        }}
                     </span>
                 </b-button>
             </div>
@@ -167,7 +167,7 @@ export default {
             this.$emit("reset-form");
         },
         resend_code() {
-            this.resend = this.__("auth.login.confirmation_code_resent");
+            this.resend = this.__("auth.resend.confirmation_code");
             this.$emit("resend-login");
         },
         startRatelimiter() {

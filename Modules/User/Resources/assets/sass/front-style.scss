@@ -64,20 +64,20 @@ body > div {
     overflow: visible;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-weight: bold !important;
-}
+// .h1,
+// .h2,
+// .h3,
+// .h4,
+// .h5,
+// .h6,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//     font-weight: bold !important;
+// }
 
 ul {
     padding: 0;
@@ -100,10 +100,42 @@ a {
     text-decoration: none !important;
 }
 
+.modal.fade .modal-dialog {
+    transform: translate(0, 0);
+}
+
+.modal-content {
+    border: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    h4{
+        color: pallete("dark");
+        font-weight: 500 !important;
+    }
+
+    .modal-footer,
+    .modal-body,
+    .modal-header {
+        border: none;
+    }
+}
+
 @import "./wizard.scss";
 
 .dropdown-menu {
+    border: none !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 8px;
     text-align: right;
+    .dropdown-item {
+        padding: 16px;
+
+        svg {
+            vertical-align: middle !important;
+        }
+    }
 }
 
 .header-site #profile-box {
@@ -382,8 +414,6 @@ input[type="number"] {
         &:focus,
         &:hover {
             transition: box-shadow 350ms;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
-                0 6px 6px rgba(0, 0, 0, 0.23);
         }
     }
 }
@@ -430,11 +460,18 @@ input[type="number"] {
         border: 0;
         width: 100%;
         text-align: center;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 50px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
         &:focus,
-        &:hover {
-            background-color: pallete("green");
-            transition: background-color 350ms;
+        &:hover,
+        &:active {
+            border: none;
+            outline: none;
+            background-color: #2ee59d;
+            color: #fff;
+            transform: translateY(-4px);
         }
     }
 }
@@ -1524,6 +1561,14 @@ input[type="number"] {
             width: 200px;
             padding: 16px;
             border-radius: 12px;
+            box-shadow: 0 10px 20px rgb(5 115 8 / 34%),
+                0 6px 6px hsl(116deg 43% 60% / 0%);
+            transition: box-shadow 350ms;
+
+            &:hover {
+                box-shadow: 0 10px 20px rgb(5 115 8 / 54%),
+                    0 6px 6px hsl(116deg 43% 60% / 0%);
+            }
         }
     }
 }
@@ -2223,6 +2268,15 @@ input[type="number"] {
 /*Sidebar*/
 
 /*Home Redesign*/
+.user-panel-main {
+    .normal-ads {
+
+        .normal-ad {
+            margin: 1em;
+        }
+    }
+}
+
 .normal-ads {
     .status {
         display: inline-block;
@@ -2233,9 +2287,11 @@ input[type="number"] {
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 14;
     }
     .inner {
         color: pallete("gray");
+        z-index: 15;
     }
 }
 
@@ -2261,6 +2317,7 @@ input[type="number"] {
             position: relative;
             transition: 350ms;
             height: 200px;
+            z-index: 10;
         }
 
         &:hover .thumbnail {

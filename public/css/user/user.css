@@ -82,21 +82,6 @@ body > div {
   overflow: visible;
 }
 
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold !important;
-}
-
 ul {
   padding: 0;
   margin-bottom: 0;
@@ -117,6 +102,27 @@ svg {
 button,
 a {
   text-decoration: none !important;
+}
+
+.modal.fade .modal-dialog {
+  transform: translate(0, 0);
+}
+
+.modal-content {
+  border: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.modal-content h4 {
+  color: #424242;
+  font-weight: 500 !important;
+}
+
+.modal-content .modal-footer,
+.modal-content .modal-body,
+.modal-content .modal-header {
+  border: none;
 }
 
 .wizard .logo-main {
@@ -281,7 +287,19 @@ a {
 }
 
 .dropdown-menu {
+  border: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-radius: 8px;
   text-align: right;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 16px;
+}
+
+.dropdown-menu .dropdown-item svg {
+  vertical-align: middle !important;
 }
 
 .header-site #profile-box button {
@@ -554,7 +572,6 @@ input[type=number] {
 .section.login-form-section .btn-login-submit:focus,
 .section.login-form-section .btn-login-submit:hover {
   transition: box-shadow 350ms;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .section.about-us {
@@ -598,12 +615,19 @@ input[type=number] {
   border: 0;
   width: 100%;
   text-align: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .form-confirmation input[type=submit]:focus,
-.form-confirmation input[type=submit]:hover {
-  background-color: #71be34;
-  transition: background-color 350ms;
+.form-confirmation input[type=submit]:hover,
+.form-confirmation input[type=submit]:active {
+  border: none;
+  outline: none;
+  background-color: #2ee59d;
+  color: #fff;
+  transform: translateY(-4px);
 }
 
 .intro-wrapper {
@@ -1617,6 +1641,12 @@ input[type=number] {
   width: 200px;
   padding: 16px;
   border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(5, 115, 8, 0.34), 0 6px 6px rgba(115, 197, 109, 0);
+  transition: box-shadow 350ms;
+}
+
+.actions .call .call-btn:hover {
+  box-shadow: 0 10px 20px rgba(5, 115, 8, 0.54), 0 6px 6px rgba(115, 197, 109, 0);
 }
 
 .actions .safe {
@@ -2126,6 +2156,10 @@ input[type=number] {
 
 /*Home Redesign*/
 
+.user-panel-main .normal-ads .normal-ad {
+  margin: 1em;
+}
+
 .normal-ads .status {
   display: inline-block;
   padding: 4px 8px;
@@ -2135,10 +2169,12 @@ input[type=number] {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 14;
 }
 
 .normal-ads .inner {
   color: #b3b3b3;
+  z-index: 15;
 }
 
 .normal-ads .inner {
@@ -2163,6 +2199,7 @@ input[type=number] {
   position: relative;
   transition: 350ms;
   height: 200px;
+  z-index: 10;
 }
 
 .normal-ads .inner:hover .thumbnail {
