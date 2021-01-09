@@ -92,7 +92,7 @@ ul li {
 }
 
 svg {
-  vertical-align: middle;
+  vertical-align: middle !important;
 }
 
 /* ========
@@ -102,6 +102,10 @@ svg {
 button,
 a {
   text-decoration: none !important;
+}
+
+.btn {
+  box-shadow: none;
 }
 
 .modal.fade .modal-dialog {
@@ -480,6 +484,31 @@ input[type=number] {
   border-radius: 50px;
   margin-bottom: 2em;
   padding: 16px;
+  background: #11998e;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #38ef7d, #11998e);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+  box-shadow: -3px 3px 20px rgba(93, 192, 136, 0.4), 0 6px 6px rgba(115, 197, 109, 0);
+  transition: box-shadow 350ms;
+}
+
+.btn-mobilesale:hover,
+.btn-mobilesale:focus,
+.btn-mobilesale:active {
+  box-shadow: -3px 3px 20px rgba(93, 192, 136, 0.6), 0 6px 6px rgba(115, 197, 109, 0);
+}
+
+.btn-mobilesale .btn-title {
+  margin-left: 8px;
+  margin-right: 8px;
+  transition: all 350ms;
+}
+
+.btn-mobilesale:hover .btn-title {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .btn-rounded-high {
@@ -881,10 +910,6 @@ input[type=number] {
 
 .form-control {
   outline: none;
-  box-shadow: none;
-}
-
-.btn {
   box-shadow: none;
 }
 

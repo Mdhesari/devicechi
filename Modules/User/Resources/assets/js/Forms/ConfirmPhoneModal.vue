@@ -23,7 +23,7 @@
                 />
             </div>
             <div class="errors">
-                <p class="text-danger">{{ form.error("code") }}</p>
+                <p class="text-danger rtl">{{ form.error("code") }}</p>
             </div>
             <input
                 :disabled="isLoading"

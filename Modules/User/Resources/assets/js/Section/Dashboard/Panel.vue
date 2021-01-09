@@ -7,7 +7,8 @@
                         :href="route('user.ad.create')"
                         class="btn btn-success btn-rounded-high btn-mobilesale"
                     >
-                        {{ __("ads.create.btn_title") }}
+                        <b-icon icon="plus-circle"></b-icon>
+                        <span class="btn-title">{{ __("ads.create.btn_title") }}</span>
                     </inertia-link>
                 </div>
             </div>

@@ -89,7 +89,7 @@ ul li {
 }
 
 svg {
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 
 /* ========
@@ -98,6 +98,10 @@ svg {
 button,
 a {
     text-decoration: none !important;
+}
+
+.btn {
+    box-shadow: none;
 }
 
 .modal.fade .modal-dialog {
@@ -109,7 +113,7 @@ a {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
-    h4{
+    h4 {
         color: pallete("dark");
         font-weight: 500 !important;
     }
@@ -319,6 +323,42 @@ input[type="number"] {
     border-radius: 50px;
     margin-bottom: 2em;
     padding: 16px;
+    background: #11998e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #38ef7d,
+        #11998e
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #38ef7d,
+        #11998e
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+
+    box-shadow: -3px 3px 20px hsl(146 44% 56% / 0.4),
+        0 6px 6px rgba(115, 197, 109, 0);
+    transition: box-shadow 350ms;
+
+    &:hover,
+    &:focus,
+    &:active {
+        box-shadow: -3px 3px 20px hsl(146 44% 56% / 0.6),
+            0 6px 6px rgba(115, 197, 109, 0);
+    }
+
+    .btn-title {
+        margin-left: 8px;
+        margin-right: 8px;
+        transition: all 350ms;
+    }
+
+    &:hover .btn-title {
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+    }
 }
 
 .btn-rounded-high {
@@ -726,11 +766,6 @@ input[type="number"] {
     outline: none;
     box-shadow: none;
 }
-
-.btn {
-    box-shadow: none;
-}
-
 .mini-container {
     width: 900px;
     max-width: 100%;
@@ -2270,7 +2305,6 @@ input[type="number"] {
 /*Home Redesign*/
 .user-panel-main {
     .normal-ads {
-
         .normal-ad {
             margin: 1em;
         }
