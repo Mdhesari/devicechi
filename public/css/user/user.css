@@ -2094,6 +2094,21 @@ input[type=number] {
   padding: 150px 0;
 }
 
+.user-panel-section .nav-link.active {
+  color: #fb839b;
+  border: none;
+  border-bottom: 1px solid;
+  background: transparent;
+}
+
+.user-panel-section .nav-link {
+  color: #2a5164;
+}
+
+.user-panel-section .nav-link:hover {
+  border: none;
+}
+
 .sidebar {
   width: 100%;
 }

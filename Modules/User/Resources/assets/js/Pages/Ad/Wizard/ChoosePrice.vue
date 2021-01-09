@@ -30,10 +30,10 @@
                     :placeholder="__('ads.form.placeholder.price')"
                 ></b-form-input>
                 <p class="text-danger" v-text="form.error('price')"></p>
-                <small
+                <p
                     class="form-text text-muted"
                     v-text="calculated_price"
-                ></small>
+                ></p>
             </b-form-group>
 
             <b-form-group class="text-center mt-4">
