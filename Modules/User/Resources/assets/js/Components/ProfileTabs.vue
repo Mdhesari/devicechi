@@ -11,14 +11,18 @@
 
         <!-- tabs -->
         <li
-            v-for="tab in tabs"
+            v-for="(tab, index) in tabs"
+            :key="index"
             class="tab-item"
             :class="{
                 active: tab.is_active
             }"
         >
             <div class="tab-item-content">
-                <inertia-Link :href="tab.route" v-text="tab.text"></inertia-Link>
+                <inertia-Link
+                    :href="tab.route"
+                    v-text="tab.text"
+                ></inertia-Link>
             </div>
         </li>
     </ul>
