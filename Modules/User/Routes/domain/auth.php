@@ -124,6 +124,8 @@ Route::prefix('/dashboard')->group(function () {
 
     Route::post('/bookmark-ad', [AdMainController::class, 'bookmark'])->name('ad.bookmark');
 
+    Route::get('/seend-ads', [UserController::class, 'seens'])->name('ad.seen');
+
     Route::prefix('/payments')->name('payments.')->group(function () {
 
         Route::get('/', [UserPaymentController::class, 'index'])->name('list');

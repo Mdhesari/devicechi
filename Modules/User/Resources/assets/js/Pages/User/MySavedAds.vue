@@ -9,8 +9,6 @@
                 <!-- <div class="col-md-6"></div> -->
             </div>
 
-            <spinner v-if="isLoading" />
-
             <!-- No Content -->
             <b-alert
                 v-if="!isLoading"

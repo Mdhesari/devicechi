@@ -102,4 +102,15 @@ class UserController extends Controller
         return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
     }
 
+    public function seens(Request $request)
+    {
+
+        $ads = $request->user()->seenAds;
+
+        $tabs = [];
+
+        $nav_items = get_profile_nav_items();
+
+        return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
+    }
 }

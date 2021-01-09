@@ -54,7 +54,11 @@ class AdHomeController extends Controller
                 'ad' => $ad,
             ]);
 
-        $is_bookmarked_for_user = $request->user()->bookmarkedAds()->contains($ad);
+        $user = $request->user();
+
+        $is_bookmarked_for_user = $user->bookmarkedAds()->count() > 0;
+
+        $user->readAd($ad);
 
         return inertia('Ad/Single', compact('ad', 'is_bookmarked_for_user'));
     }

@@ -132,6 +132,28 @@ class User extends MainUser implements MustVerifyPhone
         return $this->belongsToMany(Ad::class);
     }
 
+    public function seenAds()
+    {
+        return $this->belongsToMany(Ad::class, 'ad_user_seen')->withPivot('count');
+    }
+
+    public function readAd($ad)
+    {
+
+        $existing_ad = $this->seenAds()->whereAdId($ad->id)->first();
+
+        if ($existing_ad) {
+
+            return $existing_ad->pivot->update([
+                'count' => ++$existing_ad->pivot->count
+            ]);
+        }
+
+        return $this->seenAds()->attach($ad, [
+            'count' => 1
+        ]);
+    }
+
     public function hasUncompleteAd()
     {
 

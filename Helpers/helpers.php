@@ -31,10 +31,15 @@ function get_profile_nav_items()
             'params' => [],
         ],
         [
+            'label' => __(' Seen Ads '),
+            'route' => 'user.ad.seen',
+            'params' => [],
+        ],
+        [
             'label' => __(' My Payments '),
             'route' => 'user.payments.list',
             'params' => [],
-        ]
+        ],
     ]);
 
     $navbar = $navbar->map(function ($item, $index) {
