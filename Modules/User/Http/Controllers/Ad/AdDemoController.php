@@ -3,12 +3,13 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use App\Models\Ad;
+use Illuminate\Http\Request;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
 
 class AdDemoController extends BaseAdController
 {
 
-    public function show(Ad $ad)
+    public function show(Ad $ad, Request $request)
     {
 
         $step = BaseAdController::DEMO;
@@ -19,7 +20,9 @@ class AdDemoController extends BaseAdController
 
         $help = $ad->help;
 
-        return inertia('Ad/Demo', compact('ad', 'help'));
+        $is_bookmarked_for_user = $request->user()->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
+
+        return inertia('Ad/Demo', compact('ad', 'help', 'is_bookmarked_for_user'));
     }
 
     public function publish(AdDemoActionRequest $request)

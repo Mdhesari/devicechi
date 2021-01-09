@@ -4,6 +4,7 @@ namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
 use App\Models\Ad;
+use Exception;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Route;
@@ -130,5 +131,33 @@ class AdMainController extends BaseAdController
             'search' => $search,
             'models' => $query->get(),
         ]);
+    }
+
+    public function bookmark(Request $request)
+    {
+
+        $request->validate([
+            'ad' => ['required'],
+            'attach' => ['required', 'boolean']
+        ]);
+
+        $status = true;
+        $message = '';
+
+        try {
+
+            $query = auth()->user()->bookmarkedAds();
+
+            if ($request->attach)
+                $response = $query->attach($request->ad);
+            else
+                $response = $query->detach($request->ad);
+        } catch (Exception $e) {
+
+            $status = false;
+            $message = $e->getMessage();
+        }
+
+        return response()->json(compact('status', 'message'));
     }
 }

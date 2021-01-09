@@ -21,9 +21,11 @@ class AdPictureFactory extends Factory
      */
     public function definition()
     {
+
+        $number = rand(1, 10);
+
         return [
-            'url' => 'https://source.unsplash.com/1600x900/?mobile',
+            'url' => "images/{$number}.jpg",
         ];
     }
-
 }

@@ -12,6 +12,7 @@
 */
 
 use Modules\User\Http\Controllers\Ad\AdContactController;
+use Modules\User\Http\Controllers\Ad\AdMainController;
 use Tightenco\Ziggy\Ziggy;
 
 Route::get('/routes', function (Request $request) {

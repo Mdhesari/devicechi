@@ -45,7 +45,7 @@ class AdHomeController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show(Ad $ad)
+    public function show(Ad $ad, Request $request)
     {
         $ad->loadSingleRelations();
 
@@ -54,7 +54,9 @@ class AdHomeController extends Controller
                 'ad' => $ad,
             ]);
 
-        return inertia('Ad/Single', compact('ad'));
+        $is_bookmarked_for_user = $request->user()->bookmarkedAds()->contains($ad);
+
+        return inertia('Ad/Single', compact('ad', 'is_bookmarked_for_user'));
     }
 
     /**
