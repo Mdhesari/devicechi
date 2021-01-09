@@ -28,6 +28,7 @@ use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\UserController;
+use Modules\User\Http\Controllers\UserPaymentController;
 
 Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
@@ -122,6 +123,11 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/bookmarked-ads', [UserController::class, 'bookmarks'])->name('ad.bookmarked');
 
     Route::post('/bookmark-ad', [AdMainController::class, 'bookmark'])->name('ad.bookmark');
+
+    Route::prefix('/payments')->name('payments.')->group(function () {
+
+        Route::get('/', [UserPaymentController::class, 'index'])->name('list');
+    });
 });
 
 Route::prefix('/profile')->name('profile.')->group(function () {

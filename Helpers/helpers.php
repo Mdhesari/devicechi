@@ -29,6 +29,11 @@ function get_profile_nav_items()
             'label' => __(' Bookmarked Ads '),
             'route' => 'user.ad.bookmarked',
             'params' => [],
+        ],
+        [
+            'label' => __(' My Payments '),
+            'route' => 'user.payments.list',
+            'params' => [],
         ]
     ]);
 

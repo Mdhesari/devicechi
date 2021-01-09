@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\Model\Payment\Discount;
-use App\Model\Payment\Payment;
+use App\Models\Payment\Payment;
 use Hash;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
