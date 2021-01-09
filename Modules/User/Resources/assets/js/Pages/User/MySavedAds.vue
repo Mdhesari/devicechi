@@ -3,7 +3,12 @@
         <Panel :user="user" :tabs="tabs">
             <div class="row" v-if="ads && !isLoading">
                 <div class="row normal-ads">
-                    <NormalAd v-for="ad in ads" :key="ad.id" :ad="ad"></NormalAd>
+                    <NormalAd
+                        v-for="ad in ads"
+                        :key="ad.id"
+                        :ad="ad"
+                        :countAds="ads.length"
+                    ></NormalAd>
                 </div>
 
                 <!-- <div class="col-md-6"></div> -->

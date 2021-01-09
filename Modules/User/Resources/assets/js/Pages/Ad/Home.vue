@@ -71,6 +71,7 @@
                         v-for="ad in ads"
                         :key="ad.id"
                         :ad="ad"
+                        :countAds="ads.length"
                     ></NormalAd>
                 </div>
             </div>

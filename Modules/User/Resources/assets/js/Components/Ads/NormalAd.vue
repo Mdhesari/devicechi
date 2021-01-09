@@ -1,5 +1,11 @@
 <template>
-    <div class="col-md-3 normal-ad">
+    <div
+        class="normal-ad"
+        :class="{
+            'col-md-3': countAds > 3,
+            'col-md-5': countAds < 3
+        }"
+    >
         <inertia-link
             :href="
                 route('user.ad.show', {
@@ -42,7 +48,7 @@
 import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
 
 export default {
-    props: ["ad"],
+    props: ["ad", "countAds"],
     mixins: [AdPictureHelpers]
 };
 </script>

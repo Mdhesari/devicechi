@@ -3,7 +3,12 @@
         <Panel :user="user" :tabs="tabs">
             <div class="row" v-if="ads && !isLoading">
                 <div class="row normal-ads">
-                    <NormalAd v-for="ad in ads" :key="ad.id" :ad="ad">
+                    <NormalAd
+                        v-for="ad in ads"
+                        :key="ad.id"
+                        :ad="ad"
+                        :countAds="ads.length"
+                    >
                         <p :class="`status ${renderStatusClass(ad.status)}`">
                             {{ renderStatusLabel(ad.status) }}
                         </p>

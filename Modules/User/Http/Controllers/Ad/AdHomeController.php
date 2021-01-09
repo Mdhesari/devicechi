@@ -56,7 +56,7 @@ class AdHomeController extends Controller
 
         $user = $request->user();
 
-        $is_bookmarked_for_user = $user->bookmarkedAds()->count() > 0;
+        $is_bookmarked_for_user = $user->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
 
         $user->readAd($ad);
 

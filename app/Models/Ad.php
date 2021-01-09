@@ -14,6 +14,7 @@ use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
+use Str;
 
 class Ad extends Model
 {
@@ -25,6 +26,13 @@ class Ad extends Model
     const STATUS_UNCOMPLETED = 3;
     const STATUS_UNAVAILABLE = 4;
     const STATUS_ARCHIVE = 5;
+
+    const STATUS_REJECTED_LABEL = "REJECTED";
+    const STATUS_AVAILABLE_LABEL = "AVAILABLE";
+    const STATUS_PENDING_LABEL = "PENDING";
+    const STATUS_UNCOMPLETED_LABEL = "UNCOMPLETED";
+    const STATUS_UNAVAILABLE_LABEL = "UNAVAILABLE";
+    const STATUS_ARCHIVE_LABEL = "ARCHIVE";
 
     protected $fillable = [
         'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable', 'meta_data'
@@ -157,7 +165,15 @@ class Ad extends Model
     public function scopeFilterAd($query, $request)
     {
 
-        if (!is_null($status = $request->query('status'))) $query = $query->whereStatus($status);
+        $status = $request->query('status');
+
+        if ($status && is_string($status)) {
+            $status = Str::upper($status);
+
+            $status = static::getStatusNumber($status);
+        }
+
+        if (!is_null($status)) $query = $query->whereStatus($status);
 
         if ($search = $request->query('brand_id')) $query = $query->wherePhoneBrandId($search);
 
@@ -286,27 +302,63 @@ class Ad extends Model
         return number_format($this->price) . ' تومان ';
     }
 
-    public function getStatus()
+    public static function getStatusNumber($status = null)
     {
 
-        switch ($this->status) {
-            case 0:
-                $status = __(" REJECTED ");
+        switch ($status) {
+            case static::STATUS_REJECTED_LABEL:
+                $status = static::STATUS_REJECTED;
                 break;
-            case 1:
-                $status = __(" AVAILABLE ");
+            case static::STATUS_AVAILABLE_LABEL:
+                $status = static::STATUS_AVAILABLE;
                 break;
-            case 2:
-                $status = __(" PENDING ");
+            case static::STATUS_PENDING_LABEL:
+                $status = static::STATUS_PENDING;
                 break;
-            case 3:
-                $status = __(" UNCOMPLETED ");
+            case static::STATUS_UNCOMPLETED_LABEL:
+                $status = static::STATUS_UNCOMPLETED;
                 break;
-            case 4:
-                $status = __(" UNAVAILABLE ");
+            case static::STATUS_UNAVAILABLE_LABEL:
+                $status = static::STATUS_UNAVAILABLE;
                 break;
-            case 5:
-                $status = __(" ARCHIVE ");
+            case static::STATUS_ARCHIVE_LABEL:
+                $status = static::STATUS_ARCHIVE;
+            default:
+                $status = __(" Invalid ");
+        }
+
+        return $status;
+    }
+
+    public function getStatus($status = null)
+    {
+        if (is_null($status))
+            $status = $this->status;
+
+        switch ($status) {
+            case static::STATUS_REJECTED:
+                $label = static::STATUS_REJECTED_LABEL;
+                $status = __(" {$label} ");
+                break;
+            case static::STATUS_AVAILABLE:
+                $label = static::STATUS_AVAILABLE_LABEL;
+                $status = __(" {$label} ");
+                break;
+            case static::STATUS_PENDING:
+                $label = static::STATUS_PENDING_LABEL;
+                $status = __(" {$label} ");
+                break;
+            case static::STATUS_UNCOMPLETED:
+                $label = static::STATUS_UNCOMPLETED_LABEL;
+                $status = __(" {$label} ");
+                break;
+            case static::STATUS_UNAVAILABLE:
+                $label = static::STATUS_UNAVAILABLE_LABEL;
+                $status = __(" {$label} ");
+                break;
+            case static::STATUS_ARCHIVE:
+                $label = static::STATUS_ARCHIVE_LABEL;
+                $status = __(" {$label} ");
             default:
                 $status = __(" Invalid ");
         }
@@ -329,7 +381,7 @@ class Ad extends Model
     public function generateShortLink()
     {
 
-        if(is_null($this->title)) return;
+        if (is_null($this->title)) return;
 
         $shortLink = $this->shortLink()->firstOrCreate([
             'link' => route('user.ad.show', [

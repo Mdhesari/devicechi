@@ -8,6 +8,7 @@ use Exception;
 use Modules\User\Entities\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Route;
+use Str;
 
 class AdMainController extends BaseAdController
 {
@@ -32,31 +33,31 @@ class AdMainController extends BaseAdController
             [
                 'text' => __('user::ads.tabs.accepted'),
                 'params' => [
-                    'status' => Ad::STATUS_AVAILABLE,
+                    'status' => strtolower(Ad::STATUS_AVAILABLE_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.pending'),
                 'params' => [
-                    'status' => Ad::STATUS_PENDING,
+                    'status' => strtolower(Ad::STATUS_PENDING_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.rejected'),
                 'params' => [
-                    'status' => Ad::STATUS_REJECTED,
+                    'status' => strtolower(Ad::STATUS_REJECTED_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.uncompleted'),
                 'params' => [
-                    'status' => Ad::STATUS_UNCOMPLETED,
+                    'status' => strtolower(Ad::STATUS_UNCOMPLETED_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.archive'),
                 'params' => [
-                    'status' => Ad::STATUS_ARCHIVE,
+                    'status' => strtolower(Ad::STATUS_ARCHIVE_LABEL),
                 ],
             ]
         ]);
@@ -75,9 +76,8 @@ class AdMainController extends BaseAdController
                     return $tab;
                 }
             } else {
-
                 if (isset($tab['params']['status']))
-                    $tab['is_active'] = $tab['params']['status'] === intval($query_status);
+                    $tab['is_active'] = $tab['params']['status'] ==  $query_status;
             }
 
             return $tab;
