@@ -15,7 +15,7 @@ class CreateAdUserSeenTable extends Migration
     {
         Schema::create('ad_user_seen', function (Blueprint $table) {
             $table->foreignId('user_id');
-            $table->foreignId('ad_id');
+            $table->foreignUuid('ad_id');
 
             $table->unsignedBigInteger('count')->default(0);
 

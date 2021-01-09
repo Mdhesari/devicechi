@@ -15,7 +15,7 @@ class CreateAccessoriesAd extends Migration
     {
         Schema::create('accessories_ad', function (Blueprint $table) {
             $table->foreignId('phone_accessory_id');
-            $table->foreignId('ad_id');
+            $table->foreignUuid('ad_id');
 
             $table->primary(['phone_accessory_id', 'ad_id']);
         });

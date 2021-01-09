@@ -16,7 +16,7 @@ class CreateAdContactsTable extends Migration
         Schema::create('ad_contacts', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('ad_id');
+            $table->foreignUuid('ad_id');
             $table->foreignId('contact_type_id');
             $table->string('value');
             $table->timestamp('value_verified_at')->nullable();

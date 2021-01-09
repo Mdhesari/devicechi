@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
+use App\Traits\Uuids;
 use Illuminate\Notifications\Notifiable;
 use Log;
 use Modules\User\Entities\AdPicture;
@@ -18,7 +19,7 @@ use Str;
 
 class Ad extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, Uuids;
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;

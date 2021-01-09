@@ -38,7 +38,7 @@ class AdRepository extends Repository implements
         $this->model = $adModel;
     }
 
-    public function find(int $id)
+    public function find($id)
     {
         return $this->model->find($id);
     }
