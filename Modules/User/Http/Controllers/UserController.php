@@ -89,4 +89,17 @@ class UserController extends Controller
 
         return back()->with('toSuccess', __(' Ok '));
     }
+
+    public function bookmarks(Request $request)
+    {
+
+        $ads = $request->user()->bookmarkedAds;
+
+        $tabs = [];
+
+        $nav_items = get_profile_nav_items();
+
+        return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
+    }
+
 }

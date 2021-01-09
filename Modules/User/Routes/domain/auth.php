@@ -118,6 +118,8 @@ Route::prefix('/dashboard')->group(function () {
     Route::get('/', 'UserController@index')->name('dashboard');
 
     Route::get('/ads', [AdMainController::class, 'get'])->name('ad.get');
+
+    Route::get('/bookmarked-ads', [UserController::class, 'bookmarks'])->name('ad.bookmarked');
 });
 
 Route::prefix('/profile')->name('profile.')->group(function () {

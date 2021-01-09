@@ -24,6 +24,11 @@ function get_profile_nav_items()
             'label' => __(' My Ads '),
             'route' => 'user.ad.get',
             'params' => [],
+        ],
+        [
+            'label' => __(' Bookmarked Ads '),
+            'route' => 'user.ad.bookmarked',
+            'params' => [],
         ]
     ]);
 

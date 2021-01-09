@@ -126,6 +126,12 @@ class User extends MainUser implements MustVerifyPhone
         return $this->hasMany(Ad::class);
     }
 
+    public function bookmarkedAds()
+    {
+
+        return $this->belongsToMany(Ad::class);
+    }
+
     public function hasUncompleteAd()
     {
 
