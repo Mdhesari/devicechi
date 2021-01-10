@@ -45,7 +45,7 @@ class CodeVerificatiNotification extends Notification
      */
     public function via($notifiable)
     {
-        return array_merge($this->channels, ['database']);
+        return array_merge($this->channels, ['database','ghasedak']);
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
 use App\Traits\Uuids;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Log;
 use Modules\User\Entities\AdPicture;
@@ -19,7 +20,7 @@ use Str;
 
 class Ad extends Model
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, Sluggable;
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
@@ -395,6 +396,20 @@ class Ad extends Model
         return route('shortlink', [
             'code' => $code
         ]);
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
     }
 
     /**

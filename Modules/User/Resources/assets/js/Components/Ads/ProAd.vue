@@ -4,7 +4,7 @@
             class="ad-img"
             :href="
                 route('user.ad.show', {
-                    ad: ad.id
+                    ad: ad.slug || ad.id
                 })
             "
             :style="`background-image: url('${renderAdPicture(ad)}');`"

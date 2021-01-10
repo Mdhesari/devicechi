@@ -109,7 +109,7 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
     Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
 
-    Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
+    Route::get('/{ad:slug}', [AdHomeController::class, 'show'])->name('show');
 
     Route::get('/p/{ad}', [AdHomeController::class, 'show'])->name('show.short-link');
 });

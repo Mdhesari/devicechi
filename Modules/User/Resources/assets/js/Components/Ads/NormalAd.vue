@@ -9,7 +9,7 @@
         <inertia-link
             :href="
                 route('user.ad.show', {
-                    ad: ad.id
+                    ad: ad.slug || ad.id
                 })
             "
         >
