@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_accessories', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -76,7 +76,7 @@ export default {
             this.form
                 .post(
                     route("user.ad.step_phone_age", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         preserveState: false

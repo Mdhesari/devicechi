@@ -61,6 +61,9 @@ class AdRepository extends Repository implements
 
     public function create($data)
     {
+
+        $data = array_merge($data, ['slug' => uniqid()]);
+
         return $this->model->create($data);
     }
 

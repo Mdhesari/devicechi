@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_model_variant', {
-                ad: ad.id,
+                ad: ad.slug,
                 phone_model: model.name
             })
         "
@@ -73,7 +73,7 @@ export default {
             this.$inertia
                 .post(
                     route("user.ad.step_phone_accessories", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         accessories: this.selected

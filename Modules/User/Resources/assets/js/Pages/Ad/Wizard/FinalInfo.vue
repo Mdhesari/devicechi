@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_contact', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -99,7 +99,7 @@ export default {
 
             this.form.post(
                 route("user.ad.step_phone_details", {
-                    ad: this.ad.id
+                    ad: this.ad.slug
                 })
             );
         }

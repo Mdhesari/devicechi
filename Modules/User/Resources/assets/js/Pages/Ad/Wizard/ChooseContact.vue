@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_location', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -73,7 +73,7 @@ export default {
             this.$inertia
                 .post(
                     route("user.ad.step_phone_contact", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     })
                 )
                 .then(response => {
@@ -100,7 +100,7 @@ export default {
             axios
                 .post(
                     route("user.ad.step_phone_contact.delete", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         _method: "delete",

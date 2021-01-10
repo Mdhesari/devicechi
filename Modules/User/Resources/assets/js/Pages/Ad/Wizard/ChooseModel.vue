@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.create', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -29,7 +29,7 @@
                             :href="
                                 route('user.ad.step_phone_model', {
                                     phone_brand: brand.name,
-                                    ad: ad.id ? ad.id : null
+                                    ad: ad.slug ? ad.slug : null
                                 })
                             "
                             :data="{
@@ -79,7 +79,7 @@
                         :href="
                             route('user.ad.step_phone_model', {
                                 phone_brand: brand.name,
-                                ad: ad.id ? ad.id : null
+                                ad: ad.slug ? ad.slug : null
                             })
                         "
                         :data="{

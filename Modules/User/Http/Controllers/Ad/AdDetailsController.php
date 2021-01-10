@@ -24,6 +24,9 @@ class AdDetailsController extends BaseAdController
     public function store(Ad $ad, AdDetailsRequest $request)
     {
 
+        if (is_null($ad->title))
+            $ad->slug = null;
+
         $this->adRepository->updateDetails($request->all(), $ad);
 
         return redirect()->route('user.ad.step_phone_demo', [

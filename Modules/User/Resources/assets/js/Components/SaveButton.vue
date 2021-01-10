@@ -15,7 +15,7 @@ export default {
     methods: {
         async save() {
             const response = await axios.post(route("user.ad.bookmark"), {
-                ad: this.ad.id,
+                ad: this.ad.slug,
                 attach: !this.isSaved
             });
 

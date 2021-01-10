@@ -5,11 +5,12 @@ namespace Modules\User\Http\Controllers\Ad;
 use App\Models\Ad;
 use Illuminate\Http\Request;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
+use Modules\User\Http\Requests\UserAdRequest;
 
 class AdDemoController extends BaseAdController
 {
 
-    public function show(Ad $ad, Request $request)
+    public function show(Ad $ad, UserAdRequest $request)
     {
 
         $step = BaseAdController::DEMO;

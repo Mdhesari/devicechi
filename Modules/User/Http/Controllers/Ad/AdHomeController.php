@@ -16,7 +16,7 @@ class AdHomeController extends Controller
     public function index()
     {
 
-        $ads = Ad::with('pictures', 'state.city')->get();
+        $ads = Ad::with('pictures', 'state.city')->published()->get();
 
         return inertia('Ad/Home', compact('ads'));
     }

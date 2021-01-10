@@ -36,7 +36,7 @@ export default {
         getBack() {
             this.$inertia.visit(
                 route("user.ad.step_phone_details", {
-                    ad: this.ad.id
+                    ad: this.ad.slug
                 })
             );
         },

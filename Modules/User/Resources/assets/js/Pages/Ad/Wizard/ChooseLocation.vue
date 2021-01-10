@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_pictures', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -109,7 +109,7 @@ export default {
             this.form
                 .post(
                     this.route("user.ad.step_phone_location", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         preserveScroll: true
@@ -138,7 +138,7 @@ export default {
 
             const response = await axios.get(
                 route("user.ad.step_phone_location.states", {
-                    ad: this.ad.id,
+                    ad: this.ad.slug,
                     city: id
                 })
             );

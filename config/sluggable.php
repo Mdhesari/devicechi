@@ -128,7 +128,7 @@ return [
      * Separator to use when generating slugs.  Defaults to a hyphen.
      */
 
-    'separator' => '-',
+    'separator' => '_',
 
     /**
      * Enforce uniqueness of slugs?  Defaults to true.
@@ -151,7 +151,10 @@ return [
      * suffix to append to the slug.
      */
 
-    'uniqueSuffix' => null,
+    'uniqueSuffix' => function() {
+
+        return Str::random(6);
+    },
 
     /**
      * Should we include the trashed items when generating a unique slug?

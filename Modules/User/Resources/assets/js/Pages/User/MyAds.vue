@@ -15,7 +15,7 @@
                         <inertia-link
                             :href="
                                 route('user.ad.step_phone_demo', {
-                                    ad: ad.id
+                                    ad: ad.slug
                                 })
                             "
                         >

@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_model', {
-                ad: ad.id,
+                ad: ad.slug,
                 phone_brand: brand.name
             })
         "

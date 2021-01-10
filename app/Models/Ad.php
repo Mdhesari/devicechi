@@ -37,7 +37,7 @@ class Ad extends Model
     const STATUS_ARCHIVE_LABEL = "ARCHIVE";
 
     protected $fillable = [
-        'title', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable', 'meta_data'
+        'title', 'slug', 'description', 'user_id', 'phone_model_id', 'phone_model_variant_id', 'is_multicard', 'meta_ad', 'state_id', 'price', 'phone_age_id', 'location', 'is_exchangeable', 'meta_data'
     ];
 
     protected $appends = [
@@ -83,6 +83,17 @@ class Ad extends Model
     {
 
         return $this->status === self::STATUS_PENDING;
+    }
+
+    public function scopePublished($query)
+    {
+
+        return $query->whereStatus(static::STATUS_AVAILABLE);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function publish()
@@ -413,7 +424,7 @@ class Ad extends Model
     {
         return [
             'slug' => [
-                'source' => 'title',
+                'source' => ['title', 'state.name', 'state.city.name'],
             ],
         ];
     }

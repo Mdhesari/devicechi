@@ -2,7 +2,7 @@
     <WizardStep
         :backLink="
             route('user.ad.step_phone_price', {
-                ad: ad.id
+                ad: ad.slug
             })
         "
     >
@@ -80,7 +80,7 @@ export default {
             this.form
                 .post(
                     route("user.ad.step_phone_pictures", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         peserveState: false,
@@ -169,7 +169,7 @@ export default {
             } else {
                 const response = await axios.post(
                     route("user.ad.step_phone_pictures", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         _method: "DELETE",

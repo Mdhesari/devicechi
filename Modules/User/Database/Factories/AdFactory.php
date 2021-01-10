@@ -33,6 +33,8 @@ class AdFactory extends Factory
             'state_id' => 1,
             'phone_model_id' => PhoneModel::first()->id,
             'user_id' => 1,
+            'status' => Ad::STATUS_AVAILABLE,
+            'is_published' => true
         ];
     }
 }

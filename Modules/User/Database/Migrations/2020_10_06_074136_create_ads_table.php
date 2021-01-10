@@ -28,10 +28,12 @@ class CreateAdsTable extends Migration
             $table->text('location')->nullable();
             $table->json('meta_ad')->nullable();
             $table->string('slug')->nullable();
+
             /* contacts, meta_title, meta_description, age  */
 
             $table->boolean('is_multicard')->default(0);
             $table->boolean('is_exchangeable')->default(0);
+            $table->boolean('is_published')->default(0);
             $table->timestamps();
         });
     }

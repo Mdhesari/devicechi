@@ -99,7 +99,7 @@ export default {
             axios
                 .post(
                     route("user.ad.step_phone_contact.verify", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         _method: "put",
@@ -153,7 +153,7 @@ export default {
             axios
                 .post(
                     route("user.ad.step_phone_contact.add", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     }),
                     {
                         contact_type: this.input_data.type,

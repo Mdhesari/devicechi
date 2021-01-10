@@ -140,6 +140,8 @@ class User extends MainUser implements MustVerifyPhone
     public function readAd($ad)
     {
 
+        if ($this->id === $ad->user->id) return;
+
         $existing_ad = $this->seenAds()->whereAdId($ad->id)->first();
 
         if ($existing_ad) {

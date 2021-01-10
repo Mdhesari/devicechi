@@ -22,7 +22,7 @@
                         :href="
                             route('user.ad.step_phone_model', {
                                 phone_brand: ad_brand.name,
-                                ad: ad.id ? ad.id : null
+                                ad: ad.slug ? ad.slug : null
                             })
                         "
                     >

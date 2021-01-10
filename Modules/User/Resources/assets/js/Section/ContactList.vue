@@ -48,7 +48,7 @@ export default {
             axios
                 .get(
                     route("user.api.ad.contacts.get", {
-                        ad: this.ad.id
+                        ad: this.ad.slug
                     })
                 )
                 .then(response => {
