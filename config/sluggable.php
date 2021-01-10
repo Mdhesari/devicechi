@@ -26,7 +26,7 @@ return [
      * want to make sure your slugs aren't too long.
      */
 
-    'maxLength' => null,
+    'maxLength' => 64,
 
     /**
      * If you are setting a maximum length on your slugs, you may not want the
