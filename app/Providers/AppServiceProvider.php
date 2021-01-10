@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use DB;
 use Ghasedak\GhasedakApi;
 use Ghasedak\Laravel\GhasedakServiceProvider;
 use Illuminate\Http\Reques;
@@ -13,6 +14,7 @@ use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
 use Request;
+use Schema;
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -39,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        Schema::defaultStringLength(191);
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);

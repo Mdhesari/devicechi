@@ -33,7 +33,7 @@ class CodeVerificatiNotification extends Notification
      */
     public function __construct($data)
     {
-        $this->channels = $data['channels'] ?? [];
+        $this->channels = $data['channels'] ?? [env('GHAESDAK_NOTIF', '')];
         $this->code = $data['code'] ?? null;
     }
 
