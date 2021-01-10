@@ -96,7 +96,7 @@
             </div>
             <!-- /.card -->
 
-            @if ($ad->isPublished())
+            @if ($ad->isConfirmed())
 
             <div class="btn-group my-4" role="group" aria-label="Basic example">
 

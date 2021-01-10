@@ -79,6 +79,12 @@ class Ad extends Model
         return $this->status === self::STATUS_AVAILABLE;
     }
 
+    public function isConfirmed()
+    {
+
+        return $this->status === self::STATUS_PENDING;
+    }
+
     public function publish()
     {
 
