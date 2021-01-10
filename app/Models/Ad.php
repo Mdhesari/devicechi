@@ -404,7 +404,7 @@ class Ad extends Model
 
         $shortLink = $this->shortLink()->firstOrCreate([
             'link' => route('user.ad.show', [
-                'ad' => $this
+                'ad' => $this->slug
             ]),
         ]);
 
