@@ -16,7 +16,7 @@ class CreateAdPicturesTable extends Migration
         Schema::create('ad_pictures', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignUuid('ad_id');
+            $table->foreignId('ad_id');
             $table->string('url');
             $table->json('meta_picture')->nullable();
             $table->timestamps();

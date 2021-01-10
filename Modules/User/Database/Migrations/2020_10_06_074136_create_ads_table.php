@@ -14,7 +14,7 @@ class CreateAdsTable extends Migration
     public function up()
     {
         Schema::create('ads', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id()->from(1000);
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->foreignId('user_id')->constrained();
@@ -27,6 +27,7 @@ class CreateAdsTable extends Migration
             $table->unsignedTinyInteger('status')->default(3); /* 0: unavailable, 1: available, 2: pending, 3: uncompleted */
             $table->text('location')->nullable();
             $table->json('meta_ad')->nullable();
+            $table->string('slug')->nullable();
             /* contacts, meta_title, meta_description, age  */
 
             $table->boolean('is_multicard')->default(0);

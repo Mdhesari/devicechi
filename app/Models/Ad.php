@@ -19,7 +19,7 @@ use Str;
 
 class Ad extends Model
 {
-    use HasFactory, Notifiable, Uuids;
+    use HasFactory, Notifiable;
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;

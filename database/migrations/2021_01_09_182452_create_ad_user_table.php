@@ -15,7 +15,7 @@ class CreateAdUserTable extends Migration
     {
         Schema::create('ad_user', function (Blueprint $table) {
             $table->foreignId('user_id');
-            $table->foreignUuid('ad_id');
+            $table->foreignId('ad_id');
 
             $table->primary(['ad_id', 'user_id']);
         });
