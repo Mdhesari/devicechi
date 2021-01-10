@@ -10,8 +10,13 @@ use Modules\User\Http\Requests\UserAdRequest;
 class AdDemoController extends BaseAdController
 {
 
-    public function show(Ad $ad, UserAdRequest $request)
+    public function show(Ad $ad, Request $request)
     {
+
+        if ($ad->id != auth()->id()) {
+
+            return abort(403);
+        }
 
         $step = BaseAdController::DEMO;
 
