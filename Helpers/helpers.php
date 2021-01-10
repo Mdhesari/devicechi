@@ -11,36 +11,39 @@ function make_mobile_limiter_key($user, $mobile = null)
     return $user->id . '|' . ($mobile ?? $user->mobile) . ':send_verification';
 }
 
-function get_profile_nav_items()
+function get_nav_items($navbar = null)
 {
 
-    $navbar = collect([
-        [
-            'label' => __(' My Profile '),
-            'route' => 'user.dashboard',
-            'params' => [],
-        ],
-        [
-            'label' => __(' My Ads '),
-            'route' => 'user.ad.get',
-            'params' => [],
-        ],
-        [
-            'label' => __(' Bookmarked Ads '),
-            'route' => 'user.ad.bookmarked',
-            'params' => [],
-        ],
-        [
-            'label' => __(' Seen Ads '),
-            'route' => 'user.ad.seen',
-            'params' => [],
-        ],
-        [
-            'label' => __(' My Payments '),
-            'route' => 'user.payments.list',
-            'params' => [],
-        ],
-    ]);
+    if (is_null($navbar))
+        $navbar = collect([
+            [
+                'label' => __(' My Profile '),
+                'route' => 'user.dashboard',
+                'params' => [],
+            ],
+            [
+                'label' => __(' My Ads '),
+                'route' => 'user.ad.get',
+                'params' => [],
+            ],
+            [
+                'label' => __(' Bookmarked Ads '),
+                'route' => 'user.ad.bookmarked',
+                'params' => [],
+            ],
+            [
+                'label' => __(' Seen Ads '),
+                'route' => 'user.ad.seen',
+                'params' => [],
+            ],
+            [
+                'label' => __(' My Payments '),
+                'route' => 'user.payments.list',
+                'params' => [],
+            ],
+        ]);
+    else
+        $navbar = collect($navbar);
 
     $navbar = $navbar->map(function ($item, $index) {
         $item['is_active'] = Route::is($item['route']);

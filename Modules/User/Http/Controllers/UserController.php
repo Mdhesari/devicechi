@@ -27,14 +27,9 @@ class UserController extends Controller
 
         $success_session = session('success');
 
-        $tabs = collect([
-            // [
-            //     'text' => __('user::ads.tabs.all'),
-            //     'params' => [],
-            // ],
-        ]);
+        $tabs = [];
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         $user->load('city');
 
@@ -97,7 +92,7 @@ class UserController extends Controller
 
         $tabs = [];
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
     }
@@ -109,7 +104,7 @@ class UserController extends Controller
 
         $tabs = [];
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
     }

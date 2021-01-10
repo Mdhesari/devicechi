@@ -17,7 +17,7 @@ class UserPaymentController extends Controller
 
         $payments = $request->user()->payments()->select('title', 'amount',  'status', 'created_at')->get();
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         $tabs = [];
 

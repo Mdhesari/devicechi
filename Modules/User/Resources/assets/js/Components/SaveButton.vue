@@ -1,5 +1,10 @@
 <template>
-    <button class="btn rounded" @click="save">
+    <button
+        v-b-tooltip.click
+        :title="getTooltip"
+        class="btn rounded"
+        @click="save"
+    >
         <b-icon :icon="isSaved ? 'bookmark-check-fill' : 'bookmark'"></b-icon>
     </button>
 </template>
@@ -13,9 +18,14 @@ export default {
         };
     },
     methods: {
+        getTooltip() {
+            return this.isSaved
+                ? this.__("global.unbookmark")
+                : this.__("global.bookmark");
+        },
         async save() {
             const response = await axios.post(route("user.ad.bookmark"), {
-                ad: this.ad.slug,
+                ad: this.ad.id,
                 attach: !this.isSaved
             });
 

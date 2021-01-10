@@ -20,7 +20,6 @@ class ShortLinkController extends Controller
 
         $linkArr = parse_url($shortL->link);
 
-        dd($linkArr);
         if (isset($linkArr['schema'])) return redirect();
 
         return redirect($shortL->link);

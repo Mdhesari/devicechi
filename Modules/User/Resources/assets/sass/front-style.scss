@@ -100,6 +100,11 @@ a {
     text-decoration: none !important;
 }
 
+.custom-radio,
+.custom-control {
+    margin-top: 1em;
+}
+
 .btn {
     box-shadow: none;
 }
@@ -128,7 +133,6 @@ a {
 @import "./wizard.scss";
 
 .swiper-slide {
-
     cursor: pointer;
 }
 
@@ -324,10 +328,11 @@ input[type="number"] {
 }
 
 .btn-mobilesale {
-    width: 100%;
+    display: inline-block;
     border-radius: 50px;
     margin-bottom: 2em;
-    padding: 16px;
+    padding: 16px 36px;
+    color: #f7f8f9 !important;
     background: #11998e; /* fallback for old browsers */
     background: -webkit-linear-gradient(
         to right,
@@ -865,6 +870,14 @@ input[type="number"] {
     &.navActive {
         right: 0;
     }
+
+    .btn-mobilesale {
+        padding: 13px 24px;
+
+        &:hover {
+            padding: 13px 24px;
+        }
+    }
 }
 
 .header-site .main-menu ul {
@@ -880,6 +893,12 @@ input[type="number"] {
 .header-site .main-menu ul li a {
     color: pallete("gray");
     font-size: 20px;
+    transition: color 350ms;
+
+    &:hover,
+    &.active {
+        color: pallete("dark");
+    }
 }
 
 .header-site .main-menu ul li a:hover {
@@ -2157,19 +2176,20 @@ input[type="number"] {
 .user-panel-section {
     padding: 150px 0;
 
+    .nav-link {
+        color: #2a5164;
+
+        &:hover {
+            color: #fb839b;
+            border-color: transparent;
+        }
+    }
+
     .nav-link.active {
         color: #fb839b;
         border: none;
         border-bottom: 1px solid;
         background: transparent;
-    }
-
-    .nav-link {
-        color: #2a5164;
-
-        &:hover {
-            border: none;
-        }
     }
 }
 
@@ -2503,6 +2523,30 @@ input[type="number"] {
 /*breadcrumb*/
 /* Queries*/
 @media (max-width: 768px) {
+
+    .post-holder {
+        padding: 10px 0;
+    }
+
+    .col-12.col-lg-6.single-post {
+        order: 1;
+        margin-bottom: 0em;
+        padding-top: 2em;
+    }
+
+    .actions-navbar .btn {
+
+        padding: 15px 50px;
+    }
+
+    .actions-navbar .btn .label {
+        display: none;
+    }
+
+    .col-12.col-lg-6.gallery-post.links {
+        order: 0;
+    }
+
     .single-product .gallery-items .gallery-item {
         display: inline-block;
         margin-right: 16px;

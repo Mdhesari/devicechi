@@ -23,8 +23,19 @@ class ShortLink extends Model
     protected static function booted()
     {
         static::creating(function ($shortLink) {
-            $shortLink->code = Str::random(6);
+            $shortLink->code = $this->createCode();
         });
+    }
+
+    private function createCode()
+    {
+
+        $code = Str::random(8);
+
+        if ($this->whereCode($code)->count() > 0)
+            $this->createCode();
+
+        return $code;
     }
 
     public function getKeyName()

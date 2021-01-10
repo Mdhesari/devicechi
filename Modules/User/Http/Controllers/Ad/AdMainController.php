@@ -83,7 +83,7 @@ class AdMainController extends BaseAdController
             return $tab;
         });
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         return inertia('User/MyAds', compact('ads', 'tabs', 'nav_items'));
     }

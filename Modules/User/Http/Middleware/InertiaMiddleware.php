@@ -25,6 +25,10 @@ class InertiaMiddleware
 
         Inertia::share('user', $request->user());
 
+        Inertia::share('menu_navbar', function () {
+            return get_nav_items(config('admin.navs'));
+        });
+
         if ($request->isModuleDomain(config('user.domain'), config('user.prefix'))) {
 
             Inertia::setRootView('user::layouts.app');

@@ -1,28 +1,28 @@
 <template>
     <div class="actions-navbar">
         <b-button-group>
-            <b-button class="btn-save" @click="publishAd">
-                <span class="label">
+            <b-button  v-b-tooltip.hover :title="__('ads.actions.save')" class="btn-save" @click="publishAd">
+                <!-- <span class="label">
                     {{ __("ads.actions.save") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="check-circle"></b-icon>
             </b-button>
-            <b-button class="btn-delete" @click="deleteAd">
-                <span class="label">
+            <b-button  v-b-tooltip.hover :title="__('ads.actions.delete')" class="btn-delete" @click="deleteAd">
+                <!-- <span class="label">
                     {{ __("ads.actions.delete") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="trash-fill"></b-icon>
             </b-button>
-            <b-button class="btn-archive" @click="archiveAd">
-                <span class="label">
+            <b-button  v-b-tooltip.hover :title="__('ads.actions.archive')" class="btn-archive" @click="archiveAd">
+                <!-- <span class="label">
                     {{ __("ads.actions.archive") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="pencil-square"></b-icon>
             </b-button>
-            <b-button class="btn-back" @click="getBack">
-                <span class="label">
+            <b-button  v-b-tooltip.hover :title="__('ads.actions.back')" class="btn-back" @click="getBack">
+                <!-- <span class="label">
                     {{ __("ads.actions.back") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="arrow-left"></b-icon>
             </b-button>
         </b-button-group>

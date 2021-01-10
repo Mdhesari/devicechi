@@ -17,6 +17,8 @@ return [
     'save' => 'ذخیره',
     'loading' => 'در حال بارگذاری...',
     'copy' => 'کپی شد',
+    'bookmark' => 'ذخیره شد',
+    'unbookmark' => '',
     'user' => [
         'profile' => [
             'title' => 'حساب کاربری',
