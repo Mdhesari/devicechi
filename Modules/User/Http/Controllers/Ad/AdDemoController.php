@@ -13,7 +13,7 @@ class AdDemoController extends BaseAdController
     public function show(Ad $ad, Request $request)
     {
 
-        if ($ad->id != auth()->id()) {
+        if ($ad->user->id != auth()->id()) {
 
             return abort(403);
         }
