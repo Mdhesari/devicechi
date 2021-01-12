@@ -2242,10 +2242,6 @@ input[type=number] {
   z-index: 15;
 }
 
-.normal-ads .inner {
-  width: 200px;
-}
-
 .normal-ads .inner .ad-name {
   color: #727272;
 }
@@ -2265,6 +2261,11 @@ input[type=number] {
   transition: 350ms;
   height: 200px;
   z-index: 10;
+}
+
+.normal-ads .inner .thumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .normal-ads .inner:hover .thumbnail {
