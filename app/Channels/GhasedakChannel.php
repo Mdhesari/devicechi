@@ -25,16 +25,25 @@ class GhasedakChannel
 
         $message = $notification->toGhasedak($notifiable);
 
+        $code = $notification->getCode($notifiable);
+
         $default_line_number = config('ghasedak.default_line');
 
         $line = Arr::get(config('ghasedak.lines'), $default_line_number);
 
         $api = new GhasedakApi(config('ghasedak.api_key'));
 
-        $result = $api->SendSimple(
-            $mobile,  // receptor
-            $message, // message
-            $line, // choose a line number from your account
+        // $result = $api->SendSimple(
+        //     $mobile,  // receptor
+        //     $message, // message
+        //     $line, // choose a line number from your account
+        // );
+
+        $result = $api->verify(
+            $mobile,
+            $type = 1,
+            $template = 'confirmation',
+            $code
         );
 
         Log::info(json_encode($result));
