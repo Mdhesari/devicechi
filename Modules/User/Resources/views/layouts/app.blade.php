@@ -24,8 +24,8 @@
         window.default_locale = "{{ config('app.locale') }}"
         window.fallback_locale = "{{ config('app.fallback_locale') }}"
         window.messages = @json($messages)
-        
     </script>
+
     @routes
     <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>
@@ -36,7 +36,6 @@
 </head>
 
 <body>
-
 
     @inertia
 
