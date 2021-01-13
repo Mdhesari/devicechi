@@ -29,7 +29,7 @@
                     </h3>
                 </div>
                 <div class="row ads-holder">
-                    <ProAd v-for="ad in ads" :key="ad.id" :ad="ad"></ProAd>
+                    <ProAd v-for="ad in proAds" :key="ad.id" :ad="ad"></ProAd>
                 </div>
             </div>
         </section>
@@ -122,6 +122,6 @@ export default {
         NormalAd,
         ProAd
     },
-    props: ["ads", "user"]
+    props: ["ads", "proAds", "user"]
 };
 </script>

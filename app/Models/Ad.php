@@ -85,10 +85,17 @@ class Ad extends Model
         return $this->status === self::STATUS_PENDING;
     }
 
+    // ======== Scopes ==================
     public function scopePublished($query)
     {
 
         return $query->whereStatus(static::STATUS_AVAILABLE);
+    }
+
+    public function scopeFilterPro($query)
+    {
+
+        return $query->where('is_pro', 'true');
     }
 
     public function getRouteKeyName()

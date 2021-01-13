@@ -18,7 +18,9 @@ class AdHomeController extends Controller
 
         $ads = Ad::with('pictures', 'state.city')->published()->get();
 
-        return inertia('Ad/Home', compact('ads'));
+        $proAds = Ad::with('pictures', 'state.city')->published()->filterPro()->limit(3)->get();
+
+        return inertia('Ad/Home', compact('ads', 'proAds'));
     }
 
     /**

@@ -22,9 +22,20 @@ class AdTableSeeder extends Seeder
     {
         Model::unguard();
 
-        Ad::factory()->has(AdPicture::factory()->count(rand(2, 5)), 'pictures')
-            ->has(AdContact::factory()->count(rand(1, 5)), 'contacts')
+        Ad::factory()->has(AdPicture::factory(), 'pictures')
+            ->has(AdContact::factory(), 'contacts')
             ->count(10)
             ->create();
+
+        $ads = Ad::factory()->has(AdPicture::factory(), 'pictures')
+            ->has(AdContact::factory(), 'contacts')
+            ->count(3)
+            ->make();
+
+        $ads->map(function ($ad) {
+
+            $ad->is_pro = true;
+            $ad->save();
+        });
     }
 }
