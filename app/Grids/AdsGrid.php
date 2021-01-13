@@ -47,7 +47,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"label" => "ID",
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
+					"operator" => "like"
 				],
 				"styles" => [
 					"column" => "grid-w-10"
@@ -59,31 +59,14 @@ class AdsGrid extends Grid implements AdsGridInterface
 				],
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
+					"operator" => "like"
 				]
-			],
-			"description" => [
-				"search" => [
-					"enabled" => true
-				],
-				"filter" => [
-					"enabled" => true,
-					"operator" => "="
-				],
-				"raw" => true,
-			],
-			"user_id" => [
-				"filter" => [
-					"enabled" => true,
-					"operator" => "=",
-				],
-				"export" => false
 			],
 			"model" => [
 				"label" => __(" Model "),
 				"filter" => [
 					"enabled" => true,
-					"operator" => "=",
+					"operator" => "like",
 				],
 				"presenter" => function ($columnData, $columnName) {
 
@@ -95,7 +78,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"label" => __(" Brand "),
 				"filter" => [
 					"enabled" => true,
-					"operator" => "=",
+					"operator" => "like",
 				],
 				"presenter" => function ($columnData, $columnName) {
 
@@ -108,7 +91,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				],
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
+					"operator" => "like"
 				],
 				"presenter" => function ($columnData, $columnName) {
 
@@ -118,7 +101,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 			"state" => [
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
+					"operator" => "like"
 				],
 				"presenter" => function ($columnData, $columnName) {
 
@@ -143,7 +126,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"label" => __(" User "),
 				"filter" => [
 					"enabled" => true,
-					"operator" => "=",
+					"operator" => "like",
 				],
 				"presenter" => function ($columnData, $columnName) {
 
@@ -163,29 +146,18 @@ class AdsGrid extends Grid implements AdsGridInterface
 				],
 				"filter" => [
 					"enabled" => true,
-					"operator" => "="
+					"operator" => "like"
 				],
 				"presenter" => function ($columnData, $columnName) {
 
 					return $columnData->getStatus();
 				},
 			],
-			// "is_exchangeable" => [
-			//     "search" => [
-			//         "enabled" => true
-			//     ],
-			//     "filter" => [
-			//         "enabled" => true,
-			//         "operator" => "="
-			//     ]
-			// ],
 			"created_at" => [
 				"sort" => false,
 				"date" => "true",
 				"filter" => [
-					"enabled" => true,
-					"type" => "date",
-					"operator" => "<="
+					"enabled" => false,
 				]
 			]
 		];
