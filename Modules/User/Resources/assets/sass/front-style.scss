@@ -374,7 +374,7 @@ input[type="number"] {
 }
 
 .input-phone-number {
-    width: 45%;
+    width: 40%;
 }
 
 .input-phone-code {
@@ -2792,8 +2792,60 @@ $pallete: (
     }
 }
 
+@media (max-width: 991.98px) { 
+
+    .vector img {
+        width: 350px;
+    }
+
+    .input-phone-code {
+        width: 17%;
+    }
+
+    .input-phone-number {
+        width: 52%;
+    }
+ }
+
 /* Queries*/
 @media (max-width: 768px) {
+    /* General */
+    .home-title h1 {
+        font-size: 2rem;
+    }
+
+    .home-bg {
+        // background: transparent url("../img/background/body-ellipse-1-min.png") no-repeat center -20em;
+        background: transparent;
+    }
+
+    .home-bg::after {
+        content: "";
+        background: transparent;
+    }
+
+    .home-title .sub-title {
+        font-size: 12px;
+    }
+
+    .vector img {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .section.login-form-section .login-form {
+        text-align: center;
+    }
+
+    .login-form-wrapper {
+        order: 0;
+    }
+
+    .login-vector-wrapper {
+        order: 1;
+    }
+
     .filter-price {
         margin: 0 auto;
         margin-bottom: 30px;
