@@ -1,6 +1,6 @@
 <template>
     <authLayout :user="user">
-        <section class="about-us-section">
+        <section class="about-us-section d-none">
             <div class="mini-container">
                 <div class="about-us">
                     <p>
@@ -21,32 +21,6 @@
                 </div>
             </div>
         </section>
-        <section class="search-bar-section">
-            <div class="mini-container">
-                <div class="search-bar">
-                    <input type="text" placeholder="دنبال چه گوشی می گردی " />
-                    <button type="button" class="icon">
-                        <img src="../../../img/search.svg" alt="Search" />
-                    </button>
-                </div>
-                <!-- <div class="filter-bar">
-                    <form action="#" class="filters">
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                    </form>
-                </div> -->
-            </div>
-        </section>
         <section class="ads-section">
             <div class="container">
                 <div class="main-title">
@@ -56,6 +30,64 @@
                 </div>
                 <div class="row ads-holder">
                     <ProAd v-for="ad in ads" :key="ad.id" :ad="ad"></ProAd>
+                </div>
+            </div>
+        </section>
+        <section class="search-bar-section">
+            <div class="mini-container">
+                <div class="search-bar">
+                    <input type="text" placeholder="دنبال چه گوشی می گردی " />
+                    <button type="button" class="icon">
+                        <img src="../../../img/search.svg" alt="Search" />
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="filter-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="filter-price">
+                            <div class="range" id="slider-snap-value-lower">
+                                <span class="number"></span>
+                                میلیون تومان
+                            </div>
+                            <div class="range" id="slider-snap-value-higher">
+                                <span class="number"></span>
+                                میلیون تومان
+                            </div>
+                            <div
+                                id="slider"
+                                class="noUi-target noUi-ltr noUi-horizontal"
+                            ></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="filter-model">
+                            <select class="form-control form-control-sm">
+                                <option disabled="disabled" selected="true">
+                                    مدل موبایل مورد نظر</option
+                                >
+                                <option value="">اپل</option>
+                                <option value="">سامسونگ</option>
+                                <option value="">هواوی</option>
+                                <option value="">شیائومی</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="filter-city">
+                            <select class="form-control form-control-sm">
+                                <option disabled="disabled" selected="true"
+                                    >شهر مورد نظر</option
+                                >
+                                <option value="">تهران</option>
+                                <option value="">تبریز</option>
+                                <option value="">اصفهان</option>
+                                <option value="">اهواز </option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
