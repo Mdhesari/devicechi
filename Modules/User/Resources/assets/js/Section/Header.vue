@@ -19,13 +19,13 @@
                     <span class="rec width18"></span>
                 </button>
 
-                <a
+                <!-- <a
                     v-if="user == null"
                     href="#"
                     class="btn action-btn add-advertisment"
                 >
                     ورود یا ثبت نام
-                </a>
+                </a> -->
 
                 <UserDropDown v-if="user" :user="user"></UserDropDown>
 

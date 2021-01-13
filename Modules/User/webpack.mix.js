@@ -10,7 +10,7 @@ mix.disableSuccessNotifications();
 
 mix.setPublicPath("../../public").mergeManifest();
 
-mix.browserSync('localhost');
+// mix.browserSync('localhost');
 
 mix.js(__dirname + "/Resources/assets/js/app.js", "js/user/user.js")
     .js(__dirname + "/Resources/assets/js/libs/moment.js", "js/user/moment.js")

@@ -5,7 +5,8 @@
             v-on:resend-login="sendLoginCode"
             ref="confirmModal"
         ></confirm-modal>
-        <b-col md="6">
+
+        <b-col md="6" class="login-vector-wrapper">
             <div class="vector">
                 <img
                     class="sale-vector"
@@ -15,7 +16,7 @@
             </div>
         </b-col>
 
-        <b-col md="6" class="text-right">
+        <b-col md="6" class="login-form-wrapper text-right">
             <b-form @submit="onSubmit" @reset="onReset" class="login-form">
                 <b-form-group
                     class="phone_number"

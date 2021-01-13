@@ -2,8 +2,8 @@
     <!-- Primary Navigation Menu -->
     <nav class="main-menu" id="mainMenu">
         <!-- Navigation Links -->
-        <ul>
-            <li>
+        <ul class="p-2">
+            <li v-if="user">
                 <inertia-link
                     :href="route('user.ad.create')"
                     class="btn btn-success btn-rounded-high btn-mobilesale"
@@ -32,7 +32,8 @@
 export default {
     data() {
         return {
-            navbar: this.getProp("menu_navbar")
+            navbar: this.getProp("menu_navbar"),
+            user: this.getProp("user")
         };
     }
 };

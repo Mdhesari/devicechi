@@ -34,6 +34,7 @@ class CreateAdsTable extends Migration
             $table->boolean('is_multicard')->default(0);
             $table->boolean('is_exchangeable')->default(0);
             $table->boolean('is_published')->default(0);
+            $table->boolean('is_pro')->default(0);
             $table->timestamps();
         });
     }
