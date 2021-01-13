@@ -1,0 +1,11 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/mobilefo/beta.mobileforsale.ir"
+PassengerBaseURI "/:7866"
+PassengerNodejs "/home/mobilefo/nodevenv/beta.mobileforsale.ir/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION BEGIN
+RewriteEngine On
+RewriteRule ^/?(.*)$ http://127.0.0.1:7866/$1 [P,L]
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION END
