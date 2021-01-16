@@ -25,8 +25,6 @@ class UserController extends Controller
 
         $all_status = $adRepository->getAllStatus();
 
-        $success_session = session('success');
-
         $tabs = [];
 
         $nav_items = get_nav_items();
@@ -37,7 +35,7 @@ class UserController extends Controller
 
         $cities = City::whereCountryId($user_country->id)->get();
 
-        return inertia('User/Profile', compact('success_session', 'user', 'tabs', 'nav_items', 'cities'));
+        return inertia('User/Profile', compact('user', 'tabs', 'nav_items', 'cities'));
     }
 
     public function update(Request $request)
