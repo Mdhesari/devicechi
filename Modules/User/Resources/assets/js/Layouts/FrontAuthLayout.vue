@@ -4,12 +4,6 @@
 
         <!-- Page Content -->
         <main class="main-site">
-            <b-container>
-                <div class="alert alert-success" v-if="success">
-                    {{ success }}
-                </div>
-            </b-container>
-
             <slot></slot>
         </main>
 
@@ -26,6 +20,11 @@ export default {
     components: {
         Header,
         Footer
+    },
+    mounted() {
+        if (this.success) {
+            this.$to(this.success, "", "s");
+        }
     },
     data() {
         return {

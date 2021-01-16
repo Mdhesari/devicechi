@@ -24,7 +24,7 @@ class AdTableSeeder extends Seeder
 
         Ad::factory()->has(AdPicture::factory(), 'pictures')
             ->has(AdContact::factory(), 'contacts')
-            ->count(10)
+            ->count(3)
             ->create();
 
         $ads = Ad::factory()->has(AdPicture::factory(), 'pictures')

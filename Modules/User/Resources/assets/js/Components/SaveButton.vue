@@ -1,12 +1,16 @@
 <template>
-    <button
-        v-b-tooltip.click
-        :title="getTooltip"
-        class="btn rounded"
-        @click="save"
-    >
-        <b-icon :icon="isSaved ? 'bookmark-check-fill' : 'bookmark'"></b-icon>
-    </button>
+    <div>
+        <button id="bookmark-btn" class="btn rounded" @click="save">
+            <b-icon
+                :icon="isSaved ? 'bookmark-check-fill' : 'bookmark'"
+            ></b-icon>
+        </button>
+        <b-tooltip target="bookmark-btn" triggers="click blur">
+            <span v-if="isSaved" v-text="__('global.bookmark')"></span>
+
+            <span v-if="!isSaved" v-text="__('global.unbookmark')"></span>
+        </b-tooltip>
+    </div>
 </template>
 
 <script>
@@ -18,11 +22,6 @@ export default {
         };
     },
     methods: {
-        getTooltip() {
-            return this.isSaved
-                ? this.__("global.unbookmark")
-                : this.__("global.bookmark");
-        },
         async save() {
             const response = await axios.post(route("user.ad.bookmark"), {
                 ad: this.ad.id,

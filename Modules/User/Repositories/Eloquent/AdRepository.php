@@ -6,6 +6,7 @@ use Illuminate\Pipeline\Pipeline;
 use App\Models\Ad;
 use Image;
 use Intervention\Image\ImageManager;
+use Modules\Admin\Space\ImageFilters\InstagramFilter;
 use Modules\User\Entities\AdPicture;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
@@ -211,7 +212,7 @@ class AdRepository extends Repository implements
         return strval($path);
     }
 
-    public function renderPicturesToExport($quality = 90)
+    public function renderPicturesToExport($template = null, $quality = 100)
     {
 
         $pictures = $this->model->pictures()->latest()->get();
@@ -230,16 +231,20 @@ class AdRepository extends Repository implements
 
             if (file_exists($full_path)) continue;
 
-            // edit size and add template
-            $img = Image::make($image)->resize(1080, 1080)->insert(public_path('images/template-1.png'));
+            $image = Image::make($image)->filter(new InstagramFilter(
+
+                Str::of($this->model->phoneModel->brand->name)
+                    ->append("\n")
+                    ->append($this->model->phoneModel->name),
+                $template
+            ));
 
             if (!is_dir($dirname)) {
 
                 mkdir($dirname);
             }
 
-            // get new saved image
-            $img->save($full_path, $quality);
+            $image->save($full_path, $quality);
         }
     }
 
