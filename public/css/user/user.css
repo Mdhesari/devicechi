@@ -526,7 +526,7 @@ input[type=number] {
 }
 
 .input-phone-number {
-  width: 45%;
+  width: 40%;
 }
 
 .input-phone-code {
@@ -670,7 +670,7 @@ input[type=number] {
 }
 
 .intro-wrapper {
-  background: transparent url(/images/bg.svg?f3b49a149dd8df1be613ade626feacfb) no-repeat center center;
+  background: transparent url(/images/bg.svg?a7ba8fcfb1f735a0bb3e6146cb42d1a3) no-repeat center center;
 }
 
 .actions-navbar {
@@ -2242,10 +2242,6 @@ input[type=number] {
   z-index: 15;
 }
 
-.normal-ads .inner {
-  width: 200px;
-}
-
 .normal-ads .inner .ad-name {
   color: #727272;
 }
@@ -2265,6 +2261,11 @@ input[type=number] {
   transition: 350ms;
   height: 200px;
   z-index: 10;
+}
+
+.normal-ads .inner .thumbnail img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .normal-ads .inner:hover .thumbnail {
@@ -2371,9 +2372,216 @@ input[type=number] {
 
 /*breadcrumb*/
 
+.filter-section {
+  padding: 60px 0;
+}
+
+.filter-price .noUi-horizontal {
+  height: 4px;
+  background-color: #c2c2c2;
+  border: 0;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.filter-price .noUi-connect {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.filter-price .noUi-handle:after,
+.filter-price .noUi-handle:before {
+  position: absolute;
+  content: "" !important;
+  width: 10px;
+  height: 10px;
+  background-color: #424242;
+  display: block !important;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  top: 3px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.filter-price .noUi-handle {
+  border: 0;
+  border-radius: 0;
+  background: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+.filter-price #slider-snap-value-lower {
+  position: absolute;
+  left: 0;
+}
+
+.filter-price #slider-snap-value-higher {
+  position: absolute;
+  right: 0;
+}
+
+.filter-price .number {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.filter-price {
+  display: inline-block;
+  min-width: 300px;
+  margin-left: 16px;
+  height: 45px;
+  position: relative;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 14px;
+}
+
+.form-control-sm {
+  height: 48px !important;
+  border-radius: 10px !important;
+}
+
+.active-filter {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.active-filter .action-btn {
+  width: 100px;
+  background-color: #424242;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 0 12px;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+}
+
+.advers .adver .inner {
+  border-radius: 24px;
+  background-color: #ffffff;
+  transition: 0.2s all;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  height: initial;
+  min-height: 130px;
+}
+
+.advers .adver .inner .image {
+  width: 130px;
+  height: 130px;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 24px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: -24px;
+}
+
+.advers .adver .inner .image img {
+  width: 100%;
+}
+
+.advers .adver .inner .details {
+  min-height: initial;
+}
+
+.advers .adver .inner .details .name {
+  margin: 0 24px;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #b3b3b3;
+}
+
+.advers .adver .inner .details .price {
+  font-size: 16px;
+  color: #b3b3b3;
+}
+
+.Introduction .vector-holder {
+  width: 500px;
+}
+
+.Introduction .vector-holder img {
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .vector img {
+    width: 350px;
+  }
+
+  .input-phone-code {
+    width: 17%;
+  }
+
+  .input-phone-number {
+    width: 52%;
+  }
+}
+
 /* Queries*/
 
 @media (max-width: 768px) {
+  /* General */
+
+  .home-title h1 {
+    font-size: 2rem;
+  }
+
+  .home-bg {
+    background: transparent;
+  }
+
+  .home-bg::after {
+    content: "";
+    background: transparent;
+  }
+
+  .home-title .sub-title {
+    font-size: 12px;
+  }
+
+  .vector img {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .section.login-form-section .login-form {
+    text-align: center;
+  }
+
+  .login-form-wrapper {
+    order: 0;
+  }
+
+  .login-vector-wrapper {
+    order: 1;
+  }
+
+  .filter-price {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 265px;
+    display: grid;
+    min-width: initial;
+  }
+
+  .filter-model {
+    margin-bottom: 30px;
+  }
+
   .post-holder {
     padding: 10px 0;
   }
