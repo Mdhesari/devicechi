@@ -60,6 +60,8 @@ class AdContact extends Model implements AdContactMustVerifyValue
 
         if ($this->data && $code = $this->data['phone_country_code']) {
 
+            $code = trim($code, '+');
+
             $value = "+{$code}{$value}";
         }
 
