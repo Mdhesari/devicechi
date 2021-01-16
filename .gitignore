@@ -10,3 +10,5 @@ npm-debug.log
 yarn-error.log
 _ide_helper.php
 storage/*
+.env.swo
+.env.swp
