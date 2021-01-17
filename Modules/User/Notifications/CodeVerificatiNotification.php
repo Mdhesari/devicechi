@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Log;
 
-class CodeVerificatiNotification extends Notification
+class CodeVerificatiNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
