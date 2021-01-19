@@ -24,16 +24,24 @@ class InstagramFilter implements FilterInterface
     private $_template = null;
 
     /**
+     * blur
+     *
+     * @var bool
+     */
+    private $_blur = false;
+
+    /**
      * __construct
      *
      * @param  mixed $image
      * @param  mixed $text
      * @return void
      */
-    public function __construct($text, $template = null)
+    public function __construct($text, $blur = false, $template = null)
     {
         $this->_text = $text;
         $this->_template = $template;
+        $this->_blur = $blur;
     }
 
     /**
@@ -66,7 +74,7 @@ class InstagramFilter implements FilterInterface
     public function getFont()
     {
 
-        return public_path('fonts/Syncopate/Syncopate-Regular.ttf');
+        return public_path('fonts/Open_Sans/OpenSans-Regular.ttf');
     }
 
     /**
@@ -77,7 +85,7 @@ class InstagramFilter implements FilterInterface
     public function getFontSize()
     {
 
-        return 90;
+        return 130;
     }
 
     /**
@@ -88,16 +96,18 @@ class InstagramFilter implements FilterInterface
      */
     public function applyFilter(BaseImage $original_image)
     {
-        $image = Image::make(clone $original_image)->resize(1080, 1080);
+        $image = Image::make($original_image->basePath())->fit(1080, 1080);
 
         $font_family = $this->getFont();
         $font_size = $this->getFontSize();
 
+        if (is_numeric($this->_blur)) $image->blur($this->_blur);
+
         $image
-            ->blur(95)
-            ->insert($original_image, 'center-center')
-            ->insert($this->getTemplate())
-            ->text($this->getText(), 540, 540, function ($font) use ($font_family, $font_size) {
+            ->insert($this->getTemplate());
+
+        if ($this->getText())
+            $image->text($this->getText(), 540, 540, function ($font) use ($font_family, $font_size) {
                 $font->file($font_family);
                 $font->size($font_size);
                 $font->color('#f1f2f3');

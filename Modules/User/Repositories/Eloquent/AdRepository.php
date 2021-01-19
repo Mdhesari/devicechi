@@ -233,9 +233,9 @@ class AdRepository extends Repository implements
 
             $image = Image::make($image)->filter(new InstagramFilter(
 
-                Str::of($this->model->phoneModel->brand->name)
+                Str::of(ucfirst($this->model->phoneModel->brand->name))
                     ->append("\n")
-                    ->append($this->model->phoneModel->name),
+                    ->append(ucfirst($this->model->phoneModel->name)),
                 $template
             ));
 
