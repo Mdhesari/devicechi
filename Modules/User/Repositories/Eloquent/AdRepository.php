@@ -193,7 +193,7 @@ class AdRepository extends Repository implements
 
         $template = Str::of(config('admin.instagram.templates.post'));
 
-        $text = $template->replace(':brand_model', $ad->phoneModel->name . ', ' . $ad->phoneModel->brand->name)
+        $text = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
             ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
             ->replace(':variants', $ad->variant->storage . 'حافظه')
             ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
@@ -217,6 +217,8 @@ class AdRepository extends Repository implements
 
         $pictures = $this->model->pictures()->latest()->get();
 
+        $index = 0;
+
         foreach ($pictures as $picture) {
 
             $image = Storage::path($picture->getAttributes()['url']);
@@ -229,13 +231,18 @@ class AdRepository extends Repository implements
                 ->append('/1080-1080-')
                 ->append($export_src['basename']);
 
-            if (file_exists($full_path)) continue;
+            // TODO make it optional to override existing watermarks
+            // if (file_exists($full_path)) continue;
+
+            $text = null;
+
+            if ($index == 0)
+                $text = Str::of(ucfirst($this->model->phoneModel->brand->name))
+                    ->append("\n")
+                    ->append(ucfirst($this->model->phoneModel->name));
 
             $image = Image::make($image)->filter(new InstagramFilter(
-
-                Str::of(ucfirst($this->model->phoneModel->brand->name))
-                    ->append("\n")
-                    ->append(ucfirst($this->model->phoneModel->name)),
+                $text,
                 $template
             ));
 
@@ -245,6 +252,8 @@ class AdRepository extends Repository implements
             }
 
             $image->save($full_path, $quality);
+
+            $index++;
         }
     }
 

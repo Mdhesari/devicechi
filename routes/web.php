@@ -35,11 +35,12 @@ Route::get('/try', function () {
     //     })
     //     ->save('test.jpg');
 
-    $image = Image::make($user_img)->filter(new InstagramFilter(
+    $text = Str::of("iphone")
+        ->append("\n")
+        ->append("77");
 
-        Str::of("iphone")
-            ->append("\n")
-            ->append("77"),
+    $image = Image::make($user_img)->filter(new InstagramFilter(
+        $text,
         $template
     ))->save('test.jpg');
 
