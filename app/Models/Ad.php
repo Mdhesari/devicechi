@@ -106,7 +106,7 @@ class Ad extends Model
     public function publish()
     {
 
-        $this->forceFill([
+        return $this->forceFill([
             'status' => self::STATUS_PENDING,
         ])->save();
     }
@@ -114,7 +114,7 @@ class Ad extends Model
     public function archive()
     {
 
-        $this->forceFill([
+        return $this->forceFill([
             'status' => self::STATUS_ARCHIVE,
         ])->save();
     }
