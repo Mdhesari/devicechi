@@ -59,6 +59,12 @@ class AdMainController extends BaseAdController
                 'params' => [
                     'status' => strtolower(Ad::STATUS_ARCHIVE_LABEL),
                 ],
+            ],
+            [
+                'text' => __('user::ads.tabs.unavailable'),
+                'params' => [
+                    'status' => strtolower(Ad::STATUS_UNAVAILABLE),
+                ],
             ]
         ]);
 
