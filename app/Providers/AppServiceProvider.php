@@ -6,6 +6,7 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\Ad;
 use DB;
 use Ghasedak\GhasedakApi;
 use Ghasedak\Laravel\GhasedakServiceProvider;
@@ -50,5 +51,20 @@ class AppServiceProvider extends ServiceProvider
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
+        Ad::updating(function ($ad) {
+
+            $user = auth()->user();
+
+            // check if ad is already published and user is modifying its data
+            // Security: as a concern of adding any invalid or hurtful information or resources we need to sign the ad as uncompleted so the ad will not be shown in the ads home area and users will not be able to access it
+            if (
+                $user instanceof \Modules\User\Entities\User &&
+                $ad->isPublished()
+            ) {
+
+                $ad->uncomplete();
+            }
+        });
     }
 }

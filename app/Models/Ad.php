@@ -119,6 +119,14 @@ class Ad extends Model
         ])->save();
     }
 
+    public function uncomplete()
+    {
+
+        return $this->forceFill([
+            'status' => self::STATUS_UNCOMPLETED,
+        ])->save();
+    }
+
     public function accept()
     {
         return $this->forceFill([
