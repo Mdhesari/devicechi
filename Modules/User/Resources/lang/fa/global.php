@@ -19,6 +19,12 @@ return [
     'copy' => 'کپی شد',
     'bookmark' => 'ذخیره شد',
     'unbookmark' => 'لغو ذخیره',
+    'ask' => [
+        'delete' => [
+            'title' => 'آیا مطمئن هستید؟!',
+            'description' => 'آگهی شما حذف و غیر فعال خواهد شد.'
+        ]
+    ],
     'user' => [
         'profile' => [
             'title' => 'حساب کاربری',

@@ -3,6 +3,7 @@ require("./bootstrap");
 import Vue from "vue";
 import Lang from "lang.js";
 import VueToastr from "vue-toastr";
+import VueSwal from "vue-swal";
 
 import { InertiaApp } from "@inertiajs/inertia-vue";
 import { InertiaForm } from "laravel-jetstream";
@@ -38,6 +39,7 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.use(VueToastr);
 Vue.use(VueClipboard);
+Vue.use(VueSwal);
 
 Vue.mixin({
     methods: {
