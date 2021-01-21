@@ -29,34 +29,6 @@ class InertiaServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        Inertia::share('site_url', config('app.url'));
-
-        Inertia::share('success', function () {
-            return session('success');
-        });
-
-        Inertia::share('flash', function () {
-
-            return [
-                'success' => session('success'),
-                'error' => session('error'),
-                'toSuccess' => session('toSuccess'),
-                'toError' => session('toError'),
-            ];
-        });
-
-        Inertia::share('all_steps', function (Request $request) {
-
-            $BaseAdCtrl = app(BaseAdController::class);
-
-            if (method_exists($BaseAdCtrl, 'getAllSteps')) {
-
-                return $BaseAdCtrl->getAllSteps();
-            }
-
-            return null;
-        });
-
         Inertia::setRootView('user::layouts.app');
     }
 }

@@ -6,6 +6,7 @@ use App\Models\Ad;
 use Illuminate\Http\Request;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
 use Modules\User\Http\Requests\UserAdRequest;
+use Session;
 
 class AdDemoController extends BaseAdController
 {
@@ -18,6 +19,12 @@ class AdDemoController extends BaseAdController
             return abort(403);
         }
 
+        $warning = false;
+
+        if ($ad->isPublished()) {
+            $warning = trans('user::ads.warning.edit');
+        }
+
         $step = BaseAdController::DEMO;
 
         $this->checkPreviousSteps($step, $ad);
@@ -28,7 +35,7 @@ class AdDemoController extends BaseAdController
 
         $is_bookmarked_for_user = $request->user()->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
 
-        return inertia('Ad/Demo', compact('ad', 'help', 'is_bookmarked_for_user'));
+        return inertia('Ad/Demo', compact('ad', 'help', 'is_bookmarked_for_user', 'warning'));
     }
 
     public function publish(AdDemoActionRequest $request)

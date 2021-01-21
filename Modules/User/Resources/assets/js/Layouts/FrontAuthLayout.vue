@@ -25,11 +25,20 @@ export default {
         if (this.success) {
             this.$to(this.success, "", "s");
         }
+
+        if (this.error) {
+            this.$to(this.error);
+        }
+
+        if (this.warning) {
+            this.$to(this.warning, "", "w");
+        }
     },
     data() {
         return {
             success: this.getProp("success"),
-            error: this.getProp("error")
+            error: this.getProp("error"),
+            warning: this.getProp("warning")
         };
     }
 };
