@@ -116,8 +116,6 @@ class AdRepository extends Repository implements
 
         $desc = $data['description'];
 
-        $desc = preg_replace('/\\n/', '<br>', $desc);
-
         $ad->title = $data['title'];
         $ad->description = $desc;
         return $ad->save();

@@ -83,9 +83,9 @@
                         </div>
                         <div class="des">
                             <h4>توضیحات</h4>
-                            <p v-html="ad.description"></p>
+                            <div v-html="adBody"></div>
                         </div>
-                        <HamtaAlert />
+                        <HamtaAlert class="my-4" />
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">
@@ -111,6 +111,11 @@ export default {
         GetContactList,
         ShareButton,
         SaveButton
+    },
+    computed: {
+        adBody() {
+            return this.ad.description.replace(/(?:\r\n|\r|\n)/g, "<br>");
+        }
     },
     methods: {
         printVariantInfo(variant) {
