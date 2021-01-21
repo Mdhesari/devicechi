@@ -56,6 +56,12 @@ class Ad extends Model
         'meta_ad' => 'array'
     ];
 
+    public function getPrintableDescAttribute()
+    {
+
+        return preg_replace("/(?:\r\n|\r|\n)/", "<br>", $this->description);
+    }
+
     public function getIsMulticardReadAttribute()
     {
         return boolval($this->is_multicard) ? __(' Yes ') : __(' No ');

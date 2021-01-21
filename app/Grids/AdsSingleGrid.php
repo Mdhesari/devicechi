@@ -17,6 +17,17 @@ class AdsSingleGrid extends AdsGrid
 	{
 		parent::setColumns();
 		$this->columns = array_merge($this->columns, [
+			'description' => [
+				'label' => __(" Description "),
+				'filter' => [
+					'enabled' => false,
+				],
+				'presenter' => function ($columnData, $columnName) {
+
+					return $columnData->printableDesc;
+				},
+				'raw' => true,
+			],
 			'accessories' => [
 				'label' => __(" Accessories "),
 				'filter' => [
