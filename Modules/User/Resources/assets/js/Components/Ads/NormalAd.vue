@@ -15,7 +15,10 @@
         >
             <div class="inner">
                 <div class="thumbnail">
-                    <img :src="renderAdPicture(ad)" :alt="ad.title" />
+                    <img
+                        :src="renderAdPicture(ad, 'thumb_url')"
+                        :alt="ad.title"
+                    />
                     <div class="bookmark">
                         <i class="fa-bookmark far" aria-hidden="true"></i>
                     </div>

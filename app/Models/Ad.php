@@ -18,6 +18,7 @@ use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Str;
 
 class Ad extends Model implements HasMedia
@@ -461,6 +462,13 @@ class Ad extends Model implements HasMedia
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection(self::PICTURES_COLLECTION);
+    }
+
+    public function registerMediaConversions(?Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width(255)
+            ->height(200);
     }
 
     /**
