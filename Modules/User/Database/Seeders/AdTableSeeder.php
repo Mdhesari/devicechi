@@ -9,7 +9,6 @@ use Faker\Generator;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
-use Modules\User\Entities\AdPicture;
 
 class AdTableSeeder extends Seeder
 {
@@ -22,18 +21,26 @@ class AdTableSeeder extends Seeder
     {
         Model::unguard();
 
-        Ad::factory()->has(AdPicture::factory(), 'pictures')
+        $ads = Ad::factory()
             ->has(AdContact::factory(), 'contacts')
             ->count(3)
             ->create();
 
-        $ads = Ad::factory()->has(AdPicture::factory(), 'pictures')
+        $picture = "https://static.toiimg.com/photo/73078527.cms";
+
+        $ads->map(function (Ad $ad) use ($picture) {
+
+            $ad->addMediaFromUrl($picture)->toMediaCollection($ad::PICTURES_COLLECTION);
+        });
+
+        $ads = Ad::factory()
             ->has(AdContact::factory(), 'contacts')
             ->count(3)
             ->make();
 
-        $ads->map(function ($ad) {
+        $ads->map(function (Ad $ad) use ($picture) {
 
+            $ad->addMediaFromUrl($picture)->toMediaCollection($ad::PICTURES_COLLECTION);
             $ad->is_pro = true;
             $ad->save();
         });

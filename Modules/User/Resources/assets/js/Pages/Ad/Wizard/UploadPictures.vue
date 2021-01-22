@@ -38,8 +38,6 @@
                 />
             </b-row>
 
-            
-
             <b-button
                 v-if="pictures.length >= pictures_min_count"
                 variant="secondary"
@@ -62,7 +60,6 @@ export default {
     },
     data() {
         return {
-            pictures: this.getProp("pictures"),
             form: this.$inertia.form({
                 pictures: []
             }),
@@ -71,7 +68,8 @@ export default {
             pictures_min_count: this.getProp("ad_pictures_min_count"),
             label_text: this.__("ads.form.placeholder.upload.init"),
             validFileTypes: this.getProp("ad_pictures_format"),
-            ad: this.getProp("ad")
+            ad: this.getProp("ad"),
+            pictures: this.getProp("pictures")
         };
     },
     methods: {

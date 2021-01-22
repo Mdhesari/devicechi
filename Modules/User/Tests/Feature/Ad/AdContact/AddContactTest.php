@@ -10,7 +10,6 @@ use Laravel\Sanctum\Sanctum;
 use App\Models\Ad;
 use App\Models\Ad\AdContact;
 use App\Models\Ad\AdContactType;
-use Modules\User\Entities\AdPicture;
 use Modules\User\Entities\User;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
@@ -92,7 +91,7 @@ class AddContactTest extends TestCase
             'user_id' => $this->user->id,
         ])->create();
 
-        $pictures = AdPicture::factory(3)->make();
+        // $pictures = AdPicture::factory(3)->make();
 
         $ad->pictures()->saveMany($pictures);
 

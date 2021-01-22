@@ -4,7 +4,6 @@ namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
 use App\Models\Ad;
-use Modules\User\Entities\AdPicture;
 use Modules\User\Http\Requests\Ad\AdStorePictureRequest;
 use Modules\User\Space\Contracts\StoresAdPicture;
 
@@ -31,16 +30,8 @@ class AdPictureController extends BaseAdController
     {
         $pictures = $request->pictures;
 
-        foreach ($pictures as $picture) {
-
-            $path = $driver->store($picture, $ad);
-
-            $picture = new AdPicture;
-            $picture->url = $path;
-            $picture->is_active = $request->boolean(optional($picture)->is_active, false);
-
-            $ad->pictures()->save($picture);
-        }
+        foreach ($pictures as $picture)
+            $ad->addMedia($picture)->toMediaCollection(Ad::PICTURES_COLLECTION);
 
         return redirect()->route('user.ad.step_phone_location', [
             'ad' => $ad,
@@ -51,20 +42,10 @@ class AdPictureController extends BaseAdController
     {
 
         $request->validate([
-            'picture_id' => ['required', 'exists:ad_pictures,id'],
+            'picture_id' => ['required', 'exists:media,id'],
         ]);
 
-        $picture = AdPicture::find($request->picture_id);
-
-        $picture_url = $picture->getAttributes()['url'];
-
-        $status = $picture->delete();
-
-        if ($status) {
-
-            $result = $storeDriver->deleteStoredPicture($picture_url);
-            $status = $result;
-        }
+        $status = $ad->deleteMedia($request->picture_id);
 
         return response()->json([
             'status' => $status,

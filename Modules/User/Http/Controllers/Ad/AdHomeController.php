@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use App\Http\Resources\AdResource;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -16,9 +17,9 @@ class AdHomeController extends Controller
     public function index()
     {
 
-        $ads = Ad::with('pictures', 'state.city')->published()->get();
+        $ads = Ad::with('state.city')->published()->get();
 
-        $proAds = Ad::with('pictures', 'state.city')->published()->filterPro()->limit(3)->get();
+        $proAds = Ad::with('state.city')->published()->filterPro()->limit(3)->get();
 
         return inertia('Ad/Home', compact('ads', 'proAds'));
     }

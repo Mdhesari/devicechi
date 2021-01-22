@@ -22,7 +22,7 @@ class AdStorePictureRequest extends FormRequest
 
         $pictures_validations = ['array'];
 
-        $pictures_count = $ad->pictures()->count();
+        $pictures_count = count($ad->pictures);
 
         $ad_picture_size_limit = config('user.ad_picture_size_limit', 5); // MB
         $ad_pictures_max_count = config('user.ad_pictures_max_count', 9);

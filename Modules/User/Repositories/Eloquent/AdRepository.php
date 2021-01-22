@@ -55,7 +55,7 @@ class AdRepository extends Repository implements
             'user_id' => auth()->id(),
         ], $data);
 
-        return $this->model->with('pictures')->where($data)->get();
+        return $this->model->where($data)->get();
     }
 
     public function create($data)

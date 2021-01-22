@@ -10,17 +10,24 @@ use App\Traits\Uuids;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
 use Log;
-use Modules\User\Entities\AdPicture;
+use Modules\User\Entities\K;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Str;
 
-class Ad extends Model
+class Ad extends Model implements HasMedia
 {
-    use HasFactory, Notifiable, Sluggable;
+    use HasFactory,
+        Notifiable,
+        Sluggable,
+        InteractsWithMedia;
+
+    const PICTURES_COLLECTION = "pictures";
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
@@ -44,6 +51,7 @@ class Ad extends Model
         'is_multicard_read',
         'is_exchangeable_read',
         'short_url',
+        'pictures'
     ];
 
     /**
@@ -187,7 +195,7 @@ class Ad extends Model
     public function loadSingleRelations()
     {
 
-        $this->load(['phoneModel', 'phoneModel.brand', 'pictures', 'variant', 'state.city']);
+        $this->load(['phoneModel', 'phoneModel.brand', 'variant', 'state.city']);
     }
 
     public function scopeUncompleted($query)
@@ -274,10 +282,10 @@ class Ad extends Model
         return $this->belongsTo(PhoneModel::class);
     }
 
-    public function pictures()
+    public function getPicturesAttribute()
     {
 
-        return $this->hasMany(AdPicture::class);
+        return $this->getMedia(self::PICTURES_COLLECTION);
     }
 
     public function contacts()
@@ -448,6 +456,11 @@ class Ad extends Model
                 'source' => ['title', 'state.name', 'state.city.name'],
             ],
         ];
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection(self::PICTURES_COLLECTION);
     }
 
     /**

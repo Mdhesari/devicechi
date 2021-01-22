@@ -102,7 +102,6 @@ import HamtaAlert from "../Section/HamtaAlert";
 import GetContactList from "../Section/ContactList";
 import ShareButton from "../Components/ShareButton";
 import SaveButton from "../Components/SaveButton";
-
 export default {
     props: ["ad"],
     components: {
