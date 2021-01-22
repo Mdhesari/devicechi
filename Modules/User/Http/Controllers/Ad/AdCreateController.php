@@ -12,7 +12,7 @@ class AdCreateController extends BaseAdController
     {
         if ($ad) {
             $ad->load('phoneModel.brand');
-            // $ad->resetModel();
+            $ad->resetModel();
         }
 
         $step = BaseAdController::STEP_CHOOSE_BRAND;
