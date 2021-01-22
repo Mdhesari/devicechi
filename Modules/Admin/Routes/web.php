@@ -25,6 +25,7 @@ use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\CategoryController;
+use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
 use Modules\Admin\Http\Controllers\Payment\PaymentController;
 use Modules\Admin\Http\Controllers\RegisterController;
@@ -171,6 +172,11 @@ Route::middleware('auth.admin')->group(function () {
         Route::get('delete/{category}', [CategoryController::class, 'delete'])->name('delete');
 
         Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('file-manager')->middleware('can:read media')->name('admin.media.')->group(function () {
+
+        Route::get('/', [FileManagerController::class, 'index'])->name('home');
     });
 });
 
