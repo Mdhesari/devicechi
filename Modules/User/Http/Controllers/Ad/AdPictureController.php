@@ -30,8 +30,9 @@ class AdPictureController extends BaseAdController
     {
         $pictures = $request->pictures;
 
-        foreach ($pictures as $picture)
+        foreach ($pictures as $picture) {
             $ad->addMedia($picture)->toMediaCollection(Ad::PICTURES_COLLECTION);
+        }
 
         return redirect()->route('user.ad.step_phone_location', [
             'ad' => $ad,
