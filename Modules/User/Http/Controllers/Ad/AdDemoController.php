@@ -44,7 +44,7 @@ class AdDemoController extends BaseAdController
 
         $this->adRepository->publish($ad['id']);
 
-        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.pending'));
+        return redirect()->route('user.ad.step_phone_demo', $ad['slug'])->with('success', __('user::ads.success.pending'));
     }
 
     public function delete(AdDemoActionRequest $request)

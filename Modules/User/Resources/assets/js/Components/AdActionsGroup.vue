@@ -61,10 +61,17 @@ export default {
             );
         },
         publishAd() {
-            this.$inertia.post(route("user.ad.step_phone_demo.publish"), {
-                _method: "PUT",
-                ad: this.ad
-            });
+            this.$inertia.post(
+                route("user.ad.step_phone_demo.publish"),
+                {
+                    _method: "PUT",
+                    ad: this.ad
+                },
+                {
+                    preserveScroll: true,
+                    preserveState: false
+                }
+            );
         },
         deleteAd() {
             this.$swal({
