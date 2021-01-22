@@ -20,6 +20,7 @@
         >
             <div class="tab-item-content">
                 <inertia-Link
+                    preserve-scroll
                     :href="tab.route"
                     v-text="tab.text"
                 ></inertia-Link>

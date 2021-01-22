@@ -3,6 +3,7 @@
         <div class="container">
             <div class="row mx-2">
                 <inertia-link
+                    preserve-scroll
                     :href="route('user.ad.create')"
                     class="btn btn-success btn-rounded-high btn-mobilesale"
                 >
@@ -18,12 +19,13 @@
                     v-for="(nav, index) in nav_items"
                     :key="index"
                 >
-                    <inertia-Link
+                    <inertia-link
+                        preserve-scroll
                         class="nav-link"
                         :class="{ active: nav.is_active }"
                         :href="nav.route"
                         v-text="nav.label"
-                    ></inertia-Link>
+                    ></inertia-link>
                 </li>
             </b-nav>
 
