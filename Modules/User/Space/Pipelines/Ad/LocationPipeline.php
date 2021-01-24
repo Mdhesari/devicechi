@@ -16,7 +16,7 @@ class LocationPipeline implements ValidatesAdStep
         extract($data);
 
         if ($step >= BaseAdController::STEP_CHOOSE_LOCATION) {
-            if (count($ad->pictures) < 1) {
+            if ($ad->getMedia()->count() < 1) {
 
                 throw new PreviousStepRedirectHttpException(route('user.ad.step_phone_pictures', [
                     'ad' => $ad,

@@ -93,7 +93,7 @@ class AddContactTest extends TestCase
 
         // $pictures = AdPicture::factory(3)->make();
 
-        $ad->pictures()->saveMany($pictures);
+        // $ad->pictures()->saveMany($pictures);
 
         $response = $this->post(route('user.ad.step_phone_contact.add', [
             'contact_type' => AdContactType::whereName(AdContactType::TYPE_EMAIL)->first()->toArray(),

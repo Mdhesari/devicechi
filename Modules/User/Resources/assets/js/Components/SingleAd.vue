@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 gallery-post links">
-                    <AdPostGallery :pictures="ad.pictures" />
+                    <AdPostGallery :pictures="ad.media" />
                 </div>
             </div>
         </div>

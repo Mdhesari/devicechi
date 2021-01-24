@@ -25,7 +25,7 @@ class AdStorePictureRequest extends FormRequest
 
         $pictures_validations = ['required', 'array'];
 
-        $pictures_count = count($ad->pictures);
+        $pictures_count = $ad->getMedia()->count();
 
         // here we want to check if stored pictures count on database are not higher than max pics or less than min pics validation.
 

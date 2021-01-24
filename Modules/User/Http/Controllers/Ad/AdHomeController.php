@@ -17,7 +17,7 @@ class AdHomeController extends Controller
     public function index()
     {
 
-        $ads = Ad::with('state.city')->published()->get();
+        $ads = Ad::with('state.city')->includeMediaThumb()->published()->get();
 
         $proAds = Ad::with('state.city')->published()->filterPro()->limit(3)->get();
 
@@ -51,6 +51,7 @@ class AdHomeController extends Controller
     public function show(Ad $ad, Request $request)
     {
         $ad->loadSingleRelations();
+        $ad->load('media');
 
         if (!$ad->isPublished())
             return redirect()->route('user.ad.step_phone_demo', [

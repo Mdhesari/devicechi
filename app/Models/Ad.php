@@ -99,6 +99,17 @@ class Ad extends Model implements HasMedia
     }
 
     // ======== Scopes ==================
+    public function scopeIncludeMediaThumb($query)
+    {
+
+        return $query->with([
+            'media' => function ($q) {
+
+                $q->activeOnly();
+            }
+        ]);
+    }
+
     public function scopePublished($query)
     {
 

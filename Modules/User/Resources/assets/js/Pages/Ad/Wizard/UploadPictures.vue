@@ -80,6 +80,9 @@ export default {
     methods: {
         next(ev) {
             // go to next step
+            if (!this.form.activePicture)
+                return this.$to(this.__("ads.form.error.active-picture"));
+
             this.form
                 .post(
                     route("user.ad.step_phone_pictures", {
@@ -171,6 +174,10 @@ export default {
                     } else {
                         this.uploadForm.pictures = [];
                         this.form.pictures = this.getProp("pictures");
+
+                        if (!this.form.activePicture) {
+                            this.form.activePicture = this.form.pictures[0].id;
+                        }
                     }
                 })
                 .catch(error => {
@@ -191,6 +198,9 @@ export default {
                     }
                 );
             } else {
+                if (this.form.activePicture == picture.id)
+                    this.form.activePicture = null;
+
                 const response = await axios.post(
                     route("user.ad.step_phone_pictures", {
                         ad: this.ad.slug
