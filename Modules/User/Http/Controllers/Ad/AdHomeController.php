@@ -64,6 +64,8 @@ class AdHomeController extends Controller
 
         $user->readAd($ad);
 
+        $ad->append('short_url');
+
         return inertia('Ad/Single', compact('ad', 'is_bookmarked_for_user'));
     }
 

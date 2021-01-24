@@ -49,7 +49,6 @@ class Ad extends Model implements HasMedia
     protected $appends = [
         'is_multicard_read',
         'is_exchangeable_read',
-        'short_url',
         'pictures'
     ];
 
