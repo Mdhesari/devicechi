@@ -20,7 +20,7 @@
                     <b-icon-upload></b-icon-upload>
                 </label>
                 <b-form-file
-                    accept="image/*"
+                    accept=".jpg, .jpeg"
                     id="picture-upload-input-file"
                     ref="pictures"
                     @change="updatePhotoList"
@@ -29,17 +29,19 @@
                 ></b-form-file>
             </b-form-group>
 
-            <b-row class="upload-previews" v-if="pictures.length > 0">
+            <b-row class="upload-previews" v-if="form.pictures.length > 0">
                 <UploadPreviewItem
-                    v-for="(picture, index) in pictures"
+                    v-for="(picture, index) in form.pictures"
+                    @changeActivePicture="changeActivePicture(picture.id)"
                     :key="index"
                     :picture="picture"
+                    :isActive="form.activePicture == picture.id"
                     @removePicture="removePicture(picture)"
                 />
             </b-row>
 
             <b-button
-                v-if="pictures.length >= pictures_min_count"
+                v-if="form.pictures.length >= pictures_min_count"
                 variant="secondary"
                 @click.prevent="next"
             >
@@ -61,6 +63,10 @@ export default {
     data() {
         return {
             form: this.$inertia.form({
+                activePicture: this.getProp("active_picture"),
+                pictures: this.getProp("pictures")
+            }),
+            uploadForm: this.$inertia.form({
                 pictures: []
             }),
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
@@ -68,8 +74,7 @@ export default {
             pictures_min_count: this.getProp("ad_pictures_min_count"),
             label_text: this.__("ads.form.placeholder.upload.init"),
             validFileTypes: this.getProp("ad_pictures_format"),
-            ad: this.getProp("ad"),
-            pictures: this.getProp("pictures")
+            ad: this.getProp("ad")
         };
     },
     methods: {
@@ -86,16 +91,14 @@ export default {
                     }
                 )
                 .then(response => {
-                    let error = null;
-
-                    if ((error = this.form.error("pictures"))) {
-                        this.$to(error);
-                    }
+                    //
                 })
                 .catch(error => {
                     this.$to(this.__("global.errors.common"));
                 });
-            // this.$emit("next");
+        },
+        changeActivePicture(id) {
+            this.form.activePicture = id;
         },
         validateUploadedPicture(file) {
             let result = true;
@@ -128,7 +131,7 @@ export default {
         updatePhotoList(ev) {
             const files = ev.target.files;
 
-            const all_pictures_count = this.pictures.length + files.length;
+            const all_pictures_count = this.form.pictures.length + files.length;
 
             if (all_pictures_count > this.pictures_limit_count) {
                 this.$to(
@@ -140,30 +143,53 @@ export default {
             }
 
             for (let i = 0; i < files.length; i++) {
-                const validation_result = this.validateUploadedPicture(
-                    files[i]
-                );
+                if (!this.validateUploadedPicture(files[i])) continue;
 
-                if (!validation_result) continue;
+                this.uploadForm.pictures.push(files[i]);
 
-                this.form.pictures.push(files[i]);
-
-                this.pictures.push({
-                    url: URL.createObjectURL(files[i]),
-                    original_file: files[i]
-                });
+                // this.pictures.push({
+                //     url: URL.createObjectURL(files[i]),
+                //     original_file: files[i]
+                // });
             }
+
+            this.uploadForm
+                .post(
+                    route("user.ad.step_phone_pictures_upload", {
+                        ad: this.ad.slug
+                    }),
+                    {
+                        peserveState: false,
+                        preserveScroll: true
+                    }
+                )
+                .then(response => {
+                    let error;
+
+                    if ((error = this.form.error("pictures"))) {
+                        this.$to(error);
+                    } else {
+                        this.uploadForm.pictures = [];
+                        this.form.pictures = this.getProp("pictures");
+                    }
+                })
+                .catch(error => {
+                    this.$to(this.__("global.errors.common"));
+                });
         },
         async removePicture(picture) {
             let is_blob = "original_file" in picture;
 
             if (is_blob) {
-                this.form.pictures = this.form.pictures.filter((el, index) => {
-                    return (
-                        el.name != picture.original_file.name &&
-                        el.lastModified != picture.original_file.lastModified
-                    );
-                });
+                this.uploadForm.pictures = this.uploadForm.pictures.filter(
+                    (el, index) => {
+                        return (
+                            el.name != picture.original_file.name &&
+                            el.lastModified !=
+                                picture.original_file.lastModified
+                        );
+                    }
+                );
             } else {
                 const response = await axios.post(
                     route("user.ad.step_phone_pictures", {
@@ -182,7 +208,7 @@ export default {
                 }
             }
 
-            this.pictures = this.pictures.filter(el => {
+            this.form.pictures = this.form.pictures.filter(el => {
                 return el.url != picture.url;
             });
         },

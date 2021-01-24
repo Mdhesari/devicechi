@@ -706,6 +706,12 @@ input[type="number"] {
             padding: 1em;
             cursor: pointer;
 
+            .active-badge {
+                position: absolute;
+                top: -10%;
+                right: 10%;
+            }
+
             img {
                 box-shadow: 2px 2px 9px 0px;
                 transition: all 500ms;
@@ -2792,8 +2798,7 @@ $pallete: (
     }
 }
 
-@media (max-width: 991.98px) { 
-
+@media (max-width: 991.98px) {
     .vector img {
         width: 350px;
     }
@@ -2805,7 +2810,7 @@ $pallete: (
     .input-phone-number {
         width: 52%;
     }
- }
+}
 
 /* Queries*/
 @media (max-width: 768px) {

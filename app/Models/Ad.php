@@ -28,8 +28,6 @@ class Ad extends Model implements HasMedia
         Sluggable,
         InteractsWithMedia;
 
-    const PICTURES_COLLECTION = "pictures";
-
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
     const STATUS_PENDING = 2;
@@ -286,7 +284,7 @@ class Ad extends Model implements HasMedia
     public function getPicturesAttribute()
     {
 
-        return $this->getMedia(self::PICTURES_COLLECTION);
+        return $this->getMedia();
     }
 
     public function contacts()
@@ -457,11 +455,6 @@ class Ad extends Model implements HasMedia
                 'source' => ['title', 'state.name', 'state.city.name'],
             ],
         ];
-    }
-
-    public function registerMediaCollections(): void
-    {
-        $this->addMediaCollection(self::PICTURES_COLLECTION);
     }
 
     public function registerMediaConversions(?Media $media = null): void

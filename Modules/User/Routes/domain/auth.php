@@ -60,6 +60,8 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
                 Route::post('/pictures', [AdPictureController::class, 'store']);
 
+                Route::post('/pictures-upload', [AdPictureController::class, 'storeUploads'])->name('pictures_upload');
+
                 Route::delete('/pictures', [AdPictureController::class, 'delete']);
 
                 Route::get('/location', [AdLocationController::class, 'choose'])->name('location');

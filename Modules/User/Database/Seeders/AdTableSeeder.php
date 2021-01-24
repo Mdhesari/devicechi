@@ -30,7 +30,7 @@ class AdTableSeeder extends Seeder
 
         $ads->map(function (Ad $ad) use ($picture) {
 
-            $ad->addMediaFromUrl($picture)->toMediaCollection($ad::PICTURES_COLLECTION);
+            $ad->addMediaFromUrl($picture)->toMediaCollection();
         });
 
         $ads = Ad::factory()
@@ -40,7 +40,7 @@ class AdTableSeeder extends Seeder
 
         $ads->map(function (Ad $ad) use ($picture) {
 
-            $ad->addMediaFromUrl($picture)->toMediaCollection($ad::PICTURES_COLLECTION);
+            $ad->addMediaFromUrl($picture)->toMediaCollection();
             $ad->is_pro = true;
             $ad->save();
         });

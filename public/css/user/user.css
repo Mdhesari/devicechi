@@ -859,6 +859,12 @@ input[type=number] {
   cursor: pointer;
 }
 
+.browse-pictures-form .upload-previews .preview-item .active-badge {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+}
+
 .browse-pictures-form .upload-previews .preview-item img {
   box-shadow: 2px 2px 9px 0px;
   transition: all 500ms;

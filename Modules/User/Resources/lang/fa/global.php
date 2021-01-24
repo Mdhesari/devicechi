@@ -19,6 +19,8 @@ return [
     'copy' => 'کپی شد',
     'bookmark' => 'ذخیره شد',
     'unbookmark' => 'لغو ذخیره',
+    'active' => 'فعال',
+    'active-picture' => 'تصویر اصلی',
     'ask' => [
         'delete' => [
             'title' => 'آیا مطمئن هستید؟!',

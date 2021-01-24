@@ -25,4 +25,10 @@ class Media extends \Spatie\MediaLibrary\MediaCollections\Models\Media
 
         return $this->getFullUrl('thumb');
     }
+
+    public function scopeActiveOnly($query)
+    {
+
+        return $query->where('custom_properties->active', true);
+    }
 }
