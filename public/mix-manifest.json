@@ -1,14 +1,8 @@
 {
-    "/js/team/team.js": "/js/team/team.js",
-    "/css/team/team.css": "/css/team/team.css",
-    "/css/team/tailwind.css": "/css/team/tailwind.css",
-    "/js/user/user.js": "/js/user/user.js",
-    "/css/user/user.css": "/css/user/user.css",
-    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
-    "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css",
-    "/css/user/normalize.css": "/css/user/normalize.css",
-    "/js/user/moment.js": "/js/user/moment.js",
-    "/css/user/swiper.css": "/css/user/swiper.css",
-    "/js/user/manifest.js": "/js/user/manifest.js",
-    "/js/user/vendor.js": "/js/user/vendor.js"
+    "/js/user/moment.js": "/js/user/moment.js?id=d2a32e67e4f496ce94d2",
+    "/js/user/user.js": "/js/user/user.js?id=eb07f478063a6bc92167",
+    "/css/user/user.css": "/css/user/user.css?id=1945367dd37983bce285",
+    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css?id=060514089cdcfcb8d232",
+    "/css/user/swiper.css": "/css/user/swiper.css?id=d92bb3e880034a70e588",
+    "/css/user/normalize.css": "/css/user/normalize.css?id=64b2b4fa42c7d558d735"
 }
