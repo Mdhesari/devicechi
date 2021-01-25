@@ -21,6 +21,7 @@ return [
     'unbookmark' => 'لغو ذخیره',
     'active' => 'فعال',
     'active-picture' => 'تصویر اصلی',
+    'loading' => 'در حال بروزرسانی...',
     'ask' => [
         'delete' => [
             'title' => 'آیا مطمئن هستید؟!',

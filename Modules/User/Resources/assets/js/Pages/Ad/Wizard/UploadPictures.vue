@@ -42,10 +42,11 @@
 
             <b-button
                 v-if="form.pictures.length >= pictures_min_count"
+                :disabled="isLoading"
                 variant="secondary"
                 @click.prevent="next"
             >
-                {{ __("global.next") }}
+                {{ isLoading ? __("global.loading") : __("global.next") }}
             </b-button>
         </form>
     </WizardStep>
@@ -69,6 +70,7 @@ export default {
             uploadForm: this.$inertia.form({
                 pictures: []
             }),
+            isLoading: false,
             ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
             pictures_limit_count: this.getProp("ad_pictures_max_count"),
             pictures_min_count: this.getProp("ad_pictures_min_count"),
@@ -156,6 +158,8 @@ export default {
                 // });
             }
 
+            this.isLoading = true;
+
             this.uploadForm
                 .post(
                     route("user.ad.step_phone_pictures_upload", {
@@ -168,6 +172,8 @@ export default {
                 )
                 .then(response => {
                     let error;
+
+                    this.isLoading = false;
 
                     if ((error = this.form.error("pictures"))) {
                         this.$to(error);
