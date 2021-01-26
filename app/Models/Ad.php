@@ -204,7 +204,9 @@ class Ad extends Model implements HasMedia
     public function loadSingleRelations()
     {
 
-        $this->load(['phoneModel', 'phoneModel.brand', 'variant', 'state.city']);
+        $this->load(['accessories', 'phoneModel', 'phoneModel.brand', 'variant', 'state.city', 'media']);
+
+        return $this;
     }
 
     public function scopeUncompleted($query)

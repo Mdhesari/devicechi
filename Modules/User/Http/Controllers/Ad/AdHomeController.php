@@ -50,21 +50,20 @@ class AdHomeController extends Controller
      */
     public function show(Ad $ad, Request $request)
     {
-        $ad->loadSingleRelations();
-        $ad->load('media');
 
         if (!$ad->isPublished())
             return redirect()->route('user.ad.step_phone_demo', [
                 'ad' => $ad,
             ]);
 
+        $ad->loadSingleRelations()
+            ->append('short_url');
+
         $user = $request->user();
 
         $is_bookmarked_for_user = $user->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
 
         $user->readAd($ad);
-
-        $ad->append('short_url');
 
         return inertia('Ad/Single', compact('ad', 'is_bookmarked_for_user'));
     }
