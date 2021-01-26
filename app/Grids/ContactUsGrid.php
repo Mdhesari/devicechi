@@ -86,7 +86,11 @@ class ContactUsGrid extends Grid implements ContactUsGridInterface
                 "filter" => [
                     "enabled" => true,
                     "operator" => "="
-                ]
+                ],
+                "presenter" => function ($columnData) {
+
+                    return trans("user::contact-us.subjects.{$columnData->subject}");
+                },
             ],
             "created_at" => [
                 "sort" => false,
