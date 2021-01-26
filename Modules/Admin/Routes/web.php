@@ -23,6 +23,7 @@ use Modules\Admin\Http\Controllers\HomeController;
 use Modules\Admin\Http\Controllers\ActivityLogController;
 use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdExportController;
+use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\CategoryController;
 use Modules\Admin\Http\Controllers\FileManagerController;
@@ -177,6 +178,15 @@ Route::middleware('auth.admin')->group(function () {
     Route::prefix('file-manager')->middleware('can:read media')->name('admin.media.')->group(function () {
 
         Route::get('/', [FileManagerController::class, 'index'])->name('home');
+    });
+
+    Route::prefix('contact-us')->name('admin.contact-us.')->group(function () {
+
+        Route::get('/', [AdminContactUsController::class, 'index'])->name('list');
+
+        Route::get('/show/{contactu}', [AdminContactUsController::class, 'show'])->name('show');
+
+        Route::get('/delete/{contactu}', [AdminContactUsController::class, 'destroy'])->name('destroy');
     });
 });
 

@@ -105,5 +105,17 @@ return [
                 'icon_class' => 'fa fa-files-o',
             ],
         ],
+
+        [
+            'label' => __(' Contact us '),
+            'permission' => 'contact user',
+            'icon_class' => 'fa fa-support',
+            [
+                'title' => __(' Contacts '),
+                'route' => 'admin.contact-us.list',
+                'route_params' => [],
+                'icon_class' => 'fa fa-list-ul nav-icon',
+            ],
+        ],
     ],
 ];

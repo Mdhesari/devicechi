@@ -5,7 +5,7 @@ namespace App\Grids;
 use Closure;
 use Leantony\Grid\Grid;
 
-class ContactusesGrid extends Grid implements ContactUsGridInterface
+class ContactUsGrid extends Grid implements ContactUsGridInterface
 {
     /**
      * The name of the grid
@@ -20,7 +20,6 @@ class ContactusesGrid extends Grid implements ContactUsGridInterface
      * @var array
      */
     protected $buttonsToGenerate = [
-        'create',
         'view',
         'delete',
         'refresh',
@@ -109,12 +108,12 @@ class ContactusesGrid extends Grid implements ContactUsGridInterface
     public function setRoutes()
     {
         // searching, sorting and filtering
-        $this->setIndexRouteName('contactuses.index');
+        $this->setIndexRouteName('admin.contact-us.list');
 
         // crud support
-        $this->setCreateRouteName('contactuses.create');
-        $this->setViewRouteName('contactuses.show');
-        $this->setDeleteRouteName('contactuses.destroy');
+        $this->setCreateRouteName('admin.contact-us.list');
+        $this->setViewRouteName('admin.contact-us.show');
+        $this->setDeleteRouteName('admin.contact-us.destroy');
 
         // default route parameter
         $this->setDefaultRouteParameter('id');
