@@ -15,7 +15,6 @@ class AdMainController extends BaseAdController
 
     public function get(Request $request)
     {
-        // $ads = $this->adRepository->getUserAds($request);
         $ads = $request->user()->ads()->filterAd($request)->get();
 
         $ads->load('state.city');

@@ -382,6 +382,7 @@ class Ad extends Model implements HasMedia
                 break;
             case static::STATUS_ARCHIVE_LABEL:
                 $status = static::STATUS_ARCHIVE;
+                break;
             default:
                 $status = __(" Invalid ");
         }
