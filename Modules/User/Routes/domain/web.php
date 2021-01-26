@@ -15,7 +15,12 @@ use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\Home\HomeController;
+use Modules\User\Http\Controllers\UserContactUsController;
 use Modules\User\Http\Controllers\UserController;
+
+Route::get('/contact-us', [UserContactUsController::class, 'index'])->name('contact-us');
+
+Route::post('/contact-us', [UserContactUsController::class, 'store']);
 
 Route::middleware('auth.user:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
 

@@ -2839,26 +2839,28 @@ $pallete: (
     ul {
         li {
             margin-bottom: 30px;
-            width: 250px;
-            transition: 0.1s all;
-            -webkit-transition: 0.1s all;
-            -moz-transition: 0.1s all;
-            -ms-transition: 0.1s all;
-            -o-transition: 0.1s all;
-            padding: 16px;
-            border-radius: 16px;
-            -webkit-border-radius: 16px;
-            -moz-border-radius: 16px;
-            -ms-border-radius: 16px;
-            -o-border-radius: 16px;
+            width: auto;
+
+            a {
+                transition: 0.1s all;
+                -webkit-transition: 0.1s all;
+                -moz-transition: 0.1s all;
+                -ms-transition: 0.1s all;
+                -o-transition: 0.1s all;
+                padding: 16px;
+            }
+
+            svg {
+                font-size: 24px;
+            }
         }
     }
 }
 
 .contact-us-ways {
     ul {
-        li:hover {
-            background-color: #ebebeb;
+        li a:hover {
+            color: pallete("dark_gray") !important;
         }
     }
 }

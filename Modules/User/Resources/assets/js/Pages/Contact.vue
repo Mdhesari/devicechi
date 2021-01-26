@@ -13,7 +13,7 @@
                         </div>
                         <div class="contact-us-ways">
                             <ul>
-                                <li>
+                                <!-- <li>
                                     <div class="icon">
                                         <i
                                             class="fa fa-phone"
@@ -36,18 +36,17 @@
                                             >info@mfs.com</a
                                         >
                                     </div>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <div class="icon">
-                                        <i
-                                            class="fa fa-life-ring"
-                                            aria-hidden="true"
-                                        ></i>
-                                    </div>
                                     <div class="info">
-                                        <a href="mail:info@mfs.com"
-                                            >support@mfs.com</a
-                                        >
+                                        <a href="mail:support@mobileforsale.ir">
+                                            <span class="icon">
+                                                <b-icon icon="mailbox"></b-icon>
+                                            </span>
+                                            <span>
+                                                support@mobileforsale.ir
+                                            </span>
+                                        </a>
                                     </div>
                                 </li>
                             </ul>
@@ -61,37 +60,58 @@
                                     <input
                                         required
                                         id="name"
+                                        name="name"
                                         v-model="form.name"
                                         type="text"
                                     />
+                                    <p
+                                        class="text-danger"
+                                        v-text="form.error('name')"
+                                    ></p>
                                 </div>
                                 <div class="input-holder">
                                     <label for="mobile">موبایل</label>
                                     <input
                                         required
                                         id="mobile"
+                                        name="mobile"
                                         v-model="form.mobile"
                                         type="tel"
                                     />
+                                    <p
+                                        class="text-danger"
+                                        v-text="form.error('mobile')"
+                                    ></p>
                                 </div>
                                 <div class="input-holder">
-                                    <label for="">موضوع</label>
+                                    <label for="subject">موضوع</label>
                                     <b-form-select
+                                        id="subject"
+                                        name="subject"
                                         required
                                         v-model="form.subject"
                                         :options="subjects"
                                     ></b-form-select>
+                                    <p
+                                        class="text-danger"
+                                        v-text="form.error('subject')"
+                                    ></p>
                                 </div>
                                 <div class="input-holder">
                                     <label for="text">پیام</label>
                                     <textarea
+                                        id="text"
+                                        name="text"
                                         required
                                         v-model="form.text"
-                                        id="text"
                                         cols="30"
                                         rows="10"
                                         placeholder="پیام"
                                     ></textarea>
+                                    <p
+                                        class="text-danger"
+                                        v-text="form.error('text')"
+                                    ></p>
                                 </div>
                                 <div class="btn-message">
                                     <button
@@ -152,7 +172,11 @@ export default {
     },
     methods: {
         submitForm() {
-            alert("hurraay!");
+            this.form.post(route("contact-us"), {
+                preserveScroll: true,
+                preserveState: page =>
+                    Object.keys(this.$inertia.page.props.errors).length
+            });
         }
     }
 };

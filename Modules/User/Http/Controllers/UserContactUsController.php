@@ -2,6 +2,8 @@
 
 namespace Modules\User\Http\Controllers;
 
+use App\Http\Requests\ContactUsRequest;
+use App\Models\ContactUs;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -31,9 +33,11 @@ class UserContactUsController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(ContactUsRequest $request)
     {
-        //
+        ContactUs::create($request->all());
+
+        return back()->with('success', trans('user::contact-us.success'));
     }
 
     /**

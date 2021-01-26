@@ -33,8 +33,6 @@ use Modules\User\Http\Controllers\UserPaymentController;
 
 Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
-Route::get('/contact-us', [UserContactUsController::class, 'index'])->name('contact-us');
-
 Route::prefix('/ads')->name('ad.')->group(function () {
 
     Route::prefix('/sell/mobile')->group(function () {

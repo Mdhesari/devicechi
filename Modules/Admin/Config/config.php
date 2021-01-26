@@ -12,7 +12,7 @@ return [
         ],
         [
             'title' => __(' Contact us '),
-            'route' => 'user.contact-us',
+            'route' => 'contact-us',
             'params' => [],
         ]
     ],

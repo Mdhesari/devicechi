@@ -2541,22 +2541,24 @@ input[type=number] {
 
 .contact-us-ways ul li {
   margin-bottom: 30px;
-  width: 250px;
+  width: auto;
+}
+
+.contact-us-ways ul li a {
   transition: 0.1s all;
   -webkit-transition: 0.1s all;
   -moz-transition: 0.1s all;
   -ms-transition: 0.1s all;
   -o-transition: 0.1s all;
   padding: 16px;
-  border-radius: 16px;
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  -ms-border-radius: 16px;
-  -o-border-radius: 16px;
 }
 
-.contact-us-ways ul li:hover {
-  background-color: #ebebeb;
+.contact-us-ways ul li svg {
+  font-size: 24px;
+}
+
+.contact-us-ways ul li a:hover {
+  color: #727272 !important;
 }
 
 .contact-us-ways ul li .icon {
