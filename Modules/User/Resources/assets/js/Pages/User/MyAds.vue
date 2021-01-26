@@ -1,28 +1,26 @@
 <template>
     <AuthLayout :user="user">
         <Panel :user="user" :tabs="tabs">
-            <div class="row" v-if="ads && !isLoading">
-                <div class="row normal-ads">
-                    <NormalAd
-                        v-for="ad in ads"
-                        :key="ad.id"
-                        :ad="ad"
-                        :countAds="ads.length"
+            <div class="row normal-ads mt-4" v-if="ads && !isLoading">
+                <NormalAd
+                    v-for="ad in ads"
+                    :key="ad.id"
+                    :ad="ad"
+                    :countAds="ads.length"
+                >
+                    <p :class="`status ${renderStatusClass(ad.status)}`">
+                        {{ renderStatusLabel(ad.status) }}
+                    </p>
+                    <inertia-link
+                        :href="
+                            route('user.ad.step_phone_demo', {
+                                ad: ad.slug
+                            })
+                        "
                     >
-                        <p :class="`status ${renderStatusClass(ad.status)}`">
-                            {{ renderStatusLabel(ad.status) }}
-                        </p>
-                        <inertia-link
-                            :href="
-                                route('user.ad.step_phone_demo', {
-                                    ad: ad.slug
-                                })
-                            "
-                        >
-                            ویرایش آگهی
-                        </inertia-link>
-                    </NormalAd>
-                </div>
+                        ویرایش آگهی
+                    </inertia-link>
+                </NormalAd>
 
                 <!-- <div class="col-md-6"></div> -->
             </div>

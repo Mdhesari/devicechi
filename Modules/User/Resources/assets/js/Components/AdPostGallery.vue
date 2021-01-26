@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="gallery">
         <div class="swiper-container " id="mainHomeSlider">
             <SwiperWrapper>
                 <SwiperSlide

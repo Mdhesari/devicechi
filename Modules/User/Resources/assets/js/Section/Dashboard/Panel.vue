@@ -13,7 +13,7 @@
                     }}</span>
                 </inertia-link>
             </div>
-            <b-nav tabs class="mb-4">
+            <b-nav tabs class="mb-4 flex-column flex-md-row">
                 <li
                     class="nav-item"
                     v-for="(nav, index) in nav_items"
@@ -30,14 +30,14 @@
             </b-nav>
 
             <div class="row user-panel-main">
-                <div class="col-md-4" v-if="showProfile()">
+                <div class="col-12 col-md-4" v-if="showProfile()">
                     <div class="sidebar">
                         <ProfileTabs :user="user" :tabs="tabs"></ProfileTabs>
                     </div>
                 </div>
                 <div
                     :class="{
-                        'col-md-8': showProfile(),
+                        'col-12 col-md-8': showProfile(),
                         'col-md-12': !showProfile()
                     }"
                 >

@@ -98,6 +98,12 @@ svg {
 button,
 a {
     text-decoration: none !important;
+
+    &:focus,
+    &:hover,
+    &:active {
+        outline: none !important;
+    }
 }
 
 .custom-radio,
@@ -146,6 +152,7 @@ a {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border-radius: 8px;
     text-align: right;
+    left: auto !important;
     .dropdown-item {
         padding: 16px;
 
@@ -265,6 +272,7 @@ input[type="number"] {
         display: block;
         text-align: center;
         padding: 50px;
+        line-height: 32px;
         font-size: 26px;
     }
 
@@ -1618,7 +1626,7 @@ input[type="number"] {
     .btn-dock {
         position: absolute;
         left: 0;
-        top: 0;
+        top: 1em;
 
         .btn:hover {
             color: pallete("orange_back");
@@ -2358,7 +2366,7 @@ input[type="number"] {
 .user-panel-main {
     .normal-ads {
         .normal-ad {
-            margin: 1em;
+            // margin: 1em;
         }
     }
 }
@@ -2423,6 +2431,10 @@ input[type="number"] {
             }
         }
     }
+}
+
+.details {
+    overflow: hidden;
 }
 
 .normal-ads {
@@ -2994,12 +3006,6 @@ $pallete: (
         color: pallete("white");
     }
 }
-@media (max-width: 768px) {
-    .contact-us-message {
-        width: 100%;
-        order: 0;
-    }
-}
 
 @media (max-width: 991.98px) {
     .vector img {
@@ -3017,6 +3023,46 @@ $pallete: (
 
 /* Queries*/
 @media (max-width: 768px) {
+    .btn-mobilesale .main-menu {
+        .btn-title {
+            display: none;
+        }
+    }
+
+    .single-post .heading {
+        margin-top: 2em;
+    }
+
+    .browse-pictures-form .upload-previews .preview-item .active-badge {
+        top: -2%;
+    }
+
+    .wizard-step .icon-upload-label {
+        font-size: 16px;
+    }
+
+    .wizard {
+        .wizard-card {
+            padding: 5px;
+        }
+
+        .indicator-line {
+            width: 320px;
+            border-width: 4px;
+
+            .steps {
+                border: 1px solid #ebf1fa;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+
+    .contact-us-message {
+        width: 100%;
+        order: 0;
+    }
+
     /* General */
     .home-title h1 {
         font-size: 2rem;
@@ -3076,7 +3122,7 @@ $pallete: (
     }
 
     .actions-navbar .btn {
-        padding: 15px 50px;
+        padding: 15px 40px;
     }
 
     .actions-navbar .btn .label {
@@ -3116,6 +3162,12 @@ $pallete: (
 
     .about-us-mvp-section {
         padding: 40px 0 !important;
+    }
+}
+
+@media (max-width: 368px) {
+    .actions-navbar .btn {
+        padding: 15px 30px;
     }
 }
 

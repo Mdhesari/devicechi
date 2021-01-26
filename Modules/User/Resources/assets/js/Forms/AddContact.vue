@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="form-contact">
         <b-form-group class="mt-2">
             <b-form-group
                 v-if="input_data.type && ad_contact === null"

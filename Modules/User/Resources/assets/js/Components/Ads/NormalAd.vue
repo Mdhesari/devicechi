@@ -1,11 +1,5 @@
 <template>
-    <div
-        class="normal-ad"
-        :class="{
-            'col-md-3': countAds > 3,
-            'col-md-5': countAds < 3
-        }"
-    >
+    <div class="normal-ad col-md-4">
         <inertia-link
             :href="
                 route('user.ad.show', {
