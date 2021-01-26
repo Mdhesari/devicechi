@@ -2,7 +2,7 @@
     <authLayout :user="user">
         <section class="demo">
             <b-container>
-                <SingleAd :ad="ad"></SingleAd>
+                <SingleAd :ad="ad" :accessories="accessories"></SingleAd>
             </b-container>
         </section>
     </authLayout>
@@ -17,6 +17,6 @@ export default {
         AuthLayout,
         SingleAd
     },
-    props: ["ad", "user"]
+    props: ["ad", "user", "accessories"]
 };
 </script>

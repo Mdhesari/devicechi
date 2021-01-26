@@ -7,6 +7,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Ad;
+use Modules\User\Entities\PhoneAccessory;
 
 class AdHomeController extends Controller
 {
@@ -65,7 +66,9 @@ class AdHomeController extends Controller
 
         $user->readAd($ad);
 
-        return inertia('Ad/Single', compact('ad', 'is_bookmarked_for_user'));
+        $accessories = PhoneAccessory::whereNotIn('id', $ad->accessories()->select('id')->pluck('id'))->get();
+
+        return inertia('Ad/Single', compact('ad', 'accessories', 'is_bookmarked_for_user'));
     }
 
     /**

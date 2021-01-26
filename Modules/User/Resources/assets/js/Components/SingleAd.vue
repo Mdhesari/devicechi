@@ -29,6 +29,36 @@
                             </div>
                         </div>
                         <div class="specs">
+                            <ul
+                                class="list-group list-group-horizontal my-4 row accessories"
+                            >
+                                <li
+                                    v-for="(accessory, index) in ad.accessories"
+                                    :key="index"
+                                    class="list-group-item col bg-transparent border-0"
+                                >
+                                    <img
+                                        class="accessory-image"
+                                        v-b-tooltip
+                                        :title="
+                                            __('accessories.' + accessory.title)
+                                        "
+                                        :src="url(accessory.picture_path)"
+                                        :alt="accessory.title"
+                                    />
+                                </li>
+                                <!-- <li
+                                    v-for="(accessory, index) in accessories"
+                                    :key="index"
+                                    class="list-group-item bg-transparent border-0"
+                                >
+                                    <img
+                                        class="accessory-image"
+                                        :src="url(accessory.picture_path)"
+                                        :alt="accessory.title"
+                                    />
+                                </li> -->
+                            </ul>
                             <ul class="infos-phone">
                                 <li class="inner">
                                     <div class="title">قیمت</div>
@@ -104,7 +134,15 @@ import GetContactList from "../Section/ContactList";
 import ShareButton from "../Components/ShareButton";
 import SaveButton from "../Components/SaveButton";
 export default {
-    props: ["ad"],
+    props: {
+        ad: {
+            type: Object
+        },
+        accessories: {
+            type: Array,
+            default: []
+        }
+    },
     components: {
         AdPostGallery,
         HamtaAlert,
