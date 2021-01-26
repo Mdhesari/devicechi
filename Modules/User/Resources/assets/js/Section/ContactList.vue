@@ -26,18 +26,32 @@
                     >
                         {{ contact.value }}
                     </a>
+
+                    <ShareButton
+                        class="d-inline-block"
+                        icon="clipboard"
+                        propId="copy-to-clipboard"
+                        :shareUrl="contact.value"
+                    ></ShareButton>
                 </p>
             </li>
         </ul>
+        <PoliceAlert v-show="contacts.length > 0"></PoliceAlert>
     </div>
 </template>
 
 <script>
 import ContactTypeMixin from "../Mixins/ContactTypeMixin";
+import PoliceAlert from "../Section/PoliceAlert";
+import ShareButton from "../Components/ShareButton";
 
 export default {
     props: ["ad"],
     mixins: [ContactTypeMixin],
+    components: {
+        PoliceAlert: PoliceAlert,
+        ShareButton: ShareButton
+    },
     data() {
         return {
             contacts: []

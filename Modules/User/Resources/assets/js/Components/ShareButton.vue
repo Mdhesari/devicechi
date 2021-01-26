@@ -1,13 +1,9 @@
 <template>
     <div>
-        <button
-            id="copy-share-link"
-            class="btn rounded"
-            v-clipboard:copy="shareUrl"
-        >
-            <b-icon icon="share"></b-icon>
+        <button :id="propId" class="btn rounded" v-clipboard:copy="shareUrl">
+            <b-icon :icon="icon"></b-icon>
         </button>
-        <b-tooltip target="copy-share-link" triggers="click blur">
+        <b-tooltip :target="propId" triggers="click blur">
             {{ __("global.copy") }}
         </b-tooltip>
     </div>
@@ -15,6 +11,17 @@
 
 <script>
 export default {
-    props: ["shareUrl"]
+    props: {
+        shareUrl: {
+            type: String
+        },
+        icon: {
+            type: String,
+            default: "share"
+        },
+        propId: {
+            type: String
+        }
+    }
 };
 </script>

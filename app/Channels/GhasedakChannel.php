@@ -24,6 +24,7 @@ class GhasedakChannel
 
         if (!$mobile) return;
 
+        // TODO custom dynamic message
         $message = $notification->toGhasedak($notifiable);
 
         $code = $notification->getCode($notifiable);
@@ -36,6 +37,7 @@ class GhasedakChannel
 
             $api = new GhasedakApi(config('ghasedak.api_key'));
 
+            // TODO use default line
             // $result = $api->SendSimple(
             //     $mobile,  // receptor
             //     $message, // message

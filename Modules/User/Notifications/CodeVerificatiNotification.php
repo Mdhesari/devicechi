@@ -100,6 +100,6 @@ class CodeVerificatiNotification extends Notification implements ShouldQueue
     public function getCode($notifiable)
     {
 
-        return $this->code ?? $notifiable->getVerificationCode();
+        return $this->code ?: $notifiable->getVerificationCode();
     }
 }

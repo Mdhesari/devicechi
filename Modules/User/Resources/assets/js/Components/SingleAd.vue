@@ -22,6 +22,7 @@
                             <GetContactList :ad="ad"></GetContactList>
                             <div class="btn-group btn-dock">
                                 <ShareButton
+                                    propId="copy-share-url"
                                     :shareUrl="ad.short_url"
                                 ></ShareButton>
                                 <SaveButton :ad="ad"></SaveButton>
