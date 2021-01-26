@@ -55,20 +55,39 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="contact-us-message">
-                            <form action="#">
+                            <form @submit.prevent="submitForm">
                                 <div class="input-holder">
-                                    <label for="">نام شما</label>
-                                    <input type="text" />
+                                    <label for="name">نام شما</label>
+                                    <input
+                                        required
+                                        id="name"
+                                        v-model="form.name"
+                                        type="text"
+                                    />
                                 </div>
                                 <div class="input-holder">
-                                    <label for="">ایمیل</label>
-                                    <input type="text" />
+                                    <label for="mobile">موبایل</label>
+                                    <input
+                                        required
+                                        id="mobile"
+                                        v-model="form.mobile"
+                                        type="tel"
+                                    />
                                 </div>
                                 <div class="input-holder">
-                                    <label for="">پیام</label>
+                                    <label for="">موضوع</label>
+                                    <b-form-select
+                                        required
+                                        v-model="form.subject"
+                                        :options="subjects"
+                                    ></b-form-select>
+                                </div>
+                                <div class="input-holder">
+                                    <label for="text">پیام</label>
                                     <textarea
-                                        name=""
-                                        id=""
+                                        required
+                                        v-model="form.text"
+                                        id="text"
                                         cols="30"
                                         rows="10"
                                         placeholder="پیام"
@@ -92,12 +111,49 @@
 </template>
 
 <script>
-import AuthLayout from "../../Layouts/FrontAuthLayout";
+import AuthLayout from "../Layouts/FrontAuthLayout";
 
 export default {
     props: ["user"],
     components: {
         AuthLayout
+    },
+    data() {
+        return {
+            form: this.$inertia.form({
+                name: "",
+                mobile: "",
+                subject: null,
+                text: ""
+            }),
+            subjects: [
+                {
+                    value: null,
+                    text: this.__("contact-us.subjects.default")
+                },
+                {
+                    value: "adv",
+                    text: this.__("contact-us.subjects.adv")
+                },
+                {
+                    value: "bug_report",
+                    text: this.__("contact-us.subjects.bug_report")
+                },
+                {
+                    value: "participate",
+                    text: this.__("contact-us.subjects.participate")
+                },
+                {
+                    value: "abuse_report",
+                    text: this.__("contact-us.subjects.abuse_report")
+                }
+            ]
+        };
+    },
+    methods: {
+        submitForm() {
+            alert("hurraay!");
+        }
     }
 };
 </script>

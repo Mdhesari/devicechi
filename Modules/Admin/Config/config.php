@@ -4,6 +4,18 @@ return [
     'name' => 'Admin',
     'domain' => env('ADMIN_DOMAIN', 'http://team.localhost'),
     'prefix' => env('ADMIN_PREFIX', '/'),
+    'navs' => [
+        [
+            'title' => __(' Home Page '),
+            'route' => 'user.ad.home',
+            'params' => [],
+        ],
+        [
+            'title' => __(' Contact us '),
+            'route' => 'user.contact-us',
+            'params' => [],
+        ]
+    ],
     'lists' => [
         [
             'title' => __(' Ads '),

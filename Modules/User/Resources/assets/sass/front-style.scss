@@ -2934,7 +2934,8 @@ $pallete: (
 }
 .contact-us-message {
     .input-holder {
-        input {
+        input,
+        select {
             display: block;
             width: 100%;
             padding: 8px;
@@ -2953,8 +2954,9 @@ $pallete: (
         textarea {
             border: none;
             padding: 8px;
-            background-color: #ededed;
+            // background-color: #ededed;
             width: 100%;
+            border: 1px solid pallete("gray");
             border-radius: 12px;
             -webkit-border-radius: 12px;
             -moz-border-radius: 12px;
