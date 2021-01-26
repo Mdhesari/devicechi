@@ -9,9 +9,8 @@ use App\Models\Ad;
 use ftp;
 use Modules\User\Database\Factories\AdContactFactory;
 use Modules\User\Notifications\CodeVerificatiNotification;
-use Modules\User\Space\Contracts\AdContactMustVerifyValue;
 
-class AdContact extends Model implements AdContactMustVerifyValue
+class AdContact extends Model
 {
     use HasFactory,
         Notifiable;
@@ -31,17 +30,6 @@ class AdContact extends Model implements AdContactMustVerifyValue
     {
 
         return $query->whereNotNull('value_verified_at');
-    }
-
-    public function setVerificationCode($code)
-    {
-
-        $this->verification_code = $code;
-    }
-
-    public function getVerificationCode()
-    {
-        return $this->verification_code;
     }
 
     public function ad()

@@ -141,12 +141,13 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
      * @param  mixed $ad_contact
      * @return void
      */
-    public function sendVerification($ad_contact)
+    public function sendVerification($ad_contact, $code)
     {
 
         $data = [
             'ad_contact' => $ad_contact,
             'status' => false,
+            'code' => $code,
         ];
 
         $pipelines = config('contact.verify.pipelines', [

@@ -77,8 +77,6 @@ class AdContactController extends BaseAdController
 
         $code = app(CodeVerificationGenerator::class)->generate();
 
-        $ad_contact->setVerificationCode($code);
-
         if (App::environment('testing'))
             session()->put('test_code', $code);
 
@@ -86,7 +84,7 @@ class AdContactController extends BaseAdController
             AdContact::VERIFICATION_SESSION => Hash::make($code),
         ]);
 
-        return $adContactRepository->sendVerification($ad_contact);
+        return $adContactRepository->sendVerification($ad_contact, $code);
     }
 
     public function verify(Ad $ad, AdContactVerifyRequest $request, AdContactRepository $adContactRepository)

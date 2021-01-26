@@ -17,6 +17,7 @@ class AdContactEmailVerificationPipeline implements AdContactSendVerificationPip
 
             $ad_contact->sendVerification([
                 'channels' => ['mail'],
+                'code' => $code,
             ]);
             $data['status'] = true;
         }

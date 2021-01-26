@@ -32,7 +32,8 @@ interface AdContactRepositoryInterface
      * Send verification to intended user contact
      *
      * @param  mixed $ad_contact
+     * @param  mixed $code
      * @return void
      */
-    public function sendVerification($ad_contact);
+    public function sendVerification($ad_contact, $code);
 }
