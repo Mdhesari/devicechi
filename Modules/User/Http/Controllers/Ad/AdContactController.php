@@ -138,7 +138,7 @@ class AdContactController extends BaseAdController
     {
 
         return response()->json([
-            'contacts' => $ad->contacts->load('type'),
+            'contacts' => $ad->contacts()->with('type')->verified()->get(),
         ]);
     }
 }

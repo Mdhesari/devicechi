@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Ad;
+use ftp;
 use Modules\User\Database\Factories\AdContactFactory;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Space\Contracts\AdContactMustVerifyValue;
