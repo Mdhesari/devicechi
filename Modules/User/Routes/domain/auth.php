@@ -27,6 +27,7 @@ use Modules\User\Http\Controllers\Ad\AdPriceController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Http\Controllers\Auth\SessionController;
+use Modules\User\Http\Controllers\UserContactUsController;
 use Modules\User\Http\Controllers\UserController;
 use Modules\User\Http\Controllers\UserPaymentController;
 
@@ -104,6 +105,8 @@ Route::prefix('/ads')->name('ad.')->group(function () {
     });
 
     Route::get('/', [AdHomeController::class, 'index'])->name('home');
+
+    Route::get('/contact-us', [UserContactUsController::class, 'index'])->name('contact-us');
 
     Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
 
