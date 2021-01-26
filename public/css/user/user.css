@@ -109,6 +109,10 @@ a {
   margin-top: 1em;
 }
 
+.custom-select {
+  padding-right: 2em !important;
+}
+
 .btn {
   box-shadow: none;
 }
