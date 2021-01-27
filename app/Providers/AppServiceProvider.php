@@ -79,14 +79,14 @@ class AppServiceProvider extends ServiceProvider
 
                         [$relation, $relationAttr] = explode('.', $attr);
 
-                        $query->orWhereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery) {
-                            $query->where($relationAttr, 'Like', "%{$searchQuery}%");
+                        $query->whereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery) {
+                            $query->orWhere($relationAttr, 'Like', "%{$searchQuery}%");
                         });
                     },
                     // is single attr
                     function (Builder $query) use ($attr, $searchQuery) {
 
-                        $query->orWhere($attr, 'Like', "%{$searchQuery}%");
+                        $query->where($attr, 'Like', "%{$searchQuery}%");
                     }
                 );
             }

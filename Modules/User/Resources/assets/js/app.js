@@ -59,7 +59,7 @@ Vue.mixin({
             return this.$inertia.page.props.current_root + "/" + path;
         },
         getProp(param) {
-            return this.$inertia.page.props[param];
+            return this.$inertia.page.props[param] || "";
         },
         __(name, replace) {
             return this.$t.get(name, replace);

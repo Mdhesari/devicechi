@@ -7,6 +7,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Ad;
+use Log;
 use Modules\User\Entities\PhoneAccessory;
 
 class AdHomeController extends Controller
@@ -29,12 +30,13 @@ class AdHomeController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function all()
+    public function all(Request $request)
     {
+        $ads = Ad::with('state.city')->filterAd($request)->includeMediaThumb()->published()->get();
 
-        $ads = Ad::with('state.city')->includeMediaThumb()->published()->get();
+        $search = $request->input('q');
 
-        return inertia('Ad/Ads', compact('ads'));
+        return inertia('Ad/Ads', compact('ads', 'search'));
     }
 
     /**
@@ -47,13 +49,16 @@ class AdHomeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * search ads
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function search(Request $request)
     {
-        //
+
+        return response()->json([
+            'ads' => Ad::published()->with('phoneModel.brand', 'state.city')->filterAd($request)->paginate()
+        ]);
     }
 
     /**

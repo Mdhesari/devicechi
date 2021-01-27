@@ -224,17 +224,23 @@ class Ad extends Model implements HasMedia
     public function scopeFilterAd($query, $request)
     {
 
-        $status = $request->query('status');
+        $status = $request->input('status', null);
 
-        if ($status && is_string($status)) {
-            $status = Str::upper($status);
+        $query->when(
+            !is_null($status),
+            function ($query) use ($status) {
+                if (is_string($status)) {
+                    $status = Str::upper($status);
+                    $status = static::getStatusNumber($status);
+                }
 
-            $status = static::getStatusNumber($status);
-        }
+                $query = $query->whereStatus($status);
+            }
+        );
 
-        if (!is_null($status)) $query = $query->whereStatus($status);
+        if ($search = $request->input('brand_id')) $query = $query->wherePhoneBrandId($search);
 
-        if ($search = $request->query('brand_id')) $query = $query->wherePhoneBrandId($search);
+        if ($search = $request->input('q')) $query = $query->searchLike(['title', 'description', 'state.name', 'phoneModel.name'], $search);
 
         return $query;
     }

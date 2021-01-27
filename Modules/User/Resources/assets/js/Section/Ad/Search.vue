@@ -2,15 +2,116 @@
     <section class="search-bar-section">
         <div class="mini-container">
             <div class="search-bar">
-                <input type="text" placeholder="دنبال چه گوشی می گردی " />
-                <button type="button" class="icon">
+                <b-form-input
+                    type="search"
+                    v-model="form.search"
+                    @focus="updateResult"
+                    @keyup="updateResult"
+                    @keyup.delete="restore"
+                    @blur="showResult = false"
+                    placeholder="دنبال چه گوشی می گردی "
+                />
+                <button type="button" class="icon" @click="search">
                     <img src="../../../img/search.svg" alt="Search" />
                 </button>
             </div>
+            <transition name="fade">
+                <div v-show="showResult" class="search-result">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                v-text="`جستجو عبارت ${form.search}`"
+                                @click="search"
+                            ></button>
+                        </li>
+                        <li
+                            v-for="(item, index) in resultList"
+                            :key="index"
+                            class="list-group-item"
+                        >
+                            <a
+                                :href="
+                                    route('user.ad.show', {
+                                        ad: item.slug
+                                    })
+                                "
+                                class="btn btn-link text-lead text-right"
+                            >
+                                <p v-text="item.title"></p>
+                                <p v-text="item.state.city.name"></p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </transition>
         </div>
     </section>
 </template>
 
 <script>
-export default {};
+export default {
+    data() {
+        return {
+            isLoading: false,
+            showResult: false,
+            form: this.$inertia.form({
+                search: this.getProp("search")
+            }),
+            resultList: []
+        };
+    },
+    methods: {
+        updateResult() {
+            if (this.form.search.length < 3) return;
+
+            if (this.isLoading) return;
+
+            this.isLoading = true;
+
+            setTimeout(() => {
+                axios
+                    .post(route("user.ad.all"), {
+                        q: this.form.search
+                    })
+                    .then(response => {
+                        const data = response.data;
+
+                        if (data.ads) this.resultList = data.ads.data;
+
+                        this.isLoading = false;
+                        this.showResult = true;
+                    });
+            }, 1000);
+        },
+        search() {
+            this.$inertia.visit(
+                route("user.ad.all", {
+                    q: this.form.search
+                })
+            );
+        },
+        restore() {
+            this.resultList = [];
+
+            if (this.form.search.length < 1) this.showResult = false;
+        }
+    }
+};
 </script>
+
+<style scoped>
+.list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+</style>

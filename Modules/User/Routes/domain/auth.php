@@ -108,6 +108,8 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
     Route::get('/s', [AdHomeController::class, 'all'])->name('all');
 
+    Route::post('/s', [AdHomeController::class, 'search']);
+
     Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
 
     Route::get('/get/models', [AdMainController::class, 'getModels'])->name('get.models');
