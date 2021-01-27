@@ -14,6 +14,11 @@ return [
             'title' => __(' Contact us '),
             'route' => 'contact-us',
             'params' => [],
+        ],
+        [
+            'title' => __(' All Ads '),
+            'route' => 'user.ad.all',
+            'params' => [],
         ]
     ],
     'lists' => [
