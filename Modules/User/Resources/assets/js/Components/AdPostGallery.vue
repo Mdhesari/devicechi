@@ -1,6 +1,6 @@
 <template>
     <div class="gallery">
-        <div class="swiper-container " id="mainHomeSlider">
+        <div class="swiper-container main-gallery" id="mainHomeSlider">
             <SwiperWrapper>
                 <SwiperSlide
                     v-for="(picture, index) in pictures"

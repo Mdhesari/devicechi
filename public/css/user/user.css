@@ -68,6 +68,7 @@ body {
   text-align: right;
   color: #424242;
   direction: rtl;
+  overflow-x: hidden;
 }
 
 p {
@@ -1413,6 +1414,10 @@ input[type=number] {
   margin: 0 24px;
 }
 
+.call {
+  max-width: 100%;
+}
+
 .btn-call {
   margin: 36px 24px;
   padding: 8px 16px !important;
@@ -2667,6 +2672,11 @@ input[type=number] {
 }
 
 @media (max-width: 991.98px) {
+  .wizard-step .list-contacts .list-contacts-item .btn-del-contact {
+    display: block;
+    left: 1em;
+  }
+
   .vector img {
     width: 350px;
   }
@@ -2677,6 +2687,20 @@ input[type=number] {
 
   .input-phone-number {
     width: 52%;
+  }
+
+  .col-12.col-lg-6.single-post {
+    order: 1;
+    margin-bottom: 0em;
+    padding-top: 2em;
+  }
+
+  .col-12.col-lg-6.gallery-post.links {
+    order: 0;
+  }
+
+  .main-gallery .swiper-slide {
+    height: 400px !important;
   }
 }
 
@@ -2772,22 +2796,12 @@ input[type=number] {
     padding: 10px 0;
   }
 
-  .col-12.col-lg-6.single-post {
-    order: 1;
-    margin-bottom: 0em;
-    padding-top: 2em;
-  }
-
   .actions-navbar .btn {
     padding: 15px 40px;
   }
 
   .actions-navbar .btn .label {
     display: none;
-  }
-
-  .col-12.col-lg-6.gallery-post.links {
-    order: 0;
   }
 
   .single-product .gallery-items .gallery-item {

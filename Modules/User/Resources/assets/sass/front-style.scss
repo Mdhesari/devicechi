@@ -51,6 +51,7 @@ body {
     text-align: right;
     color: pallete("dark");
     direction: rtl;
+    overflow-x: hidden;
 }
 
 p {
@@ -1262,6 +1263,10 @@ input[type="number"] {
 }
 
 .price span {
+}
+
+.call {
+    max-width: 100%;
 }
 
 .btn-call {
@@ -3006,6 +3011,17 @@ $pallete: (
 }
 
 @media (max-width: 991.98px) {
+    .wizard-step {
+        .list-contacts {
+            .list-contacts-item {
+                .btn-del-contact {
+                    display: block;
+                    left: 1em;
+                }
+            }
+        }
+    }
+
     .vector img {
         width: 350px;
     }
@@ -3016,6 +3032,20 @@ $pallete: (
 
     .input-phone-number {
         width: 52%;
+    }
+
+    .col-12.col-lg-6.single-post {
+        order: 1;
+        margin-bottom: 0em;
+        padding-top: 2em;
+    }
+
+    .col-12.col-lg-6.gallery-post.links {
+        order: 0;
+    }
+
+    .main-gallery .swiper-slide {
+        height: 400px !important;
     }
 }
 
@@ -3113,22 +3143,12 @@ $pallete: (
         padding: 10px 0;
     }
 
-    .col-12.col-lg-6.single-post {
-        order: 1;
-        margin-bottom: 0em;
-        padding-top: 2em;
-    }
-
     .actions-navbar .btn {
         padding: 15px 40px;
     }
 
     .actions-navbar .btn .label {
         display: none;
-    }
-
-    .col-12.col-lg-6.gallery-post.links {
-        order: 0;
     }
 
     .single-product .gallery-items .gallery-item {
