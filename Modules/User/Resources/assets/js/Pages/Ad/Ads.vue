@@ -29,14 +29,21 @@
                 >
                     هیچ آگهی موجود نیست!
                 </b-alert>
-                <div v-if="ads.length > 0" class="row normal-ads">
+                <div v-if="allAds.data.length > 0" class="row normal-ads">
                     <NormalAd
-                        v-for="ad in ads"
+                        v-for="ad in allAds.data"
                         :key="ad.id"
                         :ad="ad"
-                        :countAds="ads.length"
+                        :countAds="allAds.data.length"
                     ></NormalAd>
                 </div>
+
+                <Pagination
+                    size="default"
+                    align="center"
+                    :data="allAds"
+                    @pagination-change-page="getResults"
+                ></Pagination>
             </div>
         </section>
     </authLayout>
@@ -47,14 +54,35 @@ import AuthLayout from "../../Layouts/FrontAuthLayout";
 import NormalAd from "../../Components/Ads/NormalAd";
 import SearchSection from "../../Section/Ad/Search";
 import FilterSection from "../../Section/Ad/Filter";
+import Pagination from "laravel-vue-pagination";
 
 export default {
     components: {
         AuthLayout,
         NormalAd,
         SearchSection,
-        FilterSection
+        FilterSection,
+        Pagination
     },
-    props: ["ads", "proAds", "user", "search"]
+    data() {
+        return {
+            allAds: this.getProp("ads")
+        };
+    },
+    props: ["ads", "proAds", "user", "search"],
+    methods: {
+        getResults(page = 1) {
+            axios
+                .get(
+                    route("user.ad.all", {
+                        page,
+                        q: this.search
+                    })
+                )
+                .then(response => {
+                    this.allAds = response.data;
+                });
+        }
+    }
 };
 </script>

@@ -16,10 +16,11 @@ class AdHomeController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
+        $ads = Ad::with('state.city')->includeMediaThumb()->published()->paginate();
 
-        $ads = Ad::with('state.city')->includeMediaThumb()->published()->get();
+        if ($request->expectsJson()) return $ads;
 
         $proAds = Ad::with('state.city')->published()->filterPro()->limit(3)->get();
 
@@ -32,7 +33,9 @@ class AdHomeController extends Controller
      */
     public function all(Request $request)
     {
-        $ads = Ad::with('state.city')->filterAd($request)->includeMediaThumb()->published()->get();
+        $ads = Ad::with('state.city')->filterAd($request)->includeMediaThumb()->published()->paginate(3);
+
+        if ($request->expectsJson()) return $ads;
 
         $search = $request->input('q');
 
