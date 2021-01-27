@@ -99,7 +99,7 @@ export default {
                     //
                 })
                 .catch(error => {
-                    this.$to(this.__("global.errors.common"));
+                    this.$to(this.__("global.errors.common.title"));
                 });
         },
         changeActivePicture(id) {
