@@ -87,7 +87,11 @@
                                 <li class="inner">
                                     <div class="title">برند</div>
                                     <div class="value">
-                                        {{ ad.phone_model.brand.name }}
+                                        {{
+                                            ad.phone_model.brand.persian_name +
+                                                " " +
+                                                ad.phone_model.brand.name
+                                        }}
                                     </div>
                                 </li>
                                 <li class="inner">
