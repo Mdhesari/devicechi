@@ -36,9 +36,9 @@
                                 phone_model: ad_model.name
                             }"
                         >
-                            <strong class="model-label">
+                            <h4 class="model-label">
                                 {{ ad_model.name }}
-                            </strong>
+                            </h4>
                         </inertia-link>
                     </div>
                 </div>
