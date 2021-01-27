@@ -1,8 +1,8 @@
 <template>
-  <front-layout class="home-bg">
-    <IntroductionSection></IntroductionSection>
-    <HomeLoginSection></HomeLoginSection>
-  </front-layout>
+    <front-layout>
+        <IntroductionSection></IntroductionSection>
+        <HomeLoginSection></HomeLoginSection>
+    </front-layout>
 </template>
 
 <script>
@@ -12,11 +12,11 @@ import FrontLayout from "./../Layouts/FrontLayout";
 import AppSection from "./../Components/AppSection";
 
 export default {
-  components: {
-    FrontLayout,
-    IntroductionSection,
-    AppSection,
-    HomeLoginSection,
-  },
+    components: {
+        FrontLayout,
+        IntroductionSection,
+        AppSection,
+        HomeLoginSection
+    }
 };
 </script>

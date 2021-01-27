@@ -1,15 +1,13 @@
 <template>
     <AuthLayout :user="user">
         <Panel :user="user" :tabs="tabs">
-            <div class="row" v-if="ads && !isLoading">
-                <div class="row normal-ads">
-                    <NormalAd
-                        v-for="ad in ads"
-                        :key="ad.id"
-                        :ad="ad"
-                        :countAds="ads.length"
-                    ></NormalAd>
-                </div>
+            <div class="row normal-ads" v-if="ads && !isLoading">
+                <NormalAd
+                    v-for="ad in ads"
+                    :key="ad.id"
+                    :ad="ad"
+                    :countAds="ads.length"
+                ></NormalAd>
 
                 <!-- <div class="col-md-6"></div> -->
             </div>
