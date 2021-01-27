@@ -33,65 +33,10 @@
                 </div>
             </div>
         </section>
-        <section class="search-bar-section">
-            <div class="mini-container">
-                <div class="search-bar">
-                    <input type="text" placeholder="دنبال چه گوشی می گردی " />
-                    <button type="button" class="icon">
-                        <img src="../../../img/search.svg" alt="Search" />
-                    </button>
-                </div>
-            </div>
-        </section>
-        <section class="filter-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12">
-                        <div class="filter-price">
-                            <div class="range" id="slider-snap-value-lower">
-                                <span class="number"></span>
-                                میلیون تومان
-                            </div>
-                            <div class="range" id="slider-snap-value-higher">
-                                <span class="number"></span>
-                                میلیون تومان
-                            </div>
-                            <div
-                                id="slider"
-                                class="noUi-target noUi-ltr noUi-horizontal"
-                            ></div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="filter-model">
-                            <select class="form-control form-control-sm">
-                                <option disabled="disabled" selected="true">
-                                    مدل موبایل مورد نظر</option
-                                >
-                                <option value="">اپل</option>
-                                <option value="">سامسونگ</option>
-                                <option value="">هواوی</option>
-                                <option value="">شیائومی</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
-                        <div class="filter-city">
-                            <select class="form-control form-control-sm">
-                                <option disabled="disabled" selected="true"
-                                    >شهر مورد نظر</option
-                                >
-                                <option value="">تهران</option>
-                                <option value="">تبریز</option>
-                                <option value="">اصفهان</option>
-                                <option value="">اهواز </option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="normal-adssection">
+
+        <SearchSection />
+
+        <section class="normal-adssection mt-4">
             <div class="container">
                 <div class="main-title">
                     <h3>
@@ -115,12 +60,14 @@
 import AuthLayout from "../../Layouts/FrontAuthLayout";
 import NormalAd from "../../Components/Ads/NormalAd";
 import ProAd from "../../Components/Ads/ProAd";
+import SearchSection from "../../Section/Ad/Search";
 
 export default {
     components: {
         AuthLayout,
         NormalAd,
-        ProAd
+        ProAd,
+        SearchSection
     },
     props: ["ads", "proAds", "user"]
 };
