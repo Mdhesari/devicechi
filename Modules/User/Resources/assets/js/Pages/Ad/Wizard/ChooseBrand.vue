@@ -31,7 +31,7 @@
                             :alt="ad_brand.name"
                         />
                         <h4 class="brand-label">
-                            {{ ad_brand.name }}
+                            {{ ad_brand.persian_name + "_" + ad_brand.name }}
                         </h4>
                     </inertia-link>
                 </div>
@@ -77,7 +77,7 @@
                     >
                         <img :src="url(brand.picture_path)" :alt="brand.name" />
                         <h4 class="brand-label">
-                            {{ brand.name }}
+                            {{ brand.persian_name + " " + brand.name }}
                         </h4>
                     </inertia-link>
                 </div>

@@ -7,15 +7,18 @@ use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Models\Ad;
+use Arr;
 use DB;
 use Ghasedak\GhasedakApi;
 use Ghasedak\Laravel\GhasedakServiceProvider;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Reques;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
 use Request;
 use Schema;
+use Str;
 use View;
 
 class AppServiceProvider extends ServiceProvider
@@ -65,6 +68,30 @@ class AppServiceProvider extends ServiceProvider
 
                 $ad->uncomplete();
             }
+        });
+
+        Builder::macro('searchLike', function ($attributes, $searchQuery) {
+            foreach (Arr::wrap($attributes) as $attr) {
+                $this->when(
+                    Str::contains($attr, '.'),
+                    // is relation
+                    function (Builder $query) use ($attr, $searchQuery) {
+
+                        [$relation, $relationAttr] = explode('.', $attr);
+
+                        $query->orWhereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery) {
+                            $query->where($relationAttr, 'Like', "%{$searchQuery}%");
+                        });
+                    },
+                    // is single attr
+                    function (Builder $query) use ($attr, $searchQuery) {
+
+                        $query->orWhere($attr, 'Like', "%{$searchQuery}%");
+                    }
+                );
+            }
+
+            return $this;
         });
     }
 }

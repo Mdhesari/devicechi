@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class PhoneBrand extends Model
 {
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     protected $fillable = [
-        'name', 'picture_path',
+        'name', 'picture_path', 'persian_name'
     ];
 
     public function getRouteKeyName()
@@ -26,7 +34,7 @@ class PhoneBrand extends Model
     public static function scopeFilterSearch($query, $search)
     {
 
-        return $query->where('Name', 'Like',  "%$search%");
+        return $query->searchLike(['name', 'persian_name'], $search);
     }
 
     public function models()
