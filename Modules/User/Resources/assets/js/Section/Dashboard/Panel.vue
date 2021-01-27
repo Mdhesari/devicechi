@@ -1,6 +1,6 @@
 <template>
     <section class="user-panel-section">
-        <div class="container">
+        <div class="container-lg">
             <div class="row mx-2">
                 <inertia-link
                     preserve-scroll

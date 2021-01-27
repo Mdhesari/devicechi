@@ -1,5 +1,5 @@
 <template>
-    <div class="normal-ad col-md-4">
+    <div class="normal-ad col-sm-6 col-md-4">
         <inertia-link
             :href="
                 route('user.ad.show', {
