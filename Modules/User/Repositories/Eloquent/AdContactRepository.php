@@ -105,7 +105,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
             "value" => $user->phone,
-            "value_verified_at" => $user->phone_verified_at,
+            "value_verified_at" => now(),
             "data" => [
                 "phone_country_code" => $user->phone_country_code,
             ],
@@ -122,7 +122,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         $data = [
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
-            "value_verified_at" => $user->phone_verified_at,
+            "value_verified_at" => now(),
             "value" => $user->email,
         ];
 
