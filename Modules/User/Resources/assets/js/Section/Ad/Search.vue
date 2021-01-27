@@ -39,8 +39,14 @@
                                 "
                                 class="btn btn-link text-lead text-right"
                             >
-                                <p v-text="item.title"></p>
+                                <h5 v-text="item.title"></h5>
                                 <p v-text="item.state.city.name"></p>
+                                <div class="meta">
+                                    <p>
+                                        {{ formatMoney(item.price) }}
+                                        <span>تومان</span>
+                                    </p>
+                                </div>
                             </a>
                         </li>
                     </ul>
@@ -64,7 +70,10 @@ export default {
     },
     methods: {
         updateResult() {
-            if (this.form.search.length < 3) return;
+            if (this.form.search.length < 3) {
+                this.showResult = false;
+                return;
+            }
 
             if (this.isLoading) return;
 
@@ -103,8 +112,26 @@ export default {
 
 <style scoped>
 .list-group-item {
+    position: relative;
     border: none;
     border-bottom: 1px solid #eee;
+}
+
+.list-group-item .meta {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+}
+
+.mini-container {
+    position: relative;
+}
+
+.search-result {
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    z-index: 33;
 }
 
 .fade-enter-active,

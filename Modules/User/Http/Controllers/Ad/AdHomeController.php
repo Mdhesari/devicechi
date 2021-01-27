@@ -55,9 +55,10 @@ class AdHomeController extends Controller
      */
     public function search(Request $request)
     {
+        $ads = Ad::with('phoneModel.brand', 'state.city')->publishedWithFilter($request)->latest()->paginate(4);
 
         return response()->json([
-            'ads' => Ad::published()->with('phoneModel.brand', 'state.city')->filterAd($request)->paginate()
+            'ads' => $ads
         ]);
     }
 

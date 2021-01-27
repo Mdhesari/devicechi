@@ -221,6 +221,17 @@ class Ad extends Model implements HasMedia
         return $query->whereNotNull('phone_model_variant_id');
     }
 
+    public function scopePublishedWithFilter($query, $request)
+    {
+
+        $query->published()->where(function ($query) use ($request) {
+
+            $query->filterAd($request);
+        });
+
+        return $query;
+    }
+
     public function scopeFilterAd($query, $request)
     {
 
@@ -238,9 +249,23 @@ class Ad extends Model implements HasMedia
             }
         );
 
-        if ($search = $request->input('brand_id')) $query = $query->wherePhoneBrandId($search);
+        if ($search = $request->input('brand_id')) {
 
-        if ($search = $request->input('q')) $query = $query->searchLike(['title', 'description', 'state.name', 'phoneModel.name'], $search);
+            $query = $query->wherePhoneBrandId($search);
+        }
+
+        if ($search = $request->input('q')) {
+
+            $query = $query->searchLike([
+                'title',
+                'description',
+                'state.name',
+                'state.city.name',
+                'phoneModel.name',
+                'phoneModel.brand.name',
+                'phoneModel.brand.persian_name'
+            ], $search);
+        }
 
         return $query;
     }

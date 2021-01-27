@@ -70,6 +70,45 @@ class AppServiceProvider extends ServiceProvider
             }
         });
 
+        Builder::macro('searchWhereHas', function ($query, $attr, $searchQuery) {
+
+            $attrArr = explode('.', $attr);
+
+            $relation = $attrArr[0];
+
+            $relationAttr = $attrArr[1];
+
+            return $query->orWhereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery, $attrArr, $relation) {
+
+                if (isset($attrArr[2])) {
+
+                    $relation = $attrArr[1];
+                    $relationAttr = $attrArr[2];
+
+                    return $query->whereHas($relation, function ($query) use ($searchQuery, $relationAttr) {
+
+                        $query->Where($relationAttr, 'Like', $searchQuery);
+                    });
+                }
+
+                return $query->Where($relationAttr, 'Like', $searchQuery);
+
+                // $query->when(
+                //     count($attrArr) > 2,
+                //     function (Builder $query) use ($attrArr, $searchQuery) {
+
+                //         unset($attrArr[0]);
+                //         $relationAttr = join('.', $attrArr);
+
+                //         return $this->searchWhereHas($query, $relationAttr, $searchQuery);
+                //     },
+                //     function (Builder $query) use ($relationAttr, $searchQuery, $relation) {
+                //         return $query->where($relationAttr, 'Like', $searchQuery);
+                //     }
+                // );
+            });
+        });
+
         Builder::macro('searchLike', function ($attributes, $searchQuery) {
             foreach (Arr::wrap($attributes) as $attr) {
                 $this->when(
@@ -77,16 +116,22 @@ class AppServiceProvider extends ServiceProvider
                     // is relation
                     function (Builder $query) use ($attr, $searchQuery) {
 
-                        [$relation, $relationAttr] = explode('.', $attr);
+                        $query = $this->searchWhereHas($query, $attr, "%{$searchQuery}%");
 
-                        $query->whereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery) {
-                            $query->orWhere($relationAttr, 'Like', "%{$searchQuery}%");
-                        });
+                        // $attrArr = explode('.', $attr);
+
+                        // $relation = $attrArr[0];
+
+                        // $relationAttr = $attrArr[1];
+
+                        // $query->orWhereHas($relation, function (Builder $query) use ($relationAttr, $searchQuery) {
+                        //     $query->Where($relationAttr, 'Like', "%{$searchQuery}%");
+                        // });
                     },
                     // is single attr
                     function (Builder $query) use ($attr, $searchQuery) {
 
-                        $query->where($attr, 'Like', "%{$searchQuery}%");
+                        $query->orWhere($attr, 'Like', "%{$searchQuery}%");
                     }
                 );
             }
