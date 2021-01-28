@@ -11,13 +11,18 @@ return [
             'params' => [],
         ],
         [
+            'title' => __(' All Ads '),
+            'route' => 'user.ad.all',
+            'params' => [],
+        ],
+        [
             'title' => __(' Contact us '),
             'route' => 'contact-us',
             'params' => [],
         ],
         [
-            'title' => __(' All Ads '),
-            'route' => 'user.ad.all',
+            'title' => __(' Rules '),
+            'route' => 'rules',
             'params' => [],
         ]
     ],

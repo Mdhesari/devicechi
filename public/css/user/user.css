@@ -1026,7 +1026,7 @@ input[type=number] {
   background-color: #ffffff;
   box-shadow: 0 2px 24px rgba(0, 0, 0, 0.05);
   transition: 0.3s all;
-  z-index: 12;
+  z-index: 99;
   border-radius: 30px 0 0 30px;
   -webkit-transition: 0.3s all;
   -moz-transition: 0.3s all;
@@ -1082,7 +1082,7 @@ input[type=number] {
   bottom: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 11;
+  z-index: 98;
   opacity: 0;
   visibility: hidden;
   transition: 0.3s all;
@@ -1748,7 +1748,7 @@ input[type=number] {
 /*SingleBlog*/
 
 .single-blog-section {
-  padding: 100px 0;
+  padding: 50px 0;
 }
 
 .single-blog-inner {
@@ -1851,7 +1851,8 @@ input[type=number] {
 .single-blog-inner .content ul li {
   list-style: initial;
   color: #727272;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 39px;
 }
 
 .single-blog-inner .content blockquote {
@@ -2707,8 +2708,8 @@ input[type=number] {
 /* Queries*/
 
 @media (max-width: 768px) {
-  .btn-mobilesale .main-menu .btn-title {
-    display: none;
+  .main-menu .btn-mobilesale {
+    font-size: 16px !important;
   }
 
   .single-post .heading {
@@ -2831,6 +2832,10 @@ input[type=number] {
 }
 
 @media (max-width: 368px) {
+  .main-menu .btn-mobilesale .btn-title {
+    display: none;
+  }
+
   .actions-navbar .btn {
     padding: 15px 30px;
   }

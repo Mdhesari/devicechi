@@ -30,4 +30,15 @@ class HomeController extends Controller
 
         return Inertia::render('Home', $data);
     }
+
+    /**
+     * rules
+     *
+     * @return void
+     */
+    public function rules()
+    {
+
+        return inertia('Rules');
+    }
 }
