@@ -63,7 +63,19 @@ class AdController extends Controller
         $columns = $grid->getProcessedColumns();
         $item = collect($grid->getData()->items())->first();
 
+        $templates = [
+            [
+                'title' => __(' Template 1 '),
+                'url' => 'images/template-1.png'
+            ],
+            [
+                'title' => __(' Template 1 '),
+                'url' => 'images/template-2.png'
+            ],
+        ];
+
         return view('admin::ads.show', compact(
+            'templates',
             'ad',
             'item',
             'columns',

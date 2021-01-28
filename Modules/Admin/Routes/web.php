@@ -141,7 +141,7 @@ Route::middleware('auth.admin')->group(function () {
 
         Route::get('/', [AdController::class, 'index'])->name('list');
 
-        Route::get('/export/{ad}', [AdExportController::class, 'index'])->name('export');
+        Route::post('/export/{ad}', [AdExportController::class, 'index'])->name('export');
 
         Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');
 

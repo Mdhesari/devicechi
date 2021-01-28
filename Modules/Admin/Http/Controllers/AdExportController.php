@@ -7,6 +7,7 @@ use Arr;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Http\Requests\AdExportRequest;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdRepository;
 use Storage;
@@ -19,17 +20,21 @@ class AdExportController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index(Ad $ad, AdRepositoryInterface $adRepository)
+    public function index(Ad $ad, AdRepositoryInterface $repository, AdExportRequest $request)
     {
+        $repository->setModel($ad);
 
-        $adRepository->setModel($ad);
+        $repository->createCaptionFile();
 
-        $adRepository->createCaptionFile();
+        $repository->renderPicturesToExport(
+            $request->template,
+            $request->input('quality', 100),
+            $request->boolean('dont_overwrite'),
 
-        $adRepository->renderPicturesToExport();
+        );
 
         $zip_path = store_dir_to_zip(
-            Storage::path($adRepository->getExportDirname()),
+            Storage::path($repository->getExportDirname()),
             'export.zip'
         );
 

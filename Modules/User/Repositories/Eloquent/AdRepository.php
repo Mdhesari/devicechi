@@ -189,6 +189,9 @@ class AdRepository extends Repository implements
 
         $template = Str::of(config('admin.instagram.templates.post'));
 
+        if ($ad->status == Ad::STATUS_UNCOMPLETED)
+            return false;
+
         $text = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
             ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
             ->replace(':variants', $ad->variant->storage . 'حافظه')
@@ -208,31 +211,30 @@ class AdRepository extends Repository implements
         return strval($path);
     }
 
-    public function renderPicturesToExport($template = null, $quality = 100)
+    public function renderPicturesToExport($template = null, $quality = 100, $dont_overwrite = false)
     {
-
-        $pictures = $this->model->pictures()->latest()->get();
-
-        $index = 0;
+        $pictures = $this->model->media()->latest()->get();
 
         foreach ($pictures as $picture) {
 
-            $image = Storage::path($picture->getAttributes()['url']);
+            $image = $picture->getPath();
 
             $export_src = pathinfo($image);
 
-            $dirname = $export_src['dirname'] . '/exports';
+            $dirname = Storage::path($this->getExportDirName());
 
             $full_path = Str::of($dirname)
                 ->append('/1080-1080-')
                 ->append($export_src['basename']);
 
-            // TODO make it optional to override existing watermarks
-            // if (file_exists($full_path)) continue;
+            if ($dont_overwrite && file_exists($full_path)) continue;
 
             $text = null;
 
-            if ($index == 0)
+            if (
+                isset($picture->custom_properties['active'])
+                && $picture->custom_properties['active']
+            )
                 $text = Str::of(ucfirst($this->model->phoneModel->brand->name))
                     ->append("\n")
                     ->append(ucfirst($this->model->phoneModel->name));
@@ -248,8 +250,6 @@ class AdRepository extends Repository implements
             }
 
             $image->save($full_path, $quality);
-
-            $index++;
         }
     }
 

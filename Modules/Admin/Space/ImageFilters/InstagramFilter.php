@@ -37,7 +37,7 @@ class InstagramFilter implements FilterInterface
      * @param  mixed $text
      * @return void
      */
-    public function __construct($text, $blur = false, $template = null)
+    public function __construct($text,  $template = null, $blur = false)
     {
         $this->_text = $text;
         $this->_template = $template;
@@ -51,8 +51,7 @@ class InstagramFilter implements FilterInterface
      */
     public function getTemplate()
     {
-
-        return $this->_template ?: public_path('images/template-1.png');
+        return is_null($this->_template) ? public_path('images/template-1.png') : public_path($this->_template);
     }
 
     /**

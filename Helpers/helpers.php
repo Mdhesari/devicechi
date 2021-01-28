@@ -93,9 +93,11 @@ function store_dir_to_zip($path, $zip_file = 'archive.zip')
 {
 
     $zip_file = pathinfo($path)['dirname'] . '/' . trim($zip_file, '/');
-
     $zip = new ZipArchive;
+
     $zip->open($zip_file, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+    if (!File::exists($path)) mkdir($path);
 
     $files = new RecursiveDirectoryIterator($path);
 
