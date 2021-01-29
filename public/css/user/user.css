@@ -491,7 +491,7 @@ input[type=number] {
 .wizard-step label.icon-upload-label {
   background-color: #f0f0f0;
   color: #495057;
-  border-radius: 3px;
+  border-radius: 8px;
   border: none;
 }
 
@@ -500,7 +500,7 @@ input[type=number] {
   color: #333;
   padding: 16px 18px;
   font-size: 18px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -774,11 +774,11 @@ input[type=number] {
 
 .model-item a {
   display: inline-block;
-  border: 1px solid #eee;
   text-align: center;
   margin: 15px;
   padding: 12px 16px;
   border-radius: 3px;
+  box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.1);
 }
 
 .model-item a:hover {
@@ -796,7 +796,7 @@ input[type=number] {
   color: #333;
   font-size: 16px;
   font-family: IranSans;
-  font-weight: 550 !important;
+  font-weight: 400 !important;
   margin-top: 8px;
 }
 
@@ -810,10 +810,10 @@ input[type=number] {
 
 .brand-item a {
   display: inline-block;
-  border: 1px solid #eee;
   padding: 14px;
   border-radius: 8px;
   margin: 10px 0;
+  box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.1);
 }
 
 .brand-item a:hover {
@@ -831,7 +831,7 @@ input[type=number] {
   color: #333;
   font-size: 16px;
   font-family: IranSans;
-  font-weight: 550 !important;
+  font-weight: 400 !important;
   margin-top: 8px;
 }
 

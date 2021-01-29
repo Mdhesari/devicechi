@@ -70,6 +70,8 @@ class AdsGrid extends Grid implements AdsGridInterface
 				],
 				"presenter" => function ($columnData, $columnName) {
 
+					if (is_null($columnData->phoneModel)) return "";
+
 					return $columnData->phoneModel->name;
 				},
 				"export" => false
@@ -81,6 +83,8 @@ class AdsGrid extends Grid implements AdsGridInterface
 					"operator" => "like",
 				],
 				"presenter" => function ($columnData, $columnName) {
+
+					if (is_null($columnData->phoneModel)) return "";
 
 					return $columnData->phoneModel->brand->name;
 				},
