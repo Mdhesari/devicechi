@@ -182,31 +182,15 @@ class AdRepository extends Repository implements
         return $ad->archive();
     }
 
-    public function createCaptionFile()
+    public function createCaptionFile($caption)
     {
 
         $ad = $this->model;
 
-        $template = Str::of(config('admin.instagram.templates.post'));
-
-        if ($ad->status == Ad::STATUS_UNCOMPLETED)
-            return false;
-
-        $text = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
-            ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
-            ->replace(':variants', $ad->variant->storage . 'حافظه')
-            ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
-            ->replace(':price', $ad->getFormattedPrice())
-            ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
-            ->replace(':status', trans($ad->getStatus()))
-            ->replace(':title', $ad->title)
-            ->replace(':description', $ad->description)
-            ->replace('<br>', "\n");
-
         $path = $this->getExportDirName($ad)
             ->append('/caption.txt');
 
-        Storage::put($path, $text);
+        Storage::put($path, $caption);
 
         return strval($path);
     }

@@ -20,14 +20,17 @@ class AdExportController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index(Ad $ad, AdRepositoryInterface $repository, AdExportRequest $request)
+    public function index(Ad $ad, AdRepositoryInterface $repository, Request $request)
     {
         $repository->setModel($ad);
 
-        $repository->createCaptionFile();
+        $repository->createCaptionFile(render_ad_caption(
+            $ad,
+            $request->input('caption')
+        ));
 
         $repository->renderPicturesToExport(
-            $request->template,
+            $request->input('template'),
             $request->input('quality', 100),
             $request->boolean('dont_overwrite'),
 

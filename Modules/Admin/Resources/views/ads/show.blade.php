@@ -142,7 +142,7 @@
                                     <p class="alert alert-danger">{{ $message }}</p>
                                     @enderror
 
-                                    <div class="form-group">
+                                    <div class="form-group my-4">
                                         <input type="checkbox" name="dont_overwrite">
                                         <label for="dont_overwrite">@lang(' Use existing watermark ')</label>
                                     </div>
@@ -150,8 +150,20 @@
                                     <p class="alert alert-danger">{{ $message }}</p>
                                     @enderror
 
+                                    <div class="form-group my-4">
+                                        <label for="caption">@lang(' Caption ')</label>
+                                        <button type="button" id="copy-button" class="btn btn-outline-success my-2"
+                                            data-trigger="click" data-toggle="tooltip" title="@lang(' Copied! ')"
+                                            data-delay='{"show":"100", "hide":"500"}'>@lang(' Copy ')</button>
+                                        <textarea name="caption" class="form-control" id="caption"
+                                            rows="20">{{ $caption }}</textarea>
+                                    </div>
+                                    @error('caption')
+                                    <p class="alert alert-danger">{{ $message }}</p>
+                                    @enderror
+
                                     <button type="submit" class="btn btn-outline-info mt-4">
-                                        @lang(' Export Instagram Post ')
+                                        @lang(' Export Instagram ')
                                     </button>
                                 </form>
                             </div>
@@ -196,3 +208,34 @@
     </div>
 </section>
 @endsection
+
+@push('add_scripts')
+<script>
+    jQuery(function($) {
+    $("#copy-button").bind("click", function() {
+        var input = document.getElementById("caption");
+        console.log(input)
+        input.select();
+        input.setSelectionRange(0, input.value.length + 1);
+        try {
+            var success = document.execCommand("copy");
+            if (success) {
+                // Change tooltip message to "Copied!"
+                $("#copy-button").tooltip()
+
+                setTimeout(() => {
+                    $("#copy-button").tooltip('hide')
+                }, 1000);
+            } else {
+                // Handle error. Perhaps change tooltip message to tell user to use Ctrl-c
+                // instead.
+            }
+        } catch (err) {
+            // Handle error. Perhaps change tooltip message to tell user to use Ctrl-c
+            // instead.
+        }
+    });
+});
+
+</script>
+@endpush

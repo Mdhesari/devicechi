@@ -15,7 +15,7 @@ class AdExportRequest extends FormRequest
     {
         return [
             'template' => ['required', 'string'],
-            'quality' => ['required', 'numeric', 'min:10', 'max:100']
+            'quality' => ['nullable', 'numeric', 'min:10', 'max:100']
         ];
     }
 

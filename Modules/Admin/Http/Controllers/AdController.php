@@ -74,7 +74,10 @@ class AdController extends Controller
             ],
         ];
 
+        $caption = render_ad_caption($ad);
+
         return view('admin::ads.show', compact(
+            'caption',
             'templates',
             'ad',
             'item',

@@ -17,6 +17,7 @@ class CreateAdsTable extends Migration
             $table->id()->from(1000);
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
+            $table->longText('caption')->nullable();
             $table->foreignId('user_id')->constrained();
 
             $table->foreignId('state_id')->nullable();

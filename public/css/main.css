@@ -1,26 +1,29 @@
 .fa {
-	vertical-align: middle;
+    vertical-align: middle;
+}
+
+.tooltip-inner {
+    font-family: "Vazir", sans-serif !important;
 }
 
 .laravel-grid .btn-group .btn {
-	margin-left: 8px;
-	margin-right: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .boxshadow-0,
 .boxshadow-0:active,
 .boxshadow-0:focus {
-	box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 .picture img {
-
-	width: 300px;
+    width: 300px;
 }
 
 div.modal {
-	top: 50%;
-	transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 table thead .sorting,
@@ -28,26 +31,26 @@ table thead .sorting_asc,
 table thead .sorting_desc,
 table thead .sorting_asc_disabled,
 table thead .sorting_desc_disabled {
-	cursor: pointer;
-	*cursor: hand;
-	background-repeat: no-repeat;
-	background-position: center right;
-	padding-right: 18px;
+    cursor: pointer;
+    *cursor: hand;
+    background-repeat: no-repeat;
+    background-position: center right;
+    padding-right: 18px;
 }
 table thead .sorting {
-	background-image: url('../image/icons/sort_both.png');
+    background-image: url("../image/icons/sort_both.png");
 }
 table thead .sorting_asc {
-	background-image: url('../image/icons/sort_asc.png');
+    background-image: url("../image/icons/sort_asc.png");
 }
 table thead .sorting_desc {
-	background-image: url('../image/icons/sort_desc.png');
+    background-image: url("../image/icons/sort_desc.png");
 }
 table thead .sorting_asc_disabled {
-	background-image: url('../image/icons/sort_asc_disabled.png');
+    background-image: url("../image/icons/sort_asc_disabled.png");
 }
 table thead .sorting_desc_disabled {
-	background-image: url('../image/icons/sort_desc_disabled.png');
+    background-image: url("../image/icons/sort_desc_disabled.png");
 }
 
 table.order-column tbody tr > .sorting_1,
@@ -56,7 +59,7 @@ table.order-column tbody tr > .sorting_3,
 table.display tbody tr > .sorting_1,
 table.display tbody tr > .sorting_2,
 table.display tbody tr > .sorting_3 {
-	background-color: #fafafa;
+    background-color: #fafafa;
 }
 table.order-column tbody tr.selected > .sorting_1,
 table.order-column tbody tr.selected > .sorting_2,
@@ -64,77 +67,77 @@ table.order-column tbody tr.selected > .sorting_3,
 table.display tbody tr.selected > .sorting_1,
 table.display tbody tr.selected > .sorting_2,
 table.display tbody tr.selected > .sorting_3 {
-	background-color: #acbad5;
+    background-color: #acbad5;
 }
 table.display tbody tr.odd > .sorting_1,
 table.order-column.stripe tbody tr.odd > .sorting_1 {
-	background-color: #f1f1f1;
+    background-color: #f1f1f1;
 }
 table.display tbody tr.odd > .sorting_2,
 table.order-column.stripe tbody tr.odd > .sorting_2 {
-	background-color: #f3f3f3;
+    background-color: #f3f3f3;
 }
 table.display tbody tr.odd > .sorting_3,
 table.order-column.stripe tbody tr.odd > .sorting_3 {
-	background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 table.display tbody tr.odd.selected > .sorting_1,
 table.order-column.stripe tbody tr.odd.selected > .sorting_1 {
-	background-color: #a6b4cd;
+    background-color: #a6b4cd;
 }
 table.display tbody tr.odd.selected > .sorting_2,
 table.order-column.stripe tbody tr.odd.selected > .sorting_2 {
-	background-color: #a8b5cf;
+    background-color: #a8b5cf;
 }
 table.display tbody tr.odd.selected > .sorting_3,
 table.order-column.stripe tbody tr.odd.selected > .sorting_3 {
-	background-color: #a9b7d1;
+    background-color: #a9b7d1;
 }
 table.display tbody tr.even > .sorting_1,
 table.order-column.stripe tbody tr.even > .sorting_1 {
-	background-color: #fafafa;
+    background-color: #fafafa;
 }
 table.display tbody tr.even > .sorting_2,
 table.order-column.stripe tbody tr.even > .sorting_2 {
-	background-color: #fcfcfc;
+    background-color: #fcfcfc;
 }
 table.display tbody tr.even > .sorting_3,
 table.order-column.stripe tbody tr.even > .sorting_3 {
-	background-color: #fefefe;
+    background-color: #fefefe;
 }
 table.display tbody tr.even.selected > .sorting_1,
 table.order-column.stripe tbody tr.even.selected > .sorting_1 {
-	background-color: #acbad5;
+    background-color: #acbad5;
 }
 table.display tbody tr.even.selected > .sorting_2,
 table.order-column.stripe tbody tr.even.selected > .sorting_2 {
-	background-color: #aebcd6;
+    background-color: #aebcd6;
 }
 table.display tbody tr.even.selected > .sorting_3,
 table.order-column.stripe tbody tr.even.selected > .sorting_3 {
-	background-color: #afbdd8;
+    background-color: #afbdd8;
 }
 table.display tbody tr:hover > .sorting_1,
 table.order-column.hover tbody tr:hover > .sorting_1 {
-	background-color: #eaeaea;
+    background-color: #eaeaea;
 }
 table.display tbody tr:hover > .sorting_2,
 table.order-column.hover tbody tr:hover > .sorting_2 {
-	background-color: #ececec;
+    background-color: #ececec;
 }
 table.display tbody tr:hover > .sorting_3,
 table.order-column.hover tbody tr:hover > .sorting_3 {
-	background-color: #efefef;
+    background-color: #efefef;
 }
 table.display tbody tr:hover.selected > .sorting_1,
 table.order-column.hover tbody tr:hover.selected > .sorting_1 {
-	background-color: #a2aec7;
+    background-color: #a2aec7;
 }
 table.display tbody tr:hover.selected > .sorting_2,
 table.order-column.hover tbody tr:hover.selected > .sorting_2 {
-	background-color: #a3b0c9;
+    background-color: #a3b0c9;
 }
 table.display tbody tr:hover.selected > .sorting_3,
 table.order-column.hover tbody tr:hover.selected > .sorting_3 {
-	background-color: #a5b2cb;
+    background-color: #a5b2cb;
 }

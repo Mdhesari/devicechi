@@ -126,6 +126,14 @@ class Ad extends Model implements HasMedia
         return 'slug';
     }
 
+    public function updateCaption($caption)
+    {
+
+        return $this->forceFill([
+            'caption' => $caption,
+        ])->save();
+    }
+
     public function publish()
     {
 
