@@ -30,10 +30,7 @@
                     :placeholder="__('ads.form.placeholder.price')"
                 ></b-form-input>
                 <p class="text-danger" v-text="form.error('price')"></p>
-                <p
-                    class="form-text text-muted"
-                    v-text="calculated_price"
-                ></p>
+                <p class="form-text text-muted" v-text="calculated_price"></p>
             </b-form-group>
 
             <b-form-group class="text-center mt-4">
@@ -60,6 +57,7 @@
 
 <script>
 import WizardStep from "../../../Components/WizardStep";
+import { NumberToWords } from "persian-tools2";
 
 export default {
     components: {
@@ -120,10 +118,11 @@ export default {
                 let result = this.formatMoney(price) + " تومان";
 
                 if (getPrice) {
-                    return result;
+                    return NumberToWords.convert(result) + " تومان";
                 }
 
-                this.calculated_price = result;
+                this.calculated_price =
+                    NumberToWords.convert(result) + " تومان";
             } else this.calculated_price = "";
         }
     }

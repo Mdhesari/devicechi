@@ -36,7 +36,7 @@ class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPip
 
             $ad_contact->sendVerification([
                 'channels' => [
-                    'ghasedak',
+                    // 'ghasedak',
                 ],
                 'code' => $code
             ]);
