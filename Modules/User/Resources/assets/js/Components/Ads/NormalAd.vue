@@ -1,5 +1,10 @@
 <template>
-    <div class="normal-ad col-sm-6 col-md-4">
+    <div
+        class="normal-ad col-sm-6"
+        :class="{
+            'col-md-4': useFour
+        }"
+    >
         <inertia-link
             :href="
                 route('user.ad.show', {
@@ -18,12 +23,14 @@
                     </div>
                 </div>
                 <div class="details">
-                    <h5 class="ad-name ">
+                    <h5 class="ad-name">
                         {{ ad.title }}
                     </h5>
-                    <div class="ad-price text-muted mt-4">
-                        {{ formatMoney(ad.price) }}
-                        <span>تومان</span>
+                    <div class="ad-price text-muted mt-4 mb-3">
+                        <strong>
+                            <span>{{ formatMoney(ad.price) }}</span>
+                            <span>تومان</span>
+                        </strong>
                     </div>
                     <p class="publish-time text-muted" v-if="ad.state">
                         <span>
@@ -45,7 +52,18 @@
 import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
 
 export default {
-    props: ["ad", "countAds"],
+    props: {
+        useFour: {
+            type: Boolean,
+            default: true
+        },
+        ad: {
+            type: Object
+        },
+        countAds: {
+            type: Number
+        }
+    },
     mixins: [AdPictureHelpers]
 };
 </script>

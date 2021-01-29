@@ -114,6 +114,43 @@ a:active {
   outline: none !important;
 }
 
+.alert {
+  padding: 24px 32px;
+}
+
+.bg-info,
+.bg-warning,
+.bg-danger,
+.bg-success,
+.bg-secondary,
+.bg-primary {
+  border-radius: 12px;
+}
+
+.bg-info p,
+.bg-info .alert-heading,
+.bg-warning p,
+.bg-warning .alert-heading,
+.bg-danger p,
+.bg-danger .alert-heading,
+.bg-success p,
+.bg-success .alert-heading,
+.bg-secondary p,
+.bg-secondary .alert-heading,
+.bg-primary p,
+.bg-primary .alert-heading {
+  color: #f7f8f0;
+}
+
+.bg-info p,
+.bg-warning p,
+.bg-danger p,
+.bg-success p,
+.bg-secondary p,
+.bg-primary p {
+  margin: 0;
+}
+
 .custom-radio,
 .custom-control {
   margin-top: 1em;
@@ -133,6 +170,7 @@ a:active {
 
 .modal-content {
   border: 0;
+  border-radius: 12px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -155,6 +193,9 @@ a:active {
 .wizard .wizard-card {
   padding: 30px;
   width: 100%;
+  box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: none !important;
 }
 
 .wizard .row {
@@ -341,6 +382,7 @@ a:active {
 }
 
 .header-site #profile-box button .b-avatar {
+  color: #ffffff;
   width: 2.3rem;
   height: 2.3rem;
 }
@@ -510,11 +552,6 @@ input[type=number] {
   margin-bottom: 2em;
   padding: 16px 36px;
   color: #f7f8f9 !important;
-  background: #11998e;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #38ef7d, #11998e);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border: none;
   box-shadow: -3px 3px 20px rgba(93, 192, 136, 0.4), 0 6px 6px rgba(115, 197, 109, 0);
   transition: box-shadow 350ms;
@@ -542,11 +579,11 @@ input[type=number] {
 }
 
 .input-phone-number {
-  width: 40%;
+  width: 30%;
 }
 
 .input-phone-code {
-  width: 12%;
+  width: 10%;
   position: relative;
   left: 1em;
 }
@@ -603,7 +640,7 @@ input[type=number] {
 }
 
 .section.login-form-section .login-form {
-  margin-top: 25%;
+  margin: 64px 0;
 }
 
 .section.login-form-section .phone_number input,
@@ -671,8 +708,9 @@ input[type=number] {
   width: 100%;
   text-align: center;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  margin-top: 1.5rem;
 }
 
 .form-confirmation input[type=submit]:focus,
@@ -680,7 +718,7 @@ input[type=number] {
 .form-confirmation input[type=submit]:active {
   border: none;
   outline: none;
-  background-color: #2ee59d;
+  background-color: #73b479;
   color: #fff;
   transform: translateY(-4px);
 }
@@ -775,10 +813,11 @@ input[type=number] {
 .model-item a {
   display: inline-block;
   text-align: center;
-  margin: 15px;
-  padding: 12px 16px;
+  margin: 10px;
+  padding: 12px 0;
   border-radius: 3px;
   box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.1);
+  width: 190px;
 }
 
 .model-item a:hover {
@@ -806,6 +845,12 @@ input[type=number] {
 
 .brand-item {
   text-align: center;
+}
+
+.brand-item .brand-item-inner {
+  width: 100%;
+  max-height: 170px;
+  height: 170px;
 }
 
 .brand-item a {
@@ -2284,7 +2329,7 @@ input[type=number] {
   overflow: hidden;
   position: relative;
   transition: 350ms;
-  height: 200px;
+  height: 250px;
   z-index: 10;
 }
 
@@ -2306,6 +2351,12 @@ input[type=number] {
   overflow: hidden;
 }
 
+.normal-ads .edit-ad {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 16px;
+}
+
 .normal-ads .inner .details {
   padding: 45px 15px 20px;
   border-bottom-right-radius: 20px;
@@ -2313,7 +2364,7 @@ input[type=number] {
   position: relative;
   top: -25px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  min-height: 125px;
+  height: 230px;
   font-size: 14px;
 }
 
@@ -2337,7 +2388,7 @@ input[type=number] {
 /* FOOTER */
 
 .footer-site {
-  margin-top: 32em;
+  margin-top: 4rem;
 }
 
 .footer-site .social > a {

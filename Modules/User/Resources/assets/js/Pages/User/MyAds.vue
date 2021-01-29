@@ -7,11 +7,13 @@
                     :key="ad.id"
                     :ad="ad"
                     :countAds="ads.length"
+                    :useFour="false"
                 >
                     <p :class="`status ${renderStatusClass(ad.status)}`">
                         {{ renderStatusLabel(ad.status) }}
                     </p>
                     <inertia-link
+                        class="edit-ad"
                         :href="
                             route('user.ad.step_phone_demo', {
                                 ad: ad.slug

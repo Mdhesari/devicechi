@@ -6,7 +6,7 @@
             ref="confirmModal"
         ></confirm-modal>
 
-        <b-col md="6" class="login-vector-wrapper">
+        <!-- <b-col md="6" class="login-vector-wrapper">
             <div class="vector">
                 <img
                     class="sale-vector"
@@ -14,12 +14,12 @@
                     alt="Sale Online | فروش آنلاین"
                 />
             </div>
-        </b-col>
+        </b-col> -->
 
-        <b-col md="6" class="login-form-wrapper text-right">
+        <b-col class="login-form-wrapper text-right">
             <b-form @submit="onSubmit" @reset="onReset" class="login-form">
                 <b-form-group
-                    class="phone_number"
+                    class="phone_number text-center"
                     :label="__('login.form.label')"
                 >
                     <b-button
@@ -58,7 +58,6 @@
 
 <script>
 import ConfirmModal from "../Forms/ConfirmPhoneModal";
-import Axios from "axios";
 
 export default {
     components: {

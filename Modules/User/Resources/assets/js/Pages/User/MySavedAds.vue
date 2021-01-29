@@ -7,6 +7,7 @@
                     :key="ad.id"
                     :ad="ad"
                     :countAds="ads.length"
+                    :useFour="false"
                 ></NormalAd>
 
                 <!-- <div class="col-md-6"></div> -->
