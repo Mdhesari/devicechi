@@ -35,7 +35,10 @@ class AdDemoController extends BaseAdController
 
         $is_bookmarked_for_user = $request->user()->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
 
-        $ad->append('short_url');
+        $ad->append([
+            'short_url',
+            'is_confirmed'
+        ]);
 
         return inertia('Ad/Demo', compact('ad', 'help', 'is_bookmarked_for_user', 'warning'));
     }

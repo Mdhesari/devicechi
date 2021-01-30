@@ -14,6 +14,7 @@ use Modules\User\Http\Requests\Ad\AdContactVerifyRequest;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Session;
 use Validator;
 
 class AdContactController extends BaseAdController
@@ -95,6 +96,8 @@ class AdContactController extends BaseAdController
         $hashed_value = session(AdContact::VERIFICATION_SESSION);
 
         if (Hash::check($verification_code, $hashed_value)) {
+
+            Session::forget(AdContact::VERIFICATION_SESSION);
 
             $ad_contact = $adContactRepository->find($request->ad_contact_id);
 

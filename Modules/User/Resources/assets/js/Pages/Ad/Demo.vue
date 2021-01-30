@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <SingleAd :ad="ad"></SingleAd>
-                <AdActionsGroup :ad="ad" />
+                <AdActionsGroup :ad="ad" :isConfirmed="ad.is_confirmed" />
             </b-container>
         </section>
     </authLayout>

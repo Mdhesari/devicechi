@@ -93,6 +93,8 @@ class SessionController extends Controller
 
         if (Hash::check($request->code, $hashed_verification_code) && $phone) {
 
+            $request->session()->forget(['phone', 'verification_code', 'phone_country_code']);
+
             $user = User::where('phone', $phone)->first();
 
             $user->verifyPhoneNumberIfNotVerified();

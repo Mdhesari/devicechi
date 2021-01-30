@@ -6,6 +6,7 @@
                 :title="__('ads.actions.save')"
                 class="btn-save"
                 @click="publishAd"
+                :disabled="isConfirmed"
             >
                 <!-- <span class="label">
                     {{ __("ads.actions.save") }}
@@ -52,6 +53,11 @@
 <script>
 export default {
     props: ["ad"],
+    data() {
+        return {
+            isConfirmed: this.getProp("isConfirmed")
+        };
+    },
     methods: {
         getBack() {
             this.$inertia.visit(

@@ -91,10 +91,22 @@ class Ad extends Model implements HasMedia
         return $this->status === self::STATUS_AVAILABLE;
     }
 
+    public function getIsPublishedAttribute()
+    {
+
+        return $this->isPublished();
+    }
+
     public function isConfirmed()
     {
 
         return $this->status === self::STATUS_PENDING;
+    }
+
+    public function getIsConfirmedAttribute()
+    {
+
+        return $this->isConfirmed();
     }
 
     // ======== Scopes ==================
