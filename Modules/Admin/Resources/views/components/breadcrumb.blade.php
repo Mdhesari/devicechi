@@ -5,7 +5,7 @@
     <div class="col-sm-6">
         <ol class="breadcrumb float-sm-left">
 
-            <x-breadcrumb-item :url="route('dashboard')">خانه</x-breadcrumb-item>
+            <x-breadcrumb-item :url="route('admin.dashboard')">خانه</x-breadcrumb-item>
 
             @if(empty($slot->toHtml()))
             <x-breadcrumb-item>{{ $title }}</x-breadcrumb-item>

@@ -25,7 +25,6 @@ use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
-use Modules\Admin\Http\Controllers\CategoryController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
 use Modules\Admin\Http\Controllers\Payment\PaymentController;
@@ -33,21 +32,26 @@ use Modules\Admin\Http\Controllers\RegisterController;
 use Modules\Admin\Http\Controllers\RolePermissionController;
 use Modules\Admin\Http\Controllers\UserController;
 
-Route::middleware('auth.admin')->group(function () {
 
-    // root endpoint
+Route::name('admin.')->middleware('auth.admin')->group(function () {
+
     Route::get('/', [HomeController::class, 'index'])->name('dashboard');
-    Route::post('logout', [AuthController::class, 'logout'])->name('admin.logout');
 
-    Route::get('profile', [AdminController::class, 'index'])->name('admin.profile');
-    Route::put('profile', [AdminController::class, 'update']);
+    Route::prefix('profile')->group(function () {
 
-    Route::prefix('/activity-log')->middleware('can:activity-log-management')->name('admin.activity.')->group(function () {
+        Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+
+        Route::get('/', [AdminController::class, 'index'])->name('profile');
+
+        Route::put('/', [AdminController::class, 'update']);
+    });
+
+    Route::prefix('/activity-log')->middleware('can:activity-log-management')->name('activity.')->group(function () {
 
         Route::get('/', [ActivityLogController::class, 'index'])->name('report');
     });
 
-    Route::prefix('role-permissions')->middleware('can:access-management')->name('admin.role-permission.')->group(function () {
+    Route::prefix('role-permissions')->middleware('can:access-management')->name('role-permission.')->group(function () {
 
         Route::post('/role/create', [RolePermissionController::class, 'store'])->name('create-role');
 
@@ -56,15 +60,19 @@ Route::middleware('auth.admin')->group(function () {
         Route::put('/{role}', [RolePermissionController::class, 'update']);
     });
 
-    Route::prefix('users')->name('admin.users.')->group(function () {
+    Route::prefix('users')->name('users.')->group(function () {
+
+        Route::get('search', [UserController::class, 'search'])->name('search');
 
         Route::middleware('can:update user')->group(function () {
-            Route::get('/', [UserController::class, 'list'])->name('list');
 
-            Route::get('/show/{user}', [UserController::class, 'show'])->name('show');
+            Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
+
+            Route::post('/edit/{user}', [UserController::class, 'update']);
         });
 
         Route::middleware('can:create user')->group(function () {
+
             Route::get('/add', [UserController::class, 'create'])->name('add');
 
             Route::post('/add', [UserController::class, 'store']);
@@ -72,9 +80,9 @@ Route::middleware('auth.admin')->group(function () {
 
         Route::middleware('can:read user')->group(function () {
 
-            Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
+            Route::get('/', [UserController::class, 'list'])->name('list');
 
-            Route::post('/edit/{user}', [UserController::class, 'update']);
+            Route::get('/show/{user}', [UserController::class, 'show'])->name('show');
         });
 
         Route::middleware('can:delete user')->group(function () {
@@ -89,24 +97,17 @@ Route::middleware('auth.admin')->group(function () {
         });
     });
 
-    Route::prefix('admins')->middleware('can:read admin')->name('admin.admins.')->group(function () {
-
-        Route::get('/', [AdminController::class, 'list'])->name('list');
+    Route::prefix('admins')->name('admins.')->group(function () {
 
         Route::middleware('can:create admin')->group(function () {
 
             Route::get('/add', [AdminController::class, 'create'])->name('add');
 
             Route::post('/add', [AdminController::class, 'store']);
-        });
-
-        Route::post('/{admin}', [AdminController::class, 'show'])->name('show');
-
-        Route::middleware('can:update admin')->group(function () {
 
             Route::get('/edit/{admin}', [AdminController::class, 'edit'])->name('edit');
 
-            Route::post('/edit/{admin}', [AdminController::class, 'update'])->name('update');
+            Route::post('/edit/{admin}', [AdminController::class, 'update']);
         });
 
         Route::middleware('can:delete admin')->group(function () {
@@ -119,68 +120,69 @@ Route::middleware('auth.admin')->group(function () {
 
             Route::put('/restore/{admin}', [AdminController::class, 'restore'])->name('restore');
         });
+
+        Route::middleware('can:read admin')->group(function () {
+
+            Route::get('/', [AdminController::class, 'list'])->name('list');
+
+            Route::get('/show/{admin}', [AdminController::class, 'show'])->name('show');
+        });
     });
 
+    Route::prefix('payments')->name('payments.')->group(function () {
 
-    Route::prefix('payments')->name('admin.payments.')->group(function () {
+        Route::middleware('can:read payment')->group(function () {
 
-        Route::get('/', [PaymentController::class, 'index'])->name('list');
+            Route::get('/', [PaymentController::class, 'index'])->name('list');
 
-        Route::get('/show/{payment}', [PaymentController::class, 'show'])->name('show');
+            Route::get('/show/{payment}', [PaymentController::class, 'show'])->name('show');
+        });
 
-        Route::get('/add', [PaymentController::class, 'create'])->name('add');
+        Route::middleware('can:create payment')->group(function () {
 
-        Route::post('/add', [PaymentController::class, 'store']);
+            Route::get('/add', [PaymentController::class, 'create'])->name('add');
 
-        Route::get('/update', [PaymentController::class, 'update'])->name('update');
+            Route::post('/add', [PaymentController::class, 'store']);
 
-        Route::get('/delete', [PaymentController::class, 'destroy'])->name('destroy');
+            Route::get('/update', [PaymentController::class, 'update'])->name('update');
+
+            Route::get('/delete', [PaymentController::class, 'destroy'])->name('destroy');
+        });
     });
 
-    Route::prefix('ads')->name('admin.ads.')->group(function () {
+    Route::prefix('ads')->name('ads.')->group(function () {
 
-        Route::get('/', [AdController::class, 'index'])->name('list');
+        Route::middleware('can:read ad')->group(function () {
 
-        Route::post('/export/{ad}', [AdExportController::class, 'index'])->name('export');
+            Route::get('/', [AdController::class, 'index'])->name('list');
 
-        Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');
+            Route::post('/export/{ad}', [AdExportController::class, 'index'])->name('export');
 
-        Route::get('/add', [AdController::class, 'create'])->name('add');
+            Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');
+        });
 
-        Route::post('/add', [AdController::class, 'store']);
+        Route::middleware('can:create ad')->group(function () {
 
-        Route::get('/update', [AdController::class, 'update'])->name('update');
+            Route::get('/add', [AdController::class, 'create'])->name('add');
 
-        Route::get('/delete', [AdController::class, 'destroy'])->name('destroy');
+            Route::post('/add', [AdController::class, 'store']);
 
-        Route::put('/update/accept/{ad}', [AdController::class, 'accept'])->name('accept');
+            Route::get('/update', [AdController::class, 'update'])->name('update');
 
-        Route::put('/update/ignore/{ad}', [AdController::class, 'ignore'])->name('ignore');
+            Route::get('/delete', [AdController::class, 'destroy'])->name('destroy');
+
+            Route::put('/update/accept/{ad}', [AdController::class, 'accept'])->name('accept');
+
+            Route::put('/update/ignore/{ad}', [AdController::class, 'ignore'])->name('ignore');
+        });
     });
 
-    Route::prefix('category')->name('admin.category.')->group(function () {
-
-        Route::get('/', [CategoryController::class, 'list'])->name('list');
-
-        Route::get('/add', [CategoryController::class, 'create'])->name('add');
-
-        Route::post('/add', [CategoryController::class, 'store']);
-
-        Route::get('/{category}', [CategoryController::class, 'edit'])->name('edit');
-
-        Route::post('/{category}', [CategoryController::class, 'update']);
-
-        Route::get('delete/{category}', [CategoryController::class, 'delete'])->name('delete');
-
-        Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('destroy');
-    });
-
-    Route::prefix('file-manager')->middleware('can:read media')->name('admin.media.')->group(function () {
+    Route::prefix('file-manager')->middleware('can:read media')->name('media.')->group(function () {
 
         Route::get('/', [FileManagerController::class, 'index'])->name('home');
     });
 
-    Route::prefix('contact-us')->name('admin.contact-us.')->group(function () {
+    Route::prefix('contact-us')->middleware('can:contact user')->name('contact-us.')->group(function () {
 
         Route::get('/', [AdminContactUsController::class, 'index'])->name('list');
 

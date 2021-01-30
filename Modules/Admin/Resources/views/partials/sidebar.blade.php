@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ route("dashboard") }}" class="brand-link">
+    <a href="{{ route("admin.dashboard") }}" class="brand-link">
         {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8"> --}}
         <span class="brand-text font-weight-light">پنل مدیریت</span>
@@ -56,7 +56,8 @@
                     <li class="nav-item has-treeview @route($treeviewRoutes) menu-open @endroute">
 
                         <a href="#" class="nav-link @route($treeviewRoutes) active @endroute">
-                            <i class="nav-icon fa fa-dashboard"></i>
+                            <i
+                                class="{{ isset($item['icon_class']) ? $item['icon_class'] : 'nav-icon fa fa-dashboard'}}"></i>
                             <p>
                                 {{ $item['label'] }}
                                 <i class="right fa fa-angle-left"></i>

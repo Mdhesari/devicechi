@@ -199,7 +199,7 @@ class AdminController extends Controller
             ]));
         }
 
-        return redirect()->route('dashboard');
+        return redirect()->route('admin.dashboard');
     }
 
     public function approveDestroy(Admin $admin)

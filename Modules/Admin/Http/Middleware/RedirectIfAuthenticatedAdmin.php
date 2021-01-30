@@ -23,7 +23,7 @@ class RedirectIfAuthenticatedAdmin
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(route('dashboard'));
+                return redirect(route('admin.dashboard'));
             }
         }
 

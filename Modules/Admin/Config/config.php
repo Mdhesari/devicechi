@@ -48,13 +48,13 @@ return [
             'route' => 'admin.payments.list',
             'bg' => 'bg-warning',
         ],
-        [
-            'title' => __(' Categories '),
-            'model' => '\App\Models\Category\Category',
-            'icon' => 'ion ion-bag',
-            'route' => 'admin.category.list',
-            'bg' => 'bg-danger',
-        ],
+        // [
+        //     'title' => __(' Brands '),
+        //     'model' => '\App\Models\Category\Category',
+        //     'icon' => 'ion ion-bag',
+        //     'route' => 'admin.category.list',
+        //     'bg' => 'bg-danger',
+        // ],
     ],
     'roles' => [
         'super-admin' => [
@@ -63,7 +63,6 @@ return [
         'admin' => [
             '!delete user', //  ! cannot do action
             '!create admin',
-            '!update admin',
             '!delete admin',
             '!access-management',
         ],
@@ -77,11 +76,9 @@ return [
     'permissions' => [
         'create user',
         'read user',
-        'update user',
         'delete user',
         'create ad',
         'read ad',
-        'update ad',
         'delete ad',
         'write article',
         'contact user',
@@ -89,15 +86,12 @@ return [
         'activity-log-management',
         'create admin',
         'read admin',
-        'update admin',
         'delete admin',
         'create payment',
         'read payment',
-        'update payment',
         'delete payment',
         'create media',
         'read media',
-        'update media',
         'delete media',
 
     ],

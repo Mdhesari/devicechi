@@ -61,14 +61,6 @@
                                 </td>
 
                                 <td>
-                                    {{-- <div class="btn-group" role="group" aria-label="Admin actions">
-                                        @can('update user')
-                                        <a href="{{ route("admin.users.edit", ['user' => $user]) }}"
-                                    class="btn btn-secondary">
-                                    <i class="fa fa-pencil" style="vertical-align:middle;"></i>
-                                    </a>
-                                    @endcan
-                </div> --}}
                 </td>
                 </tr>
 

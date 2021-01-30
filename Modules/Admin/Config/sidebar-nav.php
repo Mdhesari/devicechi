@@ -6,7 +6,7 @@ return [
         [
             'title' => __(' Dashboard '),
             'permission' => 'read user',
-            'route' => 'dashboard',
+            'route' => 'admin.dashboard',
             'route_params' => [],
             'icon_class' => 'fa fa-panel',
         ],
@@ -109,12 +109,12 @@ return [
         [
             'label' => __(' Contact us '),
             'permission' => 'contact user',
-            'icon_class' => 'fa fa-support',
+            'icon_class' => 'ion-help-circled',
             [
                 'title' => __(' Contacts '),
                 'route' => 'admin.contact-us.list',
                 'route_params' => [],
-                'icon_class' => 'fa fa-list-ul nav-icon',
+                'icon_class' => 'fa fa-support',
             ],
         ],
     ],

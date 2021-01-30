@@ -21,7 +21,7 @@
         <div class="row">
 
             <div class="col-md-12 my-4">
-                <a href="{{ route('dashboard') }}" class="btn btn-primary d-block mx-auto">
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-primary d-block mx-auto">
                     @lang(' Back to panel ')
                 </a>
             </div>

@@ -27,7 +27,7 @@ class AuthController extends Controller
 
         $this->guard()->login($admin, $request->boolean('remember_me', false));
 
-        return redirect(route('dashboard'));
+        return redirect(route('admin.dashboard'));
     }
     /**
      * Display a listing of the resource.

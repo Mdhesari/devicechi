@@ -64,7 +64,7 @@
 
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Admin actions">
-                                        @can('update user')
+                                        @can('create user')
                                         <a href="{{ route("admin.admins.edit", ['admin' => $admin]) }}"
                                             class="btn btn-secondary">
                                             <i class="fa fa-pencil" style="vertical-align:middle;"></i>
