@@ -18,6 +18,5 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserDatabaseSeeder::class);
         $this->call(AdminDatabaseSeeder::class);
-        // $this->call(TeamDatabaseSeeder::class);
     }
 }
