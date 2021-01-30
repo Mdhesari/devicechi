@@ -130,7 +130,7 @@ class Ad extends Model implements HasMedia
     public function scopeFilterPro($query)
     {
 
-        return $query->where('is_pro', 'true');
+        return $query->where('is_pro', true);
     }
 
     public function getRouteKeyName()
@@ -143,6 +143,14 @@ class Ad extends Model implements HasMedia
 
         return $this->forceFill([
             'caption' => $caption,
+        ])->save();
+    }
+
+    public function proSign()
+    {
+
+        return $this->forceFill([
+            'is_pro' => true,
         ])->save();
     }
 
@@ -470,6 +478,7 @@ class Ad extends Model implements HasMedia
             case static::STATUS_ARCHIVE:
                 $label = static::STATUS_ARCHIVE_LABEL;
                 $status = __(" {$label} ");
+                break;
             default:
                 $status = __(" Invalid ");
         }

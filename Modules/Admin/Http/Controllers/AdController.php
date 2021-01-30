@@ -117,9 +117,14 @@ class AdController extends Controller
         //
     }
 
-    public function accept(Ad $ad)
+    public function accept(Ad $ad, Request $request)
     {
         $ad->accept();
+
+        if ($request->boolean('pro_ad')) {
+
+            $ad->proSign();
+        }
 
         event(new UserAdAccepted($ad));
 

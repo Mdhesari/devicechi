@@ -22,7 +22,7 @@ class AdHomeController extends Controller
 
         if ($request->expectsJson()) return $ads;
 
-        $proAds = Ad::with('state.city')->published()->filterPro()->limit(3)->get();
+        $proAds = Ad::with('state.city')->latest()->published()->filterPro()->limit(3)->get();
 
         return inertia('Ad/Home', compact('ads', 'proAds'));
     }

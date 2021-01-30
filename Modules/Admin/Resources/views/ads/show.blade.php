@@ -174,21 +174,20 @@
                 </div>
             </div>
 
-            @if ($ad->isConfirmed())
-
             <div class="btn-group my-4" role="group" aria-label="Basic example">
 
-                @if(!$ad->isAccepted())
                 <form action="{{ route("admin.ads.accept", [
                     'ad' => $ad,
                 ]) }}" method="POST">
                     @csrf
+                    <div class="form-group m-4">
+                        <label for="pro_ad">@lang(' Pro Ad ')</label>
+                        <input type="checkbox" name="pro_ad" id="pro_ad" @if($ad->is_pro) checked @endif>
+                    </div>
                     @method('put')
                     <button type="submit" class="btn btn-success mx-1">@lang(' Accept ')</button>
                 </form>
-                @endif
 
-                @if(!$ad->isIgnored())
                 <form action="{{ route("admin.ads.ignore", [
                     'ad' => $ad,
                 ]) }}" method="POST">
@@ -198,10 +197,7 @@
                         rows="5"></textarea>
                     <button type="submit" class="btn btn-danger mx-1">@lang(' Ignore ')</button>
                 </form>
-                @endif
             </div>
-
-            @endif
 
         </div>
         <!-- ./col -->
