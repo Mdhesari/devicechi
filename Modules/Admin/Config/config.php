@@ -48,13 +48,13 @@ return [
             'route' => 'admin.payments.list',
             'bg' => 'bg-warning',
         ],
-        // [
-        //     'title' => __(' Brands '),
-        //     'model' => '\App\Models\Category\Category',
-        //     'icon' => 'ion ion-bag',
-        //     'route' => 'admin.category.list',
-        //     'bg' => 'bg-danger',
-        // ],
+        [
+            'title' => __(' Brands '),
+            'model' => '\App\Models\PhoneBrand',
+            'icon' => 'ion ion-bag',
+            'route' => 'admin.brands.list',
+            'bg' => 'bg-danger',
+        ],
     ],
     'roles' => [
         'super-admin' => [

@@ -4,7 +4,7 @@ namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
 use App\Models\Ad;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 
 class AdModelController extends BaseAdController

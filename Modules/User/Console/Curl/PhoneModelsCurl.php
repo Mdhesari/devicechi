@@ -5,7 +5,7 @@ namespace Modules\User\Console\Curl;
 use Artisan;
 use Goutte\Client;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;

@@ -17,13 +17,13 @@ class AdController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index(AdsGrid $adsGrid, Request $request)
+    public function index(AdsGrid $grid, Request $request)
     {
         $page_title = __(' Ads List ');
 
         $query = Ad::query();
 
-        return $adsGrid
+        return $grid
             ->create(compact('query', 'request'))
             ->renderOn('admin::grid.index', compact('page_title'));
     }

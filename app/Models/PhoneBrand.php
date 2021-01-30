@@ -1,8 +1,9 @@
 <?php
 
-namespace Modules\User\Entities;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Modules\User\Entities\PhoneModel;
 
 class PhoneBrand extends Model
 {

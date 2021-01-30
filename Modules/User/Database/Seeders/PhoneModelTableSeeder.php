@@ -6,7 +6,7 @@ use DB;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Exceptions\PhoneModelUnableToeSeedWithoutBrands;
 

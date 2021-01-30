@@ -23,6 +23,7 @@ use Modules\Admin\Http\Controllers\HomeController;
 use Modules\Admin\Http\Controllers\ActivityLogController;
 use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdExportController;
+use Modules\Admin\Http\Controllers\AdminBrandController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\FileManagerController;
@@ -189,6 +190,16 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         Route::get('/show/{contactu}', [AdminContactUsController::class, 'show'])->name('show');
 
         Route::get('/delete/{contactu}', [AdminContactUsController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::prefix('brands')->name('brands.')->group(function () {
+
+        Route::middleware('can:read ad')->group(function () {
+
+            Route::get('/', [AdminBrandController::class, 'index'])->name('list');
+
+            // Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');
+        });
     });
 });
 

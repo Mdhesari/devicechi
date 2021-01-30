@@ -3,7 +3,7 @@
 namespace Modules\User\Console\Curl;
 
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 

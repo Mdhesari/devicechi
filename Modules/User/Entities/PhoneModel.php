@@ -2,6 +2,7 @@
 
 namespace Modules\User\Entities;
 
+use App\Models\PhoneBrand;
 use Illuminate\Database\Eloquent\Model;
 
 class PhoneModel extends Model

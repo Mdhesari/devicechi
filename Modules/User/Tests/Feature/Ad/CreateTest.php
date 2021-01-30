@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\User;
 
 class CreateTest extends TestCase

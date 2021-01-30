@@ -5,7 +5,7 @@ namespace Modules\User\Console\Curl;
 use Artisan;
 use Goutte\Client;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Symfony\Component\HttpClient\HttpClient;
 
 class PhoneModelsVariantCurl extends Command

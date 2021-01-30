@@ -5,7 +5,7 @@ namespace Modules\User\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Core\Traits\HasDomain;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 
 class RouteServiceProvider extends ServiceProvider

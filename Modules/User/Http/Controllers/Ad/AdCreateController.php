@@ -3,7 +3,7 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use App\Models\Ad;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 
 class AdCreateController extends BaseAdController
 {
