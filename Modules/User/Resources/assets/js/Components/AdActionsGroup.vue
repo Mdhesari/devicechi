@@ -52,12 +52,7 @@
 
 <script>
 export default {
-    props: ["ad"],
-    data() {
-        return {
-            isConfirmed: this.getProp("isConfirmed")
-        };
-    },
+    props: ["ad", "isConfirmed"],
     methods: {
         getBack() {
             this.$inertia.visit(
