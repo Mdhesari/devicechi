@@ -47,7 +47,7 @@ class AdminsGrid extends Grid implements AdminsGridInterface
                 "label" => "ID",
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
+                    "operator" => "like"
                 ],
                 "styles" => [
                     "column" => "grid-w-10"
@@ -59,7 +59,7 @@ class AdminsGrid extends Grid implements AdminsGridInterface
                 ],
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
+                    "operator" => "like"
                 ]
             ],
             "email" => [
@@ -68,26 +68,38 @@ class AdminsGrid extends Grid implements AdminsGridInterface
                 ],
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
+                    "operator" => "like"
                 ]
             ],
             "email_verified_at" => [
                 "sort" => true,
-                "date" => "true",
                 "filter" => [
                     "enabled" => true,
                     "type" => "date",
                     "operator" => "<="
-                ]
+                ],
+                "presenter" => function ($columnData, $columnName) {
+                    if ($columnData->email_verified_at)
+
+                        return $columnData->email_verified_at->format('%B %d، %Y');
+
+                    return null;
+                }
             ],
             "created_at" => [
                 "sort" => true,
-                "date" => "true",
                 "filter" => [
                     "enabled" => true,
                     "type" => "date",
                     "operator" => "<="
-                ]
+                ],
+                "presenter" => function ($columnData, $columnName) {
+                    if ($columnData->created_at)
+
+                        return $columnData->created_at->format('%B %d، %Y');
+
+                    return null;
+                }
             ]
         ];
     }

@@ -28,7 +28,9 @@
                 @if($column->isSortable)
                 <th scope="col"
                     class="{{ is_callable($column->columnClass) ? call_user_func($column->columnClass) : $column->columnClass }}"
-                    title="click to sort by {{ $column->key }}">
+                    title="@lang('click to sort by :column',[
+                        'column' => $column->key
+                    ]) ">
                     <a data-trigger-pjax="1" class="data-sort"
                         href="{{ $grid->getSortUrl($column->key, $grid->getSelectedSortDirection()) }}">
                         @if($column->useRawHtmlForLabel)
@@ -50,7 +52,9 @@
                 @endif
                 @else
                 @if($column->isSortable)
-                <th scope="col" title="click to sort by {{ $column->key }}"
+                <th scope="col" title="@lang('click to sort by :column',[
+                    'column' => __(" $column->key ")
+                ]) "
                     class="{{ is_callable($column->columnClass) ? call_user_func($column->columnClass) : $column->columnClass }}">
                     <a data-trigger-pjax="1" class="data-sort"
                         href="{{ $grid->getSortUrl($column->key, $grid->getSelectedSortDirection()) }}">
@@ -85,7 +89,7 @@
             @if($grid->hasItems())
             @if($grid->warnIfEmpty())
             <div class="alert alert-warning" role="alert">
-                <strong><i class="fa fa-exclamation-triangle"></i>&nbsp;No data present!.</strong>
+                <strong><i class="fa fa-exclamation-triangle"></i>&nbsp;@lang('No data present!.')</strong>
             </div>
             @endif
             @else

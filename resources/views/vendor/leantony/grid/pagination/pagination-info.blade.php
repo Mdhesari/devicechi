@@ -3,14 +3,18 @@
         <b>
             @if($grid->getData()->total() <= $grid->getData()->perpage())
                 @if(!isset($atFooter))
-                    Showing {{ ($grid->getData()->currentpage() - 1 ) * $grid->getData()->perpage() + 1 }}
-                    to {{ $grid->getData()->total() }}
-                    of {{ $grid->getData()->total() }} entries.
+                    @lang(' Showing :current to :current_total of :total entires ', [
+                        'current' => ($grid->getData()->currentpage() - 1 ) * $grid->getData()->perpage() + 1,
+                        'current_total' => $grid->getData()->total(),
+                        'total' => $grid->getData()->total() 
+                    ])
                 @endif
             @else
-                Showing {{ ($grid->getData()->currentpage() - 1 ) * $grid->getData()->perpage() + 1 }}
-                to {{ $grid->getData()->currentpage() * $grid->getData()->perpage() }}
-                of {{ $grid->getData()->total() }} entries.
+                @lang(' Showing :current to :current_total of :total entires ', [
+                    'current' => ($grid->getData()->currentpage() - 1 ) * $grid->getData()->perpage() + 1,
+                    'current_total' => $grid->getData()->currentpage() * $grid->getData()->perpage(),
+                    'total' => $grid->getData()->total()
+                ])
             @endif
         </b>
     </div>
@@ -19,14 +23,18 @@
         @if($grid->getData()->count() >= $grid->getData()->perpage())
             <div class="pull-{{ $direction }}">
                 <b>
-                    Showing {{ $grid->getData()->count() }} records for this page.
+                    @lang(' Showing :count records for this page. ', [
+                        'count' => $grid->getData()->count()
+                    ])
                 </b>
             </div>
         @endif
     @else
         <div class="pull-{{ $direction }}">
             <b>
-                Showing {{ $grid->getData()->count() }} records for this page.
+                @lang(' Showing :count records for this page. ', [
+                        'count' => $grid->getData()->count()
+                ])
             </b>
         </div>
     @endif

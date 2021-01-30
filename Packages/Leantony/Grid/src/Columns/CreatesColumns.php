@@ -203,14 +203,9 @@ trait CreatesColumns
             $rowClass = '';
         }
 
-        if (isset($columnData['sort'])) {
+        $sort_dir = session('__grid.current_sort_direction');
 
-            if ($columnData['sort'])
-                $columnClass .= ' sorting';
-        } else {
-
-            $columnClass .= ' sorting';
-        }
+        $columnClass .= ' sorting_' . $sort_dir;
 
         return compact('columnClass', 'rowClass');
     }

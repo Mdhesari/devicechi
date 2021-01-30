@@ -44,78 +44,62 @@ class UsersGrid extends Grid implements UsersGridInterface
     {
         $this->columns = [
             "id" => [
-                "label" => "ID",
+                "label" => __(" ID "),
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
+                    "operator" => "like"
                 ],
                 "styles" => [
                     "column" => "grid-w-10"
                 ]
             ],
             "name" => [
+                "label" => __(" Name "),
                 "search" => [
                     "enabled" => true
                 ],
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
-                ]
-            ],
-            "phone_country_code" => [
-                "label" => __(" Country Code "),
-                "search" => [
-                    "enabled" => true
-                ],
-                "filter" => [
-                    "enabled" => true,
-                    "operator" => "="
+                    "operator" => "like"
                 ]
             ],
             "phone" => [
+                "label" => __(" Mobile "),
                 "search" => [
                     "enabled" => true
                 ],
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
-                ]
-            ],
-            "phone_verified_at" => [
-                "sort" => true,
-                "date" => "true",
-                "filter" => [
-                    "enabled" => true,
-                    "type" => "date",
-                    "operator" => "<="
+                    "operator" => "like"
                 ]
             ],
             "email" => [
+                "label" => __(" Email "),
                 "search" => [
                     "enabled" => true
                 ],
                 "filter" => [
                     "enabled" => true,
-                    "operator" => "="
-                ]
-            ],
-            "email_verified_at" => [
-                "sort" => true,
-                "date" => "true",
-                "filter" => [
-                    "enabled" => true,
-                    "type" => "date",
-                    "operator" => "<="
+                    "operator" => "like"
                 ]
             ],
             "created_at" => [
+                "label" => __(" Created At "),
                 "sort" => true,
-                "date" => "true",
                 "filter" => [
-                    "enabled" => true,
+                    "enabled" => false,
                     "type" => "date",
                     "operator" => "<="
-                ]
+                ],
+                "presenter" => function ($columnData, $columnName) {
+                    if ($columnData->created_at)
+
+                        $created_at = $columnData->created_at;
+
+                    return is_string($created_at) ? $created_at : $created_at->format('%B %d، %Y');
+
+                    return null;
+                }
             ]
         ];
     }

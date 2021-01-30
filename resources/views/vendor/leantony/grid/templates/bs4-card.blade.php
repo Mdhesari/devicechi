@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="pull-left">
-                    <h4 class="grid-title">{{ $grid->renderTitle() }}</h4>
+                    <h4 class="grid-title">{{ __(" {$grid->renderTitle()} ") }}</h4>
                 </div>
                 {!! $grid->renderPaginationInfoAtHeader() !!}
             </div>
