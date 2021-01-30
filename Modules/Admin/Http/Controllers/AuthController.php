@@ -2,7 +2,6 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use Auth;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -10,25 +9,27 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Modules\Admin\Entities\Admin;
+use Modules\Admin\Http\Requests\AdminLoginRequest;
 
-//TODO:Error handling
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @param Request $request
-     * @return \Illuminate\Contracts\Foundation\Application|Renderable|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function login(Request $request)
-    {
-        $this->validator($request->all())->validate();
+    public const HOME = 'admin.dashboard';
 
+    /**
+     * login admin
+     *
+     * @param AdminLoginRequest $request
+     * @return mixed
+     */
+    public function login(AdminLoginRequest $request)
+    {
         $admin = $this->attempt($request->all());
 
-        $this->guard()->login($admin, $request->boolean('remember_me', false));
+        \Auth::login($admin, $request->boolean('remember_me', false));
 
         return redirect(route('admin.dashboard'));
     }
+
     /**
      * Display a listing of the resource.
      * @return mixed
@@ -37,13 +38,14 @@ class AuthController extends Controller
     {
         return view('admin::auth.login');
     }
+
     /**
      * Show the form for creating a new resource.
      * @return \Illuminate\Contracts\Foundation\Application|Renderable|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function logout(Request $request)
     {
-        $this->guard()->logout();
+        \Auth::logout();
 
         $request->session()->invalidate();
 
@@ -52,17 +54,6 @@ class AuthController extends Controller
         return redirect(route('admin.login'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param array $data
-     */
-    public function validator(array $data)
-    {
-        return Validator::make($data, [
-            'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', 'string', 'min:8'],
-        ]);
-    }
     /**
      * Handle a registration request for the application.
      *
@@ -76,15 +67,12 @@ class AuthController extends Controller
 
         if (!$admin || !Hash::check($data['password'], $admin->password)) {
             throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+                'email' => [trans('validation.email', [
+                    'attribute' => 'email',
+                ])],
             ]);
         }
+
         return $admin;
-    }
-
-    public function guard()
-    {
-
-        return Auth::guard('admin');
     }
 }

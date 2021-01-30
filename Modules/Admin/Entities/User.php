@@ -23,7 +23,9 @@ class User extends MainUser
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $fillable = [
+        'name', 'email', 'password', 'phone', 'phone_country_code', 'city_id'
+    ];
 
     // protected static function newFactory()
     // {

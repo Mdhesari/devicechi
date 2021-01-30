@@ -8,7 +8,7 @@
 
     <div class="card">
         <div class="card-body register-card-body">
-            <p class="login-box-msg">ثبت نام کاربر جدید</p>
+            <p class="login-box-msg">@lang('Create New User')</p>
 
             <form action="{{ route("admin.users.add") }}" method="post">
                 @csrf
@@ -33,7 +33,8 @@
                 <p class="alert alert-danger">{{ $message }}</p>
                 @enderror
                 <div class="input-group mb-3">
-                    <input name="password" type="password" class="form-control password-input" placeholder="رمز عبور">
+                    <input autocomplete="off" name="password" type="password" class="form-control password-input"
+                        placeholder="رمز عبور">
                     <div class="input-group-append">
                         <span class="fa fa-lock input-group-text"></span>
                     </div>
@@ -42,8 +43,8 @@
                 <p class="alert alert-danger">{{ $message }}</p>
                 @enderror
                 <div class="input-group mb-3">
-                    <input name="password_confirmation" type="password" class="form-control password-input"
-                        placeholder="تکرار رمز عبور">
+                    <input autocomplete="off" name="password_confirmation" type="password"
+                        class="form-control password-input" placeholder="تکرار رمز عبور">
                     <div class="input-group-append">
                         <span class="fa fa-lock input-group-text"></span>
                     </div>

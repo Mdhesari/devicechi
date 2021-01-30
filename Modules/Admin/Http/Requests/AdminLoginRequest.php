@@ -4,7 +4,7 @@ namespace Modules\Admin\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminCreateUserRequest extends FormRequest
+class AdminLoginRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -14,10 +14,8 @@ class AdminCreateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['min:3', 'string', 'max:255'],
-            'mobile' => ['required', 'min:6', 'string', 'max:255', 'unique:users,phone'],
-            'email' => ['nullable', 'email'],
-            'password' => ['bail', 'confirmed', 'min:8', 'required_without:email_password'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8'],
         ];
     }
 

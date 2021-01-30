@@ -16,8 +16,8 @@ class AdminUpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['min:3', 'string', 'max:255'],
-            'mobile' => ['required', 'min:6', 'string', 'max:255'],
+            'name' => ['nullable', 'min:3', 'string', 'max:255'],
+            'mobile' => ['nullable', 'min:6', 'string', 'max:255'],
             'password' => ['nullable', 'string', 'confirmed', 'min:8'],
         ];
     }

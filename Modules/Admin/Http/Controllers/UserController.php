@@ -9,6 +9,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\ValidationException;
 use Modules\Admin\Entities\User;
 use Modules\Admin\Http\Requests\AdminCreateUserRequest;
 use Modules\Admin\Http\Requests\AdminUpdateUserRequest;
@@ -23,6 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
+
         $page_title = __(' Submit User ');
 
         return view('admin::users.create', compact('page_title'));
@@ -45,6 +47,7 @@ class UserController extends Controller
         }
 
         $user = User::create([
+            'email' => $request->email,
             'name' => $request->name,
             'phone' => $request->mobile,
             'password' => Hash::make($request->password),
@@ -55,7 +58,7 @@ class UserController extends Controller
 
         event(new Registered($user));
 
-        $request->user()->notify(new sendPasswordToUser($password));
+        $user->notify(new sendPasswordToUser($password));
 
         return redirect()->back()->with('success', __(' User created successfully. '));
     }
@@ -103,10 +106,9 @@ class UserController extends Controller
             'mobile' => [Rule::unique('users')->ignore($user->id)]
         ]);
 
-        $data = [
-            'name' => $request->name,
-            'phone' => $request->mobile,
-        ];
+        $data = $request->only(['name', 'mobile', 'password']);
+
+        $data['phone'] = $data['mobile'];
 
         $email_password = $request->boolean('email_password');
 
@@ -127,12 +129,29 @@ class UserController extends Controller
         return redirect()->back()->with('success', __(' User Successfully Updated. '));
     }
 
-    public function show(User $user)
+    public function show(User $user, UsersGrid $usersGrid, Request $request)
     {
 
         $page_title = __(' User Profile ');
+        $show_title = __(' User Profile ');
 
-        return view('admin::users.show', compact('user'));
+        $query = User::query();
+
+        $query->whereId($user->id);
+
+        $grid = $usersGrid->create(compact('request', 'query'));
+
+        $columns = $grid->getProcessedColumns();
+        $item = collect($grid->getData()->items())->first();
+
+        return view('admin::global.show', compact(
+            'user',
+            'item',
+            'columns',
+            'grid',
+            'show_title',
+            'page_title'
+        ));
     }
 
     /**
@@ -148,14 +167,14 @@ class UserController extends Controller
         // soft delete
         $result = $user->delete();
 
-        if ($result) {
+        if (!$result)
+            throw ValidationException::withMessages([
+                'user' => __('Unable to delete user'),
+            ]);
 
-            Session::flash('success', __(' User :name successfully deleted! ', [
-                'name' => $name,
-            ]));
-        }
-
-        return redirect()->back();
+        return redirect()->back()->with('success', __(' User :name successfully deleted! ', [
+            'name' => $name,
+        ]));
     }
 
     /**
@@ -169,12 +188,13 @@ class UserController extends Controller
         $name = $user->name;
 
         $user->profile()->delete();
+        $user->webinars()->delete();
         $user->payments()->delete();
         $user->profile()->delete();
-        $user->transactions()->delete();
         $user->files()->delete();
         $user->tickets()->sync([]);
-        $user->favorites()->sync([]);
+        $user->favourites()->sync([]);
+        $user->mutatedWebinars()->sync([]);
         $user->discounts()->sync([]);
         $user->resetPassword()->delete();
 
@@ -210,5 +230,25 @@ class UserController extends Controller
         }
 
         return back();
+    }
+    public function search(Request $request)
+    {
+        if ($request->expectsJson()) {
+
+            $query = User::query();
+
+            $search = $request->input('query');
+
+            $ignore = $request->input('ignore');
+
+            if (!empty($ignore)) {
+
+                $query->whereNotIn('id', $ignore);
+            }
+
+            $users = $query->searchLike('name', $search)->limit(config('admin.auto_complete_limit'))->get();
+
+            return $users;
+        }
     }
 }

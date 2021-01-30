@@ -14,11 +14,11 @@ class AdminUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'min:3'],
-            'email' => ['email'],
-            'mobile' => ['nullable','min:6'],
+            'name' => ['nullable', 'min:3'],
+            'email' => ['nullable', 'email'],
+            'mobile' => ['nullable', 'min:6'],
             'password' => ['confirmed'],
-            'role' => ['nullable', 'string', 'exists:roles,name' ]
+            'role' => ['nullable', 'string', 'exists:roles,name']
         ];
     }
 

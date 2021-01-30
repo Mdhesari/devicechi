@@ -14,10 +14,10 @@ class AdminStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['bail', 'min:3', 'string', 'max:255', 'unique:admins'],
-            'email' => ['bail', 'email', 'string', 'max:255', 'unique:admins'],
-            'password' => ['bail', 'min:8', 'string', 'max:255', 'confirmed'],
-            'role' => ['bail', 'string', 'exists:roles,name'],
+            'name' => ['min:3', 'string', 'max:255', 'unique:admins'],
+            'email' => ['email', 'string', 'max:255', 'unique:admins'],
+            'password' => ['min:8', 'string', 'max:255', 'confirmed'],
+            'role' => ['required', 'exists:roles,name'],
         ];
     }
 
