@@ -28,6 +28,7 @@
         "spatie/laravel-activitylog": "^3.16",
         "spatie/laravel-medialibrary": "^9.0.0",
         "spatie/laravel-permission": "^3.18",
+        "hekmatinasser/verta": "^1.11",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

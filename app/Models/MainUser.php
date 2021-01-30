@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\CustomDateCast;
 use App\Models\Payment\Payment;
 use Hash;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -25,6 +26,18 @@ class MainUser extends User
      */
 
     protected $table = "users";
+
+
+    protected $casts = [
+
+        'email_verified_at' => CustomDateCast::class,
+
+        'mobile_verified_at' => CustomDateCast::class,
+
+        'created_at' => CustomDateCast::class,
+
+        'updated_at' => CustomDateCast::class,
+    ];
 
     /**
      * @param $value
