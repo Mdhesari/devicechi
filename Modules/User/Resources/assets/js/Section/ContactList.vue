@@ -1,6 +1,10 @@
 <template>
     <div class="call">
-        <button @click.prevent="loadContacts" class="btn call-btn">
+        <button
+            @click.prevent="loadContacts"
+            :disabled="contacts.length > 0"
+            class="btn call-btn"
+        >
             تماس با آگهی دهنده
         </button>
         <ul class="list-group contacts mt-4">
