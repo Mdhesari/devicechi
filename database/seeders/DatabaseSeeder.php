@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\TicketDepartment;
 use Illuminate\Database\Seeder;
 use Modules\Admin\Database\Seeders\AdminDatabaseSeeder;
-use Modules\Team\Database\Seeders\TeamDatabaseSeeder;
+use Modules\Main\Database\Seeders\MainDatabaseSeeder;
 use Modules\User\Database\Seeders\UserDatabaseSeeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,7 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UserDatabaseSeeder::class);
-        $this->call(AdminDatabaseSeeder::class);
+        $this->call([
+            UserDatabaseSeeder::class,
+            AdminDatabaseSeeder::class,
+        ]);
     }
 }

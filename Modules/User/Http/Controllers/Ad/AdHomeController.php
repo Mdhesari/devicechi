@@ -13,7 +13,7 @@ use Modules\User\Entities\PhoneAccessory;
 class AdHomeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display Ad home
      * @return Renderable
      */
     public function index(Request $request)

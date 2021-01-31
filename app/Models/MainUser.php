@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Modules\Main\Database\Factories\UserFactory;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Entities\City;
 use Spatie\Permission\Traits\HasRoles;
 use Storage;
@@ -83,5 +83,15 @@ class MainUser extends User
     {
 
         return $this->belongsTo(City::class);
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return UserFactory::new();
     }
 }

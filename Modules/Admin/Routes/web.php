@@ -65,18 +65,15 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
         Route::get('search', [UserController::class, 'search'])->name('search');
 
-        Route::middleware('can:update user')->group(function () {
-
-            Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
-
-            Route::post('/edit/{user}', [UserController::class, 'update']);
-        });
-
         Route::middleware('can:create user')->group(function () {
 
             Route::get('/add', [UserController::class, 'create'])->name('add');
 
             Route::post('/add', [UserController::class, 'store']);
+
+            Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
+
+            Route::post('/edit/{user}', [UserController::class, 'update']);
         });
 
         Route::middleware('can:read user')->group(function () {

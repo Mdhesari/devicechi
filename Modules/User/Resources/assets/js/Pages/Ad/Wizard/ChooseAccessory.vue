@@ -15,7 +15,7 @@
                 {{ __("ads.wizard.choose_accessory.desc") }}
             </p>
 
-            <div class="row list-accessories">
+            <div class="row list-accessories mobile-radio-form">
                 <b-form-checkbox
                     :disabled="isLoading"
                     class="col-12 col-md-3 text-center"

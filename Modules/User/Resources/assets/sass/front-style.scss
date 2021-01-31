@@ -3207,6 +3207,13 @@ $pallete: (
     line-height: 26px;
 }
 
+.mobile-radio-form-group,
+.mobile-radio-form {
+    label {
+        width: 180px;
+    }
+}
+
 @media (max-width: 991.98px) {
     .wizard-step {
         .list-contacts {
@@ -3248,6 +3255,13 @@ $pallete: (
 
 /* Queries*/
 @media (max-width: 768px) {
+    .mobile-radio-form-group,
+    .mobile-radio-form {
+        label {
+            width: 180px;
+        }
+    }
+
     .filter-price {
         margin: 0 auto;
         margin-bottom: 30px;

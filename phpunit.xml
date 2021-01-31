@@ -16,6 +16,13 @@
             <directory suffix="Test.php">./Modules/User/Tests/Unit/</directory>
         </testsuite>
 
+
+        <!-- Admin Module -->
+        <testsuite name="Admin-F">
+            <!-- <directory suffix="Test.php">./Modules/Admin/Tests/Feature/Admins/</directory> -->
+            <file>./Modules/Admin/Tests/Feature/Admins/AdminCreateTest.php</file>
+        </testsuite>
+
     </testsuites>
     <coverage processUncoveredFiles="true">
         <include>
@@ -24,6 +31,7 @@
     </coverage>
     <php>
         <server name="APP_ENV" value="testing"/>
+        <server name="APP_LOCALE" value="en"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
         <server name="DB_CONNECTION" value="sqlite"/>
@@ -31,6 +39,7 @@
         <server name="MAIL_MAILER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
+        <server name="FILESYSTEM_DRIVER" value="fake"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
     </php>
 </phpunit>

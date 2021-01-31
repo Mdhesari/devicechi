@@ -4,9 +4,12 @@ namespace Modules\Admin\Entities;
 
 use App\Models\MainUser;
 use App\Models\Payment\Payment;
+use App\Models\TicketMessage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Admin\Database\Factories\AdminFactory;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -15,7 +18,9 @@ use Spatie\Permission\Traits\HasRoles;
  */
 class Admin extends MainUser
 {
-    use HasRoles, SoftDeletes;
+    use HasRoles,
+        SoftDeletes,
+        LogsActivity;
 
     /**
      * @var string
@@ -26,12 +31,22 @@ class Admin extends MainUser
      */
     protected $fillable = ['name', 'email', 'password', 'email_verified_at'];
 
+    /**
+     * Payments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function payments()
     {
 
         return $this->hasMany(Payment::class);
     }
 
+    /**
+     * Get printable roles
+     *
+     * @return void
+     */
     public function getRolesAsStringAttribute()
     {
 
@@ -40,8 +55,34 @@ class Admin extends MainUser
         return empty($roles) ? __(' No Roles ') : $roles;
     }
 
-    public function guardName() {
+    /**
+     * Tickets
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function tickets()
+    {
+        return $this->hasMany(TicketMessage::class);
+    }
+
+    /**
+     * guardName
+     *
+     * @return void
+     */
+    public function guardName()
+    {
 
         return 'web';
+    }
+
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    protected static function newFactory()
+    {
+        return AdminFactory::new();
     }
 }
