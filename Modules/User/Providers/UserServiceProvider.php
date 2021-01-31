@@ -67,6 +67,7 @@ class UserServiceProvider extends ServiceProvider
 
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(ViewServiceProvider::class);
+        $this->app->register(UserAuthServiceProvider::class);
 
         $this->app->singleton(StoresAdPicture::class, StoreAdPicture::class);
         $this->app->bind(CodeVerificationGenerator::class, GeneratorVerification::class);

@@ -2,6 +2,8 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use App\Models\Ad;
+use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
@@ -26,6 +28,18 @@ class BaseAdController extends Controller
     public function __construct(AdRepositoryInterface $adRepository)
     {
         $this->adRepository = $adRepository;
+    }
+
+    /**
+     * checkAuthorization
+     *
+     * @param  Ad $ad
+     * @return mixed
+     */
+    public function checkAuthorization(Ad $ad)
+    {
+
+        return Gate::authorize('view', $ad);
     }
 
     public function checkPreviousSteps($step, $ad)

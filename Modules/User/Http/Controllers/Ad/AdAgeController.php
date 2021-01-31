@@ -13,6 +13,8 @@ class AdAgeController extends BaseAdController
 {
     public function choose(Ad $ad)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_AGE;
 
         $this->checkPreviousSteps($step, $ad);
@@ -24,6 +26,8 @@ class AdAgeController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $request->validate([
             'age_id' => 'required|exists:phone_ages,id'
         ]);

@@ -120,7 +120,6 @@ class AdMainController extends BaseAdController
 
     public function getModels(Request $request)
     {
-
         $query =  PhoneModel::query();
 
         $search = "";

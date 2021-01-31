@@ -21,6 +21,8 @@ class AdContactController extends BaseAdController
 {
     public function choose(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_CONTACT;
 
         $this->checkPreviousSteps($step, $ad);
@@ -34,6 +36,7 @@ class AdContactController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
 
         if (!$ad->contacts()->verified()->count()) {
 
@@ -51,6 +54,7 @@ class AdContactController extends BaseAdController
 
     public function add(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'contact_type' => ['required'],
@@ -90,6 +94,7 @@ class AdContactController extends BaseAdController
 
     public function verify(Ad $ad, AdContactVerifyRequest $request, AdContactRepository $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $verification_code = $request->verification_code;
 
@@ -119,6 +124,7 @@ class AdContactController extends BaseAdController
 
     public function remove(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'contact_id' => ['required', 'exists:ad_contacts,id']

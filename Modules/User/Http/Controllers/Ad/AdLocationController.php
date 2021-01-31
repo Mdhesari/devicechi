@@ -11,6 +11,8 @@ class AdLocationController extends BaseAdController
 {
     public function choose(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_LOCATION;
 
         $this->checkPreviousSteps($step, $ad);
@@ -30,6 +32,8 @@ class AdLocationController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $request->validate([
             'city' => ['required', 'numeric', 'exists:cities,id'],
             'state' => ['required', 'numeric', 'exists:city_states,id'],
@@ -45,6 +49,7 @@ class AdLocationController extends BaseAdController
 
     public function getState(Ad $ad, City $city)
     {
+        $this->checkAuthorization($ad);
 
         $states = $city->states;
 

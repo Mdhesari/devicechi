@@ -13,11 +13,7 @@ class AdDemoController extends BaseAdController
 
     public function show(Ad $ad, Request $request)
     {
-
-        if ($ad->user->id != auth()->id()) {
-
-            return abort(403);
-        }
+        $this->checkAuthorization($ad);
 
         $warning = false;
 
@@ -45,27 +41,33 @@ class AdDemoController extends BaseAdController
 
     public function publish(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->publish($ad['id']);
+        $this->checkAuthorization($ad);
 
-        return redirect()->route('user.ad.step_phone_demo', $ad['slug'])->with('success', __('user::ads.success.pending'));
+        $this->adRepository->publish($ad);
+
+        return redirect()->route('user.ad.step_phone_demo', $ad)->with('success', __('user::ads.success.pending'));
     }
 
     public function delete(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->delete($ad['id']);
+        $this->checkAuthorization($ad);
+
+        $this->adRepository->delete($ad);
 
         return redirect()->route('user.ad.get')->with('success', __('user::ads.success.delete'));
     }
 
     public function archive(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->archive($ad['id']);
+        $this->checkAuthorization($ad);
+
+        $this->adRepository->archive($ad);
 
         return redirect()->route('user.ad.get')->with('success', __('user::ads.success.archive'));
     }

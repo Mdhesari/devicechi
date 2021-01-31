@@ -11,6 +11,8 @@ class AdVariantController extends BaseAdController
 
     public function choose(Ad $ad, PhoneModel $model)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_VARIANT;
 
         $this->checkPreviousSteps($step, $ad);
@@ -23,6 +25,7 @@ class AdVariantController extends BaseAdController
 
     public function store(Ad $ad, PhoneModel $model, Request $request)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'variant_id' => 'required|exists:phone_variants,id',

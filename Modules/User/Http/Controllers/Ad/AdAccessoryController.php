@@ -11,6 +11,8 @@ class AdAccessoryController extends BaseAdController
 
     public function choose(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_ACCESSORY;
 
         $this->checkPreviousSteps($step, $ad);
@@ -35,6 +37,7 @@ class AdAccessoryController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'accessories' => 'required|array'

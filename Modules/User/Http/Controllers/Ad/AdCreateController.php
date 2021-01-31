@@ -11,6 +11,7 @@ class AdCreateController extends BaseAdController
     public function show(Ad $ad = null)
     {
         if ($ad) {
+            $this->checkAuthorization($ad);
             $ad->load('phoneModel.brand');
             $ad->resetModel();
         }

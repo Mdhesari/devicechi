@@ -12,6 +12,9 @@ class AdModelController extends BaseAdController
 
     public function choose(PhoneBrand $brand, Ad $ad)
     {
+        if ($ad)
+            $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_MODEL;
 
         $this->checkPreviousSteps($step, $ad);
@@ -27,6 +30,9 @@ class AdModelController extends BaseAdController
 
     public function store(PhoneBrand $brand, Ad $ad = null, Request $request)
     {
+
+        if ($ad)
+            $this->checkAuthorization($ad);
 
         $request->validate([
             'phone_model' => 'required|exists:phone_models,name'

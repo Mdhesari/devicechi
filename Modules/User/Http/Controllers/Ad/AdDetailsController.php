@@ -14,6 +14,8 @@ class AdDetailsController extends BaseAdController
 {
     public function choose(Ad $ad)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_FINALINFO;
 
         $this->checkPreviousSteps($step, $ad);
@@ -23,6 +25,7 @@ class AdDetailsController extends BaseAdController
 
     public function store(Ad $ad, AdDetailsRequest $request)
     {
+        $this->checkAuthorization($ad);
 
         if (is_null($ad->title))
             $ad->slug = null;

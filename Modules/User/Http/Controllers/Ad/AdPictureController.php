@@ -13,6 +13,8 @@ class AdPictureController extends BaseAdController
 {
     public function choose(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_UPLOAD_PICTURES;
 
         $this->checkPreviousSteps($step, $ad);
@@ -34,6 +36,8 @@ class AdPictureController extends BaseAdController
 
     public function store(Ad $ad, AdConfirmPictureRequest $request)
     {
+        $this->checkAuthorization($ad);
+
         $ad->media()->activeOnly()->update([
             'custom_properties->active' => false,
         ]);
@@ -47,6 +51,8 @@ class AdPictureController extends BaseAdController
 
     public function storeUploads(Ad $ad, AdStorePictureRequest $request)
     {
+        $this->checkAuthorization($ad);
+
         $pictures = Arr::wrap($request->pictures);
 
         $media = [];
@@ -67,6 +73,7 @@ class AdPictureController extends BaseAdController
 
     public function delete(Ad $ad, Request $request, StoresAdPicture $storeDriver)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'picture_id' => ['required', 'exists:media,id'],

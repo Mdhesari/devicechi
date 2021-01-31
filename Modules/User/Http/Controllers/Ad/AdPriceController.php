@@ -9,6 +9,8 @@ class AdPriceController extends BaseAdController
 {
     public function choose(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_PRICE;
 
         $this->checkPreviousSteps($step, $ad);
@@ -22,6 +24,8 @@ class AdPriceController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
         $request->validate([
             'price' => ['required', 'numeric', 'regex:/^\d{1,10}\.\d{1,2}$|^\d{0,10}$/i'],
             'is_exchangeable' => ['nullable']
