@@ -17,18 +17,23 @@
             <div class="container">
                 <div class="main-title">
                     <h3>
-                        آگهی ها
+                        {{ __("ads.latest") }}
                     </h3>
                 </div>
 
                 <!-- No Content -->
                 <b-alert
-                    :show="ads.length < 1"
+                    :show="allAds.data.length < 1"
                     variant="info"
                     class="text-center mt-4"
                 >
-                    هیچ آگهی موجود نیست!
+                    {{
+                        __("ads.not-found", {
+                            q: search
+                        })
+                    }}
                 </b-alert>
+
                 <div v-if="allAds.data.length > 0" class="row normal-ads">
                     <NormalAd
                         v-for="ad in allAds.data"
