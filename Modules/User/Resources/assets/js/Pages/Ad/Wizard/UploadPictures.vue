@@ -40,6 +40,18 @@
                 />
             </b-row>
 
+            <b-alert show variant="info">
+                <h6 v-text="__('ads.form.warning.upload.title')"></h6>
+                <ul class="list-group">
+                    <li>تصویر با کیفیت گرفته شود</li>
+                    <li>
+                        حجم تصویر کمتر از
+                        {{ `${ad_picture_size_limit} مگابایت` }} باشد
+                    </li>
+                    <li>حداقل ۲ تصویر را آپلود کنید</li>
+                </ul>
+            </b-alert>
+
             <b-button
                 v-if="form.pictures.length >= pictures_min_count"
                 :disabled="isLoading"
