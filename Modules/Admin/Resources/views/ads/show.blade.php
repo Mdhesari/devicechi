@@ -158,6 +158,14 @@
                                         <textarea name="caption" class="form-control" id="caption"
                                             rows="20">{{ $caption }}</textarea>
                                     </div>
+
+                                    <div class="form-group my-4">
+                                        <a class="btn btn-link"
+                                            href="{{ route("admin.ads.export.renew-caption", $ad) }}">
+                                            @lang(' Renew caption ')
+                                        </a>
+                                    </div>
+
                                     @error('caption')
                                     <p class="alert alert-danger">{{ $message }}</p>
                                     @enderror

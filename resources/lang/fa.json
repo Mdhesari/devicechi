@@ -267,5 +267,6 @@
     " PENDING ": "در انتظار تایید",
     " UNCOMPLETED ": "نیمه تمام",
     " UNAVAILABLE ": "غیر فعال",
-    " ARCHIVE ": "پیش نویس"
+    " ARCHIVE ": "پیش نویس",
+    " Renew caption ": "ساخت مجدد کپشن"
 }

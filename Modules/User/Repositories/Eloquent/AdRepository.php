@@ -199,13 +199,18 @@ class AdRepository extends Repository implements
     {
         $pictures = $this->model->media()->latest()->get();
 
+        $dirname = Storage::path($this->getExportDirName());
+
+        if (is_dir($dirname))
+            exec("rm -r $dirname");
+
+        mkdir($dirname);
+
         foreach ($pictures as $picture) {
 
             $image = $picture->getPath();
 
             $export_src = pathinfo($image);
-
-            $dirname = Storage::path($this->getExportDirName());
 
             $full_path = Str::of($dirname)
                 ->append('/1080-1080-')
@@ -227,11 +232,6 @@ class AdRepository extends Repository implements
                 $text,
                 $template
             ));
-
-            if (!is_dir($dirname)) {
-
-                mkdir($dirname);
-            }
 
             $image->save($full_path, $quality);
         }

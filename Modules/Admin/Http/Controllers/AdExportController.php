@@ -44,6 +44,19 @@ class AdExportController extends Controller
         return response()->download($zip_path);
     }
 
+    public function renewCaption(Ad $ad, AdRepositoryInterface $repository, Request $request)
+    {
+        $repository->setModel($ad);
+
+        $repository->createCaptionFile(render_ad_caption(
+            $ad,
+            $request->input('caption'),
+            true
+        ));
+
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      * @return Renderable

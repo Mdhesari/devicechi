@@ -154,6 +154,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
             Route::get('/', [AdController::class, 'index'])->name('list');
 
+            Route::get('/renew-caption/{ad}', [AdExportController::class, 'renewCaption'])->name('export.renew-caption');
+
             Route::post('/export/{ad}', [AdExportController::class, 'index'])->name('export');
 
             Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');

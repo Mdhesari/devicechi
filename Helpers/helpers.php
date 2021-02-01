@@ -124,31 +124,31 @@ function format_user_mobile($mobile)
     return trim(preg_replace('/^0/', '', $mobile));
 }
 
-function render_ad_caption($ad, $caption = null)
+function render_ad_caption($ad, $caption = null, $regenerate = false)
 {
 
-    if (!is_null($ad->caption)) {
+    if (is_null($ad->caption) || $regenerate) {
 
-        if (is_null($caption))
-            return $ad->caption;
+        $template = \Str::of(config('admin.instagram.templates.post'));
+
+        $caption = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
+            ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
+            ->replace(':variants', $ad->variant->storage . 'حافظه')
+            ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
+            ->replace(':price', $ad->getFormattedPrice())
+            ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
+            ->replace(':status', trans($ad->getStatus()))
+            ->replace(':title', $ad->title)
+            ->replace(':description', $ad->description)
+            ->replace('<br>', "\n");
 
         $ad->updateCaption($caption);
 
         return $caption;
     };
 
-    $template = \Str::of(config('admin.instagram.templates.post'));
-
-    $caption = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
-        ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
-        ->replace(':variants', $ad->variant->storage . 'حافظه')
-        ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
-        ->replace(':price', $ad->getFormattedPrice())
-        ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
-        ->replace(':status', trans($ad->getStatus()))
-        ->replace(':title', $ad->title)
-        ->replace(':description', $ad->description)
-        ->replace('<br>', "\n");
+    if (is_null($caption))
+        return $ad->caption;
 
     $ad->updateCaption($caption);
 
