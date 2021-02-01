@@ -28,7 +28,7 @@ class UserDatabaseSeeder extends Seeder
         $this->call([
             CountryStatesTableSeeder::class,
             PhoneBrandTableSeeder::class,
-            PhoneBrandImageTableSeeder::class,
+            // PhoneBrandImageTableSeeder::class,
             PhoneModelTableSeeder::class,
             PhoneModelVariantsTableSeeder::class,
             PhoneAccessoriesTableSeeder::class,

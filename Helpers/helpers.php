@@ -154,3 +154,9 @@ function render_ad_caption($ad, $caption = null)
 
     return $caption;
 }
+
+function predata_path($path = "")
+{
+
+    return database_path("seeders/predata") . $path;
+}

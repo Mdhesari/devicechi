@@ -10,7 +10,7 @@ use Modules\User\Entities\PhoneModel;
 class AdModelController extends BaseAdController
 {
 
-    public function choose(PhoneBrand $brand, Ad $ad)
+    public function choose(PhoneBrand $brand, Ad $ad = null)
     {
         if ($ad)
             $this->checkAuthorization($ad);

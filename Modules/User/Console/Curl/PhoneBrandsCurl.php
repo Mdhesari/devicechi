@@ -43,7 +43,7 @@ class PhoneBrandsCurl extends Command
 
         $this->info('Start scrapping... ' . $url . ' url.');
 
-        $this->storeItems($response);
+        // $this->storeItems($response);
 
         $this->storeImages($response);
 
@@ -132,6 +132,8 @@ class PhoneBrandsCurl extends Command
             Log::info(PhoneBrand::all()->toArray());
         } else {
 
+            file_put_contents(predata_path('/brands.json'), json_encode($brands));
+
             Log::info($brands);
         }
     }
@@ -140,28 +142,4 @@ class PhoneBrandsCurl extends Command
     {
         return file_put_contents($src, file_get_contents($url));
     }
-
-    // /**
-    //  * Get the console command arguments.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getArguments()
-    // {
-    //     return [
-    //         ['example', InputArgument::REQUIRED, 'An example argument.'],
-    //     ];
-    // }
-
-    // /**
-    //  * Get the console command options.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getOptions()
-    // {
-    //     return [
-    //         ['example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null],
-    //     ];
-    // }
 }

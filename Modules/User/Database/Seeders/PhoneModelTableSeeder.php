@@ -29,9 +29,15 @@ class PhoneModelTableSeeder extends Seeder
 
         foreach ($models as $model) {
 
-            $brand = PhoneBrand::whereName($model['brand_name'])->first();
+            try {
+                $brand = PhoneBrand::whereName($model['brand_name'])->first();
 
-            if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("Cannot create model with nulled brand");
+                if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("There is no brand name : " . $model['brand_name']);
+            } catch (PhoneModelUnableToeSeedWithoutBrands $e) {
+
+                report($e);
+                continue;
+            }
 
             $db_models[] = [
                 'phone_brand_id' => $brand->id,

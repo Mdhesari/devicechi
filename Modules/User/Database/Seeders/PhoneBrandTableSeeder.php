@@ -18,15 +18,14 @@ class PhoneBrandTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $brands = config('user.phone_brands');
+        $brands = json_decode(file_get_contents(predata_path('/brands.json')), true);
 
         $db_brands = [];
 
         DB::table('phone_brands')->truncate();
 
         foreach ($brands as $brand) {
-
-            $db_brands[]['name'] = $brand;
+            $db_brands[] = $brand;
         }
 
         DB::table('phone_brands')->insert($db_brands);
