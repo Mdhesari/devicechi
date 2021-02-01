@@ -25,7 +25,7 @@ class PhoneModelTableSeeder extends Seeder
 
         $db_models = [];
 
-        PhoneModel::truncate();
+        DB::table('phone_models')->truncate();
 
         foreach ($models as $model) {
 
