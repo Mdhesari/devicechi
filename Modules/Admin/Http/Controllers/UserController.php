@@ -74,6 +74,14 @@ class UserController extends Controller
 
         $page_title = __(' Users List ');
 
+        if (!$request->input('sort_by')) {
+
+            $request->merge([
+                'sort_by' => 'created_at',
+                'sort_dir' => 'desc',
+            ]);
+        }
+
         return $usersGrid
             ->create(compact('query', 'request'))
             ->renderOn('admin::grid.index', compact('page_title'));
