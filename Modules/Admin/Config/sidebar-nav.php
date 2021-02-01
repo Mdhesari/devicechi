@@ -8,16 +8,17 @@ return [
             'permission' => 'read user',
             'route' => 'admin.dashboard',
             'route_params' => [],
-            'icon_class' => 'fa fa-panel',
+            'icon_class' => 'fa fa-dashboard nav-icon',
         ],
         [
             'label' =>  __(' Ads Management '),
             'permission' => 'read ad',
+            'icon_class' => 'fa fa-buysellads nav-icon',
             [
                 'title' => __(' Ads List '),
                 'route' => 'admin.ads.list',
                 'route_params' => [],
-                'icon_class' => 'fa fa-users nav-icon'
+                'icon_class' => 'fa fa-list-ul nav-icon'
             ],
         ],
         [
