@@ -89,19 +89,6 @@ class AdsGrid extends Grid implements AdsGridInterface
 					return $columnData->phoneModel->brand->name;
 				},
 			],
-			"is_multicard" => [
-				"search" => [
-					"enabled" => true
-				],
-				"filter" => [
-					"enabled" => true,
-					"operator" => "like"
-				],
-				"presenter" => function ($columnData, $columnName) {
-
-					return $columnData->multicardInfo;
-				},
-			],
 			"state" => [
 				"filter" => [
 					"enabled" => true,
@@ -158,7 +145,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				},
 			],
 			"created_at" => [
-				"sort" => false,
+				"sort" => true,
 				"date" => "true",
 				"filter" => [
 					"enabled" => false,

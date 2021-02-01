@@ -23,6 +23,14 @@ class AdController extends Controller
 
         $query = Ad::query();
 
+        if (!$request->input('sort_by')) {
+
+            $request->merge([
+                'sort_by' => 'created_at',
+                'sort_dir' => 'desc',
+            ]);
+        }
+
         return $grid
             ->create(compact('query', 'request'))
             ->renderOn('admin::grid.index', compact('page_title'));
