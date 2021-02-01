@@ -18,7 +18,7 @@ class AdHomeController extends Controller
      */
     public function index(Request $request)
     {
-        $ads = Ad::with('state.city')->includeMediaThumb()->published()->paginate();
+        $ads = Ad::with('state.city')->latest()->includeMediaThumb()->published()->paginate();
 
         if ($request->expectsJson()) return $ads;
 
@@ -33,7 +33,7 @@ class AdHomeController extends Controller
      */
     public function all(Request $request)
     {
-        $ads = Ad::with('state.city')->filterAd($request)->includeMediaThumb()->published()->paginate(3);
+        $ads = Ad::with('state.city')->latest()->filterAd($request)->includeMediaThumb()->published()->paginate(3);
 
         if ($request->expectsJson()) return $ads;
 

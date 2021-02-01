@@ -29,7 +29,7 @@ class PhoneBrandImageTableSeeder extends Seeder
             if (is_null($brand)) {
 
                 report(new Exception('brand not found'));
-                throw new PhoneBrandNotFound('Phone brand not found while seeding phone brand images.');
+                throw new PhoneBrandNotFound('Phone brand {' . $brand_image['name'] . '} not found while seeding phone brand images.');
             }
 
             DB::table('phone_brands')->whereId($brand->id)->update([

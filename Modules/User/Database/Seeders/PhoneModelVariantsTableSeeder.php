@@ -19,9 +19,7 @@ class PhoneModelVariantsTableSeeder extends Seeder
     {
         Model::unguard();
 
-        // $phone_variants = config('user.phone_variants');
-
-        $phone_variants = json_decode(file_get_contents(public_path() . '/variants.json'), true);
+        $phone_variants = json_decode(file_get_contents(predata_path('/variants.json')), true);
 
         $db_model = [];
 

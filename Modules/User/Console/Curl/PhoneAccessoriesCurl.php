@@ -25,16 +25,6 @@ class PhoneAccessoriesCurl extends Command
     protected $description = 'Curl all accessories on db or log';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -94,6 +84,9 @@ class PhoneAccessoriesCurl extends Command
 
             Log::info($accessories);
         } else {
+
+            file_put_contents(predata_path('/accessories.json'), json_encode($accessories));
+
             Log::info($accessories);
         }
 

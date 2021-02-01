@@ -28,18 +28,6 @@ class PhoneModelsCurl extends Command
     protected $description = 'Curl all phone models and store on db or log.';
 
     /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->cli = new Client(HttpClient::create(['timeout' => 60]));
-
-        parent::__construct();
-    }
-
-    /**
      * Execute the console command.
      *
      * @return mixed
@@ -95,31 +83,9 @@ class PhoneModelsCurl extends Command
             Artisan::call('module:seed User --class=PhoneModelTableSeeder');
         } else {
 
+            file_put_contents(predata_path('/models.json'), json_encode($db_models));
+
             Log::info($db_models);
         }
     }
-
-    // /**
-    //  * Get the console command arguments.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getArguments()
-    // {
-    //     return [
-    //         ['example', InputArgument::REQUIRED, 'An example argument.'],
-    //     ];
-    // }
-
-    // /**
-    //  * Get the console command options.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getOptions()
-    // {
-    //     return [
-    //         ['example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null],
-    //     ];
-    // }
 }

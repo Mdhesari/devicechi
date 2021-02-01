@@ -21,7 +21,7 @@ class PhoneModelTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $models = config('user.phone_models');
+        $models = json_decode(file_get_contents(predata_path('/models.json')), true);
 
         $db_models = [];
 

@@ -1,0 +1,9972 @@
+[
+    {
+        "model": "G2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "G2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "G",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "E",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "E",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "D2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "D2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "D",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "D",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone XS Max",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone XS Max",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone XS Max",
+        "ram": "4GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone XS",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone XS",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone XS",
+        "ram": "4GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone XR",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone XR",
+        "ram": "3GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone XR",
+        "ram": "3GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone X",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone X",
+        "ram": "3GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone SE",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone SE",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone SE",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone SE",
+        "ram": "2GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone SE 2020",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone SE 2020",
+        "ram": "3GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone SE 2020",
+        "ram": "3GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 8 Plus",
+        "ram": "3GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 8 Plus",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 8 Plus",
+        "ram": "3GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 8",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 8",
+        "ram": "2GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 8",
+        "ram": "2GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 7 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 7 Plus",
+        "ram": "3GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 7 Plus",
+        "ram": "3GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 7",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 7",
+        "ram": "2GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 7",
+        "ram": "2GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 6S Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 6S Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 6S Plus",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 6S Plus",
+        "ram": "2GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 6S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 6S",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 6S",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 6S",
+        "ram": "2GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 6 Plus",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 6 Plus",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 6 Plus",
+        "ram": "1GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 6",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 6",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 6",
+        "ram": "1GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 6",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 5S",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 5S",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 5S",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 5C",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "iPhone 5C",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 5C",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 5",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 5",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 5",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 4S",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "iPhone 4S",
+        "ram": "512MB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 4S",
+        "ram": "512MB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 4S",
+        "ram": "512MB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 4",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "iPhone 4",
+        "ram": "512MB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 4",
+        "ram": "512MB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 3GS",
+        "ram": "256MB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "iPhone 3G",
+        "ram": "128MB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "iPhone 12 Pro Max",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 12 Pro Max",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 12 Pro Max",
+        "ram": "6GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone 12 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 12 Pro",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 12 Pro",
+        "ram": "6GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone 12 Mini",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 12 Mini",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 12 Mini",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 12",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 12",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 12",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 11 Pro Max",
+        "ram": "4GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone 11 Pro Max",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 11 Pro Max",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 11 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 11 Pro",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iPhone 11 Pro",
+        "ram": "4GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "iPhone 11",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "iPhone 11",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iPhone 11",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Zenfone Zoom ZX550",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Zoom ZX550",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Zenfone Selfie",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Selfie",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Selfie",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Max ZC550KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Max ZC550KL",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max Pro M2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max Pro M2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone Max Pro M2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone Max Pro M1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max Pro M1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone Max Pro M1",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone Max M2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max M2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone Max M1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Max",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Live 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Lite L1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Go ZC500TG",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Go ZC500TG",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone Go ZC451TG",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "ZenFone Go ZB552KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Go ZB551KL",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone Go ZB551KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "ZenFone Go ZB500KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "ZenFone Go ZB450KL",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone Go 5.0 LTE T500",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone Go 4.5",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone Go",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone C ZC451CG",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone 6",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 6",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 5Z",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 5Z",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Zenfone 5Z",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Zenfone 5 Lite A502CG",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone 5 A501CG",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone 5 A501CG",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 5 A500KL 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 5 A500CG 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 4 Selfie Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 4 Selfie",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 4 A450CG",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone 4 A400CG",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Zenfone 3s Max",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 3 ZE552KL",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 3 ZE552KL",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 3 Ultra",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 3 Max ZC553KL",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 3 Max ZC520TL",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 3 Laser 32GB",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 3 Deluxe",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Zenfone 3 Deluxe",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 2 ZE551ML",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 ZE551ML",
+        "ram": "4GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 ZE551ML",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Zenfone 2 ZE551ML",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 2 ZE551ML",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Zenfone 2 ZE550ML 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 Laser ZE601KL 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zenfone 2 Laser ZE550KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 Laser ZE550KL",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 Laser ZE500KL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Zenfone 2 Laser ZE500KL",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "ROG Phone 3",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "ROG Phone 3",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "6Z",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6Z",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6Z",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Z30",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Z3",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Z10",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Priv 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Passport 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Motion",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Leap",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "KEYone Limited Edition",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "KEY2 LE",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "KEY2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Evolve",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "DTEK60",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "DTEK50",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Rogue",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Note 8",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 6",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5 Lite C",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 5 Lite",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 5 Lite",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 3S",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 3 Plus",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 3 Lite",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 3",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mega 5A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mega 5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Mega 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mega 2.5D",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Max",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Dazen X7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cool Play 6",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Cool 6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Cool 6",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Cool 5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Cool 3 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cool 3 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Cool 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cool 2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Cool 1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Cool 1",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Cool 1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A8",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X1s",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "S6s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "S6 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "S6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "S10 Lite",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Pioneer P6",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Pioneer P5L",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Pioneer P4S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Pioneer P4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Pioneer P3S",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Pioneer P3",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Pioneer P2S",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Pioneer P2M",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Pioneer P2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "P7 Max",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "P7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "P5W",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Max",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Marathon M5 Plus",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Marathon M5 Lite",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Marathon M5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Marathon M4",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Marathon M3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "M7 Power",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M2",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "F9 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F9",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F8 Neo",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F205 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F205",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F103 Pro",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F103",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F103",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F10",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Elife S7 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife S5.5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife S5.1",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife S Plus 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife E8",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Elife E7 Mini",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife E7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife E7",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Elife E6",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Elife E5",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Elife E3",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Dream D1",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ctrl V6L",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Ctrl V5",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "CTRL V4S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Ctrl V4",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ctrl V4",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ctrl V3",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ctrl V2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ctrl V1",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A1 Signature Edition",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A1 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A1 Lite",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel XL LTE",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel XL LTE",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Pixel",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Pixel 4a",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel 3A XL",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 3A",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 3 XL",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 3 XL",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel 3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 3",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel 2 XL",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 2 XL",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Pixel 2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pixel 2",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "View 20",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "View 20",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "View 10",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Play",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Play",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Holly 4 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Holly 4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Holly 3 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Holly 2 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Holly",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Bee",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "9X Pro",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "9X",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9X",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9S",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9N",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9N",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9N",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9A",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9 Lite",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9 Lite",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8X",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8X",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8X",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8C",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "8C",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8 Lite",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7X",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7X",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "7C",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7C",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "6X",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6X",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6 Plus",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "6",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "5X",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "5C",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "4X",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "4C",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "3X",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "3C",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "20i",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "20",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "10 Lite",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "10 Lite",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "10 Lite",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "10",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Wildfire X",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Wildfire X",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "U12 Plus",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "One X9",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One X Plus",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One X Plus",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "One X",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One X",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One V",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "One S9",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One S",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One Remix",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One Mini M4",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One Mini 2",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One Mini",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One ME",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One Max",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M9 Prime Camera Edition",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M9 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One M9",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One M8s",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M8 Eye",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M8",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M8",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One M7 801e",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One E9s",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One E9 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One E8",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One Dual Sim",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One A9",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One A9",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "One 802d",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Evo 4G",
+        "ram": "512MB ",
+        "storage": " 1GB"
+    },
+    {
+        "model": "Desire XC",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire X Dual Sim",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire X",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire VC",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire V",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire U",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire SV",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire P",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire Eye 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire C",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 830",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Desire 828",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 828",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Desire 826X",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 826",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 825",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 820S Dual Sim",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 820Q",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 820G Plus",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 820 Mini",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 820",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 816G Plus",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 816G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 816D",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 816",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 816",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 728G",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 728 Ultra Edition",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Desire 728 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 700",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 630",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 628",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Desire 626G Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 626",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 626",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 620G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 616",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 612",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 610",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 601",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 600C",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 600",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 526G Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 526G Plus",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Desire 516C",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 516",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 510",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 501",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 501",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 500",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 326G 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Desire 310",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 310",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 300",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 210",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Desire 10 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Desire 10 Lifestyle",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Butterfly X920D",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Butterfly S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Butterfly",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Butterfly 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "8S",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "10 Evo",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "10 32GB",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y9s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y9 Prime 2019",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y9 2019",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "P9 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "P40 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "P40",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "P30 Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "P30 Lite",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "P30 Lite",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "P20 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "P20 Lite",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Nova 3i",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Nova 3",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Nexus 6P",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Nexus 6P",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mate 20 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Ascend Y600",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Ascend P7 Single Sim 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Ascend P6",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Ascend G750",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Ascend G730",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Zero 8i",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Zero 5 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Zero 5",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Smart HD 2021",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Smart 4 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Smart 4",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Smart 3 Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Smart 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Smart 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "S5 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "S4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "S4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5 Stylus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Hot S5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot S3X",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Hot S3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot S3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Hot 9 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot 9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot 7 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot 7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Hot 6 Pro",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Hot 4 Pro",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Hot 10",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Hot 10",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Vision 3 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Vision 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vision 3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Turbo 5S",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Turbo 5 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Snap 4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M812",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "M680",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "M535 Plus",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "EPIC 1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A1s",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Super 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Y2 Ultra",
+        "ram": "1 GB ",
+        "storage": " 8 GB"
+    },
+    {
+        "model": "Cloud Tread",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Swift 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud String V 2.0",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Power Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Pace",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud N12",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Flash",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud Crystal 2.5 D",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud 4G Star",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Cloud 4G Smart",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Xtreme V",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Trend 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Star HD",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Star 5.0",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Star 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Star 2 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Speed HD",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Speed",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Slice 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua S7",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Power HD 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Power+",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua Life 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua i7",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Aqua i4 Plus",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Aqua HD",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Aqua Glam 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Dream 2 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Dream 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Craze",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Amaze",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Aqua Ace 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Aqua 4G Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vision 1",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vision 1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A48",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A48",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Titanium X",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium S9 Lite",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Titanium S8",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium S5i",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Titanium S5 Ultra",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Titanium S320",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium S3",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Titanium S25 Klick",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium S205",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium S19",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Pop S315",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Octane Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium Moghul",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Machone Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium Machfive",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium Mach Two S360",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Mach Six VR",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium Mach One S310",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Hexa",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Titanium Dazzle S201",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Titanium Dazzle 3 S204",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Sparkle V",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "S9 Titanium",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "S7 Titanium",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Quattro L52",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Quattro L51 HD",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Quattro L50",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Platinum P9",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Opium N9",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Opium N7",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "K9 Smart 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Dazzle 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A25 Plus",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Z92",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Z92",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Z80",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Z71",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Z66",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Z61 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Z6",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z53",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Z50",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Z41",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Z4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z2",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "X81",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X50 4G",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "X46",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "X38 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "X3 8GB",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "X11 4G",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "V5 4G",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "V2S",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "V2 3GB RAM 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Pixel V2 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Pixel V1",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "P7 3G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "iris X9 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Iris X8",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Iris X8",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Iris X5",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Iris X5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Iris X10",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Iris X1",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Iris Pro 30",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Iris Fuel 60",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Iris Fuel 50",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Iris Alfa",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Iris 450 Colour 4GB",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Icon",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "EG932",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "BEU",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A97",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A82",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A79",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A76 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A71 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "405 Plus 4GB",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Le Max",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Le Max",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Le Max 2",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Le Max 2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Le Max 2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Le 2 Pro",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Le 2 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Le 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Le 2",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Le 1S Eco",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Le 1s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Zuk Z1",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z6 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Z2 Plus 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z2 Plus 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe Z2 Pro",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe Z K910L",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vibe X3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe X2",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe X S960",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vibe Shot",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe S1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "VIBE P1M",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vibe P1 Turbo",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe P1",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe K5 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vibe K5 Plus",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Vibe K5 Note",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe K5 Note",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Vibe K5 Note",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Vibe K5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Sisley S90",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "S930",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "S920",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "S890",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "S860",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "S850",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "S820",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "S820",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "S660",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "S650",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "S60",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "S580",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Phab Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Phab 2 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Phab 2 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Phab 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "P780",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "P70",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "P2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "P2",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K910L",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K900",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K9 Note",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "K9",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K8 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K8 Plus",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K8 Note",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K8 Note",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "K8",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K6 Power",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K6 Power",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K6 Note",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "K6 Note",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "K4 Note",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K3 Note",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K10 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "K10 Note",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "K10 Note",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A859",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A850",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A7700",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A706",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A7000 Turbo",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A7000",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A7",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A680",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A6600 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A6600",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A6000 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A6000",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A6 Note",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A536",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A526",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A5000",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "A5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A369i (White, 4 GB)",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A328",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A319",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A2010",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Wing",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "W31",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "W30 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "W30",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "W10 Alpha",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "W10",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Velvet",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V40 ThinQ",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V30 Plus",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Stylus 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Q7",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Q60",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Q6 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Q6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Q Stylus Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Q Stylus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Optimus VU P895",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Optimus G Pro E988",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Optimus G E975",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Optimus 4X HD P880",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Nexus 5X",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Nexus 5X",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Nexus 5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Nexus 5",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Nexus 4 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Max (X160)",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Magna",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "L90",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "L80 Dual",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "L70 Dual",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "L Fino D295 4GB",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "L Bello Dual D335",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "K7 4G 16GB",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K10 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "G8X ThinQ",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "G7 ThinQ",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "G7 Plus ThinQ",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "G6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "G5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G4 Stylus 16GB",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "G4 Dual Sim 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G3 Stylus Dual D690",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "G3 D855",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "G3 D855",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G3 Beat",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "G2 4G",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G Pro 2 -D838",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "G FLEX2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "G FLEX2",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "G FLEX D958",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F70 D315",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Wind 7S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Wind 7i",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Wind 7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Wind 6",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Wind 4S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Wind 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Wind 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Wind 1",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 9",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 8",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 7S",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 6",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Water 5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 4",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 11",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 10",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Water 1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Flame 8",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Flame 7S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Flame 7",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Flame 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Flame 1",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "F8",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "F1S (Water F1S)",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Earth 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Earth 1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C459",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "C451",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Vdeo 5",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Vdeo 4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Vdeo 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Vdeo 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Vdeo 1",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Unite 4 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Unite 4 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Unite 4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Unite 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Unite 2",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Unite 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Spark 2 Q334",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "iOne Note",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Infinity N12",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Infinity N11",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "IN Note 1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "IN Note 1",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "IN 1b",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "IN 1b",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Canvas Xpress 4G Q413",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Xpress 2 E313",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas XP 4G",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas XL2 A109",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas XL A119",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Win W121",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Turbo Mini A200",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Turbo A250",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Tube A118R",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Spark Q380",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Spark 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Spark 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Spark 2 Plus Q350",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Silver 5 Q450",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Selfie Lens Q345",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Selfie A255",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Selfie 4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Selfie 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Pulse 4G",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Power A96",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Play 4G",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Play",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Pep Q371",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Pace 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Nitro A311",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Nitro A310",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Nitro 3 E455",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Nitro 3 E352",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Nitro 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Mega 4G",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Mega 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Mega",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Magnus A117",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Mad A94",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas L A108",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Knight Cameo A290",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Knight A350",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Canvas Knight 2 E471",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Juice A77",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Juice A177",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Juice 4 Q382",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Juice 3 Plus Q394",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Juice 3",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Juice 2",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Infinity Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Canvas Infinity Life",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Infinity",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Canvas Hue AQ5000",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Hue 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas HD Plus A190",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas HD A116i",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas HD A116",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Gold A300",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Canvas Fun A76",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Fun A74",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Fire A093",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Fire 5 Q386",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Fire 4G Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Fire 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Fire 4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Fire 3 A096",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Fire 2 A104",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Express A99",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Evok E483",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Entice",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Elanza A93",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Elanza 2 A121",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Ego A113",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Duet AE90",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Duet 2",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Doodle A111",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Doodle 4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Doodle 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Doodle 2 A240",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas Blaze HD",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Blaze 4G Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Blaze 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Beat A114R",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas Amaze Q395",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Amaze 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Canvas Amaze 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas A1",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas 6 Pro E484",
+        "ram": "4GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas 6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Canvas 5 Lite Q462",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas 5 E481",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas 4 Plus A315",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas 4",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Canvas 2.2 A114",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas 2 Plus A110Q",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas 2 Colors A120",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Canvas 2 A110",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Supreme",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Supreme 2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Selfie",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bolt S303",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt S302",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt S301",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt S300",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q381",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bolt Q346",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bolt Q339",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q338",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bolt Q336",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q335",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q333",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q332",
+        "ram": "512MB ",
+        "storage": " 2GB"
+    },
+    {
+        "model": "Bolt Q331",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q325",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q324",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt Q323",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt D321",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt D320",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt D304",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt D303",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt AD4500",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt AD3520",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A82",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A79",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A69",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A67",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A28",
+        "ram": "256MB ",
+        "storage": " 512MB"
+    },
+    {
+        "model": "Bolt A089",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A069",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A067",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A066",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bolt A064",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Bharat 5 Pro",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Bharat 5 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Bharat 5",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Bharat 4",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Bharat 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bharat 2 Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Bharat 2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Razr 5G",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Razr 2019",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "One Vision",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "One Power",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "One Macro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "One Fusion Plus",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "One Action",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Nexus 6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Nexus 6",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Z2 Play 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Z2 Force",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Z Style Mod 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Z Play",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto Z Play",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Z",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto Z",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto X4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto X4",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto X Style",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto X Style",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X Play",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X Play",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto X Force",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto X Force",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X 2nd Gen",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto X 2nd Gen",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X 1st Gen",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto X 1st Gen",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto X 1st Gen",
+        "ram": "2GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto Turbo 64GB",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto M",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto M",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G9 Power",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G8 Power Lite",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G8 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G7 Power",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G6 Plus",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G6 Play",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G5S Plus 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto G5S",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G5 Plus",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G5 Plus",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G5 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G4 Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G4 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G4 Play",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G4",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto G Turbo Edition",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G 5G",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Moto G 3rd Gen",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto G 3rd Gen",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G 2nd Gen 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto G 2nd Gen 4G",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G 2nd Gen 3G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto G 2nd Gen 3G",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto G 1st Gen",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto G 1st Gen",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto G 1st Gen",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto E6s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Moto E5 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto E5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto E4 Plus 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Moto E4",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto E3 Power",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto E 2nd Gen",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto E 2nd Gen",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Moto E 1st Gen",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Moto C Plus",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Moto C",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Edge Plus",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Moto E7 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C3 2020",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "C3 2020",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8.1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8.1",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8 Sirocco",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7.2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7.2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7.1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6.2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6.1 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6.1 Plus",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6 2018",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6 2018",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5.3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5.3",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5.1 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5.1 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5.1 Plus",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5.1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "5",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "4.2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3.2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "3.2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3.1 Plus 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3.1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "3.1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "2.4",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "2.3",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "2.2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2.2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "2.1",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "1",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "X 16GB",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "One",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Nord",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Nord",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Nord",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "8T 5G",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8T 5G",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "8 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8 Pro",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "8",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "8",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7T Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "7T",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7T",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "7 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7 Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "7 Pro",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "7",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "6T McLaren Edition",
+        "ram": "10GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "6T",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6T",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6T",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "6",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "5T",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5T",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3T",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3T",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "3",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "2",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Reno",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 5 Pro 5G",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 4 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 3 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 3 Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Reno2 Z",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Reno 2F",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 2F",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Reno 2",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Reno 10x Zoom",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Reno 10x Zoom",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "R7 plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "R7 Lite",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "R5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "R2001 Yoyo",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "R17 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "R17",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "R15 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "R1001 Joy",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "R1 R829",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Neo 7 4G",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Neo 5 2015",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Neo 5 2015",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Neo 3",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "N1 Mini",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "N1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mirror 5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mirror 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "K3",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "K3",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "K1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Joy Plus",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Joy 3",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Find X2",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Find X",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Find 7A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Find 7",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Find 5 Mini",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Find 5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "F9 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F9 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F7",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F5 Youth",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F5",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F3 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F3 Plus",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F1s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "F1s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F17 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F17",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F17",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F15",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F15",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F11 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F11 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F11",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F11",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F1 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "F1",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A9",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A9 2020",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A9 2020",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A83",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A83",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A83",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A71",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A7",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A5s",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A5s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A5s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A57",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A53 2020",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A53 2020",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A52",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A52",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A52",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A5 2020",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A5 2020",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A5 2020",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A3s",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A3s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A3s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A37F",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A37",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "A33 2020",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A31",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A31",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "A1K",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A15s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A15",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A15",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A12",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A12",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "A11K",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "T50",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "T45 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "T44 Lite",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "T41",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "T41",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "T40 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "P81",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "P66 Mega",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "P61",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "P55 Novo",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "P55 Novo",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "P55",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "P50",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "P41",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "P11",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Eluga Z1 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Eluga Z",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Eluga X1 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Eluga X1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Eluga U",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Eluga Turbo",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Eluga Tapp",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Eluga Switch",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Eluga S Mini",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Eluga S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Eluga Ray X",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Eluga Ray 810",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Eluga Ray 610",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Eluga Prim",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Eluga Mark",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Eluga L2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Eluga L",
+        "ram": "- ",
+        "storage": " -"
+    },
+    {
+        "model": "Eluga I8",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "ELUGA I2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Eluga I",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Eluga Arc 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Eluga A2",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X3",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X3",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X3",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M2 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M2 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M2 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "M2",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "M2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F1",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "F1",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "F1",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "XT",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "XT",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "XT",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X50 Pro",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X50 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X50 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X3 Super Zoom",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X3 Super Zoom",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X3 Super Zoom",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X3",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X3",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2 Pro",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X2 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X2 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X2",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "U1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "U1",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "U1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Narzo 20A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Narzo 20A",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Narzo 20 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Narzo 20 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Narzo 20",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Narzo 20",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Narzo 10A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Narzo 10A",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Narzo 10",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "C3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "C2",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C15 Qualcomm Edition",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C15 Qualcomm Edition",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C15",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C15",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C12",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C12",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "C11",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "C1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C1 2019",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "C1 2019",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7i",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "7",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6i",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "6",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5s",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5i",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3i",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "3 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "2 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "2 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "2 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "1",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y1 Lite",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note Prime",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 9 Pro Max",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 9 Pro Max",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 9 Pro Max",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 9 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 9 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 9 Pro",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 9",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 9",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 8 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 8 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 8 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 8",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 8",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 8",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 7S",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 7S",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 7 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 7 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Note 7 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 7",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 7",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 6 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 6 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 4G",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Note 4",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note 4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Note 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Note 3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Note",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Note 2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "K20 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "K20 Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "K20",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "K20",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Go",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Go",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "9i",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9i",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9A",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "9 Prime",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9 Prime",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9 Power",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9 Power",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "9",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "8A Dual",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "8A Dual",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "8A Dual",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "8A",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "8A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "8",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "7A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "7A",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "7",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6A",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "6 Pro",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "6",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "5A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "5A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "4A",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "4A",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "4",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "3S Prime",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3S Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "3S",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2 Prime",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2 Prime",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "2",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "1S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Z4",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Tizen Z3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Tizen Z2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Tizen Z1",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Z Fold 2",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Z Flip",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Young",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Young 2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Y S5360",
+        "ram": "160mb ",
+        "storage": " 2Gb"
+    },
+    {
+        "model": "Galaxy Trend",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Star Pro Duos",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Star Advance",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Star",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Star 2",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy S9 Plus Dual Sim",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S9 Plus Dual Sim",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S9 Plus Dual Sim",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S9 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S9 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S9 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S8 Plus Dual Sim",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S8 Plus Dual Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S8 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S7 Edge Dual Sim",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S7 Edge Dual Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S7 Edge Dual Sim",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S7 Dual Sim 32GB",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S6 Edge Plus 32GB",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S6 Edge",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S6 Edge",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S6",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S6",
+        "ram": "3GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S5 Mini",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S4 Zoom",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy S4 Mini 8GB",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy S4 32GB",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S4 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S3 Neo",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S3 Mini 8GB",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy S3 Mini 16GB",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S3 32GB",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S3 16GB",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy S3 64GB",
+        "ram": "1GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy S21 Ultra 5G",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S21 Ultra 5G",
+        "ram": "16GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy S21 Plus 5G",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S21 Plus 5G",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S21 5G",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S21 5G",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S20 Ultra",
+        "ram": "12GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S20 Plus",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S20 FE",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S20 FE",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy S20",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S2 Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy S2",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy S10e",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S10 Plus",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S10 Plus",
+        "ram": "8GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy S10 Plus",
+        "ram": "12GB ",
+        "storage": " 1TB"
+    },
+    {
+        "model": "Galaxy S10 Lite",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S10 Lite",
+        "ram": "8GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy S10",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy S10",
+        "ram": "8GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy S Duos",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy S Duos 3",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy S Duos 2",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Pocket",
+        "ram": "- ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy On8",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy On8 2018",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy On7 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy On7 Prime",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy On7 Prime",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy On7",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy On6 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy On5 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy On5 8GB",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy On Nxt",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy On Nxt",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy On Nxt",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy On Max",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 9",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy Note 9",
+        "ram": "8GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy Note 8 Dual Sim",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy Note 8 Dual Sim",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy Note 8 Dual Sim",
+        "ram": "6GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Note 5 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 5 Dual Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy Note 5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 5",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy Note 4 Edge 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 3 Neo",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Note 3",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Note 20 Ultra 5G",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Note 20",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Note 2 N7100",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Note 10.1 GT- 8000",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Note 10 Plus",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Note 10 Plus",
+        "ram": "12GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy Note 10 Lite",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy Note 10 Lite",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy Note 10",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Galaxy Note 1 N7000",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Music Duos",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Mega 6.3",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Mega 5.8",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Mega 2",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Mega 2",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy M51",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M51",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M40",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M31s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M31s",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M31 Prime",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M31",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M31",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M31",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M30s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M30s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M30s",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M30",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M30",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M30",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M21",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M21",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy M20",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M20",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M11",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M11",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M10s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M10",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M10",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy M02s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M02s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy M01s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M01 Core",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy M01 Core",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy M01",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J8 4GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy J7 Pro 64GB",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy J7 Pro 64GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 Prime",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 Prime",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J7 Prime 2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 Nxt 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 Nxt",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J7 Max",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 Duo",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J7 2016 Edition",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J7",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J6 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy J6 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy J6",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J5 Prime",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J5 Prime",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J5 2016 Edition",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J5",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J5",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J4 Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J4 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy J4 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J3 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J3 2016",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J2 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J2 Ace",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J2 2018",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy J2 2017",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J2 2016",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy J1 Ace",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy J1",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy J1 2016",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Quattro I8552",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Quattro I8550",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Prime",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Prime",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Neo Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Neo",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand Max",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Grand Duos",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Grand 2",
+        "ram": "1.5GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Golden",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Fold",
+        "ram": "12GB ",
+        "storage": " 512GB"
+    },
+    {
+        "model": "Galaxy Fame",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy F41",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy F41",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy E7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy E5",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy Core Prime",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Core 2",
+        "ram": "768MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Core",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Galaxy Chat",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy C9 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy C7 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy Axiom",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Alpha",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy Ace Nxt",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Ace 4",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy Ace 3",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Galaxy A9 Pro",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A9",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A9",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A80",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A8 Star",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A8 Plus 64GB",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A8",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A71",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A70s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A70s",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A70",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A7",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A7 2018",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A7 2018",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A7 2017",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A7 2016",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A6 Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A6",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A6",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A51",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A51",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A50s",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A50s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A50",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A50",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A50",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A5 2017",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A5 2016",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A31",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A30s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A30s",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A30",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A3 2016",
+        "ram": "1.5GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A3",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Galaxy A21s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A21s",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A21s",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Galaxy A20s",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Galaxy A20s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A20",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A10s",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A10s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Galaxy A10",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia ZR",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia ZL",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z5 Premium Dual",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia Z5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia Z5",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia Z3 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia Z3 Dual",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z3 Compact",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z3",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z2",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z1 Mini Compact",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z Ultra",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Z",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia XZ1",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia XZ Premium",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia XZ",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia XA1 Ultra",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia XA1 Plus 32GB",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia XA1",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia XA Ultra",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia XA Dual",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia X",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia X",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Xperia U",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia T3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia T2 Ultra Dual",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia SP",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia SL LT26ii",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia S",
+        "ram": "1GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia R1 Plus",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia P",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia Neo L",
+        "ram": "512MB ",
+        "storage": " 1GB"
+    },
+    {
+        "model": "Xperia Miro",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia M5 Dual",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia M4 Aqua Dual",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia M2 Dual",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia M2 Aqua",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia M2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia M",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia M",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia L2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xperia L",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia J",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia Go",
+        "ram": "512MB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia E4 Dual",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia E3",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia E3",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia E1",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia E1",
+        "ram": "512MB ",
+        "storage": " 1.58GB"
+    },
+    {
+        "model": "Xperia E",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Xperia E 4G Dual",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia C5 Ultra Dual",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia C4 Dual",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xperia C3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia C3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Xperia C",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Spark Power 2 Air",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark Power 2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Spark Go Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark Go",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Spark Go 2020",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 6 Go",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Spark 6 Air",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 6 Air",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 6 Air",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Spark 5 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Spark 5",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 4 Air",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Spark 4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pova",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Pova",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Phantom 9",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "i7",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "i5 Pro",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "i3 Pro",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Camon iSky 3",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon iSky",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Camon iSky 2",
+        "ram": "2GB ",
+        "storage": " 16 GB"
+    },
+    {
+        "model": "Camon iClick",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Camon iClick 2",
+        "ram": "4 GB ",
+        "storage": " 64 GB"
+    },
+    {
+        "model": "Camon iAir 2 Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon iAce 2X",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon iAce",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Camon iAce 2",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon i4",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon i4",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon i4",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Camon i2X",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Camon i2",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon i Twin",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon i Air",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Camon i",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Camon 16",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Camon 15 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Camon 15",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Camon 12 Air",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z1x",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z1x",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Z1x",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Z10",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Z1 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z1 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Z1 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y95",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y93",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y93",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y91i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y91i",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y91i",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y91",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y91",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y90",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y83 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y83",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y81i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y81",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y81",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y71i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y71",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y71",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y69",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y66 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y55S",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y55L",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y53i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y53",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y51L",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y51A",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y51 2020",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y50",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y37 16GB",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y31L",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y31 2021",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y31",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Y30",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y30",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y28",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Y27L",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y27L",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Y22",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Y21L",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y21",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Y20i",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y20A",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y20",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y20",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y19",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y17",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Y15S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Y15 (2019)",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y12s",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y12",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Y12",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Y11",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Y11 2019",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Xshot X710",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Xplay5 Elite",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Xplay5",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X6S Plus",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X6S",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X6 Plus Single Sim",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "X6",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "X50 Pro",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X50",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X50",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "X5 Pro",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X5 MAX",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X5",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X3S",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "X21",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V9 Youth",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "V9 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V9 Pro",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V9",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V7 Plus 4GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V7",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "V5s 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V5 Plus 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V5",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "V3 Max",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "V3 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "V20 SE",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V20 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V20",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V20",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "V20 2021",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V19",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V19",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "V17 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V17",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V15 Pro",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V15 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "V15",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V11 Pro",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V11",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "V1 Max",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "V1",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "U20",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "U20",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "U20",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "U10",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "U10",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "U10",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "S1 Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "S1",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "S1",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "S1",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "NEX",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iQOO 3",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "iQOO 3",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "iQOO 3 5G",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Mi Mix 2 128GB",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi Max",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Mi Max",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi Max",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi Max 2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi Max 2",
+        "ram": "4GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Mi Max 2",
+        "ram": "4GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi A3",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi A3",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi A2",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi A2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi A1 64GB",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi 5 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Mi 4i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mi 4i",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Mi 4",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mi 4",
+        "ram": "3GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi 3",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Mi 10T Pro",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10T",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10T",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10i",
+        "ram": "6GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "Mi 10i",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10i",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10",
+        "ram": "8GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Mi 10",
+        "ram": "8GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "Black Shark 2",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "Black Shark 2",
+        "ram": "12GB ",
+        "storage": " 256GB"
+    },
+    {
+        "model": "ZX",
+        "ram": "4GB ",
+        "storage": " 64GB"
+    },
+    {
+        "model": "ZX",
+        "ram": "6GB ",
+        "storage": " 128GB"
+    },
+    {
+        "model": "X910",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "X500",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Win Q900S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q900T",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q900S Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q900S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q900",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q800 X-Edition",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q800",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q710S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q700S Plus",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q700S",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q700i",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q700 Club",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q700",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q610S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q600S",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q600",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q520S",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q510S",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q500S IPS",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q500",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q3000",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Q2500",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q2100",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q2000L",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q2000",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q1200",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q1100",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q1020",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q1011",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q1010i",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Q1010",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q1000S Plus",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Q1000S",
+        "ram": "1GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Q1000 Opus 2",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q1000 Opus",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Q1000",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "Prime",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Play 8X 1200",
+        "ram": "2GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "Play 8X 1100",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Play 6X 1000",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Opus HD",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Opus 3",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "One HD",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "One",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Omega 5.5",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Omega 5.0",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "LT900",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "LT 2000",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "ERA X",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "ERA 4K",
+        "ram": "2GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "ERA 4G",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Era 2",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Era 1X",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Era",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Cube 5.0",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "Black",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Black",
+        "ram": "3GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Black 1X 32GB",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    },
+    {
+        "model": "A700S",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A600",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A550S IPS",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A510S",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A500S Lite",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A500S",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A500L",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A500 Club",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A500",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A1010",
+        "ram": "512MB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "A1000S",
+        "ram": "1GB ",
+        "storage": " 4GB"
+    },
+    {
+        "model": "8X 1020",
+        "ram": "1GB ",
+        "storage": " 8GB"
+    },
+    {
+        "model": "8X 1000i",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "8X 1000 Hive",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Ace",
+        "ram": "2GB ",
+        "storage": " 16GB"
+    },
+    {
+        "model": "Ace",
+        "ram": "3GB ",
+        "storage": " 32GB"
+    }
+]
