@@ -4,10 +4,32 @@ return [
     'name' => 'Admin',
     'domain' => env('ADMIN_DOMAIN', 'http://team.localhost'),
     'prefix' => env('ADMIN_PREFIX', '/'),
-    'navs' => [
+    'auth_navs' => [
         [
             'title' => __(' Home Page '),
             'route' => 'user.ad.home',
+            'params' => [],
+        ],
+        [
+            'title' => __(' All Ads '),
+            'route' => 'user.ad.all',
+            'params' => [],
+        ],
+        [
+            'title' => __(' Contact us '),
+            'route' => 'contact-us',
+            'params' => [],
+        ],
+        [
+            'title' => __(' Rules '),
+            'route' => 'rules',
+            'params' => [],
+        ]
+    ],
+    'guest_navs' => [
+        [
+            'title' => __(' Home Page '),
+            'route' => 'user.home',
             'params' => [],
         ],
         [

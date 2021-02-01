@@ -1,5 +1,5 @@
 <template>
-    <front-layout>
+    <AuthLayout :user="user">
         <section class="single-blog-section">
             <div class="container">
                 <div class="single-blog-inner">
@@ -56,15 +56,16 @@
                 </div>
             </div>
         </section>
-    </front-layout>
+    </AuthLayout>
 </template>
 
 <script>
-import FrontLayout from "./../Layouts/FrontLayout";
+import AuthLayout from "./../Layouts/FrontAuthLayout";
 
 export default {
+    props:["user"],
     components: {
-        FrontLayout
+        AuthLayout
     }
 };
 </script>

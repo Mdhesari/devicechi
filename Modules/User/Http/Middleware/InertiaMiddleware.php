@@ -27,7 +27,10 @@ class InertiaMiddleware
         Inertia::share('user', $request->user());
 
         Inertia::share('menu_navbar', function () {
-            return get_nav_items(config('admin.navs'));
+            if (auth()->user())
+                return get_nav_items(config('admin.auth_navs'));
+
+            return get_nav_items(config('admin.guest_navs'));
         });
 
         Inertia::share('site_url', config('app.url'));

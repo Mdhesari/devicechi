@@ -1,21 +1,22 @@
 <template>
-    <front-layout>
+    <AuthLayout :user="user">
         <IntroductionSection></IntroductionSection>
         <HomeLoginSection></HomeLoginSection>
         <HomeIntroSection></HomeIntroSection>
-    </front-layout>
+    </AuthLayout>
 </template>
 
 <script>
 import IntroductionSection from "./../Section/Introduction";
 import HomeLoginSection from "./../Section/HomeLogin";
 import HomeIntroSection from "./../Section/HomeIntro";
-import FrontLayout from "./../Layouts/FrontLayout";
+import AuthLayout from "./../Layouts/FrontAuthLayout";
 import AppSection from "./../Components/AppSection";
 
 export default {
+    props: ["user"],
     components: {
-        FrontLayout,
+        AuthLayout,
         IntroductionSection,
         AppSection,
         HomeLoginSection,

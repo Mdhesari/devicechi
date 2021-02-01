@@ -37,6 +37,7 @@
                     <b-form-input
                         @blur="!focusOnPhone"
                         v-model="form.phone"
+                        ref="mobile"
                         type="tel"
                         minlength="6"
                         maxlength="11"
@@ -83,6 +84,7 @@ export default {
     methods: {
         onSubmit(e) {
             e.preventDefault();
+            if (this.form.phone.length < 1) return this.$refs.mobile.focus();
             this.isLoading = true;
 
             let result = this.sendLoginCode();
