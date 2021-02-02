@@ -2837,7 +2837,8 @@ $pallete: (
 }
 .Introduction {
     .vector-holder {
-        width: 500px;
+        max-width: 100%;
+        width: 400px;
         img {
             width: 100%;
         }
@@ -3180,7 +3181,7 @@ $pallete: (
 }
 
 .Introduction .vector-holder {
-    width: 500px;
+    width: 400px;
     margin-bottom: 30px;
 }
 .Introduction .vector-holder img {

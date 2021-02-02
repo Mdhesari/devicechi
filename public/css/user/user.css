@@ -2593,7 +2593,8 @@ input[type=number] {
 }
 
 .Introduction .vector-holder {
-  width: 500px;
+  max-width: 100%;
+  width: 400px;
 }
 
 .Introduction .vector-holder img {
@@ -2864,7 +2865,7 @@ input[type=number] {
 }
 
 .Introduction .vector-holder {
-  width: 500px;
+  width: 400px;
   margin-bottom: 30px;
 }
 
