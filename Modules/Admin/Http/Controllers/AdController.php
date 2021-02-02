@@ -146,7 +146,7 @@ class AdController extends Controller
             'description' => ['required'],
         ]);
 
-        $ad->ignore($request->description);
+        $ad->ignore($request->description, $request->user()->id);
 
         if ($request->boolean('notify_ignored_user'))
             $ad->notify(new AdIgnoredNotification);

@@ -208,19 +208,23 @@ class Ad extends Model implements HasMedia
         ])->save();
     }
 
-    public function accept()
+    public function accept($admin_id)
     {
         return $this->forceFill([
             'status' => static::STATUS_AVAILABLE,
+            'meta_ad' => [
+                'admin_id' => $admin_id
+            ]
         ])->save();
     }
 
-    public function ignore($description)
+    public function ignore($description, $admin_id)
     {
         return $this->forceFill([
             'status' => static::STATUS_REJECTED,
             'meta_ad' => [
                 'reject_description' => $description,
+                'admin_id' => $admin_id
             ],
         ])->save();
     }
