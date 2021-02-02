@@ -86,6 +86,28 @@ class MainUser extends User
     }
 
     /**
+     * routeNotificationForMail
+     *
+     * @return string|null
+     */
+    public function routeNotificationForSms()
+    {
+
+        return $this->phone;
+    }
+
+    /**
+     * routeNotificationForMail
+     *
+     * @return string|null
+     */
+    public function routeNotificationForMail()
+    {
+
+        return $this->email;
+    }
+
+    /**
      * Create a new factory instance for the model.
      *
      * @return \Illuminate\Database\Eloquent\Factories\Factory

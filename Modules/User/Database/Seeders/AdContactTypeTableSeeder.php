@@ -29,7 +29,5 @@ class AdContactTypeTableSeeder extends Seeder
             $type->data = isset($arr['data']) ? $arr['data'] : [];
             $type->save();
         }
-
-        // AdContactType::create($contact_types);
     }
 }

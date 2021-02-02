@@ -32,6 +32,14 @@ class AdContact extends Model
         return $query->whereNotNull('value_verified_at');
     }
 
+    public function scopeMobileOnly($query)
+    {
+
+        $mobile_id = AdContactType::whereName(AdContactType::TYPE_PHONE)->first()->id;
+
+        return $query->whereContactTypeId($mobile_id);
+    }
+
     public function ad()
     {
 

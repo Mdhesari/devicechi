@@ -20,14 +20,22 @@ class GhasedakChannel
      */
     public function send($notifiable, Notification $notification)
     {
-        $mobile = $notifiable->routeNotificationFor('sms', $notification) ?? $notifiable->phone;
+        $mobile = $notifiable->routeNotificationFor('sms', $notification);
 
-        if (!$mobile) return;
+        if (!$mobile) return report(
+            new Exception(
+                sprintf('Mobile not found for notification : %s, Notifiable : %s', get_class($notification), get_class($notifiable))
+            )
+        );
 
-        // TODO custom dynamic message
-        $message = $notification->toGhasedak($notifiable);
+        $ghasedak = $notification->toGhasedak($notifiable);
 
-        $code = $notification->getCode($notifiable);
+        if (!isset($ghasedak['template']) || !isset($ghasedak['placeholders']))
+            report(new Exception('toGhasedak method is invalid.'));
+
+        $template = $ghasedak['template'];
+
+        $placeholders = $ghasedak['placeholders'];
 
         $default_line_number = config('ghasedak.default_line');
 
@@ -47,8 +55,8 @@ class GhasedakChannel
             $api->verify(
                 $mobile,
                 $type = 1,
-                $template = 'confirmation',
-                $code
+                $template,
+                ...$placeholders
             );
         } catch (Exception $e) {
 

@@ -2,23 +2,32 @@
 
 namespace App\Notifications;
 
+use App\Models\Ad;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Log;
 
-class AdAccepted extends Notification
+abstract class BaseAdReview extends Notification
 {
     use Queueable;
+
+    /**
+     * channels
+     *
+     * @var array
+     */
+    protected $channels;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($channels = ['ghasedak'])
     {
-        //
+        $this->channels = $channels;
     }
 
     /**
@@ -29,7 +38,7 @@ class AdAccepted extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['ghasedak'];
     }
 
     /**
@@ -41,9 +50,28 @@ class AdAccepted extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->lin("تبریک!")
-            ->line("آگهی شما توسط تیم پشتیبانی تایید شد.");
+            ->line('The introduction to the notification.')
+            ->action('Notification Action', url('/'))
+            ->line('Thank you for using our application!');
     }
+
+    /**
+     * Get the mail representation of the notification.
+     *
+     * @param mixed $notifiable
+     * @return string
+     */
+    public function toGhasedak($notifiable)
+    {
+        return [
+            'template' => $this->getTemplate(),
+            'placeholders' => [
+                $notifiable->phoneModel->brand->printableName
+            ],
+        ];
+    }
+
+    public abstract function getTemplate();
 
     /**
      * Get the array representation of the notification.
@@ -54,7 +82,7 @@ class AdAccepted extends Notification
     public function toArray($notifiable)
     {
         return [
-            "ad" => $notifiable->toArray()
+            //
         ];
     }
 }

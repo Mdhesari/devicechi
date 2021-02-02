@@ -268,5 +268,7 @@
     " UNCOMPLETED ": "نیمه تمام",
     " UNAVAILABLE ": "غیر فعال",
     " ARCHIVE ": "پیش نویس",
-    " Renew caption ": "ساخت مجدد کپشن"
+    " Renew caption ": "ساخت مجدد کپشن",
+    " Notify User ": "اطلاع رسانی به کاربر",
+    " Ad View ": "مشاهده آگهی"
 }

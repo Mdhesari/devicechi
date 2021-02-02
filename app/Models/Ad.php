@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
 use App\Traits\Uuids;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Notifications\Notifiable;
@@ -66,6 +67,35 @@ class Ad extends Model implements HasMedia
     {
 
         return preg_replace("/(?:\r\n|\r|\n)/", "<br>", $this->description);
+    }
+
+    /**
+     * routeNotificationForSms
+     *
+     * @return string|null
+     */
+    public function routeNotificationForSms()
+    {
+        $contact = $this->contacts()->verified()->mobileOnly()->first();
+
+        if (!$contact) return null;
+
+        return $contact->value;
+    }
+
+    /**
+     * routeNotificationForMail
+     *
+     * @return string|null
+     */
+    public function routeNotificationForMail()
+    {
+
+        $contact = $this->contacts()->whereContactTypeId(AdContactType::TYPE_EMAIL)->first();
+
+        if (!$contact) return null;
+
+        return $contact->value;
     }
 
     public function getIsMulticardReadAttribute()

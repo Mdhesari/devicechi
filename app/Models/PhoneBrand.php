@@ -19,6 +19,10 @@ class PhoneBrand extends Model
         'name', 'picture_path', 'persian_name'
     ];
 
+    protected $appends = [
+        'printable_name',
+    ];
+
     public function getRouteKeyName()
     {
         return 'name';
@@ -36,6 +40,16 @@ class PhoneBrand extends Model
     {
 
         return $query->searchLike(['name', 'persian_name'], $search);
+    }
+
+    /**
+     * Get printable name
+     *
+     * @return string
+     */
+    public function getPrintableNameAttribute()
+    {
+        return trim($this->name . ' ' . $this->persian_name);
     }
 
     public function models()

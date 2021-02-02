@@ -192,6 +192,10 @@
                         <label for="pro_ad">@lang(' Pro Ad ')</label>
                         <input type="checkbox" name="pro_ad" id="pro_ad" @if($ad->is_pro) checked @endif>
                     </div>
+                    <div class="form-group m-4">
+                        <label for="notify_user">@lang(' Notify User ')</label>
+                        <input type="checkbox" name="notify_user" id="notify_user">
+                    </div>
                     @method('put')
                     <button type="submit" class="btn btn-success mx-1">@lang(' Accept ')</button>
                 </form>
@@ -201,6 +205,10 @@
                 ]) }}" method="POST">
                     @csrf
                     @method('put')
+                    <div class="form-group m-4">
+                        <label for="notify_ignored_user">@lang(' Notify User ')</label>
+                        <input type="checkbox" name="notify_ignored_user" id="notify_ignored_user">
+                    </div>
                     <textarea class="form-control" placeholder="@lang(' Description ')" name="description" cols="30"
                         rows="5"></textarea>
                     <button type="submit" class="btn btn-danger mx-1">@lang(' Ignore ')</button>

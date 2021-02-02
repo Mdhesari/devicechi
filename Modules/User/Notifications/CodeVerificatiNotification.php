@@ -70,10 +70,12 @@ class CodeVerificatiNotification extends Notification implements ShouldQueue
      */
     public function toGhasedak($notifiable)
     {
-
-        $message = '{MFS} Your verification code is ' . $this->getCode($notifiable);
-
-        return $message;
+        return [
+            'template' => 'confirmation',
+            'placeholders' => [
+                $this->code ?: $notifiable->getVerificationCode()
+            ],
+        ];
     }
 
     /**

@@ -2,11 +2,11 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use App\Events\UserAdAccepted;
-use App\Events\UserAdIgnored;
 use App\Grids\AdsGrid;
 use App\Grids\AdsSingleGrid;
 use App\Models\Ad;
+use App\Notifications\AdAcceptedNotification;
+use App\Notifications\AdIgnoredNotification;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -134,7 +134,8 @@ class AdController extends Controller
             $ad->proSign();
         }
 
-        event(new UserAdAccepted($ad));
+        if ($request->boolean('notify_user'))
+            $ad->notify(new AdAcceptedNotification);
 
         return back()->with('success', __(' آگهی با موفقیت انتشار داده شد.'));
     }
@@ -147,7 +148,8 @@ class AdController extends Controller
 
         $ad->ignore($request->description);
 
-        event(new UserAdIgnored($ad));
+        if ($request->boolean('notify_ignored_user'))
+            $ad->notify(new AdIgnoredNotification);
 
         return back()->with('success', __(' آگهی با موفقیت رد شد.'));
     }
