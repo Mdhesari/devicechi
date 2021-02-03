@@ -32,9 +32,10 @@
                     </a>
 
                     <ShareButton
+                        :key="contact.value"
                         class="d-inline-block"
                         icon="clipboard"
-                        propId="copy-to-clipboard"
+                        :propId="`copy-to-clipboard-${contact.id}`"
                         :shareUrl="contact.value"
                     ></ShareButton>
                 </p>
