@@ -21,14 +21,14 @@ class InstagramFilter implements FilterInterface
      *
      * @var mixed
      */
-    private $_template = null;
+    private $_template;
 
     /**
      * blur
      *
      * @var bool
      */
-    private $_blur = false;
+    private $_blur;
 
     /**
      * __construct
@@ -37,7 +37,7 @@ class InstagramFilter implements FilterInterface
      * @param  mixed $text
      * @return void
      */
-    public function __construct($text,  $template = null, $blur = false)
+    public function __construct($text,  $template = null, $blur = 70)
     {
         $this->_text = $text;
         $this->_template = $template;
@@ -95,12 +95,30 @@ class InstagramFilter implements FilterInterface
      */
     public function applyFilter(BaseImage $original_image)
     {
-        $image = Image::make($original_image->basePath())->fit(1080, 1080);
+        $image = Image::make($original_image->basePath());
+
+        if (
+            ($image->width() > $image->height()) ||
+            ($image->height() - $image->width() > 400)
+        ) {
+            // Landscape
+            $old_instance = Image::make($original_image->basePath());
+
+            if ($image->width() > $image->height())
+                $image->widen(1080);
+            else
+                $image->heighten(1080);
+
+            $old_instance->fit(1080, 1080)->blur($this->_blur)->insert($image, 'center-center');
+
+            $image = $old_instance;
+        } else {
+            // Portrait
+            $image->fit(1080, 1080);
+        }
 
         $font_family = $this->getFont();
         $font_size = $this->getFontSize();
-
-        if (is_numeric($this->_blur)) $image->blur($this->_blur);
 
         $image
             ->insert($this->getTemplate());

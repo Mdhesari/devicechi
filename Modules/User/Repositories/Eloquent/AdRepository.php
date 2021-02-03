@@ -226,7 +226,9 @@ class AdRepository extends Repository implements
             )
                 $text = Str::of(ucfirst($this->model->phoneModel->brand->name))
                     ->append("\n")
-                    ->append(ucfirst($this->model->phoneModel->name));
+                    ->append(
+                        Str::words(ucfirst($this->model->phoneModel->name), 2, '')
+                    );
 
             $image = Image::make($image)->filter(new InstagramFilter(
                 $text,
