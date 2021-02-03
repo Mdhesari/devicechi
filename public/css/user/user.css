@@ -2196,6 +2196,42 @@ input[type=number] {
   padding: 150px 0;
 }
 
+.user-panel-section .nav {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.user-panel-section .nav::-webkit-scrollbar {
+  width: 20px;
+}
+
+.user-panel-section .nav::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.user-panel-section .nav::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+}
+
+.user-panel-section .nav::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+}
+
+.user-panel-section .nav::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+.user-panel-section .nav-item {
+  flex: 0 0 auto;
+}
+
 .user-panel-section .nav-link {
   color: #2a5164;
 }
@@ -3078,6 +3114,18 @@ input[type=number] {
 
   .search-bar-section {
     padding: initial;
+  }
+
+  .search-bar .icon {
+    width: 56px;
+  }
+
+  .search-bar-section .search-bar input {
+    font-size: 16px;
+  }
+
+  .search-bar .icon img {
+    width: 32px;
   }
 
   .footer-site .menu {

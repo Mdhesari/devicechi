@@ -2227,6 +2227,42 @@ input[type="number"] {
 .user-panel-section {
     padding: 150px 0;
 
+    .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #d6dee1;
+            border-radius: 20px;
+            border: 6px solid transparent;
+            background-clip: content-box;
+        }
+    }
+
+    .nav-item {
+        flex: 0 0 auto;
+    }
+
     .nav-link {
         color: #2a5164;
 
@@ -3397,6 +3433,18 @@ $pallete: (
 
     .search-bar-section {
         padding: initial;
+    }
+
+    .search-bar .icon {
+        width: 56px;
+    }
+
+    .search-bar-section .search-bar input {
+        font-size: 16px;
+    }
+
+    .search-bar .icon img {
+        width: 32px;
     }
 
     .footer-site {

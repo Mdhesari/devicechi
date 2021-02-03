@@ -13,7 +13,6 @@
                         __("ads.create.btn_title")
                     }}</span>
                 </inertia-link>
-            </li>
             <li v-for="(nav, item) in navbar" :key="item">
                 <inertia-link
                     :class="{
@@ -23,6 +22,7 @@
                 >
                     {{ nav.title }}
                 </inertia-link>
+            </li>
             </li>
         </ul>
     </nav>

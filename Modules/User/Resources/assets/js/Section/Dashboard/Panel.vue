@@ -13,7 +13,7 @@
                     }}</span>
                 </inertia-link>
             </div>
-            <b-nav tabs class="mb-4 flex-column flex-md-row">
+            <b-nav tabs class="mb-4">
                 <li
                     class="nav-item"
                     v-for="(nav, index) in nav_items"
