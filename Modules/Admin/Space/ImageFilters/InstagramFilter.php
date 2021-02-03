@@ -98,6 +98,7 @@ class InstagramFilter implements FilterInterface
         $image = Image::make($original_image->basePath());
 
         if (
+            ($image->width() < 500 || $image->height() < 500) ||
             ($image->width() > $image->height()) ||
             ($image->height() - $image->width() > 400)
         ) {
