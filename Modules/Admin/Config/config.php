@@ -48,6 +48,23 @@ return [
             'params' => [],
         ]
     ],
+    'footer_navs' => [
+        [
+            'title' => __(' Home Page '),
+            'route' => 'user.home',
+            'params' => [],
+        ],
+        [
+            'title' => __(' Contact us '),
+            'route' => 'contact-us',
+            'params' => [],
+        ],
+        [
+            'title' => __(' Rules '),
+            'route' => 'rules',
+            'params' => [],
+        ],
+    ],
     'lists' => [
         [
             'title' => __(' Ads '),

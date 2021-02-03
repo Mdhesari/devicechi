@@ -33,6 +33,11 @@ class InertiaMiddleware
             return get_nav_items(config('admin.guest_navs'));
         });
 
+        Inertia::share('footer_navbar', function () {
+
+        return get_nav_items(config('admin.footer_navs'));
+        });
+
         Inertia::share('site_url', config('app.url'));
 
         Inertia::share('success', function () {

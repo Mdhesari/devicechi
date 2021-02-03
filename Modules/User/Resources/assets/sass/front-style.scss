@@ -2550,7 +2550,7 @@ input[type="number"] {
     display: inline-block;
     padding: 0 12px;
     height: 36px;
-    width: 100px;
+    // width: 100px;
 }
 
 .footer-site .menu ul li:hover {
@@ -3402,6 +3402,10 @@ $pallete: (
     .footer-site {
         .menu {
             text-align: right;
+        }
+
+        .copy-right {
+            margin: 2em 0;
         }
     }
 

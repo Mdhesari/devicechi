@@ -127,7 +127,7 @@ class AdController extends Controller
 
     public function accept(Ad $ad, Request $request)
     {
-        $ad->accept();
+        $ad->accept($request->user()->id);
 
         if ($request->boolean('pro_ad')) {
 
