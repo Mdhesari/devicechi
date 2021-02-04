@@ -5,8 +5,12 @@
             <div class="row">
                 <div class="col-12 col-md-1">
                     <div class="social">
-                        <a href="https://instagram.com/mobile.for.sales" target="_blank" class="instagram">
-                          <b-icon icon="instagram"></b-icon>
+                        <a
+                            href="https://instagram.com/mobile.for.sales"
+                            target="_blank"
+                            class="instagram"
+                        >
+                            <b-icon icon="instagram"></b-icon>
                         </a>
                     </div>
                 </div>
@@ -23,7 +27,7 @@
                 </div>
                 <div class="col-12 col-md-5">
                     <div class="copy-right rtl">
-                        .کلیه حقوق مادی و معنوی این وبسایت محفوظ می باشد
+                        کلیه حقوق مادی و معنوی این وبسایت محفوظ می باشد
                     </div>
                 </div>
             </div>
