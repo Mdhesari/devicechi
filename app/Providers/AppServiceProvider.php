@@ -18,6 +18,7 @@ use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
 use Request;
 use Schema;
+use SEOMeta;
 use Str;
 use View;
 
@@ -47,7 +48,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         Schema::defaultStringLength(191);
 
         Fortify::createUsersUsing(CreateNewUser::class);

@@ -111,6 +111,12 @@ export default {
 </script>
 
 <style scoped>
+
+.list-group {
+    max-height: 22rem;
+    overflow-y: scroll;
+}
+
 .list-group-item {
     position: relative;
     border: none;

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Providers\RouteServiceProvider;
+use SEOMeta;
 
 class InertiaMiddleware
 {
@@ -19,6 +20,11 @@ class InertiaMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        $head_title = trans('user::global.head.title', [
+            'app_name' => config('app.name')
+        ]);
+
+        SEOMeta::setTitle($head_title);
 
         Inertia::share('current_root', $request->root());
 
@@ -40,9 +46,7 @@ class InertiaMiddleware
 
         Inertia::share('site_url', config('app.url'));
 
-        Inertia::share('head_title',  __('user::global.head.title', [
-            'app_name' => config('app.name')
-        ]));
+        Inertia::share('head_title',  $head_title);
 
         Inertia::share('success', function () {
             return session('success');
