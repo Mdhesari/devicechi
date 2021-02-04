@@ -53,14 +53,16 @@ class PhoneBrandsPersianNameCurl extends Command
             if (isset($title[1]))
                 $brands[trim($title[0])] = $title[1];
         });
-
         $persian_brands = [];
+
+        $bar = $this->output->createProgressBar(PhoneBrand::count());
 
         foreach (PhoneBrand::cursor() as $main) {
 
-            foreach ($brands as $key => $value) {
-                if ($main->name == $key) {
+            $bar->advance();
 
+            foreach ($brands as $key => $value) {
+                if (strtolower($main->name) == strtolower($key)) {
                     $persian_brands[] = [
                         'brand_name' => $key,
                         'name' => $value,
@@ -72,6 +74,8 @@ class PhoneBrandsPersianNameCurl extends Command
                 }
             }
         }
+
+        $bar->finish();
 
         file_put_contents(predata_path('/persian_brands.json'), json_encode($persian_brands, JSON_UNESCAPED_UNICODE));
     }
