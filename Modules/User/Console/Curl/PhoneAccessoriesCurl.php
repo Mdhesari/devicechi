@@ -51,7 +51,7 @@ class PhoneAccessoriesCurl extends Command
             $url = $node->attr('src');
             $info = pathinfo($url);
 
-            $dir = 'images/accessories/';
+            $dir = 'assets/accessories/';
 
             $path = $dir . $info['basename'];
 

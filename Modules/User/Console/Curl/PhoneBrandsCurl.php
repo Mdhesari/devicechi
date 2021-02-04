@@ -95,7 +95,7 @@ class PhoneBrandsCurl extends Command
 
             $brand = $info['filename'];
 
-            $dir = 'images/brands/';
+            $dir = 'assets/brands/';
 
             $path = $dir . $info['basename'];
 
