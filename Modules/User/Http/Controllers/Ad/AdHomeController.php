@@ -7,8 +7,12 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use App\Models\Ad;
+use Artesaos\SEOTools\Facades\TwitterCard;
+use JsonLd;
 use Log;
 use Modules\User\Entities\PhoneAccessory;
+use OpenGraph;
+use SEOMeta;
 
 class AdHomeController extends Controller
 {
@@ -92,9 +96,25 @@ class AdHomeController extends Controller
         $accessories = PhoneAccessory::whereNotIn('id', $ad->accessories()->select('id')->pluck('id'))->get();
 
         $head_title = $ad->title;
+        $head_desc = $ad->description;
 
-        return inertia('Ad/Single', compact('ad', 'head_title', 'accessories', 'is_bookmarked_for_user'))
-            ->withViewData(compact('head_title'));
+        OpenGraph::setDescription($head_desc);
+        OpenGraph::setTitle($head_title);
+        OpenGraph::setUrl(route('user.ad.show', $ad));
+        OpenGraph::addProperty('type', 'ads');
+
+        TwitterCard::setTitle($head_title);
+        TwitterCard::setSite(config('app.name'));
+
+        JsonLd::setTitle($head_title);
+        JsonLd::setDescription($head_desc);
+        JsonLd::addImage($ad->media->first()->getFullUrl());
+
+        SEOMeta::setTitle($head_title);
+        SEOMeta::setDescription($head_desc);
+
+        return inertia('Ad/Single', compact('ad', 'head_title', 'head_desc', 'accessories', 'is_bookmarked_for_user'))
+            ->withViewData(compact('head_title', 'head_desc'));
     }
 
     /**

@@ -25,15 +25,6 @@ class ViewServiceProvider extends ServiceProvider
 
             $messages = ExportLocalization::export()->toFlat();
 
-            if (!$view->offsetExists('head_title')) {
-
-                $view->with([
-                    'head_title' => __('user::global.head.title', [
-                        'app_name' => config('app.name')
-                    ])
-                ]);
-            }
-
             return $view->with(compact('messages'));
         });
     }
