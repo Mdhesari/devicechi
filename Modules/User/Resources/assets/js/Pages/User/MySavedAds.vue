@@ -3,20 +3,27 @@
         <Panel :user="user" :tabs="tabs">
             <div class="row normal-ads" v-if="ads && !isLoading">
                 <NormalAd
-                    v-for="ad in ads"
+                    v-for="ad in ads.data"
                     :key="ad.id"
                     :ad="ad"
-                    :countAds="ads.length"
+                    :countAds="ads.data.length"
                     :useFour="false"
                 ></NormalAd>
 
                 <!-- <div class="col-md-6"></div> -->
             </div>
 
+            <Pagination
+                size="default"
+                align="center"
+                :data="ads"
+                @pagination-change-page="getResults"
+            ></Pagination>
+
             <!-- No Content -->
             <b-alert
                 v-if="!isLoading"
-                :show="ads.length < 1"
+                :show="ads.data.length < 1"
                 variant="info"
                 class="text-center mt-4"
             >
@@ -32,13 +39,15 @@ import spinner from "../../Components/Spinner";
 import Panel from "../../Section/Dashboard/Panel";
 import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
 import NormalAd from "../../Components/Ads/NormalAd";
+import Pagination from "laravel-vue-pagination";
 
 export default {
     components: {
         spinner,
         Panel,
         AuthLayout,
-        NormalAd
+        NormalAd,
+        Pagination
     },
     props: ["user", "tabs"],
     mixins: [AdPictureHelpers],
@@ -60,6 +69,17 @@ export default {
             return title !== null && title.length > 0
                 ? title
                 : this.__("ads.defaults.title");
+        },
+        getResults(page = 1) {
+            axios
+                .get(
+                    route("user.ad.get", {
+                        page
+                    })
+                )
+                .then(response => {
+                    this.ads = response.data;
+                });
         }
     }
 };

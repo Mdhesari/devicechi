@@ -15,14 +15,12 @@ class AdMainController extends BaseAdController
 
     public function get(Request $request)
     {
-        $ads = $request->user()->ads()->latest()->filterAd($request)->get();
+        $ads = $request->user()->ads()->includeMediaThumb()->latest()->filterAd($request)->paginate();
 
         $ads->load('state.city');
 
-        if ($request->wantsJson())
-            return response()->json([
-                'ads' => $ads,
-            ]);
+        if ($request->expectsJson())
+            return $ads;
 
         $tabs = collect([
             [

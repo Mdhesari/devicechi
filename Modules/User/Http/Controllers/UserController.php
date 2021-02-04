@@ -85,8 +85,9 @@ class UserController extends Controller
 
     public function bookmarks(Request $request)
     {
+        $ads = $request->user()->bookmarkedAds()->paginate();
 
-        $ads = $request->user()->bookmarkedAds;
+        if ($request->expectsJson()) return $ads;
 
         $tabs = [];
 
@@ -98,7 +99,9 @@ class UserController extends Controller
     public function seens(Request $request)
     {
 
-        $ads = $request->user()->seenAds;
+        $ads = $request->user()->seenAds()->paginate();
+
+        if ($request->expectsJson()) return $ads;
 
         $tabs = [];
 
