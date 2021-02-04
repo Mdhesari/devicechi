@@ -10,7 +10,7 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "خرید و فروش موبایل کارکرده و با کیفیت", // set false to total remove
+            'title'        => false, // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
             'description' => 'پلتفرم مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و',
             'separator'    => ' - ',
