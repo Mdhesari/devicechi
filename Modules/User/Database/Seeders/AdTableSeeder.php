@@ -23,6 +23,8 @@ class AdTableSeeder extends Seeder
     {
         Model::unguard();
 
+        if (!$this->app->environment('local')) return;
+
         $picture_api = "https://bing-image-search1.p.rapidapi.com/images/search";
         $pictures = Http::withHeaders([
             "x-rapidapi-key" => "5TaePplKOvmshE8Wa4MDs4aBgakHp197xCsjsnnFR5U2JxnipT",
@@ -48,7 +50,6 @@ class AdTableSeeder extends Seeder
             } catch (Exception $e) {
                 report($e);
             }
-
         }
 
         for ($i = 0; $i < 3; $i++) {

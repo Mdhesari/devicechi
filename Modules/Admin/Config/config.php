@@ -132,7 +132,7 @@ return [
         'create media',
         'read media',
         'delete media',
-
+        'telescope'
     ],
     'instagram' => [
         'templates' => [
