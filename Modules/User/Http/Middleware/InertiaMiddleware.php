@@ -35,10 +35,14 @@ class InertiaMiddleware
 
         Inertia::share('footer_navbar', function () {
 
-        return get_nav_items(config('admin.footer_navs'));
+            return get_nav_items(config('admin.footer_navs'));
         });
 
         Inertia::share('site_url', config('app.url'));
+
+        Inertia::share('head_title',  __('user::global.head.title', [
+            'app_name' => config('app.name')
+        ]));
 
         Inertia::share('success', function () {
             return session('success');

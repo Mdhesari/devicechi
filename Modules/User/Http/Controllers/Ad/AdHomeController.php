@@ -75,7 +75,6 @@ class AdHomeController extends Controller
      */
     public function show(Ad $ad, Request $request)
     {
-
         if (!$ad->isPublished())
             return redirect()->route('user.ad.step_phone_demo', [
                 'ad' => $ad,
@@ -92,7 +91,10 @@ class AdHomeController extends Controller
 
         $accessories = PhoneAccessory::whereNotIn('id', $ad->accessories()->select('id')->pluck('id'))->get();
 
-        return inertia('Ad/Single', compact('ad', 'accessories', 'is_bookmarked_for_user'));
+        $head_title = $ad->title;
+
+        return inertia('Ad/Single', compact('ad', 'head_title', 'accessories', 'is_bookmarked_for_user'))
+            ->withViewData(compact('head_title'));
     }
 
     /**

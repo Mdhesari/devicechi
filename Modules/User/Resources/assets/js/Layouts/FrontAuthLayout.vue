@@ -22,6 +22,8 @@ export default {
         Footer
     },
     mounted() {
+        document.title = this.getProp("head_title");
+
         if (this.success) {
             this.$to(this.success, "", "s");
         }
