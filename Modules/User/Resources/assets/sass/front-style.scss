@@ -3219,6 +3219,7 @@ $pallete: (
 .Introduction .vector-holder {
     width: 400px;
     margin-bottom: 30px;
+    margin-top: 5rem;
 }
 .Introduction .vector-holder img {
     width: 100%;
@@ -3292,6 +3293,9 @@ $pallete: (
 
 /* Queries*/
 @media (max-width: 768px) {
+    .services-intro {
+        margin-top: 4rem;
+    }
     .mobile-radio-form-group,
     .mobile-radio-form {
         label {
