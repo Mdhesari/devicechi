@@ -18,11 +18,14 @@ class AdHomeController extends Controller
      */
     public function index(Request $request)
     {
-        $ads = Ad::with('state.city')->latest()->includeMediaThumb()->published()->paginate();
+
+        $query = Ad::with('state.city')->latest()->includeMediaThumb()->published();
+
+        $ads = $query->paginate();
 
         if ($request->expectsJson()) return $ads;
 
-        $proAds = Ad::with('state.city')->latest()->published()->filterPro()->limit(3)->get();
+        $proAds = $query->filterPro()->take(3)->get();
 
         return inertia('Ad/Home', compact('ads', 'proAds'));
     }

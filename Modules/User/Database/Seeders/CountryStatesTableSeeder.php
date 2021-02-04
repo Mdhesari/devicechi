@@ -22,9 +22,9 @@ class CountryStatesTableSeeder extends Seeder
 
         $countries = json_decode(file_get_contents(__DIR__ . '/../iran-cities/json/iranstates.json'), true);
 
-        DB::table('countries')->truncate();
-        DB::table('cities')->truncate();
-        DB::table('city_states')->truncate();
+        // DB::table('countries')->truncate();
+        // DB::table('cities')->truncate();
+        // DB::table('city_states')->truncate();
 
         foreach ($countries as $country) {
 

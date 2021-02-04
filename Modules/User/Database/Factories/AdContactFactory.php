@@ -26,6 +26,7 @@ class AdContactFactory extends Factory
         return [
             'contact_type_id' => $type = AdContactType::all()->random()->id,
             'value' => $type == AdContactType::TYPE_EMAIL ? $this->faker->email : $this->faker->phoneNumber,
+            'value_verified_at' => now(),
         ];
     }
 }

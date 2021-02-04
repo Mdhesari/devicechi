@@ -7,7 +7,9 @@
                     ad: ad.slug
                 })
             "
-            :style="`background-image: url('${renderAdPicture(ad)}');`"
+            :style="
+                `background-image: url('${renderAdPicture(ad, 'thumb_url')}');`
+            "
         >
             <div class="inner">
                 <div class="bookmark">

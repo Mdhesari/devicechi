@@ -50,7 +50,6 @@ class Ad extends Model implements HasMedia
     protected $appends = [
         'is_multicard_read',
         'is_exchangeable_read',
-        'pictures'
     ];
 
     /**
@@ -567,8 +566,8 @@ class Ad extends Model implements HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(255)
-            ->height(200);
+            ->width(640)
+            ->height(640);
     }
 
     /**
