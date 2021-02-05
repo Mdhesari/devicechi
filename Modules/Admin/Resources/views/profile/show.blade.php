@@ -12,13 +12,13 @@
                 <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle" src="{{ $user->image }}"
+                            <img class="profile-user-img img-fluid img-circle" src="{{ $admin->image }}"
                                 alt="User profile picture">
                         </div>
 
-                        <h3 class="profile-username text-center">{{ $user->name }}</h3>
+                        <h3 class="profile-username text-center">{{ $admin->name }}</h3>
 
-                        <p class="text-muted text-center">{{ $user->roles_as_string }}</p>
+                        <p class="text-muted text-center">{{ $admin->roles_as_string }}</p>
 
                         <form action="{{ route("admin.logout") }}" method="POST" class="text-center">
                             @csrf
@@ -80,10 +80,10 @@
                 <div class="card">
                     <div class="card-header p-2">
                         <ul class="nav nav-pills">
-                            <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">فعالیت‌ها</a>
+                            {{-- <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">فعالیت‌ها</a>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">تایم لاین</a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item"><a class="nav-link active" href="#settings"
                                     data-toggle="tab">تنظیمات</a></li>
                         </ul>
@@ -316,14 +316,16 @@
                             <!-- /.tab-pane -->
 
                             <div class="tab-pane active" id="settings">
-                                <form action="{{ route('admin.profile') }}" method="POST" class="form-horizontal">
+                                <form action="{{ route('admin.profile', [
+                                    'admin' => $admin->id
+                                ]) }}" method="POST" class="form-horizontal">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group">
                                         <label for="inputName" class="col-sm-2 control-label"> @lang(' Name ') </label>
 
                                         <div class="col-sm-10">
-                                            <input value="{{ $user->name }}" name="name" type="text"
+                                            <input value="{{ $admin->name }}" name="name" type="text"
                                                 class="form-control" id="inputName" placeholder="@lang('Name')">
                                         </div>
 
@@ -336,23 +338,11 @@
                                         </label>
 
                                         <div class="col-sm-10">
-                                            <input value="{{ $user->email }}" name="email" type="email"
+                                            <input value="{{ $admin->email }}" name="email" type="email"
                                                 class="form-control" id="inputEmail" placeholder="@lang(' Email')">
                                         </div>
 
                                         @error('email')
-                                        <p class="alert alert-danger">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputMobile" class="col-sm-2 control-label"> @lang('Mobile')
-                                        </label>
-
-                                        <div class="col-sm-10">
-                                            <input value="{{ $user->mobile }}" name="mobile" type="tel"
-                                                class="form-control" id="inputMobile" placeholder="@lang(' Mobile ')">
-                                        </div>
-                                        @error('mobile')
                                         <p class="alert alert-danger">{{ $message }}</p>
                                         @enderror
                                     </div>
@@ -369,8 +359,8 @@
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputPasswordConfirm" class="col-sm-2 control-label"> @lang('
-                                            Confirm Password ')
+                                        <label for="inputPasswordConfirm" class="col-sm-2 control-label">
+                                             @lang(' Confirm Password ')
                                         </label>
 
                                         <div class="col-sm-10">
