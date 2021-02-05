@@ -11,3 +11,5 @@ yarn-error.log
 _ide_helper.php
 .env.swo
 .env.swp
+.env-production
+tmp/laravel.log
