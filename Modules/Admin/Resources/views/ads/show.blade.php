@@ -182,6 +182,7 @@
                 </div>
             </div>
 
+            @if(!$ad->isUncompleted())
             <div class="btn-group my-4" role="group" aria-label="Basic example">
 
                 <form action="{{ route("admin.ads.accept", [
@@ -214,6 +215,11 @@
                     <button type="submit" class="btn btn-danger mx-1">@lang(' Ignore ')</button>
                 </form>
             </div>
+            @else
+            <div class="alert alert-warning">
+                آگهی هنوز تکمیل نشده است و امکان تایید یا رد آگهی وجود ندارد.
+            </div>
+            @endif
 
         </div>
         <!-- ./col -->

@@ -142,7 +142,7 @@ class AdminController extends Controller
 
         $admin->update($data);
 
-        if ($data['role']) {
+        if (isset($data['role'])) {
             $admin->assignRole($data['role']);
         }
 

@@ -133,6 +133,12 @@ class Ad extends Model implements HasMedia
         return $this->status === self::STATUS_PENDING;
     }
 
+    public function isUncompleted()
+    {
+
+        return $this->status === self::STATUS_UNCOMPLETED;
+    }
+
     public function getIsConfirmedAttribute()
     {
 

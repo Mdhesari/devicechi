@@ -131,16 +131,18 @@ function render_ad_caption($ad, $caption = null, $regenerate = false)
 
         $template = \Str::of(config('admin.instagram.templates.post'));
 
-        $caption = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
-            ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
-            ->replace(':variants', $ad->variant->storage . 'حافظه')
-            ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
-            ->replace(':price', $ad->getFormattedPrice())
-            ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
-            ->replace(':status', trans($ad->getStatus()))
-            ->replace(':title', $ad->title)
-            ->replace(':description', $ad->description)
-            ->replace('<br>', "\n");
+        if (!$ad->isUncompleted())
+            $caption = $template->replace(':brand_model', $ad->phoneModel->brand->name . ', ' . $ad->phoneModel->name)
+                ->replace(':multicard', $ad->is_multicard ? 'دو سیم کارته' : 'یک سیمکارت')
+                ->replace(':variants', $ad->variant->storage . 'حافظه')
+                ->replace(':city_state', $ad->state->city->name . ', ' . $ad->state->name)
+                ->replace(':price', $ad->getFormattedPrice())
+                ->replace(':contacts', join("\n", $ad->contacts->pluck('value')->toArray()))
+                ->replace(':status', trans($ad->getStatus()))
+                ->replace(':title', $ad->title)
+                ->replace(':description', $ad->description)
+                ->replace('<br>', "\n");
+        $caption = "";
 
         $ad->updateCaption($caption);
 
