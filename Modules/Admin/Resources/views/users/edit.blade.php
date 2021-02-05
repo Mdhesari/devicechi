@@ -23,7 +23,7 @@
                 <p class="alert alert-danger">{{ $message }}</p>
                 @enderror
                 <div class="input-group mb-3">
-                    <input value="{{ $user->mobile }}" name="mobile" type="tel" class="form-control"
+                    <input value="{{ $user->phone }}" name="mobile" type="tel" class="form-control"
                         placeholder="موبایل">
                     <div class="input-group-append">
                         <span class="fa fa-envelope input-group-text"></span>
