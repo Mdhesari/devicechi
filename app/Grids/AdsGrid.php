@@ -44,7 +44,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 	{
 		$this->columns = [
 			"id" => [
-				"label" => "ID",
+				"label" => __(" ID "),
 				"filter" => [
 					"enabled" => true,
 					"operator" => "like"
@@ -53,7 +53,29 @@ class AdsGrid extends Grid implements AdsGridInterface
 					"column" => "grid-w-10"
 				]
 			],
+			"picture" => [
+				"label" => __(" Picture "),
+				"search" => [
+					"enabled" => false
+				],
+				"filter" => [
+					"enabled" => false,
+					"operator" => "like"
+				],
+				"presenter" => function ($columnData) {
+
+					$url = url("/images/default_ad_picture.png");
+
+					if ($media = $columnData->media()->activeOnly()->first()) {
+						$url = $media->thumb_url;
+					}
+
+					return sprintf('<img src="%s" class="image-ad-grid-preview" alt="%s">', $url, optional($columnData->phoneModel)->name);
+				},
+				"raw" => true,
+			],
 			"title" => [
+				"label" => __(" Title "),
 				"search" => [
 					"enabled" => true
 				],
@@ -90,6 +112,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				},
 			],
 			"state" => [
+				"label" => __(" City State "),
 				"filter" => [
 					"enabled" => true,
 					"operator" => "like"
@@ -132,6 +155,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"raw" => true,
 			],
 			"status" => [
+				"label" => __(" City "),
 				"search" => [
 					"enabled" => true
 				],
@@ -145,6 +169,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				},
 			],
 			"created_at" => [
+				"label" => __(" Created At "),
 				"sort" => true,
 				"date" => "true",
 				"filter" => [

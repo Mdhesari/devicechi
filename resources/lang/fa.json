@@ -275,5 +275,9 @@
     " Accepted by :admin ": "تایید شده توسط :admin",
     " No Review ": "بدون مرور",
     " Rejected by :admin, :desc ": "رد شده توسط :admin به دلیل : :desc",
-    " New Published Ad ": "آگهی جدید انتشار داده شده است!"
+    " New Published Ad ": "آگهی جدید انتشار داده شده است!",
+    " Picture ": "تصویر شاخص",
+    " Model ": "مدل",
+    " Brand ": "برند",
+    " City State ": "شهر"
 }
