@@ -85,7 +85,7 @@ class UserController extends Controller
 
     public function bookmarks(Request $request)
     {
-        $ads = $request->user()->bookmarkedAds()->paginate();
+        $ads = $request->user()->bookmarkedAds()->includeMediaThumb()->paginate();
 
         if ($request->expectsJson()) return $ads;
 
@@ -99,7 +99,7 @@ class UserController extends Controller
     public function seens(Request $request)
     {
 
-        $ads = $request->user()->seenAds()->paginate();
+        $ads = $request->user()->seenAds()->includeMediaThumb()->paginate();
 
         if ($request->expectsJson()) return $ads;
 
