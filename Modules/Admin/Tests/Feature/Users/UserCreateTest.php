@@ -8,7 +8,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Admin\Entities\User;
-use Modules\Admin\Notifications\sendPasswordToUser;
+use Modules\Admin\Notifications\SendPasswordToUser;
 use Notification;
 
 class UserCreateTest extends BaseUsersCase
@@ -98,7 +98,7 @@ class UserCreateTest extends BaseUsersCase
 
     //     Notification::assertSentTo(
     //         MainUser::whereEmail($data['email'])->first(),
-    //         sendPasswordToUser::class
+    //         SendPasswordToUser::class
     //     );
     // }
 }

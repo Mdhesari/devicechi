@@ -59,7 +59,7 @@ return [
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Mobile For Sale',
             'emoji' => ':boom:',
-            'level' => 'emergency',
+            'level' => 'debug',
         ],
 
         'papertrail' => [

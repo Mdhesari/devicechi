@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\Rule;
 use Modules\Admin\Http\Requests\AdminStoreRequest;
-use Modules\Admin\Notifications\sendPasswordToUser;
+use Modules\Admin\Notifications\SendPasswordToUser;
 use Modules\Admin\Transformers\LoginViewResource;
 use Modules\Admin\Entities\Admin;
 use Modules\Admin\Http\Requests\AdminUpdateRequest;
@@ -83,7 +83,7 @@ class AdminController extends Controller
 
         event(new Registered($admin));
 
-        $admin->notify(new sendPasswordToUser($request->password));
+        $admin->notify(new SendPasswordToUser($request->password));
 
         return redirect()->back()->with('success', __(' User created successfully. '));
     }
@@ -148,7 +148,7 @@ class AdminController extends Controller
 
         if ($password) {
 
-            $admin->notify(new sendPasswordToUser($password));
+            $admin->notify(new SendPasswordToUser($password));
         }
 
         if (!$admin)

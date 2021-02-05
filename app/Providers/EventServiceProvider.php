@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Events\NewAdPublishedEvent;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Modules\Admin\Listeners\ReportNewPublishedAdToAdmin;
 use Modules\User\Events\UserRegistered;
 use Modules\User\Listeners\SendPhoneVerificationCode;
 use Modules\User\Listeners\StorePhoneSessionVerificationCode;
@@ -23,7 +25,10 @@ class EventServiceProvider extends ServiceProvider
         ],
         UserRegistered::class => [
             // SendPhoneVerificationCode::class
-        ]
+        ],
+        NewAdPublishedEvent::class => [
+            ReportNewPublishedAdToAdmin::class,
+        ],
     ];
 
     /**

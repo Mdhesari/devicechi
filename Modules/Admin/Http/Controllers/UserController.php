@@ -13,7 +13,7 @@ use Illuminate\Validation\ValidationException;
 use Modules\Admin\Entities\User;
 use Modules\Admin\Http\Requests\AdminCreateUserRequest;
 use Modules\Admin\Http\Requests\AdminUpdateUserRequest;
-use Modules\Admin\Notifications\sendPasswordToUser;
+use Modules\Admin\Notifications\SendPasswordToUser;
 use Session;
 
 class UserController extends Controller
@@ -58,7 +58,7 @@ class UserController extends Controller
 
         event(new Registered($user));
 
-        $user->notify(new sendPasswordToUser($password));
+        $user->notify(new SendPasswordToUser($password));
 
         return redirect()->back()->with('success', __(' User created successfully. '));
     }
@@ -125,7 +125,7 @@ class UserController extends Controller
             if (is_null($request->password))
                 $request->password = random_password();
 
-            $user->notify(new sendPasswordToUser($request->password));
+            $user->notify(new SendPasswordToUser($request->password));
 
             $data['password'] = Hash::make($request->password);
         }

@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
 use Modules\Admin\Entities\Admin;
-use Modules\Admin\Notifications\sendPasswordToUser;
+use Modules\Admin\Notifications\SendPasswordToUser;
 use Notification;
 
 class AdminCreateTest extends BaseAdminCase
@@ -111,7 +111,7 @@ class AdminCreateTest extends BaseAdminCase
 
         Notification::assertSentTo(
             Admin::where('email', $email)->first(),
-            sendPasswordToUser::class,
+            SendPasswordToUser::class,
         );
     }
 }

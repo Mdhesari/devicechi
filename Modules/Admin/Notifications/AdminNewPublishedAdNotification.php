@@ -2,26 +2,26 @@
 
 namespace Modules\Admin\Notifications;
 
+use App\Models\Ad;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Log;
 
-class sendPasswordToUser extends Notification
+class AdminNewPublishedAdNotification extends Notification
 {
     use Queueable;
 
-    protected $password;
+    protected $ad;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($password)
+    public function __construct(Ad $ad)
     {
-        $this->password = $password;
+        $this->ad = $ad;
     }
 
     /**
@@ -43,11 +43,12 @@ class sendPasswordToUser extends Notification
      */
     public function toMail($notifiable)
     {
-        if (app()->environment('local'))
-            Log::info('testing user pass' . $this->password);
-
         return (new MailMessage)
-            ->line('Your password is ' . $this->password . ' please dont share it with anyone else.');
+            ->line(__("admin::ads.published", [
+                'user' => $this->ad->user->phone,
+                'brand' => $this->ad->phoneModel->brand->name,
+            ]))
+            ->action(__(' View '), route('admin.ads.show', $this->ad));
     }
 
     /**

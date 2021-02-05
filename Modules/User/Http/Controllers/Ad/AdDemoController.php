@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
+use App\Events\NewAdPublishedEvent;
 use App\Models\Ad;
 use Illuminate\Http\Request;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
@@ -46,6 +47,8 @@ class AdDemoController extends BaseAdController
         $this->checkAuthorization($ad);
 
         $this->adRepository->publish($ad);
+
+        event(new NewAdPublishedEvent($ad));
 
         return redirect()->route('user.ad.step_phone_demo', $ad)->with('success', __('user::ads.success.pending'));
     }
