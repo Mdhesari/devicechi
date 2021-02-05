@@ -21,8 +21,6 @@ class AdDemoController extends BaseAdController
             $warning = trans('user::ads.warning.edit');
         }
 
-        if()
-
         $step = BaseAdController::DEMO;
 
         $this->checkPreviousSteps($step, $ad);
