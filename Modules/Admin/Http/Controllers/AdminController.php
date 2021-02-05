@@ -29,9 +29,9 @@ class AdminController extends Controller
 
         $page_title = __(' User Profile ');
 
-        $user = $request->user()->load('roles');
+        $admin = $request->user()->load('roles');
 
-        return view('admin::profile.show', compact('page_title', 'user'));
+        return view('admin::profile.show', compact('page_title', 'admin'));
     }
 
     /**
@@ -117,13 +117,18 @@ class AdminController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(AdminUpdateRequest $request, Admin $admin)
+    public function update(Admin $admin, AdminUpdateRequest $request)
     {
 
         // more email validation for not existing
         $request->validate([
-            'email' => [Rule::unique('users')->ignore($request->user()->id)]
+            'email' => [Rule::unique('admins')->ignore($request->user()->id)]
         ]);
+
+        if (empty($admin->toArray())) {
+
+            $admin = $request->user();
+        }
 
         $password = false;
 

@@ -10,7 +10,7 @@
             <div class="card-body register-card-body">
                 <p class="login-box-msg">ثبت نام کاربر جدید</p>
 
-                <form action="{{ route("admin.admins.update", ['admin' => $admin]) }}" method="post">
+                <form action="{{ route("admin.admins.edit", ['admin' => $admin]) }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
                         <input value="{{ $admin->name }}" name="name" type="text" class="form-control"
