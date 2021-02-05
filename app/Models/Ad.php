@@ -567,8 +567,9 @@ class Ad extends Model implements HasMedia
     public function registerMediaConversions(?Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-            ->width(640)
-            ->height(640);
+            ->width(600)
+            ->height(600)
+            ->nonQueued();
     }
 
     /**

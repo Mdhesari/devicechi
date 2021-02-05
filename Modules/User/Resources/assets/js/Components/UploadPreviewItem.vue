@@ -7,7 +7,7 @@
         ></div>
         <img
             class="fluid"
-            :src="picture.url"
+            :src="picture.thumb_url"
             alt="Uploaded Picture"
             @click="$emit('changeActivePicture')"
         />

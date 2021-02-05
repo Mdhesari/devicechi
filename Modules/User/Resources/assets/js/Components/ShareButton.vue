@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button :id="propId" class="btn rounded" v-clipboard:copy="shareUrl">
+        <button type="button" :id="propId" class="btn rounded" v-clipboard:success="hi" v-clipboard:copy="shareUrl">
             <b-icon :icon="icon"></b-icon>
         </button>
         <b-tooltip :target="propId" triggers="click blur">

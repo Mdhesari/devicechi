@@ -17,7 +17,6 @@
                     <b-icon
                         :icon="renderContactTypeIcon(contact.type)"
                         class="vertical-middle"
-                        scale="1.4"
                     ></b-icon>
 
                     <a

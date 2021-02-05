@@ -2,7 +2,7 @@
     <!-- Footer Content -->
     <footer class="footer-site">
         <div class="container">
-            <div class="row">
+            <div class="row mb-2">
                 <div class="col-12 col-md-1">
                     <div class="social">
                         <a
