@@ -23,7 +23,7 @@ class AdTableSeeder extends Seeder
     {
         Model::unguard();
 
-        if (!$this->app->environment('local')) return;
+        if (!app()->environment('local')) return;
 
         $picture_api = "https://bing-image-search1.p.rapidapi.com/images/search";
         $pictures = Http::withHeaders([
