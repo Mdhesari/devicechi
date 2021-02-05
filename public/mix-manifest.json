@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "/js/user/moment.js": "/js/user/moment.js",
     "/js/user/user.js": "/js/user/user.js",
     "/css/user/user.css": "/css/user/user.css",
@@ -6,4 +7,16 @@
     "/css/user/swiper.css": "/css/user/swiper.css",
     "/css/user/normalize.css": "/css/user/normalize.css",
     "/js/user/swiper.js": "/js/user/swiper.js"
+=======
+    "/js/team/team.js": "/js/team/team.js?id=697e34e0d34d1b7d1849",
+    "/css/team/team.css": "/css/team/team.css?id=d41d8cd98f00b204e980",
+    "/css/team/tailwind.css": "/css/team/tailwind.css?id=3f742fa7bca992d9fe27",
+    "/js/user/user.js": "/js/user/user.js?id=8f78cac017daa0dc2145",
+    "/css/user/user.css": "/css/user/user.css?id=c8ecdb2a40e14a106e82",
+    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css?id=ad2e9fe3581a2061196c",
+    "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css?id=2a7faa3eceec7ac8dee9",
+    "/css/user/normalize.css": "/css/user/normalize.css?id=64b2b4fa42c7d558d735",
+    "/js/user/moment.js": "/js/user/moment.js?id=d2a32e67e4f496ce94d2",
+    "/css/user/swiper.css": "/css/user/swiper.css?id=d92bb3e880034a70e588"
+>>>>>>> Stashed changes
 }
