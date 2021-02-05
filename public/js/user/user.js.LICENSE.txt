@@ -11,7 +11,7 @@
  */
 
 /*!
- * BootstrapVue Icons, generated from Bootstrap Icons 1.2.1
+ * BootstrapVue Icons, generated from Bootstrap Icons 1.2.2
  *
  * @link https://icons.getbootstrap.com/
  * @license MIT
@@ -19,8 +19,28 @@
  */
 
 /*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*!
  * Vue.js v2.6.12
  * (c) 2014-2020 Evan You
+ * Released under the MIT License.
+ */
+
+/*!
+ * clipboard.js v2.0.6
+ * https://clipboardjs.com/
+ * 
+ * Licensed MIT © Zeno Rocha
+ */
+
+/*!
+ * vue-swal v1.0.0
+ * (c) 2018 Antério Vieira
  * Released under the MIT License.
  */
 

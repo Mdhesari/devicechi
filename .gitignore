@@ -14,3 +14,5 @@ _ide_helper.php
 error_log
 .env-production
 tmp/laravel.log
+.user.ini
+php.ini
