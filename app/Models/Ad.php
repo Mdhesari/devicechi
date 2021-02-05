@@ -59,7 +59,8 @@ class Ad extends Model implements HasMedia
      */
     protected $casts = [
         'is_exchangeable' => 'boolean',
-        'meta_ad' => 'array'
+        'meta_ad' => 'array',
+        'status' => 'int',
     ];
 
     public function getPrintableDescAttribute()
