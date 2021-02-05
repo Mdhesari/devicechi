@@ -142,7 +142,8 @@ function render_ad_caption($ad, $caption = null, $regenerate = false)
                 ->replace(':title', $ad->title)
                 ->replace(':description', $ad->description)
                 ->replace('<br>', "\n");
-        $caption = "";
+        else
+            $caption = "";
 
         $ad->updateCaption($caption);
 
