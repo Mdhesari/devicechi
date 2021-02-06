@@ -70,6 +70,7 @@
 
                             @if(is_array($item_child))
 
+                            @if(!isset($item_child['permission']) || $user->can($item_child['permission']))
                             <li class="nav-item" data-key="{{ $loop->index }}">
                                 <a href="{{ route($item_child['route'], $item_child['route_params']) }}"
                                     class="nav-link @route($item_child['route']) active @endroute">
@@ -79,6 +80,7 @@
                                     </p>
                                 </a>
                             </li>
+                            @endif
 
                             @endif
 

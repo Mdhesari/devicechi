@@ -52,6 +52,7 @@ return [
                 'title' => __(' Create Admin '),
                 'route' => 'admin.admins.add',
                 'route_params' => [],
+                'permission' => 'create admin',
                 'icon_class' => 'fa fa-plus nav-icon'
             ],
         ],

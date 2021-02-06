@@ -29,6 +29,7 @@ return [
         'css/admin/main.css',
         /*Persian Datepicker*/
         'css/admin/plugins/persian-datepicker/jquery.md.bootstrap.datetimepicker.style.css',
+        'css/admin/select2.min.css',
         /*Custom Style*/
         'css/main.css'
     ]

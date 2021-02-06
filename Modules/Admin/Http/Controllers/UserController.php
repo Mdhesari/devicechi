@@ -3,6 +3,9 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Grids\UsersGrid;
+use App\Http\Requests\SearchRequest;
+use App\Http\Resources\SearchResource;
+use App\Space\Contracts\Searchable;
 use Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Support\Renderable;
@@ -16,7 +19,7 @@ use Modules\Admin\Http\Requests\AdminUpdateUserRequest;
 use Modules\Admin\Notifications\SendPasswordToUser;
 use Session;
 
-class UserController extends Controller
+class UserController extends Controller implements Searchable
 {
     /**
      * Show the form for creating a new resource.
@@ -239,24 +242,33 @@ class UserController extends Controller
 
         return back();
     }
-    public function search(Request $request)
+
+    public function search(SearchRequest $request)
     {
-        if ($request->expectsJson()) {
+        $query = User::query();
 
-            $query = User::query();
+        $search = $request->input('search');
 
-            $search = $request->input('query');
+        $ignore = $request->input('ignore');
 
-            $ignore = $request->input('ignore');
+        if (!empty($ignore)) {
 
-            if (!empty($ignore)) {
-
-                $query->whereNotIn('id', $ignore);
-            }
-
-            $users = $query->searchLike('name', $search)->limit(config('admin.auto_complete_limit'))->get();
-
-            return $users;
+            $query->whereNotIn('id', $ignore);
         }
+
+        if ($search)
+            $query->where(function ($query) use ($search) {
+
+                $query->searchLike(['name', 'mobile'], $search);
+            });
+
+        $users = $query->paginate();
+        return response([
+            'results' => SearchResource::collection($users),
+            "search" => $search,
+            "pagination" => [
+                "more" => $users->count() > 0
+            ]
+        ]);
     }
 }

@@ -100,10 +100,16 @@ return [
             '*', // all permissions
         ],
         'admin' => [
-            '!delete user', //  ! cannot do action
-            '!create admin',
+            //  ! cannot do action
             '!delete admin',
             '!access-management',
+            '!activity-log-management',
+            '!create payment',
+            '!read payment',
+            '!delete payment',
+            '!create media',
+            '!read media',
+            '!delete media',
         ],
         'writer' => [
             'write article'

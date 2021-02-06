@@ -37,6 +37,7 @@ return [
         'css/admin/dist/js/pages/dashboard.js',
         /* AdminLTE for demo purposes */
         'css/admin/dist/js/demo.js',
+        'css/admin/select2.min.js',
         'css/admin/main.js',
         /*Persian Datepicker*/
 //        'css/admin/plugins/persian-datepicker/jquery.md.bootstrap.datetimepicker.js'

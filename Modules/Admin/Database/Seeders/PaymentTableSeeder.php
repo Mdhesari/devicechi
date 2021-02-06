@@ -17,6 +17,8 @@ class PaymentTableSeeder extends Seeder
     {
         Model::unguard();
 
+        if (!app()->environment('local')) return;
+
         Payment::factory()->count(20)->create();
     }
 }

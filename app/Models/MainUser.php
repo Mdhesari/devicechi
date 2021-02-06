@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Casts\CustomDateCast;
 use App\Models\Payment\Payment;
+use App\Space\Contracts\HasOption;
 use Hash;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Modules\User\Entities\City;
 use Spatie\Permission\Traits\HasRoles;
 use Storage;
 
-class MainUser extends User
+class MainUser extends User implements HasOption
 {
     use HasFactory, Notifiable;
 
@@ -38,6 +39,26 @@ class MainUser extends User
 
         'updated_at' => CustomDateCast::class,
     ];
+
+    /**
+     * Get option value
+     *
+     * @return string
+     */
+    public function getOptionValue(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get option text
+     *
+     * @return string
+     */
+    public function getOptionText(): string
+    {
+        return $this->name . " | " . $this->mobile;
+    }
 
     /**
      * @param $value
