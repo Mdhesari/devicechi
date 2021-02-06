@@ -50,6 +50,17 @@ class MainUser extends User implements HasOption
         return $this->id;
     }
 
+
+    /**
+     * Get user ads
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ads()
+    {
+        return $this->hasMany(Ad::class);
+    }
+
     /**
      * Get option text
      *

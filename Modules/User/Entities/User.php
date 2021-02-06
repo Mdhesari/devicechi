@@ -115,17 +115,6 @@ class User extends MainUser implements MustVerifyPhone
         ])->save();
     }
 
-
-    /**
-     * Get user ads
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function ads()
-    {
-        return $this->hasMany(Ad::class);
-    }
-
     public function bookmarkedAds()
     {
 
