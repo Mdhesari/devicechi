@@ -13,7 +13,7 @@
             <div class="inputs">
                 <input
                     class="form-control"
-                    type="text"
+                    type="tel"
                     autocomplete="off"
                     required
                     v-for="digit in digitsCount"
