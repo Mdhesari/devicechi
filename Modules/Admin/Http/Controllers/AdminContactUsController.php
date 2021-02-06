@@ -56,9 +56,7 @@ class AdminContactUsController extends Controller
      */
     public function destroy(ContactUs $contactu)
     {
-        $rees = $contactu->delete();
-
-        dd($contactu);
+        $contactu->delete();
 
         return back()->with('success', __(' Deleted successfully '));
     }

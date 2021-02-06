@@ -3,6 +3,7 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Grids\AdminsGrid;
+use App\Grids\AdminsSingleGrid;
 use Hash;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Contracts\Support\Renderable;
@@ -93,9 +94,28 @@ class AdminController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show(Admin $admin)
+    public function show(Admin $admin, AdminsSingleGrid $grid, Request $request)
     {
-        return view('admin::admins.show', compact('admin'));
+
+        $page_title = __(' Admin Profile ');
+        $show_title = __(' Admin Profile ');
+
+        $query = Admin::query();
+
+        $query->whereId($admin->id);
+
+        $grid = $grid->create(compact('request', 'query'));
+
+        $columns = $grid->getProcessedColumns();
+        $item = collect($grid->getData()->items())->first();
+
+        return view('admin::global.show', compact(
+            'item',
+            'columns',
+            'grid',
+            'show_title',
+            'page_title'
+        ));
     }
 
     /**
