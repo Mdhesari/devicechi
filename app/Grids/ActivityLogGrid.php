@@ -75,6 +75,8 @@ class ActivityLogGrid extends Grid implements ActivityLogGridInterface
                 ],
                 'presenter' => function ($columnData, $columnName) {
 
+                    if (!is_object($columnData->causer)) return;
+
                     $route = route('admin.users.show', [
                         'user' => $columnData->causer->id,
                     ]);
