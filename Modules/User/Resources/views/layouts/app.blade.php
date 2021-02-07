@@ -22,7 +22,7 @@
     <meta name="msapplication-TileColor" content="#ff6704">
     <meta name="theme-color" content="#ff6704">
 
-    <link rel="canonical" href="{{ config('app.name') }}" />
+    <link rel="canonical" href="{{ config('app.url') }}" />
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/user/normalize.css') }}">
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-vue.css') }}">
