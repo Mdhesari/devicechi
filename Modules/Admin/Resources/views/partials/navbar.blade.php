@@ -9,7 +9,7 @@
             <a href="{{ route('admin.dashboard') }}" class="nav-link">خانه</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">تماس</a>
+            <a href="{{ route('admin.contact-us.list') }}" class="nav-link">تماس ها</a>
         </li>
     </ul>
 
@@ -26,7 +26,7 @@
     </form>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav mr-auto">
+    {{-- <ul class="navbar-nav mr-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
@@ -116,6 +116,6 @@
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
                     class="fa fa-th-large"></i></a>
         </li>
-    </ul>
+    </ul> --}}
 </nav>
 <!-- /.navbar -->

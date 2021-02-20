@@ -40,7 +40,7 @@ class GhasedakChannel
         $default_line_number = config('ghasedak.default_line');
 
         $line = Arr::get(config('ghasedak.lines'), $default_line_number);
-
+        debug($placeholders);
         try {
 
             $api = new GhasedakApi(config('ghasedak.api_key'));
