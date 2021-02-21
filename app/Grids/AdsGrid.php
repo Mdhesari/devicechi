@@ -155,7 +155,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"raw" => true,
 			],
 			"status" => [
-				"label" => __(" City "),
+				"label" => __(" Status "),
 				"search" => [
 					"enabled" => true
 				],
