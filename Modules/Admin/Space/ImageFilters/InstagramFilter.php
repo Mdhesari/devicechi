@@ -109,7 +109,7 @@ class InstagramFilter implements FilterInterface
             $image->text($this->getText(), 540, 540, function ($font) use ($font_family, $font_size) {
                 $font->file($font_family);
                 $font->size($font_size);
-                $font->color('#f8bb63');
+                $font->color('#0277bc');
                 $font->align('center');
                 $font->valign('center');
             });
