@@ -73,12 +73,12 @@ class AdController extends Controller
 
         $templates = [
             [
-                'title' => __(' Template 1 '),
-                'url' => 'images/template-1.png'
+                'title' => __(' Template Primary '),
+                'url' => 'images/templates/1080/devicechi-insta-cover-primary-1080.png'
             ],
             [
-                'title' => __(' Template 1 '),
-                'url' => 'images/template-2.png'
+                'title' => __(' Template Secondary '),
+                'url' => 'images/templates/1080/devicechi-insta-cover-secondary-1080.png'
             ],
         ];
 

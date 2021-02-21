@@ -51,7 +51,7 @@ class InstagramFilter implements FilterInterface
      */
     public function getTemplate()
     {
-        return is_null($this->_template) ? public_path('images/template-1.png') : public_path($this->_template);
+        return is_null($this->_template) ? public_path('images/templates/1080/devicechi-insta-cover-primary-1080.png') : public_path($this->_template);
     }
 
     /**
@@ -97,26 +97,7 @@ class InstagramFilter implements FilterInterface
     {
         $image = Image::make($original_image->basePath());
 
-        if (
-            ($image->width() < 500 || $image->height() < 500) ||
-            ($image->width() > $image->height()) ||
-            ($image->height() - $image->width() > 400)
-        ) {
-            // Landscape
-            $old_instance = Image::make($original_image->basePath());
-
-            if ($image->width() > $image->height())
-                $image->widen(1080);
-            else
-                $image->heighten(1080);
-
-            $old_instance->fit(1080, 1080)->blur($this->_blur)->insert($image, 'center-center');
-
-            $image = $old_instance;
-        } else {
-            // Portrait
-            $image->fit(1080, 1080);
-        }
+        $image = $this->fitImage($image);
 
         $font_family = $this->getFont();
         $font_size = $this->getFontSize();
@@ -134,5 +115,34 @@ class InstagramFilter implements FilterInterface
             });
 
         return $image;
+    }
+
+    /**
+     * fitImage
+     *
+     * @var \Intervention\Image\Image $image
+     * @return \Intervention\Image\Image
+     */
+    public function fitImage(\Intervention\Image\Image $image)
+    {
+        if (
+            ($image->width() < 500 || $image->height() < 500) ||
+            ($image->width() > $image->height()) ||
+            ($image->height() - $image->width() > 400)
+        ) {
+            // Landscape
+            $old_instance = Image::make($image->basePath());
+
+            if ($image->width() > $image->height())
+                $image->widen(1080);
+            else
+                $image->heighten(1080);
+
+            $old_instance->fit(1080, 1080)->blur($this->_blur)->insert($image, 'center-center');
+
+            return $old_instance;
+        }
+
+        return $image->fit(1080, 1080);
     }
 }
