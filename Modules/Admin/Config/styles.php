@@ -6,8 +6,8 @@ return [
         /* Font Awesome */
         'css/admin/plugins/font-awesome/css/font-awesome.min.css',
         /* Ionicons */
-        // 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
-        'css/ionicons/css/ionic.min.css',
+        'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+        // 'css/ionicons/css/ionic.min.css',
         /* Theme style */
         'css/admin/dist/css/adminlte.min.css',
         /* iCheck */
@@ -26,7 +26,7 @@ return [
         'css/admin/dist/css/bootstrap-rtl.min.css',
         /* template rtl version */
         'css/admin/dist/css/custom-style.css',
-        'css/admin/main.css',
+        // 'css/admin/main.css',
         /*Persian Datepicker*/
         'css/admin/plugins/persian-datepicker/jquery.md.bootstrap.datetimepicker.style.css',
         'css/admin/select2.min.css',

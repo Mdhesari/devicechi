@@ -56,7 +56,7 @@ class GhasedakChannel
                 $mobile,
                 $type = 1,
                 $template,
-                ...$placeholders
+                $placeholders
             );
         } catch (Exception $e) {
 

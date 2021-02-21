@@ -195,16 +195,23 @@ class AdRepository extends Repository implements
         return strval($path);
     }
 
+    private function setupDirectory($dirname, $dont_overwrite)
+    {
+
+        if (is_dir($dirname))
+            exec("rm -r $dirname");
+
+        if (!is_dir($dirname))
+            mkdir($dirname);
+    }
+
     public function renderPicturesToExport($template = null, $quality = 100, $dont_overwrite = false)
     {
         $pictures = $this->model->media()->latest()->get();
 
         $dirname = Storage::path($this->getExportDirName());
 
-        if (is_dir($dirname))
-            exec("rm -r $dirname");
-
-        mkdir($dirname);
+        $this->setupDirectory($dirname, $dont_overwrite);
 
         foreach ($pictures as $picture) {
 

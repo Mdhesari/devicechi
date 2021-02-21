@@ -127,7 +127,7 @@ function format_user_mobile($mobile)
 function render_ad_caption($ad, $caption = null, $regenerate = false)
 {
 
-    if (is_null($ad->caption) || $regenerate) {
+    if (is_null($ad->caption) || empty($ad->caption) || $regenerate) {
 
         $template = \Str::of(config('admin.instagram.templates.post'));
 
