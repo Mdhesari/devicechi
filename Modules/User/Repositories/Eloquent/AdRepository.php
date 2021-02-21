@@ -201,8 +201,7 @@ class AdRepository extends Repository implements
         if (is_dir($dirname))
             exec("rm -r $dirname");
 
-        if (!is_dir($dirname))
-            mkdir($dirname);
+        mkdir($dirname);
     }
 
     public function renderPicturesToExport($template = null, $quality = 100, $dont_overwrite = false)
