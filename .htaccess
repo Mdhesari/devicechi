@@ -1,5 +1,7 @@
+
 <IfModule mod_rewrite.c>
-RewriteEngine On
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^public
 RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
 
@@ -32,3 +34,10 @@ RewriteRule ^(.*)$ public/$1 [L]
    php_flag zlib.output_compression Off
 </IfModule>
 # END cPanel-generated php ini directives, do not edit
+RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
+RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^mobileforsale\.ir$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mobileforsale\.ir$
+RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
+
