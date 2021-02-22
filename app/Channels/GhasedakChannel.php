@@ -31,7 +31,7 @@ class GhasedakChannel
         $ghasedak = $notification->toGhasedak($notifiable);
 
         if (!isset($ghasedak['template']) || !isset($ghasedak['placeholders']))
-            report(new Exception('toGhasedak method is invalid.'));
+            report(new Exception('toGhasedak method implementation is invalid.'));
 
         $template = $ghasedak['template'];
 
