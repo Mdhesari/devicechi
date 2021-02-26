@@ -37,7 +37,7 @@
                 <div class="logo">
                     <inertia-link :href="route('user.home')">
                         <img
-                            src="../../img/mobile-logo.png"
+                            :src="url('images/img/mobile-logo.png')"
                             alt="Mobile For Sales"
                         />
                     </inertia-link>

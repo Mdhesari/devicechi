@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-6 mb-4">
                     <div class="vector-holder">
                         <img
-                            src="../../img/vectors/sale.png"
+                            :src="url('/images/img/vectors/sale.png')"
                             alt="Mobileforsale submission vector"
                         />
                     </div>
@@ -63,7 +63,7 @@
                 <div class="col-12 col-md-6">
                     <div class="vector-holder">
                         <img
-                            src="../../img/vectors/vector-home-1.svg"
+                            :src="url('images/img/vectors/vector-home-1.svg')"
                             alt="Mobileforsale services vector"
                         />
                     </div>

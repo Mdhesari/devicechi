@@ -11,7 +11,7 @@
         </b-col>
         <b-col md="6">
           <div class="vector">
-            <img src="../../assets/img/vectors/questions.svg" alt="About Us" />
+            <img :src="url('/images/img/vectors/questions.svg')" alt="About Us" />
           </div>
         </b-col>
       </b-row>

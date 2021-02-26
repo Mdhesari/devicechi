@@ -1,9 +1,14 @@
 {
-    "/js/user/moment.js": "/js/user/moment.js?id=d2a32e67e4f496ce94d2",
-    "/js/user/swiper.js": "/js/user/swiper.js?id=f7ce1edbb8a252b94bb9",
-    "/js/user/user.js": "/js/user/user.js?id=3a2eea3619e7216e091e",
-    "/css/user/user.css": "/css/user/user.css?id=d6a15881116367fc0f2c",
-    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css?id=d48e35784a7cd78f8094",
-    "/css/user/swiper.css": "/css/user/swiper.css?id=d92bb3e880034a70e588",
-    "/css/user/normalize.css": "/css/user/normalize.css?id=64b2b4fa42c7d558d735"
+    "/js/user/user.js": "/js/user/user.js",
+    "/js/user/moment.js": "/js/user/moment.js",
+    "/js/user/swiper.js": "/js/user/swiper.js",
+    "/css/user/normalize.css": "/css/user/normalize.css",
+    "/css/user/swiper.css": "/css/user/swiper.css",
+    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
+    "/css/user/user.css": "/css/user/user.css",
+    "/images/3593987.jpg": "/images/3593987.jpg?id=125ed3b2fd0fd3081d53",
+    "/images/logo-white.png": "/images/logo-white.png?id=8add336a438b17cc590f",
+    "/images/logo.png": "/images/logo.png?id=059c053f2831f778e7a4",
+    "/images/mobile-logo.png": "/images/mobile-logo.png?id=6ca9ef43d8326652c94e",
+    "/images/search.svg": "/images/search.svg?id=c0999df36acb264c1333"
 }

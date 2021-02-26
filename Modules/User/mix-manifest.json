@@ -1,0 +1,9 @@
+{
+    "/js/user/user.js": "/js/user/user.js",
+    "/js/user/moment.js": "/js/user/moment.js",
+    "/js/user/swiper.js": "/js/user/swiper.js",
+    "/css/user/normalize.css": "/css/user/normalize.css",
+    "/css/user/swiper.css": "/css/user/swiper.css",
+    "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
+    "/css/user/user.css": "/css/user/user.css"
+}

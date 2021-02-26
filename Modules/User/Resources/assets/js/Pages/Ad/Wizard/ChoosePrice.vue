@@ -29,7 +29,7 @@
 					@keyup="calculatePrice"
 					:placeholder="__('ads.form.placeholder.price')"
 				></b-form-input>
-				<p class="text-danger" v-text="form.error('price')"></p>
+				<p class="text-danger" v-text="form.errors.price"></p>
 				<p class="form-text text-muted" v-text="calculated_price"></p>
 			</b-form-group>
 
@@ -75,22 +75,21 @@ export default {
 			ad: this.getProp('ad')
 		}
 	},
+	updated() {
+		this.isLoading = false
+	},
 	methods: {
 		next(ev) {
 			this.isLoading = true
-			this.form
-				.post(
-					route('user.ad.step_phone_price', {
-						ad: this.ad.slug
-					}),
-					{
-						preserveState: false,
-						preserveScroll: true
-					}
-				)
-				.then((response) => {
-					this.isLoading = false
-				})
+			this.form.post(
+				route('user.ad.step_phone_price', {
+					ad: this.ad.slug
+				}),
+				{
+					preserveState: false,
+					preserveScroll: true
+				}
+			)
 
 			// this.$emit("next");
 		},
