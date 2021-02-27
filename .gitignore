@@ -16,3 +16,4 @@ error_log
 tmp/laravel.log
 .user.ini
 php.ini
+.vscode/
