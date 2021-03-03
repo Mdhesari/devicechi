@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Leantony\Grid\Providers\GridServiceProvider::class,
+        App\Providers\AdminLteServiceProvider::class,
 
         /*
          * Application Service Providers...

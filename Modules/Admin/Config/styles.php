@@ -4,7 +4,8 @@ return [
     'default' => 'global',
     'global' => [
         /* Font Awesome */
-        'css/admin/plugins/font-awesome/css/font-awesome.min.css',
+        // 'css/admin/plugins/font-awesome/css/font-awesome.min.css',
+        'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
         /* Ionicons */
         'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
         // 'css/ionicons/css/ionic.min.css',

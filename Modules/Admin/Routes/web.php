@@ -28,11 +28,11 @@ use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
+use Modules\Admin\Http\Controllers\MenuEditorController;
 use Modules\Admin\Http\Controllers\Payment\PaymentController;
 use Modules\Admin\Http\Controllers\RegisterController;
 use Modules\Admin\Http\Controllers\RolePermissionController;
 use Modules\Admin\Http\Controllers\UserController;
-
 
 Route::name('admin.')->middleware('auth.admin')->group(function () {
 
@@ -199,6 +199,21 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
             // Route::get('/show/{ad:id}', [AdController::class, 'show'])->name('show');
         });
+    });
+
+    Route::prefix('menu-editor')->middleware('can:read menu-editor')->name('menu-editor.')->group(function () {
+
+        Route::get('/', [MenuEditorController::class, 'index'])->name('show');
+
+        Route::get('/groups/add', [MenuEditorController::class, 'create'])->name('store.group');
+
+        Route::post('/groups/add', [MenuEditorController::class, 'store']);
+
+        Route::get('/groups/delete/{menu}', [MenuEditorController::class, 'delete'])->name('delete.group');
+
+        Route::delete('/groups/delete/{menu}', [MenuEditorController::class, 'destroy']);
+
+        Route::post('/groups/{menu}', [MenuEditorController::class, 'storeItems'])->name('store');
     });
 });
 

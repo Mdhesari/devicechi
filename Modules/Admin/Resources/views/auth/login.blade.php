@@ -15,8 +15,7 @@
             <form action="{{ route('admin.login') }}" method="post">
                 @csrf
                 <div class="input-group mb-3">
-                    <input name="email" type="email" class="form-control" value="{{ old('email') }}"
-                        placeholder="Email">
+                    <input name="email" type="email" class="form-control" value="{{ old('email') }}" placeholder="Email">
                     <div class="input-group-append">
                         <span class="fa fa-envelope input-group-text"></span>
                     </div>
@@ -30,7 +29,7 @@
                 <div class="input-group mb-3">
                     <input name="password" type="password" class="form-control" placeholder="Password">
                     <div class="input-group-append">
-                        <span class="fa fa-lock input-group-text"></span>
+                        <span class="fas fa-user input-group-text"></span>
                     </div>
 
                 </div>

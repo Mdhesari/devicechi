@@ -5,12 +5,9 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('admin.dashboard') }}" class="nav-link">خانه</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ route('admin.contact-us.list') }}" class="nav-link">تماس ها</a>
-        </li>
+
+        @each('admin::partials.navbar.menu-item', $adminlte->menu('admin_topnav'), 'item')
+
     </ul>
 
     <!-- SEARCH FORM -->
@@ -26,9 +23,9 @@
     </form>
 
     <!-- Right navbar links -->
-    {{-- <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto">
         <!-- Messages Dropdown Menu -->
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="fa fa-comments-o"></i>
                 <span class="badge badge-danger navbar-badge">3</span>
@@ -111,11 +108,10 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">مشاهده همه نوتیفیکیشن</a>
             </div>
-        </li>
+        </li> --}}
         <li class="nav-item">
-            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i
-                    class="fa fa-th-large"></i></a>
+            <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#"><i class="fa fa-th-large"></i></a>
         </li>
-    </ul> --}}
+    </ul>
 </nav>
 <!-- /.navbar -->
