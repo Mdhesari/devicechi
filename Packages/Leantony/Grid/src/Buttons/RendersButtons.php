@@ -201,7 +201,7 @@ trait RendersButtons
 
         return (new GenericButton([
             'name' => 'Edit',
-            'icon' => 'fa-pencil',
+            'icon' => 'fa-pencil-alt',
             'position' => 1,
             'class' => 'btn btn-outline-primary btn-sm grid-row-button',
             'showModal' => false,

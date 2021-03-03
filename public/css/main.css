@@ -43,19 +43,19 @@ table thead .sorting_desc_disabled {
 	padding-right: 18px;
 }
 table thead .sorting {
-	background-image: url('../image/icons/sort_both.png');
+	background-image: url('../images/icons/sort_both.png');
 }
 table thead .sorting_asc {
-	background-image: url('../image/icons/sort_asc.png');
+	background-image: url('../images/icons/sort_asc.png');
 }
 table thead .sorting_desc {
-	background-image: url('../image/icons/sort_desc.png');
+	background-image: url('../images/icons/sort_desc.png');
 }
 table thead .sorting_asc_disabled {
-	background-image: url('../image/icons/sort_asc_disabled.png');
+	background-image: url('../images/icons/sort_asc_disabled.png');
 }
 table thead .sorting_desc_disabled {
-	background-image: url('../image/icons/sort_desc_disabled.png');
+	background-image: url('../images/icons/sort_desc_disabled.png');
 }
 
 table.order-column tbody tr > .sorting_1,
