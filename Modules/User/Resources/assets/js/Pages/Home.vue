@@ -1,5 +1,5 @@
 <template>
-	<AuthLayout>
+	<AuthLayout :user="user">
 		<section class="banner-site">
 			<div class="container">
 				<div class="row">
@@ -102,117 +102,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="normal-ads-section py-5">
-			<div class="container">
-				<div class="main-title">
-					<a href="#">
-						<h2>
-							آگهی ها
-						</h2>
-					</a>
-				</div>
-				<div class="row normal-ads">
-					<div class="col-md-3 col-xs-6 normal-ad">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div class="tumbnail">
-								<img
-									src="https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80"
-									alt=""
-								/>
-								<div class="bookmark">
-									<i class="fa-bookmark far" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="details">
-								<div class="ad-name">
-									<h3>آیفون 6</h3>
-								</div>
-								<div class="ad-price">
-									<span>2000,000</span>
-									هزارتومان
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 normal-ad">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div class="tumbnail">
-								<img
-									src="https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80"
-									alt=""
-								/>
-								<div class="bookmark">
-									<i class="fa-bookmark far" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="details">
-								<div class="ad-name">
-									<h3>آیفون 6</h3>
-								</div>
-								<div class="ad-price">
-									<span>2000,000</span>
-									هزارتومان
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 normal-ad">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div class="tumbnail">
-								<img
-									src="https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80"
-									alt=""
-								/>
-								<div class="bookmark">
-									<i class="fa-bookmark far" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="details">
-								<div class="ad-name">
-									<h3>آیفون 6</h3>
-								</div>
-								<div class="ad-price">
-									<span>2000,000</span>
-									هزارتومان
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class=" col-md-3 col-xs-6 normal-ad">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div class="tumbnail">
-								<img
-									src="https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80"
-									alt=""
-								/>
-								<div class="bookmark">
-									<i class="fa-bookmark far" aria-hidden="true"></i>
-								</div>
-							</div>
-							<div class="details">
-								<div class="ad-name">
-									<h3>آیفون 6</h3>
-								</div>
-								<div class="ad-price">
-									<span>2000,000</span>
-									هزارتومان
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="more">
-						<a href="#">
-							مشاهده بیشتر
-							<i class="fa fa-arrow-left" aria-hidden="true"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+		<NormalAdsSection :ads="ads"></NormalAdsSection>
 		<section class="why-us-section py-5">
 			<div class="container">
 				<div class="main-title">
@@ -537,12 +427,14 @@
 <script>
 import AuthLayout from './../Layouts/FrontAuthLayout'
 import BrandsSection from './../Components/Sections/BrandsSection'
+import NormalAdsSection from './../Components/Sections/NormalAdsSection'
 
 export default {
-	props: ['user', 'brands'],
+	props: ['user', 'brands', 'ads'],
 	components: {
 		AuthLayout,
-		BrandsSection
+		BrandsSection,
+		NormalAdsSection
 	}
 }
 </script>

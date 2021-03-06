@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Home;
 
+use App\Models\Ad;
 use App\Models\PhoneBrand;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -29,6 +30,8 @@ class HomeController extends Controller
             $data['ratelimiter'] = $ratelimiter;
 
         $data['brands'] = PhoneBrand::limit(16)->get();
+
+        $data['ads'] = Ad::with('state.city')->latest()->includeMediaThumb()->published()->limit(9)->get();
 
         return Inertia::render('Home', $data);
     }
