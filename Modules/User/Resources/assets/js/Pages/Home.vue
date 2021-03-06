@@ -14,25 +14,9 @@
 				<div class="search-bar">
 					<input type="text" placeholder="دنبال چه گوشی می گردی " />
 					<button type="button" class="icon">
-						<img src="img/search.svg" alt="" />
+						<img src="../../img/search.svg" alt="" />
 					</button>
 				</div>
-				<!-- <div class="filter-bar">
-                    <form action="#" class="filters">
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                         <div class="filter">
-                            <input type="checkbox" id="filter" name="" class="filter-input" >
-                            <label for="filter" class="filter-label">فیلتر 1</label>
-                         </div>
-                    </form>
-                </div> -->
 			</div>
 		</section>
 		<section class="step-section py-5">
