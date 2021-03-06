@@ -840,120 +840,120 @@ input[type='number'] {
 /* NECESSARY */
 
 /* HEADER */
-.header-site .container {
-	height: 100px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
+// .header-site .container {
+// 	height: 100px;
+// 	display: flex;
+// 	justify-content: space-between;
+// 	align-items: center;
+// }
 
-.header-site .burger-btn {
-	background: 0;
-	border: 0;
-	outline: 0;
-}
+// .header-site .burger-btn {
+// 	background: 0;
+// 	border: 0;
+// 	outline: 0;
+// }
 
-.header-site .burger-btn .rec {
-	display: block;
-	width: 25px;
-	height: 4px;
-	background: pallete('dark');
-	margin-bottom: 7px;
-	border-radius: 40px;
-	-webkit-border-radius: 40px;
-	-moz-border-radius: 40px;
-	-ms-border-radius: 40px;
-	-o-border-radius: 40px;
-}
+// .header-site .burger-btn .rec {
+// 	display: block;
+// 	width: 25px;
+// 	height: 4px;
+// 	background: pallete('dark');
+// 	margin-bottom: 7px;
+// 	border-radius: 40px;
+// 	-webkit-border-radius: 40px;
+// 	-moz-border-radius: 40px;
+// 	-ms-border-radius: 40px;
+// 	-o-border-radius: 40px;
+// }
 
-.width18 {
-	width: 18px !important;
-}
+// .width18 {
+// 	width: 18px !important;
+// }
 
-.header-site .logo {
-	display: inline-block;
-	margin-right: 24px;
-}
+// .header-site .logo {
+// 	display: inline-block;
+// 	margin-right: 24px;
+// }
 
-.header-site .add-advertisment {
-	width: auto;
-	display: inline-block;
-	background-color: pallete('dark');
-	color: pallete('white');
-	border-radius: 20px;
-	padding: 0 12px;
-	height: 36px;
-	line-height: 36px;
-	font-size: 14px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	-ms-border-radius: 20px;
-	-o-border-radius: 20px;
-}
+// .header-site .add-advertisment {
+// 	width: auto;
+// 	display: inline-block;
+// 	background-color: pallete('dark');
+// 	color: pallete('white');
+// 	border-radius: 20px;
+// 	padding: 0 12px;
+// 	height: 36px;
+// 	line-height: 36px;
+// 	font-size: 14px;
+// 	-webkit-border-radius: 20px;
+// 	-moz-border-radius: 20px;
+// 	-ms-border-radius: 20px;
+// 	-o-border-radius: 20px;
+// }
 
-.header-site .add-advertisment:hover {
-	color: pallete('white') !important;
-}
+// .header-site .add-advertisment:hover {
+// 	color: pallete('white') !important;
+// }
 
 .header-site .main-menu {
-	position: fixed;
-	right: -100%;
-	top: 0;
-	bottom: 0;
-	width: 60%;
-	height: 100%;
-	max-width: 70%;
-	background-color: pallete('white');
-	@include box-shadow(light);
-	transition: 0.3s all;
-	z-index: 99;
-	border-radius: 30px 0 0 30px;
-	-webkit-transition: 0.3s all;
-	-moz-transition: 0.3s all;
-	-ms-transition: 0.3s all;
-	-o-transition: 0.3s all;
-	-webkit-border-radius: 30px 0 0 30px;
-	-moz-border-radius: 30px 0 0 30px;
-	-ms-border-radius: 30px 0 0 30px;
-	-o-border-radius: 30px 0 0 30px;
+	// 	position: fixed;
+	// 	right: -100%;
+	// 	top: 0;
+	// 	bottom: 0;
+	// 	width: 60%;
+	// 	height: 100%;
+	// 	max-width: 70%;
+	// 	background-color: pallete('white');
+	// 	@include box-shadow(light);
+	// 	transition: 0.3s all;
+	// 	z-index: 99;
+	// 	border-radius: 30px 0 0 30px;
+	// 	-webkit-transition: 0.3s all;
+	// 	-moz-transition: 0.3s all;
+	// 	-ms-transition: 0.3s all;
+	// 	-o-transition: 0.3s all;
+	// 	-webkit-border-radius: 30px 0 0 30px;
+	// 	-moz-border-radius: 30px 0 0 30px;
+	// 	-ms-border-radius: 30px 0 0 30px;
+	// 	-o-border-radius: 30px 0 0 30px;
 
 	&.navActive {
 		right: 0;
 	}
 
-	.btn-mobilesale {
-		padding: 13px 24px;
+	// 	.btn-mobilesale {
+	// 		padding: 13px 24px;
 
-		&:hover {
-			padding: 13px 24px;
-		}
-	}
+	// 		&:hover {
+	// 			padding: 13px 24px;
+	// 		}
+	// 	}
 }
 
-.header-site .main-menu ul {
-	text-align: right;
-	margin-right: 24px;
-}
+// .header-site .main-menu ul {
+// 	text-align: right;
+// 	margin-right: 24px;
+// }
 
-.header-site .main-menu ul li {
-	margin-top: 16px;
-	display: block;
-}
+// .header-site .main-menu ul li {
+// 	margin-top: 16px;
+// 	display: block;
+// }
 
-.header-site .main-menu ul li a {
-	color: pallete('gray');
-	font-size: 20px;
-	transition: color 350ms;
+// .header-site .main-menu ul li a {
+// 	color: pallete('gray');
+// 	font-size: 20px;
+// 	transition: color 350ms;
 
-	&:hover,
-	&.active {
-		color: pallete('dark');
-	}
-}
+// 	&:hover,
+// 	&.active {
+// 		color: pallete('dark');
+// 	}
+// }
 
-.header-site .main-menu ul li a:hover {
-	text-decoration: none;
-}
+// .header-site .main-menu ul li a:hover {
+// 	text-decoration: none;
+// }
 
 .header-site .dark-back {
 	position: fixed;
@@ -3977,8 +3977,6 @@ $pallete: (
 	font-size: 18px;
 	color: #424242;
 }
-.footer-site .footer-list ul {
-}
 .footer-site .footer-list ul li {
 	margin-bottom: 8px;
 }
@@ -4006,6 +4004,14 @@ $pallete: (
 .footer-site .footer-logo img {
 	width: 100%;
 }
+.mobile-logo-holder {
+	display: none;
+	width: 180px;
+	padding: 8px;
+}
+.mobile-logo-holder img {
+	width: 100%;
+}
 @media (min-width: 576px) {
 	.modal-dialog {
 		max-width: 800px !important;
@@ -4027,6 +4033,10 @@ $pallete: (
 		overflow-y: auto;
 		overflow-x: hidden;
 		transition: 0.3s all;
+
+		&.navActive {
+			right: 0;
+		}
 	}
 	.header-site .top-header .middel-side .main-menu ul {
 		margin-top: 16px;
@@ -4062,10 +4072,6 @@ $pallete: (
 	.warnning-section .warnning-holder .btn-back-home {
 		padding: 8px 12px;
 	}
-	.notification-section .notification-holder {
-	}
-	.notification-section .notification-holder .notifications {
-	}
 	.notification-section .notification-holder .notifications .notification {
 		flex-direction: column;
 		text-align: center;
@@ -4078,48 +4084,9 @@ $pallete: (
 		margin-left: initial;
 		margin-bottom: 24px;
 	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.icon
-		i {
-	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.content {
-	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.content
-		.heading {
-	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.content
-		.heading
-		h2 {
-	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.content
-		.desc {
-	}
-	.notification-section
-		.notification-holder
-		.notifications
-		.notification
-		.content
-		.desc
-		p {
+
+	.footer-site .footer-list {
+		text-align: right;
 	}
 }
 @media (max-width: 320px) {
