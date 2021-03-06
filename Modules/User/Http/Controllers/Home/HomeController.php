@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers\Home;
 
+use App\Models\PhoneBrand;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Modules\User\Http\Controllers\Controller;
@@ -16,7 +17,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
         $data = [];
 
         if ($message = session('trigger_auth'))
@@ -27,6 +27,8 @@ class HomeController extends Controller
 
         if ($ratelimiter = session('ratelimiter'))
             $data['ratelimiter'] = $ratelimiter;
+
+        $data['brands'] = PhoneBrand::limit(16)->get();
 
         return Inertia::render('Home', $data);
     }
