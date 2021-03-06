@@ -20,7 +20,7 @@
 						type="button"
 						class="btn city-btn"
 						data-toggle="modal"
-						data-target="#exampleModal"
+						@click="$refs.cityModal.activateModal()"
 					>
 						<i class="fas fa-map-marker-alt"></i>
 						<span>
@@ -61,23 +61,27 @@
 				</div>
 			</div>
 		</div>
+		<CityModal ref="cityModal" :isActive="showCityModal"></CityModal>
 	</header>
 </template>
 
 <script>
 import Navbar from './Navigation'
 import UserDropDown from '../Components/UserDropDown'
+import CityModal from '../Forms/CityModal'
 
 export default {
 	props: ['user'],
 	data() {
 		return {
-			showNavbar: false
+			showNavbar: false,
+			showCityModal: false
 		}
 	},
 	components: {
 		Navbar,
-		UserDropDown
+		UserDropDown,
+		CityModal
 	}
 }
 </script>

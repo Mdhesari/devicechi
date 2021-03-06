@@ -343,68 +343,6 @@
 				</div>
 			</div>
 		</section>
-		<div
-			class="modal fade"
-			id="exampleModal"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="exampleModalLabel"
-			aria-hidden="true"
-		>
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">انتخاب شهر</h5>
-						<button
-							type="button"
-							class="close"
-							data-dismiss="modal"
-							aria-label="Close"
-						>
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<div class="search-box">
-							<input type="text" name="" id="" placeholder="جستوجو سریع شهر" />
-							<button type="submit" class="search-btn">
-								<i class="fas fa-search"></i>
-							</button>
-						</div>
-						<div class="row cities">
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 city">
-								<div class="inner">
-									<a href="#">
-										تهران
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-6 city">
-								<div class="inner">
-									<a href="#">
-										مشهد
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-6 city">
-								<div class="inner">
-									<a href="#">
-										اصفهان
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 city">
-								<div class="inner">
-									<a href="#">
-										شیراز
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</AuthLayout>
 </template>
 
