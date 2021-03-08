@@ -5,7 +5,6 @@ namespace Modules\User\Entities;
 use App\Models\Ad;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
@@ -23,9 +22,7 @@ class User extends MainUser implements MustVerifyPhone
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
-    // use HasTeams;
     use Notifiable;
-    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.

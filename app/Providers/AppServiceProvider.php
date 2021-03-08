@@ -2,10 +2,6 @@
 
 namespace App\Providers;
 
-use App\Actions\Fortify\CreateNewUser;
-use App\Actions\Fortify\ResetUserPassword;
-use App\Actions\Fortify\UpdateUserPassword;
-use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Models\Ad;
 use Arr;
 use DB;
@@ -14,7 +10,6 @@ use Ghasedak\Laravel\GhasedakServiceProvider;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Reques;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Fortify\Fortify;
 use Laravel\Sanctum\Sanctum;
 use Request;
 use Schema;
@@ -31,8 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Fortify::ignoreRoutes();
-
         if ($this->app->environment('local')) {
             $this->app->register(\Laravel\Telescope\TelescopeServiceProvider::class);
             $this->app->register(TelescopeServiceProvider::class);
@@ -49,11 +42,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
-        Fortify::createUsersUsing(CreateNewUser::class);
-        Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
-        Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         Ad::updating(function ($ad) {
 
