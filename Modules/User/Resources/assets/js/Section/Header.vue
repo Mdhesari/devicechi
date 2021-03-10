@@ -40,8 +40,12 @@
 							<img src="img/mainlogo.png" alt="" />
 						</div>
 						<ul>
-							<li class="user-sign"><a :href="route('user.login')">ورود یا ثبت نام </a></li>
-							<li class="user-sign"><a :href="route('user.ad.create')">ثبت رایگان آگهی </a></li>
+							<li class="user-sign">
+								<a :href="route('user.login')">ورود یا ثبت نام </a>
+							</li>
+							<li class="user-sign">
+								<a :href="route('user.ad.create')">ثبت رایگان آگهی </a>
+							</li>
 							<li><a href="#">صفحه اصلی</a></li>
 							<li><a href="#">همه آگهی ها</a></li>
 							<li><a href="#">تماس با ما</a></li>
@@ -52,8 +56,11 @@
 				</div>
 				<div class="left-side">
 					<div class="user-actions">
-						<a :href="route('user.login')">ورود یا ثبت نام</a>
-						<a :href="route('user.ad.create')" class="add-ads">ثبت رایگان آگهی</a>
+						<a v-if="!user" :href="route('user.login')">ورود یا ثبت نام</a>
+						<UserDropDown v-if="user" :user="user"></UserDropDown>
+						<inertia-link :href="route('user.ad.create')" class="add-ads">
+							ثبت رایگان آگهی
+						</inertia-link>
 					</div>
 					<button class="burger-btn" id="burgerBtn" @click="showNavbar = true">
 						<i class="fas fa-bars"></i>
