@@ -88,6 +88,7 @@ class AdHomeController extends Controller
             ->append('short_url');
 
         $user = $request->user();
+        $is_bookmarked_for_user = false;
 
         if ($user) {
             $is_bookmarked_for_user = $user->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
