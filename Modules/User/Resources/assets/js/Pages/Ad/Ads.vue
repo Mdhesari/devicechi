@@ -32,6 +32,17 @@
 							q: search || cityName
 						})
 					}}
+
+					<a
+						:href="
+							route('user.ad.home', {
+								city: cityName
+							})
+						"
+						class="btn btn-link"
+					>
+						{{ __('ads.reload') }}
+					</a>
 				</b-alert>
 
 				<div v-if="allAds.data.length > 0" class="row normal-ads">

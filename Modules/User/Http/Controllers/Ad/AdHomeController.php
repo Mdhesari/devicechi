@@ -29,7 +29,11 @@ class AdHomeController extends Controller
 
         if ($city) {
             $query = Ad::with('state.city')->where(function ($query) use ($city, $request) {
-                $query->searchLike('state.city.name', $city->name)->filterAd($request);
+                if (empty($request->query('q'))) {
+                    $query->searchLike('state.city.name', $city->name);
+                } else {
+                    $query->filterAd($request);
+                }
             });
         } else {
             $query = Ad::with('state.city')->filterAd($request);
