@@ -9,16 +9,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="search-bar-section py-5">
-			<div class="mini-container">
-				<div class="search-bar">
-					<input type="text" placeholder="دنبال چه گوشی می گردی " />
-					<button type="button" class="icon">
-						<img :src="url('images/search.svg')" alt="search icon" />
-					</button>
-				</div>
-			</div>
-		</section>
+		<SearchSection class="py-5" />
 		<section class="step-section py-5">
 			<div class="container">
 				<div class="main-title">
@@ -349,6 +340,7 @@
 <script>
 import AuthLayout from './../Layouts/FrontAuthLayout'
 import BrandsSection from './../Components/Sections/BrandsSection'
+import SearchSection from './../Section/Ad/Search'
 import NormalAdsSection from './../Components/Sections/NormalAdsSection'
 
 export default {
@@ -356,6 +348,7 @@ export default {
 	components: {
 		AuthLayout,
 		BrandsSection,
+		SearchSection,
 		NormalAdsSection
 	}
 }

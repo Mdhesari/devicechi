@@ -147,3 +147,13 @@ export default {
 	opacity: 0;
 }
 </style>
+<!-- <section class="search-bar-section py-5">
+			<div class="mini-container">
+				<div class="search-bar">
+					<input type="text" placeholder="دنبال چه گوشی می گردی " />
+					<button type="button" class="icon">
+						<img :src="url('images/search.svg')" alt="search icon" />
+					</button>
+				</div>
+			</div>
+		</section> -->
