@@ -58,8 +58,8 @@ Vue.mixin({
 
 			return this.$inertia.page.props.current_root + '/' + path
 		},
-		getProp(param) {
-			return this.$inertia.page.props[param] || ''
+		getProp(param, defaultVal = '') {
+			return this.$inertia.page.props[param] || defaultVal
 		},
 		__(name, replace) {
 			return this.$t.get(name, replace)

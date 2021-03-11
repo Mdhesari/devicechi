@@ -12,9 +12,9 @@
 			<div class="top-header">
 				<div class="right-side">
 					<div class="logo-holder">
-						<inertia-link :href="route('user.home')">
+						<a :href="route('user.home')">
 							<img :src="url('images/logo.png')" alt="" />
-						</inertia-link>
+						</a>
 					</div>
 					<button
 						type="button"
@@ -24,7 +24,7 @@
 					>
 						<i class="fas fa-map-marker-alt"></i>
 						<span>
-							انتخاب شهر
+							{{ cityName }}
 						</span>
 					</button>
 				</div>
@@ -82,7 +82,8 @@ export default {
 	data() {
 		return {
 			showNavbar: false,
-			showCityModal: false
+			showCityModal: false,
+			cityName: this.getProp('cityName', 'انتخاب شهر')
 		}
 	},
 	components: {

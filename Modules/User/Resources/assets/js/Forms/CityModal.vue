@@ -12,19 +12,39 @@
 				<i class="fas fa-search"></i>
 			</button>
 		</div>
-		<div class="row cities">
+		<div class="row cities justify-content-center" v-show="!isLoading">
+			<b-alert
+				variant="warning"
+				class="d-block mx-auto"
+				:show="cities.length < 1"
+			>
+				{{
+					__('ads.form.warning.nothing.cities', {
+						city_name: searchText
+					})
+				}}
+			</b-alert>
+
 			<div
 				v-for="(city, index) in cities"
 				:key="index"
 				class="col-lg-3 col-md-3 col-sm-12 col-xs-12 city"
 			>
 				<div class="inner">
-					<a href="#">
+					<inertia-link
+						:href="
+							route('user.ad.home', {
+								city: city.name
+							})
+						"
+					>
 						{{ city.name }}
-					</a>
+					</inertia-link>
 				</div>
 			</div>
 		</div>
+
+		<Spinner v-show="isLoading" />
 
 		<template #modal-header>
 			<h5 class="modal-title" id="exampleModalLabel">انتخاب شهر</h5>
@@ -45,7 +65,12 @@
 </template>
 
 <script>
+import Spinner from '../Components/Spinner-progressing'
+
 export default {
+	components: {
+		Spinner
+	},
 	data() {
 		return {
 			isActive: false,
@@ -53,6 +78,9 @@ export default {
 			searchText: '',
 			isLoading: false
 		}
+	},
+	mounted() {
+		this.search()
 	},
 	methods: {
 		activateModal() {
@@ -68,6 +96,9 @@ export default {
 
 			this.isLoading = true
 
+			this.search()
+		},
+		search() {
 			axios
 				.get(
 					route('user.api.cities.get', {

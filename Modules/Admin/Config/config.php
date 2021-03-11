@@ -13,7 +13,7 @@ return [
         ],
         [
             'title' => __(' All Ads '),
-            'route' => 'user.ad.all',
+            'route' => 'user.ad.get',
             'params' => [],
         ],
         [
@@ -35,7 +35,7 @@ return [
         ],
         [
             'title' => __(' All Ads '),
-            'route' => 'user.ad.all',
+            'route' => 'user.ad.get',
             'params' => [],
         ],
         [

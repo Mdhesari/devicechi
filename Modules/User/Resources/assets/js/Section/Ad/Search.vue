@@ -58,6 +58,12 @@
 
 <script>
 export default {
+	props: {
+		searchURL: {
+			type: String,
+			default: route('user.ad.home')
+		}
+	},
 	data() {
 		return {
 			isLoading: false,
@@ -65,6 +71,7 @@ export default {
 			form: this.$inertia.form({
 				search: this.getProp('search')
 			}),
+			cityName: this.getProp('cityName', null),
 			resultList: []
 		}
 	},
@@ -81,8 +88,9 @@ export default {
 
 			setTimeout(() => {
 				axios
-					.post(route('user.ad.all'), {
-						q: this.form.search
+					.post(route('user.ad.home'), {
+						q: this.form.search,
+						city: this.cityName
 					})
 					.then((response) => {
 						const data = response.data
@@ -96,8 +104,9 @@ export default {
 		},
 		search() {
 			this.$inertia.visit(
-				route('user.ad.all', {
-					q: this.form.search
+				route('user.ad.home', {
+					q: this.form.search,
+					city: this.cityName
 				})
 			)
 		},

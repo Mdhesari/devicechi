@@ -3,10 +3,14 @@
 		<button id="bookmark-btn" class="btn rounded" @click="save">
 			<b-icon :icon="isSaved ? 'bookmark-check-fill' : 'bookmark'"></b-icon>
 		</button>
-		<b-tooltip target="bookmark-btn" triggers="click blur">
+		<b-tooltip v-if="user" target="bookmark-btn" triggers="click blur">
 			<span v-if="isSaved" v-text="__('global.bookmark')"></span>
 
 			<span v-if="!isSaved" v-text="__('global.unbookmark')"></span>
+		</b-tooltip>
+
+		<b-tooltip v-if="!user" target="bookmark-btn" triggers="hover">
+			<span v-text="__('global.need_login')"></span>
 		</b-tooltip>
 	</div>
 </template>
@@ -22,7 +26,7 @@ export default {
 	methods: {
 		async save() {
 			if (!this.user) {
-				this.$inertia.visit(route('user.login'))
+				window.location.href = route('user.login')
 			}
 
 			const response = await axios.post(route('user.ad.bookmark'), {

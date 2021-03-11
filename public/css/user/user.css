@@ -1391,9 +1391,13 @@ input[type=number] {
 .page-title-container {
   padding: 45px 0;
   position: relative;
-  z-index: 1;
   background-image: linear-gradient(to right, #78f2e9, #b65eba);
   color: #ffffff;
+}
+
+.page-title-container .page-title {
+  margin-bottom: 5rem;
+  margin-top: 1rem;
 }
 
 .page-title {
