@@ -14,7 +14,7 @@
 				<div class="search-bar">
 					<input type="text" placeholder="دنبال چه گوشی می گردی " />
 					<button type="button" class="icon">
-						<img src="../../img/search.svg" alt="" />
+						<img :src="url('images/search.svg')" alt="search icon" />
 					</button>
 				</div>
 			</div>
@@ -32,7 +32,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 step">
 						<div class="inner">
 							<div class="icon">
-								<img src="../../img/get-price.png" alt="" />
+								<img :src="url('images/get-price.png')" alt="" />
 							</div>
 							<div class="title">
 								<h3>
@@ -50,7 +50,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 step">
 						<div class="inner">
 							<div class="icon">
-								<img src="../../img/book-pickup.png" alt="" />
+								<img :src="url('images/book-pickup.png')" alt="" />
 							</div>
 							<div class="title">
 								<h3>
@@ -68,7 +68,7 @@
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 step">
 						<div class="inner">
 							<div class="icon">
-								<img src="../../img/get-paid.png" alt="" />
+								<img :src="url('images/get-paid.png')" alt="" />
 							</div>
 							<div class="title">
 								<h3>

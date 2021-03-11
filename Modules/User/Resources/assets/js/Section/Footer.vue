@@ -95,9 +95,9 @@
 						</ul>
 					</div>
 					<div class="footer-logo">
-						<a href="#">
-							<img src="img/mainlogo.png" alt="" />
-						</a>
+						<inertia-link :href="route('user.home')">
+							<img :src="url('images/mainlogo.png')" alt="Devicechi Logo" />
+						</inertia-link>
 					</div>
 				</div>
 			</div>

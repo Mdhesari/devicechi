@@ -3231,7 +3231,7 @@ input[type=number] {
 .main-site .banner-site {
   height: 350px;
   background-color: #53a0c2;
-  background-image: url("/mobileforsale-front/img/back/overlay_bg.png");
+  background-image: url(/images/overlay_bg.png?6ff0c25294cabf37ede18e214d7ef09a);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

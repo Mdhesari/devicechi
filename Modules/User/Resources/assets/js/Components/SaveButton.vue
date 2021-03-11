@@ -17,7 +17,7 @@ export default {
 	data() {
 		return {
 			isSaved: Boolean(this.getProp('is_bookmarked_for_user'))
-		} 
+		}
 	},
 	methods: {
 		async save() {

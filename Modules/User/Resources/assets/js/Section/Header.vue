@@ -12,9 +12,9 @@
 			<div class="top-header">
 				<div class="right-side">
 					<div class="logo-holder">
-						<a href="#">
-							<img src="../../img/logo.png" alt="" />
-						</a>
+						<inertia-link :href="route('user.home')">
+							<img :src="url('images/logo.png')" alt="" />
+						</inertia-link>
 					</div>
 					<button
 						type="button"
@@ -37,7 +37,7 @@
 						id="mainMenu"
 					>
 						<div class="mobile-logo-holder">
-							<img src="img/mainlogo.png" alt="" />
+							<img :src="url('images/logo.png')" alt="logo" />
 						</div>
 						<ul>
 							<li class="user-sign">
