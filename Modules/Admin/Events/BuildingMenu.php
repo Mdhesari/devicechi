@@ -2,7 +2,7 @@
 
 namespace Modules\Admin\Events;
 
-use App\Menu\Builder\Builder;
+use App\Menu\Builder;
 use Illuminate\Queue\SerializesModels;
 
 class BuildingMenu

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Menu\Builder;
+namespace App\Menu;
 
 use App\Helpers\MenuItemHelper;
 use Illuminate\Support\Arr;

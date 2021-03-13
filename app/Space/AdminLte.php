@@ -3,7 +3,7 @@
 namespace App\Space;
 
 use App\Helpers\MenuItemHelper;
-use App\Menu\Builder\Builder;
+use App\Menu\Builder;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
 use Modules\Admin\Events\BuildingMenu;
