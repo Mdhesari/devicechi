@@ -4020,11 +4020,6 @@ $pallete: (
 .mobile-logo-holder img {
 	width: 100%;
 }
-@media (min-width: 576px) {
-	.modal-dialog {
-		max-width: 800px !important;
-	}
-}
 @media (max-width: 990px) {
 	.main-site .banner-site .h1holder h1 {
 		font-size: 18px;

@@ -1,5 +1,5 @@
 <template>
-	<b-modal v-model="isActive">
+	<b-modal size="lg" v-model="isActive">
 		<div class="search-box">
 			<input
 				v-model="searchText"
@@ -53,6 +53,7 @@
 				class="close"
 				data-dismiss="modal"
 				aria-label="Close"
+				@click="isActive = false"
 			>
 				<span aria-hidden="true">&times;</span>
 			</button>
