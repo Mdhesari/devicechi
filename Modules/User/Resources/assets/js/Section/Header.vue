@@ -29,30 +29,10 @@
 					</button>
 				</div>
 				<div class="middel-side">
-					<nav
-						class="main-menu"
-						:class="{
-							navActive: showNavbar
-						}"
-						id="mainMenu"
-					>
-						<div class="mobile-logo-holder">
-							<img :src="url('images/logo.png')" alt="logo" />
-						</div>
-						<ul>
-							<li class="user-sign">
-								<a :href="route('user.login')">ورود یا ثبت نام </a>
-							</li>
-							<li class="user-sign">
-								<a :href="route('user.ad.create')">ثبت رایگان آگهی </a>
-							</li>
-							<li><a href="#">صفحه اصلی</a></li>
-							<li><a href="#">همه آگهی ها</a></li>
-							<li><a href="#">تماس با ما</a></li>
-							<li><a href="#">شرایط ثبت آگهی</a></li>
-							<li><a href="#">اعلان ها</a></li>
-						</ul>
-					</nav>
+					<Navbar
+						:class="{ navActive: showNavbar }"
+						:showNavbar="showNavbar"
+					></Navbar>
 				</div>
 				<div class="left-side">
 					<div class="user-actions">

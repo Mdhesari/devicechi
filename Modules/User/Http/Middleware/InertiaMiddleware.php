@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Middleware;
 
+use App\Space\AdminLte;
 use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -32,12 +33,18 @@ class InertiaMiddleware
 
         Inertia::share('user', $request->user());
 
-        Inertia::share('menu_navbar', function () {
-            if (auth()->user())
-                return get_nav_items(config('admin.auth_navs'));
+        Inertia::share('main_menu_items', function () {
+            $adminlte = app(AdminLte::class);
 
-            return get_nav_items(config('admin.guest_navs'));
+            return $adminlte->menu('user_main_menu');
         });
+
+        // Inertia::share('menu_navbar', function () {
+        //     if (auth()->user())
+        //         return get_nav_items(config('admin.auth_navs'));
+
+        //     return get_nav_items(config('admin.guest_navs'));
+        // });
 
         Inertia::share('footer_navbar', function () {
 

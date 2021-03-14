@@ -1,37 +1,49 @@
 <template>
-	<!-- Primary Navigation Menu -->
-	<nav class="main-menu" id="mainMenu">
-		<!-- Navigation Links -->
-		<ul class="p-2">
-			<li v-if="user">
-				<inertia-link
-					:href="route('user.ad.create')"
-					class="btn btn-success btn-rounded-high btn-mobilesale"
-				>
-					<b-icon icon="plus-circle"></b-icon>
-					<span class="btn-title">{{ __('ads.create.btn_title') }}</span>
-				</inertia-link>
+	<nav
+		class="main-menu"
+		:class="{
+			navActive: showNavbar
+		}"
+		id="mainMenu"
+	>
+		<div class="mobile-logo-holder">
+			<img :src="url('images/logo.png')" alt="logo" />
+		</div>
+		<ul>
+			<li class="user-sign">
+				<a :href="route('user.login')">ورود یا ثبت نام </a>
+			</li>
+			<li class="user-sign">
+				<a :href="route('user.ad.create')">ثبت رایگان آگهی </a>
 			</li>
 
-			<li v-for="(nav, item) in navbar" :key="item">
-				<inertia-link
-					:class="{
-						active: nav.is_active
-					}"
-					:href="nav.route"
-				>
-					{{ nav.title }}
-				</inertia-link>
-			</li>
+			<MenuItem
+				v-for="(item, index) in items"
+				:key="index"
+				:item="item"
+			></MenuItem>
+
+			<!-- <li><a href="#">صفحه اصلی</a></li>
+			<li><a href="#">همه آگهی ها</a></li>
+			<li><a href="#">تماس با ما</a></li>
+			<li><a href="#">شرایط ثبت آگهی</a></li>
+			<li><a href="#">اعلان ها</a></li> -->
 		</ul>
 	</nav>
 </template>
 
 <script>
+import MenuItem from './../Components/Menu/MenuItem'
+
 export default {
+	props: ['showNavbar'],
+	components: {
+		MenuItem
+	},
 	data() {
 		return {
-			navbar: this.getProp('menu_navbar'),
+			// navbar: this.getProp('menu_navbar'),
+			items: this.getProp('main_menu_items'),
 			user: this.getProp('user')
 		}
 	}
