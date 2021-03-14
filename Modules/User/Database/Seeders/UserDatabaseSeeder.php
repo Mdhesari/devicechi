@@ -23,8 +23,9 @@ class UserDatabaseSeeder extends Seeder
             'phone_country_code' => '+98'
         ]);
 
-        if (app()->environment('local'))
+        if (app()->environment('local')) {
             \Modules\User\Entities\User::factory(10)->create();
+        }
 
         $this->call([
             CountryStatesTableSeeder::class,
@@ -35,7 +36,12 @@ class UserDatabaseSeeder extends Seeder
             PhoneAccessoriesTableSeeder::class,
             PhoneAgesTableSeeder::class,
             AdContactTypeTableSeeder::class,
-            AdTableSeeder::class,
         ]);
+
+        if (app()->environment('local')) {
+            $this->call([
+                AdTableSeeder::class,
+            ]);
+        }
     }
 }

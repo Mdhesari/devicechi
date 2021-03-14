@@ -163,6 +163,28 @@ return [
                 'route' => 'admin.contact-us.list',
             ],
         ],
+        'user_main_menu' => [
+            [
+                'text' => ' Home ',
+                'route' => 'user.home',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' All Ads ',
+                'route' => 'user.ad.home',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Contact Us ',
+                'route' => 'contact-us',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Rules ',
+                'route' => 'rules',
+                'route_params' => [],
+            ]
+        ]
     ],
 
     /*
