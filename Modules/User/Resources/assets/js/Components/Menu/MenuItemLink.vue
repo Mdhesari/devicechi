@@ -1,5 +1,5 @@
 <template>
-	<a :class="item.class" :href="item.href" :target="urlTarget">
+	<inertia-link :class="item.class" :href="item.href" :target="urlTarget">
 		<i v-if="isset(item.icon)" :class="item.icon"></i>
 
 		{{ item.text }}
@@ -7,7 +7,7 @@
 		<span v-if="isset(item.label)" class="badge" :class="getBadgeClass(item)">
 			{{ item.label }}
 		</span>
-	</a>
+	</inertia-link>
 </template>
 
 <script>
