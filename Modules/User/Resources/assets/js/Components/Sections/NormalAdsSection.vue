@@ -2,11 +2,9 @@
 	<section class="normal-ads-section py-5">
 		<div class="container">
 			<div class="main-title">
-				<a href="#">
-					<h2>
-						آگهی ها
-					</h2>
-				</a>
+				<h2>
+					آگهی ها
+				</h2>
 			</div>
 			<div class="row normal-ads">
 				<NormalAd
@@ -16,7 +14,7 @@
 					:countAds="ads.length"
 				></NormalAd>
 				<div class="more">
-					<a href="#">
+					<a :href="route('user.ad.home')">
 						مشاهده بیشتر
 						<i class="fa fa-arrow-left" aria-hidden="true"></i>
 					</a>

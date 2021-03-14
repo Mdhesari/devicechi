@@ -13,11 +13,9 @@
 		<section class="step-section py-5">
 			<div class="container">
 				<div class="main-title">
-					<a href="#">
-						<h2>
-							گام های خرید و فروش
-						</h2>
-					</a>
+					<h2>
+						گام های خرید و فروش
+					</h2>
 				</div>
 				<div class="row steps">
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 step">
@@ -81,11 +79,9 @@
 		<section class="why-us-section py-5">
 			<div class="container">
 				<div class="main-title">
-					<a href="#">
-						<h2>
-							چرا ما ؟
-						</h2>
-					</a>
+					<h2>
+						چرا ما ؟
+					</h2>
 				</div>
 				<div class="row why-us-boxes">
 					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 why-us-box">
@@ -212,7 +208,7 @@
 			</div>
 		</section>
 		<BrandsSection :brands="brands"></BrandsSection>
-		<section class="blog-lists py-5">
+		<!-- <section class="blog-lists py-5">
 			<div class="container">
 				<div class="main-title">
 					<h2>
@@ -333,7 +329,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	</AuthLayout>
 </template>
 

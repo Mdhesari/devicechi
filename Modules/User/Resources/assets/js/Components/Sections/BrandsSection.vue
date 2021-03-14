@@ -2,11 +2,9 @@
 	<section class="brand-section py-5">
 		<div class="container">
 			<div class="main-title">
-				<a href="#">
-					<h2>
-						برند ها
-					</h2>
-				</a>
+				<h2>
+					برند ها
+				</h2>
 			</div>
 			<div class="row brands">
 				<div class="swiper-container">
