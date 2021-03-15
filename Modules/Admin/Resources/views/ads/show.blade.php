@@ -1,5 +1,9 @@
 @extends('admin::app')
 
+@push('add_styles')
+<link rel="stylesheet" href="{{ asset('css/admin/plugins/colorpicker/bootstrap-colorpicker.min.css') }}">
+@endpush
+
 @section('content')
 <!-- Main content -->
 <section class="content">
@@ -9,13 +13,11 @@
 
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
-                        aria-controls="home" aria-selected="true"> @lang(' Ad View ')</a>
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"> @lang(' Ad View ')</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab"
-                        aria-controls="setting" aria-selected="false">@lang(' Setting ')</a>
+                    <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false">@lang(' Setting ')</a>
                 </li>
             </ul>
 
@@ -125,15 +127,20 @@
                                 ]) }}">
                                     @csrf
 
+                                    <!-- Color Picker -->
+                                    <!-- <div class="form-group">
+                                        <label>@lang(' Choose Color ')</label>
+                                        <input type="text" name="color" class="form-control my-colorpicker1">
+                                    </div> -->
+                                    <!-- /.form group -->
+
                                     @foreach ($templates as $key => $template)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="template"
-                                            id="template-{{ $key }}" value="{{ $template['url'] }}" @if($loop->first)
+                                        <input class="form-check-input" type="radio" name="template" id="template-{{ $key }}" value="{{ $template['url'] }}" @if($loop->first)
                                         checked @endif>
                                         <label class="form-check-label" for="template-{{ $key }}">
                                             <div class="picture bg-secondary">
-                                                <img class="rounded img-fluid" src="{{ url($template['url']) }}"
-                                                    alt="{{ $template['title'] }}">
+                                                <img class="rounded img-fluid" src="{{ url($template['url']) }}" alt="{{ $template['title'] }}">
                                             </div>
                                         </label>
                                     </div>
@@ -152,16 +159,12 @@
 
                                     <div class="form-group my-4">
                                         <label for="caption">@lang(' Caption ')</label>
-                                        <button type="button" id="copy-button" class="btn btn-outline-success my-2"
-                                            data-trigger="click" data-toggle="tooltip" title="@lang(' Copied! ')"
-                                            data-delay='{"show":"100", "hide":"500"}'>@lang(' Copy ')</button>
-                                        <textarea name="caption" class="form-control" id="caption"
-                                            rows="20">{{ $caption }}</textarea>
+                                        <button type="button" id="copy-button" class="btn btn-outline-success my-2" data-trigger="click" data-toggle="tooltip" title="@lang(' Copied! ')" data-delay='{"show":"100", "hide":"500"}'>@lang(' Copy ')</button>
+                                        <textarea name="caption" class="form-control" id="caption" rows="20">{{ $caption }}</textarea>
                                     </div>
 
                                     <div class="form-group my-4">
-                                        <a class="btn btn-link"
-                                            href="{{ route("admin.ads.export.renew-caption", $ad) }}">
+                                        <a class="btn btn-link" href="{{ route("admin.ads.export.renew-caption", $ad) }}">
                                             @lang(' Renew caption ')
                                         </a>
                                     </div>
@@ -189,10 +192,10 @@
                     'ad' => $ad,
                 ]) }}" method="POST">
                     @csrf
-                    <div class="form-group m-4">
+                    <!-- <div class="form-group m-4">
                         <label for="pro_ad">@lang(' Pro Ad ')</label>
                         <input type="checkbox" name="pro_ad" id="pro_ad" @if($ad->is_pro) checked @endif>
-                    </div>
+                    </div> -->
                     <div class="form-group m-4">
                         <label for="notify_user">@lang(' Notify User ')</label>
                         <input type="checkbox" name="notify_user" id="notify_user">
@@ -210,8 +213,7 @@
                         <label for="notify_ignored_user">@lang(' Notify User ')</label>
                         <input type="checkbox" name="notify_ignored_user" id="notify_ignored_user">
                     </div>
-                    <textarea class="form-control" placeholder="@lang(' Description ')" name="description" cols="30"
-                        rows="5"></textarea>
+                    <textarea class="form-control" placeholder="@lang(' Description ')" name="description" cols="30" rows="5"></textarea>
                     <button type="submit" class="btn btn-danger mx-1">@lang(' Ignore ')</button>
                 </form>
             </div>
@@ -228,32 +230,35 @@
 @endsection
 
 @push('add_scripts')
+<script src="{{ asset('css/admin/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
 <script>
     jQuery(function($) {
-    $("#copy-button").bind("click", function() {
-        var input = document.getElementById("caption");
-        console.log(input)
-        input.select();
-        input.setSelectionRange(0, input.value.length + 1);
-        try {
-            var success = document.execCommand("copy");
-            if (success) {
-                // Change tooltip message to "Copied!"
-                $("#copy-button").tooltip()
 
-                setTimeout(() => {
-                    $("#copy-button").tooltip('hide')
-                }, 1000);
-            } else {
+        $('.my-colorpicker1').colorpicker()
+
+        $("#copy-button").bind("click", function() {
+            var input = document.getElementById("caption");
+            console.log(input)
+            input.select();
+            input.setSelectionRange(0, input.value.length + 1);
+            try {
+                var success = document.execCommand("copy");
+                if (success) {
+                    // Change tooltip message to "Copied!"
+                    $("#copy-button").tooltip()
+
+                    setTimeout(() => {
+                        $("#copy-button").tooltip('hide')
+                    }, 1000);
+                } else {
+                    // Handle error. Perhaps change tooltip message to tell user to use Ctrl-c
+                    // instead.
+                }
+            } catch (err) {
                 // Handle error. Perhaps change tooltip message to tell user to use Ctrl-c
                 // instead.
             }
-        } catch (err) {
-            // Handle error. Perhaps change tooltip message to tell user to use Ctrl-c
-            // instead.
-        }
+        });
     });
-});
-
 </script>
 @endpush
