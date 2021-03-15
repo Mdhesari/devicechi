@@ -31,7 +31,13 @@ class AdPictureController extends BaseAdController
 
         $active_picture = optional($active_picture)->id;
 
-        return inertia('Ad/Wizard/Create', compact('step', 'active_picture', 'pictures', 'ad_picture_size_limit', 'ad', 'ad_pictures_min_count', 'ad_pictures_max_count', 'ad_pictures_format'));
+        $picturesUploaded = false;
+
+        if (session('picturesUploaded')) {
+            $picturesUploaded = "ok";
+        }
+
+        return inertia('Ad/Wizard/Create', compact('step', 'active_picture', 'picturesUploaded', 'pictures', 'ad_picture_size_limit', 'ad', 'ad_pictures_min_count', 'ad_pictures_max_count', 'ad_pictures_format'));
     }
 
     public function store(Ad $ad, AdConfirmPictureRequest $request)
@@ -68,7 +74,7 @@ class AdPictureController extends BaseAdController
             ]);
         }
 
-        return back()->with('success', 'value');
+        return back()->with('picturesUploaded', true);
     }
 
     public function delete(Ad $ad, Request $request, StoresAdPicture $storeDriver)

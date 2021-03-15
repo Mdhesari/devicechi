@@ -6,7 +6,7 @@ import VueToastr from 'vue-toastr'
 import VueSwal from 'vue-swal'
 
 import { InertiaApp } from '@inertiajs/inertia-vue'
-import { InertiaForm } from 'laravel-jetstream'
+// import { InertiaForm } from 'laravel-jetstream'
 import PortalVue from 'portal-vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import { InertiaProgress } from '@inertiajs/progress'
@@ -33,7 +33,7 @@ InertiaProgress.init({
 })
 
 Vue.use(InertiaApp)
-Vue.use(InertiaForm)
+// Vue.use(InertiaForm)
 Vue.use(PortalVue)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
