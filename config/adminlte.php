@@ -184,6 +184,46 @@ return [
                 'route' => 'rules',
                 'route_params' => [],
             ]
+        ],
+        'user_main_footer_services' => [
+            [
+                'text' => ' View Ads ',
+                'route' => 'user.ad.home',
+                'route_params' => [],
+            ],
+        ],
+        'user_main_footer_news' => [
+            [
+                'text' => ' Hamta Learning ',
+                'url' => 'http://hmti.ir/06',
+            ],
+        ],
+        'user_main_footer_help' => [
+            [
+                'text' => ' Home ',
+                'route' => 'user.home',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Dashboard ',
+                'route' => 'user.dashboard',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Create Ad ',
+                'route' => 'user.ad.create',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Contact Us ',
+                'route' => 'contact-us',
+                'route_params' => [],
+            ],
+            [
+                'text' => ' Rules ',
+                'route' => 'rules',
+                'route_params' => [],
+            ],
         ]
     ],
 

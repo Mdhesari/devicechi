@@ -35,46 +35,49 @@
 				<div class="col-md-3">
 					<div class="footer-list">
 						<div class="footer-list-heading">
-							<h3>عنوان شماره اول</h3>
+							<h3>خدمات</h3>
 						</div>
 						<ul class="footer-list-links">
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
+							<MenuItem
+								v-for="(item, index) in navbar.main"
+								:key="index"
+								:item="item"
+							></MenuItem>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="footer-list">
 						<div class="footer-list-heading">
-							<h3>عنوان شماره اول</h3>
+							<h3>آموزش</h3>
 						</div>
 						<ul class="footer-list-links">
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
+							<MenuItem
+								v-for="(item, index) in navbar.news"
+								:key="index"
+								:item="item"
+							></MenuItem>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="footer-list">
 						<div class="footer-list-heading">
-							<h3>عنوان شماره اول</h3>
+							<h3>دسترسی سریع</h3>
 						</div>
 						<ul class="footer-list-links">
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
-							<li><a href="#">لینک</a></li>
+							<MenuItem
+								v-for="(item, index) in navbar.help"
+								:key="index"
+								:item="item"
+							></MenuItem>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="footer-list">
 						<div class="footer-list-heading">
-							<h3>عنوان شماره اول</h3>
+							<h3>شبکه های اجتماعی</h3>
 						</div>
 						<ul class="footer-social-links">
 							<li>
@@ -106,7 +109,12 @@
 </template>
 
 <script>
+import MenuItem from './../Components/Menu/MenuItem'
+
 export default {
+	components: {
+		MenuItem
+	},
 	data() {
 		return {
 			navbar: this.getProp('footer_navbar'),

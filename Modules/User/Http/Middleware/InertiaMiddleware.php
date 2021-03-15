@@ -46,9 +46,15 @@ class InertiaMiddleware
         //     return get_nav_items(config('admin.guest_navs'));
         // });
 
-        Inertia::share('footer_navbar', function () {
+        Inertia::share('footer_navbar', function (AdminLte $adminLte) {
+            // return get_nav_items(config('admin.footer_navs'));
+            $footers = [];
 
-            return get_nav_items(config('admin.footer_navs'));
+            $footers['main'] = $adminLte->menu('user_main_footer_services');
+            $footers['news'] = $adminLte->menu('user_main_footer_news');
+            $footers['help'] = $adminLte->menu('user_main_footer_help');
+
+            return $footers;
         });
 
         Inertia::share('site_url', config('app.url'));
