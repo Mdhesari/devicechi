@@ -289,6 +289,11 @@ class Ad extends Model implements HasMedia
         return $query->whereNotNull('phone_model_variant_id');
     }
 
+    public function scopeFilterCity($query, $name)
+    {
+        return $query->searchLike('state.city.name', $name);
+    }
+
     public function scopePublishedWithFilter($query, $request)
     {
 

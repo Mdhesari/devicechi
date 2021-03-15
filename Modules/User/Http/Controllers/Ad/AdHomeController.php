@@ -25,35 +25,22 @@ class AdHomeController extends Controller
     {
         if ($city) {
             $city = $this->getCityByName($city);
-
             $this->rememberCity($city);
         } else {
             $city = $this->getCityByName(session(City::USER_SESSION_TO_EXPLORE));
         }
 
+        $query = Ad::with('phoneModel.brand', 'state.city');
+
         if ($city) {
-            $query = Ad::with('state.city')->where(function ($query) use ($city, $request) {
-                if (empty($request->query('q'))) {
-                    $query->searchLike('state.city.name', $city->name);
-                } else {
-                    $query->filterAd($request);
-                }
-            });
-        } else {
-            $query = Ad::with('state.city')->filterAd($request);
+            $query = $query->filterCity($city->name);
         }
 
-        $qurey = $query->latest()->published();
-
-        $ads = $query->paginate();
-
-        $ads->load([
-            'state.city',
-            'media' => function ($q) {
-
-                $q->activeOnly();
-            }
-        ]);
+        $ads = $query
+            ->publishedWithFilter($request)
+            ->latest()
+            ->includeMediaThumb()
+            ->paginate();
 
         if ($request->expectsJson()) {
             return $ads;
@@ -67,7 +54,7 @@ class AdHomeController extends Controller
             'city' => $cityName,
         ]);
 
-        return inertia('Ad/Ads', compact('ads', 'search', 'searchURL'));
+        return inertia('Ad/Ads', compact('ads', 'search', 'cityName', 'searchURL'));
     }
 
     /**
@@ -76,7 +63,12 @@ class AdHomeController extends Controller
      */
     public function all(Request $request)
     {
-        $ads = Ad::with('state.city')->latest()->filterAd($request)->includeMediaThumb()->published()->paginate(3);
+        $ads = Ad::with('state.city')
+            ->latest()
+            ->filterAd($request)
+            ->includeMediaThumb()
+            ->published()
+            ->paginate(3);
 
         if ($request->expectsJson()) return $ads;
 
@@ -101,7 +93,16 @@ class AdHomeController extends Controller
      */
     public function search(Request $request)
     {
-        $ads = Ad::with('phoneModel.brand', 'state.city')->publishedWithFilter($request)->latest()->paginate(4);
+        $query = Ad::with('phoneModel.brand', 'state.city');
+
+        if ($city = $this->getCityByName(session(City::USER_SESSION_TO_EXPLORE))) {
+            $query = $query->filterCity($city->name);
+        }
+
+        $ads = $query
+            ->publishedWithFilter($request)
+            ->latest()
+            ->paginate(4);
 
         return response()->json([
             'ads' => $ads
@@ -199,7 +200,7 @@ class AdHomeController extends Controller
     private function rememberCity($city)
     {
         if ($city) {
-            session(City::USER_SESSION_TO_EXPLORE, $city->name);
+            session()->put(City::USER_SESSION_TO_EXPLORE, $city->name);
         } else {
             session()->forget(City::USER_SESSION_TO_EXPLORE);
         }
