@@ -22,6 +22,18 @@
 	box-shadow: none !important;
 }
 
+.btn-menu-save {
+	position: fixed;
+	bottom: 1rem;
+	right: 50%;
+	z-index: 999;
+	box-shadow: 1px 0px 7px 0px rgb(0 0 0 / 30%);
+}
+
+.btn-menu-save > .btn-success {
+	padding: 8px 43px;
+}
+
 .picture img {
 	width: 300px;
 }
@@ -43,19 +55,19 @@ table thead .sorting_desc_disabled {
 	padding-right: 18px;
 }
 table thead .sorting {
-	background-image: url('../image/icons/sort_both.png');
+	background-image: url('../images/icons/sort_both.png');
 }
 table thead .sorting_asc {
-	background-image: url('../image/icons/sort_asc.png');
+	background-image: url('../images/icons/sort_asc.png');
 }
 table thead .sorting_desc {
-	background-image: url('../image/icons/sort_desc.png');
+	background-image: url('../images/icons/sort_desc.png');
 }
 table thead .sorting_asc_disabled {
-	background-image: url('../image/icons/sort_asc_disabled.png');
+	background-image: url('../images/icons/sort_asc_disabled.png');
 }
 table thead .sorting_desc_disabled {
-	background-image: url('../image/icons/sort_desc_disabled.png');
+	background-image: url('../images/icons/sort_desc_disabled.png');
 }
 
 table.order-column tbody tr > .sorting_1,

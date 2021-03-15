@@ -8,6 +8,8 @@ use Modules\User\Entities\PhoneModel;
 class PhoneBrand extends Model
 {
 
+    const ASSET_NAME = 'brands';
+
     /**
      * Indicates if the model should be timestamped.
      *
@@ -21,11 +23,17 @@ class PhoneBrand extends Model
 
     protected $appends = [
         'printable_name',
+        'picture_url',
     ];
 
     public function getRouteKeyName()
     {
         return 'name';
+    }
+
+    public function getPictureUrlAttribute()
+    {
+        return url($this->picture_path);
     }
 
     public static function scopeExcludeAd($query, $ad)

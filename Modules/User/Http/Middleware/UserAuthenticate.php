@@ -31,6 +31,6 @@ class UserAuthenticate extends Authenticate
     private function getRedirectRoute($request)
     {
 
-        return route('user.home');
+        return route('user.login');
     }
 }

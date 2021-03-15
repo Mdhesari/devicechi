@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Middleware;
 
+use App\Space\AdminLte;
 use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -32,16 +33,28 @@ class InertiaMiddleware
 
         Inertia::share('user', $request->user());
 
-        Inertia::share('menu_navbar', function () {
-            if (auth()->user())
-                return get_nav_items(config('admin.auth_navs'));
+        Inertia::share('main_menu_items', function () {
+            $adminlte = app(AdminLte::class);
 
-            return get_nav_items(config('admin.guest_navs'));
+            return $adminlte->menu('user_main_menu');
         });
 
-        Inertia::share('footer_navbar', function () {
+        // Inertia::share('menu_navbar', function () {
+        //     if (auth()->user())
+        //         return get_nav_items(config('admin.auth_navs'));
 
-            return get_nav_items(config('admin.footer_navs'));
+        //     return get_nav_items(config('admin.guest_navs'));
+        // });
+
+        Inertia::share('footer_navbar', function (AdminLte $adminLte) {
+            // return get_nav_items(config('admin.footer_navs'));
+            $footers = [];
+
+            $footers['main'] = $adminLte->menu('user_main_footer_services');
+            $footers['news'] = $adminLte->menu('user_main_footer_news');
+            $footers['help'] = $adminLte->menu('user_main_footer_help');
+
+            return $footers;
         });
 
         Inertia::share('site_url', config('app.url'));

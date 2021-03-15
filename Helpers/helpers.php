@@ -163,3 +163,14 @@ function predata_path($path = "")
 
     return database_path("seeders/predata") . $path;
 }
+
+function get_cache_menu_full_key($key)
+{
+    return Str::of(config('cache.app_keys.menu'))->replace(':key', $key);
+}
+
+function get_asset_url($name)
+{
+
+    return trim(config('assets.dir.' . $name), '/');
+}

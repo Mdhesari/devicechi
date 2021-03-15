@@ -4,6 +4,7 @@ return [
     'name' => 'Admin',
     'domain' => env('ADMIN_DOMAIN', 'http://team.localhost'),
     'prefix' => env('ADMIN_PREFIX', '/'),
+    'layout' => 'admin::app',
     'auth_navs' => [
         [
             'title' => __(' Home Page '),
@@ -12,7 +13,7 @@ return [
         ],
         [
             'title' => __(' All Ads '),
-            'route' => 'user.ad.all',
+            'route' => 'user.ad.get',
             'params' => [],
         ],
         [
@@ -34,7 +35,7 @@ return [
         ],
         [
             'title' => __(' All Ads '),
-            'route' => 'user.ad.all',
+            'route' => 'user.ad.get',
             'params' => [],
         ],
         [
@@ -138,7 +139,10 @@ return [
         'create media',
         'read media',
         'delete media',
-        'telescope'
+        'telescope',
+        'read menu-editor',
+        'update menu-editor',
+        'delete menu-editor',
     ],
     'instagram' => [
         'templates' => [

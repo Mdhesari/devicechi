@@ -50,6 +50,9 @@ class HandleUserAction
                 $event->grid, $event->request,
                 $event->builder, $event->validTableColumns, $event->args
             ))->sort();
+        } else {
+
+            session()->forget('__grid.current_sort_direction');
         }
 
         $paginator = (new GridPaginationHandler($event->grid, $event->request, $event->builder));

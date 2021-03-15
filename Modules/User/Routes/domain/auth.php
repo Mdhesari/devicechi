@@ -11,14 +11,12 @@
 |
 */
 
-use Composer\Package\RootPackage;
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdAgeController;
 use Modules\User\Http\Controllers\Ad\AdContactController;
 use Modules\User\Http\Controllers\Ad\AdCreateController;
 use Modules\User\Http\Controllers\Ad\AdDemoController;
 use Modules\User\Http\Controllers\Ad\AdDetailsController;
-use Modules\User\Http\Controllers\Ad\AdHomeController;
 use Modules\User\Http\Controllers\Ad\AdLocationController;
 use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Ad\AdModelController;
@@ -33,8 +31,25 @@ use Modules\User\Http\Controllers\UserPaymentController;
 
 Route::post('/session/logout', [SessionController::class, 'destroy'])->name('session.logout');
 
-Route::prefix('/ads')->name('ad.')->group(function () {
+Route::prefix('/dashboard')->group(function () {
 
+    Route::get('/', [UserController::class, 'index'])->name('dashboard');
+
+    Route::get('/ads', [AdMainController::class, 'get'])->name('ad.get');
+
+    Route::get('/bookmarked-ads', [UserController::class, 'bookmarks'])->name('ad.bookmarked');
+
+    Route::post('/bookmark-ad', [AdMainController::class, 'bookmark'])->name('ad.bookmark');
+
+    Route::get('/visited-ads', [UserController::class, 'seens'])->name('ad.seen');
+
+    Route::prefix('/payments')->name('payments.')->group(function () {
+
+        Route::get('/', [UserPaymentController::class, 'index'])->name('list');
+    });
+});
+
+Route::prefix('/ads')->name('ad.')->group(function () {
     Route::prefix('/sell/mobile')->group(function () {
 
         Route::get('/{ad?}', [AdCreateController::class, 'show'])->name('create');
@@ -102,40 +117,6 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
             Route::post('/{phone_brand}/{ad?}', [AdModelController::class, 'store']);
         });
-    });
-
-    Route::get('/', [AdHomeController::class, 'index'])->name('home');
-
-    Route::get('/s', [AdHomeController::class, 'all'])->name('all');
-
-    Route::post('/s', [AdHomeController::class, 'search']);
-
-    Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
-
-    Route::get('/get/models', [AdMainController::class, 'getModels'])->name('get.models');
-
-    Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
-
-    Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
-
-    Route::get('/p/{ad}', [AdHomeController::class, 'show'])->name('show.short-link');
-});
-
-Route::prefix('/dashboard')->group(function () {
-
-    Route::get('/', 'UserController@index')->name('dashboard');
-
-    Route::get('/ads', [AdMainController::class, 'get'])->name('ad.get');
-
-    Route::get('/bookmarked-ads', [UserController::class, 'bookmarks'])->name('ad.bookmarked');
-
-    Route::post('/bookmark-ad', [AdMainController::class, 'bookmark'])->name('ad.bookmark');
-
-    Route::get('/visited-ads', [UserController::class, 'seens'])->name('ad.seen');
-
-    Route::prefix('/payments')->name('payments.')->group(function () {
-
-        Route::get('/', [UserPaymentController::class, 'index'])->name('list');
     });
 });
 

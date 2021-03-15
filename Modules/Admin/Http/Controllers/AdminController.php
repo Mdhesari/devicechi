@@ -142,7 +142,7 @@ class AdminController extends Controller
 
         // more email validation for not existing
         $request->validate([
-            'email' => [Rule::unique('admins')->ignore($request->user()->id)]
+            'email' => [Rule::unique('admins')->ignore($admin->id)]
         ]);
 
         if (empty($admin->toArray())) {

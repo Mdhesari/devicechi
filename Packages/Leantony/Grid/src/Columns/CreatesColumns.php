@@ -203,9 +203,9 @@ trait CreatesColumns
             $rowClass = '';
         }
 
-        $sort_dir = session('__grid.current_sort_direction');
-
-        $columnClass .= ' sorting_' . $sort_dir;
+        if ($sort_dir = session('__grid.current_sort_direction')) {
+            $columnClass .= ' sorting_' . $sort_dir;
+        }
 
         return compact('columnClass', 'rowClass');
     }

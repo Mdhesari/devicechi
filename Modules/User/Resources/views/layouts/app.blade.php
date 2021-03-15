@@ -24,6 +24,7 @@
 
     <link rel="canonical" href="{{ config('app.url') }}" />
     <!-- Styles -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="{{ mix('css/user/normalize.css') }}">
     <link rel="stylesheet" href="{{ mix('css/user/bootstrap-vue.css') }}">
 
@@ -38,6 +39,7 @@
     </script>
 
     @routes
+    <script src="https://kit.fontawesome.com/de1219be64.js" crossorigin="anonymous"></script>
     <script src="{{ mix('js/user/moment.js') }}"></script>
     <script src="{{ mix('js/user/user.js') }}" defer></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

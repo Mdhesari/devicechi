@@ -10,6 +10,7 @@ use App\Models\Ad;
 use Artesaos\SEOTools\Facades\TwitterCard;
 use JsonLd;
 use Log;
+use Modules\User\Entities\City;
 use Modules\User\Entities\PhoneAccessory;
 use OpenGraph;
 use SEOMeta;
@@ -20,18 +21,49 @@ class AdHomeController extends Controller
      * Display Ad home
      * @return Renderable
      */
-    public function index(Request $request)
+    public function index(Request $request, $city = null)
     {
+        if ($city) {
+            $city = City::whereName($city)->first();
+        }
 
-        $query = Ad::with('state.city')->latest()->includeMediaThumb()->published();
+        if ($city) {
+            $query = Ad::with('state.city')->where(function ($query) use ($city, $request) {
+                if (empty($request->query('q'))) {
+                    $query->searchLike('state.city.name', $city->name);
+                } else {
+                    $query->filterAd($request);
+                }
+            });
+        } else {
+            $query = Ad::with('state.city')->filterAd($request);
+        }
+
+        $qurey = $query->latest()->published();
 
         $ads = $query->paginate();
 
-        if ($request->expectsJson()) return $ads;
+        $ads->load([
+            'state.city',
+            'media' => function ($q) {
 
-        $proAds = $query->filterPro()->take(3)->get();
+                $q->activeOnly();
+            }
+        ]);
 
-        return inertia('Ad/Home', compact('ads', 'proAds'));
+        if ($request->expectsJson()) {
+            return $ads;
+        }
+
+        $search = $request->input('q');
+
+        $cityName = optional($city)->name;
+
+        $searchURL = route("user.ad.home", [
+            'city' => $cityName,
+        ]);
+
+        return inertia('Ad/Ads', compact('ads', 'search', 'cityName', 'searchURL'));
     }
 
     /**
@@ -88,10 +120,13 @@ class AdHomeController extends Controller
             ->append('short_url');
 
         $user = $request->user();
+        $is_bookmarked_for_user = false;
 
-        $is_bookmarked_for_user = $user->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
+        if ($user) {
+            $is_bookmarked_for_user = $user->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
 
-        $user->readAd($ad);
+            $user->readAd($ad);
+        }
 
         $accessories = PhoneAccessory::whereNotIn('id', $ad->accessories()->select('id')->pluck('id'))->get();
 
