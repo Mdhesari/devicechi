@@ -12,9 +12,12 @@ return [
         'defaults'       => [
             'title'        => false, // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description' => 'پلتفرم مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و',
+            'description' => 'پلتفرم تخصصی مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و غیره',
             'separator'    => ' - ',
             'keywords'     => [
+                'devicechi',
+                'device for sale',
+                'mobile for sale',
                 'sell mobile',
                 'buy mobile',
                 'smartphone',
@@ -22,12 +25,12 @@ return [
                 'marketplace',
                 'shop',
                 'shopping',
+                'دیوایس‌چی',
                 'فروش گوشی',
                 'خرید گوشی',
                 'فروشگاه دست دوم',
                 'گوشی هوشمند',
-                'آگهی',
-                'دیوار',
+                'آگهی موبایل',
                 'سامانه آگهی'
             ],
             'canonical'    => false, // Set null for using Url::current(), set false to total remove
@@ -52,8 +55,8 @@ return [
          * The default configurations to be used by the opengraph generator.
          */
         'defaults' => [
-            'title'        => "خرید و فروش موبایل کارکرده و با کیفیت", // set false to total remove
-            'description' => 'پلتفرم مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و',
+            'title'        => "سامانه تخصصی خرید و فروش موبایل، تبلت و لپ تاپ", // set false to total remove
+            'description' => 'پلتفرم تخصصی مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و غیره',
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => false,
             'site_name'   => false,
@@ -74,8 +77,8 @@ return [
          * The default configurations to be used by the json-ld generator.
          */
         'defaults' => [
-            'title'       => 'Over 9000 Thousand!', // set false to total remove
-            'description' => 'For those who helped create the Genki Dama', // set false to total remove
+            'title'        => "سامانه تخصصی خرید و فروش موبایل، تبلت و لپ تاپ", // set false to total remove
+            'description' => 'پلتفرم تخصصی مارکت پلیس برای خرید و فروش گوشی های کارکرده، برند های مختلف از جمله اپل، سامسونگ، هووآوی، شیائومی و غیره',
             'url'         => false, // Set null for using Url::current(), set false to total remove
             'type'        => 'WebPage',
             'images'      => [],

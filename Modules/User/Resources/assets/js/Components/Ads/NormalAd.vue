@@ -15,9 +15,6 @@
 			<div class="inner">
 				<div class="thumbnail">
 					<img :src="renderAdPicture(ad, 'thumb_url')" :alt="ad.title" />
-					<div class="bookmark">
-						<i class="fa-bookmark far" aria-hidden="true"></i>
-					</div>
 					<!-- <SaveButton :user="user" :ad="ad"></SaveButton> -->
 				</div>
 				<div class="details">
