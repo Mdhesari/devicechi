@@ -10,6 +10,8 @@ class City extends Model
 {
     use HasFactory;
 
+    const USER_SESSION_TO_EXPLORE = 'city_to_explore';
+
     public $timestamps = false;
 
     protected $fillable = [];

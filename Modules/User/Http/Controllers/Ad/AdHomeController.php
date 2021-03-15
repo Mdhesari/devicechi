@@ -24,7 +24,11 @@ class AdHomeController extends Controller
     public function index(Request $request, $city = null)
     {
         if ($city) {
-            $city = City::whereName($city)->first();
+            $city = $this->getCityByName($city);
+
+            $this->rememberCity($city);
+        } else {
+            $city = $this->getCityByName(session(City::USER_SESSION_TO_EXPLORE));
         }
 
         if ($city) {
@@ -63,7 +67,7 @@ class AdHomeController extends Controller
             'city' => $cityName,
         ]);
 
-        return inertia('Ad/Ads', compact('ads', 'search', 'cityName', 'searchURL'));
+        return inertia('Ad/Ads', compact('ads', 'search', 'searchURL'));
     }
 
     /**
@@ -181,5 +185,23 @@ class AdHomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getCityByName($name)
+    {
+        if (is_null($name)) {
+            return false;
+        }
+
+        return City::whereName($name)->first();
+    }
+
+    private function rememberCity($city)
+    {
+        if ($city) {
+            session(City::USER_SESSION_TO_EXPLORE, $city->name);
+        } else {
+            session()->forget(City::USER_SESSION_TO_EXPLORE);
+        }
     }
 }
