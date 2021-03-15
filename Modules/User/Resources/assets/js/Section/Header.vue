@@ -36,7 +36,9 @@
 				</div>
 				<div class="left-side">
 					<div class="user-actions">
-						<a v-if="!user" :href="route('user.login')">ورود یا ثبت نام</a>
+						<inertia-link v-if="!user" :href="route('user.login')"
+							>ورود یا ثبت نام</inertia-link
+						>
 						<UserDropDown v-if="user" :user="user"></UserDropDown>
 						<inertia-link :href="route('user.ad.create')" class="add-ads">
 							ثبت رایگان آگهی
