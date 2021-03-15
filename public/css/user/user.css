@@ -3201,6 +3201,10 @@ input[type=number] {
   color: #424242;
 }
 
+ul li a.active {
+  color: #161111 !important;
+}
+
 .header-site .top-header .left-side {
   display: flex;
 }
@@ -3217,18 +3221,18 @@ input[type=number] {
   background-color: #438a5e;
 }
 
-.header-site .top-header .left-side .user-actions a {
+.header-site .top-header .left-side .user-actions > a {
   font-size: 16px;
   color: #b3b3b3;
   transition: 0.3s all;
   margin-left: 8px;
 }
 
-.header-site .top-header .left-side .user-actions a:hover {
+.header-site .top-header .left-side .user-actions > a:hover {
   color: #424242;
 }
 
-.header-site .top-header .left-side .user-actions a:last-child {
+.header-site .top-header .left-side .user-actions > a:last-child {
   margin-left: 0;
 }
 

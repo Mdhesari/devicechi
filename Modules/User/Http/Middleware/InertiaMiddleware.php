@@ -6,6 +6,7 @@ use App\Space\AdminLte;
 use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Modules\User\Entities\City;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Providers\RouteServiceProvider;
 use SEOMeta;
@@ -32,6 +33,8 @@ class InertiaMiddleware
         Inertia::share('locale', config('app.locale'));
 
         Inertia::share('user', $request->user());
+
+        Inertia::share('cityName', session(City::USER_SESSION_TO_EXPLORE));
 
         Inertia::share('main_menu_items', function () {
             $adminlte = app(AdminLte::class);
