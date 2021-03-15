@@ -144,6 +144,10 @@ export default {
 					text: this.__('contact-us.subjects.bug_report')
 				},
 				{
+					value: 'suggestions',
+					text: this.__('contact-us.subjects.suggestions')
+				},
+				{
 					value: 'participate',
 					text: this.__('contact-us.subjects.participate')
 				},
