@@ -116,6 +116,7 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
             Route::delete('/force-delete/{admin}', [AdminController::class, 'forceDestroy'])->name('force-destroy');
 
+            Route::put('/restore/{user}', [UserController::class, 'restore'])->name('restore');
             Route::put('/restore/{admin}', [AdminController::class, 'restore'])->name('restore');
         });
 
@@ -169,7 +170,13 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
             Route::get('/update', [AdController::class, 'update'])->name('update');
 
-            Route::get('/delete', [AdController::class, 'destroy'])->name('destroy');
+            Route::get('/delete/{ad:id}', [AdController::class, 'approveDestroy'])->name('destroy');
+
+            Route::delete('/force-delete/{ad:id}', [AdController::class, 'forceDestroy'])->name('force-destroy');
+
+            Route::delete('/delete/{ad:id}', [AdController::class, 'destroy']);
+
+            Route::put('/restore/{ad}', [AdController::class, 'restore'])->name('restore');
 
             Route::put('/update/accept/{ad}', [AdController::class, 'accept'])->name('accept');
 

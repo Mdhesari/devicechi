@@ -159,7 +159,6 @@ class AdRepository extends Repository implements
     public function delete($ad)
     {
         if (!is_object($ad)) {
-
             $ad = $this->find($ad);
         }
 

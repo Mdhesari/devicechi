@@ -40,7 +40,7 @@
 							>ورود یا ثبت نام</inertia-link
 						>
 						<UserDropDown v-if="user" :user="user"></UserDropDown>
-						<inertia-link :href="route('user.ad.create')" class="add-ads">
+						<inertia-link :href="route('user.ad.create')" class="d-none d-lg-inline-block add-ads">
 							ثبت رایگان آگهی
 						</inertia-link>
 					</div>

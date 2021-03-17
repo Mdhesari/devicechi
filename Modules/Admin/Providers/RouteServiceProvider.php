@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Providers;
 
+use App\Models\Ad;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Admin\Entities\Admin;
@@ -69,6 +70,21 @@ class RouteServiceProvider extends ServiceProvider
                 return Admin::withTrashed()->findOrFail($value);
 
             return Admin::findOrFail($value);
+        });
+
+        Route::bind('ad', function ($value) {
+
+            $isRoute = request()->routeIs([
+                'admin.ads.destroy',
+                'admin.ads.force-destroy',
+                'admin.ads.restore'
+            ]);
+
+            if ($isRoute) {
+                return Ad::withTrashed()->findOrFail($value);
+            }
+
+            return Ad::whereSlug($value)->first();
         });
     }
 
