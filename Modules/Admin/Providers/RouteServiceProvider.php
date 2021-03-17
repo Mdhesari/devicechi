@@ -80,10 +80,11 @@ class RouteServiceProvider extends ServiceProvider
                 'admin.ads.restore'
             ]);
 
-            if ($isRoute)
+            if ($isRoute) {
                 return Ad::withTrashed()->findOrFail($value);
+            }
 
-            return Ad::findOrFail($value);
+            return Ad::whereSlug($value)->first();
         });
     }
 
