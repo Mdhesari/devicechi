@@ -5,5 +5,9 @@
     "/css/user/user.css": "/css/user/user.css",
     "/css/user/bootstrap-vue.css": "/css/user/bootstrap-vue.css",
     "/css/user/swiper.css": "/css/user/swiper.css",
-    "/css/user/normalize.css": "/css/user/normalize.css"
+    "/css/user/normalize.css": "/css/user/normalize.css",
+    "/js/team/team.js": "/js/team/team.js",
+    "/css/team/team.css": "/css/team/team.css",
+    "/css/team/tailwind.css": "/css/team/tailwind.css",
+    "/css/user/bootstrap-rtl.css": "/css/user/bootstrap-rtl.css"
 }

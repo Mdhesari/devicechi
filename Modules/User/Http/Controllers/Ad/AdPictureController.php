@@ -68,7 +68,6 @@ class AdPictureController extends BaseAdController
         }
 
         if ($request->expectsJson()) {
-
             return response([
                 'media' => $media
             ]);

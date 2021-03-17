@@ -91,23 +91,6 @@ export default {
 			ad: this.getProp('ad')
 		}
 	},
-	updated() {
-		this.isLoading = false
-		let error
-
-		this.isLoading = false
-
-		if ((error = this.form.errors.pictures)) {
-			this.$to(error)
-		} else {
-			this.uploadForm.pictures = []
-			this.form.pictures = this.getProp('pictures')
-
-			if (!this.form.activePicture) {
-				this.form.activePicture = this.form.pictures[0].id
-			}
-		}
-	},
 	methods: {
 		next(ev) {
 			// go to next step
@@ -182,15 +165,31 @@ export default {
 
 			this.isLoading = true
 
-			this.uploadForm.post(
-				route('user.ad.step_phone_pictures_upload', {
-					ad: this.ad.slug
-				}),
-				{
-					// peserveState: true,
-					// preserveScroll: true
-				}
-			)
+			this.uploadForm
+				.post(
+					route('user.ad.step_phone_pictures_upload', {
+						ad: this.ad.slug
+					}),
+					{
+						peserveState: true,
+						preserveScroll: true
+					}
+				)
+				.then((respones) => {
+					let error
+
+					if ((error = this.form.errors.pictures)) {
+						this.$to(error)
+					} else {
+						this.uploadForm.pictures = []
+						this.form.pictures = this.getProp('pictures')
+
+						if (!this.form.activePicture) {
+							this.form.activePicture = this.form.pictures[0].id
+						}
+					}
+				})
+				.finally(() => (this.isLoading = false))
 		},
 		async removePicture(picture) {
 			let is_blob = 'original_file' in picture
