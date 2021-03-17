@@ -12,6 +12,7 @@
 */
 
 use Modules\User\Http\Controllers\Ad\AdHomeController;
+use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\Home\HomeController;

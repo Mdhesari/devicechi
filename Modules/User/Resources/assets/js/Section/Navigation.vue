@@ -10,6 +10,14 @@
 			<img :src="url('images/logo.png')" alt="logo" />
 		</div>
 		<ul>
+			<li class="d-block d-md-none">
+				<inertia-link
+					:href="route('user.ad.create')"
+					class="add-ads"
+				>
+					ثبت رایگان آگهی
+				</inertia-link>
+			</li>
 			<MenuItem
 				v-for="(item, index) in items"
 				:key="index"
@@ -19,12 +27,6 @@
 			<li class="user-sign d-block d-md-none">
 				<a :href="route('user.login')">ورود یا ثبت نام </a>
 			</li>
-
-			<!-- <li><a href="#">صفحه اصلی</a></li>
-			<li><a href="#">همه آگهی ها</a></li>
-			<li><a href="#">تماس با ما</a></li>
-			<li><a href="#">شرایط ثبت آگهی</a></li>
-			<li><a href="#">اعلان ها</a></li> -->
 		</ul>
 	</nav>
 </template>
