@@ -145,7 +145,7 @@ export default {
 				},
 				{
 					value: 'suggestions',
-					text: this.__('contact-us.subjects.suggestions')
+					text: this.__('contact-us.subjects.suggestion')
 				},
 				{
 					value: 'participate',

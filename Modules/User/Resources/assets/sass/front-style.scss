@@ -8,7 +8,7 @@
 @import './fonts.scss';
 
 $pallete: (
-	'primary': #ff6704,
+	'primary': #0277bc,
 	'dark': #424242,
 	'light_silver': #f5f6fa,
 	'white': #ffffff,
@@ -194,7 +194,6 @@ a {
 
 .header-site #profile-box {
 	button {
-		bottom: 5px;
 		background-color: transparent;
 		border: none;
 
@@ -1327,7 +1326,7 @@ input[type='number'] {
 	padding: 45px 0;
 	position: relative;
 	// z-index: 1;
-	background-image: linear-gradient(to right, #78f2e9, #b65eba);
+	background-image: linear-gradient(to right, #58a5ef, #0277bc);
 	color: pallete('white');
 
 	.page-title {
@@ -1568,6 +1567,16 @@ input[type='number'] {
 			color: pallete('gray');
 			margin-bottom: 16px;
 		}
+	}
+}
+
+.normal-ad {
+	.publish-time {
+		position: absolute;
+		width: 100%;
+		right: 0;
+		padding: 0 15px;
+		bottom: 0;
 	}
 }
 
@@ -2474,6 +2483,7 @@ input[type='number'] {
 	.inner {
 		.ad-name {
 			color: pallete('dark_gray');
+			font-size: 20px;
 		}
 
 		&:hover .ad-name {
@@ -2490,10 +2500,11 @@ input[type='number'] {
 			position: relative;
 			transition: 350ms;
 			height: 250px;
+			width: 250px;
 			z-index: 10;
 
 			img {
-				object-fit: cover;
+				// object-fit: cover;
 			}
 		}
 
@@ -2534,8 +2545,10 @@ input[type='number'] {
 			top: -25px;
 			box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 			// min-height: 125px;
-			height: 230px;
+			height: 200px;
+			width: 250px;
 			font-size: 14px;
+			background-color: #fff;
 		}
 	}
 }
@@ -3628,9 +3641,7 @@ $pallete: (
 	display: inline-block;
 	padding: 0 8px;
 }
-.user-sign {
-	display: none !important;
-}
+
 .header-site .top-header .middel-side .main-menu ul li a {
 	font-size: 16px;
 	color: #b3b3b3;
@@ -3969,7 +3980,7 @@ ul li a.active {
 .danger-back {
 	background-color: #dc3545;
 }
-.badge {
+.custom-badge {
 	background-color: #007bff;
 	border-radius: 50%;
 	width: 20px;
@@ -4025,7 +4036,7 @@ ul li a.active {
 .mobile-logo-holder img {
 	width: 100%;
 }
-@media (max-width: 990px) {
+@media (max-width: 1200px) {
 	.main-site .banner-site .h1holder h1 {
 		font-size: 18px;
 	}
@@ -4053,17 +4064,12 @@ ul li a.active {
 		display: block;
 		margin-bottom: 16px;
 	}
-	.user-sign {
-		display: block !important;
-	}
+
 	.header-site .burger-btn {
 		display: block;
 	}
 	.header-site .top-header .left-side .user-actions a {
 		font-size: 14px;
-	}
-	.header-site .top-header .left-side .user-actions > a:last-child {
-		display: none;
 	}
 	.city-btn span {
 		font-size: 14px;

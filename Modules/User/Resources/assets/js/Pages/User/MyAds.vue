@@ -7,7 +7,7 @@
                     :key="ad.id"
                     :ad="ad"
                     :countAds="ads.data.length"
-                    :useFour="false"
+                    :useFour="true"
                 >
                     <p :class="`status ${renderStatusClass(ad.status)}`">
                         {{ renderStatusLabel(ad.status) }}

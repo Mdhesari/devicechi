@@ -8,7 +8,7 @@
 			id="darkBack"
 			@click="showNavbar = false"
 		></div>
-		<div class="container">
+		<div class="container-md">
 			<div class="top-header">
 				<div class="right-side">
 					<div class="logo-holder">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="left-side">
 					<div class="user-actions">
-						<inertia-link v-if="!user" :href="route('user.login')"
+						<inertia-link v-if="!user" :href="route('user.login')" class="d-none d-lg-inline-block"
 							>ورود یا ثبت نام</inertia-link
 						>
 						<UserDropDown v-if="user" :user="user"></UserDropDown>

@@ -1,8 +1,9 @@
 <template>
 	<div
-		class="normal-ad col-sm-6"
+		class="normal-ad col-12"
 		:class="{
-			'col-md-4': useFour
+			'col-md-4': useFour,
+			'col-md-3': !useFour
 		}"
 	>
 		<inertia-link
@@ -18,9 +19,9 @@
 					<!-- <SaveButton :user="user" :ad="ad"></SaveButton> -->
 				</div>
 				<div class="details">
-					<h5 class="ad-name">
+					<h3 class="ad-name">
 						{{ ad.title }}
-					</h5>
+					</h3>
 					<div class="ad-price text-muted mt-4 mb-3">
 						<strong>
 							<span>{{ formatMoney(ad.price) }}</span>
