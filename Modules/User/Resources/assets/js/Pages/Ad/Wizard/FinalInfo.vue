@@ -86,7 +86,9 @@ export default {
 	methods: {
 		next() {
 			if (!this.form.agreement_status) {
-				this.$to(this.__('ads.form.errors.uleitle', 'ads.form.errors.uleesc'))
+				this.$to(
+					this.__('ads.form.error.rule.title', 'ads.form.error.rule.desc')
+				)
 				return 0
 			}
 
