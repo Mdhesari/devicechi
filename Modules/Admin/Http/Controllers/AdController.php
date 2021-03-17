@@ -7,9 +7,11 @@ use App\Grids\AdsSingleGrid;
 use App\Models\Ad;
 use App\Notifications\AdAcceptedNotification;
 use App\Notifications\AdIgnoredNotification;
+use GuzzleHttp\Psr7\FnStream;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Validation\ValidationException;
 
 class AdController extends Controller
 {
@@ -36,7 +38,7 @@ class AdController extends Controller
             ->renderOn('admin::grid.index', compact('page_title'));
     }
 
-    /**
+    /**\
      * Show the form for creating a new resource.
      * @return Renderable
      */
@@ -120,9 +122,50 @@ class AdController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy(Ad $ad)
     {
-        //
+        // soft delete
+        $result = $ad->delete();
+
+        if (!$result) {
+            return abort(500, __(' Unable to delete ad! '));
+        }
+
+        return redirect()->back()->with('success', __(' Ad successfully deleted! '));
+    }
+
+
+    public function approveDestroy(Ad $ad)
+    {
+        $page_title = __(' Delete Ad ');
+
+        return view('admin::ads.delete', compact('ad', 'page_title'));
+    }
+
+    public function forceDestroy(Ad $ad)
+    {
+        $ad->contacts()->delete();
+
+        $result = $ad->forceDelete();
+
+        if ($result) {
+            session()->flash('success', __(' Ad successfully force deleted! '));
+        }
+
+        return redirect()->route('admin.ads.list');
+    }
+
+    public function restore(Ad $ad)
+    {
+        if ($ad->trashed()) {
+            $result = $ad->restore();
+
+            if ($result) {
+                session()->flash('success', __('Successfully restored ad.'));
+            }
+        }
+
+        return back();
     }
 
     public function accept(Ad $ad, Request $request)

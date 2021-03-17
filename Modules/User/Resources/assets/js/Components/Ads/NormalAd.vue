@@ -1,6 +1,9 @@
 <template>
 	<div
-		class="normal-ad col-12 col-sm-6 col-md-3"
+		class="normal-ad col-12 col-sm-6 col-md-4"
+		:class="{
+			'col-lg-3': !useFour
+		}"
 	>
 		<inertia-link
 			:href="
@@ -51,7 +54,7 @@ export default {
 	props: {
 		useFour: {
 			type: Boolean,
-			default: true
+			default: false
 		},
 		ad: {
 			type: Object

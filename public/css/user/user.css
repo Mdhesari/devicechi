@@ -2264,6 +2264,12 @@ input[type=number] {
   z-index: 15;
 }
 
+.normal-ads .inner {
+  max-width: 100%;
+  width: 250px;
+  margin: 0 auto;
+}
+
 .normal-ads .inner .ad-name {
   color: #727272;
   font-size: 20px;
@@ -2283,7 +2289,7 @@ input[type=number] {
   position: relative;
   transition: 350ms;
   height: 250px;
-  width: 250px;
+  width: 100%;
   z-index: 10;
 }
 
@@ -2301,9 +2307,17 @@ input[type=number] {
 }
 
 .normal-ads .edit-ad {
+  display: inline-block;
   position: absolute;
+  top: 0;
   bottom: 0;
-  padding-bottom: 16px;
+  padding: 4px;
+  font-size: 12px;
+  background-color: #0277bc;
+  color: #ffffff;
+  border-radius: 6px;
+  z-index: 14;
+  height: 30px;
 }
 
 .normal-ads .inner .details {
@@ -2314,7 +2328,7 @@ input[type=number] {
   top: -25px;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
   height: 200px;
-  width: 250px;
+  width: 100%;
   font-size: 14px;
   background-color: #fff;
 }

@@ -9,6 +9,7 @@ use App\Models\Ad\AdContact;
 use App\Models\Ad\AdContactType;
 use App\Traits\Uuids;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Log;
 use Modules\User\Entities\K;
@@ -27,7 +28,8 @@ class Ad extends Model implements HasMedia
     use HasFactory,
         Notifiable,
         Sluggable,
-        InteractsWithMedia;
+        InteractsWithMedia,
+        SoftDeletes;
 
     const STATUS_REJECTED = 0;
     const STATUS_AVAILABLE = 1;
