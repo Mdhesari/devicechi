@@ -55,8 +55,8 @@
 				:key="index"
 				class="dropdown-contact-item"
 				@click="showContactInput(contact_type)"
-                right
-                text="Right align"
+				right
+				text="Right align"
 			>
 				<b-icon
 					:icon="renderContactTypeIcon(contact_type)"
@@ -89,39 +89,38 @@ export default {
 	mixins: [ContactTypeMixin],
 	methods: {
 		verifyContact() {
-			axios
-				.post(
-					route('user.ad.step_phone_contact.verify', {
-						ad: this.ad.slug
-					}),
-					{
-						_method: 'put',
-						ad_contact_id: this.ad_contact.id,
-						verification_code: this.input_data.verify_value
-					}
-				)
-				.then((response) => {
-					if (response.data.status) {
-						this.$to(this.__('ads.form.success.contact.add.title'), '', 's')
-						this.$emit('addContact', response.data.contact)
-						this.HideContactInput()
-					} else {
-						if (response.data.error) {
-							const error = response.data.error
+			axios.post(
+				route('user.ad.step_phone_contact.verify', {
+					ad: this.ad.slug
+				}),
+				{
+					_method: 'put',
+					ad_contact_id: this.ad_contact.id,
+					verification_code: this.input_data.verify_value,
+					onSuccess: (response) => {
+						if (response.data.status) {
+							this.$to(this.__('ads.form.success.contact.add.title'), '', 's')
+							this.$emit('addContact', response.data.contact)
+							this.HideContactInput()
+						} else {
+							if (response.data.error) {
+								const error = response.data.error
 
-							this.$to(error)
+								this.$to(error)
+							}
+						}
+					},
+					onError: (error) => {
+						if (error.response.data.errors) {
+							const errors = error.response.data.errors
+
+							errors.verification_code.forEach((error) => {
+								this.$to(error)
+							})
 						}
 					}
-				})
-				.catch((error) => {
-					if (error.response.data.errors) {
-						const errors = error.response.data.errors
-
-						errors.verification_code.forEach((error) => {
-							this.$to(error)
-						})
-					}
-				})
+				}
+			)
 		},
 		addContact(ev) {
 			// in order to prevent event bubbling...
