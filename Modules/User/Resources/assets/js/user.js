@@ -33,7 +33,7 @@ InertiaProgress.init({
 })
 
 Vue.use(InertiaApp)
-Vue.use(InertiaForm)
+// Vue.use(InertiaForm)
 Vue.use(PortalVue)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

@@ -46,7 +46,7 @@
 					id="password"
 					v-model="form.password"
 					:placeholder="__('profile.placeholder.password')"
-				></b-form-input>
+				></b-form-input>p
 
 				<p class="help text-muted" v-text="__('profile.help.password')"></p>
 
@@ -116,20 +116,21 @@ export default {
 		onSubmit(event) {
 			event.preventDefault()
 
-			this.form
-				.post(route('user.profile.update'), {
-					preserveScroll: true,
-					preserveState: false
-				})
-				.then((respone) => {
-					if (this.$page.flash.toSuccess) {
+			this.form.post(route('user.profile.update'), {
+				preserveScroll: true,
+				preserveState: false,
+				onSuccess: () => {
+					const flash = this.getProp('flash')
+
+					if (flash.toSuccess) {
 						let res = this.$to(
 							'اطلاعات حساب کاربری با موفقیت بروزرسانی شد.',
 							'',
 							's'
 						)
 					}
-				})
+				}
+			})
 		}
 	}
 }
