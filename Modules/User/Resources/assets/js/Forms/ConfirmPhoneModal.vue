@@ -90,7 +90,6 @@ export default {
 
 	methods: {
 		activateAuth(phone, ratelimiter) {
-			console.log(phone)
 			this.phone = phone
 			this.ratelimiter = ratelimiter
 

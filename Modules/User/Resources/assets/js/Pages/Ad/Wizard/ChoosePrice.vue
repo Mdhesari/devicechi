@@ -104,7 +104,6 @@ export default {
 			}
 			price = this.fixGivenNumber(price)
 			if (Number(price) > 0) {
-				console.log(price)
 				price = this.formatPrice(price)
 				if (price.length > 10) {
 					this.isInvalid = true

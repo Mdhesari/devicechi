@@ -118,7 +118,7 @@ export default {
 
 			this.form.post(route('user.profile.update'), {
 				preserveScroll: true,
-				preserveState: false,
+				preserveState: true,
 				onSuccess: () => {
 					const flash = this.getProp('flash')
 

@@ -100,8 +100,6 @@ export default {
 		},
 		nextUsingChange(variant_id) {
 			this.form.variant_id = variant_id
-
-			console.log(this.form.variant_id)
 		},
 		printVariantInfo(variant) {
 			return variant.ram + ' / ' + variant.storage

@@ -165,31 +165,31 @@ export default {
 
 			this.isLoading = true
 
-			this.uploadForm
-				.post(
-					route('user.ad.step_phone_pictures_upload', {
-						ad: this.ad.slug
-					}),
-					{
-						peserveState: true,
-						preserveScroll: true
-					}
-				)
-				.then((respones) => {
-					let error
+			this.uploadForm.post(
+				route('user.ad.step_phone_pictures_upload', {
+					ad: this.ad.slug
+				}),
+				{
+					peserveState: true,
+					preserveScroll: true,
+					onSuccess: (response) => {
+						let error
 
-					if ((error = this.form.errors.pictures)) {
-						this.$to(error)
-					} else {
-						this.uploadForm.pictures = []
-						this.form.pictures = this.getProp('pictures')
+						if ((error = this.form.errors.pictures)) {
+							this.$to(error)
+						} else {
+							this.uploadForm.pictures = []
+							this.form.pictures = this.getProp('pictures')
 
-						if (!this.form.activePicture) {
-							this.form.activePicture = this.form.pictures[0].id
+							if (!this.form.activePicture) {
+								this.form.activePicture = this.form.pictures[0].id
+							}
 						}
+
+						this.isLoading = false
 					}
-				})
-				.finally(() => (this.isLoading = false))
+				}
+			)
 		},
 		async removePicture(picture) {
 			let is_blob = 'original_file' in picture

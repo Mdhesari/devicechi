@@ -81,15 +81,6 @@ export default {
 			)
 		}
 	},
-	updated() {
-		this.isLoading = false
-		if (this.getProp('trigger_auth')) {
-			this.$refs.confirmModal.activateAuth(
-				this.getProp('phone'),
-				this.getProp('ratelimiter')
-			)
-		}
-	},
 	methods: {
 		onSubmit(e) {
 			e.preventDefault()
@@ -101,7 +92,16 @@ export default {
 		sendLoginCode() {
 			const form = this.form.post(route('user.auth'), {
 				preserveScroll: true,
-				preserveState: true
+				preserveState: true,
+				onSuccess: (response) => {
+					this.isLoading = false
+					if (this.getProp('trigger_auth')) {
+						this.$refs.confirmModal.activateAuth(
+							this.getProp('phone'),
+							this.getProp('ratelimiter')
+						)
+					}
+				}
 			})
 		},
 		onReset() {

@@ -238,7 +238,6 @@
 
         $("#copy-button").bind("click", function() {
             var input = document.getElementById("caption");
-            console.log(input)
             input.select();
             input.setSelectionRange(0, input.value.length + 1);
             try {

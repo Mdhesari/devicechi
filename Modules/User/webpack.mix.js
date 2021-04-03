@@ -10,6 +10,8 @@ mix.setPublicPath('../../public').mergeManifest()
 
 // mix.browserSync('localhost');
 
+mix.options({ uglify: { uglifyOptions: { compress: { drop_console: true } } } })
+
 mix
 	.js(__dirname + '/Resources/assets/js/user.js', 'js/user/user.js')
 	.js(__dirname + '/Resources/assets/js/libs/moment.js', 'js/user/moment.js')

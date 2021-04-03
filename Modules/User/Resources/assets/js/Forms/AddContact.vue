@@ -149,8 +149,6 @@ export default {
 					}
 				)
 				.then((response) => {
-					console.log(response)
-
 					if (response.data.errors) {
 						let errors = response.data.errors
 
@@ -168,12 +166,8 @@ export default {
 					}
 				})
 				.catch((error) => {
-					console.log(error)
-
 					if (error.response.data.errors) {
 						const errors = error.response.data.errors
-
-						console.log(errors)
 
 						if (errors.value)
 							errors.value.forEach((val) => {

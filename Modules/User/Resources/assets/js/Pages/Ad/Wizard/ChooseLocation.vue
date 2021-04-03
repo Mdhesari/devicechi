@@ -102,28 +102,28 @@ export default {
 		next(ev) {
 			// this.$emit("next");
 
-			this.form
-				.post(
-					this.route('user.ad.step_phone_location', {
-						ad: this.ad.slug
-					}),
-					{
-						preserveScroll: true
+			this.form.post(
+				this.route('user.ad.step_phone_location', {
+					ad: this.ad.slug
+				}),
+				{},
+				{
+					preserveScroll: true,
+					onSuccess(response) {
+						if (this.form.errors.city) {
+							this.$to(
+								this.__('ads.form.error.location.city.title'),
+								this.__('ads.form.error.location.city.desc')
+							)
+						} else if (this.form.errors.state) {
+							this.$to(
+								this.__('ads.form.error.location.state.title'),
+								this.__('ads.form.error.location.state.desc')
+							)
+						}
 					}
-				)
-				.then((response) => {
-					if (this.form.errors.city) {
-						this.$to(
-							this.__('ads.form.error.location.city.title'),
-							this.__('ads.form.error.location.city.desc')
-						)
-					} else if (this.form.errors.state) {
-						this.$to(
-							this.__('ads.form.error.location.state.title'),
-							this.__('ads.form.error.location.state.desc')
-						)
-					}
-				})
+				}
+			)
 		},
 		async loadCityStates(id) {
 			this.form.state = null
