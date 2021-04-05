@@ -38,12 +38,12 @@
                                 </li> -->
 								<li>
 									<div class="info">
-										<a href="mail:support@mobileforsale.ir">
+										<a href="mail:support@devicechi.com">
 											<span class="icon">
 												<b-icon icon="mailbox"></b-icon>
 											</span>
 											<span>
-												support@mobileforsale.ir
+												support@devicechi.com
 											</span>
 										</a>
 									</div>

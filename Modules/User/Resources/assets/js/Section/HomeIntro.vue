@@ -6,7 +6,7 @@
 					<div class="vector-holder">
 						<img
 							:src="url('images/sale.png')"
-							alt="mobileforsale submission vector"
+							alt="devicechi submission vector"
 						/>
 					</div>
 				</div>
@@ -58,7 +58,7 @@
 					<div class="vector-holder">
 						<img
 							:src="url('images/vector-home-1.svg')"
-							alt="Mobileforsale services vector"
+							alt="devicechi services vector"
 						/>
 					</div>
 				</div>

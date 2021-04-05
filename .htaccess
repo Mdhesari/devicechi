@@ -37,7 +37,7 @@ RewriteRule ^(.*)$ public/$1 [L]
 RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
 RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
-RewriteCond %{HTTP_HOST} ^mobileforsale\.ir$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.mobileforsale\.ir$
+RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
 RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
 

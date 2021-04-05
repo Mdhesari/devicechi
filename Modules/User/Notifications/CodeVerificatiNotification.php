@@ -88,7 +88,7 @@ class CodeVerificatiNotification extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         if (app()->environment('local')) {
-            Log::info('Mobileforsale.ir : Your verification code is ' . $this->getCode($notifiable) . ', number requested : ' . ($notifiable->routeNotificationFor('sms', $this) ?? $notifiable->phone));
+            Log::info('Devicechi.com : Your verification code is ' . $this->getCode($notifiable) . ', number requested : ' . ($notifiable->routeNotificationFor('sms', $this) ?? $notifiable->phone));
         }
 
         return [
