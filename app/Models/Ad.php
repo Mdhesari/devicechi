@@ -437,7 +437,6 @@ class Ad extends Model implements HasMedia
 
     public function getAgeInfo()
     {
-
         $text = "";
 
         $age = $this->age;
@@ -446,11 +445,11 @@ class Ad extends Model implements HasMedia
 
         if ($age->from == "-") {
             $text = trans("user::ads.form.label.age.min", [
-                'month' => $age->from
+                'month' => $age->to
             ]);
         } else if ($age->to == "+") {
             $text = trans("user::ads.form.label.age.max", [
-                'month' => $age->to
+                'month' => $age->from
             ]);
         } else {
             $text = trans("user::ads.form.label.age.between", [
