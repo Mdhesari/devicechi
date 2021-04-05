@@ -84,6 +84,10 @@ class RouteServiceProvider extends ServiceProvider
                 return Ad::withTrashed()->findOrFail($value);
             }
 
+            if (is_numeric($value)) {
+                return Ad::findOrFail($value);
+            }
+
             return Ad::whereSlug($value)->first();
         });
     }
