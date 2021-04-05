@@ -12,7 +12,6 @@
     "devDependencies": {
         "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^7.0.3",
-        "laravel-jetstream": "^0.0.3",
         "laravel-mix": "^5.0.9",
         "laravel-mix-merge-manifest": "^0.1.2",
         "resolve-url-loader": "^3.1.0",
