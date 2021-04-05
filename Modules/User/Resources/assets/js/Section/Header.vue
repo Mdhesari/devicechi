@@ -36,11 +36,20 @@
 				</div>
 				<div class="left-side">
 					<div class="user-actions">
-						<inertia-link v-if="!user" :href="route('user.login')" class="d-none d-lg-inline-block"
+						<inertia-link
+							v-if="!user"
+							:href="route('user.login')"
+							class="d-none d-lg-inline-block"
 							>ورود یا ثبت نام</inertia-link
 						>
 						<UserDropDown v-if="user" :user="user"></UserDropDown>
-						<inertia-link :href="route('user.ad.create')" class="d-none d-lg-inline-block add-ads">
+						<inertia-link
+							:href="route('user.ad.create')"
+							class="add-ads"
+							:class="{
+								'd-none d-lg-inline-block': (typeof user === 'object' && user !== null)
+							}"
+						>
 							ثبت رایگان آگهی
 						</inertia-link>
 					</div>
