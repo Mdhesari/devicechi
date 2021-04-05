@@ -26,7 +26,7 @@
 							</div>
 							<div class="title">
 								<h3>
-									گام شماره اول
+									جستجو و بررسی
 								</h3>
 							</div>
 							<div class="desc">
@@ -43,7 +43,7 @@
 							</div>
 							<div class="title">
 								<h3>
-									گام شماره دوم
+									انتخاب و تماس
 								</h3>
 							</div>
 							<div class="desc">
@@ -60,7 +60,7 @@
 							</div>
 							<div class="title">
 								<h3>
-									گام شماره سوم
+									پرداخت و دریافت
 								</h3>
 							</div>
 							<div class="desc">
