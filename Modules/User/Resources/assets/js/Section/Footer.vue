@@ -86,12 +86,12 @@
 								></a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://instagram.com/devicechi">
 									<i class="fa fa-instagram" aria-hidden="true"></i
 								></a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://t.me/devicechi">
 									<i class="fa fa-paper-plane-o" aria-hidden="true"></i
 								></a>
 							</li>
