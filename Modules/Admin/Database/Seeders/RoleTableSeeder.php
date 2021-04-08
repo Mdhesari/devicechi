@@ -27,13 +27,21 @@ class RoleTableSeeder extends Seeder
 
         $permissions = $permissions->map(fn ($name) => ['name' => $name, 'guard_name' => 'web']);
 
-        Permission::insert($permissions->toArray());
+        if (Permission::count() > 0) {
+            $permissions = $permissions->filter(fn ($name) => !(Permission::whereName($name)->exists()));
+        }
+
+        $data = $permissions->toArray();
+
+        if (!empty($data)) {
+            Permission::insert($data);
+        }
 
         $roles = collect(config('admin.roles'));
 
         $roles->map(function ($role_permissions, $name) {
 
-            $role = Role::create(['name' => $name, 'guard_name' => 'web']);
+            $role = Role::firstOrCreate(['name' => $name, 'guard_name' => 'web']);
 
             $permissions = Permission::query();
 

@@ -54,7 +54,7 @@ class AdminLteServiceProvider extends ServiceProvider
      */
     private function registerViewComposers(Factory $view)
     {
-        $view->composer(config('admin.layout', 'app'), AdminLteComposer::class);
+        $view->composer(config('admin.layout', 'app', 'page'), AdminLteComposer::class);
     }
 
     /**

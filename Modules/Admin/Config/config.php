@@ -143,6 +143,9 @@ return [
         'read menu-editor',
         'update menu-editor',
         'delete menu-editor',
+        'create pages',
+        'read pages',
+        'delete pages',
     ],
     'instagram' => [
         'templates' => [

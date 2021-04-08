@@ -29,6 +29,7 @@ use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
 use Modules\Admin\Http\Controllers\MenuEditorController;
+use Modules\Admin\Http\Controllers\PageController;
 use Modules\Admin\Http\Controllers\Payment\PaymentController;
 use Modules\Admin\Http\Controllers\RegisterController;
 use Modules\Admin\Http\Controllers\RolePermissionController;
@@ -221,6 +222,15 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         Route::delete('/groups/delete/{menu}', [MenuEditorController::class, 'destroy']);
 
         Route::post('/groups/{menu}', [MenuEditorController::class, 'storeItems'])->name('store');
+    });
+
+    Route::prefix('pages')->middleware('can:read pages')->name('pages.')->group(function () {
+
+        Route::get('/', [PageController::class, 'show'])->name('show');
+
+        Route::middleware('can:create pages')->group(function () {
+            Route::get('/new', [PageController::class, 'create'])->name('create');
+        });
     });
 });
 
