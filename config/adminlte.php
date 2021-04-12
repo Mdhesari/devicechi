@@ -31,6 +31,25 @@ return [
                 'icon' => 'fa fa-bars nav-icon',
             ],
             [
+                'text' =>  ' Pages Management ',
+                'permission' => 'read pages',
+                'icon' => 'fab fa-buysellads nav-icon',
+                'submenu' => [
+                    [
+                        'text' => ' Pages List ',
+                        'route' => 'admin.pages.list',
+                        'route_params' => [],
+                        'icon' => 'fa fa-list-ul nav-icon'
+                    ],
+                    [
+                        'text' => ' Create Page ',
+                        'route' => 'admin.pages.create',
+                        'route_params' => [],
+                        'icon' => 'fa fa-plus nav-icon'
+                    ],
+                ],
+            ],
+            [
                 'text' =>  ' Ads Management ',
                 'permission' => 'read ad',
                 'icon' => 'fab fa-buysellads nav-icon',

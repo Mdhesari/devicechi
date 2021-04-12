@@ -2,6 +2,8 @@
 
 namespace Modules\Admin\Http\Controllers;
 
+use App\Grids\PagesGrid;
+use App\Models\Page;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -9,15 +11,21 @@ use Modules\Admin\Http\Requests\PageCreateRequest;
 
 class PageController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * Show the specified resource.
+     * @param int $id
      * @return Renderable
      */
-    public function index()
+    public function index(Request $request, PagesGrid $grid)
     {
-        $page_title = __(' Create Page ');
+        $page_title = __(' Pages List ');
 
-        return view('admin::pages.create', compact('page_title'));
+        $query = Page::query();
+
+        return $grid
+            ->create(compact('query', 'request'))
+            ->renderOn('admin::grid.index', compact('page_title'));
     }
 
     /**

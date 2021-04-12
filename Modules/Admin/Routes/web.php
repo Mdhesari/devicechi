@@ -225,14 +225,17 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
     });
 
     Route::prefix('pages')->middleware('can:read pages')->name('pages.')->group(function () {
-
-        Route::get('/', [PageController::class, 'show'])->name('show');
-
         Route::middleware('can:create pages')->group(function () {
             Route::get('/new', [PageController::class, 'create'])->name('create');
-
             Route::post('/new', [PageController::class, 'store']);
+            Route::get('/edit/{page}', [PageController::class, 'show'])->name('edit');
         });
+
+        Route::middleware('can:create pages')->group(function () {
+            Route::delete('/destroy/{page}', [PageController::class, 'destroy'])->name('destroy');
+        });
+
+        Route::get('/', [PageController::class, 'index'])->name('list');
     });
 });
 
