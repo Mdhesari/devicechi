@@ -4,6 +4,7 @@ namespace Modules\Admin\Http\Controllers;
 
 use App\Grids\PagesGrid;
 use App\Models\Page;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -47,6 +48,16 @@ class PageController extends Controller
     public function store(PageCreateRequest $request)
     {
         $admin = $request->user();
+
+        if ($request->slug) {
+            $request->merge([
+                'slug' => SlugService::createSlug(
+                    Page::class,
+                    'slug',
+                    trim($request->slug, '/')
+                ),
+            ]);
+        }
 
         $admin->pages()->create($request->all());
 
