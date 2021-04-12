@@ -31,7 +31,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     <!-- form start -->
-                    <form action="{{ route("admin.payments.add") }}" method="POST" role="form">
+                    <form action="{{ route("admin.pages.create") }}" method="POST" role="form">
                         @csrf
 
                         <div class="form-group">
@@ -43,14 +43,22 @@
                         @enderror
 
                         <div class="form-group">
+                            <label for="slug">@lang(' Slug ')</label>
+                            <input value="{{ old('slug') }}" type="text" class="form-control form-control" id="slug" name="slug" placeholder="{{__(' Slug ')}}">
+                        </div>
+                        @error('slug')
+                        <p class="alert alert-danger">{{ $message }}</p>
+                        @enderror
+
+                        <div class="form-group">
                             <label for="editor">@lang(' Text ')</label>
                             <div class="mb-3">
-                                <textarea id="editor" name="editor" style="width: 100%">لطفا متن مورد نظر خودتان را وارد کنید</textarea>
+                                <textarea id="editor" name="body" style="width: 100%">لطفا متن مورد نظر خودتان را وارد کنید</textarea>
                             </div>
                             <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a>
                             </p>
                         </div>
-                        @error('editor')
+                        @error('body')
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror
 

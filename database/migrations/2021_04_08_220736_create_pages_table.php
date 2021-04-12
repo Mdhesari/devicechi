@@ -17,10 +17,10 @@ class CreatePagesTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->longText('body');
-            $table->sring('slug');
-            $table->string('excerpt', 64);
-            $table->json('meta');
+            $table->longText('body')->nullable();
+            $table->string('slug');
+            $table->string('excerpt', 64)->nullable();
+            $table->json('meta')->nullable();
             $table->string('template')->nullable();
             $table->foreignId('admin_id');
 

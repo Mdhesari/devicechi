@@ -5,6 +5,7 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Http\Requests\PageCreateRequest;
 
 class PageController extends Controller
 {
@@ -35,9 +36,18 @@ class PageController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(PageCreateRequest $request)
     {
-        //
+        $admin = $request->user();
+
+        $admin->pages()->create($request->all());
+
+        if ($image = $request->input('featured_image', false)) {
+
+            dd($image);
+        }
+
+        return back()->with('success', __(' Successful! '));
     }
 
     /**

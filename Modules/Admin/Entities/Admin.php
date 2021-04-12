@@ -3,6 +3,7 @@
 namespace Modules\Admin\Entities;
 
 use App\Models\MainUser;
+use App\Models\Page;
 use App\Models\Payment\Payment;
 use App\Models\TicketMessage;
 use Illuminate\Database\Eloquent\Model;
@@ -40,6 +41,10 @@ class Admin extends MainUser
     {
 
         return $this->hasMany(Payment::class);
+    }
+
+    public function pages() {
+        return $this->hasMany(Page::class);
     }
 
     /**

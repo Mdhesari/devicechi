@@ -38,9 +38,9 @@ class UserDatabaseSeeder extends Seeder
             AdContactTypeTableSeeder::class,
         ]);
 
-        if (app()->environment('local')) {
+        if (app()->environment('local') && app()->environment('scrap_ads', true)) {
             $this->call([
-                AdTableSeeder::class,
+                // AdTableSeeder::class,
             ]);
         }
     }

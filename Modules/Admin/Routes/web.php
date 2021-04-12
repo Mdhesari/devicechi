@@ -230,6 +230,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
         Route::middleware('can:create pages')->group(function () {
             Route::get('/new', [PageController::class, 'create'])->name('create');
+
+            Route::post('/new', [PageController::class, 'store']);
         });
     });
 });
