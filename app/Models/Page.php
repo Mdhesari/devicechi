@@ -20,6 +20,16 @@ class Page extends Model
         'template',
     ];
 
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'meta' => 'array',
+    ];
+
     /**
      * Return the sluggable configuration array for this model.
      *

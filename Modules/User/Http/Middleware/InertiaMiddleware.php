@@ -3,6 +3,7 @@
 namespace Modules\User\Http\Middleware;
 
 use App\Space\AdminLte;
+use Artesaos\SEOTools\Facades\SEOTools;
 use Closure;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -26,7 +27,7 @@ class InertiaMiddleware
             'app_name' => config('app.name')
         ]);
 
-        SEOMeta::setTitle($head_title);
+        SEOTools::setTitle($head_title);
 
         Inertia::share('current_root', $request->root());
 

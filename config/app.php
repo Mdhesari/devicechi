@@ -15,7 +15,9 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
-    'version' => '1.82.1',
+    'username' => env('APP_NAME', '@devicechi'),
+
+    'version' => '1.82.2',
 
     /*
     |--------------------------------------------------------------------------
@@ -234,7 +236,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         "ExportLocalization" => "KgBot\\LaravelLocalization\\Facades\\ExportLocalizations",
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
