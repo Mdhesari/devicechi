@@ -65,16 +65,6 @@ class PagesGrid extends Grid implements PagesGridInterface
                     "operator" => "="
                 ]
             ],
-            "body" => [
-                "search" => [
-                    "enabled" => true
-                ],
-                "filter" => [
-                    "enabled" => true,
-                    "operator" => "="
-                ],
-                "raw" => true,
-            ],
             "slug" => [
                 "search" => [
                     "enabled" => true
