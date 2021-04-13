@@ -71,12 +71,14 @@ class PageController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @param int $id
+     * @param Page $page
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(Page $page)
     {
-        return view('admin::edit');
+        $page_title = __(' Create New Page ');
+
+        return view('admin::pages.edit', compact('page_title', 'page'));
     }
 
     /**

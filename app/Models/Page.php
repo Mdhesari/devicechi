@@ -43,4 +43,39 @@ class Page extends Model
             ]
         ];
     }
+
+    /**
+     * getMetaTagTitleAttribute
+     *
+     * @return string|null
+     */
+    public function getMetaTagTitleAttribute()
+    {
+        return optional($this->meta)->tag_title;
+    }
+
+    /**
+     * getMetaDescriptionAttribute
+     *
+     * @return string|null
+     */
+    public function getMetaDescriptionAttribute()
+    {
+        return optional($this->meta)->description;
+    }
+
+    /**
+     * Get meta keywords
+     *
+     * @return array
+     */
+    public function getMetaKeywordsAttribute()
+    {
+        return optional($this->meta)->keywords ?: [];
+    }
+
+    public function getMetaPrintableKeywordsAttribute()
+    {
+        return join('.', $this->meta_keywords);
+    }
 }
