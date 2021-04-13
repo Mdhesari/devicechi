@@ -72,7 +72,11 @@ class PagesGrid extends Grid implements PagesGridInterface
                 "filter" => [
                     "enabled" => true,
                     "operator" => "="
-                ]
+                ],
+                "presenter" => function ($columnData) {
+                    return sprintf('<a href="%s">%s</a>', url($columnData->slug), $columnData->slug);
+                },
+                "raw" => true,
             ],
             "created_at" => [
                 "sort" => false,
