@@ -44,7 +44,7 @@ class Page extends Model
         ];
     }
 
-    public static function getAvailableMetaKeys()
+    public function getAvailableMetaKeys()
     {
         return [
             'tag_title', 'description', 'keywords'
@@ -84,5 +84,19 @@ class Page extends Model
     public function getMetaPrintableKeywordsAttribute()
     {
         return join('.', $this->meta_keywords);
+    }
+
+    public function updateMeta($data)
+    {
+        $keys = $this->getAvailableMetaKeys();
+
+        $data = array_filter($data, fn ($item, $key) => !is_null($item) && in_array($key, $keys), ARRAY_FILTER_USE_BOTH);
+
+        if (isset($data['keywords'])) {
+            $data['keywords'] = explode('.', $data['keywords']);
+        }
+
+        $this->meta = $data;
+        $this->update();
     }
 }

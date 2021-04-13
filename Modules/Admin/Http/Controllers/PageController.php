@@ -61,9 +61,8 @@ class PageController extends Controller
             ]);
         }
 
-        $page = $admin->pages()->create($request->all());
-
-        $this->updatePageMeta($page, $request->only(Page::getAvailableMetaKeys()));
+        $page = $admin->pages()->create($data = $request->all());
+        $page->updateMeta($data);
 
         //TODO for future updates
         if ($image = $request->input('featured_image', false)) {
@@ -99,8 +98,8 @@ class PageController extends Controller
             'slug' => [Rule::unique('pages', 'slug')->ignore($page->id)],
         ]);
 
-        $page->update($request->all());
-        $this->updatePageMeta($page, $request->only(Page::getAvailableMetaKeys()));
+        $page->update($data = $request->all());
+        $page->updateMeta($data);
 
         return back()->with('success', __(' Successful! '));
     }
@@ -113,18 +112,5 @@ class PageController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    private function updatePageMeta(Page $page, array $data)
-    {
-
-        $data = array_filter($data, fn ($item, $key) => !is_null($item), ARRAY_FILTER_USE_BOTH);
-
-        if (isset($data['keywords'])) {
-            $data['keywords'] = explode('.', $data['keywords']);
-        }
-
-        $page->meta = $data;
-        $page->update();
     }
 }
