@@ -8,7 +8,9 @@ use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Validation\Rule;
 use Modules\Admin\Http\Requests\PageCreateRequest;
+use Validator;
 
 class PageController extends Controller
 {
@@ -61,12 +63,13 @@ class PageController extends Controller
 
         $admin->pages()->create($request->all());
 
+        //TODO for future updates
         if ($image = $request->input('featured_image', false)) {
 
             dd($image);
         }
 
-        return back()->with('success', __(' Successful! '));
+        return redirect()->route('admin.pages.list')->with('success', __(' Successful! '));
     }
 
     /**
@@ -84,12 +87,19 @@ class PageController extends Controller
     /**
      * Update the specified resource in storage.
      * @param Request $request
-     * @param int $id
+     * @param Page $page
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Page $page)
     {
-        //
+        Validator::make($request->all(), [
+            'title' => ['required', 'min:3'],
+            'slug' => [Rule::unique('pages', 'slug')->ignore($page->id)],
+        ]);
+
+        $page->update($request->all());
+
+        return back()->with('success', __(' Successful! '));
     }
 
     /**
