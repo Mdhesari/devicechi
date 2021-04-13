@@ -44,6 +44,13 @@ class Page extends Model
         ];
     }
 
+    public static function getAvailableMetaKeys()
+    {
+        return [
+            'tag_title', 'description', 'keywords'
+        ];
+    }
+
     /**
      * getMetaTagTitleAttribute
      *
@@ -51,7 +58,7 @@ class Page extends Model
      */
     public function getMetaTagTitleAttribute()
     {
-        return optional($this->meta)->tag_title;
+        return optional($this->meta)['tag_title'] ?: '';
     }
 
     /**
@@ -61,7 +68,7 @@ class Page extends Model
      */
     public function getMetaDescriptionAttribute()
     {
-        return optional($this->meta)->description;
+        return optional($this->meta)['description'] ?: '';
     }
 
     /**
@@ -71,7 +78,7 @@ class Page extends Model
      */
     public function getMetaKeywordsAttribute()
     {
-        return optional($this->meta)->keywords ?: [];
+        return optional($this->meta)['keywords'] ?: [];
     }
 
     public function getMetaPrintableKeywordsAttribute()

@@ -64,26 +64,26 @@
 
                         <div class="form-group">
                             <label for="meta_tag_title">@lang(' Meta Tag Title ')</label>
-                            <input value="{{ $page->meta_tag_title }}" type="text" class="form-control" id="meta_tag_title" name="meta_tag_title" placeholder="{{__(' Meta Tag Title ')}}">
+                            <input value="{{ $page->meta_tag_title }}" type="text" class="form-control" id="meta_tag_title" name="tag_title" placeholder="{{__(' Meta Tag Title ')}}">
                         </div>
-                        @error('meta_tag_title')
+                        @error('tag_title')
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror
 
                         <div class="form-group">
                             <label for="meta_description">@lang(' Meta Description ')</label>
-                            <input value="{{ $page->meta_description }}" type="text" class="form-control" id="meta_description" name="meta_description" placeholder="{{__(' Meta Description ')}}">
+                            <input value="{{ $page->meta_description }}" type="text" class="form-control" id="meta_description" name="description" placeholder="{{__(' Meta Description ')}}">
                         </div>
-                        @error('meta_description')
+                        @error('description')
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror
 
                         <div class="form-group">
                             <label for="meta_keywords">@lang(' Meta Keywords ')</label>
-                            <input value="{{ $page->meta_printable_keywords }}" type="text" class="form-control" id="meta_keywords" name="meta_keywords" placeholder="{{__(' Meta Keywords ')}}">
+                            <input value="{{ $page->meta_printable_keywords }}" type="text" class="form-control" id="meta_keywords" name="keywords" placeholder="{{__(' Meta Keywords ')}}">
                             <small class="help-text">@lang(' Seperate with . ')</small>
                         </div>
-                        @error('meta_keywords')
+                        @error('keywords')
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror
 
