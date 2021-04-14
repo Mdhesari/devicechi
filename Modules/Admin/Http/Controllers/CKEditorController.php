@@ -35,21 +35,20 @@ class CKEditorController extends Controller
     public function store(Request $request)
     {
         if ($request->hasFile('upload')) {
-            // $originName = $request->file('upload')->getClientOriginalName();
-            // $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            // $extension = $request->file('upload')->getClientOriginalExtension();
-            // $fileName = $fileName . '_' . time() . '.' . $extension;
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '_' . time() . '.' . $extension;
 
-            $path = 'uploads/' . now()->format('Y-M');
+            $path = 'uploads/' . now()->format('Y') . '/' . now()->format('M');
 
-            $path = $request->upload->store($path);
+            $path = $request->upload->storeAs($path, $fileName);
 
             $url = url(Storage::url($path));
-            // $request->file('upload')->move(storage_path($path), $fileName);
-            info($url);
             $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            // $url = storage_path($path . '/' . $fileName);
-            $msg = 'Image uploaded successfully';
+
+            $msg = __(' Image uploaded successfully ');
+
             $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
 
             @header('Content-type: text/html; charset=utf-8');
