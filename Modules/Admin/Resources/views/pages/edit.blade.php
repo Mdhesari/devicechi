@@ -1,13 +1,5 @@
 @extends('admin::app')
 
-@push('add_styles')
-<style>
-    .ck-editor__editable {
-        min-height: 500px;
-    }
-</style>
-@endpush
-
 @section('content')
 <section class="content">
     <div class="row">
@@ -53,7 +45,7 @@
                         <div class="form-group">
                             <label for="editor">@lang(' Text ')</label>
                             <div class="mb-3">
-                                <textarea id="editor" name="body" style="width: 100%">لطفا متن مورد نظر خودتان را وارد کنید</textarea>
+                                <x-ckeditor name="body">{{ old('body') }}</x-ckeditor>
                             </div>
                             <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a>
                             </p>
@@ -97,22 +89,3 @@
     </div>
 </section>
 @endsection
-
-@push('add_scripts')
-<script src="{{ asset('css/admin/plugins/ckeditor/ckeditor.js') }}"></script>
-
-<script>
-    $(function() {
-        // Replace the <textarea id="editor"> with a CKEditor
-        // instance, using default configuration.
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(function(editor) {
-                // The editor instance
-            })
-            .catch(function(error) {
-                console.error(error)
-            })
-    })
-</script>
-@endpush
