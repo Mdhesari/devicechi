@@ -294,5 +294,9 @@
     " Text ": "متن",
     " Seperate with . ": "با نقطه . جدا شود",
     " Archive ": "پیش نویس",
-    " Successful! ": "عملیات موفقیت آمیز!"
+    " Successful! ": "عملیات موفقیت آمیز!",
+    " Pages Management ": "مدیریت صفحات",
+    " Pages List ": "لیست صفحات",
+    " Menus ": "منوها",
+    " Add new menu ":"ساخت منو جدید"
 }

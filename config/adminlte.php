@@ -33,7 +33,7 @@ return [
             [
                 'text' =>  ' Pages Management ',
                 'permission' => 'read pages',
-                'icon' => 'fab fa-buysellads nav-icon',
+                'icon' => 'fas fa-paper-plane nav-icon',
                 'submenu' => [
                     [
                         'text' => ' Pages List ',

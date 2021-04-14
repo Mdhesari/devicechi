@@ -26,6 +26,7 @@ use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminBrandController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
+use Modules\Admin\Http\Controllers\CKEditorController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
 use Modules\Admin\Http\Controllers\MenuEditorController;
@@ -239,6 +240,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
         Route::get('/', [PageController::class, 'index'])->name('list');
     });
+
+    Route::post('/ckeditor/upload', [CKEditorController::class, 'store'])->name('ckeditor.upload');
 });
 
 Route::middleware('guest.admin')->group(function () {
