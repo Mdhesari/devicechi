@@ -47,8 +47,6 @@
                             <div class="mb-3">
                                 <x-ckeditor name="body">{{ old('body') }}</x-ckeditor>
                             </div>
-                            <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a>
-                            </p>
                         </div>
                         @error('body')
                         <p class="alert alert-danger">{{ $message }}</p>

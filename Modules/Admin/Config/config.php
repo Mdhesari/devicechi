@@ -5,6 +5,7 @@ return [
     'domain' => env('ADMIN_DOMAIN', 'http://team.localhost'),
     'prefix' => env('ADMIN_PREFIX', '/'),
     'layout' => 'admin::app',
+    'max_upload_size' => env('MAX_UPLOAD_SIZE_IN_KB', 99000), // KB
     'auth_navs' => [
         [
             'title' => __(' Home Page '),

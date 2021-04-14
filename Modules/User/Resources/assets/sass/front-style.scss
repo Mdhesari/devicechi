@@ -1728,6 +1728,9 @@ input[type='number'] {
 /*SingleBlog*/
 .single-blog-section {
 	padding: 50px 0;
+	img {
+	max-width: 100%;
+}
 }
 
 .single-blog-inner {

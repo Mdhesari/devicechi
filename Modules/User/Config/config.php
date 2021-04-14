@@ -2,10 +2,10 @@
 
 return [
     'name' => 'User',
-    'verification_length' => 5,
-    'ad_picture_size_limit' => 5, // MB
-    'ad_pictures_max_count' => 6,
-    'ad_pictures_min_count' => 2,
+    'verification_length' => env('VERIFICATION_LENGTH', 5),
+    'ad_picture_size_limit' => env('AD_PICTURE_SIZE_LIMIT', 12), // MB
+    'ad_pictures_max_count' => env('AD_PICTURES_MAX_COUNT', 6),
+    'ad_pictures_min_count' => env('AD_PICTURES_MIN_COUNT', 2),
 
     'domain' => env('USER_DOMAIN', 'http://localhost'),
     'prefix' => env('User_PREFIX', '/'),

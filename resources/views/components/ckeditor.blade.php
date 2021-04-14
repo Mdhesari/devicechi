@@ -1,3 +1,10 @@
+@push('add_styles')
+<style>
+    .ck-editor__editable {
+        min-height: 500px;
+    }
+</style>
+@endpush
 
 <div>
     <!-- Because you are alive, everything is possible. - Thich Nhat Hanh -->

@@ -4,6 +4,9 @@
 <section class="content">
     <div class="row">
         <div class="col-md-12">
+            <h5>
+                <a href="{{ url($page->slug) }}" class="btn btn-link" target="_blank">{{ url($page->slug) }}</a>
+            </h5>
             <div class="card card-info card-outline">
                 <div class="card-header">
                     <h3 class="card-title">
@@ -45,10 +48,8 @@
                         <div class="form-group">
                             <label for="editor">@lang(' Text ')</label>
                             <div class="mb-3">
-                                <x-ckeditor name="body">{{ old('body') }}</x-ckeditor>
+                                <x-ckeditor name="body">{{ $page->body }}</x-ckeditor>
                             </div>
-                            <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a>
-                            </p>
                         </div>
                         @error('body')
                         <p class="alert alert-danger">{{ $message }}</p>

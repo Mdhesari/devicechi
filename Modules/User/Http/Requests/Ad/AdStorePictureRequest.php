@@ -15,9 +15,9 @@ class AdStorePictureRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $ad_picture_size_limit = config('user.ad_picture_size_limit', 5); // MB
-        $ad_pictures_max_count = config('user.ad_pictures_max_count', 9);
-        $ad_pictures_min_count = config('user.ad_pictures_min_count', 3);
+        $ad_picture_size_limit = config('user.ad_picture_size_limit'); // MB
+        $ad_pictures_max_count = config('user.ad_pictures_max_count');
+        $ad_pictures_min_count = config('user.ad_pictures_min_count');
 
         if (isset($request->ad)) $ad = $request->ad;
 

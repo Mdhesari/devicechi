@@ -80,7 +80,7 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        $page_title = __(' Create New Page ');
+        $page_title = __(' Edit Page ');
 
         return view('admin::pages.edit', compact('page_title', 'page'));
     }
