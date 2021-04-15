@@ -16,6 +16,7 @@ class PageCreateRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:3'],
+            'excerpt' => ['max:64'],
             'slug' => ['unique:pages,slug']
         ];
     }
