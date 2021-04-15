@@ -55,7 +55,7 @@
                         <div class="form-group">
                             <label for="editor">@lang(' Excerpt ')</label>
                             <div class="mb-3">
-                                <textarea rows="9" name="excerpt">{{ old('excerpt') }}</textarea>
+                                <textarea rows="9" name="excerpt" class="form-control">{{ old('excerpt') }}</textarea>
                             </div>
                         </div>
                         @error('excerpt')
