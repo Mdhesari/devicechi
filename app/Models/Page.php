@@ -5,9 +5,10 @@ namespace App\Models;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Page extends Model
+class Page extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, Sluggable;
 
@@ -98,5 +99,10 @@ class Page extends Model
 
         $this->meta = $data;
         $this->update();
+    }
+
+    public function renderName()
+    {
+        return $this->title . ' : ' . $this->slug;
     }
 }

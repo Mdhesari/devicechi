@@ -302,5 +302,7 @@
     " Image uploaded successfully ": "تصویر با موفقیت آپلود شد.",
     " The file is too big! ": "فایل بارگذاری شده سنگین است!",
     " Edit Page ": "بروزرسانی صفحه",
-    " Excerpt ": "خلاصه"
+    " Excerpt ": "خلاصه",
+    " Page :page will be deleted, are you sure?! ": "صفحه :page برای همیشه حذف خواهد شد، آیا مطمین به انجام این کار هستید؟!",
+    " Warning! ": "هشدار!"
 }

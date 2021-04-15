@@ -98,13 +98,21 @@ class PageController extends Controller
         return back()->with('success', __(' Successful! '));
     }
 
+
+    public function delete(Page $page)
+    {
+        return view('admin::pages.delete', compact('page'));
+    }
+
     /**
      * Remove the specified resource from storage.
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function destroy(Page $page)
     {
-        //
+        $page->delete();
+
+        return redirect()->route('admin.pages.list')->with('success',__(' Successful! '));
     }
 }

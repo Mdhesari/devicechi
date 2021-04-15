@@ -235,7 +235,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         });
 
         Route::middleware('can:delete pages')->group(function () {
-            Route::delete('/destroy/{page}', [PageController::class, 'destroy'])->name('destroy');
+            Route::get('/destroy/{page}', [PageController::class, 'delete'])->name('destroy');
+            Route::delete('/destroy/{page}', [PageController::class, 'destroy']);
         });
 
         Route::get('/', [PageController::class, 'index'])->name('list');
