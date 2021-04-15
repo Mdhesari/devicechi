@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Devicechi'),
 
     'username' => env('APP_NAME', '@devicechi'),
 
-    'version' => '1.83.8',
+    'version' => '1.84.0',
 
     /*
     |--------------------------------------------------------------------------

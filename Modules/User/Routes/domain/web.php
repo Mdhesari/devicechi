@@ -24,8 +24,6 @@ Route::get('/contact-us', [UserContactUsController::class, 'index'])->name('cont
 
 Route::post('/contact-us', [UserContactUsController::class, 'store']);
 
-Route::get('/rules', [HomeController::class, 'rules'])->name('rules');
-
 Route::middleware('auth.user:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
