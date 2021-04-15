@@ -89,7 +89,6 @@ class PageController extends Controller
     {
         Validator::make($request->all(), [
             'title' => ['required', 'min:3'],
-            'excerpt' => ['max:64'],
             'slug' => [Rule::unique('pages', 'slug')->ignore($page->id)],
         ]);
 
@@ -114,6 +113,6 @@ class PageController extends Controller
     {
         $page->delete();
 
-        return redirect()->route('admin.pages.list')->with('success', __(' Successful! '));
+        return redirect()->route('admin.pages.list')->with('success',__(' Successful! '));
     }
 }
