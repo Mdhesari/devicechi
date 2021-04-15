@@ -56,6 +56,16 @@
                         @enderror
 
                         <div class="form-group">
+                            <label for="editor">@lang(' Excerpt ')</label>
+                            <div class="mb-3">
+                                <textarea rows="5" name="excerpt" class="form-control">{{ $page->excerpt }}</textarea>
+                            </div>
+                        </div>
+                        @error('excerpt')
+                        <p class="alert alert-danger">{{ $message }}</p>
+                        @enderror
+
+                        <div class="form-group">
                             <label for="meta_tag_title">@lang(' Meta Tag Title ')</label>
                             <input value="{{ $page->meta_tag_title }}" type="text" class="form-control" id="meta_tag_title" name="tag_title" placeholder="{{__(' Meta Tag Title ')}}">
                         </div>

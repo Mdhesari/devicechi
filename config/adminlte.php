@@ -198,11 +198,6 @@ return [
                 'route' => 'contact-us',
                 'route_params' => [],
             ],
-            [
-                'text' => ' Rules ',
-                'route' => 'rules',
-                'route_params' => [],
-            ]
         ],
         'user_main_footer_services' => [
             [
@@ -236,11 +231,6 @@ return [
             [
                 'text' => ' Contact Us ',
                 'route' => 'contact-us',
-                'route_params' => [],
-            ],
-            [
-                'text' => ' Rules ',
-                'route' => 'rules',
                 'route_params' => [],
             ],
         ]

@@ -24,17 +24,17 @@ class ViewPageController extends Controller
         $page = Page::whereSlug($slug)->latest()->first();
 
         if ($page) {
+            $meta = $page->meta;
             $head_title = $page->title . ' | ' . config('app.name');
             $head_desc = $page->excerpt ?: '';
-            $meta = $page->meta;
 
             SEOTools::setTitle($head_title);
             SEOTools::setDescription($head_desc);
             SEOTools::opengraph()->setUrl($request->getUri());
 
-            if ($meta && isset($meta['keywords'])) {
-                SEOMeta::setKeywords($meta['keywords']);
-            }
+            SEOMeta::setTitle($page->metaTagTitle);
+            SEOMeta::setDescription($page->metaDescription);
+            SEOMeta::setKeywords($page->metaKeywords);
             // SEOTools::jsonLd()->addImage('https://codecasts.com.br/img/logo.jpg');
 
             return Inertia::render('Pages/Show', compact('page', 'head_title', 'head_desc'))->withViewData(compact('head_title', 'head_desc'));

@@ -64,12 +64,6 @@ class PageController extends Controller
         $page = $admin->pages()->create($data = $request->all());
         $page->updateMeta($data);
 
-        //TODO for future updates
-        if ($image = $request->input('featured_image', false)) {
-
-            dd($image);
-        }
-
         return redirect()->route('admin.pages.list')->with('success', __(' Successful! '));
     }
 
