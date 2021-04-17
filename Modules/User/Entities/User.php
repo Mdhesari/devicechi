@@ -30,7 +30,7 @@ class User extends MainUser implements MustVerifyPhone
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'phone_country_code', 'city_id'
+        'name', 'email', 'password', 'phone', 'phone_country_code', 'city_id', 'meta_user'
     ];
 
     /**
@@ -53,6 +53,7 @@ class User extends MainUser implements MustVerifyPhone
     protected $casts = [
         'email_verified_at' => 'datetime',
         'phone_verified_at' => 'datetime',
+        'meta_user' => 'array'
     ];
 
     /**
@@ -150,8 +151,12 @@ class User extends MainUser implements MustVerifyPhone
 
     public function getProfilePhotoPathAttribute($value)
     {
-
         return is_null($value) ? asset('images/user.png') : Storage::url($value);
+    }
+
+    public function getHelpAlertAdAttribute()
+    {
+        return optional($this->user_meta)[Ad::HELP_ALERT_SESSION] ?: true;
     }
 
     /**

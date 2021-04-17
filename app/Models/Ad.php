@@ -38,6 +38,8 @@ class Ad extends Model implements HasMedia
     const STATUS_UNAVAILABLE = 4;
     const STATUS_ARCHIVE = 5;
 
+    const HELP_ALERT_SESSION = 'show_help_ad';
+
     const STATUS_REJECTED_LABEL = "REJECTED";
     const STATUS_AVAILABLE_LABEL = "AVAILABLE";
     const STATUS_PENDING_LABEL = "PENDING";

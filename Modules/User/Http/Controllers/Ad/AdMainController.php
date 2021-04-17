@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ad;
 use Exception;
 use App\Models\PhoneBrand;
+use Cache;
 use Modules\User\Entities\PhoneModel;
 use Route;
 use Str;
@@ -161,5 +162,18 @@ class AdMainController extends BaseAdController
         }
 
         return response()->json(compact('status', 'message'));
+    }
+
+    public function disableHelpAlert(Request $request)
+    {
+        $user = auth()->user();
+
+        info(auth()->id());
+
+        return $user->update([
+            'user_meta' => [
+                Ad::HELP_ALERT_SESSION => false
+            ],
+        ]);
     }
 }

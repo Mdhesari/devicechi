@@ -101,6 +101,9 @@ export default {
 							this.getProp('ratelimiter')
 						)
 					}
+				},
+				onError: (response) => {
+					this.isLoading = false
 				}
 			})
 		},

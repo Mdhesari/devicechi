@@ -79,6 +79,9 @@ export default {
 					preserveState: false,
 					onSuccess: (response) => {
 						this.isLoading = false
+					},
+					onError: (response) => {
+						this.isLoading = false
 					}
 				}
 			)

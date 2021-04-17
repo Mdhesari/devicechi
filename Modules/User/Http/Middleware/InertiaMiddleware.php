@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Middleware;
 
+use App\Models\Ad;
 use App\Space\AdminLte;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Closure;
@@ -30,6 +31,8 @@ class InertiaMiddleware
         SEOTools::setTitle($head_title);
 
         Inertia::share('current_root', $request->root());
+
+        Inertia::share('show_help_ad', auth()->user()->help_alert_ad);
 
         Inertia::share('locale', config('app.locale'));
 

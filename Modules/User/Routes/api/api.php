@@ -24,3 +24,5 @@ Route::get('/routes', function (Request $request) {
 Route::get('/get/contacts/{ad}', [AdContactController::class, 'get'])->name('ad.contacts.get');
 
 Route::get('/cities/get', [CityController::class, 'index'])->name('cities.get');
+
+Route::put('/alerts/disable/ad-help', [AdMainController::class, 'disableHelpAlert'])->name('alerts.disable.ad-help');
