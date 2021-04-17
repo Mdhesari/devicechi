@@ -13,6 +13,15 @@
 								<p class="form-desc">
 									{{ __('ads.wizard.power.desc') }}
 								</p>
+
+								<div class="text-center">
+									<p>قابل پرداخت :</p>
+									<p>0 تومان</p>
+								</div>
+
+								<button class="btn btn-secondary" type="submit">
+									{{ __('ads.proceed') }}
+								</button>
 							</form>
 						</div>
 					</div>
@@ -29,6 +38,11 @@ export default {
 	components: {
 		AuthLayout
 	},
-	props: ['ad', 'user']
+	props: ['ad', 'user'],
+	methods: {
+		next() {
+			//
+		}
+	}
 }
 </script>
