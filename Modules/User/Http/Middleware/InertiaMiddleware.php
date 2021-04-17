@@ -32,7 +32,7 @@ class InertiaMiddleware
 
         Inertia::share('current_root', $request->root());
 
-        Inertia::share('show_help_ad', auth()->user()->help_alert_ad);
+        Inertia::share('show_help_ad', auth()->user() ? auth()->user()->help_alert_ad : true);
 
         Inertia::share('locale', config('app.locale'));
 
