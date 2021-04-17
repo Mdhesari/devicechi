@@ -14,9 +14,26 @@
 									{{ __('ads.wizard.power.desc') }}
 								</p>
 
+								<div class="row list-accessories mobile-radio-form">
+									<b-form-checkbox
+										:disabled="isLoading"
+										class="col-12 col-md-3 text-center"
+										v-for="(feature, index) in features"
+										:key="index"
+										:name="'feature_' + feature.id"
+										v-model="selected[feature.id]"
+										:value="feature.id"
+									>
+										<h5 class="accessory-title mt-2">
+											<!-- {{ __('features.' + accessory.title) }} -->
+											Feature {{ feature.id }}
+										</h5>
+									</b-form-checkbox>
+								</div>
+
 								<div class="text-center">
 									<p>قابل پرداخت :</p>
-									<p>0 تومان</p>
+									<p class="final-price">0 تومان</p>
 								</div>
 
 								<button class="btn btn-secondary" type="submit">
@@ -39,6 +56,13 @@ export default {
 		AuthLayout
 	},
 	props: ['ad', 'user'],
+	data() {
+		return {
+			finalPrice: this.getProp('finalPrice', 0),
+			features: this.getProp('features', []),
+			selected: this.getProp('selected', [])
+		}
+	},
 	methods: {
 		next() {
 			//
