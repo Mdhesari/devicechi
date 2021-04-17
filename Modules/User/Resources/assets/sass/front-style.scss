@@ -374,6 +374,18 @@ input[type='number'] {
 	}
 }
 
+.btn-attract {
+	background-color: #e0e7ea;
+	border: none;
+	color: pallete('red');
+
+	&:hover {
+		background-color: #e0e7ea;
+		border: none;
+		color: pallete('red');
+	}
+}
+
 .btn-mobilesale {
 	display: inline-block;
 	border-radius: 50px;
@@ -1729,8 +1741,8 @@ input[type='number'] {
 .single-blog-section {
 	padding: 50px 0;
 	img {
-	max-width: 100%;
-}
+		max-width: 100%;
+	}
 }
 
 .single-blog-inner {
