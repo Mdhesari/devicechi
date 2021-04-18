@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<!-- End wiazrd steps -->
-				<b-alert class="mt-4" variant="secondary" :show="helpAd">
+				<b-alert class="mt-4" variant="warning" :show="helpAd">
 					<p>
 						در مراحل ثبت آگهی به مشکل خورده اید؟! از طریق لینک زیر با پشتیبانی
 						تماس بگیرید.
