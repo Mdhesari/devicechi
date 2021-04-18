@@ -40,18 +40,17 @@ class PromotionResource extends JsonResource
         switch ($type) {
             case 'month':
                 $available_at->addMonths($number);
-                $result = $available_at->diffInMonths($original_created_at);
                 break;
             case 'minute':
                 $available_at->addMinutes($number);
-                $result = $available_at->diffInMinutes($original_created_at);
                 break;
             default:
                 $available_at->addDays($number);
-                $result = $available_at->diffInDays($original_created_at);
         }
 
-        if ($result <= 0) {
+        $result = now()->greaterThan($available_at);
+
+        if ($result) {
             return false;
         }
 
