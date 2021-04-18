@@ -385,12 +385,12 @@ input[type='number'] {
 .btn-attract {
 	background-color: #e0e7ea;
 	border: none;
-	color: pallete('red');
+	color: pallete('primary');
 
 	&:hover {
-		background-color: #e0e7ea;
+		background-color: #e0e7ead7;
 		border: none;
-		color: pallete('red');
+		color: pallete('primary');
 	}
 }
 
