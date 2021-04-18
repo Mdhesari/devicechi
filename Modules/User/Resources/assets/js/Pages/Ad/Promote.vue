@@ -53,7 +53,11 @@
 										</div>
 									</div>
 									<div class="col-12 col-md-4">
-										<div class="sidebar payment-box" ref="sidebar" :style="sidebarStyles">
+										<div
+											class="sidebar payment-box"
+											ref="sidebar"
+											:style="sidebarStyles"
+										>
 											<div class="text-center">
 												<h5>قابل پرداخت :</h5>
 												<h6 class="final-price">
@@ -61,14 +65,24 @@
 													<span>{{ formatCurrency(finalCurrency) }}</span>
 												</h6>
 											</div>
-
-											<button
-												:disabled="finalPrice <= 0"
-												class="btn btn-success mt-4 d-block mx-auto"
-												type="submit"
-											>
-												{{ __('ads.pay') }}
-											</button>
+											<div class="btn-group mt-4 w-100 mx-auto">
+												<button
+													:disabled="finalPrice <= 0"
+													class="btn btn-success"
+													type="submit"
+												>
+													{{ __('ads.pay') }}
+												</button>
+												<inertia-link
+													:href="
+														route('user.ad.step_phone_demo', {
+															ad
+														})
+													"
+													class="btn btn-link text-secondary"
+													>بازگشت</inertia-link
+												>
+											</div>
 											<p class="text-help text-muted text-center mt-3">
 												پرداخت امن از طریق کارت های شتاب امکان پذیر میباشد.
 											</p>
@@ -86,7 +100,7 @@
 
 <script>
 import AuthLayout from '../../Layouts/FrontAuthLayout'
-const offset = 180;
+const offset = 180
 
 export default {
 	components: {

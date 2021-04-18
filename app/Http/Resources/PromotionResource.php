@@ -6,6 +6,9 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class PromotionResource extends JsonResource
 {
+
+    private $ad;
+
     /**
      * Transform the resource into an array.
      *
@@ -14,10 +17,14 @@ class PromotionResource extends JsonResource
      */
     public function toArray($request)
     {
-        return array_merge(parent::toArray($request), [
-            'activate_at' => $this->evaluateActivateAfter($this->activate_after, $this->activate_after_type),
-            'free' => $this->price <= 0,
-        ]);
+        if ($this->ad = $request->ad) {
+            return array_merge(parent::toArray($request), [
+                'activate_at' => $this->evaluateActivateAfter($this->activate_after, $this->activate_after_type),
+                'free' => $this->price <= 0,
+            ]);
+        }
+
+        return parent::toArray($request);
     }
 
     private function evaluateActivateAfter($number, $type)
@@ -27,19 +34,27 @@ class PromotionResource extends JsonResource
         }
 
         $result = 0;
-        $now = now();
+        $available_at = $this->ad->created_at;
+        $original_created_at = clone $available_at;
 
         switch ($type) {
             case 'month':
-                $result = $now->addMonths($number);
+                $available_at->addMonths($number);
+                $result = $available_at->diffInMonths($original_created_at);
                 break;
             case 'minute':
-                $result = $now->addMinutes($number);
+                $available_at->addMinutes($number);
+                $result = $available_at->diffInMinutes($original_created_at);
                 break;
             default:
-                $result = $now->addDays($number);
+                $available_at->addDays($number);
+                $result = $available_at->diffInDays($original_created_at);
         }
 
-        return $result;
+        if ($result <= 0) {
+            return false;
+        }
+
+        return $available_at;
     }
 }
