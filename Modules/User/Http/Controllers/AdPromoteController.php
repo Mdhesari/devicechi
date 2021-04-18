@@ -2,12 +2,14 @@
 
 namespace Modules\User\Http\Controllers;
 
+use App\Http\Resources\PromotionResource;
 use App\Models\Ad;
+use App\Models\Promotion;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class AdPowerController extends Controller
+class AdPromoteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,9 @@ class AdPowerController extends Controller
      */
     public function index(Ad $ad, Request $request)
     {
-        return inertia('Ad/Power', compact('ad'));
+        $promotions = PromotionResource::collection(Promotion::all());
+
+        return inertia('Ad/Promote', compact('ad', 'promotions'));
     }
 
     /**
@@ -76,5 +80,21 @@ class AdPowerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function finalPrice(Request $request)
+    {
+        $request->validate([
+            'promotions' => ['required', 'array'],
+        ]);
+
+        $promotions = array_filter($request->promotions, fn ($item, $key) => !is_null($item), ARRAY_FILTER_USE_BOTH);
+
+        $finalPrice = Promotion::whereIn('id', $promotions)->sum('price');
+
+        return [
+            'price' => $finalPrice,
+            'currency' => 'IRR',
+        ];
     }
 }

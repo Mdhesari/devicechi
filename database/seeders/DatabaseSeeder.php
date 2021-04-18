@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             MenuSeeder::class,
             UserDatabaseSeeder::class,
             AdminDatabaseSeeder::class,
+            PromotionSeeder::class,
         ]);
     }
 }

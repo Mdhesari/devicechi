@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer-site">
+	<footer class="footer-site" ref="footer">
 		<div class="container">
 			<div class="row">
 				<!-- <div class="col-md-2">

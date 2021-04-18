@@ -21,7 +21,7 @@
 				</div>
 				<inertia-link
 					:href="
-						route('user.ad.step_phone_power', {
+						route('user.ad.step_phone_promote', {
 							ad
 						})
 					"

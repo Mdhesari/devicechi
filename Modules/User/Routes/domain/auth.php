@@ -24,7 +24,7 @@ use Modules\User\Http\Controllers\Ad\AdPictureController;
 use Modules\User\Http\Controllers\Ad\AdPriceController;
 use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
-use Modules\User\Http\Controllers\AdPowerController;
+use Modules\User\Http\Controllers\AdPromoteController;
 use Modules\User\Http\Controllers\Auth\SessionController;
 use Modules\User\Http\Controllers\UserContactUsController;
 use Modules\User\Http\Controllers\UserController;
@@ -103,7 +103,9 @@ Route::prefix('/ads')->name('ad.')->group(function () {
 
                 Route::get('/demo', [AdDemoController::class, 'show'])->name('demo');
 
-                Route::get('/ad-power', [AdPowerController::class, 'index'])->name('power');
+                Route::get('/ad-promote', [AdPromoteController::class, 'index'])->name('promote');
+
+                Route::post('/ad-promote/finalPrice', [AdPromoteController::class, 'finalPrice'])->name('promote.finalPrice');
 
                 Route::get('/{phone_model}/variants', [AdVariantController::class, 'choose'])->name('model_variant');
 
