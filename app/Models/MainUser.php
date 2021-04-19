@@ -93,7 +93,7 @@ class MainUser extends User implements HasOption
 
     public function payments()
     {
-        return $this->morphMany(Payment::class, 'resource');
+        return $this->hasMany(Payment::class);
     }
     public function discounts()
     {

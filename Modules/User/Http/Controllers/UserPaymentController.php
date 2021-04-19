@@ -68,8 +68,7 @@ class UserPaymentController extends Controller
 
         $user = $request->user();
 
-        $payment = $user->payments()->where('transaction_id', $transaction_id)->first();
-
+        $payment = PaymentModel::where('transaction_id', $transaction_id)->first();
         try {
             $verified = Payment::amount($this->getFinalPriceFromCurrency($payment->amount, 'IRT'))->transactionId($transaction_id)->verify();
 
@@ -93,6 +92,9 @@ class UserPaymentController extends Controller
 
             // failed payment
             report($e);
+
+            $payment->status = PaymentModel::FAILED;
+            $payment->save();
 
             dd('failed');
             // return abort(402, __(' Invalid Payment '));
