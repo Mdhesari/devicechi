@@ -2,9 +2,11 @@
 
 namespace Modules\User\Http\Controllers;
 
+use App\Models\Ad;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Repositories\Eloquent\PromotionRepository;
 
 class UserPaymentController extends Controller
 {
@@ -24,14 +26,15 @@ class UserPaymentController extends Controller
         return inertia('User/MyPayments', compact('payments', 'tabs', 'nav_items'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
+    public function gateway(Ad $ad, Request $request, PromotionRepository $repository)
     {
-        //
+        $request->validate([
+            'promotions' => 'required|array',
+        ]);
+
+        $finalPrice = $repository->evaluateFinalPrice($request->promotions);
+
+        // store payment and redirect to gateway api
     }
 
     /**

@@ -8,6 +8,7 @@ use App\Models\Promotion;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Repositories\Eloquent\PromotionRepository;
 
 class AdPromoteController extends Controller
 {
@@ -82,19 +83,12 @@ class AdPromoteController extends Controller
         //
     }
 
-    public function getFinalPrice(Request $request)
+    public function getFinalPrice(Request $request, PromotionRepository $repository)
     {
         $request->validate([
             'promotions' => ['required', 'array'],
         ]);
 
-        $promotions = array_filter($request->promotions, fn ($item, $key) => !is_null($item), ARRAY_FILTER_USE_BOTH);
-
-        $finalPrice = Promotion::whereIn('id', $promotions)->sum('price');
-
-        return [
-            'price' => $finalPrice,
-            'currency' => 'IRR',
-        ];
+        return $repository->evaluateFinalPrice($request->promotions);
     }
 }

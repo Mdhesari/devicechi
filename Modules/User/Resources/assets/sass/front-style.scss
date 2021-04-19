@@ -4211,6 +4211,26 @@ ul li a.active {
 			line-height: 32px;
 		}
 	}
+
+	.normal-ads .inner {
+		width: 100%;
+		display: flex;
+		border-radius: 20px;
+		background-color: #fff;
+		overflow: hidden;
+		margin-bottom: 30px;
+		box-shadow: 0 0 24px rgb(0 0 0 / 5%);
+	}
+	.normal-ads .inner .thumbnail {
+		border-radius: 0 !important ;
+	}
+	.normal-ads .inner .details {
+		top: initial !important ;
+		height: initial !important ;
+		padding: 15px 15px 20px;
+		border-bottom-right-radius: 0 !important ;
+		border-bottom-left-radius: 0 !important ;
+	}
 }
 
 @media (max-width: 991.98px) {
