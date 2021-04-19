@@ -19,7 +19,7 @@ class PromotionRepository extends Repository implements PromotionRepositoryInter
         $finalPrice = $this->model->whereIn('id', $promotions)->sum('price');
 
         return [
-            'price' => $finalPrice,
+            'price' => intval($finalPrice),
             'currency' => 'IRR',
         ];
     }

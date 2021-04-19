@@ -160,7 +160,18 @@ export default {
 	},
 	methods: {
 		next() {
-			console.log(this.selected)
+			axios
+				.put(
+					route('user.ad.step_phone_payment.gateway', {
+						ad: this.ad
+					}),
+					{
+						promotions: this.selected
+					}
+				)
+				.then((response) => {
+				window.location = response.data.action
+				})
 		},
 		formatCurrency(currency) {
 			// temp

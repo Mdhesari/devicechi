@@ -18,7 +18,7 @@ class Payment extends Model
     const PENDING = 2;
     const REJECTED = 3;
 
-    protected $fillable = ['amount', 'user_id'];
+    protected $fillable = ['amount', 'user_id', 'transaction_id', 'currency'];
 
     //-----------------Relations------------------//
     public function user()

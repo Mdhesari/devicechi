@@ -51,6 +51,7 @@ Route::prefix('/dashboard')->group(function () {
 });
 
 Route::prefix('/ads')->name('ad.')->group(function () {
+
     Route::prefix('/sell/mobile')->group(function () {
 
         Route::get('/{ad?}', [AdCreateController::class, 'show'])->name('create');
@@ -60,6 +61,13 @@ Route::prefix('/ads')->name('ad.')->group(function () {
         Route::prefix('/process')->name('step_phone_')->group(function () {
 
             Route::prefix('{ad}')->group(function () {
+
+                Route::prefix('/payment')->name('payment.')->group(function () {
+
+                    Route::put('/gateway', [UserPaymentController::class, 'gateway'])->name('gateway');
+
+                    Route::get('/verify', [UserPaymentController::class, 'verify'])->name('verify');
+                });
 
                 Route::get('/accessories', [AdAccessoryController::class, 'choose'])->name('accessories');
 

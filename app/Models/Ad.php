@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\User\Database\Factories\AdFactory;
 use App\Models\Ad\AdContact;
 use App\Models\Ad\AdContactType;
+use App\Models\Payment\Payment;
 use App\Traits\Uuids;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -584,6 +585,11 @@ class Ad extends Model implements HasMedia
             ->width(600)
             ->height(600)
             ->nonQueued();
+    }
+
+    public function payments()
+    {
+        return $this->morphMany(Payment::class, 'resource');
     }
 
     /**
