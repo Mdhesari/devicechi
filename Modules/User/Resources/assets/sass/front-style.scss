@@ -108,6 +108,10 @@ a {
 	}
 }
 
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+display: none ;
+}
+
 .text-help {
 	font-size: 14px !important;
 }
@@ -4214,6 +4218,7 @@ ul li a.active {
 
 	.normal-ads .inner {
 		width: 100%;
+		height: 200px;
 		display: flex;
 		border-radius: 20px;
 		background-color: #fff;
