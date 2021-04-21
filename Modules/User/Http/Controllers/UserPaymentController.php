@@ -2,8 +2,12 @@
 
 namespace Modules\User\Http\Controllers;
 
+use App\Events\AdSuccessfullPromotionPayment;
+use App\Events\UserInvalidPayment;
+use App\Events\UserSuccessfullPayment;
 use App\Models\Ad;
 use App\Models\Payment\Payment as PaymentModel;
+use App\Models\Promotion;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Support\Renderable;
@@ -90,17 +94,23 @@ class UserPaymentController extends Controller
             $payment->verified_at = now();
             $payment->save();
 
+            event(new UserSuccessfullPayment($user, $payment));
+
             $promotions = $payment->meta['promotions'];
 
             $ad = $payment->resource;
 
             $ad->promotions()->attach($promotions);
 
+            event(new AdSuccessfullPromotionPayment($user, $ad));
+
             $user->push();
 
             return redirect()->route('user.ad.step_phone_payment.successPurchase', [
                 'ad' => $ad,
+                'promotions' => $promotions,
                 'refID' => $transaction_id,
+                'finalPrice' => $payment->amount,
             ]);
 
             // successful payment
@@ -111,6 +121,8 @@ class UserPaymentController extends Controller
             $payment->status = PaymentModel::FAILED;
             $payment->save();
 
+            event(new UserInvalidPayment($user, $payment));
+
             return redirect()->route('user.ad.step_phone_payment.failedPurchase', [
                 'ad' => $payment->resource,
                 'code' => $e->getCode(),
@@ -120,7 +132,7 @@ class UserPaymentController extends Controller
 
     public function successPurchase(Ad $ad, $refID, Request $request)
     {
-        $promotions = $ad->promotions;
+        $promotions = Promotion::whereIn('id', $request->promotions)->get()->toArray();
         $refID = intval($refID);
         $finalPrice = $request->finalPrice;
 

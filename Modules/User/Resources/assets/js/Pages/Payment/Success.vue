@@ -14,7 +14,8 @@
 					</p>
 					<p>
 						<span>مبلغ کل :‌</span>
-						<span>{{ finalPrice }}</span>
+						<span>{{ formatMoney(finalPrice) }}</span>
+                        <span>ریال</span>
 					</p>
 					<inertia-link
 						:href="
