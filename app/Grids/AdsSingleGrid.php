@@ -64,6 +64,24 @@ class AdsSingleGrid extends AdsGrid
 					return $columnData->getAgeInfo();
 				},
 			],
+			"user" => [
+				"label" => __(" User "),
+				"filter" => [
+					"enabled" => true,
+					"operator" => "like",
+				],
+				"presenter" => function ($columnData, $columnName) {
+
+					if (is_null($columnData->user)) return __(' No User ');
+
+					$route = route('admin.users.show', [
+						'user' => $columnData->user->id,
+					]);
+
+					return '<a href="' . $route . '" class="btn btn-link text-primary">' . $columnData->user->name . ' ( ' .  $columnData->user->phone . ' ) ' . '</a>';
+				},
+				"raw" => true,
+			],
 			'admin_status' => [
 				'label' => __(" Latest Review Status "),
 				"search" => [

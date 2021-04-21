@@ -3,31 +3,30 @@
 namespace App\Notifications;
 
 use App\Models\Ad;
+use App\Models\MainUser;
+use App\Models\Payment\Payment;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Log;
 
-abstract class BaseAdReview extends Notification
+class AdminAdPromotionPaymentNotification extends Notification
 {
     use Queueable;
 
-    /**
-     * channels
-     *
-     * @var array
-     */
-    protected $channels;
+    public $ad;
+
+    public $payment;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($channels = ['ghasedak'])
+    public function __construct(Ad $ad, Payment $payment)
     {
-        $this->channels = $channels;
+        $this->ad = $ad;
+        $this->payment = $payment;
     }
 
     /**
@@ -38,7 +37,7 @@ abstract class BaseAdReview extends Notification
      */
     public function via($notifiable)
     {
-        return ['ghasedak'];
+        return ['mail'];
     }
 
     /**
@@ -50,26 +49,13 @@ abstract class BaseAdReview extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('The introduction to the notification.')
-            ->action('Notification Action', url('/'))
-            ->line('Thank you for using our application!');
+            ->line(__("admin::ads.payment.promotions", [
+                'user' => $this->ad->user->phone,
+                'promotions' => $this->ad->printablePromotions,
+                'payment' =>  $this->payment->formattedRialAmount
+            ]))
+            ->action(__(' View '), route('admin.ads.show', $this->ad));
     }
-
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param mixed $notifiable
-     * @return string
-     */
-    public function toGhasedak($notifiable)
-    {
-        return [
-            'template' => $this->getTemplate(),
-            'placeholders' => $this->getPlaceHolders($notifiable),
-        ];
-    }
-
-    public abstract function getTemplate();
 
     /**
      * Get the array representation of the notification.
@@ -81,13 +67,6 @@ abstract class BaseAdReview extends Notification
     {
         return [
             //
-        ];
-    }
-
-    public function getPlaceHolders($notifiable)
-    {
-        return [
-            $notifiable->phoneModel->brand->printableName
         ];
     }
 }

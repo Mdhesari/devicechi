@@ -107,6 +107,12 @@ class Payment extends Model
         return number_format($this->amount) . ' تومان ';
     }
 
+    public function getFormattedRialAmountAttribute($value)
+    {
+        //TODO: dynamic currency
+        return number_format($this->amount) . ' ریال ';
+    }
+
     // ------------- End Attributes --------------
 
     /**

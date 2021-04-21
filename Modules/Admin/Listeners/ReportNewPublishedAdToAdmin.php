@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Listeners;
 
+use App\Events\NewAdPublishedEvent;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Log;
@@ -27,7 +28,7 @@ class ReportNewPublishedAdToAdmin
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle(NewAdPublishedEvent $event)
     {
         Notification::send(Admin::all(), new AdminNewPublishedAdNotification($event->ad));
 

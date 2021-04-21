@@ -12,6 +12,7 @@ use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use LogicException;
 use Modules\User\Repositories\Eloquent\PromotionRepository;
 use Payment;
 use Shetabit\Multipay\Invoice;
@@ -50,7 +51,7 @@ class UserPaymentController extends Controller
             ->amount($this->getFinalPriceFromCurrency($finalPrice, 'IRT'))
             ->detail([
                 'mobile' => $user->phone,
-                'description' => __('user::globa.ad_promote_payment_desc'),
+                'description' => __('user::global.ad_promote_payment_desc'),
             ]);
 
         // store payment and redirect to gateway api
@@ -75,13 +76,16 @@ class UserPaymentController extends Controller
 
         $payment = PaymentModel::where('transaction_id', $transaction_id)->first();
 
-
-        if ($payment) {
+        if (!$payment) {
             return abort(404);
         }
 
         if ($payment->missingPromotions()) {
             return abort(400);
+        }
+
+        if ($payment->status == PaymentModel::SUCCESS) {
+            return $this->paymentFailureReport($user, $payment, 101);
         }
 
         try {
@@ -99,7 +103,7 @@ class UserPaymentController extends Controller
             $ad = $payment->resource;
             $ad->promotions()->attach($promotions);
 
-            event(new AdSuccessfullPromotionPayment($user, $ad));
+            event(new AdSuccessfullPromotionPayment($ad, $payment));
 
             $user->push();
 
@@ -109,20 +113,40 @@ class UserPaymentController extends Controller
                 'refID' => $transaction_id,
                 'finalPrice' => $payment->amount,
             ]);
+        } catch (LogicException $e) {
+            report($e);
+
+            if ($payment->status == PaymentModel::SUCCESS) {
+                $user->push();
+
+                return redirect()->route('user.ad.step_phone_payment.successPurchase', [
+                    'ad' => $ad,
+                    'promotions' => $promotions,
+                    'refID' => $transaction_id,
+                    'finalPrice' => $payment->amount,
+                ]);
+            }
+
+            return $this->paymentFailureReport($user, $payment, $e);
         } catch (Exception $e) {
             // failed payment
             report($e);
 
-            $payment->status = PaymentModel::FAILED;
-            $payment->save();
-
-            event(new UserInvalidPayment($user, $payment));
-
-            return redirect()->route('user.ad.step_phone_payment.failedPurchase', [
-                'ad' => $payment->resource,
-                'code' => $e->getCode(),
-            ]);
+            return $this->paymentFailureReport($user, $payment, $e);
         }
+    }
+
+    public function paymentFailureReport($user, $payment, $error)
+    {
+        $payment->status = PaymentModel::FAILED;
+        $payment->save();
+
+        event(new UserInvalidPayment($user, $payment));
+
+        return redirect()->route('user.ad.step_phone_payment.failedPurchase', [
+            'ad' => $payment->resource,
+            'code' => $error->getCode(),
+        ]);
     }
 
     public function successPurchase(Ad $ad, $refID, Request $request)

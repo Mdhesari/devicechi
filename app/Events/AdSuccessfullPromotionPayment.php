@@ -4,6 +4,7 @@ namespace App\Events;
 
 use App\Models\Ad;
 use App\Models\MainUser;
+use App\Models\Payment\Payment;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -16,7 +17,7 @@ class AdSuccessfullPromotionPayment
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $user;
+    public $payment;
 
     public $ad;
 
@@ -25,10 +26,10 @@ class AdSuccessfullPromotionPayment
      *
      * @return void
      */
-    public function __construct(MainUser $user, Ad $ad)
+    public function __construct(Ad $ad, Payment $payment)
     {
-        $this->user = $user;
         $this->ad = $ad;
+        $this->payment = $payment;
     }
 
     /**

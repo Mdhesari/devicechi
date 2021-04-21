@@ -44,7 +44,6 @@ class GhasedakChannel
         try {
 
             $api = new GhasedakApi(config('ghasedak.api_key'));
-
             // TODO use default line
             // $result = $api->SendSimple(
             //     $mobile,  // receptor

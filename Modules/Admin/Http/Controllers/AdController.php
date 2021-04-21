@@ -173,12 +173,12 @@ class AdController extends Controller
         $ad->accept($request->user()->id);
 
         if ($request->boolean('pro_ad')) {
-
             $ad->proSign();
         }
 
-        if ($request->boolean('notify_user'))
+        if ($request->boolean('notify_user')) {
             $ad->notify(new AdAcceptedNotification);
+        }
 
         return back()->with('success', __(' آگهی با موفقیت انتشار داده شد.'));
     }

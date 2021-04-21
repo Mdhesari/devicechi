@@ -81,11 +81,12 @@ class Ad extends Model implements HasMedia
      */
     public function routeNotificationForSms()
     {
-        $contact = $this->contacts()->verified()->mobileOnly()->first();
+        return $this->user->phone;
+        // $contact = $this->contacts()->verified()->mobileOnly()->first();
 
-        if (!$contact) return null;
+        // if (!$contact) return null;
 
-        return $contact->value;
+        // return $contact->value;
     }
 
     /**
@@ -101,6 +102,16 @@ class Ad extends Model implements HasMedia
         if (!$contact) return null;
 
         return $contact->value;
+    }
+
+    public function getPrintablePromotionsAttribute()
+    {
+        return join(', ', $this->promotions()->pluck('title')->toArray());
+    }
+
+    public function latestPayment()
+    {
+        return $this->payments()->latest()->first();
     }
 
     public function getIsMulticardReadAttribute()

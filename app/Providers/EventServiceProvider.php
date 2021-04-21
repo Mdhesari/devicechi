@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\AdSuccessfullPromotionPayment;
 use App\Events\NewAdPublishedEvent;
+use App\Listeners\AdminNotifySuccessfullAdPromotionPayment;
+use App\Listeners\UserSuccessfullPaymentListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -20,15 +23,21 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        // All listeners are commented because of auto discovery enabled
         Registered::class => [
-            SendEmailVerificationNotification::class,
+            // SendEmailVerificationNotification::class,
         ],
         UserRegistered::class => [
             // SendPhoneVerificationCode::class
         ],
         NewAdPublishedEvent::class => [
-            ReportNewPublishedAdToAdmin::class,
+            // ReportNewPublishedAdToAdmin::class,
         ],
+        AdSuccessfullPromotionPayment::class => [
+            // auto discovery
+            // AdminNotifySuccessfullAdPromotionPayment::class,
+            // UserSuccessfullPaymentListener::class,
+        ]
     ];
 
     /**
