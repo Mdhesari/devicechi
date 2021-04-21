@@ -38,7 +38,6 @@ class Payment extends Model
 
     public function resource()
     {
-
         return $this->morphTo(__FUNCTION__, 'resource_type', 'resource_id');
     }
 

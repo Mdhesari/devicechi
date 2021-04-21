@@ -76,16 +76,15 @@ class UserPaymentController extends Controller
                 $payment->status = PaymentModel::SUCCESS;
                 $payment->verified_code = $verified->getReferenceId();
             } else {
-
-                throw new InvalidPaymentException;
+                return abort(404);
             }
 
             $payment->verified_at = now();
             $payment->$payment->save();
 
             $user->push();
-            return 'success';
-            // return redirect()->route('payments.success', ['refID' => $payment->refID]);
+
+            return redirect()->route('user.ad.step_phone_payment.successPurchase', ['refID' => $payment->refID, 'ad' => $payment->resource]);
 
             // successful payment
         } catch (Exception $e) {
@@ -96,9 +95,22 @@ class UserPaymentController extends Controller
             $payment->status = PaymentModel::FAILED;
             $payment->save();
 
-            dd('failed');
-            // return abort(402, __(' Invalid Payment '));
+            return redirect()->route('user.ad.step_phone_payment.failedPurchase', [
+                'ad' => $payment->resource,
+            ]);
         }
+    }
+
+    public function successPurchase(Ad $ad, $refID, Request $request)
+    {
+        $promotions = $ad->promotions;
+
+        return inertia('Payment/Success', compact('ad', 'refID', 'promotions'));
+    }
+
+    public function failedPurchase(Ad $ad, Request $request)
+    {
+        return inertia('Payment/Failed', compact('ad'));
     }
 
     /**

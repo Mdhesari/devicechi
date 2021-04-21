@@ -67,6 +67,10 @@ Route::prefix('/ads')->name('ad.')->group(function () {
                     Route::put('/gateway', [UserPaymentController::class, 'gateway'])->name('gateway');
 
                     Route::get('/verify', [UserPaymentController::class, 'verify'])->name('verify');
+
+                    Route::get('/successPurchase/{refID}', [UserPaymentController::class, 'successPurchase'])->name('successPurchase');
+
+                    Route::get('/failedPurchase', [UserPaymentController::class, 'failedPurchase'])->name('failedPurchase');
                 });
 
                 Route::get('/accessories', [AdAccessoryController::class, 'choose'])->name('accessories');
