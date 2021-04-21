@@ -21,6 +21,7 @@ class PromotionRepository extends Repository implements PromotionRepositoryInter
         return [
             'price' => intval($finalPrice),
             'currency' => 'IRR',
+            'promotions' => $promotions,
         ];
     }
 }

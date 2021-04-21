@@ -62,6 +62,10 @@ Vue.mixin({
 		__(name, replace) {
 			return this.$t.get(name, replace)
 		},
+		formatCurrency(currency) {
+			// temp
+			return 'ریال'
+		},
 		formatMoney(amount, decimalCount = 0, decimal = '.', thousands = ',') {
 			try {
 				decimalCount = Math.abs(decimalCount)

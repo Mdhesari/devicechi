@@ -348,6 +348,16 @@ class Ad extends Model implements HasMedia
         return $query;
     }
 
+    public function promotions()
+    {
+        return $this->belongsToMany(Promotion::class);
+    }
+
+    public function isPromotionPaid($promotion)
+    {
+        return $this->promotions->contains($promotion);
+    }
+
     public function missingPhoneAccessories()
     {
 

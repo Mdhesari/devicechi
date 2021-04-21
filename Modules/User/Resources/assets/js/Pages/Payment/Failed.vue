@@ -7,7 +7,7 @@
 						<i class="fa fa-times red-color" aria-hidden="true"></i>
 					</div>
 					<div class="title">خطا</div>
-					<div class="message">تراکنش شما با خطا مواجه شد</div>
+					<div class="message">{{ message }}</div>
 					<inertia-link
 						:href="
 							route('user.ad.step_phone_promote', {
@@ -27,7 +27,7 @@
 import AuthLayout from './../../Layouts/FrontAuthLayout'
 
 export default {
-	props: ['user', 'ad'],
+	props: ['user', 'ad', 'message'],
 	components: {
 		AuthLayout
 	}

@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers;
 use App\Models\Ad;
 use App\Models\Payment\Payment as PaymentModel;
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -37,9 +38,9 @@ class UserPaymentController extends Controller
             'promotions' => 'required|array',
         ]);
 
-        $price = $repository->evaluateFinalPrice($request->promotions);
-        $finalPrice = $price['price'];
-        $currency = $price['currency'];
+        $priceArr = $repository->evaluateFinalPrice($request->promotions);
+        $finalPrice = $priceArr['price'];
+        $currency = $priceArr['currency'];
         $user = $request->user();
 
         // prepare invoice
@@ -52,12 +53,15 @@ class UserPaymentController extends Controller
             ]);
 
         // store payment and redirect to gateway api
-        return Payment::callbackUrl(route('user.ad.step_phone_payment.verify', $ad))->purchase($invoice, function ($driver, $transactionId) use ($ad, $finalPrice, $user, $currency) {
+        return Payment::callbackUrl(route('user.ad.step_phone_payment.verify', $ad))->purchase($invoice, function ($driver, $transactionId) use ($ad, $finalPrice, $user, $currency, $priceArr) {
             $ad->payments()->create([
                 'transaction_id' => $transactionId,
                 'amount' => $finalPrice,
                 'user_id' => $user->id,
                 'currency' => $currency,
+                'meta' => [
+                    'promotions' => $priceArr['promotions']
+                ]
             ]);
         })->pay()->toJson();
     }
@@ -73,6 +77,10 @@ class UserPaymentController extends Controller
             $verified = Payment::amount($this->getFinalPriceFromCurrency($payment->amount, 'IRT'))->transactionId($transaction_id)->verify();
 
             if ($payment) {
+                if ($payment->missingPromotions()) {
+                    return abort(400);
+                }
+
                 $payment->status = PaymentModel::SUCCESS;
                 $payment->verified_code = $verified->getReferenceId();
             } else {
@@ -80,15 +88,23 @@ class UserPaymentController extends Controller
             }
 
             $payment->verified_at = now();
-            $payment->$payment->save();
+            $payment->save();
+
+            $promotions = $payment->meta['promotions'];
+
+            $ad = $payment->resource;
+
+            $ad->promotions()->attach($promotions);
 
             $user->push();
 
-            return redirect()->route('user.ad.step_phone_payment.successPurchase', ['refID' => $payment->refID, 'ad' => $payment->resource]);
+            return redirect()->route('user.ad.step_phone_payment.successPurchase', [
+                'ad' => $ad,
+                'refID' => $transaction_id,
+            ]);
 
             // successful payment
         } catch (Exception $e) {
-
             // failed payment
             report($e);
 
@@ -97,6 +113,7 @@ class UserPaymentController extends Controller
 
             return redirect()->route('user.ad.step_phone_payment.failedPurchase', [
                 'ad' => $payment->resource,
+                'code' => $e->getCode(),
             ]);
         }
     }
@@ -104,13 +121,32 @@ class UserPaymentController extends Controller
     public function successPurchase(Ad $ad, $refID, Request $request)
     {
         $promotions = $ad->promotions;
+        $refID = intval($refID);
+        $finalPrice = $request->finalPrice;
 
-        return inertia('Payment/Success', compact('ad', 'refID', 'promotions'));
+        return inertia('Payment/Success', compact('ad', 'refID', 'promotions', 'finalPrice'));
     }
 
     public function failedPurchase(Ad $ad, Request $request)
     {
-        return inertia('Payment/Failed', compact('ad'));
+        $message = $this->getFailureMessageBasedOnCode($request->code);
+
+        return inertia('Payment/Failed', compact('ad', 'message'));
+    }
+
+    private function getFailureMessageBasedOnCode($code)
+    {
+        $message = '';
+
+        switch ($code) {
+            case 101:
+                $message = 'عمليات پرداخت موفق بوده و قبلا تراكنش انجام شده است';
+                break;
+            default:
+                $message = 'تراکنش شما با خطا مواجه شد';
+        }
+
+        return $message;
     }
 
     /**
@@ -142,6 +178,6 @@ class UserPaymentController extends Controller
                 break;
         }
 
-        return $price;
+        return intval($price);
     }
 }

@@ -18,7 +18,21 @@ class Payment extends Model
     const PENDING = 2;
     const REJECTED = 3;
 
-    protected $fillable = ['amount', 'user_id', 'transaction_id', 'currency'];
+    protected $fillable = ['amount', 'user_id', 'transaction_id', 'currency', 'meta'];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'meta' => 'array',
+    ];
+
+    public function missingPromotions()
+    {
+        return !isset($this->meta['promotions']);
+    }
 
     //-----------------Relations------------------//
     public function user()

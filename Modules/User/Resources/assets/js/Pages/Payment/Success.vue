@@ -12,15 +12,30 @@
 						<span>کد پیگیری :‌</span>
 						<span>{{ refID }}</span>
 					</p>
-					<a href="#" class="btn green-background pay-btn">مدیریت آگهی</a>
-                    <h5>لیست موارد خریداری شده : </h5>
+					<p>
+						<span>مبلغ کل :‌</span>
+						<span>{{ finalPrice }}</span>
+					</p>
+					<inertia-link
+						:href="
+							route('user.ad.step_phone_demo', {
+								ad
+							})
+						"
+						class="btn green-background pay-btn"
+						>مدیریت آگهی
+					</inertia-link>
+					<h5 class="mt-4 py-4">لیست موارد خریداری شده برای آگهی مورد نظر:</h5>
 					<ul class="list-group">
 						<li
 							class="list-item"
 							v-for="(promotion, index) in promotions"
 							:key="index"
-							v-text="promotion.title"
-						></li>
+						>
+							<span v-text="promotion.title"></span>
+							<span>{{ formatMoney(promotion.price) }}</span>
+							<span>{{ formatCurrency(promotion.currency) }}</span>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -32,7 +47,7 @@
 import AuthLayout from './../../Layouts/FrontAuthLayout'
 
 export default {
-	props: ['user', 'refID', 'promotions'],
+	props: ['user', 'refID', 'promotions', 'finalPrice', 'ad'],
 	components: {
 		AuthLayout
 	}

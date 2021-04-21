@@ -23,7 +23,8 @@
 												:disabled="
 													isLoading ||
 														promotion.free ||
-														Boolean(promotion.activate_at)
+														Boolean(promotion.activate_at) ||
+														promotion.paid
 												"
 												:key="index"
 												:name="'promotion_' + promotion.id"
@@ -36,6 +37,9 @@
 													{{ promotion.title }}
 													<span v-if="promotion.free">(رایگان)</span>
 													<span v-if="promotion.activate_at">(غیر فعال)</span>
+													<span v-if="promotion.paid" class="text-success"
+														>(پرداخت شده)</span
+													>
 												</h5>
 												<p class="promote-desc">{{ promotion.description }}</p>
 												<p class="promote-price">
@@ -170,12 +174,8 @@ export default {
 					}
 				)
 				.then((response) => {
-				window.location = response.data.action
+					window.location = response.data.action
 				})
-		},
-		formatCurrency(currency) {
-			// temp
-			return 'ریال'
 		},
 		updateFinalPrice(selected) {
 			axios

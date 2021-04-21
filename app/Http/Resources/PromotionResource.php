@@ -21,6 +21,7 @@ class PromotionResource extends JsonResource
             return array_merge(parent::toArray($request), [
                 'activate_at' => $this->evaluateActivateAfter($this->activate_after, $this->activate_after_type),
                 'free' => $this->price <= 0,
+                'paid' => $this->ad->isPromotionPaid($this->resource),
             ]);
         }
 
