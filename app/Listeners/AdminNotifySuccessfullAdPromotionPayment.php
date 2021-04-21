@@ -2,12 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\UserAdAccepted;
-use App\Notifications\AdAcceptedNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class UserAdAcceptedNotify
+class AdminNotifySuccessfullAdPromotionPayment
 {
     /**
      * Create the event listener.
@@ -25,8 +23,8 @@ class UserAdAcceptedNotify
      * @param  object  $event
      * @return void
      */
-    public function handle(UserAdAccepted $event)
+    public function handle($event)
     {
-        $event->ad->notify(new AdAcceptedNotification);
+        //
     }
 }

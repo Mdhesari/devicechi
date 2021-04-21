@@ -31,7 +31,6 @@ class AdSuccessfullPromotionPayment
         $this->ad = $ad;
     }
 
-
     /**
      * Get the channels the event should broadcast on.
      *
