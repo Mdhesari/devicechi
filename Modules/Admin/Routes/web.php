@@ -26,6 +26,7 @@ use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminBrandController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
+use Modules\Admin\Http\Controllers\AdminPromotionController;
 use Modules\Admin\Http\Controllers\CKEditorController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
@@ -148,6 +149,16 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
             Route::get('/update', [PaymentController::class, 'update'])->name('update');
 
             Route::get('/delete', [PaymentController::class, 'destroy'])->name('destroy');
+        });
+    });
+
+    Route::prefix('promotions')->name('promotions.')->group(function () {
+        Route::middleware('can:read promotion')->group(function () {
+            Route::get('/', [AdminPromotionController::class, 'index'])->name('index');
+        });
+
+        Route::middleware('can:create promotion')->group(function () {
+            Route::get('/add', [AdminPromotionController::class, 'create'])->name('create');
         });
     });
 

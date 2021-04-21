@@ -17,6 +17,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link" id="promotion-tab" data-toggle="tab" href="#promotion" role="tab" aria-controls="promotion" aria-selected="true"> @lang(' Paid Promotes ')</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link" id="setting-tab" data-toggle="tab" href="#setting" role="tab" aria-controls="setting" aria-selected="false">@lang(' Setting ')</a>
                 </li>
             </ul>
@@ -44,6 +48,87 @@
 
                                 @endforeach
                             </div>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">#</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($grid->getData() as $item)
+                                    @if($grid->allowsLinkableRows())
+                                    @php
+                                    $callback = call_user_func($grid->getLinkableCallback(), $grid->transformName(),
+                                    $item);
+                                    @endphp
+                                    @php
+                                    $trClassCallback = call_user_func($grid->getRowCssStyle(), $grid->transformName(),
+                                    $item);
+                                    @endphp
+                                    <tr class="{{ trim("linkable " . $trClassCallback) }}" data-url="{{ $callback }}">
+                                        @else
+                                        @php
+                                        $trClassCallback = call_user_func($grid->getRowCssStyle(),
+                                        $grid->transformName(),
+                                        $item);
+                                        @endphp
+                                    <tr class="{{ $trClassCallback }}">
+                                        @endif
+                                        @foreach($columns as $column)
+                                    <tr>
+                                        <th>{{ $column->name }}</th>
+                                        @if(is_callable($column->data))
+                                        @if($column->useRawFormat)
+                                        <td class="{{ $column->rowClass }}">
+                                            {!! call_user_func($column->data, $item, $column->key) !!}
+                                        </td>
+                                        @else
+                                        <td class="{{ $column->rowClass }}">
+                                            {{ call_user_func($column->data , $item, $column->key) }}
+                                        </td>
+                                        @endif
+                                        @else
+                                        @if($column->useRawFormat)
+                                        <td class="{{ $column->rowClass }}">
+                                            {!! $item->{$column->key} !!}
+                                        </td>
+                                        @else
+                                        <td class="{{ $column->rowClass }}">
+                                            {{ $item->{$column->key} }}
+                                        </td>
+                                        @endif
+                                        @endif
+                                    </tr>
+                                    @endforeach
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+
+                    </div>
+                    <!-- /.card -->
+                </div>
+
+                <div class="tab-pane fade" id="promotion" role="tabpanel" aria-labelledby="promotion-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="fa fa-text-width"></i>
+                                @lang(' Paid Promotes ')
+                            </h3>
+                        </div>
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            @php
+                            $grid = $promGrid;
+                            $item = $promItems;
+                            $columns = $promColumns;
+                            @endphp
 
                             <table class="table">
                                 <thead>

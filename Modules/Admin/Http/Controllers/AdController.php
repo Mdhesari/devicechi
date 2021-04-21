@@ -4,7 +4,9 @@ namespace Modules\Admin\Http\Controllers;
 
 use App\Grids\AdsGrid;
 use App\Grids\AdsSingleGrid;
+use App\Grids\PromotionsGrid;
 use App\Models\Ad;
+use App\Models\Promotion;
 use App\Notifications\AdAcceptedNotification;
 use App\Notifications\AdIgnoredNotification;
 use GuzzleHttp\Psr7\FnStream;
@@ -62,7 +64,7 @@ class AdController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show(Ad $ad, AdsSingleGrid $adsSingleGrid, Request $request)
+    public function show(Ad $ad, AdsSingleGrid $adsSingleGrid, PromotionsGrid $promotionsGrid, Request $request)
     {
         $query = Ad::query();
 
@@ -72,6 +74,11 @@ class AdController extends Controller
 
         $columns = $grid->getProcessedColumns();
         $item = collect($grid->getData()->items())->first();
+
+        $query = Promotion::query()->whereIn('id', $ad->promotions()->pluck('id'));
+        $promGrid = $promotionsGrid->create(compact('request', 'query'));
+        $promColumns = $promGrid->getProcessedColumns();
+        $promItems = $grid->getData()->items();
 
         $templates = [
             [
@@ -92,7 +99,10 @@ class AdController extends Controller
             'ad',
             'item',
             'columns',
-            'grid'
+            'grid',
+            'promGrid',
+            'promColumns',
+            'promItems'
         ));
     }
 
