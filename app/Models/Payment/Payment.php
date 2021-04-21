@@ -114,10 +114,10 @@ class Payment extends Model
         return number_format($this->amount) . ' ریال ';
     }
 
-    public function getCreatedAtAttribute($value)
-    {
-        return verta($value)->format('%B %d، %Y');
-    }
+    // public function getCreatedAtAttribute($value)
+    // {
+    //     return verta($value)->format('%B %d، %Y');
+    // }
 
     // ------------- End Attributes --------------
 
