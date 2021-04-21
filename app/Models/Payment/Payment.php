@@ -3,6 +3,7 @@
 namespace App\Models\Payment;
 
 use App\Models\MainUser;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Admin\Database\Factories\PaymentFactory;
@@ -17,7 +18,7 @@ class Payment extends Model
     const PENDING = 2;
     const REJECTED = 3;
 
-    protected $fillable = ['amount', 'user_id', 'transaction_id', 'currency', 'meta'];
+    protected $fillable = ['title', 'description', 'amount', 'user_id', 'transaction_id', 'currency', 'meta'];
 
     /**
      * The attributes that should be cast to native types.
@@ -111,6 +112,11 @@ class Payment extends Model
     {
         //TODO: dynamic currency
         return number_format($this->amount) . ' ریال ';
+    }
+
+    public function getCreatedAtAttribute($value)
+    {
+        return verta($value)->format('%B %d، %Y');
     }
 
     // ------------- End Attributes --------------

@@ -16,5 +16,6 @@ return [
     'published' =>  'آگهی جدید توسط کاربر :user منتشر شده با برند :brand',
     'payment' => [
         'promotions' => "کاربر :user ارتقا آگهی خریداری کرد. مبلغ پرداخت شده :payment موارد خریداری شده :‌ \n :promotions",
+        'promotions_sbj' => 'پرداخت جدید برای ارتقا آگهی'
     ]
 ];

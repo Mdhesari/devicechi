@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers;
 use App\Events\AdSuccessfullPromotionPayment;
 use App\Events\UserInvalidPayment;
 use App\Events\UserSuccessfullPayment;
+use App\Grids\PaymentsGrid;
 use App\Models\Ad;
 use App\Models\Payment\Payment as PaymentModel;
 use App\Models\Promotion;
@@ -23,9 +24,13 @@ class UserPaymentController extends Controller
      * Display a listing of the resource.
      * @return Renderable
      */
-    public function index(Request $request)
+    public function index(Request $request, PaymentsGrid $grid)
     {
-        $payments = $request->user()->payments()->select('title', 'amount',  'status', 'created_at')->get();
+        $payments = $request->user()->payments()->latest()->select('title', 'amount',  'status', 'created_at')->paginate();
+
+        if ($request->wantsJson()) {
+            return $payments;
+        }
 
         $nav_items = get_nav_items();
 
@@ -51,11 +56,11 @@ class UserPaymentController extends Controller
             ->amount($this->getFinalPriceFromCurrency($finalPrice, 'IRT'))
             ->detail([
                 'mobile' => $user->phone,
-                'description' => __('user::global.ad_promote_payment_desc'),
+                'description' => $desc = __('user::global.ad_promote_payment_desc'),
             ]);
 
         // store payment and redirect to gateway api
-        return Payment::callbackUrl(route('user.ad.step_phone_payment.verify', $ad))->purchase($invoice, function ($driver, $transactionId) use ($ad, $finalPrice, $user, $currency, $priceArr) {
+        return Payment::callbackUrl(route('user.ad.step_phone_payment.verify', $ad))->purchase($invoice, function ($driver, $transactionId) use ($ad, $finalPrice, $user, $currency, $priceArr, $desc) {
             $ad->payments()->create([
                 'transaction_id' => $transactionId,
                 'amount' => $finalPrice,
@@ -63,7 +68,9 @@ class UserPaymentController extends Controller
                 'currency' => $currency,
                 'meta' => [
                     'promotions' => $priceArr['promotions']
-                ]
+                ],
+                'description' => $desc,
+                'title' => 'ارتقا آگهی'
             ]);
         })->pay()->toJson();
     }

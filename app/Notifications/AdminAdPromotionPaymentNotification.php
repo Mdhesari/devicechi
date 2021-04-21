@@ -49,6 +49,7 @@ class AdminAdPromotionPaymentNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->subject(__("admin::ads.payment.promotions"))
             ->line(__("admin::ads.payment.promotions", [
                 'user' => $this->ad->user->phone,
                 'promotions' => $this->ad->printablePromotions,

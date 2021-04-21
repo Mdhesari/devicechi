@@ -198,6 +198,10 @@ return [
                 'route' => 'contact-us',
                 'route_params' => [],
             ],
+            [
+                'text' => 'قوانین',
+                'url' => 'https://devicechi.com/rules',
+            ],
         ],
         'user_main_footer_services' => [
             [
@@ -210,6 +214,14 @@ return [
             [
                 'text' => ' Hamta Learning ',
                 'url' => 'http://hmti.ir/06',
+            ],
+            [
+                'text' => 'درباره ما',
+                'url' => 'https://devicechi.com/about_us',
+            ],
+            [
+                'text' => 'قوانین',
+                'url' => 'https://devicechi.com/rules',
             ],
         ],
         'user_main_footer_help' => [
