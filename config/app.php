@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Devicechi'),
 
-    'username' => env('APP_NAME', '@devicechi'),
+    'username' => env('APP_USERNAME', '@devicechi'),
 
     'version' => '1.90.4',
 
