@@ -10,7 +10,6 @@ use Modules\Admin\Entities\Admin;
 
 class Payment extends Model
 {
-
     use HasFactory;
 
     const FAILED = 0;
@@ -53,6 +52,13 @@ class Payment extends Model
     public function resource()
     {
         return $this->morphTo(__FUNCTION__, 'resource_type', 'resource_id');
+    }
+    // ---------- End Relations ----------------------
+
+    // ----------------- Attributes ----------------
+    public function getPromotionsAttribute()
+    {
+        return $this->missingPromotions() ? null : $this->meta['promotions'];
     }
 
     public function getStatusAttribute($value)
@@ -97,9 +103,11 @@ class Payment extends Model
 
     public function getFormattedAmountAttribute($value)
     {
-
+        //TODO: dynamic currency
         return number_format($this->amount) . ' تومان ';
     }
+
+    // ------------- End Attributes --------------
 
     /**
      * Create a new factory instance for the model.

@@ -9,13 +9,11 @@ use App\Models\Ad;
 use App\Models\Payment\Payment as PaymentModel;
 use App\Models\Promotion;
 use Exception;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\User\Repositories\Eloquent\PromotionRepository;
 use Payment;
-use Shetabit\Multipay\Exceptions\InvalidPaymentException;
 use Shetabit\Multipay\Invoice;
 
 class UserPaymentController extends Controller
@@ -26,7 +24,6 @@ class UserPaymentController extends Controller
      */
     public function index(Request $request)
     {
-
         $payments = $request->user()->payments()->select('title', 'amount',  'status', 'created_at')->get();
 
         $nav_items = get_nav_items();
@@ -77,29 +74,29 @@ class UserPaymentController extends Controller
         $user = $request->user();
 
         $payment = PaymentModel::where('transaction_id', $transaction_id)->first();
+
+
+        if ($payment) {
+            return abort(404);
+        }
+
+        if ($payment->missingPromotions()) {
+            return abort(400);
+        }
+
         try {
             $verified = Payment::amount($this->getFinalPriceFromCurrency($payment->amount, 'IRT'))->transactionId($transaction_id)->verify();
 
-            if ($payment) {
-                if ($payment->missingPromotions()) {
-                    return abort(400);
-                }
-
-                $payment->status = PaymentModel::SUCCESS;
-                $payment->verified_code = $verified->getReferenceId();
-            } else {
-                return abort(404);
-            }
-
+            $payment->status = PaymentModel::SUCCESS;
+            $payment->verified_code = $verified->getReferenceId();
             $payment->verified_at = now();
             $payment->save();
+            $payment->fresh();
 
             event(new UserSuccessfullPayment($user, $payment));
 
-            $promotions = $payment->meta['promotions'];
-
+            $promotions = $payment->promotions;
             $ad = $payment->resource;
-
             $ad->promotions()->attach($promotions);
 
             event(new AdSuccessfullPromotionPayment($user, $ad));
@@ -112,8 +109,6 @@ class UserPaymentController extends Controller
                 'refID' => $transaction_id,
                 'finalPrice' => $payment->amount,
             ]);
-
-            // successful payment
         } catch (Exception $e) {
             // failed payment
             report($e);
@@ -133,7 +128,7 @@ class UserPaymentController extends Controller
     public function successPurchase(Ad $ad, $refID, Request $request)
     {
         $promotions = Promotion::whereIn('id', $request->promotions)->get()->toArray();
-        $refID = intval($refID);
+        $refID = intval($refID); // drop zero prefixes
         $finalPrice = $request->finalPrice;
 
         return inertia('Payment/Success', compact('ad', 'refID', 'promotions', 'finalPrice'));
@@ -159,27 +154,6 @@ class UserPaymentController extends Controller
         }
 
         return $message;
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('user::show');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     private function getFinalPriceFromCurrency($price, $currency)
