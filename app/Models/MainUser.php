@@ -35,9 +35,9 @@ class MainUser extends User implements HasOption
 
         'mobile_verified_at' => CustomDateCast::class,
 
-        'created_at' => CustomDateCast::class,
+        // 'created_at' => CustomDateCast::class,
 
-        'updated_at' => CustomDateCast::class,
+        // 'updated_at' => CustomDateCast::class,
     ];
 
     /**
