@@ -79,11 +79,13 @@ class AdminsGrid extends Grid implements AdminsGridInterface
                     "operator" => "<="
                 ],
                 "presenter" => function ($columnData, $columnName) {
-                    if ($columnData->email_verified_at)
+                    if ($columnData->email_verified_at) {
+                        $email_verified_at = $columnData->email_verified_at;
 
-                        return $columnData->email_verified_at->format('%B %d، %Y');
+                        return is_string($email_verified_at) ? $email_verified_at : verta($email_verified_at)->format('%B %d، %Y');
+                    }
 
-                    return null;
+                    return __(" No Verification ");
                 }
             ],
             "created_at" => [
@@ -94,11 +96,9 @@ class AdminsGrid extends Grid implements AdminsGridInterface
                     "operator" => "<="
                 ],
                 "presenter" => function ($columnData, $columnName) {
-                    if ($columnData->created_at)
+                    $created_at = $columnData->created_at;
 
-                        return $columnData->created_at->format('%B %d، %Y');
-
-                    return null;
+                    return is_string($created_at) ? $created_at : verta($created_at)->format('%B %d، %Y');
                 }
             ]
         ];

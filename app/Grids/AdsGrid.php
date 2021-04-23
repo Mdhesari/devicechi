@@ -174,7 +174,12 @@ class AdsGrid extends Grid implements AdsGridInterface
 				"date" => "true",
 				"filter" => [
 					"enabled" => false,
-				]
+				],
+				"presenter" => function ($columnData, $columnName) {
+					$created_at = $columnData->created_at;
+
+					return is_string($created_at) ? $created_at : verta($created_at)->format('%B %d، %Y');
+				}
 			]
 		];
 	}

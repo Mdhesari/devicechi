@@ -92,13 +92,9 @@ class UsersGrid extends Grid implements UsersGridInterface
                     "operator" => "<="
                 ],
                 "presenter" => function ($columnData, $columnName) {
-                    if ($columnData->created_at)
+                    $created_at = $columnData->created_at;
 
-                        $created_at = $columnData->created_at;
-
-                    return is_string($created_at) ? $created_at : $created_at->format('%B %d، %Y');
-
-                    return null;
+                    return is_string($created_at) ? $created_at : verta($created_at)->format('%B %d، %Y');
                 }
             ]
         ];

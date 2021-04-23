@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Console\Commands\GenerateSitemap;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Modules\Admin\Console\CreateAdminUser;
 
 class Kernel extends ConsoleKernel
 {
@@ -14,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        GenerateSitemap::class
+        GenerateSitemap::class,
+        CreateAdminUser::class,
     ];
 
     /**

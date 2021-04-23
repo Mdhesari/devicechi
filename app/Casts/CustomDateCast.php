@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Casts;
 
 use App;
@@ -7,7 +8,7 @@ use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
 
 class CustomDateCast implements CastsAttributes
 {
-        /**
+    /**
      * @param \Illuminate\Database\Eloquent\Model $model
      * @param string $key
      * @param mixed $value
@@ -17,14 +18,13 @@ class CustomDateCast implements CastsAttributes
      */
     public function get($model, string $key, $value, array $attributes)
     {
-        if(App::isLocale('fa') && $value) {
-            
+        if (App::isLocale('fa') && $value) {
+
             return verta($value);
-            
         }
         return $value;
     }
-        
+
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
      * @param string $key
