@@ -3,9 +3,10 @@
 namespace Modules\User\Entities;
 
 use App\Models\PhoneBrand;
+use App\Space\Contracts\HasOption;
 use Illuminate\Database\Eloquent\Model;
 
-class PhoneModel extends Model
+class PhoneModel extends Model implements HasOption
 {
     protected $fillable = ['name', 'phone_brand_id'];
 
@@ -37,5 +38,15 @@ class PhoneModel extends Model
     {
 
         return $query->where('Name', 'Like',  "%$search%");
+    }
+
+    public function getOptionText(): string
+    {
+        return $this->name;
+    }
+
+    public function getOptionValue(): string
+    {
+        return $this->id;
     }
 }

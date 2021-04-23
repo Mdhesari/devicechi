@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Space\Contracts\HasOption;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\PhoneModel;
 
-class PhoneBrand extends Model
+class PhoneBrand extends Model implements HasOption
 {
 
     const ASSET_NAME = 'brands';
@@ -64,5 +65,15 @@ class PhoneBrand extends Model
     {
 
         return $this->hasMany(PhoneModel::class);
+    }
+
+    public function getOptionValue(): string
+    {
+        return $this->id;
+    }
+
+    public function getOptionText(): string
+    {
+        return $this->name . ' | ' . $this->persian_name;
     }
 }

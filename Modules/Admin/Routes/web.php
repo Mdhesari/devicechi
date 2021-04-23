@@ -24,9 +24,12 @@ use Modules\Admin\Http\Controllers\ActivityLogController;
 use Modules\Admin\Http\Controllers\AdController;
 use Modules\Admin\Http\Controllers\AdExportController;
 use Modules\Admin\Http\Controllers\AdminBrandController;
+use Modules\Admin\Http\Controllers\AdminCitiesController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
+use Modules\Admin\Http\Controllers\AdminModelsController;
 use Modules\Admin\Http\Controllers\AdminPromotionController;
+use Modules\Admin\Http\Controllers\AdminStatesController;
 use Modules\Admin\Http\Controllers\CKEditorController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
@@ -167,6 +170,22 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         Route::middleware('can:read ad')->group(function () {
 
             Route::get('/', [AdController::class, 'index'])->name('list');
+
+            Route::prefix('brands')->name('brands.')->group(function () {
+                Route::get('search', [AdminBrandController::class, 'search'])->name('search');
+            });
+
+            Route::prefix('models')->name('models.')->group(function () {
+                Route::get('search', [AdminModelsController::class, 'search'])->name('search');
+            });
+
+            Route::prefix('cities')->name('cities.')->group(function () {
+                Route::get('search', [AdminCitiesController::class, 'search'])->name('search');
+            });
+
+            Route::prefix('states')->name('states.')->group(function () {
+                Route::get('search', [AdminStatesController::class, 'search'])->name('search');
+            });
 
             Route::get('/renew-caption/{ad}', [AdExportController::class, 'renewCaption'])->name('export.renew-caption');
 

@@ -5,15 +5,24 @@ namespace Modules\Admin\Http\Controllers;
 use App\Grids\AdsGrid;
 use App\Grids\AdsSingleGrid;
 use App\Grids\PromotionsGrid;
+use App\Http\Requests\SearchRequest;
+use App\Http\Resources\SearchResource;
 use App\Models\Ad;
+use App\Models\PhoneBrand;
 use App\Models\Promotion;
 use App\Notifications\AdAcceptedNotification;
 use App\Notifications\AdIgnoredNotification;
+use App\Space\Contracts\Searchable;
 use GuzzleHttp\Psr7\FnStream;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
+use Modules\User\Entities\CityState;
+use Modules\User\Entities\PhoneAccessory;
+use Modules\User\Entities\PhoneAge;
+use Modules\User\Entities\PhoneModel;
+use Modules\User\Entities\PhoneVariant;
 
 class AdController extends Controller
 {
@@ -44,9 +53,19 @@ class AdController extends Controller
      * Show the form for creating a new resource.
      * @return Renderable
      */
-    public function create()
+    public function create(Request $request)
     {
-        // return view('admin::create');
+        return view('admin::ads.create', [
+            'page_title' => __(' Create Ad '),
+            'accessories' => PhoneAccessory::all(),
+            'brands' => [],
+            'ages' => PhoneAge::all(),
+            'variants' => PhoneVariant::all(),
+            'states' => [],
+            'cities' => [],
+            // temp
+            'models' => [],
+        ]);
     }
 
     /**

@@ -2,35 +2,19 @@
 
 namespace Modules\Admin\Http\Controllers;
 
-use App\Grids\PhoneBrandsGrid;
 use App\Http\Requests\SearchRequest;
 use App\Http\Resources\SearchResource;
-use App\Models\PhoneBrand;
 use App\Space\Contracts\Searchable;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\User\Entities\PhoneModel;
 
-class AdminBrandController extends Controller implements Searchable
+class AdminModelsController extends Controller implements Searchable
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index(PhoneBrandsGrid $grid, Request $request)
-    {
-        $page_title = __(' Ads List ');
-
-        $query = PhoneBrand::query();
-
-        return $grid
-            ->create(compact('query', 'request'))
-            ->renderOn('admin::grid.index', compact('page_title'));
-    }
-
     public function search(SearchRequest $request)
     {
-        $query = PhoneBrand::query();
+        $query = PhoneModel::query();
 
         $search = $request->input('search');
 
@@ -44,17 +28,25 @@ class AdminBrandController extends Controller implements Searchable
         if ($search)
             $query->where(function ($query) use ($search) {
 
-                $query->searchLike(['name', 'persian_name'], $search);
+                $query->searchLike(['name'], $search);
             });
 
-        $brands = $query->paginate();
+        $models = $query->paginate();
         return response([
-            'results' => SearchResource::collection($brands),
+            'results' => SearchResource::collection($models),
             "search" => $search,
             "pagination" => [
-                "more" => $brands->count() > 0
+                "more" => $models->count() > 0
             ]
         ]);
+    }
+    /**
+     * Display a listing of the resource.
+     * @return Renderable
+     */
+    public function index()
+    {
+        return view('admin::index');
     }
 
     /**
