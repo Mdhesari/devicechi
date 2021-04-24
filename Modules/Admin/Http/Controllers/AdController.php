@@ -8,6 +8,7 @@ use App\Grids\PromotionsGrid;
 use App\Http\Requests\SearchRequest;
 use App\Http\Resources\SearchResource;
 use App\Models\Ad;
+use App\Models\Ad\AdContactType;
 use App\Models\PhoneBrand;
 use App\Models\Promotion;
 use App\Notifications\AdAcceptedNotification;
@@ -18,11 +19,14 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\ValidationException;
+use Modules\Admin\Http\Requests\AdminCreateAdRequest;
 use Modules\User\Entities\CityState;
 use Modules\User\Entities\PhoneAccessory;
 use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
+use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
+use Validator;
 
 class AdController extends Controller
 {
@@ -63,6 +67,7 @@ class AdController extends Controller
             'variants' => PhoneVariant::all(),
             'states' => [],
             'cities' => [],
+            'contactTypes' => AdContactType::all(),
             // temp
             'models' => [],
         ]);
@@ -73,9 +78,58 @@ class AdController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(Request $request)
+    public function store(AdminCreateAdRequest $request, AdContactRepositoryInterface $contactRepo)
     {
-        //
+        $ad = new Ad;
+
+        $ad->title = $request->title;
+        $ad->description = $request->description;
+        $ad->user_id = 1;
+        $ad->state_id = $request->state_id;
+        $ad->phone_model_id = $request->model_id;
+        $ad->phone_model_variant_id = $request->variant_id;
+        $ad->price = $request->price;
+        $ad->phone_age_id = $request->age_id;
+        $ad->is_multicard = $request->boolean('is_multicard');
+        $ad->is_exchangeable = $request->boolean('is_exchangeable');
+        $ad->save();
+        $ad->fresh();
+
+        $contacts = $request->contacts;
+
+        $contacts_db = [];
+
+        foreach ($contacts as $contact) {
+            [$type, $value] = explode(':', $contact);
+
+            $contactType = AdContactType::findOrFail($type);
+
+            if ($contactType->data['validation']) {
+                Validator::validate([
+                    'value' => $value,
+                ], $contactType->data['validation'], [], $contactType->data['validation_attr'] ?? []);
+            }
+
+            $contactObj = $contactRepo->firstOrCreate([
+                'contact_type_id' => $type,
+                'ad_id' => $ad->id,
+                'value' => $value,
+            ]);
+            $contactObj->setValueAsVerified();
+
+            $contacts_db[] = $contactObj;
+        }
+
+        $acceesories = collect($request->accessories);
+
+        $acceesories = $acceesories->filter(function ($value) {
+
+            return !is_null($value) && !empty($value) && PhoneAccessory::whereId($value)->count() > 0;
+        });
+
+        $ad->accessories()->sync($acceesories);
+
+        return redirect()->route('admin.ads.list')->with('success', __(' Ad created! '));
     }
 
     /**
