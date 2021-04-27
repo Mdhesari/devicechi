@@ -128,7 +128,7 @@ return [
      * Separator to use when generating slugs.  Defaults to a hyphen.
      */
 
-    'separator' => '_',
+    'separator' => '-',
 
     /**
      * Enforce uniqueness of slugs?  Defaults to true.
