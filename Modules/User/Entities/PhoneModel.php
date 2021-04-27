@@ -42,7 +42,7 @@ class PhoneModel extends Model implements HasOption
 
     public function getOptionText(): string
     {
-        return $this->name;
+        return $this->brand->name . ' | ' . $this->name;
     }
 
     public function getOptionValue(): string

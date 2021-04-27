@@ -35,7 +35,7 @@
 
                             <div id="contacts-form" class="form-group">
                                 <label for="contact-value" class="mb-3">@lang(' Add Contact ')</label>
-                                <select class="d-none" name="contacts[]" id="contacts-select"></select>
+                                <select class="d-none" multiple name="contacts[]" id="contacts-select"></select>
                                 <div id="forms-holder" class="input-group">
                                     <div class="input-group add-contact-form my-3" style="position:relative;">
                                         <button type="button" class="btn btn-link text-danger delete-contact" style="position: absolute;bottom:80%;right:0;z-index:29">
@@ -179,8 +179,8 @@
 
             storeContactsToHiddenSelect()
 
-            if (validateCreateAdForm())
-                $(this).submit()
+            // if (validateCreateAdForm())
+            //     $(this).submit()
         })
 
         function appendNewContactFormToContactsHolder() {
@@ -206,7 +206,9 @@
                 value += ':' + text
 
                 if (text.length > 0) {
-                    options.push(new Option(text, value))
+                    let opt = new Option(text, value)
+                    opt.selected = true
+                    options.push(opt)
                 }
             })
 

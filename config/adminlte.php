@@ -60,6 +60,12 @@ return [
                         'route_params' => [],
                         'icon' => 'fa fa-list-ul nav-icon'
                     ],
+                    [
+                        'text' => ' Create Ad ',
+                        'route' => 'admin.ads.add',
+                        'route_params' => [],
+                        'icon' => 'fa fa-plus nav-icon'
+                    ],
                 ],
             ],
             [

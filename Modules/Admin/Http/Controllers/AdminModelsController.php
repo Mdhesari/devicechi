@@ -28,7 +28,7 @@ class AdminModelsController extends Controller implements Searchable
         if ($search)
             $query->where(function ($query) use ($search) {
 
-                $query->searchLike(['name'], $search);
+                $query->searchLike(['name', 'brand.name'], $search);
             });
 
         $models = $query->paginate();
