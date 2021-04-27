@@ -17,6 +17,7 @@ class SearchResource extends JsonResource
         return [
             "id" => $this->getOptionValue(),
             "text" => $this->getOptionText(),
+            "selected" => method_exists($this, 'getSelected') ? $this->getSelected() : false,
         ];
     }
 }

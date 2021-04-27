@@ -8,18 +8,19 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">@lang(' Create Ad ')</h3>
+                        <h3 class="card-title">@lang(' edit Ad ')</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form id="create-ad-form" action="{{ route("admin.ads.add") }}" method="POST" role="form">
+                    <form id="edit-ad-form" action="{{ route("admin.ads.edit", $ad) }}" method="POST" role="form">
                         @csrf
+                        @method('PUT')
 
                         <div class="card-body">
 
                             <div class="form-group">
                                 <label for="title">@lang(' Title ')</label>
-                                <input value="{{ old('title') }}" type="text" class="form-control" id="title" name="title" placeholder="{{__(' Title ')}}">
+                                <input value="{{ $ad->title }}" type="text" class="form-control" id="title" name="title" placeholder="{{__(' Title ')}}">
                             </div>
                             @error('title')
                             <p class="alert alert-danger">{{ $message }}</p>
@@ -27,7 +28,7 @@
 
                             <div class="form-group">
                                 <label for="description">@lang(' Description ')</label>
-                                <input value="{{ old('description') }}" type="description" class="form-control" id="description" name="description" placeholder="{{__(' Description ')}}">
+                                <input value="{{ $ad->description }}" type="description" class="form-control" id="description" name="description" placeholder="{{__(' Description ')}}">
                             </div>
                             @error('description')
                             <p class="alert alert-danger">{{ $message }}</p>
@@ -37,19 +38,22 @@
                                 <label for="contact-value" class="mb-3">@lang(' Add Contact ')</label>
                                 <select class="d-none" multiple name="contacts[]" id="contacts-select"></select>
                                 <div id="forms-holder" class="input-group">
+
+                                    @foreach ($ad->contacts as $contact)
                                     <div class="input-group add-contact-form my-3" style="position:relative;">
                                         <button type="button" class="btn btn-link text-danger delete-contact" style="position: absolute;bottom:80%;right:0;z-index:29">
                                             <i class="fa fa-minus-circle"></i>
                                         </button>
-                                        <input class="contact-value form-control w-50" type="text">
+                                        <input class="contact-value form-control w-50" type="text" value="{{ $contact->value }}">
                                         <div class="input-group-prepend">
                                             <select class="form-control" name="contact-type" class="contact-type">
                                                 @foreach ($contactTypes as $contactType)
-                                                <option @if($loop->first) selected @endif value="{{ $contactType->id }}" title="{{ $contactType->description }}">{{ $contactType->name }}</option>
+                                                <option @if($contact->contact_type_id == $contactType->id) selected @endif value="{{ $contactType->id }}" title="{{ $contactType->description }}">{{ $contactType->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
+                                    @endforeach
                                 </div>
                                 <button id="add-contact" type="button" class="btn btn-primary my-4">@lang(' Add New + ')</button>
                             </div>
@@ -60,7 +64,7 @@
 
                             <div class="form-group">
                                 <label for="price">@lang(' Price ')</label>
-                                <input value="{{ old('price') }}" type="number" class="form-control" id="price" name="price" placeholder="{{__(' Price ')}}">
+                                <input value="{{ floor($ad->price) }}" type="number" class="form-control" id="price" name="price" placeholder="{{__(' Price ')}}">
                                 <small id="price_help" class="form-text text-muted"></small>
                             </div>
                             @error('price')
@@ -71,7 +75,7 @@
                             <div class="form-group">
                                 <label for="models-search">@lang(' Choose Model ')</label>
 
-                                <x-auto-complete-search :options="$models" :single="true" id="models-search" name="model_id" :route="route('admin.ads.models.search')" placeholder="{{__(' Choose Model ')}}" :defaults="old('model_id')">
+                                <x-auto-complete-search :options="$models" :single="true" id="models-search" name="model_id" :route="route('admin.ads.models.search')" placeholder="{{__(' Choose Model ')}}" :defaults="$ad->phone_model_id">
                                 </x-auto-complete-search>
 
                             </div>
@@ -85,7 +89,7 @@
 
                                 <select multiple name="accessories[]" id="accessories">
                                     @foreach ($accessories as $accessory)
-                                    <option value="{{ $accessory->id }}">{{ __('user::accessories.'. $accessory->title) }}</option>
+                                    <option value="{{ $accessory->id }}" @if(in_array($accessory->id, $selected_accessories)) selected @endif>{{ __('user::accessories.'. $accessory->title) }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -99,7 +103,7 @@
 
                                 <select class="form-control" name="age_id" id="age">
                                     @foreach ($ages as $age)
-                                    <option value="{{ $age->id }}">{{ $age->printableName }}</option>
+                                    <option value="{{ $age->id }}" @if($age->id == $ad->phone_age_id) selected @endif>{{ $age->printableName }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -113,7 +117,7 @@
 
                                 <select class="form-control" name="variant_id" id="variant">
                                     @foreach ($variants as $variant)
-                                    <option value="{{ $variant->id }}">{{ $variant->printableName }}</option>
+                                    <option value="{{ $variant->id }}" @if($variant->id == $ad->phone_model_variant_id) selected @endif>{{ $variant->printableName }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -122,14 +126,14 @@
                             @enderror
 
                             <div class="form-check my-2">
-                                <input type="checkbox" class="form-check-input" @if(old('is_multicard')) checked @endif name="is_multicard" id="is_multicard">
+                                <input type="checkbox" class="form-check-input" @if($ad->is_multicard) checked @endif name="is_multicard" id="is_multicard">
                                 <label class="form-check-label" for="is_multicard">
                                     @lang(' Multicard ')
                                 </label>
                             </div>
 
                             <div class="form-check my-2">
-                                <input type="checkbox" class="form-check-input" name="is_exchangeable" @if(old('is_exchangeable')) checked @endif id="is_exchangeable">
+                                <input type="checkbox" class="form-check-input" name="is_exchangeable" @if($ad->is_exchangeable) checked @endif id="is_exchangeable">
                                 <label class="form-check-label" for="is_exchangeable">
                                     @lang(' Exchangeable ')
                                 </label>
@@ -139,7 +143,7 @@
                             <div class="form-group">
                                 <label for="states-search">@lang(' Choose State ')</label>
 
-                                <x-auto-complete-search :options="$states" :single="true" id="states-search" name="state_id" :route="route('admin.ads.states.search')" placeholder="{{__(' Choose State ')}}" :defaults="old('state_id')">
+                                <x-auto-complete-search :options="$states" :single="true" id="states-search" name="state_id" :route="route('admin.ads.states.search')" placeholder="{{__(' Choose State ')}}" :defaults="$ad->state_id">
                                 </x-auto-complete-search>
 
                             </div>
@@ -149,7 +153,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">@lang(' Update ')</button>
+                            <button type="submit" class="btn btn-primary">@lang(' Save ')</button>
                         </div>
                     </form>
                 </div>
@@ -163,6 +167,8 @@
 @push('add_scripts')
 <script>
     jQuery(function($) {
+        $('#price_help').html(calcPrice($('#price').val()))
+
         $('#price').on('keyup', function(e) {
             $('#price_help').html(calcPrice($(this).val()))
         })
@@ -177,7 +183,7 @@
             }
         })
 
-        $('#create-ad-form').on('submit', function(e) {
+        $('#edit-ad-form').on('submit', function(e) {
             if (validateCreateAdForm()) {
                 return true;
             }

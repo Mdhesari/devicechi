@@ -4,8 +4,11 @@ namespace Modules\User\Repositories\Eloquent;
 
 use Illuminate\Pipeline\Pipeline;
 use App\Models\Ad;
+use App\Models\Ad\AdContactType;
 use Image;
 use Modules\Admin\Space\ImageFilters\InstagramFilter;
+use Modules\User\Entities\PhoneAccessory;
+use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
 use Modules\User\Space\Pipelines\Ad\AccessoryPipeline;
 use Modules\User\Space\Pipelines\Ad\AgePipeline;
@@ -19,6 +22,7 @@ use Modules\User\Space\Pipelines\Ad\PricePipeline;
 use Modules\User\Space\Pipelines\Ad\VariantPipeline;
 use Storage;
 use Str;
+use Validator;
 
 class AdRepository extends Repository implements
     AdRepositoryInterface
@@ -64,6 +68,58 @@ class AdRepository extends Repository implements
         $data = array_merge($data, ['slug' => uniqid()]);
 
         return $this->model->create($data);
+    }
+
+    public function updateAdFromRequest($ad, $request)
+    {
+        $ad->title = $request->title;
+        $ad->description = $request->description;
+        $ad->user_id = 1;
+        $ad->state_id = $request->state_id;
+        $ad->phone_model_id = $request->model_id;
+        $ad->phone_model_variant_id = $request->variant_id;
+        $ad->price = $request->price;
+        $ad->phone_age_id = $request->age_id;
+        $ad->is_multicard = $request->boolean('is_multicard');
+        $ad->is_exchangeable = $request->boolean('is_exchangeable');
+
+        return $ad;
+    }
+
+    public function validateAndStoreAdContacts($ad, $contacts = [])
+    {
+        foreach ($contacts as $contact) {
+            [$type, $value] = explode(':', $contact);
+
+            $contactType = AdContactType::findOrFail($type);
+
+            if ($contactType->data['validation']) {
+                Validator::validate([
+                    'value' => $value,
+                ], $contactType->data['validation'], [], $contactType->data['validation_attr'] ?? []);
+            }
+
+            $contactRepo = app(AdContactRepositoryInterface::class);
+
+            $contactObj = $contactRepo->firstOrCreate([
+                'contact_type_id' => $type,
+                'ad_id' => $ad->id,
+                'value' => $value,
+            ]);
+            $contactObj->setValueAsVerified();
+        }
+    }
+
+    public function storeAdAccessories($ad, $accessories = [])
+    {
+        $acceesories = collect($accessories);
+
+        $acceesories = $acceesories->filter(function ($value) {
+
+            return !is_null($value) && !empty($value) && PhoneAccessory::whereId($value)->count() > 0;
+        });
+
+        $ad->accessories()->sync($acceesories);
     }
 
     public function checkPreviousSteps(int $step, $ad)

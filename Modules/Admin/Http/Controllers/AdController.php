@@ -26,6 +26,8 @@ use Modules\User\Entities\PhoneAge;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Entities\PhoneVariant;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
+use Modules\User\Repositories\Contracts\AdRepositoryInterface;
+use Modules\User\Repositories\Eloquent\AdRepository;
 use Validator;
 
 class AdController extends Controller
@@ -59,18 +61,23 @@ class AdController extends Controller
      */
     public function create(Request $request)
     {
-        return view('admin::ads.create', [
+        return view('admin::ads.create', $this->getCreateVars());
+    }
+
+    private function getCreateVars()
+    {
+        return [
             'page_title' => __(' Create Ad '),
             'accessories' => PhoneAccessory::all(),
             'brands' => [],
             'ages' => PhoneAge::all(),
-            'variants' => PhoneVariant::all(),
+            'variants' => [],
             'states' => [],
             'cities' => [],
             'contactTypes' => AdContactType::all(),
             // temp
             'models' => [],
-        ]);
+        ];
     }
 
     /**
@@ -78,56 +85,16 @@ class AdController extends Controller
      * @param Request $request
      * @return Renderable
      */
-    public function store(AdminCreateAdRequest $request, AdContactRepositoryInterface $contactRepo)
+    public function store(AdminCreateAdRequest $request, AdRepositoryInterface $adRepo)
     {
         $ad = new Ad;
-
-        $ad->title = $request->title;
-        $ad->description = $request->description;
-        $ad->user_id = 1;
-        $ad->state_id = $request->state_id;
-        $ad->phone_model_id = $request->model_id;
-        $ad->phone_model_variant_id = $request->variant_id;
-        $ad->price = $request->price;
-        $ad->phone_age_id = $request->age_id;
-        $ad->is_multicard = $request->boolean('is_multicard');
-        $ad->is_exchangeable = $request->boolean('is_exchangeable');
+        $ad = $adRepo->updateAdFromRequest($ad, $request);
         $ad->save();
         $ad->fresh();
 
-        $contacts = $request->contacts;
+        $adRepo->validateAndStoreAdContacts($ad, $request->contacts);
 
-        $contacts_db = [];
-
-        foreach ($contacts as $contact) {
-            [$type, $value] = explode(':', $contact);
-
-            $contactType = AdContactType::findOrFail($type);
-
-            if ($contactType->data['validation']) {
-                Validator::validate([
-                    'value' => $value,
-                ], $contactType->data['validation'], [], $contactType->data['validation_attr'] ?? []);
-            }
-
-            $contactObj = $contactRepo->firstOrCreate([
-                'contact_type_id' => $type,
-                'ad_id' => $ad->id,
-                'value' => $value,
-            ]);
-            $contactObj->setValueAsVerified();
-
-            $contacts_db[] = $contactObj;
-        }
-
-        $acceesories = collect($request->accessories);
-
-        $acceesories = $acceesories->filter(function ($value) {
-
-            return !is_null($value) && !empty($value) && PhoneAccessory::whereId($value)->count() > 0;
-        });
-
-        $ad->accessories()->sync($acceesories);
+        $adRepo->storeAdAccessories($ad, $request->accessories);
 
         return redirect()->route('admin.ads.list')->with('success', __(' Ad created! '));
     }
@@ -184,9 +151,16 @@ class AdController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function edit(Ad $ad)
     {
-        // return view('admin::edit');
+        return view('admin::ads.edit', \array_merge($this->getCreateVars(), [
+            'page_title' => __(' Edit Ad '),
+            'selected_accessories' => $ad->accessories->pluck('id')->toArray(),
+            'ad' => $ad,
+            'models' => $ad->phoneModel()->get(),
+            'variants' => $ad->phoneModel->variants()->get(),
+            'states' => $ad->state()->get(),
+        ]));
     }
 
     /**
@@ -195,9 +169,16 @@ class AdController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update(AdminCreateAdRequest $request, Ad $ad, AdRepository $adRepo)
     {
-        //
+        $ad = $adRepo->updateAdFromRequest($ad, $request);
+        $ad->update();
+        $ad->fresh();
+
+        $adRepo->validateAndStoreAdContacts($ad, $request->contacts);
+        $adRepo->storeAdAccessories($ad, $request->accessories);
+
+        return back()->with('success', __(' Ad Updated! '));
     }
 
     /**

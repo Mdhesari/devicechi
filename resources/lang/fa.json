@@ -286,6 +286,8 @@
     " City State ": "شهر",
     " Deleted successfully ": "با موفقیت حذف شد.",
     " Create Ad ": "ایجاد آگهی جدید",
+    " Edit Ad ": "ویرایش آگهی",
+    " Add Contact ": " اطلاعات تماس (ها)",
     " View Ads ": "مشاهده آگهی ها",
     " Hamta Learning ": "آموزش همتا",
     " Choose Color ": "انتخاب رنگ",
@@ -307,5 +309,6 @@
     " Warning! ": "هشدار!",
     " Paid Promotes ": "ارتقا های خریداری شده",
     " Choose Accessories ": "لوازم جانبی",
-    " Choose Age ": "انتخاب کارکرد"
+    " Choose Age ": "انتخاب کارکرد",
+    " Choose Model ": "انتخاب مدل گوشی"
 }

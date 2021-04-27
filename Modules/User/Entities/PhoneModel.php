@@ -4,10 +4,13 @@ namespace Modules\User\Entities;
 
 use App\Models\PhoneBrand;
 use App\Space\Contracts\HasOption;
+use App\Space\Traits\HasDefaults;
 use Illuminate\Database\Eloquent\Model;
 
 class PhoneModel extends Model implements HasOption
 {
+    use HasDefaults;
+
     protected $fillable = ['name', 'phone_brand_id'];
 
     public function variants()

@@ -21,6 +21,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 	 */
 	protected $buttonsToGenerate = [
 		'create',
+		'edit',
 		'view',
 		'delete',
 		'refresh',
@@ -197,6 +198,7 @@ class AdsGrid extends Grid implements AdsGridInterface
 		// crud support
 		$this->setCreateRouteName('admin.ads.add');
 		$this->setViewRouteName('admin.ads.show');
+        $this->setEditRouteName('admin.ads.edit');
 		$this->setDeleteRouteName('admin.ads.destroy');
 
 		// default route parameter

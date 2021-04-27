@@ -20,6 +20,8 @@ class AdminModelsController extends Controller implements Searchable
 
         $ignore = $request->input('ignore');
 
+        $defaults = $request->input('defaults');
+
         if (!empty($ignore)) {
 
             $query->whereNotIn('id', $ignore);
@@ -32,6 +34,16 @@ class AdminModelsController extends Controller implements Searchable
             });
 
         $models = $query->paginate();
+
+        $tempCollection = $models->getCollection();
+
+        $tempCollection = $tempCollection->map(function ($item) use ($defaults) {
+            $item->defaults = $defaults;
+            return $item;
+        });
+
+        $models->setCollection($tempCollection);
+
         return response([
             'results' => SearchResource::collection($models),
             "search" => $search,

@@ -200,7 +200,9 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
             Route::post('/add', [AdController::class, 'store']);
 
-            Route::get('/update', [AdController::class, 'update'])->name('update');
+            Route::get('/edit/{ad:id}', [AdController::class, 'edit'])->name('edit');
+
+            Route::put('/edit/{ad:id}', [AdController::class, 'update']);
 
             Route::get('/delete/{ad:id}', [AdController::class, 'approveDestroy'])->name('destroy');
 

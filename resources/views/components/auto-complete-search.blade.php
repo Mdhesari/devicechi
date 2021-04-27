@@ -1,17 +1,19 @@
 <div class="auto-complete box w-100">
     <select @if(!$single) multiple @endif class="form-control" name="{{ $name }}" id="{{ $id }}">
-        {{-- @foreach ($options as $option)
+	@if(!empty($options))
+    	 @foreach ($options as $option)
 
-		@php
-		$value = $option->getOptionValue();
-		$text = $option->getOptionText();
-		@endphp
+			@php
+			$value = $option->getOptionValue();
+			$text = $option->getOptionText();
+			@endphp
 
-		<option @if(in_array($value, $defaults)) selected @endif value="{{ $value }}">
-        {{ $text }}
-        </option>
+			<option @if(in_array($value, $defaults)) selected @endif value="{{ $value }}">
+        	{{ $text }}
+        	</option>
 
-        @endforeach --}}
+        @endforeach
+	@endif
     </select>
 
 </div>
@@ -24,7 +26,8 @@
 		const selectId = '#{{ $id }}',
 		route = '{{ $route }}',
 		placeholder = '{{ __(" Select an option... ") }}',
-		ignore = @json($ignore)
+		ignore = @json($ignore),
+		defaults = @json($defaults)
 
 		$(selectId).select2({
 			allowClear: true,
@@ -37,6 +40,7 @@
     	  		var query = {
     	  		  search: params.term,
     	  		  page: params.page || 1,
+				  defaults,
 				  ignore
     	  		}
 
