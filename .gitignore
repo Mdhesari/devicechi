@@ -16,4 +16,9 @@ error_log
 tmp/laravel.log
 .user.ini
 php.ini
+storage/*
+public/fonts/
+public/css
+public/js
+
 .vscode/
