@@ -2,12 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Ad;
-use App\Models\Page;
 use Illuminate\Console\Command;
-use Spatie\Sitemap\SitemapGenerator;
 
-class GenerateSitemap extends Command
+class SitemapGenerator extends Command
 {
     /**
      * The name and signature of the console command.
@@ -21,7 +18,7 @@ class GenerateSitemap extends Command
      *
      * @var string
      */
-    protected $description = 'Generate sitemap for website.';
+    protected $description = 'Command description';
 
     /**
      * Create a new command instance.
@@ -40,16 +37,10 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        $generator = SitemapGenerator::create(config('app.url'));
+        $this->info('Generating sitemap...');
 
-        foreach (Page::cursor() as $page) {
-            $generator->add(url($page->slug));
-        }
+        SitemapGenerator::create(config('app.url'))->getSitemap()->writeToDisk('public', 'sitemap.xml');
 
-        foreach (Ad::cursor() as $ad) {
-            $generator->add(route('user.ad.show', $ad));
-        }
-
-        $generator->writeToFile(public_path('sitemap.xml'));
+        $this->info('End Generating sitemap...');
     }
 }
