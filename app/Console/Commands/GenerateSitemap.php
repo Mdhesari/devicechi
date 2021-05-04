@@ -51,7 +51,7 @@ class GenerateSitemap extends Command
             );
         }
 
-        foreach (Ad::cursor() as $ad) {
+        foreach (Ad::published()->cursor() as $ad) {
             $generator->add(
                 Url::create(route('user.ad.show', $ad))
                     ->setLastModificationDate($ad->updated_at)
