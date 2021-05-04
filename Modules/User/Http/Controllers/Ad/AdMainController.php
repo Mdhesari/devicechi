@@ -168,8 +168,6 @@ class AdMainController extends BaseAdController
     {
         $user = auth()->user();
 
-        info(auth()->id());
-
         return $user->update([
             'user_meta' => [
                 Ad::HELP_ALERT_SESSION => false
