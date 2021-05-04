@@ -44,15 +44,18 @@ class GenerateSitemap extends Command
         $generator = SitemapGenerator::create(config('app.url'))->getSitemap();
 
         foreach (Page::cursor() as $page) {
-            $generator->add(url($page->slug))
+            $generator->add(
+                Url::create(url($page->slug))
                 ->setLastModificationDate($page->updated_at)
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY);
         }
 
         foreach (Ad::cursor() as $ad) {
-            $generator->add(route('user.ad.show', $ad))
-                ->setLastModificationDate($ad->updated_at)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY);;
+            $generator->add(
+                Url::create(route('user.ad.show', $ad))
+                    ->setLastModificationDate($ad->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+            );
         }
 
         $generator->writeToFile(public_path('sitemap.xml'));
