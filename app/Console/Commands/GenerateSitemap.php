@@ -46,8 +46,9 @@ class GenerateSitemap extends Command
         foreach (Page::cursor() as $page) {
             $generator->add(
                 Url::create(url($page->slug))
-                ->setLastModificationDate($page->updated_at)
-                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY);
+                    ->setLastModificationDate($page->updated_at)
+                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+            );
         }
 
         foreach (Ad::cursor() as $ad) {
