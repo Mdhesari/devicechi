@@ -74,7 +74,10 @@ class AdRepository extends Repository implements
     {
         $ad->title = $request->title;
         $ad->description = $request->description;
-        $ad->user_id = 1;
+
+        if (!$ad->user_id) {
+            $ad->user_id = 1;
+        }
         $ad->state_id = $request->state_id;
         $ad->phone_model_id = $request->model_id;
         $ad->phone_model_variant_id = $request->variant_id;
