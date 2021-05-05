@@ -88,6 +88,12 @@ class AdRepository extends Repository implements
 
     public function validateAndStoreAdContacts($ad, $contacts = [])
     {
+        $contactRepo = app(AdContactRepositoryInterface::class);
+
+        if (count($contacts) > 0) {
+            $contactRepo->reset($ad);
+        }
+
         foreach ($contacts as $contact) {
             [$type, $value] = explode(':', $contact);
 
@@ -98,8 +104,6 @@ class AdRepository extends Repository implements
                     'value' => $value,
                 ], $contactType->data['validation'], [], $contactType->data['validation_attr'] ?? []);
             }
-
-            $contactRepo = app(AdContactRepositoryInterface::class);
 
             $contactObj = $contactRepo->firstOrCreate([
                 'contact_type_id' => $type,

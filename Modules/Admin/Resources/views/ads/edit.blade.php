@@ -34,29 +34,7 @@
                             <p class="alert alert-danger">{{ $message }}</p>
                             @enderror
 
-                            <div id="contacts-form" class="form-group">
-                                <label for="contact-value" class="mb-3">@lang(' Add Contact ')</label>
-                                <select class="d-none" multiple name="contacts[]" id="contacts-select"></select>
-                                <div id="forms-holder" class="input-group">
-
-                                    @foreach ($ad->contacts as $contact)
-                                    <div class="input-group add-contact-form my-3" style="position:relative;">
-                                        <button type="button" class="btn btn-link text-danger delete-contact" style="position: absolute;bottom:80%;right:0;z-index:29">
-                                            <i class="fa fa-minus-circle"></i>
-                                        </button>
-                                        <input class="contact-value form-control w-50" type="text" value="{{ $contact->value }}">
-                                        <div class="input-group-prepend">
-                                            <select class="form-control" name="contact-type" class="contact-type">
-                                                @foreach ($contactTypes as $contactType)
-                                                <option @if($contact->contact_type_id == $contactType->id) selected @endif value="{{ $contactType->id }}" title="{{ $contactType->description }}">{{ $contactType->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                                <button id="add-contact" type="button" class="btn btn-primary my-4">@lang(' Add New + ')</button>
-                            </div>
+                            <x-admin-contact-form :contacts="$ad->contacts" formId="edit-ad-form"></x-admin-contact-form>
 
                             @error('value')
                             <p class="alert alert-danger">{{ $message }}</p>
@@ -173,64 +151,6 @@
             $('#price_help').html(calcPrice($(this).val()))
         })
 
-        $('#add-contact').on('click', function(e) {
-            appendNewContactFormToContactsHolder()
-        })
-
-        $('#forms-holder').on('click', '.delete-contact', function(e) {
-            if ($('.add-contact-form').length > 1) {
-                $(this).parent().remove()
-            }
-        })
-
-        $('#edit-ad-form').on('submit', function(e) {
-            if (validateCreateAdForm()) {
-                return true;
-            }
-
-            e.preventDefault();
-
-            storeContactsToHiddenSelect()
-
-            if (validateCreateAdForm())
-                $(this).submit()
-        })
-
-        function appendNewContactFormToContactsHolder() {
-            const $clone = $('.add-contact-form').first().clone()
-
-            $clone.find('input').val('')
-
-            $clone.appendTo('#forms-holder')
-        }
-
-        function storeContactsToHiddenSelect() {
-            const hiddenSelect = $('#contacts-select')
-            let options = []
-
-            const forms = $('.add-contact-form')
-
-            forms.each(function(index) {
-                const $this = $(this)
-
-                let text = $this.find('.contact-value').val(),
-                    value = $this.find('select').find(':selected').val()
-
-                value += ':' + text
-
-                if (text.length > 0) {
-                    let opt = new Option(text, value)
-                    opt.selected = true
-                    options.push(opt)
-                }
-            })
-
-            hiddenSelect.append(options)
-        }
-
-        function validateCreateAdForm() {
-            return $('#contacts-select').find('option').length > 0
-        }
     })
 </script>
 @endpush

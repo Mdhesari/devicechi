@@ -71,7 +71,7 @@ class AdController extends Controller
             'accessories' => PhoneAccessory::all(),
             'brands' => [],
             'ages' => PhoneAge::all(),
-            'variants' => [],
+            'variants' => PhoneVariant::limit(15)->get(), //TODO: handle with ajax
             'states' => [],
             'cities' => [],
             'contactTypes' => AdContactType::all(),

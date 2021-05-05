@@ -58,6 +58,15 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         return $this->model->whereId($id)->delete();
     }
 
+    public function reset($ad_id)
+    {
+        if (is_object($ad_id)) {
+            $ad_id = $ad_id->id;
+        }
+
+        return $this->model->whereAdId($ad_id)->where('id', '>=', 0)->delete();
+    }
+
     public function getContacts($ad)
     {
         if ($ad->contacts()->count() < 1) {
