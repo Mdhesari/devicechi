@@ -31,6 +31,25 @@ return [
                 'icon' => 'fa fa-bars nav-icon',
             ],
             [
+                'text' =>  ' Posts Management ',
+                'permission' => 'read posts',
+                'icon' => 'fas fa-paper-plane nav-icon',
+                'submenu' => [
+                    [
+                        'text' => ' Posts List ',
+                        'route' => 'admin.posts.list',
+                        'route_params' => [],
+                        'icon' => 'fa fa-list-ul nav-icon'
+                    ],
+                    [
+                        'text' => ' Create Post ',
+                        'route' => 'admin.posts.create',
+                        'route_params' => [],
+                        'icon' => 'fa fa-plus nav-icon'
+                    ],
+                ],
+            ],
+            [
                 'text' =>  ' Pages Management ',
                 'permission' => 'read pages',
                 'icon' => 'fas fa-paper-plane nav-icon',

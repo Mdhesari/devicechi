@@ -5,6 +5,7 @@ namespace Modules\Admin\Entities;
 use App\Models\MainUser;
 use App\Models\Page;
 use App\Models\Payment\Payment;
+use App\Models\Post;
 use App\Models\TicketMessage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -43,7 +44,8 @@ class Admin extends MainUser
         return $this->hasMany(Payment::class);
     }
 
-    public function pages() {
+    public function pages()
+    {
         return $this->hasMany(Page::class);
     }
 
@@ -68,6 +70,11 @@ class Admin extends MainUser
     public function tickets()
     {
         return $this->hasMany(TicketMessage::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 
     /**

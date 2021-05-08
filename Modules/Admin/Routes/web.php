@@ -28,6 +28,7 @@ use Modules\Admin\Http\Controllers\AdminCitiesController;
 use Modules\Admin\Http\Controllers\AdminContactUsController;
 use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\AdminModelsController;
+use Modules\Admin\Http\Controllers\AdminPostController;
 use Modules\Admin\Http\Controllers\AdminPromotionController;
 use Modules\Admin\Http\Controllers\AdminStatesController;
 use Modules\Admin\Http\Controllers\CKEditorController;
@@ -272,6 +273,23 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         });
 
         Route::get('/', [PageController::class, 'index'])->name('list');
+    });
+
+    Route::prefix('posts')->middleware('can:read posts')->name('posts.')->group(function () {
+        Route::middleware('can:create posts')->group(function () {
+            Route::get('/new', [AdminPostController::class, 'create'])->name('create');
+            Route::post('/new', [AdminPostController::class, 'store']);
+
+            Route::get('/edit/{post:id}', [AdminPostController::class, 'edit'])->name('edit');
+            Route::post('/edit/{post:id}', [AdminPostController::class, 'update']);
+        });
+
+        Route::middleware('can:delete posts')->group(function () {
+            Route::get('/destroy/{post:id}', [AdminPostController::class, 'delete'])->name('destroy');
+            Route::delete('/destroy/{post:id}', [AdminPostController::class, 'destroy']);
+        });
+
+        Route::get('/', [AdminPostController::class, 'index'])->name('list');
     });
 
     Route::post('/ckeditor/upload', [CKEditorController::class, 'store'])->name('ckeditor.upload');

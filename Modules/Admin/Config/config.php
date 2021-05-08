@@ -147,6 +147,9 @@ return [
         'create pages',
         'read pages',
         'delete pages',
+        'create posts',
+        'read posts',
+        'delete posts',
     ],
     'instagram' => [
         'templates' => [
