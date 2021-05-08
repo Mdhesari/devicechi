@@ -89,7 +89,7 @@
                         @enderror
 
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input pl-3" name="is_favourite" id="is_favourite">
+                            <input type="checkbox" class="form-check-input pl-3" name="is_favourite" id="is_favourite" @if($post->is_favourite) checked @endif>
                             <label for="is_favourite" class="form-check-label">نمایش در اسلایدر</label>
                         </div>
 

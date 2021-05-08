@@ -318,5 +318,6 @@
     " Post :post will be deleted, are you sure?! ": "مطلب :post برای همیشه پاک خواهد شد! آیا از این کار اطمینان دارید؟!",
     " Posts Management ": "مدیریت مطالب",
     " Posts List ": "لیست مطالب",
-    " Create Post ": "ایجاد مطلب جدید"
+    " Create Post ": "ایجاد مطلب جدید",
+    " Edit Post ": "ویرایش مطلب"
 }
