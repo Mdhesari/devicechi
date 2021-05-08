@@ -316,7 +316,7 @@
                             <!-- /.tab-pane -->
 
                             <div class="tab-pane active" id="settings">
-                                <form action="{{ route('admin.profile', [
+                                <form action="{{ route('admin.profile.update', [
                                     'admin' => $admin->id
                                 ]) }}" method="POST" class="form-horizontal">
                                     @csrf

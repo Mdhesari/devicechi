@@ -52,7 +52,7 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
 
         Route::get('/', [AdminController::class, 'index'])->name('profile');
 
-        Route::put('/', [AdminController::class, 'update']);
+        Route::put('/{admin}', [AdminController::class, 'update'])->name('profile.update');
     });
 
     Route::prefix('/activity-log')->middleware('can:activity-log-management')->name('activity.')->group(function () {
