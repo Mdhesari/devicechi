@@ -114,7 +114,18 @@ return [
             '!delete media',
         ],
         'writer' => [
-            'write article'
+            'write article',
+            'create pages',
+            'read pages',
+            'delete pages',
+            'create posts',
+            'read posts',
+            'delete posts',
+            'delete user',
+            'create ad',
+            'read ad',
+            'delete ad',
+            'contact user',
         ],
         'support' => [
             'contact user',
