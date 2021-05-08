@@ -4,7 +4,7 @@
 <section class="content">
     <div class="row">
         <!-- form start -->
-        <form id="create-post-form" class="row w-100 m-0" action="{{ route("admin.posts.create") }}" method="POST" role="form">
+        <form id="create-post-form" class="row w-100 m-0" action="{{ route("admin.posts.create") }}" method="POST" role="form" enctype="multipart/form-data">
             @csrf
             <div class="col-12 col-md-8">
                 <div class="card card-info card-outline">
