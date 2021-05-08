@@ -82,10 +82,8 @@
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror
 
-                        <div class="form-group">
-                            <label for="slug">@lang(' Slug ')</label>
-                            <input value="{{ old('slug') }}" type="text" class="form-control form-control" id="slug" name="slug" placeholder="{{__(' Slug ')}}">
-                        </div>
+                        <x-slug-form textFormId="title" modelClass="-App-Models-Post"></x-slug-form>
+
                         @error('slug')
                         <p class="alert alert-danger">{{ $message }}</p>
                         @enderror

@@ -30,6 +30,7 @@ use Modules\Admin\Http\Controllers\AdminController;
 use Modules\Admin\Http\Controllers\AdminModelsController;
 use Modules\Admin\Http\Controllers\AdminPostController;
 use Modules\Admin\Http\Controllers\AdminPromotionController;
+use Modules\Admin\Http\Controllers\AdminSlugController;
 use Modules\Admin\Http\Controllers\AdminStatesController;
 use Modules\Admin\Http\Controllers\CKEditorController;
 use Modules\Admin\Http\Controllers\FileManagerController;
@@ -293,6 +294,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
     });
 
     Route::post('/ckeditor/upload', [CKEditorController::class, 'store'])->name('ckeditor.upload');
+
+    Route::get('/slug/generate', [AdminSlugController::class, 'generate'])->name('slug.generate');
 });
 
 Route::middleware('guest.admin')->group(function () {

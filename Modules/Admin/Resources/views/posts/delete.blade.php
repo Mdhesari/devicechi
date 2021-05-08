@@ -11,12 +11,12 @@
                 <div class="alert alert-warning">
                     <h4 class="alert-heading">@lang(' Warning! ')</h4>
                     <hr>
-                    @lang(' Page :page will be deleted, are you sure?! ',[
-                    'page' => $page->renderName(),
+                    @lang(' Post :post will be deleted, are you sure?! ',[
+                    'post' => $post->renderName(),
                     ])
                 </div>
 
-                <form method="POST" action="{{ route("admin.pages.destroy", $page) }}">
+                <form method="POST" action="{{ route("admin.posts.destroy", $post) }}">
                     @method('DELETE')
                     @csrf
 

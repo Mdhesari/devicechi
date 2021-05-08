@@ -314,5 +314,9 @@
     " Featured Image ": "تصویر شاخص",
     " archived ": "پیش نویس",
     " published ": "منتشر",
-    " Create New Post ": "ایجاد مطلب جدید"
+    " Create New Post ": "ایجاد مطلب جدید",
+    " Post :post will be deleted, are you sure?! ": "مطلب :post برای همیشه پاک خواهد شد! آیا از این کار اطمینان دارید؟!",
+    " Posts Management ": "مدیریت مطالب",
+    " Posts List ": "لیست مطالب",
+    " Create Post ": "ایجاد مطلب جدید"
 }

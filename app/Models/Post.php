@@ -88,6 +88,11 @@ class Post extends Model implements HasMedia
         return optional($this->meta)['keywords'] ?: [];
     }
 
+    public function renderName()
+    {
+        return $this->title . ' : ' . $this->slug;
+    }
+
     /**
      * Get meta keywords
      *

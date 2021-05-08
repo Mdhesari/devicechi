@@ -33,7 +33,7 @@ return [
             [
                 'text' =>  ' Posts Management ',
                 'permission' => 'read posts',
-                'icon' => 'fas fa-paper-plane nav-icon',
+                'icon' => 'fab fa-blogger nav-icon',
                 'submenu' => [
                     [
                         'text' => ' Posts List ',

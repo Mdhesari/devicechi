@@ -12,7 +12,7 @@
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <form id="create-ad-form" action="{{ route("admin.ads.add") }}" method="POST" role="form">
+                    <form id="create-ad-form" action="{{ route("admin.ads.add") }}" method="POST" role="form" enctype="multipart/form-data">
                         @csrf
 
                         <div class="card-body">
