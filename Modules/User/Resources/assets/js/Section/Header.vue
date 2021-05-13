@@ -47,7 +47,8 @@
 							:href="route('user.ad.create')"
 							class="add-ads"
 							:class="{
-								'd-none d-lg-inline-block': (typeof user === 'object' && user !== null)
+								'd-none d-lg-inline-block':
+									typeof user === 'object' && user !== null
 							}"
 						>
 							ثبت رایگان آگهی

@@ -6,15 +6,13 @@
 		}"
 		id="mainMenu"
 	>
+		<h2 class="d-none">منوی کاربری دیوایس چی</h2>
 		<div class="mobile-logo-holder">
 			<img :src="url('images/logo.png')" alt="logo" />
 		</div>
 		<ul>
 			<li class="d-block d-md-none">
-				<inertia-link
-					:href="route('user.ad.create')"
-					class="add-ads"
-				>
+				<inertia-link :href="route('user.ad.create')" class="add-ads">
 					ثبت رایگان آگهی
 				</inertia-link>
 			</li>
