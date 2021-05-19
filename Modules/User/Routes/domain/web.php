@@ -15,6 +15,7 @@ use Modules\User\Http\Controllers\Ad\AdHomeController;
 use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
+use Modules\User\Http\Controllers\BlogController;
 use Modules\User\Http\Controllers\Home\HomeController;
 use Modules\User\Http\Controllers\UserContactUsController;
 
@@ -52,4 +53,9 @@ Route::prefix('/ads')->name('user.ad.')->group(function () {
     Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
 
     Route::get('/p/{ad}', [AdHomeController::class, 'show'])->name('show.short-link');
+});
+
+Route::prefix('/blog')->name('user.blog.')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('index');
+    Route::get('/{post}', [BlogController::class, 'show'])->name('show');
 });

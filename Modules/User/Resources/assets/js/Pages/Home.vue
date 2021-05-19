@@ -209,128 +209,7 @@
 			</div>
 		</section>
 		<BrandsSection :brands="brands"></BrandsSection>
-		<!-- <section class="blog-lists py-5">
-			<div class="container">
-				<div class="main-title">
-					<h2>
-						بلاگ ها
-					</h2>
-				</div>
-				<div class="row blogs">
-					<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 blog">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div
-								class="thumbnail"
-								style="background-image: url('https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80');"
-							></div>
-							<div class="details">
-								<div class="title">
-									<h3>پرچمدار های سال جدید</h3>
-								</div>
-								<div class="meta-holder">
-									<span class="date">
-										16 اسفند 1399
-									</span>
-									<span class="time-duration">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>
-										خواندن : 5 دقیقه
-									</span>
-								</div>
-								<div class="desc">
-									<p>
-										از آنجا که لورم ایپسوم، شباهت زیادی به متن های واقعی دارد،
-										طراحان معمولا از لورم ایپسوم استفاده میکنند تا فقط به مشتری
-										یا کار فرما نشان دهند که قالب طراحی شده بعد از اینکه متن در
-										آن قرار میگرد چگونه خواهد بود و فونت ها و اندازه ها چگونه در
-										نظر گرفته شده است.
-									</p>
-								</div>
-							</div>
-							<div class="read-more">
-								<a href="#">مشاهده بیشتر</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 blog">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div
-								class="thumbnail"
-								style="background-image: url('https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80');"
-							></div>
-							<div class="details">
-								<div class="title">
-									<h3>پرچمدار های سال جدید</h3>
-								</div>
-								<div class="meta-holder">
-									<span class="date">
-										16 اسفند 1399
-									</span>
-									<span class="time-duration">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>
-										خواندن : 5 دقیقه
-									</span>
-								</div>
-								<div class="desc">
-									<p>
-										از آنجا که لورم ایپسوم، شباهت زیادی به متن های واقعی دارد،
-										طراحان معمولا از لورم ایپسوم استفاده میکنند تا فقط به مشتری
-										یا کار فرما نشان دهند که قالب طراحی شده بعد از اینکه متن در
-										آن قرار میگرد چگونه خواهد بود و فونت ها و اندازه ها چگونه در
-										نظر گرفته شده است.
-									</p>
-								</div>
-							</div>
-							<div class="read-more">
-								<a href="#">مشاهده بیشتر</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 blog">
-						<div class="inner">
-							<a href="#" class="fulllink"></a>
-							<div
-								class="thumbnail"
-								style="background-image: url('https://images.unsplash.com/photo-1574675904801-eb2cca16af12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1451&q=80');"
-							></div>
-							<div class="details">
-								<div class="title">
-									<h3>پرچمدار های سال جدید</h3>
-								</div>
-								<div class="meta-holder">
-									<span class="date">
-										16 اسفند 1399
-									</span>
-									<span class="time-duration">
-										<i class="fa fa-clock-o" aria-hidden="true"></i>
-										خواندن : 5 دقیقه
-									</span>
-								</div>
-								<div class="desc">
-									<p>
-										از آنجا که لورم ایپسوم، شباهت زیادی به متن های واقعی دارد،
-										طراحان معمولا از لورم ایپسوم استفاده میکنند تا فقط به مشتری
-										یا کار فرما نشان دهند که قالب طراحی شده بعد از اینکه متن در
-										آن قرار میگرد چگونه خواهد بود و فونت ها و اندازه ها چگونه در
-										نظر گرفته شده است.
-									</p>
-								</div>
-							</div>
-							<div class="read-more">
-								<a href="#">مشاهده بیشتر</a>
-							</div>
-						</div>
-					</div>
-					<div class="more">
-						<a href="#">
-							مشاهده بیشتر
-							<i class="fa fa-arrow-left" aria-hidden="true"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section> -->
+		<BlogSection :posts="posts"></BlogSection>
 	</AuthLayout>
 </template>
 
@@ -338,15 +217,17 @@
 import AuthLayout from './../Layouts/FrontAuthLayout'
 import BrandsSection from './../Components/Sections/BrandsSection'
 import SearchSection from './../Section/Ad/Search'
+import BlogSection from './../Section/BlogSection'
 import NormalAdsSection from './../Components/Sections/NormalAdsSection'
 
 export default {
-	props: ['user', 'brands', 'ads'],
+	props: ['user', 'brands', 'ads', 'posts'],
 	components: {
 		AuthLayout,
 		BrandsSection,
 		SearchSection,
-		NormalAdsSection
+		NormalAdsSection,
+		BlogSection
 	}
 }
 </script>

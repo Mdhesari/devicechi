@@ -11,6 +11,7 @@
 |
 */
 
+use App\Models\Role;
 use Modules\User\Http\Controllers\Ad\AdAccessoryController;
 use Modules\User\Http\Controllers\Ad\AdAgeController;
 use Modules\User\Http\Controllers\Ad\AdContactController;
@@ -26,6 +27,7 @@ use Modules\User\Http\Controllers\Ad\AdVariantController;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Http\Controllers\AdPromoteController;
 use Modules\User\Http\Controllers\Auth\SessionController;
+use Modules\User\Http\Controllers\BlogController;
 use Modules\User\Http\Controllers\UserContactUsController;
 use Modules\User\Http\Controllers\UserController;
 use Modules\User\Http\Controllers\UserPaymentController;

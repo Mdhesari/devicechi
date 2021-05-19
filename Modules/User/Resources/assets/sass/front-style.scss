@@ -1418,7 +1418,7 @@ p.promote-desc {
 	position: relative;
 	background-size: cover;
 	background-position: center center;
-	z-index: 13;
+	z-index: 9;
 }
 
 .blog .inner .details {
@@ -1433,10 +1433,11 @@ p.promote-desc {
 	min-height: 220px;
 }
 
-.blog .inner .details .title h2 {
+.blog .inner .details .title h3 {
 	color: pallete('dark');
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 24px;
+	line-height: 35px;
 }
 
 .blog .inner .details p {

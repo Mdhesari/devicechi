@@ -22,6 +22,14 @@ class Post extends Model implements HasMedia
         'meta',
     ];
 
+    protected $hidden = [
+        'admin_id',
+    ];
+
+    protected $appends = [
+        'meta_featured_image_url'
+    ];
+
     const MEDIA_FEATURED_IMAGE = 'featured_image';
 
     const STATUS_LIST = [
@@ -56,6 +64,11 @@ class Post extends Model implements HasMedia
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->whereStatus(1);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Exception;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,8 +23,11 @@ class Media extends \Spatie\MediaLibrary\MediaCollections\Models\Media
 
     public function getThumbUrlAttribute()
     {
-
-        return $this->getFullUrl('thumb');
+        try {
+            return $this->getFullUrl('thumb');
+        } catch (Exception $e) {
+            return '';
+        }
     }
 
     public function scopeActiveOnly($query)
