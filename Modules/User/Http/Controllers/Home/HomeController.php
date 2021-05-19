@@ -23,9 +23,7 @@ class HomeController extends Controller
         $data = [];
         $data['brands'] = PhoneBrand::limit(16)->get();
         $data['ads'] = Ad::with('state.city')->latest()->includeMediaThumb()->published()->limit(9)->get();
-        $data['posts'] = Post::published()->latest()->limit(3)->get()->toArray();
-
-        $data['posts'] = \array_merge($data['posts'], $data['posts'], $data['posts']);
+        $data['posts'] = Post::published()->latest()->limit(3)->get();
 
         return Inertia::render('Home', $data);
     }
