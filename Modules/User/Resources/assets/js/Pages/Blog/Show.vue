@@ -45,7 +45,7 @@
 						</div>
 						<div class="actionBox"></div>
 					</div>
-					<div class="content" v-html="post.body"></div>
+					<div class="content" v-html="fixGivenString(post.body)"></div>
 				</div>
 			</div>
 		</section>

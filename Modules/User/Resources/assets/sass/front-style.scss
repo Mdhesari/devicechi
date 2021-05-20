@@ -1418,25 +1418,25 @@ p.promote-desc {
 	position: relative;
 	background-size: cover;
 	background-position: center center;
-	z-index: 9;
+	z-index: 0;
 }
 
 .blog .inner .details {
-	padding: 16px;
-	background-color: pallete('white');
-	border-top-left-radius: 20px;
-	border-top-right-radius: 20px;
-	overflow: hidden;
-	margin-top: -24px;
-	position: relative;
-	z-index: 1;
-	min-height: 220px;
+	padding: 4px 16px;
+    background-color: #ffffff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    margin-top: -24px;
+    position: relative;
+    z-index: 1;
+    min-height: 220px;
 }
 
 .blog .inner .details .title h3 {
 	color: pallete('dark');
 	text-decoration: none;
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 35px;
 }
 
@@ -1446,6 +1446,11 @@ p.promote-desc {
 	text-align: justify;
 	line-height: 2;
 	font-size: 0.85rem;
+}
+.blog .inner .details .meta-holder {
+    font-size: 12px;
+    margin-bottom: 8px;
+    opacity: .5;
 }
 
 /* BLOG */
