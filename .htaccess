@@ -1,10 +1,8 @@
-
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !^public
 RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
-
 # BEGIN cPanel-generated php ini directives, do not edit
 # Manual editing of this file may result in unexpected behavior.
 # To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
@@ -40,4 +38,19 @@ RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
 RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
 RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/mobilefo/public_html/public"
+PassengerBaseURI "/"
+PassengerNodejs "/home/mobilefo/nodevenv/public_html/public/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
 
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION BEGIN
+RewriteEngine On
+RewriteRule ^/?(.*)$ http://127.0.0.1:6764/$1 [P,L]
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION END
