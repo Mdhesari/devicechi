@@ -33,6 +33,7 @@ use Modules\Admin\Http\Controllers\AdminPromotionController;
 use Modules\Admin\Http\Controllers\AdminSlugController;
 use Modules\Admin\Http\Controllers\AdminStatesController;
 use Modules\Admin\Http\Controllers\CKEditorController;
+use Modules\Admin\Http\Controllers\ExportSettingsController;
 use Modules\Admin\Http\Controllers\FileManagerController;
 use Modules\Admin\Http\Controllers\Media\AdminMediaController;
 use Modules\Admin\Http\Controllers\MenuEditorController;
@@ -291,6 +292,13 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
         });
 
         Route::get('/', [AdminPostController::class, 'index'])->name('list');
+    });
+
+    Route::prefix('settings')->middleware('can:settings')->name('settings.')->group(function () {
+        Route::prefix('export')->middleware('can:export settings')->name('export.')->group(function () {
+            Route::get('/', [ExportSettingsController::class, 'index'])->name('index');
+            Route::put('/', [ExportSettingsController::class, 'update']);
+        });
     });
 
     Route::post('/ckeditor/upload', [CKEditorController::class, 'store'])->name('ckeditor.upload');

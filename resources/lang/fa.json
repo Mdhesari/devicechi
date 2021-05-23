@@ -209,7 +209,7 @@
     " Showing :current to :current_total of :total entires ": "نمایش :current تا :current_total از :total رکورد ",
     " Export ": "خروجی",
     " Resource ": "منبع",
-    " Setting ": "تنظیمات",
+    " Settings ": "تنظیمات",
     " General Setting ": "تنظیمات عمومی",
     " Successfully updated setting. ": "تنظیمات بروز رسانی شد.",
     " No Resource ": "بدون منبع",
@@ -319,5 +319,8 @@
     " Posts Management ": "مدیریت مطالب",
     " Posts List ": "لیست مطالب",
     " Create Post ": "ایجاد مطلب جدید",
-    " Edit Post ": "ویرایش مطلب"
+    " Edit Post ": "ویرایش مطلب",
+    " Export Settings ": "تنظیمات خروجی فایل ها",
+    " Font ": "فونت",
+    " Current : ": "در حال حاضر : "
 }

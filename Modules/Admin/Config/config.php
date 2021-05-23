@@ -161,6 +161,8 @@ return [
         'create posts',
         'read posts',
         'delete posts',
+        'settings',
+        'export settings'
     ],
     'instagram' => [
         'templates' => [

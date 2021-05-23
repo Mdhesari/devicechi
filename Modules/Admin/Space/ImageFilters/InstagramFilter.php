@@ -2,9 +2,11 @@
 
 namespace Modules\Admin\Space\ImageFilters;
 
+use Exception;
 use Image;
 use Intervention\Image\Filters\FilterInterface;
 use Intervention\Image\Image as BaseImage;
+use Laravel\Horizon\Exec;
 
 class InstagramFilter implements FilterInterface
 {
@@ -31,17 +33,26 @@ class InstagramFilter implements FilterInterface
     private $_blur;
 
     /**
+     * font
+     *
+     * @var string
+     */
+    private $_fontPath;
+
+
+    /**
      * __construct
      *
      * @param  mixed $image
      * @param  mixed $text
      * @return void
      */
-    public function __construct($text,  $template = null, $blur = 70)
+    public function __construct($text, $template = null, $blur = 70, $fontPath = null)
     {
         $this->_text = $text;
         $this->_template = $template;
         $this->_blur = $blur;
+        $this->_fontPath = $fontPath;
     }
 
     /**
@@ -72,8 +83,20 @@ class InstagramFilter implements FilterInterface
      */
     public function getFont()
     {
+        return $this->_fontPath;
+    }
 
-        return public_path('fonts/Open_Sans/OpenSans-Regular.ttf');
+    /**
+     * setFont
+     *
+     * @param  mixed $path
+     * @return void
+     */
+    public function setFont($path)
+    {
+        $this->_fontPath = $path;
+
+        return $this;
     }
 
     /**
@@ -100,6 +123,11 @@ class InstagramFilter implements FilterInterface
         $image = $this->fitImage($image);
 
         $font_family = $this->getFont();
+
+        if (is_null($font_family)) {
+            throw new Exception('Font is unavailable...');
+        }
+
         $font_size = $this->getFontSize();
 
         $image

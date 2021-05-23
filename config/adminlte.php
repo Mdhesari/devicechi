@@ -196,6 +196,19 @@ return [
                     ],
                 ],
             ],
+            [
+                'text' => ' Settings ',
+                'permission' => 'settings',
+                'icon' => 'ion-help-circled',
+                'submenu' => [
+                    [
+                        'text' => ' Export Settings ',
+                        'route' => 'admin.settings.export.index',
+                        'route_params' => [],
+                        'icon' => 'fa fa-support',
+                    ],
+                ],
+            ],
         ],
         'admin_topnav' => [
             [

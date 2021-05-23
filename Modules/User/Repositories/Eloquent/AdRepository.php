@@ -5,6 +5,7 @@ namespace Modules\User\Repositories\Eloquent;
 use Illuminate\Pipeline\Pipeline;
 use App\Models\Ad;
 use App\Models\Ad\AdContactType;
+use App\Settings\ExportSettings;
 use Image;
 use Modules\Admin\Space\ImageFilters\InstagramFilter;
 use Modules\User\Entities\PhoneAccessory;
@@ -269,6 +270,7 @@ class AdRepository extends Repository implements
     public function renderPicturesToExport($template = null, $quality = 100, $dont_overwrite = false)
     {
         $pictures = $this->model->media()->latest()->get();
+        $exportSettings = app(ExportSettings::class);
 
         $dirname = Storage::path($this->getExportDirName());
 
@@ -298,10 +300,12 @@ class AdRepository extends Repository implements
                         Str::words(ucfirst($this->model->phoneModel->name), 2, '')
                     );
 
-            $image = Image::make($image)->filter(new InstagramFilter(
+            $filter = (new InstagramFilter(
                 $text,
                 $template
-            ));
+            ))->setFont($exportSettings->font_path);
+
+            $image = Image::make($image)->filter($filter);
 
             $image->save($full_path, $quality);
         }
