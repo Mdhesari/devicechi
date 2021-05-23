@@ -41,6 +41,7 @@ use Modules\Admin\Http\Controllers\PageController;
 use Modules\Admin\Http\Controllers\Payment\PaymentController;
 use Modules\Admin\Http\Controllers\RegisterController;
 use Modules\Admin\Http\Controllers\RolePermissionController;
+use Modules\Admin\Http\Controllers\TinymceController;
 use Modules\Admin\Http\Controllers\UserController;
 
 Route::name('admin.')->middleware('auth.admin')->group(function () {
@@ -302,6 +303,8 @@ Route::name('admin.')->middleware('auth.admin')->group(function () {
     });
 
     Route::post('/ckeditor/upload', [CKEditorController::class, 'store'])->name('ckeditor.upload');
+
+    Route::post('/ckeditor/upload', [TinymceController::class, 'store'])->name('tinymce.upload');
 
     Route::get('/slug/generate', [AdminSlugController::class, 'generate'])->name('slug.generate');
 });

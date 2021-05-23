@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="editor">@lang(' Text ')</label>
                             <div class="mb-3">
-                                <x-ckeditor name="body">{{ $post->body }}</x-ckeditor>
+                                <x-tinymce name="body">{{ $post->body }}</x-tinymce>
                             </div>
                         </div>
                         @error('body')
@@ -175,11 +175,3 @@
     </div>
 </section>
 @endsection
-
-@push('add_scripts')
-<script>
-    $('#edit-post-form').on('submit', function(e) {
-
-    })
-</script>
-@endpush

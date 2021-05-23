@@ -7,6 +7,11 @@
 	width: 100px;
 }
 
+.tox.tox-tinymce,
+.mce-content-body {
+	font-family: 'Vazir', sans-serif !important;
+}
+
 .tooltip-inner {
 	font-family: 'Vazir', sans-serif !important;
 }
