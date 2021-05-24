@@ -17,14 +17,11 @@ class TinymceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->dd();
-        if ($request->hasFile('upload')) {
+        if ($request->hasFile('file')) {
 
-            $validator = Validator::make($request->only('upload'), [
-                'upload' => ['image', 'max:' . config('admin.max_upload_size')]
+            $validator = Validator::make($request->only('file'), [
+                'file' => ['image', 'max:' . config('admin.max_upload_size')]
             ]);
-
-            @header('Content-type: text/html; charset=utf-8');
 
             if ($validator->fails()) {
                 $response = "<script>alert(" .  __(" The file is too big! ") . ")</script>";
@@ -33,23 +30,20 @@ class TinymceController extends Controller
                 die;
             }
 
-            $originName = $request->file('upload')->getClientOriginalName();
+            $originName = $request->file('file')->getClientOriginalName();
             $fileName = pathinfo($originName, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
+            $extension = $request->file('file')->getClientOriginalExtension();
             $fileName = $fileName . '_' . time() . '.' . $extension;
 
             $path = 'uploads/' . now()->format('Y') . '/' . now()->format('M');
 
-            $path = $request->upload->storeAs($path, $fileName);
+            $path = $request->file->storeAs($path, $fileName);
 
             $url = url(Storage::url($path));
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
 
-            $msg = __(' Image uploaded successfully ');
-
-            $response = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-
-            echo $response;
+            return response()->json([
+                'location' => $url,
+            ]);
         }
     }
 }

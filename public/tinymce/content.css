@@ -65,3 +65,9 @@ code {
 	margin-right: 1.5rem;
 	padding-right: 1rem;
 }
+
+.tox-tinymce-aux,
+.tox-dialog-wrap,
+.tox-button {
+	font-family: Vazir, sans-serif !important;
+}
