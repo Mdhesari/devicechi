@@ -58,5 +58,8 @@
         // //         console.log("Uploaded images and posted content as an ajax request.");
         // //     });
         // });
+
+        $(document).on('load', '.tox-fullscreen', function(params) {
+        })
     </script>
 @endpush
