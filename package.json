@@ -6,7 +6,7 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "production": "mix --production && cd Modules/User && mix --production",
-        "test": "cd Modules/User && mix --production"
+        "user": "cd Modules/User && mix --production"
     },
     "devDependencies": {
         "@inertiajs/inertia": "^0.8.6",
