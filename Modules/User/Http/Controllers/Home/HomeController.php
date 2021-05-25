@@ -20,6 +20,11 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        $userAgent = $request->userAgent();
+        if (strpos($userAgent, 'Instagram')) {
+            info('ok');
+            return redirect()->route('instagram-redirect');
+        }
         $data = [];
         $data['brands'] = PhoneBrand::limit(16)->get();
         $data['ads'] = Ad::with('state.city')->latest()->includeMediaThumb()->published()->limit(9)->get();
