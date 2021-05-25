@@ -14,6 +14,18 @@
 				{{ __('ads.wizard.upload_picture.desc') }}
 			</p>
 
+			<b-alert show variant="info">
+				<h6 v-text="__('ads.form.warning.upload.title')"></h6>
+				<ul class="list-group">
+					<li>تصویر با کیفیت گرفته شود</li>
+					<li>
+						حجم تصویر کمتر از
+						{{ `${ad_picture_size_limit} مگابایت` }} باشد
+					</li>
+					<li>حداقل ۲ تصویر را آپلود کنید</li>
+				</ul>
+			</b-alert>
+
 			<b-form-group class="picture-upload-input">
 				<label class="icon-upload-label" @click="openFileDialog">
 					<span class="mx-2">{{ label_text }}</span>
@@ -40,24 +52,7 @@
 				/>
 			</b-row>
 
-			<b-alert show variant="info">
-				<h6 v-text="__('ads.form.warning.upload.title')"></h6>
-				<ul class="list-group">
-					<li>تصویر با کیفیت گرفته شود</li>
-					<li>
-						حجم تصویر کمتر از
-						{{ `${ad_picture_size_limit} مگابایت` }} باشد
-					</li>
-					<li>حداقل ۲ تصویر را آپلود کنید</li>
-				</ul>
-			</b-alert>
-
-			<b-button
-				v-if="form.pictures.length >= pictures_min_count"
-				:disabled="isLoading"
-				variant="secondary"
-				@click.prevent="next"
-			>
+			<b-button :disabled="isLoading" variant="secondary" @click.prevent="next">
 				{{ isLoading ? __('global.loading') : __('global.next') }}
 			</b-button>
 		</form>
@@ -94,6 +89,14 @@ export default {
 	methods: {
 		next(ev) {
 			// go to next step
+			if (this.form.pictures.length < this.pictures_min_count)
+				return this.$to(
+					this.__('global.errors.ad.pictures.upload_minimum.title', {
+						min: this.pictures_min_count
+					}),
+					this.__('global.errors.ad.pictures.upload_minimum.desc')
+				)
+
 			if (!this.form.activePicture)
 				return this.$to(this.__('ads.form.error.active-picture'))
 

@@ -52,6 +52,10 @@ return [
         ],
         'ad' => [
             'pictures' => [
+                'upload_minimum' => [
+                    'title' => 'حداقل باید :min تصویر را بارگذاری کنید.',
+                    'desc' => '',
+                ],
                 'upload_limit' => [
                     'title' => 'نباید تصاویر بیشتر از :max را بارگذاری کنید!',
                     'desc' => '',
