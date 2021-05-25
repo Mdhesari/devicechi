@@ -1,6 +1,6 @@
 <div>
     <!-- Well begun is half done. - Aristotle -->
-    <textarea id="{{ $id }}" name="{{ $name }}">{{ $slot }}</textarea>
+    <textarea id="{{ $id }}" name="{{ $name }}"></textarea>
 </div>
 
 @push('add_scripts')
@@ -10,6 +10,41 @@
     <script>
         const upload_url = '{{ route('admin.tinymce.upload') }}',
             csrf_token = '{{ csrf_token() }}'
+
+        $('#{{ $id }}').html(fixGivenString('{{ $slot }}'))
+
+        function fixGivenString(str) {
+            	const persianNumbers = [
+					/۰/g,
+					/۱/g,
+					/۲/g,
+					/۳/g,
+					/۴/g,
+					/۵/g,
+					/۶/g,
+					/۷/g,
+					/۸/g,
+					/۹/g
+				],
+				arabicNumbers = [
+					/٠/g,
+					/١/g,
+					/٢/g,
+					/٣/g,
+					/٤/g,
+					/٥/g,
+					/٦/g,
+					/٧/g,
+					/٨/g,
+					/٩/g
+				]
+			if (typeof str === 'string') {
+				for (let i = 0; i < 10; i++) {
+					str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i)
+				}
+			}
+			return str
+        }
 
         tinymce.init({
             // images_upload_url: upload_url,
@@ -58,8 +93,5 @@
         // //         console.log("Uploaded images and posted content as an ajax request.");
         // //     });
         // });
-
-        $(document).on('load', '.tox-fullscreen', function(params) {
-        })
     </script>
 @endpush
