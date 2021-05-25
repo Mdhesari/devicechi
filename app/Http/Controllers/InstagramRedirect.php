@@ -17,16 +17,12 @@ class InstagramRedirect extends Controller
     public function __invoke(Request $request)
     {
         $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        if (strpos($userAgent, 'Instagram')) {
-            $file = \fopen($path = public_path('instagram.txt'), 'wr');
-            fwrite($file, "lorem ipsum");
-            fclose($file);
+        if (true) {
             header('Content-type: application/pdf');
             header('Content-Disposition: inline; filename= blablabla');
             header('Content-Transfer-Encoding: binary');
             header('Accept-Ranges: bytes');
-            $media = Ad::published()->has('media')->latest()->first()->getFirstMedia();
-            return response()->download($media->getPath(), $media->file_name);
+            @readfile(asset('devicechi.pdf'));
         } else {
             return redirect()->route('user.home');
         }
