@@ -33,7 +33,7 @@
                         <div class="form-group">
                             <label for="editor">@lang(' Text ')</label>
                             <div class="mb-3">
-                                <x-tinymce name="body"></x-tinymce>
+                                <x-tinymce name="body">{{ old('body') }}</x-tinymce>
                             </div>
                         </div>
                         @error('body')

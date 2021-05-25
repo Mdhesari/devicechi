@@ -5,7 +5,7 @@
  * For commercial licenses see https://www.tiny.cloud/
  */
 body {
-	font-family: Vazir, sans-serif;
+	/* font-family: Vazir, sans-serif; */
 	line-height: 1.4;
 	margin: 1rem;
 }
@@ -69,5 +69,5 @@ code {
 .tox-tinymce-aux,
 .tox-dialog-wrap,
 .tox-button {
-	font-family: Vazir, sans-serif !important;
+	/* font-family: Vazir, sans-serif !important; */
 }
