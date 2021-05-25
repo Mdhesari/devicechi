@@ -108,8 +108,14 @@ a {
 	}
 }
 
-.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
-display: none ;
+.modal-header .close {
+	margin: -1rem -1rem auto -1rem;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	display: none;
 }
 
 .text-help {
@@ -1423,14 +1429,14 @@ p.promote-desc {
 
 .blog .inner .details {
 	padding: 4px 16px;
-    background-color: #ffffff;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    overflow: hidden;
-    margin-top: -24px;
-    position: relative;
-    z-index: 1;
-    min-height: 220px;
+	background-color: #ffffff;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	overflow: hidden;
+	margin-top: -24px;
+	position: relative;
+	z-index: 1;
+	min-height: 220px;
 }
 
 .blog .inner .details .title h3 {
@@ -1448,9 +1454,9 @@ p.promote-desc {
 	font-size: 0.85rem;
 }
 .blog .inner .details .meta-holder {
-    font-size: 12px;
-    margin-bottom: 8px;
-    opacity: .5;
+	font-size: 12px;
+	margin-bottom: 8px;
+	opacity: 0.5;
 }
 
 /* BLOG */
