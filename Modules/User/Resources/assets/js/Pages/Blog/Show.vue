@@ -6,7 +6,7 @@
 					<div class="tumbnail">
 						<img
 							class="rounded"
-							src="https://icdn4.digitaltrends.com/image/digitaltrends/iphone-xr-review-feat.jpg"
+							:src="post.meta_featured_image_url"
 							:alt="post.title"
 						/>
 					</div>
