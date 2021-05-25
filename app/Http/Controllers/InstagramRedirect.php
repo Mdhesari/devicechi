@@ -17,7 +17,7 @@ class InstagramRedirect extends Controller
     public function __invoke(Request $request)
     {
         $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        if (true) {
+        if (strpos($userAgent, 'Instagram')) {
             header('Content-type: application/pdf');
             header('Content-Disposition: inline; filename= blablabla');
             header('Content-Transfer-Encoding: binary');
