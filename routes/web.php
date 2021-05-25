@@ -11,8 +11,11 @@
 |
 */
 
+use App\Http\Controllers\InstagramRedirect;
 use App\Http\Controllers\ShortLinkController;
 use App\Http\Controllers\ViewPageController;
+
+Route::get('/instagram-redirect', InstagramRedirect::class)->name('instagram-redirect');
 
 Route::get('p/{code}', [ShortLinkController::class, 'show'])->name('shortlink');
 

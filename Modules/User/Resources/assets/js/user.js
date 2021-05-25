@@ -17,6 +17,10 @@ import VueClipboard from 'vue-clipboard2'
 moment.locale('fa', fa)
 moment.loadPersian()
 
+if (navigator.userAgent.includes('Instagram')) {
+	window.location.href = 'https://devicechi.com/instagram-redirect'
+}
+
 const default_locale = window.default_locale
 const fallback_locale = window.fallback_locale
 const messages = window.messages
