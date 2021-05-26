@@ -66,6 +66,12 @@ Vue.mixin({
 			// temp
 			return 'ریال'
 		},
+		calcReadTime(text) {
+			const wpm = 225
+			const words = text.trim().split(/\s+/).length
+			const time = Math.ceil(words / wpm)
+			return time
+		},
 		formatMoney(amount, decimalCount = 0, decimal = '.', thousands = ',') {
 			try {
 				decimalCount = Math.abs(decimalCount)

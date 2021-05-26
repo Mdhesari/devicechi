@@ -15,6 +15,10 @@
 						<p class="text-muted">
 							<span>آخرین زمان بروزرسانی : </span>
 							<span>{{ moment(post.updated_at).format('LL') }}</span>
+							<span class="time-duration d-inline-block mx-2">
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+								زمان مطالعه : {{ minutesToRead }} دقیقه
+							</span>
 						</p>
 					</div>
 					<div class="meta-box">
@@ -99,6 +103,11 @@ export default {
 	props: ['user', 'post'],
 	components: {
 		AuthLayout
+	},
+	computed: {
+		minutesToRead() {
+			return this.calcReadTime(this.post.body)
+		}
 	}
 }
 </script>
