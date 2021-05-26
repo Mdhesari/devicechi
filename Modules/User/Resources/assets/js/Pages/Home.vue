@@ -7,28 +7,29 @@
 			<div class="d-block text-center">
 				<h3 class="text-primary">توجه فرمایید!</h3>
 				<p>
-					برای تجربه کاربری مناسب و استفاده درست از وبسایت لطفا این سایت را در مرورگر اصلی باز کنید.
+					برای تجربه کاربری مناسب و استفاده درست از وبسایت لطفا این سایت را در
+					مرورگر اصلی باز کنید.
 				</p>
 				<h3 class="text-primary">نحوه انجام این کار؟!</h3>
 				<ul class="list-group">
-					<li class="list-group-item">ابتدا روی دکمه
+					<li class="list-group-item">
+						ابتدا روی دکمه
 						<b-icon icon="three-dots-vertical"></b-icon>
-						در سمت بالا راست یا (چپ)
-						کلیک کنید.
+						در سمت بالا راست یا (چپ) کلیک کنید.
 					</li>
-					<li class="list-group-item">سپس روی دکمه
-						Open with ...
-						یا
-						بازکردن با ...
-						کلیک کنید.
+					<li class="list-group-item">
+						سپس روی دکمه Open with ... یا بازکردن با ... کلیک کنید.
 					</li>
 				</ul>
 			</div>
-			<b-button class="mt-3" variant="danger" block @click="$bvModal.hide('bv-modal-example')"
-				>
-				بیخیال! (امکان عملکرد نادرست سایت)
-				</b-button
+			<b-button
+				class="mt-3"
+				variant="danger"
+				block
+				@click="$bvModal.hide('bv-modal-example')"
 			>
+				بیخیال! (امکان عملکرد نادرست سایت)
+			</b-button>
 		</b-modal>
 		<section class="banner-site">
 			<div class="container">
@@ -251,13 +252,23 @@ import BlogSection from './../Section/BlogSection'
 import NormalAdsSection from './../Components/Sections/NormalAdsSection'
 
 export default {
-	props: ['user', 'brands', 'ads', 'posts', 'using_instagram'],
+	props: ['user', 'brands', 'ads', 'posts'],
+	data() {
+		return {
+			using_instagram: false
+		}
+	},
 	components: {
 		AuthLayout,
 		BrandsSection,
 		SearchSection,
 		NormalAdsSection,
 		BlogSection
+	},
+	mounted() {
+		if (navigator.userAgent.includes('Instagram')) {
+			this.using_instagram = true
+		}
 	}
 }
 </script>
