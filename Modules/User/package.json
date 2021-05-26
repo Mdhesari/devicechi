@@ -18,5 +18,8 @@
         "sass": "^1.32.8",
         "sass-loader": "^8.0.2",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "vue-social-sharing": "^3.0.7"
     }
 }

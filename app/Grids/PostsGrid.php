@@ -72,7 +72,7 @@ class PostsGrid extends Grid implements PostsGridInterface
                     "operator" => "="
                 ],
                 "presenter" => function ($columnData) {
-                    return sprintf('<a href="%s">%s</a>', url($columnData->slug), $columnData->slug);
+                    return sprintf('<a href="%s">%s</a>', route('user.blog.show', ['post' => $columnData->slug]), $columnData->slug);
                 },
                 "raw" => true,
             ],

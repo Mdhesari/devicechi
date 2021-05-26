@@ -22,24 +22,60 @@
 							<label>اشتراک گذاری در :</label>
 							<ul>
 								<li>
-									<a href="#">
+									<ShareNetwork
+										network="whatsapp"
+										:url="
+											route('user.blog.show', {
+												post: post.slug
+											})
+										"
+										:title="post.title"
+										:description="post.excerpt"
+									>
 										<i class="fa fa-whatsapp" aria-hidden="true"></i>
-									</a>
+									</ShareNetwork>
 								</li>
 								<li>
-									<a href="#">
+									<ShareNetwork
+										network="telegram"
+										:url="
+											route('user.blog.show', {
+												post: post.slug
+											})
+										"
+										:title="post.title"
+										:description="post.excerpt"
+									>
 										<i class="fa fa-telegram" aria-hidden="true"></i>
-									</a>
+									</ShareNetwork>
 								</li>
 								<li>
-									<a href="#">
+									<ShareNetwork
+										network="facebook"
+										:url="
+											route('user.blog.show', {
+												post: post.slug
+											})
+										"
+										:title="post.title"
+										:description="post.excerpt"
+									>
 										<i class="fa fa-facebook" aria-hidden="true"></i>
-									</a>
+									</ShareNetwork>
 								</li>
 								<li>
-									<a href="#">
+									<ShareNetwork
+										network="twitter"
+										:url="
+											route('user.blog.show', {
+												post: post.slug
+											})
+										"
+										:title="post.title"
+										:description="post.excerpt"
+									>
 										<i class="fa fa-twitter" aria-hidden="true"></i>
-									</a>
+									</ShareNetwork>
 								</li>
 							</ul>
 						</div>
@@ -53,7 +89,11 @@
 </template>
 
 <script>
+import Vue from 'vue'
 import AuthLayout from './../../Layouts/FrontAuthLayout'
+import ShareNetwork from 'vue-social-sharing'
+
+Vue.use(ShareNetwork)
 
 export default {
 	props: ['user', 'post'],

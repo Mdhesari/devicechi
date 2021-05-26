@@ -132,7 +132,7 @@ trait RendersButtons
             'name' => 'Refresh',
             'pjaxEnabled' => true,
             'position' => 2,
-            'icon' => 'fa-refresh',
+            'icon' => 'ion-refresh',
             'class' => 'btn btn-primary',
             'gridId' => $this->getId(),
             'url' => $this->getRefreshUrl(),

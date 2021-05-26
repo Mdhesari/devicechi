@@ -23,7 +23,7 @@
 					<span class="date" v-text="moment(post.created_at).fromNow()"></span>
 					<span class="time-duration">
 						<i class="fa fa-clock-o" aria-hidden="true"></i>
-						خواندن : 5 دقیقه
+						خواندن : {{ minutesToRead }} دقیقه
 					</span>
 				</div>
 				<div class="desc">
@@ -42,6 +42,19 @@ export default {
 			styleObject: {
 				'background-image': this.post.meta_featured_image_url
 			}
+		}
+	},
+	computed: {
+		minutesToRead() {
+			return this.calcReadTime(this.post.body)
+		}
+	},
+	methods: {
+		calcReadTime(text) {
+			const wpm = 225
+			const words = text.trim().split(/\s+/).length
+			const time = Math.ceil(words / wpm)
+			return time
 		}
 	}
 }

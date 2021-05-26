@@ -66,7 +66,7 @@ class BlogController extends Controller
         \SEOMeta::setDescription($post->metaDescription);
         \SEOMeta::setKeywords($post->metaKeywords);
 
-        return inertia('Blog/Show', compact('post'));
+        return inertia('Blog/Show', compact('post'))->withViewData(compact('head_title', 'head_desc'));
     }
 
     /**
