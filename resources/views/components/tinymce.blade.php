@@ -11,7 +11,7 @@
         const upload_url = '{{ route('admin.tinymce.upload') }}',
             csrf_token = '{{ csrf_token() }}'
 
-            $('#{{ $id }}').html(`
+        $('#{{ $id }}').html(`
             {{ $slot }}
             `)
 
