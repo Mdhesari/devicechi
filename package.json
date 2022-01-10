@@ -2,7 +2,7 @@
   "private": true,
   "engines": {
     "node": "14.x",
-    "npm": "7.x"
+    "npm": "8.x"
   },
   "scripts": {
     "development": "mix",
