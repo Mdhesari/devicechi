@@ -4,6 +4,7 @@
     "node": "14.x",
     "npm": "8.x"
   },
+  "heroku-postbuild": "npm run prod",
   "scripts": {
     "development": "mix",
     "watch": "mix watch",
