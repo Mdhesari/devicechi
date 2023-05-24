@@ -17,3 +17,4 @@ storage/*
 public/fonts/
 public/css
 public/js
+.idea/
