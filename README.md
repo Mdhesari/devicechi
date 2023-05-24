@@ -31,10 +31,10 @@ Devicechi is a web application built with Laravel, Vue.js, and PostgreSQL. It pr
 
 To run Devicechi, ensure that your system meets the following requirements:
 
-- PHP version X.X.X
+- PHP version 8.0
 - Composer
 - Node.js and NPM
-- PostgreSQL X.X
+- PostgreSQL 13
 
 ## Installation
 
