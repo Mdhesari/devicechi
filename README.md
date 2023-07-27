@@ -21,9 +21,8 @@ Devicechi is a web application built with Laravel, Vue.js, and PostgreSQL. It pr
 
 - User registration and authentication
 - Mobile phone listings with detailed information and images
-- Shopping cart functionality
 - Secure payment processing
-- User reviews and ratings
+- ser reviews and ratings
 - Search and filtering options
 - User profiles and order history
 
@@ -43,7 +42,7 @@ To install Devicechi locally, follow these steps:
 1.Clone the repository:
 
 ```shell
-git clone https://github.com/your-username/devicechi.git
+git clone https://github.com/mdhesari/devicechi.git
 cd devicechi
 ```
 
@@ -57,7 +56,7 @@ composer install
 
 ```shell
 npm install
-npm run
+npm run production
 ```
 
 4.Configure the environment variables:

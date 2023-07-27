@@ -21,6 +21,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@inertiajs/vue2": "^1.0.7",
         "vue-social-sharing": "^3.0.7"
     }
 }
