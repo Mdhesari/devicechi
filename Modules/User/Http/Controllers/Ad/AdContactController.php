@@ -7,19 +7,22 @@ use Hash;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Log;
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad;
+use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
 use Modules\User\Http\Requests\Ad\AdContactVerifyRequest;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Repositories\Eloquent\AdContactRepository;
 use Modules\User\Space\Contracts\CodeVerificationGenerator;
+use Session;
 use Validator;
 
 class AdContactController extends BaseAdController
 {
     public function choose(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_CONTACT;
 
         $this->checkPreviousSteps($step, $ad);
@@ -33,6 +36,7 @@ class AdContactController extends BaseAdController
 
     public function store(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
 
         if (!$ad->contacts()->verified()->count()) {
 
@@ -50,6 +54,7 @@ class AdContactController extends BaseAdController
 
     public function add(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'contact_type' => ['required'],
@@ -61,7 +66,7 @@ class AdContactController extends BaseAdController
         ]);
 
         $contact_type = AdContactType::find($request->contact_type['id']);
-        Log::info($contact_type);
+
         if ($contact_type->data['validation']) {
 
             Validator::validate([
@@ -77,8 +82,6 @@ class AdContactController extends BaseAdController
 
         $code = app(CodeVerificationGenerator::class)->generate();
 
-        $ad_contact->setVerificationCode($code);
-
         if (App::environment('testing'))
             session()->put('test_code', $code);
 
@@ -86,17 +89,20 @@ class AdContactController extends BaseAdController
             AdContact::VERIFICATION_SESSION => Hash::make($code),
         ]);
 
-        return $adContactRepository->sendVerification($ad_contact);
+        return $adContactRepository->sendVerification($ad_contact, $code);
     }
 
     public function verify(Ad $ad, AdContactVerifyRequest $request, AdContactRepository $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $verification_code = $request->verification_code;
 
         $hashed_value = session(AdContact::VERIFICATION_SESSION);
 
         if (Hash::check($verification_code, $hashed_value)) {
+
+            Session::forget(AdContact::VERIFICATION_SESSION);
 
             $ad_contact = $adContactRepository->find($request->ad_contact_id);
 
@@ -118,6 +124,7 @@ class AdContactController extends BaseAdController
 
     public function remove(Ad $ad, Request $request, AdContactRepositoryInterface $adContactRepository)
     {
+        $this->checkAuthorization($ad);
 
         $request->validate([
             'contact_id' => ['required', 'exists:ad_contacts,id']
@@ -131,6 +138,13 @@ class AdContactController extends BaseAdController
             'status' => boolval($result),
             'result' => $request,
             'contacts' => $contacts,
+        ]);
+    }
+
+    public function get(Ad $ad)
+    {
+        return response()->json([
+            'contacts' => $ad->contacts()->with('type')->verified()->get(),
         ]);
     }
 }

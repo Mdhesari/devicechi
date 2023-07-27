@@ -17,7 +17,9 @@ class PhoneAccessoriesTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $accessories = config('user.phone_accessories');
+        // $accessories = config('user.phone_accessories');
+
+        $accessories = json_decode(file_get_contents(predata_path('/accessories.json')), true);
 
         DB::table('phone_accessories')->truncate();
 

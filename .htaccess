@@ -1,0 +1,56 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^public
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors Off
+   php_value max_execution_time 0
+   php_value max_input_time 130
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 300M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php72"
+   php_value upload_max_filesize 300M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 0
+   php_value max_input_time 130
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 300M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php72"
+   php_value upload_max_filesize 300M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
+RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
+RewriteCond %{HTTP_HOST} ^devicechi\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.devicechi\.com$
+RewriteRule ^/?$ "https\:\/\/www\.devicechi\.com\/" [R=301,L]
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/mobilefo/public_html/public"
+PassengerBaseURI "/"
+PassengerNodejs "/home/mobilefo/nodevenv/public_html/public/10/bin/node"
+PassengerAppType node
+PassengerStartupFile app.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION BEGIN
+<IfModule Litespeed>
+</IfModule>
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX ENV VARS CONFIGURATION END
+
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION BEGIN
+RewriteEngine On
+RewriteRule ^/?(.*)$ http://127.0.0.1:6764/$1 [P,L]
+# DO NOT REMOVE. PARSWEBSERVER DEVELOPER CONFIGURATION END

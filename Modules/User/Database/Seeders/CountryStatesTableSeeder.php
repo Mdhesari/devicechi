@@ -2,6 +2,7 @@
 
 namespace Modules\User\Database\Seeders;
 
+use DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Entities\City;
@@ -20,6 +21,10 @@ class CountryStatesTableSeeder extends Seeder
         Model::unguard();
 
         $countries = json_decode(file_get_contents(__DIR__ . '/../iran-cities/json/iranstates.json'), true);
+
+        // DB::table('countries')->truncate();
+        // DB::table('cities')->truncate();
+        // DB::table('city_states')->truncate();
 
         foreach ($countries as $country) {
 

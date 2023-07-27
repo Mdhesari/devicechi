@@ -20,6 +20,10 @@ return [
 
     'default' => env('CACHE_DRIVER', 'file'),
 
+    'app_keys' => [
+        'menu' => '_menu_:key',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Cache Stores
@@ -99,6 +103,6 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_cache'),
 
 ];

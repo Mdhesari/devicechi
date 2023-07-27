@@ -5,7 +5,7 @@ namespace Modules\User\Space;
 use File;
 use Illuminate\Http\UploadedFile;
 use Log;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Space\Contracts\StoresAdPicture;
 use Storage;
 use Str;

@@ -2,9 +2,9 @@
 
 namespace Modules\User\Database\Seeders;
 
+use App\Models\Ad\AdContactType;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\User\Entities\Ad\AdContactType;
 
 class AdContactTypeTableSeeder extends Seeder
 {
@@ -29,7 +29,5 @@ class AdContactTypeTableSeeder extends Seeder
             $type->data = isset($arr['data']) ? $arr['data'] : [];
             $type->save();
         }
-
-        // AdContactType::create($contact_types);
     }
 }

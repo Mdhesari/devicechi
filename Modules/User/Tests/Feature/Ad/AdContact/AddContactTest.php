@@ -7,10 +7,9 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Entities\Ad\AdContactType;
-use Modules\User\Entities\AdPicture;
+use App\Models\Ad;
+use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
 use Modules\User\Entities\User;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
@@ -92,9 +91,9 @@ class AddContactTest extends TestCase
             'user_id' => $this->user->id,
         ])->create();
 
-        $pictures = AdPicture::factory(3)->make();
+        // $pictures = AdPicture::factory(3)->make();
 
-        $ad->pictures()->saveMany($pictures);
+        // $ad->pictures()->saveMany($pictures);
 
         $response = $this->post(route('user.ad.step_phone_contact.add', [
             'contact_type' => AdContactType::whereName(AdContactType::TYPE_EMAIL)->first()->toArray(),

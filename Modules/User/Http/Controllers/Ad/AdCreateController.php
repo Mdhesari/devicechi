@@ -2,8 +2,8 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\Ad;
+use App\Models\PhoneBrand;
 
 class AdCreateController extends BaseAdController
 {
@@ -11,8 +11,9 @@ class AdCreateController extends BaseAdController
     public function show(Ad $ad = null)
     {
         if ($ad) {
+            $this->checkAuthorization($ad);
             $ad->load('phoneModel.brand');
-            // $ad->resetModel();
+            $ad->resetModel();
         }
 
         $step = BaseAdController::STEP_CHOOSE_BRAND;

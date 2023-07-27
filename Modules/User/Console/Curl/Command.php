@@ -6,7 +6,7 @@ use Artisan;
 use Goutte\Client;
 use Illuminate\Console\Command as BaseCommand;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\HttpClient\HttpClient;

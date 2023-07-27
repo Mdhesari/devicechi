@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Console\Commands\GenerateSitemap;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Modules\Admin\Console\CreateAdminUser;
 
 class Kernel extends ConsoleKernel
 {
@@ -13,7 +15,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        GenerateSitemap::class,
+        CreateAdminUser::class,
     ];
 
     /**
@@ -24,7 +27,10 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('sitemap:generate')->daily();
+        $schedule->command('backup:clean')->weekly()->at('01:00');
+        $schedule->command('backup:run')->weekly()->at('01:30');
+        $schedule->command('backup:run --only-db')->daily()->at('01:30');
     }
 
     /**
@@ -34,7 +40,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }

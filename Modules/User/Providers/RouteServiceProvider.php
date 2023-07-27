@@ -5,7 +5,7 @@ namespace Modules\User\Providers;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Modules\Core\Traits\HasDomain;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 
 class RouteServiceProvider extends ServiceProvider
@@ -63,12 +63,12 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::domain($this->getDomain())
             ->prefix($this->getPrefix())
-            ->middleware('web')
+            ->middleware(['web', 'verified'])
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/domain/web.php'));
 
         Route::domain(config('app.url'))
-            ->middleware('web')
+            ->middleware(['web', 'verified'])
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/web.php'));
     }
@@ -90,8 +90,8 @@ class RouteServiceProvider extends ServiceProvider
             ->group(module_path('User', '/Routes/api/api.php'));
 
         Route::prefix('api')
-            ->name('user.api.auth.')
-            ->middleware(['api', 'auth:sanctum'])
+            ->name('user.api.')
+            ->middleware(['api', 'auth.user:sanctum'])
             ->namespace($this->moduleNamespace)
             ->group(module_path('User', '/Routes/api/auth.php'));
     }

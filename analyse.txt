@@ -1,0 +1,5 @@
+successful payment event => 
+	admin notification to verify
+
+successful ad promotion payment event => 
+	admin notification to action ad

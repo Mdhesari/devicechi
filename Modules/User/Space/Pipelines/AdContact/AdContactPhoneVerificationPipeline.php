@@ -5,7 +5,7 @@ namespace Modules\User\Space\Pipelines\AdContact;
 use App\Exceptions\MFSValidationException;
 use Closure;
 use Illuminate\Cache\RateLimiter;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad\AdContactType;
 use Modules\User\Space\Contracts\AdContactSendVerificationPipeline;
 
 class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPipeline
@@ -35,7 +35,10 @@ class AdContactPhoneVerificationPipeline implements AdContactSendVerificationPip
             $limiter->hit($key, config('user.mobile_rate_limit'));
 
             $ad_contact->sendVerification([
-                'channels' => 'mail',
+                'channels' => [
+                    // 'ghasedak',
+                ],
+                'code' => $code
             ]);
 
             $data['status'] = true;

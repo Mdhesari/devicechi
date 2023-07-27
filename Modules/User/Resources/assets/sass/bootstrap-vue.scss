@@ -2,6 +2,17 @@ $theme-colors: (
     "dark": #131313
 );
 
+
+$theme-colors: (
+    "primary": #0074d9,
+    "danger": #ff4136,
+    "info": #64B5F6,
+    "warning": #F57F17,
+    "success": #73b479,
+    "secondary": #90A4AE
+);
+
+
 @import "~bootstrap";
 @import "~bootstrap-vue";
 

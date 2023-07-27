@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Sanctum\Sanctum;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 use Modules\User\Entities\User;
 
 class AdGetTest extends TestCase

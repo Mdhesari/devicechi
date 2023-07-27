@@ -3,7 +3,7 @@
 namespace Modules\User\Space\Contracts;
 
 use Illuminate\Http\UploadedFile;
-use Modules\User\Entities\Ad;
+use App\Models\Ad;
 
 interface StoresAdPicture
 {

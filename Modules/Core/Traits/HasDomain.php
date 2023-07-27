@@ -30,6 +30,7 @@ trait HasDomain
     public function parseDomainUrl($url, $prefix = '/')
     {
         $domain_info = parse_url($url);
+
         if (!isset($domain_info['host']))
             throw new Exception('Module host is invalid!');
 
@@ -41,6 +42,7 @@ trait HasDomain
         $path = trim($prefix, '/');
 
         $this->domain = $domain;
+        $this->path = $path;
 
         return [
             'domain' => $domain,

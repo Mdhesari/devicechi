@@ -2,28 +2,40 @@
 
 namespace Modules\User\Notifications;
 
+use App;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Log;
 
-class CodeVerificatiNotification extends Notification
+class CodeVerificatiNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    protected $user;
+    /**
+     * Notification channels
+     *
+     * @var mixed
+     */
+    protected $channels;
 
+    /**
+     * Verification code
+     *
+     * @var mixed
+     */
     protected $code;
+
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user, $code)
+    public function __construct($data)
     {
-        $this->user = $user;
-        $this->code = $code;
+        $this->channels = $data['channels'] ?? [env('GHAESDAK_NOTIF', '')];
+        $this->code = $data['code'] ?? null;
     }
 
     /**
@@ -34,7 +46,7 @@ class CodeVerificatiNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return array_merge($this->channels, ['database']);
     }
 
     /**
@@ -45,13 +57,26 @@ class CodeVerificatiNotification extends Notification
      */
     public function toMail($notifiable)
     {
-
-        Log::info('Mobileforsale.ir : Your verification code is ' . $this->code . ', number requested : ' . $this->user->phone);
-
         return (new MailMessage)
             ->line('The introduction to the notification.')
-            ->action('Notification Action', 'https://laravel.com')
+            ->line('{MFS} Your verification code is ' . $this->getCode($notifiable))
             ->line('Thank you for using our application!');
+    }
+
+    /**
+     * Get the mail representation of the notification.
+     *
+     * @param mixed $notifiable
+     * @return string
+     */
+    public function toGhasedak($notifiable)
+    {
+        return [
+            'template' => 'confirmation',
+            'placeholders' => [
+                $this->code ?: $notifiable->getVerificationCode()
+            ],
+        ];
     }
 
     /**
@@ -62,8 +87,24 @@ class CodeVerificatiNotification extends Notification
      */
     public function toArray($notifiable)
     {
+        if (app()->environment('local')) {
+            Log::info('Devicechi.com : Your verification code is ' . $this->getCode($notifiable) . ', number requested : ' . ($notifiable->routeNotificationFor('sms', $this) ?? $notifiable->phone));
+        }
+
         return [
-            //
+            'code' => $this->getCode($notifiable),
         ];
+    }
+
+    /**
+     * Get verification code
+     *
+     * @param  mixed $notifiable
+     * @return void
+     */
+    public function getCode($notifiable)
+    {
+
+        return $this->code ?: $notifiable->getVerificationCode();
     }
 }

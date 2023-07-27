@@ -10,7 +10,7 @@ interface AdRepositoryInterface
      * @param  int $id
      * @return mixed
      */
-    public function find(int $id);
+    public function find($id);
 
     /**
      * Create ad
@@ -47,7 +47,7 @@ interface AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function publish($ad);
@@ -55,7 +55,7 @@ interface AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function delete($ad);
@@ -63,7 +63,7 @@ interface AdRepositoryInterface
     /**
      * Set ad status as pending
      *
-     * @param  int|\Modules\User\Entities\Ad $ad
+     * @param  int|\App\Models\Ad $ad
      * @return mixed
      */
     public function archive($ad);

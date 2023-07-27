@@ -1,6 +1,7 @@
 <template>
     <div>
         <Header :user="user"></Header>
+
         <!-- Page Content -->
         <main class="main-site">
             <slot></slot>
@@ -19,6 +20,28 @@ export default {
     components: {
         Header,
         Footer
+    },
+    mounted() {
+        document.title = this.getProp("head_title");
+
+        if (this.success) {
+            this.$to(this.success, "", "s");
+        }
+
+        if (this.error) {
+            this.$to(this.error);
+        }
+
+        if (this.warning) {
+            this.$to(this.warning, "", "w");
+        }
+    },
+    data() {
+        return {
+            success: this.getProp("success"),
+            error: this.getProp("error"),
+            warning: this.getProp("warning")
+        };
     }
 };
 </script>

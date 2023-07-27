@@ -1,9 +1,16 @@
 <template>
     <b-col class="preview-item" sm="6" md="4" lg="2">
-        <div v-if="picture.is_active">
-            active
-        </div>
-        <img class="fluid" :src="picture.url" alt="Uploaded Picture" />
+        <div
+            v-show="isActive"
+            class="badge badge-secondary active-badge"
+            v-text="__('global.active-picture')"
+        ></div>
+        <img
+            class="fluid"
+            :src="picture.thumb_url"
+            alt="Uploaded Picture"
+            @click="$emit('changeActivePicture')"
+        />
         <b-progress
             v-if="progress_id === picture.id"
             :value="progress_value"
@@ -25,7 +32,7 @@
 
 <script>
 export default {
-    props: ["picture"],
+    props: ["picture", "isActive"],
     data() {
         return {
             progress_value: 20,

@@ -1,190 +1,242 @@
 <template>
-    <WizardStep
-        :backLink="
-            route('user.ad.step_phone_price', {
-                ad: ad.id
-            })
-        "
-    >
-        <form class="browse-pictures-form" @submit.prevent="next">
-            <p class="form-title">
-                {{ __("ads.wizard.upload_picture.title") }}
-            </p>
-            <p class="form-desc">
-                {{ __("ads.wizard.upload_picture.desc") }}
-            </p>
+	<WizardStep
+		:backLink="
+			route('user.ad.step_phone_price', {
+				ad: ad.slug
+			})
+		"
+	>
+		<form class="browse-pictures-form" @submit.prevent="next">
+			<p class="form-title">
+				{{ __('ads.wizard.upload_picture.title') }}
+			</p>
+			<p class="form-desc">
+				{{ __('ads.wizard.upload_picture.desc') }}
+			</p>
 
-            <b-form-group class="picture-upload-input">
-                <label class="icon-upload-label" @click="openFileDialog">
-                    <span class="mx-2">{{ label_text }}</span>
-                    <b-icon-upload></b-icon-upload>
-                </label>
-                <b-form-file
-                    accept="image/*"
-                    id="picture-upload-input-file"
-                    ref="pictures"
-                    @change="updatePhotoList"
-                    multiple
-                    :drop-placeholder="__('ads.form.placeholder.upload.drop')"
-                ></b-form-file>
-            </b-form-group>
+			<b-alert show variant="info">
+				<h6 v-text="__('ads.form.warning.upload.title')"></h6>
+				<ul class="list-group">
+					<li>تصویر با کیفیت گرفته شود</li>
+					<li>
+						حجم تصویر کمتر از
+						{{ `${ad_picture_size_limit} مگابایت` }} باشد
+					</li>
+					<li>حداقل ۲ تصویر را آپلود کنید</li>
+				</ul>
+			</b-alert>
 
-            <b-row class="upload-previews" v-if="pictures.length > 0">
-                <UploadPreviewItem
-                    v-for="(picture, index) in pictures"
-                    :key="index"
-                    :picture="picture"
-                    @removePicture="removePicture(picture)"
-                />
-            </b-row>
+			<b-form-group class="picture-upload-input">
+				<label class="icon-upload-label" @click="openFileDialog">
+					<span class="mx-2">{{ label_text }}</span>
+					<b-icon-upload></b-icon-upload>
+				</label>
+				<b-form-file
+					accept=".jpg, .jpeg"
+					id="picture-upload-input-file"
+					ref="pictures"
+					@change="updatePhotoList"
+					multiple
+					:drop-placeholder="__('ads.form.placeholder.upload.drop')"
+				></b-form-file>
+			</b-form-group>
 
-            <b-button
-                v-if="pictures.length >= pictures_min_count"
-                variant="secondary"
-                @click.prevent="next"
-            >
-                {{ __("global.next") }}
-            </b-button>
-        </form>
-    </WizardStep>
+			<b-row class="upload-previews" v-if="form.pictures.length > 0">
+				<UploadPreviewItem
+					v-for="(picture, index) in form.pictures"
+					@changeActivePicture="changeActivePicture(picture.id)"
+					:key="index"
+					:picture="picture"
+					:isActive="form.activePicture == picture.id"
+					@removePicture="removePicture(picture)"
+				/>
+			</b-row>
+
+			<b-button :disabled="isLoading" variant="secondary" @click.prevent="next">
+				{{ isLoading ? __('global.loading') : __('global.next') }}
+			</b-button>
+		</form>
+	</WizardStep>
 </template>
 
 <script>
-import WizardStep from "../../../Components/WizardStep";
-import UploadPreviewItem from "../../../Components/UploadPreviewItem";
+import WizardStep from '../../../Components/WizardStep'
+import UploadPreviewItem from '../../../Components/UploadPreviewItem'
 
 export default {
-    components: {
-        WizardStep,
-        UploadPreviewItem
-    },
-    data() {
-        return {
-            pictures: this.getProp("pictures"),
-            form: this.$inertia.form({
-                pictures: []
-            }),
-            ad_picture_size_limit: this.getProp("ad_picture_size_limit"),
-            pictures_limit_count: this.getProp("ad_pictures_max_count"),
-            pictures_min_count: this.getProp("ad_pictures_min_count"),
-            label_text: this.__("ads.form.placeholder.upload.init"),
-            validFileTypes: this.getProp("ad_pictures_format"),
-            ad: this.getProp("ad")
-        };
-    },
-    methods: {
-        next(ev) {
-            // go to next step
-            this.form
-                .post(
-                    route("user.ad.step_phone_pictures", {
-                        ad: this.ad.id
-                    }),
-                    {
-                        peserveState: false,
-                        preserveScroll: true
-                    }
-                )
-                .then(response => {
-                    let error = null;
+	components: {
+		WizardStep,
+		UploadPreviewItem
+	},
+	data() {
+		return {
+			form: this.$inertia.form({
+				activePicture: this.getProp('active_picture'),
+				pictures: this.getProp('pictures')
+			}),
+			uploadForm: this.$inertia.form({
+				pictures: []
+			}),
+			isLoading: false,
+			ad_picture_size_limit: this.getProp('ad_picture_size_limit'),
+			pictures_limit_count: this.getProp('ad_pictures_max_count'),
+			pictures_min_count: this.getProp('ad_pictures_min_count'),
+			label_text: this.__('ads.form.placeholder.upload.init'),
+			validFileTypes: this.getProp('ad_pictures_format'),
+			ad: this.getProp('ad')
+		}
+	},
+	methods: {
+		next(ev) {
+			// go to next step
+			if (this.form.pictures.length < this.pictures_min_count)
+				return this.$to(
+					this.__('global.errors.ad.pictures.upload_minimum.title', {
+						min: this.pictures_min_count
+					}),
+					this.__('global.errors.ad.pictures.upload_minimum.desc')
+				)
 
-                    if ((error = this.form.error("pictures"))) {
-                        this.$to(error);
-                    }
-                })
-                .catch(error => {
-                    this.$to(this.__("global.errors.common"));
-                });
-            // this.$emit("next");
-        },
-        validateUploadedPicture(file) {
-            let result = true;
+			if (!this.form.activePicture)
+				return this.$to(this.__('ads.form.error.active-picture'))
 
-            const file_size_in_MB = (file.size / 1024 / 1024).toFixed(2);
+			this.form.post(
+				route('user.ad.step_phone_pictures', {
+					ad: this.ad.slug
+				}),
+				{
+					peserveState: false,
+					preserveScroll: true
+				}
+			)
+		},
+		changeActivePicture(id) {
+			this.form.activePicture = id
+		},
+		validateUploadedPicture(file) {
+			let result = true
 
-            if (file_size_in_MB > this.ad_picture_size_limit) {
-                this.$to(
-                    this.__("global.errors.ad.pictures.upload_limit.title"),
-                    this.__("global.errors.ad.pictures.upload_limit.desc", {
-                        max: this.ad_picture_size_limit
-                    })
-                );
+			const file_size_in_MB = (file.size / 1024 / 1024).toFixed(2)
 
-                result = false;
-            }
+			if (file_size_in_MB > this.ad_picture_size_limit) {
+				this.$to(
+					this.__('global.errors.ad.pictures.upload_limit.title'),
+					this.__('global.errors.ad.pictures.upload_limit.desc', {
+						max: this.ad_picture_size_limit
+					})
+				)
 
-            if (!this.validFileTypes.includes(file.type)) {
-                this.$to(
-                    this.__("global.errors.ad.pictures.upload_type.title"),
-                    this.__("global.errors.ad.pictures.upload_type.desc", {
-                        max: this.ad_picture_size_limit
-                    })
-                );
-                result = false;
-            }
+				result = false
+			}
 
-            return result;
-        },
-        updatePhotoList(ev) {
-            const files = ev.target.files;
+			if (!this.validFileTypes.includes(file.type)) {
+				this.$to(
+					this.__('global.errors.ad.pictures.upload_type.title'),
+					this.__('global.errors.ad.pictures.upload_type.desc', {
+						max: this.ad_picture_size_limit
+					})
+				)
+				result = false
+			}
 
-            const all_pictures_count = this.pictures.length + files.length;
+			return result
+		},
+		updatePhotoList(ev) {
+			const files = ev.target.files
 
-            if (all_pictures_count >= this.pictures_limit_count) {
-                this.$to(this.__("ads.form.error.pictures.max"));
-                return false;
-            }
+			const all_pictures_count = this.form.pictures.length + files.length
 
-            for (let i = 0; i < files.length; i++) {
-                const validation_result = this.validateUploadedPicture(
-                    files[i]
-                );
+			if (all_pictures_count > this.pictures_limit_count) {
+				this.$to(
+					this.__('ads.form.error.pictures.max', {
+						limit: this.pictures_limit_count
+					})
+				)
+				return false
+			}
 
-                if (!validation_result) continue;
+			for (let i = 0; i < files.length; i++) {
+				if (!this.validateUploadedPicture(files[i])) continue
 
-                this.form.pictures.push(files[i]);
+				this.uploadForm.pictures.push(files[i])
 
-                this.pictures.push({
-                    url: URL.createObjectURL(files[i]),
-                    original_file: files[i]
-                });
-            }
-        },
-        async removePicture(picture) {
-            let is_blob = "original_file" in picture;
+				// this.pictures.push({
+				//     url: URL.createObjectURL(files[i]),
+				//     original_file: files[i]
+				// });
+			}
 
-            if (is_blob) {
-                this.form.pictures = this.form.pictures.filter((el, index) => {
-                    return (
-                        el.name != picture.original_file.name &&
-                        el.lastModified != picture.original_file.lastModified
-                    );
-                });
-            } else {
-                const response = await axios.post(
-                    route("user.ad.step_phone_pictures", {
-                        ad: this.ad.id
-                    }),
-                    {
-                        _method: "DELETE",
-                        picture_id: picture.id
-                    }
-                );
+			this.isLoading = true
 
-                if (response.status == 200 && response.data.status) {
-                    // success
-                } else {
-                    // error
-                }
-            }
+			this.uploadForm.post(
+				route('user.ad.step_phone_pictures_upload', {
+					ad: this.ad.slug
+				}),
+				{
+					peserveState: true,
+					preserveScroll: true,
+					onSuccess: (response) => {
+						let error
 
-            this.pictures = this.pictures.filter(el => {
-                return el.url != picture.url;
-            });
-        },
-        openFileDialog() {
-            this.$refs.pictures.$el.childNodes[0].click();
-        }
-    }
-};
+						if ((error = this.form.errors.pictures)) {
+							this.$to(error)
+						} else {
+							this.uploadForm.pictures = []
+							this.form.pictures = this.getProp('pictures')
+
+							if (!this.form.activePicture) {
+								this.form.activePicture = this.form.pictures[0].id
+							}
+						}
+
+						this.isLoading = false
+					},
+					onError: (response) => {
+						this.isLoading = false
+					}
+				}
+			)
+		},
+		async removePicture(picture) {
+			let is_blob = 'original_file' in picture
+
+			if (is_blob) {
+				this.uploadForm.pictures = this.uploadForm.pictures.filter(
+					(el, index) => {
+						return (
+							el.name != picture.original_file.name &&
+							el.lastModified != picture.original_file.lastModified
+						)
+					}
+				)
+			} else {
+				if (this.form.activePicture == picture.id)
+					this.form.activePicture = null
+
+				const response = await axios.post(
+					route('user.ad.step_phone_pictures', {
+						ad: this.ad.slug
+					}),
+					{
+						_method: 'DELETE',
+						picture_id: picture.id
+					}
+				)
+
+				if (response.status == 200 && response.data.status) {
+					// success
+				} else {
+					// error
+				}
+			}
+
+			this.form.pictures = this.form.pictures.filter((el) => {
+				return el.url != picture.url
+			})
+		},
+		openFileDialog() {
+			this.$refs.pictures.$el.childNodes[0].click()
+		}
+	}
+}
 </script>

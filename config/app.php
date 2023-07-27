@@ -13,7 +13,11 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Devicechi'),
+
+    'username' => env('APP_USERNAME', '@devicechi'),
+
+    'version' => '1.101.3',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,19 +169,21 @@ return [
         /*
          * Package Service Providers...
          */
+        Leantony\Grid\Providers\GridServiceProvider::class,
+        App\Providers\AdminLteServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\ModuleDomainProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
         App\Providers\InertiaServiceProvider::class,
-
+        App\Providers\SetupNotificationChannels::class
     ],
 
     /*
@@ -229,7 +235,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        "ExportLocalization" => "KgBot\\LaravelLocalization\\Facades\\ExportLocalizations"
+        "ExportLocalization" => "KgBot\\LaravelLocalization\\Facades\\ExportLocalizations",
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

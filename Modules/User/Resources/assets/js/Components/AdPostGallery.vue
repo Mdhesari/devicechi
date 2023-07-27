@@ -1,6 +1,6 @@
 <template>
-    <div class="links">
-        <div class="swiper-container " id="mainHomeSlider">
+    <div class="gallery">
+        <div class="swiper-container main-gallery" id="mainHomeSlider">
             <SwiperWrapper>
                 <SwiperSlide
                     v-for="(picture, index) in pictures"
@@ -18,28 +18,6 @@
                     class="swiper-slide main-gallery-bg height100"
                 ></SwiperSlide>
             </SwiperWrapper>
-        </div>
-
-        <div class="short-links">
-            <div class="lable">
-                <strong>لینک کوتاه</strong>
-            </div>
-            <span class="short-link">
-                https://mobileforsale.com
-                <button class="clip-board">
-                    <i class="fa fa-clone" aria-hidden="true"></i>
-                </button>
-            </span>
-        </div>
-        <div class="actions">
-            <div class="call">
-                <a href="tel:09190790979" class=" btn call-btn"
-                    >تماس با آگهی دهنده</a
-                >
-            </div>
-            <div class="safe">
-                راهنمای معاله امن
-            </div>
         </div>
     </div>
 </template>

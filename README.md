@@ -1,61 +1,117 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Devicechi
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+DeviceChi is a modern and user-friendly marketplace app where people can buy and sell devices from each other. Whether
+it's smartphones, laptops, or other electronic gadgets, DeviceChi provides a seamless platform for users to connect,
+transact, and exchange devices securely.
 
-## About Laravel
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/network)
+[![GitHub issues](https://img.shields.io/github/issues/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/issues)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Table of Contents
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Introduction](#introduction)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Introduction
 
-## Learning Laravel
+Devicechi is a web application built with Laravel, Vue.js, and PostgreSQL. It provides a platform for users to buy and
+sell mobile phones easily. The application allows users to browse through listings, add items to their cart, and
+complete transactions securely.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- User registration and authentication
+- Mobile phone listings with detailed information and images
+- Secure payment processing
+- User reviews and ratings
+- Search and filtering options
+- User profiles and order history
 
-## Laravel Sponsors
+## Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+To run Devicechi, ensure that your system meets the following requirements:
 
-### Premium Partners
+- PHP version 8.0
+- Composer
+- Node.js and NPM
+- PostgreSQL 13
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## Installation
+
+To install Devicechi locally, follow these steps:
+
+1.Clone the repository:
+
+```shell
+git clone https://github.com/mdhesari/devicechi.git
+cd devicechi
+```
+
+2.Install PHP dependencies:
+
+```shell
+composer install
+```
+
+3.Install JavaScript dependencies:
+
+```shell
+npm install
+npm run production
+```
+
+4.Configure the environment variables:
+
+```shell
+cp .env.example .env
+```
+
+5.Generate an application key:
+
+```shell
+php artisan key:generate
+```
+
+6.Create a PostgreSQL/Mysql database for DeviceChi.
+
+7.Update the database configuration in the .env file:
+
+```markdown
+DB_CONNECTION=pgsql DB_HOST=your-database-host DB_PORT=your-database-port DB_DATABASE=your-database-name
+DB_USERNAME=your-database-username DB_PASSWORD=your-database-password
+```
+
+8.Run database migrations and seed the database:
+
+```shell
+php artisan migrate --seed
+```
+
+## Configuration
+
+Additional configuration steps, if any, can be listed here. For example, configuring payment gateways, setting up
+external services, or modifying environment variables.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+We welcome contributions to Devicechi. To contribute, please follow these guidelines:
 
-## Code of Conduct
+* Fork the repository and create a new branch for your feature or bug fix.
+* Ensure that your code follows the project's coding standards.
+* Write tests for your code, if applicable.
+* Submit a pull request describing your changes and referencing any related issues.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+For bug reports or feature requests, please open an issue on the GitHub repository.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Devicechi is open source and released under the MIT License. You are free to use, modify, and distribute this software.
+

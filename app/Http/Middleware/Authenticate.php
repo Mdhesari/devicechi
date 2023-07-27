@@ -9,11 +9,6 @@ use Route;
 class Authenticate extends Middleware
 {
 
-    protected $customSubDomainRedirects = [
-        \Modules\User\Providers\RouteServiceProvider::DOMAIN,
-        \Modules\Team\Providers\RouteServiceProvider::DOMAIN
-    ];
-
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *
@@ -37,31 +32,6 @@ class Authenticate extends Middleware
     private function getRedirectRoute($request)
     {
 
-        $redirectRoute = route('login');
-
-        foreach ($this->customSubDomainRedirects as $domain) {
-
-            if ($request->isSubDomain($domain)) {
-
-                $domainHandler = app($domain);
-
-                if ($this->isNotValidDomainHandler($domainHandler)) break;
-
-                $redirectRoute = $domainHandler->getGuestRedirectRoute();
-            }
-        }
-
-        return $redirectRoute;
-    }
-
-    /**
-     * check if it's a valid domain handler
-     *
-     * @return bool
-     */
-    private function isNotValidDomainHandler($domainHandler)
-    {
-
-        return is_null($domainHandler) || !$domainHandler instanceof DomainHanler;
+        return route('user.login');
     }
 }

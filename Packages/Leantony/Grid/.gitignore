@@ -1,0 +1,17 @@
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# custom
+vendor
+node_modules
+*.map
+
+.env
+
+*.log
+*.png

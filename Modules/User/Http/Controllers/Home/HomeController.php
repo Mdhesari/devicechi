@@ -2,8 +2,12 @@
 
 namespace Modules\User\Http\Controllers\Home;
 
+use App\Models\Ad;
+use App\Models\PhoneBrand;
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Modules\User\Entities\City;
 use Modules\User\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -16,17 +20,16 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-
         $data = [];
+        $data['using_instagram'] = false;
+        $data['brands'] = PhoneBrand::limit(16)->get();
+        $data['ads'] = Ad::with('state.city')->latest()->includeMediaThumb()->published()->limit(9)->get();
+        $data['posts'] = Post::published()->latest()->limit(3)->get();
 
-        if ($message = session('trigger_auth'))
-            $data['trigger_auth'] = $message;
-
-        if ($phone = session('phone'))
-            $data['phone'] = $phone;
-
-        if ($ratelimiter = session('ratelimiter'))
-            $data['ratelimiter'] = $ratelimiter;
+        $userAgent = $request->userAgent();
+        if (strpos($userAgent, 'Instagram')) {
+            $data['using_instagram'] = true;
+        }
 
         return Inertia::render('Home', $data);
     }

@@ -1,4 +1,4 @@
 {
-    "Team": true,
-    "User": true
+    "User": true,
+    "Admin": true
 }

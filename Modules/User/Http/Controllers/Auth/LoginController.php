@@ -8,9 +8,22 @@ use Illuminate\Routing\Controller;
 
 class LoginController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $data = [];
 
-        return 'User login route.';
+        if ($message = session('trigger_auth')) {
+            $data['trigger_auth'] = $message;
+        }
+
+        if ($phone = session('phone')) {
+            $data['phone'] = $phone;
+        }
+
+        if ($ratelimiter = session('ratelimiter')) {
+            $data['ratelimiter'] = $ratelimiter;
+        }
+
+        return inertia('Login', $data);
     }
 }

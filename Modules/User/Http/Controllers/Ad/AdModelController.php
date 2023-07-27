@@ -3,15 +3,18 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\Ad;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 
 class AdModelController extends BaseAdController
 {
 
-    public function choose(PhoneBrand $brand, Ad $ad)
+    public function choose(PhoneBrand $brand, Ad $ad = null)
     {
+        if ($ad)
+            $this->checkAuthorization($ad);
+
         $step = BaseAdController::STEP_CHOOSE_MODEL;
 
         $this->checkPreviousSteps($step, $ad);
@@ -27,6 +30,9 @@ class AdModelController extends BaseAdController
 
     public function store(PhoneBrand $brand, Ad $ad = null, Request $request)
     {
+
+        if ($ad)
+            $this->checkAuthorization($ad);
 
         $request->validate([
             'phone_model' => 'required|exists:phone_models,name'

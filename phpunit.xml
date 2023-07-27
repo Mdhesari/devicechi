@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./vendor/phpunit/phpunit/phpunit.xsd" bootstrap="vendor/autoload.php" colors="true">
     <testsuites>
-        <!-- <testsuite name="Unit-Team">
-            <directory suffix="Test.php">./Modules/Team/Tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature-Team">
-            <directory suffix="Test.php">./Modules/Team/Tests/Feature</directory>
-        </testsuite> -->
 
         <!-- Modules -->
         <!-- User -->
         <testsuite name="Feature">
-            <!-- <directory suffix="Test.php">./Modules/User/Tests/Feature/Auth/</directory> -->
+            <directory suffix="Test.php">./Modules/User/Tests/Feature/</directory>
             <!-- <file>./Modules/User/Tests/Feature/Ad/AdGetTest.php</file> -->
-            <file>./Modules/User/Tests/Feature/Auth/SessionTest.php</file>
+            <!-- <file>./Modules/User/Tests/Feature/Auth/SessionTest.php</file> -->
 
         </testsuite>
         <testsuite name="Unit">
             <!-- <file>./Modules/User/Tests/Unit/Artisan/PhoneAccessoriesCurlTest.php</file> -->
 
-            <!-- <directory suffix="Test.php">./Modules/User/Tests/Unit/Ad/Steps/Routes</directory> -->
+            <directory suffix="Test.php">./Modules/User/Tests/Unit/</directory>
+        </testsuite>
+
+
+        <!-- Admin Module -->
+        <testsuite name="Admin-F">
+            <!-- <directory suffix="Test.php">./Modules/Admin/Tests/Feature/Admins/</directory> -->
+            <file>./Modules/Admin/Tests/Feature/Admins/AdminCreateTest.php</file>
         </testsuite>
 
     </testsuites>
@@ -30,13 +31,15 @@
     </coverage>
     <php>
         <server name="APP_ENV" value="testing"/>
+        <server name="APP_LOCALE" value="en"/>
         <server name="BCRYPT_ROUNDS" value="4"/>
         <server name="CACHE_DRIVER" value="array"/>
-        <!-- <server name="DB_CONNECTION" value="sqlite"/> -->
-        <!-- <server name="DB_DATABASE" value=":memory:"/> -->
+        <server name="DB_CONNECTION" value="sqlite"/>
+        <server name="DB_DATABASE" value=":memory:"/>
         <server name="MAIL_MAILER" value="array"/>
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
+        <server name="FILESYSTEM_DRIVER" value="fake"/>
         <server name="TELESCOPE_ENABLED" value="false"/>
     </php>
 </phpunit>

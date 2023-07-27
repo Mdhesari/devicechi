@@ -11,23 +11,51 @@
 |
 */
 
-use Modules\User\Http\Controllers\Ad\AdCreateController;
+use Modules\User\Http\Controllers\Ad\AdHomeController;
+use Modules\User\Http\Controllers\Ad\AdMainController;
 use Modules\User\Http\Controllers\Auth\LoginController;
 use Modules\User\Http\Controllers\Auth\SessionController;
+use Modules\User\Http\Controllers\BlogController;
 use Modules\User\Http\Controllers\Home\HomeController;
-use Modules\User\Http\Controllers\UserController;
+use Modules\User\Http\Controllers\UserContactUsController;
 
-Route::middleware('auth:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
+Route::get('/', [HomeController::class, 'index'])->name('user.home');
+
+Route::get('/contact-us', [UserContactUsController::class, 'index'])->name('contact-us');
+
+Route::post('/contact-us', [UserContactUsController::class, 'store']);
+
+Route::middleware('auth.user:sanctum')->name('user.')->group(__DIR__ . '/auth.php');
 
 Route::middleware('guest:sanctum')->name('user.')->group(function () {
-
-    Route::get('/', [HomeController::class, 'index'])->name('home');
-
-    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::get('/auth', [LoginController::class, 'index'])->name('login');
 
     Route::post('/logout', [SessionController::class, 'destroy'])->name('logout');
 
-    Route::post('/auth', [SessionController::class, 'store'])->name('auth');
+    Route::middleware('english_numbers')->post('/auth', [SessionController::class, 'store'])->name('auth');
 
     Route::post('/auth/validate', [SessionController::class, 'verify'])->name('verify');
+});
+
+Route::prefix('/ads')->name('user.ad.')->group(function () {
+    // Route::get('/s', [AdHomeController::class, 'all'])->name('all');
+
+    Route::post('/explore', [AdHomeController::class, 'search']);
+
+    Route::get('/explore/{city?}', [AdHomeController::class, 'index'])->name('home');
+
+    Route::get('/get/brands', [AdMainController::class, 'getBrands'])->name('get.brands');
+
+    Route::get('/get/models', [AdMainController::class, 'getModels'])->name('get.models');
+
+    Route::get('/get/status/{status}', [AdMainController::class, 'getStatus'])->name('get.status');
+
+    Route::get('/{ad}', [AdHomeController::class, 'show'])->name('show');
+
+    Route::get('/p/{ad}', [AdHomeController::class, 'show'])->name('show.short-link');
+});
+
+Route::prefix('/blog')->name('user.blog.')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name('index');
+    Route::get('/{post}', [BlogController::class, 'show'])->name('show');
 });

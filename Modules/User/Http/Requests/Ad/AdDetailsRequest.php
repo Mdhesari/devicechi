@@ -14,7 +14,7 @@ class AdDetailsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'min:4'],
+            'title' => ['required', 'min:4', 'max:16'],
             'description' => ['required', 'min:8'],
             'agreement_status' => ['required', 'accepted']
         ];

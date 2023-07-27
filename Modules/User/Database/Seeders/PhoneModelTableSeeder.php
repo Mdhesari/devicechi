@@ -6,7 +6,7 @@ use DB;
 use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Modules\User\Exceptions\PhoneModelUnableToeSeedWithoutBrands;
 
@@ -21,17 +21,23 @@ class PhoneModelTableSeeder extends Seeder
     {
         Model::unguard();
 
-        $models = config('user.phone_models');
+        $models = json_decode(file_get_contents(predata_path('/models.json')), true);
 
         $db_models = [];
 
-        PhoneModel::truncate();
+        DB::table('phone_models')->truncate();
 
         foreach ($models as $model) {
 
-            $brand = PhoneBrand::whereName($model['brand_name'])->first();
+            try {
+                $brand = PhoneBrand::whereName($model['brand_name'])->first();
 
-            if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("Cannot create model with nulled brand");
+                if (is_null($brand)) throw new PhoneModelUnableToeSeedWithoutBrands("There is no brand name : " . $model['brand_name']);
+            } catch (PhoneModelUnableToeSeedWithoutBrands $e) {
+
+                report($e);
+                continue;
+            }
 
             $db_models[] = [
                 'phone_brand_id' => $brand->id,

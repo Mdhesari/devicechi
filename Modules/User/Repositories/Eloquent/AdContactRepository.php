@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Pipeline\Pipeline;
 use Log;
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad;
+use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
 use Modules\User\Entities\User;
 use Modules\User\Http\Controllers\Ad\BaseAdController;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
@@ -56,6 +56,15 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
     {
 
         return $this->model->whereId($id)->delete();
+    }
+
+    public function reset($ad_id)
+    {
+        if (is_object($ad_id)) {
+            $ad_id = $ad_id->id;
+        }
+
+        return $this->model->whereAdId($ad_id)->where('id', '>=', 0)->delete();
     }
 
     public function getContacts($ad)
@@ -105,7 +114,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
             "value" => $user->phone,
-            "value_verified_at" => $user->phone_verified_at,
+            "value_verified_at" => now(),
             "data" => [
                 "phone_country_code" => $user->phone_country_code,
             ],
@@ -122,7 +131,7 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
         $data = [
             "ad_id" => $ad_id,
             "contact_type_id" => $contact_type_id,
-            "value_verified_at" => $user->phone_verified_at,
+            "value_verified_at" => now(),
             "value" => $user->email,
         ];
 
@@ -141,12 +150,13 @@ class AdContactRepository extends Repository implements AdContactRepositoryInter
      * @param  mixed $ad_contact
      * @return void
      */
-    public function sendVerification($ad_contact)
+    public function sendVerification($ad_contact, $code)
     {
 
         $data = [
             'ad_contact' => $ad_contact,
             'status' => false,
+            'code' => $code,
         ];
 
         $pipelines = config('contact.verify.pipelines', [

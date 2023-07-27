@@ -2,29 +2,27 @@
 
 namespace Modules\User\Entities;
 
+use App\Models\Ad;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
-use Modules\User\Entities\Ad\AdContact;
-use Modules\User\Entities\Ad\AdContactType;
+use Modules\User\Database\Factories\UserFactory;
+use App\Models\Ad\AdContact;
+use App\Models\Ad\AdContactType;
+use App\Models\MainUser;
 use Modules\User\Notifications\CodeVerificatiNotification;
 use Modules\User\Repositories\Contracts\AdContactRepositoryInterface;
 use Modules\User\Space\Contracts\MustVerifyPhone;
 use Storage;
-use User\Database\Factories\UserFactory;
 
-class User extends Authenticatable implements MustVerifyPhone
+class User extends MainUser implements MustVerifyPhone
 {
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
-    // use HasTeams;
     use Notifiable;
-    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -32,7 +30,7 @@ class User extends Authenticatable implements MustVerifyPhone
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'phone', 'phone_country_code'
+        'name', 'email', 'password', 'phone', 'phone_country_code', 'city_id', 'meta_user'
     ];
 
     /**
@@ -55,6 +53,7 @@ class User extends Authenticatable implements MustVerifyPhone
     protected $casts = [
         'email_verified_at' => 'datetime',
         'phone_verified_at' => 'datetime',
+        'meta_user' => 'array'
     ];
 
     /**
@@ -78,10 +77,10 @@ class User extends Authenticatable implements MustVerifyPhone
         return !is_null($this->phone_verified_at);
     }
 
-    public function sendVerificationNotification($code)
+    public function sendVerificationNotification($data)
     {
 
-        return $this->notify(new CodeVerificatiNotification($this, $code));
+        return $this->notify(new CodeVerificatiNotification($data));
     }
 
     public function verifyPhoneNumberIfNotVerified()
@@ -95,15 +94,53 @@ class User extends Authenticatable implements MustVerifyPhone
         }
     }
 
-    /**
-     * Get user ads
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function ads()
+    public function setPhoneUnverified()
     {
 
-        return $this->hasMany(Ad::class);
+        if ($this->hasVerifiedPhone()) {
+
+            $this->forceFill([
+                'phone_verified_at' => null,
+            ])->save();
+        }
+    }
+
+    public function setNewPassword($password)
+    {
+
+        $this->forceFill([
+            'password' => $password,
+        ])->save();
+    }
+
+    public function bookmarkedAds()
+    {
+
+        return $this->belongsToMany(Ad::class);
+    }
+
+    public function seenAds()
+    {
+        return $this->belongsToMany(Ad::class, 'ad_user_seen')->withPivot('count');
+    }
+
+    public function readAd($ad)
+    {
+
+        if ($this->id === $ad->user->id) return;
+
+        $existing_ad = $this->seenAds()->whereAdId($ad->id)->first();
+
+        if ($existing_ad) {
+
+            return $existing_ad->pivot->update([
+                'count' => ++$existing_ad->pivot->count
+            ]);
+        }
+
+        return $this->seenAds()->attach($ad, [
+            'count' => 1
+        ]);
     }
 
     public function hasUncompleteAd()
@@ -114,8 +151,12 @@ class User extends Authenticatable implements MustVerifyPhone
 
     public function getProfilePhotoPathAttribute($value)
     {
-
         return is_null($value) ? asset('images/user.png') : Storage::url($value);
+    }
+
+    public function getHelpAlertAdAttribute()
+    {
+        return optional($this->user_meta)[Ad::HELP_ALERT_SESSION] ?: true;
     }
 
     /**
@@ -125,6 +166,6 @@ class User extends Authenticatable implements MustVerifyPhone
      */
     protected static function newFactory()
     {
-        return new UserFactory;
+        return UserFactory::new();
     }
 }

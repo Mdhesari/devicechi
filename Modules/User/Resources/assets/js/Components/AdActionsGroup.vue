@@ -1,28 +1,49 @@
 <template>
     <div class="actions-navbar">
         <b-button-group>
-            <b-button class="btn-save" @click="publishAd">
-                <span class="label">
+            <b-button
+                v-b-tooltip.hover
+                :title="__('ads.actions.save')"
+                class="btn-save"
+                @click="publishAd"
+                :disabled="isConfirmed"
+            >
+                <!-- <span class="label">
                     {{ __("ads.actions.save") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="check-circle"></b-icon>
             </b-button>
-            <b-button class="btn-delete" @click="deleteAd">
-                <span class="label">
+            <b-button
+                v-b-tooltip.hover
+                :title="__('ads.actions.delete')"
+                class="btn-delete"
+                @click="deleteAd"
+            >
+                <!-- <span class="label">
                     {{ __("ads.actions.delete") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="trash-fill"></b-icon>
             </b-button>
-            <b-button class="btn-archive" @click="archiveAd">
-                <span class="label">
+            <b-button
+                v-b-tooltip.hover
+                :title="__('ads.actions.archive')"
+                class="btn-archive"
+                @click="archiveAd"
+            >
+                <!-- <span class="label">
                     {{ __("ads.actions.archive") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="pencil-square"></b-icon>
             </b-button>
-            <b-button class="btn-back" @click="getBack">
-                <span class="label">
+            <b-button
+                v-b-tooltip.hover
+                :title="__('ads.actions.back')"
+                class="btn-back"
+                @click="getBack"
+            >
+                <!-- <span class="label">
                     {{ __("ads.actions.back") }}
-                </span>
+                </span> -->
                 <b-icon class="vertical-middle" icon="arrow-left"></b-icon>
             </b-button>
         </b-button-group>
@@ -31,25 +52,44 @@
 
 <script>
 export default {
-    props: ["ad"],
+    props: ["ad", "isConfirmed"],
     methods: {
         getBack() {
             this.$inertia.visit(
                 route("user.ad.step_phone_details", {
-                    ad: this.ad.id
+                    ad: this.ad.slug
                 })
             );
         },
         publishAd() {
-            this.$inertia.post(route("user.ad.step_phone_demo.publish"), {
-                _method: "PUT",
-                ad: this.ad
-            });
+            this.$inertia.post(
+                route("user.ad.step_phone_demo.publish"),
+                {
+                    _method: "PUT",
+                    ad: this.ad
+                },
+                {
+                    preserveScroll: true,
+                    preserveState: false
+                }
+            );
         },
         deleteAd() {
-            this.$inertia.post(route("user.ad.step_phone_demo.delete"), {
-                _method: "PUT",
-                ad: this.ad
+            this.$swal({
+                title: this.__("global.ask.delete.title"),
+                text: this.__("global.ask.delete.description"),
+                icon: "warning",
+                dangerMode: true,
+                buttons: [this.__("global.back"), this.__("global.confirm")]
+            }).then(willDelete => {
+                if (willDelete)
+                    this.$inertia.post(
+                        route("user.ad.step_phone_demo.delete"),
+                        {
+                            _method: "PUT",
+                            ad: this.ad
+                        }
+                    );
             });
         },
         archiveAd() {

@@ -11,13 +11,6 @@
 
 <script>
 export default {
-    props: ["picture"],
-    methods: {
-        getPictureStyle() {
-            return {
-                "background-image": this.picture.url
-            };
-        }
-    }
+    props: ["picture"]
 };
 </script>

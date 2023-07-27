@@ -2,19 +2,15 @@
 
 namespace Modules\User\Http\Controllers;
 
-use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Inertia\Inertia;
-use Log;
-use Modules\User\Entities\Ad;
+use App\Rules\MobileIran;
+use Illuminate\Validation\ValidationException;
+use Modules\User\Entities\City;
+use Modules\User\Entities\Country;
 use Modules\User\Entities\User;
-use Modules\User\Events\UserLoggedIn;
-use Modules\User\Events\UserRegistered;
 use Modules\User\Repositories\Contracts\AdRepositoryInterface;
-use Response;
-use Validator;
 
 class UserController extends Controller
 {
@@ -29,13 +25,17 @@ class UserController extends Controller
 
         $all_status = $adRepository->getAllStatus();
 
-        $success_session = session('success');
-
         $tabs = [];
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
-        return inertia('User/Profile', compact('success_session', 'user', 'tabs', 'nav_items'));
+        $user->load('city');
+
+        $user_country = Country::whereName(config('user.default_country'))->first();
+
+        $cities = City::whereCountryId($user_country->id)->get();
+
+        return inertia('User/Profile', compact('user', 'tabs', 'nav_items', 'cities'));
     }
 
     public function update(Request $request)
@@ -43,14 +43,70 @@ class UserController extends Controller
 
         $request->validate([
             'name' => ['required', 'min:3'],
-            'email' => ['nullable', 'email'],
-            'phone' => ['required', 'not_regex:/^0+/'],
+            'phone' => ['required', new MobileIran],
             'phone_country_code' => ['required'],
-            'password' => ['nullable', 'min:8', 'confirmed']
+            'password' => ['nullable', 'min:8', 'confirmed'],
+            'city_id' => ['nullable', 'exists:cities,id']
         ]);
 
-        $request->user()->update($request->only('name', 'email'));
+        $user = $request->user();
 
-        return back()->with('success', __(' Ok '));
+        $data = $request->only('name', 'phone');
+
+        $city_id = $request->input('city_id');
+
+        $data['city_id'] = empty($city_id) ? null : $city_id;
+
+        $data['phone'] = format_user_mobile($data['phone']);
+
+        $existing_user = User::wherePhone($data['phone'])->first();
+
+        if (is_null($existing_user)) {
+
+            $user->setPhoneUnverified();
+        } else if (!$user->is($existing_user)) {
+
+            throw ValidationException::withMessages([
+                'phone' => trans('validation.exists', [
+                    'attribute' => __(' Phone '),
+                ]),
+            ]);
+        }
+
+        if ($password = $request->input('password')) {
+
+            $user->setNewPassword($password);
+        }
+
+        $user->update($data);
+
+        return back()->with('toSuccess', __(' Ok '));
+    }
+
+    public function bookmarks(Request $request)
+    {
+        $ads = $request->user()->bookmarkedAds()->includeMediaThumb()->paginate();
+
+        if ($request->expectsJson()) return $ads;
+
+        $tabs = [];
+
+        $nav_items = get_nav_items();
+
+        return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
+    }
+
+    public function seens(Request $request)
+    {
+
+        $ads = $request->user()->seenAds()->includeMediaThumb()->paginate();
+
+        if ($request->expectsJson()) return $ads;
+
+        $tabs = [];
+
+        $nav_items = get_nav_items();
+
+        return inertia('User/MySavedAds', compact('ads', 'tabs', 'nav_items'));
     }
 }

@@ -2,10 +2,10 @@
 
 return [
     'name' => 'User',
-    'verification_length' => 5,
-    'ad_picture_size_limit' => 5, // MB
-    'ad_pictures_max_count' => 6,
-    'ad_pictures_min_count' => 2,
+    'verification_length' => env('VERIFICATION_LENGTH', 5),
+    'ad_picture_size_limit' => env('AD_PICTURE_SIZE_LIMIT', 12), // MB
+    'ad_pictures_max_count' => env('AD_PICTURES_MAX_COUNT', 6),
+    'ad_pictures_min_count' => env('AD_PICTURES_MIN_COUNT', 2),
 
     'domain' => env('USER_DOMAIN', 'http://localhost'),
     'prefix' => env('User_PREFIX', '/'),
@@ -29,7 +29,8 @@ return [
                 ],
                 'validation_attr' => [
                     'value' => 'ایمیل'
-                ]
+                ],
+                'href' => 'mail'
             ],
         ],
         [
@@ -44,7 +45,8 @@ return [
                 ],
                 'validation_attr' => [
                     'value' => 'موبایل'
-                ]
+                ],
+                'href' => 'tel'
             ],
         ],
     ],
@@ -10390,182 +10392,182 @@ return [
 
         array(
             'name' => '10.or',
-            'picture_path' => 'images/brands/10.or.png',
+            'picture_path' => 'assets/brands/10.or.png',
         ),
 
         array(
             'name' => 'apple',
-            'picture_path' => 'images/brands/apple.png',
+            'picture_path' => 'assets/brands/apple.png',
         ),
 
         array(
             'name' => 'asus',
-            'picture_path' => 'images/brands/asus.png',
+            'picture_path' => 'assets/brands/asus.png',
         ),
 
         array(
             'name' => 'blackberry',
-            'picture_path' => 'images/brands/blackberry.png',
+            'picture_path' => 'assets/brands/blackberry.png',
         ),
 
         array(
             'name' => 'coolpad',
-            'picture_path' => 'images/brands/coolpad.png',
+            'picture_path' => 'assets/brands/coolpad.png',
         ),
 
         array(
             'name' => 'gionee',
-            'picture_path' => 'images/brands/gionee.png',
+            'picture_path' => 'assets/brands/gionee.png',
         ),
 
         array(
             'name' => 'google',
-            'picture_path' => 'images/brands/google.png',
+            'picture_path' => 'assets/brands/google.png',
         ),
 
         array(
             'name' => 'honor',
-            'picture_path' => 'images/brands/honor.png',
+            'picture_path' => 'assets/brands/honor.png',
         ),
 
         array(
             'name' => 'htc',
-            'picture_path' => 'images/brands/htc.png',
+            'picture_path' => 'assets/brands/htc.png',
         ),
 
         array(
             'name' => 'huawei',
-            'picture_path' => 'images/brands/huawei.png',
+            'picture_path' => 'assets/brands/huawei.png',
         ),
 
         array(
             'name' => 'infinix',
-            'picture_path' => 'images/brands/infinix.png',
+            'picture_path' => 'assets/brands/infinix.png',
         ),
 
         array(
             'name' => 'infocus',
-            'picture_path' => 'images/brands/infocus.png',
+            'picture_path' => 'assets/brands/infocus.png',
         ),
 
         array(
             'name' => 'intex',
-            'picture_path' => 'images/brands/intex.png',
+            'picture_path' => 'assets/brands/intex.png',
         ),
 
         array(
             'name' => 'karbonn',
-            'picture_path' => 'images/brands/karbonn.png',
+            'picture_path' => 'assets/brands/karbonn.png',
         ),
 
         array(
             'name' => 'lava',
-            'picture_path' => 'images/brands/lava.png',
+            'picture_path' => 'assets/brands/lava.png',
         ),
 
         array(
             'name' => 'leeco',
-            'picture_path' => 'images/brands/leeco.png',
+            'picture_path' => 'assets/brands/leeco.png',
         ),
 
         array(
             'name' => 'lenovo',
-            'picture_path' => 'images/brands/lenovo.png',
+            'picture_path' => 'assets/brands/lenovo.png',
         ),
 
         array(
             'name' => 'lg',
-            'picture_path' => 'images/brands/lg.png',
+            'picture_path' => 'assets/brands/lg.png',
         ),
 
         array(
             'name' => 'lyf',
-            'picture_path' => 'images/brands/lyf.png',
+            'picture_path' => 'assets/brands/lyf.png',
         ),
 
         array(
             'name' => 'micromax',
-            'picture_path' => 'images/brands/micromax.png',
+            'picture_path' => 'assets/brands/micromax.png',
         ),
 
         array(
             'name' => 'motorola',
-            'picture_path' => 'images/brands/motorola.png',
+            'picture_path' => 'assets/brands/motorola.png',
         ),
 
         array(
             'name' => 'nokia',
-            'picture_path' => 'images/brands/nokia.png',
+            'picture_path' => 'assets/brands/nokia.png',
         ),
 
         array(
             'name' => 'oneplus',
-            'picture_path' => 'images/brands/oneplus.png',
+            'picture_path' => 'assets/brands/oneplus.png',
         ),
 
         array(
             'name' => 'oppo',
-            'picture_path' => 'images/brands/oppo.png',
+            'picture_path' => 'assets/brands/oppo.png',
         ),
 
         array(
             'name' => 'other',
-            'picture_path' => 'images/brands/other.png',
+            'picture_path' => 'assets/brands/other.png',
         ),
 
         array(
             'name' => 'panasonic',
-            'picture_path' => 'images/brands/panasonic.png',
+            'picture_path' => 'assets/brands/panasonic.png',
         ),
 
         array(
             'name' => 'poco',
-            'picture_path' => 'images/brands/poco.png',
+            'picture_path' => 'assets/brands/poco.png',
         ),
 
         array(
             'name' => 'realme',
-            'picture_path' => 'images/brands/realme.png',
+            'picture_path' => 'assets/brands/realme.png',
         ),
 
         array(
             'name' => 'redmi',
-            'picture_path' => 'images/brands/redmi.png',
+            'picture_path' => 'assets/brands/redmi.png',
         ),
 
         array(
             'name' => 'samsung',
-            'picture_path' => 'images/brands/samsung.png',
+            'picture_path' => 'assets/brands/samsung.png',
         ),
 
         array(
             'name' => 'sony',
-            'picture_path' => 'images/brands/sony.png',
+            'picture_path' => 'assets/brands/sony.png',
         ),
 
         array(
             'name' => 'tecno',
-            'picture_path' => 'images/brands/tecno.png',
+            'picture_path' => 'assets/brands/tecno.png',
         ),
 
         array(
             'name' => 'vivo',
-            'picture_path' => 'images/brands/vivo.png',
+            'picture_path' => 'assets/brands/vivo.png',
         ),
 
         array(
             'name' => 'xiaomi',
-            'picture_path' => 'images/brands/xiaomi.png',
+            'picture_path' => 'assets/brands/xiaomi.png',
         ),
 
         array(
             'name' => 'xolo',
-            'picture_path' => 'images/brands/xolo.png',
+            'picture_path' => 'assets/brands/xolo.png',
         ),
 
         array(
             'name' => 'yu',
-            'picture_path' => 'images/brands/yu.png',
+            'picture_path' => 'assets/brands/yu.png',
         ),
     ),
 
@@ -10573,22 +10575,22 @@ return [
 
         array(
             'title' => 'Original Box with same IMEI / Serial No',
-            'picture_path' => 'images/accessories/3.svg',
+            'picture_path' => 'assets/accessories/3.svg',
         ),
 
         array(
             'title' => 'Original Charger',
-            'picture_path' => 'images/accessories/1.svg',
+            'picture_path' => 'assets/accessories/1.svg',
         ),
 
         array(
             'title' => 'Original Earphones',
-            'picture_path' => 'images/accessories/2.svg',
+            'picture_path' => 'assets/accessories/2.svg',
         ),
 
         array(
             'title' => 'Valid Bill with same IMEI / Serial No',
-            'picture_path' => 'images/accessories/4.svg',
+            'picture_path' => 'assets/accessories/4.svg',
         ),
     )
 

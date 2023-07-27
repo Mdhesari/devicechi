@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 
 class PhoneBrandsCurlTest extends TestCase
 {

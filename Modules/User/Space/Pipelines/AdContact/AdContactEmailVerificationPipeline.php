@@ -3,7 +3,7 @@
 namespace Modules\User\Space\Pipelines\AdContact;
 
 use Closure;
-use Modules\User\Entities\Ad\AdContactType;
+use App\Models\Ad\AdContactType;
 use Modules\User\Space\Contracts\AdContactSendVerificationPipeline;
 
 class AdContactEmailVerificationPipeline implements AdContactSendVerificationPipeline
@@ -16,7 +16,8 @@ class AdContactEmailVerificationPipeline implements AdContactSendVerificationPip
         if ($ad_contact->type->name == AdContactType::TYPE_EMAIL) {
 
             $ad_contact->sendVerification([
-                'channels' => 'mail',
+                'channels' => ['mail'],
+                'code' => $code,
             ]);
             $data['status'] = true;
         }

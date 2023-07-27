@@ -17,6 +17,7 @@ class CreatePhoneBrandsTable extends Migration
             $table->id();
 
             $table->string('name', 32)->unique();
+            $table->string('persian_name', 32)->default("");
             $table->string('picture_path')->nullable();
         });
     }

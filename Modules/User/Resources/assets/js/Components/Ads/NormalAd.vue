@@ -1,39 +1,73 @@
 <template>
-    <div class="col-md-3 normal-ad">
-        <div class="inner">
-            <div class="tumbnail">
-                <inertia-link
-                    :href="
-                        route('user.ad.show', {
-                            ad: ad.id
-                        })
-                    "
-                    class="title"
-                >
-                    <img :src="renderAdPicture(ad)" :alt="ad.title" />
-                </inertia-link>
-                <div class="bookmark">
-                    <i class="fa-bookmark far" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="details">
-                <div class="ad-name">
-                    {{ ad.title }}
-                </div>
-                <div class="ad-price">
-                    <span>{{ ad.price }}</span>
-                    هزارتومان
-                </div>
-            </div>
-        </div>
-    </div>
+	<div
+		class="normal-ad col-12 col-sm-6 col-md-4"
+		:class="{
+			'col-lg-3': !useFour
+		}"
+	>
+		<inertia-link
+			:href="
+				route('user.ad.show', {
+					ad: ad.slug
+				})
+			"
+		>
+			<div class="inner">
+				<div class="thumbnail">
+					<img :src="renderAdPicture(ad, 'thumb_url')" :alt="ad.title" />
+					<!-- <SaveButton :user="user" :ad="ad"></SaveButton> -->
+				</div>
+				<div class="details">
+					<h3 class="ad-name">
+						{{ ad.title }}
+					</h3>
+					<div class="ad-price text-muted mt-4 mb-3">
+						<strong>
+							<span>{{ formatMoney(ad.price) }}</span>
+							<span>تومان</span>
+						</strong>
+					</div>
+					<p class="publish-time text-muted" v-if="ad.state">
+						<span>
+							{{ moment(ad.created_at).fromNow() }}
+						</span>
+						<span>در</span>
+						<span v-text="ad.state.city.name"></span>
+						<span>,</span>
+						<span v-text="ad.state.name"></span>
+					</p>
+					<slot></slot>
+				</div>
+			</div>
+		</inertia-link>
+	</div>
 </template>
 
 <script>
-import AdPictureHelpers from "../../Mixins/AdPictureHelpers.js";
+import AdPictureHelpers from './../../Mixins/AdPictureHelpers.js'
+import SaveButton from '../SaveButton'
 
 export default {
-    props: ["ad"],
-    mixins: [AdPictureHelpers]
-};
+	components: {
+		SaveButton
+	},
+	props: {
+		useFour: {
+			type: Boolean,
+			default: false
+		},
+		ad: {
+			type: Object
+		},
+		countAds: {
+			type: Number
+		}
+	},
+	mixins: [AdPictureHelpers],
+	data() {
+		return {
+			user: this.getProp('user')
+		}
+	}
+}
 </script>

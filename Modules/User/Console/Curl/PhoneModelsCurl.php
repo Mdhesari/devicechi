@@ -5,7 +5,7 @@ namespace Modules\User\Console\Curl;
 use Artisan;
 use Goutte\Client;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Modules\User\Entities\PhoneModel;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
@@ -26,18 +26,6 @@ class PhoneModelsCurl extends Command
      * @var string
      */
     protected $description = 'Curl all phone models and store on db or log.';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->cli = new Client(HttpClient::create(['timeout' => 60]));
-
-        parent::__construct();
-    }
 
     /**
      * Execute the console command.
@@ -95,31 +83,9 @@ class PhoneModelsCurl extends Command
             Artisan::call('module:seed User --class=PhoneModelTableSeeder');
         } else {
 
+            file_put_contents(predata_path('/models.json'), json_encode($db_models));
+
             Log::info($db_models);
         }
     }
-
-    // /**
-    //  * Get the console command arguments.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getArguments()
-    // {
-    //     return [
-    //         ['example', InputArgument::REQUIRED, 'An example argument.'],
-    //     ];
-    // }
-
-    // /**
-    //  * Get the console command options.
-    //  *
-    //  * @return array
-    //  */
-    // protected function getOptions()
-    // {
-    //     return [
-    //         ['example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null],
-    //     ];
-    // }
 }

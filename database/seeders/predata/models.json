@@ -1,0 +1,6118 @@
+[
+    {
+        "brand_name": "10.or",
+        "name": "G2"
+    },
+    {
+        "brand_name": "10.or",
+        "name": "G"
+    },
+    {
+        "brand_name": "10.or",
+        "name": "E"
+    },
+    {
+        "brand_name": "10.or",
+        "name": "D2"
+    },
+    {
+        "brand_name": "10.or",
+        "name": "D"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone XS Max"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone XS"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone XR"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone X"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone SE"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone SE 2020"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 8 Plus"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 8"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 7 Plus"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 7"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 6S Plus"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 6S"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 6 Plus"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 6"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 5S"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 5C"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 5"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 4S"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 4"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 3GS"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 3G"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 12 Pro Max"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 12 Pro"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 12 Mini"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 12"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 11 Pro Max"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 11 Pro"
+    },
+    {
+        "brand_name": "apple",
+        "name": "iPhone 11"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Zoom ZX550"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Selfie"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max ZC550KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max Pro M2"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max Pro M1"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max M2"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max M1"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Max"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Live 16GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Lite L1"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go ZC500TG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go ZC451TG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "ZenFone Go ZB552KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go ZB551KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "ZenFone Go ZB500KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "ZenFone Go ZB450KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go 5.0 LTE T500"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go 4.5"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone Go"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone C ZC451CG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 6"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 5Z"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 5 Lite A502CG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 5 A501CG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 5 A500KL 16GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 5 A500CG 16GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 4 Selfie Pro"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 4 Selfie"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 4 A450CG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 4 A400CG"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3s Max"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 ZE552KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 Ultra"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 Max ZC553KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 Max ZC520TL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 Laser 32GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 3 Deluxe"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 2 ZE551ML"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 2 ZE550ML 16GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 2 Laser ZE601KL 32GB"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 2 Laser ZE550KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "Zenfone 2 Laser ZE500KL"
+    },
+    {
+        "brand_name": "asus",
+        "name": "ROG Phone 3"
+    },
+    {
+        "brand_name": "asus",
+        "name": "6Z"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Z30"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Z3"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Z10"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Priv 32GB"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Passport 32GB"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Motion"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Leap"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "KEYone Limited Edition"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "KEY2 LE"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "KEY2"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "Evolve"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "DTEK60"
+    },
+    {
+        "brand_name": "blackberry",
+        "name": "DTEK50"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Rogue"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 8"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 6"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 5 Lite C"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 5 Lite"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 5"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 3S"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 3 Plus"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 3 Lite"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Note 3"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Mega 5A"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Mega 5"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Mega 3"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Mega 2.5D"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Max"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Dazen X7"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool Play 6"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 6"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 5"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 3 Plus"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 3"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 2"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "Cool 1"
+    },
+    {
+        "brand_name": "coolpad",
+        "name": "A8"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "X1s"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "X1"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "S6s"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "S6 Pro"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "S6"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "S10 Lite"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P6"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P5L"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P4S"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P4"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P3S"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P3"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P2S"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P2M"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Pioneer P2"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "P7 Max"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "P7"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "P5W"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Max"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Marathon M5 Plus"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Marathon M5 Lite"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Marathon M5"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Marathon M4"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Marathon M3"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "M7 Power"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "M2"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F9 Plus"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F9"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F8 Neo"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F205 Pro"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F205"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F103 Pro"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F103"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "F10"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife S7 16GB"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife S5.5"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife S5.1"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife S Plus 16GB"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E8"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E7 Mini"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E7"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E6"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E5"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Elife E3"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Dream D1"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V6L"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V5"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "CTRL V4S"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V4"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V3"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V2"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "Ctrl V1"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "A1 Signature Edition"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "A1 Plus"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "A1 Lite"
+    },
+    {
+        "brand_name": "gionee",
+        "name": "A1"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel XL LTE"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 4a"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 3A XL"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 3A"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 3 XL"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 3"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 2 XL"
+    },
+    {
+        "brand_name": "google",
+        "name": "Pixel 2"
+    },
+    {
+        "brand_name": "honor",
+        "name": "View 20"
+    },
+    {
+        "brand_name": "honor",
+        "name": "View 10"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Play"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Holly 4 Plus"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Holly 4"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Holly 3 Plus"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Holly 2 Plus"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Holly"
+    },
+    {
+        "brand_name": "honor",
+        "name": "Bee"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9X Pro"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9S"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9N"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9i"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9A"
+    },
+    {
+        "brand_name": "honor",
+        "name": "9 Lite"
+    },
+    {
+        "brand_name": "honor",
+        "name": "8X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "8C"
+    },
+    {
+        "brand_name": "honor",
+        "name": "8 Pro"
+    },
+    {
+        "brand_name": "honor",
+        "name": "8 Lite"
+    },
+    {
+        "brand_name": "honor",
+        "name": "8"
+    },
+    {
+        "brand_name": "honor",
+        "name": "7X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "7S"
+    },
+    {
+        "brand_name": "honor",
+        "name": "7C"
+    },
+    {
+        "brand_name": "honor",
+        "name": "7A"
+    },
+    {
+        "brand_name": "honor",
+        "name": "7"
+    },
+    {
+        "brand_name": "honor",
+        "name": "6X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "6 Plus"
+    },
+    {
+        "brand_name": "honor",
+        "name": "6"
+    },
+    {
+        "brand_name": "honor",
+        "name": "5X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "5C"
+    },
+    {
+        "brand_name": "honor",
+        "name": "4X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "4C"
+    },
+    {
+        "brand_name": "honor",
+        "name": "3X"
+    },
+    {
+        "brand_name": "honor",
+        "name": "3C"
+    },
+    {
+        "brand_name": "honor",
+        "name": "20i"
+    },
+    {
+        "brand_name": "honor",
+        "name": "20"
+    },
+    {
+        "brand_name": "honor",
+        "name": "10 Lite"
+    },
+    {
+        "brand_name": "honor",
+        "name": "10"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Wildfire X"
+    },
+    {
+        "brand_name": "htc",
+        "name": "U12 Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One X9"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One X Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One X"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One V"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One S9"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One S"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Remix"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Mini M4"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Mini 2"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Mini"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One ME"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Max"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M9 Prime Camera Edition"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M9 Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M9"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M8s"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M8 Eye"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M8"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One M7 801e"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One E9s"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One E9 Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One E8"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One Dual Sim"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One A9"
+    },
+    {
+        "brand_name": "htc",
+        "name": "One 802d"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Evo 4G"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire XC"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire X Dual Sim"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire X"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire VC"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire V"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire U"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire SV"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire P"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire Eye 16GB"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire C"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 830"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 828"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 826X"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 826"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 825"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 820S Dual Sim"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 820Q"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 820G Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 820 Mini"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 820"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 816G Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 816G"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 816D"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 816"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 728G"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 728 Ultra Edition"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 728 16GB"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 700"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 630"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 628"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 626G Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 626"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 620G"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 616"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 612"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 610"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 601"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 600C"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 600"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 526G Plus"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 516C"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 516"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 510"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 501"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 500"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 326G 8GB"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 310"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 300"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 210"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 10 Pro"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Desire 10 Lifestyle"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Butterfly X920D"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Butterfly S"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Butterfly"
+    },
+    {
+        "brand_name": "htc",
+        "name": "Butterfly 2"
+    },
+    {
+        "brand_name": "htc",
+        "name": "8S"
+    },
+    {
+        "brand_name": "htc",
+        "name": "10 Evo"
+    },
+    {
+        "brand_name": "htc",
+        "name": "10 32GB"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Y9s"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Y9 Prime 2019"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Y9 2019"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P9 32GB"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P40 Pro"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P40"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P30 Pro"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P30 Lite"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P20 Pro"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "P20 Lite"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Nova 3i"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Nova 3"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Nexus 6P"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Mate 20 Pro"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Ascend Y600"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Ascend P7 Single Sim 16GB"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Ascend P6"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Ascend G750"
+    },
+    {
+        "brand_name": "huawei",
+        "name": "Ascend G730"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Zero 8i"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Zero 5 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Zero 5"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Smart HD 2021"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Smart 4 Plus"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Smart 4"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Smart 3 Plus"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Smart 2"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "S5 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "S4"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Note 7"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Note 5 Stylus"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Note 5"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Note 4"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot S5"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot S3X"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot S3"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 9 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 9"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 7 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 7"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 6 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 4 Pro"
+    },
+    {
+        "brand_name": "infinix",
+        "name": "Hot 10"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "Vision 3 Pro"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "Vision 3"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "Turbo 5S"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "Turbo 5 Plus"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "Snap 4"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "M812"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "M680"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "M535 Plus"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "EPIC 1"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "A3"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "A2"
+    },
+    {
+        "brand_name": "infocus",
+        "name": "A1s"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Super 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Y2 Ultra"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Tread"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Swift 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud String V 2.0"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Power Plus"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Pace"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud N12"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Flash"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud Crystal 2.5 D"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud 4G Star"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Cloud 4G Smart"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Xtreme V"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Trend 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Star HD"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Star 5.0"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Star 4G"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Star 2 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Speed HD"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Speed"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Slice 2"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua S7"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Power HD 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Power+"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Life 2"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua i7"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua i4 Plus"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua HD"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Glam 8GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Dream 2 8GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Dream 8GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Craze"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Amaze"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua Ace 16GB"
+    },
+    {
+        "brand_name": "intex",
+        "name": "Aqua 4G Plus"
+    },
+    {
+        "brand_name": "itel",
+        "name": "Vision 1"
+    },
+    {
+        "brand_name": "itel",
+        "name": "A48"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium X"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S9 Lite"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S8"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S5i"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S5 Ultra"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S320"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S3"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S25 Klick"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S205"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium S19"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Pop S315"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Octane Plus"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Moghul"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Machone Plus"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Machfive"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Mach Two S360"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Mach Six VR"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Mach One S310"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Hexa"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Dazzle S201"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Titanium Dazzle 3 S204"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Sparkle V"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "S9 Titanium"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "S7 Titanium"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Quattro L52"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Quattro L51 HD"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Quattro L50"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Platinum P9"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Opium N9"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Opium N7"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "K9 Smart 4G"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "Dazzle 2"
+    },
+    {
+        "brand_name": "karbonn",
+        "name": "A25 Plus"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z92"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z80"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z71"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z66"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z61 Pro"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z6"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z53"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z50"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z41"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z4"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Z2"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X81"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X50 4G"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X46"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X38 8GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X3 8GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "X11 4G"
+    },
+    {
+        "brand_name": "lava",
+        "name": "V5 4G"
+    },
+    {
+        "brand_name": "lava",
+        "name": "V2S"
+    },
+    {
+        "brand_name": "lava",
+        "name": "V2 3GB RAM 16GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Pixel V2 16GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Pixel V1"
+    },
+    {
+        "brand_name": "lava",
+        "name": "P7 3G"
+    },
+    {
+        "brand_name": "lava",
+        "name": "iris X9 16GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris X8"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris X5"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris X10"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris X1"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris Pro 30"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris Fuel 60"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris Fuel 50"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris Alfa"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Iris 450 Colour 4GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "Icon"
+    },
+    {
+        "brand_name": "lava",
+        "name": "EG932"
+    },
+    {
+        "brand_name": "lava",
+        "name": "BEU"
+    },
+    {
+        "brand_name": "lava",
+        "name": "A97"
+    },
+    {
+        "brand_name": "lava",
+        "name": "A82"
+    },
+    {
+        "brand_name": "lava",
+        "name": "A79"
+    },
+    {
+        "brand_name": "lava",
+        "name": "A76 4G"
+    },
+    {
+        "brand_name": "lava",
+        "name": "A71 8GB"
+    },
+    {
+        "brand_name": "lava",
+        "name": "405 Plus 4GB"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le Max"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le Max 2"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le 2 Pro"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le 2"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le 1S Eco"
+    },
+    {
+        "brand_name": "leeco",
+        "name": "Le 1s"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Zuk Z1"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Z6 Pro"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Z2 Plus 64GB"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Z2 Plus 32GB"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe Z2 Pro"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe Z K910L"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe X3"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe X2"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe X S960"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe Shot"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe S1"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "VIBE P1M"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe P1 Turbo"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe P1"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe K5 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe K5 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Vibe K5"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Sisley S90"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S930"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S920"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S890"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S860"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S850"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S820"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S660"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S650"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S60"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "S580"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Phab Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Phab 2 Pro"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Phab 2 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "Phab 2"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "P780"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "P70"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "P2"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K910L"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K900"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K9 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K9"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K8 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K8 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K8"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K6 Power"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K6 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K4 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K3 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K10 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "K10 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A859"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A850"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A7700"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A706"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A7000 Turbo"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A7000"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A7"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A680"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A6600 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A6600"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A6000 Plus"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A6000"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A6 Note"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A536"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A526"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A5000"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A5"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A369i (White, 4 GB)"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A328"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A319"
+    },
+    {
+        "brand_name": "lenovo",
+        "name": "A2010"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Wing"
+    },
+    {
+        "brand_name": "lg",
+        "name": "W31"
+    },
+    {
+        "brand_name": "lg",
+        "name": "W30 Pro"
+    },
+    {
+        "brand_name": "lg",
+        "name": "W30"
+    },
+    {
+        "brand_name": "lg",
+        "name": "W10 Alpha"
+    },
+    {
+        "brand_name": "lg",
+        "name": "W10"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Velvet"
+    },
+    {
+        "brand_name": "lg",
+        "name": "V40 ThinQ"
+    },
+    {
+        "brand_name": "lg",
+        "name": "V30 Plus"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Stylus 2"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q7"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q60"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q6 Plus"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q6"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q Stylus Plus"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Q Stylus"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Optimus VU P895"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Optimus G Pro E988"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Optimus G E975"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Optimus 4X HD P880"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Nexus 5X"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Nexus 5"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Nexus 4 16GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Max (X160)"
+    },
+    {
+        "brand_name": "lg",
+        "name": "Magna"
+    },
+    {
+        "brand_name": "lg",
+        "name": "L90"
+    },
+    {
+        "brand_name": "lg",
+        "name": "L80 Dual"
+    },
+    {
+        "brand_name": "lg",
+        "name": "L70 Dual"
+    },
+    {
+        "brand_name": "lg",
+        "name": "L Fino D295 4GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "L Bello Dual D335"
+    },
+    {
+        "brand_name": "lg",
+        "name": "K7 4G 16GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "K10 16GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G8X ThinQ"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G7 ThinQ"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G7 Plus ThinQ"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G6"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G5"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G4 Stylus 16GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G4 Dual Sim 32GB"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G3 Stylus Dual D690"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G3 D855"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G3 Beat"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G2 4G"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G Pro 2 -D838"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G FLEX2"
+    },
+    {
+        "brand_name": "lg",
+        "name": "G FLEX D958"
+    },
+    {
+        "brand_name": "lg",
+        "name": "F70 D315"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 7S"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 7i"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 7"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 6"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 4S"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 3"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 2"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Wind 1"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 9"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 8"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 7S"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 7"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 6"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 5"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 4"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 3"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 2"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 11"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 10"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Water 1"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Flame 8"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Flame 7S"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Flame 7"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Flame 2"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Flame 1"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "F8"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "F1S (Water F1S)"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Earth 2"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "Earth 1"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "C459"
+    },
+    {
+        "brand_name": "lyf",
+        "name": "C451"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Vdeo 5"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Vdeo 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Vdeo 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Vdeo 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Vdeo 1"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Unite 4 Pro"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Unite 4 Plus"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Unite 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Unite 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Unite 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Spark 2 Q334"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "iOne Note"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Infinity N12"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Infinity N11"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "IN Note 1"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "IN 1b"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Xpress 4G Q413"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Xpress 2 E313"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas XP 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas XL2 A109"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas XL A119"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Win W121"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Turbo Mini A200"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Turbo A250"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Tube A118R"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Spark Q380"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Spark 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Spark 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Spark 2 Plus Q350"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Silver 5 Q450"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Selfie Lens Q345"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Selfie A255"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Selfie 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Selfie 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Pulse 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Power A96"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Play 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Play"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Pep Q371"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Pace 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Nitro A311"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Nitro A310"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Nitro 3 E455"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Nitro 3 E352"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Nitro 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Mega 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Mega 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Mega"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Magnus A117"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Mad A94"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas L A108"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Knight Cameo A290"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Knight A350"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Knight 2 E471"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice A77"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice A177"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice 4 Q382"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice 3 Plus Q394"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Juice 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Infinity Pro"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Infinity Life"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Infinity"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Hue AQ5000"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Hue 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas HD Plus A190"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas HD A116i"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas HD A116"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Gold A300"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fun A76"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fun A74"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire A093"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 5 Q386"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 4G Plus"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 3 A096"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Fire 2 A104"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Express A99"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Evok E483"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Entice"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Elanza A93"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Elanza 2 A121"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Ego A113"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Duet AE90"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Duet 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Doodle A111"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Doodle 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Doodle 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Doodle 2 A240"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Blaze HD"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Blaze 4G Plus"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Blaze 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Beat A114R"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Amaze Q395"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Amaze 4G"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas Amaze 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas A1"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 6 Pro E484"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 6"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 5 Lite Q462"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 5 E481"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 4 Plus A315"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 2.2 A114"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 2 Plus A110Q"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 2 Colors A120"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Canvas 2 A110"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Supreme"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Supreme 2"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Selfie"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt S303"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt S302"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt S301"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt S300"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q381"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q346"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q339"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q338"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q336"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q335"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q333"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q332"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q331"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q325"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q324"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt Q323"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt D321"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt D320"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt D304"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt D303"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt AD4500"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt AD3520"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A82"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A79"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A69"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A67"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A28"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A089"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A069"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A067"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A066"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bolt A064"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 5 Pro"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 5 Plus"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 5"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 4"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 3"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 2 Plus"
+    },
+    {
+        "brand_name": "micromax",
+        "name": "Bharat 2"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Razr 5G"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Razr 2019"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "One Vision"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "One Power"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "One Macro"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "One Fusion Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "One Action"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Nexus 6"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Z2 Play 64GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Z2 Force"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Z Style Mod 64GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Z Play"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Z"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X4"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X Style"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X Play"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X Force"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X 2nd Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto X 1st Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto Turbo 64GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto M"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G9 Power"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G9"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G8 Power Lite"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G8 Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G7 Power"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G7"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G6 Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G6 Play"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G6"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G5S Plus 64GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G5S"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G5 Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G5 16GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G4 Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G4 Play"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G4"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G Turbo Edition"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G 5G"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G 3rd Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G 2nd Gen 4G"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G 2nd Gen 3G"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto G 1st Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E6s"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E5 Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E5"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E4 Plus 32GB"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E4"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E3 Power"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E 2nd Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E 1st Gen"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto C Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto C"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Edge Plus"
+    },
+    {
+        "brand_name": "motorola",
+        "name": "Moto E7 Plus"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "C3 2020"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "9"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "8.1"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "8 Sirocco"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "8"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "7.2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "7.1"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "7 Plus"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "6.2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "6.1 Plus"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "6"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "6 2018"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "5.3"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "5.1 Plus"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "5.1"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "5"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "4.2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "3.2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "3.1 Plus 32GB"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "3.1"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "3 16GB"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "2.4"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "2.3"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "2.2"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "2.1"
+    },
+    {
+        "brand_name": "nokia",
+        "name": "1"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "X 16GB"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "One"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "Nord"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "8T 5G"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "8 Pro"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "8"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "7T Pro"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "7T"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "7 Pro"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "7"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "6T McLaren Edition"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "6T"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "6"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "5T"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "5"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "3T"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "3"
+    },
+    {
+        "brand_name": "oneplus",
+        "name": "2"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 5 Pro 5G"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 4 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 3 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno2 Z"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 2F"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 2"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Reno 10x Zoom"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R7 plus"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R7 Lite"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R5"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R2001 Yoyo"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R17 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R17"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R15 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R1001 Joy"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "R1 R829"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Neo 7 4G"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Neo 5 2015"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Neo 3"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "N1 Mini"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "N1"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Mirror 5"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Mirror 3"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "K3"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "K1"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Joy Plus"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Joy 3"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find X2"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find X"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find 7A"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find 7"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find 5 Mini"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "Find 5"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F9 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F9"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F7"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F5 Youth"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F5"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F3 Plus"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F3"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F1s"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F17 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F17"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F15"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F11 Pro"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F11"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F1 Plus"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "F1"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A9"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A9 2020"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A83"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A71"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A7"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A5s"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A57"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A53 2020"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A52"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A5"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A5 2020"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A3s"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A37F"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A37"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A33 2020"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A31"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A1K"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A15s"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A15"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A12"
+    },
+    {
+        "brand_name": "oppo",
+        "name": "A11K"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "T50"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "T45 4G"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "T44 Lite"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "T41"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "T40 8GB"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P81"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P66 Mega"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P61"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P55 Novo"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P55"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P50"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P41"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "P11"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Z1 Pro"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Z"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga X1 Pro"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga X1"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga U"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Turbo"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Tapp"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Switch"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga S Mini"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga S"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Ray X"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Ray 810"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Ray 610"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Prim"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Mark"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga L2"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga L"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga I8"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "ELUGA I2"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga I"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga Arc 2"
+    },
+    {
+        "brand_name": "panasonic",
+        "name": "Eluga A2"
+    },
+    {
+        "brand_name": "poco",
+        "name": "X3"
+    },
+    {
+        "brand_name": "poco",
+        "name": "X2"
+    },
+    {
+        "brand_name": "poco",
+        "name": "M2 Pro"
+    },
+    {
+        "brand_name": "poco",
+        "name": "M2"
+    },
+    {
+        "brand_name": "poco",
+        "name": "F1"
+    },
+    {
+        "brand_name": "poco",
+        "name": "C3"
+    },
+    {
+        "brand_name": "realme",
+        "name": "XT"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X50 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X3 Super Zoom"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X3"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X2 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X2"
+    },
+    {
+        "brand_name": "realme",
+        "name": "X"
+    },
+    {
+        "brand_name": "realme",
+        "name": "U1"
+    },
+    {
+        "brand_name": "realme",
+        "name": "Narzo 20A"
+    },
+    {
+        "brand_name": "realme",
+        "name": "Narzo 20 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "Narzo 20"
+    },
+    {
+        "brand_name": "realme",
+        "name": "Narzo 10A"
+    },
+    {
+        "brand_name": "realme",
+        "name": "Narzo 10"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C3"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C2"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C15 Qualcomm Edition"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C15"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C12"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C11"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C1"
+    },
+    {
+        "brand_name": "realme",
+        "name": "C1 2019"
+    },
+    {
+        "brand_name": "realme",
+        "name": "7i"
+    },
+    {
+        "brand_name": "realme",
+        "name": "7 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "7"
+    },
+    {
+        "brand_name": "realme",
+        "name": "6i"
+    },
+    {
+        "brand_name": "realme",
+        "name": "6 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "6"
+    },
+    {
+        "brand_name": "realme",
+        "name": "5s"
+    },
+    {
+        "brand_name": "realme",
+        "name": "5i"
+    },
+    {
+        "brand_name": "realme",
+        "name": "5 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "5"
+    },
+    {
+        "brand_name": "realme",
+        "name": "3i"
+    },
+    {
+        "brand_name": "realme",
+        "name": "3 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "3"
+    },
+    {
+        "brand_name": "realme",
+        "name": "2 Pro"
+    },
+    {
+        "brand_name": "realme",
+        "name": "2"
+    },
+    {
+        "brand_name": "realme",
+        "name": "1"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Y3"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Y2"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Y1 Lite"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Y1"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note Prime"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 9 Pro Max"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 9 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 9"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 8 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 8"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 7S"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 7 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 7"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 6 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 5 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 5"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 4G"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 4"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 3"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Note 2"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "K20 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "K20"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "Go"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "9i"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "9A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "9 Prime"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "9 Power"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "9"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "8A Dual"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "8A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "8"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "7A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "7"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "6A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "6 Pro"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "6"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "5A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "5"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "4A"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "4"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "3S Prime"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "3S Plus"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "3S"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "2 Prime"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "2"
+    },
+    {
+        "brand_name": "redmi",
+        "name": "1S"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Z4"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Tizen Z3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Tizen Z2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Tizen Z1"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Z Fold 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Z Flip"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Young"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Young 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Y S5360"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Trend"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Star Pro Duos"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Star Advance"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Star"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Star 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S9 Plus Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S9 Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S8 Plus Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S8 Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S7 Edge Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S7 Dual Sim 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S6 Edge Plus 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S6 Edge"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S6"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S5 Mini"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S5"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S4 Zoom"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S4 Mini 8GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S4 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S4 16GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 Neo"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 Mini 8GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 Mini 16GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 16GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S3 64GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S21 Ultra 5G"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S21 Plus 5G"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S21 5G"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S20 Ultra"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S20 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S20 FE"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S20"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S2 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S10e"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S10 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S10 Lite"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S10"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S Duos"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S Duos 3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy S Duos 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Pocket"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On8"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On8 2018"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On7 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On7 Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On7"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On6 64GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On5 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On5 8GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On Nxt"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy On Max"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 9"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 8 Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 5 Dual Sim"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 5"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 4 Edge 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 4"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 3 Neo"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 20 Ultra 5G"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 20"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 2 N7100"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 10.1 GT- 8000"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 10 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 10 Lite"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 10"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Note 1 N7000"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Music Duos"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Mega 6.3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Mega 5.8"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Mega 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M51"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M40"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M31s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M31 Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M31"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M30s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M30"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M21"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M20"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M11"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M10s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M10"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M02s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M01s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M01 Core"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy M01"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J8 4GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Pro 64GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Prime 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Nxt 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Nxt"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Max"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 Duo"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7 2016 Edition"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J7"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J6 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J6 64GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J6"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J5 Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J5 2016 Edition"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J5"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J4 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J4 32GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J4 16GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J3 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J3 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2 Ace"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2 2018"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2 2017"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J1 Ace"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J1"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy J1 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Quattro I8552"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Quattro I8550"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Neo Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Neo"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Max"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand Duos"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Grand 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Golden"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Fold"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Fame"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy F41"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy E7"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy E5"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Core Prime"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Core 2"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Core"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Chat"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy C9 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy C7 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Axiom"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Alpha"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Ace Nxt"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Ace 4"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy Ace 3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A9 Pro"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A9"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A80"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A8 Star"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A8 Plus 64GB"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A8"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A71"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A70s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A70"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A7"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A7 2018"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A7 2017"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A7 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A6 Plus"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A6"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A51"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A50s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A50"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A5"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A5 2017"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A5 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A31"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A30s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A30"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A3 2016"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A3"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A21s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A20s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A20"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A10s"
+    },
+    {
+        "brand_name": "samsung",
+        "name": "Galaxy A10"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia ZR"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia ZL"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z5 Premium Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z5"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z3 Plus"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z3 Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z3 Compact"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z3"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z2"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z1 Mini Compact"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z1"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z Ultra"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Z"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XZ1"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XZ Premium"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XZ"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XA1 Ultra"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XA1 Plus 32GB"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XA1"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XA Ultra"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia XA Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia X"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia U"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia T3"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia T2 Ultra Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia SP"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia SL LT26ii"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia S"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia R1 Plus"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia P"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Neo L"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Miro"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M5 Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M4 Aqua Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M2 Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M2 Aqua"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M2"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia M"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia L2"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia L"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia J"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia Go"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia E4 Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia E3"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia E1"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia E"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia E 4G Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia C5 Ultra Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia C4 Dual"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia C3"
+    },
+    {
+        "brand_name": "sony",
+        "name": "Xperia C"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark Power 2 Air"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark Power 2"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark Go Plus"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark Go"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark Go 2020"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 6 Go"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 6 Air"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 5 Pro"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 5"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 4 Air"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Spark 4"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Pova"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Phantom 9"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "i7"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "i5 Pro"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "i3 Pro"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iSky 3"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iSky"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iSky 2"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iClick"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iClick 2"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iAir 2 Plus"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iAce 2X"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iAce"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon iAce 2"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i4"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i2X"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i2"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i Twin"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i Air"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon i"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon 16"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon 15 Pro"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon 15"
+    },
+    {
+        "brand_name": "tecno",
+        "name": "Camon 12 Air"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Z1x"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Z10"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Z1 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y95"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y93"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y91i"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y91"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y90"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y83 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y83"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y81i"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y81"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y71i"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y71"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y69"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y66 32GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y55S"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y55L"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y53i"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y53"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y51L"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y51A"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y51 2020"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y50"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y37 16GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y31L"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y31 2021"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y31"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y30"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y28"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y27L"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y22"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y21L"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y21"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y20i"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y20A"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y20"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y19"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y17"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y15S"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y15 (2019)"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y12s"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y12"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y11"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Y11 2019"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Xshot X710"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Xplay5 Elite"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "Xplay5"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X6S Plus"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X6S"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X6 Plus Single Sim"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X6"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X50 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X50"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X5 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X5 MAX"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X5"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X3S"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "X21"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V9 Youth"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V9 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V9"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V7 Plus 4GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V7"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V5s 64GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V5 Plus 64GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V5"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V3 Max"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V3 32GB"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V20 SE"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V20 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V20"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V20 2021"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V19"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V17 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V17"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V15 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V15"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V11 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V11"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V1 Max"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "V1"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "U20"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "U10"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "S1 Pro"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "S1"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "NEX"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "iQOO 3"
+    },
+    {
+        "brand_name": "vivo",
+        "name": "iQOO 3 5G"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi Mix 2 128GB"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi Max"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi Max 2"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi A3"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi A2"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi A1 64GB"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 5 32GB"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 4i"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 4"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 3"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 10T Pro"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 10T"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 10i"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Mi 10"
+    },
+    {
+        "brand_name": "xiaomi",
+        "name": "Black Shark 2"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "ZX"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "X910"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "X500"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Win Q900S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q900T"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q900S Plus"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q900S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q900"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q800 X-Edition"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q800"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q710S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q700S Plus"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q700S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q700i"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q700 Club"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q700"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q610S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q600S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q600"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q520S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q510S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q500S IPS"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q500"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q3000"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q2500"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q2100"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q2000L"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q2000"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1200"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1100"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1020"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1011"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1010i"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1010"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1000S Plus"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1000S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1000 Opus 2"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1000 Opus"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Q1000"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Prime"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Play 8X 1200"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Play 8X 1100"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Play 6X 1000"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Opus HD"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Opus 3"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "One HD"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "One"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Omega 5.5"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Omega 5.0"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "LT900"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "LT 2000"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "ERA X"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "ERA 4K"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "ERA 4G"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Era 2"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Era 1X"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Era"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Cube 5.0"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Black"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "Black 1X 32GB"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A700S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A600"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A550S IPS"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A510S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A500S Lite"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A500S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A500L"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A500 Club"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A500"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A1010"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "A1000S"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "8X 1020"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "8X 1000i"
+    },
+    {
+        "brand_name": "xolo",
+        "name": "8X 1000 Hive"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yutopia"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yureka Plus"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yureka Note"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yureka Black"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yureka"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yureka 2"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yuphoria"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yunique Plus"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yunique 2"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yunique"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Yunicorn"
+    },
+    {
+        "brand_name": "yu",
+        "name": "Ace"
+    }
+]

@@ -2,47 +2,76 @@
 
 namespace Modules\User\Http\Controllers\Ad;
 
-use Modules\User\Entities\Ad;
+use App\Events\NewAdPublishedEvent;
+use App\Models\Ad;
+use Illuminate\Http\Request;
 use Modules\User\Http\Requests\Ad\AdDemoActionRequest;
+use Modules\User\Http\Requests\UserAdRequest;
+use Session;
 
 class AdDemoController extends BaseAdController
 {
 
-    public function show(Ad $ad)
+    public function show(Ad $ad, Request $request)
     {
+        $this->checkAuthorization($ad);
+
+        $warning = false;
+
+        if ($ad->isPublished()) {
+            $warning = trans('user::ads.warning.edit');
+        }
 
         $step = BaseAdController::DEMO;
 
         $this->checkPreviousSteps($step, $ad);
 
         $ad->loadSingleRelations();
-        return inertia('Ad/Demo', compact('ad'));
+
+        $help = $ad->help;
+
+        $is_bookmarked_for_user = $request->user()->bookmarkedAds()->whereAdId($ad->id)->count() > 0;
+
+        $ad->append([
+            'short_url',
+            'is_confirmed'
+        ]);
+
+        return inertia('Ad/Demo', compact('ad', 'help', 'is_bookmarked_for_user', 'warning'));
     }
 
     public function publish(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->publish($ad['id']);
+        $this->checkAuthorization($ad);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.pending'));
+        $this->adRepository->publish($ad);
+
+        event(new NewAdPublishedEvent($ad));
+
+        return redirect()->route('user.ad.step_phone_demo', $ad)->with('success', __('user::ads.success.pending'));
     }
 
     public function delete(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->delete($ad['id']);
+        $this->checkAuthorization($ad);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.delete'));
+        $this->adRepository->delete($ad);
+
+        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.delete'));
     }
 
     public function archive(AdDemoActionRequest $request)
     {
-        $ad = $request->ad;
+        $ad = Ad::findOrFail($request->ad['id']);
 
-        $this->adRepository->archive($ad['id']);
+        $this->checkAuthorization($ad);
 
-        return redirect()->route('user.dashboard')->with('success', __('user::ads.success.archive'));
+        $this->adRepository->archive($ad);
+
+        return redirect()->route('user.ad.get')->with('success', __('user::ads.success.archive'));
     }
 }

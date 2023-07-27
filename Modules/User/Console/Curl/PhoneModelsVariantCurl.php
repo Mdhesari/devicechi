@@ -5,7 +5,7 @@ namespace Modules\User\Console\Curl;
 use Artisan;
 use Goutte\Client;
 use Log;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\PhoneBrand;
 use Symfony\Component\HttpClient\HttpClient;
 
 class PhoneModelsVariantCurl extends Command
@@ -19,22 +19,13 @@ class PhoneModelsVariantCurl extends Command
 
     /**
      * The console command description.
+     * ###
+     * Warning : this curl may generate some false infomration and dataset
+     * ###
      *
      * @var string
      */
-    protected $description = 'Curl all model variants and store on db or log';
-
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->cli = new Client(HttpClient::create(['timeout' => 60]));
-    }
+    protected $description = 'Curl all model variants and store on db or log. Warning : this curl may generate some false infomration and dataset';
 
     /**
      * Execute the console command.
@@ -91,8 +82,6 @@ class PhoneModelsVariantCurl extends Command
             });
         }
 
-        file_put_contents(public_path() . '/variants.json', json_encode($db_data));
-
         if ($type == 'database') {
 
             config([
@@ -103,6 +92,8 @@ class PhoneModelsVariantCurl extends Command
 
             Log::info($db_data);
         } else {
+
+            file_put_contents(predata_path('/variants.json'), json_encode($db_data));
 
             Log::info($db_data);
         }

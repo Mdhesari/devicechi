@@ -22,7 +22,7 @@
                         :href="
                             route('user.ad.step_phone_model', {
                                 phone_brand: ad_brand.name,
-                                ad: ad.id ? ad.id : null
+                                ad: ad.slug ? ad.slug : null
                             })
                         "
                     >
@@ -31,7 +31,7 @@
                             :alt="ad_brand.name"
                         />
                         <h4 class="brand-label">
-                            {{ ad_brand.name }}
+                            {{ ad_brand.persian_name + "_" + ad_brand.name }}
                         </h4>
                     </inertia-link>
                 </div>
@@ -67,6 +67,7 @@
                     :data-brand-id="brand.id"
                 >
                     <inertia-link
+                    class="brand-item-inner"
                         method="get"
                         :href="
                             route('user.ad.step_phone_model', {
@@ -77,7 +78,7 @@
                     >
                         <img :src="url(brand.picture_path)" :alt="brand.name" />
                         <h4 class="brand-label">
-                            {{ brand.name }}
+                            {{ brand.persian_name + " " + brand.name }}
                         </h4>
                     </inertia-link>
                 </div>

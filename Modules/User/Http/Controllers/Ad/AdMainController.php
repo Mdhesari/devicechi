@@ -3,25 +3,25 @@
 namespace Modules\User\Http\Controllers\Ad;
 
 use Illuminate\Http\Request;
-use Modules\User\Entities\Ad;
-use Modules\User\Entities\PhoneBrand;
+use App\Models\Ad;
+use Exception;
+use App\Models\PhoneBrand;
+use Cache;
 use Modules\User\Entities\PhoneModel;
 use Route;
+use Str;
 
 class AdMainController extends BaseAdController
 {
 
     public function get(Request $request)
     {
-        // $ads = $this->adRepository->getUserAds($request);
-        $ads = $request->user()->ads()->filterAd($request)->get();
+        $ads = $request->user()->ads()->includeMediaThumb()->latest()->filterAd($request)->paginate();
 
-        $ads->load('pictures');
+        $ads->load('state.city');
 
-        if ($request->wantsJson())
-            return response()->json([
-                'ads' => $ads,
-            ]);
+        if ($request->expectsJson())
+            return $ads;
 
         $tabs = collect([
             [
@@ -31,31 +31,37 @@ class AdMainController extends BaseAdController
             [
                 'text' => __('user::ads.tabs.accepted'),
                 'params' => [
-                    'status' => Ad::STATUS_AVAILABLE,
+                    'status' => strtolower(Ad::STATUS_AVAILABLE_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.pending'),
                 'params' => [
-                    'status' => Ad::STATUS_PENDING,
+                    'status' => strtolower(Ad::STATUS_PENDING_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.rejected'),
                 'params' => [
-                    'status' => Ad::STATUS_REJECTED,
+                    'status' => strtolower(Ad::STATUS_REJECTED_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.uncompleted'),
                 'params' => [
-                    'status' => Ad::STATUS_UNCOMPLETED,
+                    'status' => strtolower(Ad::STATUS_UNCOMPLETED_LABEL),
                 ],
             ],
             [
                 'text' => __('user::ads.tabs.archive'),
                 'params' => [
-                    'status' => Ad::STATUS_ARCHIVE,
+                    'status' => strtolower(Ad::STATUS_ARCHIVE_LABEL),
+                ],
+            ],
+            [
+                'text' => __('user::ads.tabs.unavailable'),
+                'params' => [
+                    'status' => strtolower(Ad::STATUS_UNAVAILABLE),
                 ],
             ]
         ]);
@@ -74,15 +80,14 @@ class AdMainController extends BaseAdController
                     return $tab;
                 }
             } else {
-
                 if (isset($tab['params']['status']))
-                    $tab['is_active'] = $tab['params']['status'] === intval($query_status);
+                    $tab['is_active'] = $tab['params']['status'] ==  $query_status;
             }
 
             return $tab;
         });
 
-        $nav_items = get_profile_nav_items();
+        $nav_items = get_nav_items();
 
         return inertia('User/MyAds', compact('ads', 'tabs', 'nav_items'));
     }
@@ -114,7 +119,6 @@ class AdMainController extends BaseAdController
 
     public function getModels(Request $request)
     {
-
         $query =  PhoneModel::query();
 
         $search = "";
@@ -129,6 +133,45 @@ class AdMainController extends BaseAdController
         return response()->json([
             'search' => $search,
             'models' => $query->get(),
+        ]);
+    }
+
+    public function bookmark(Request $request)
+    {
+
+        $request->validate([
+            'ad' => ['required'],
+            'attach' => ['required', 'boolean']
+        ]);
+
+        $status = true;
+        $message = '';
+
+        try {
+
+            $query = auth()->user()->bookmarkedAds();
+
+            if ($request->attach)
+                $response = $query->attach($request->ad);
+            else
+                $response = $query->detach($request->ad);
+        } catch (Exception $e) {
+
+            $status = false;
+            $message = $e->getMessage();
+        }
+
+        return response()->json(compact('status', 'message'));
+    }
+
+    public function disableHelpAlert(Request $request)
+    {
+        $user = auth()->user();
+
+        return $user->update([
+            'user_meta' => [
+                Ad::HELP_ALERT_SESSION => false
+            ],
         ]);
     }
 }
