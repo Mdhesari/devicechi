@@ -1,6 +1,13 @@
 # Devicechi
 
-Devicechi is a marketplace platform for buying and selling mobile phones.
+DeviceChi is a modern and user-friendly marketplace app where people can buy and sell devices from each other. Whether
+it's smartphones, laptops, or other electronic gadgets, DeviceChi provides a seamless platform for users to connect,
+transact, and exchange devices securely.
+
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/network)
+[![GitHub issues](https://img.shields.io/github/issues/mdhesari/devicechi.svg)](https://github.com/mdhesari/devicechi/issues)
 
 ## Table of Contents
 
@@ -15,14 +22,16 @@ Devicechi is a marketplace platform for buying and selling mobile phones.
 
 ## Introduction
 
-Devicechi is a web application built with Laravel, Vue.js, and PostgreSQL. It provides a platform for users to buy and sell mobile phones easily. The application allows users to browse through listings, add items to their cart, and complete transactions securely.
+Devicechi is a web application built with Laravel, Vue.js, and PostgreSQL. It provides a platform for users to buy and
+sell mobile phones easily. The application allows users to browse through listings, add items to their cart, and
+complete transactions securely.
 
 ## Features
 
 - User registration and authentication
 - Mobile phone listings with detailed information and images
 - Secure payment processing
-- ser reviews and ratings
+- User reviews and ratings
 - Search and filtering options
 - User profiles and order history
 
@@ -71,17 +80,13 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-6.Create a PostgreSQL/Mysql database for Devicechi.
+6.Create a PostgreSQL/Mysql database for DeviceChi.
 
 7.Update the database configuration in the .env file:
 
 ```markdown
-DB_CONNECTION=pgsql
-DB_HOST=your-database-host
-DB_PORT=your-database-port
-DB_DATABASE=your-database-name
-DB_USERNAME=your-database-username
-DB_PASSWORD=your-database-password
+DB_CONNECTION=pgsql DB_HOST=your-database-host DB_PORT=your-database-port DB_DATABASE=your-database-name
+DB_USERNAME=your-database-username DB_PASSWORD=your-database-password
 ```
 
 8.Run database migrations and seed the database:
@@ -92,7 +97,8 @@ php artisan migrate --seed
 
 ## Configuration
 
-Additional configuration steps, if any, can be listed here. For example, configuring payment gateways, setting up external services, or modifying environment variables.
+Additional configuration steps, if any, can be listed here. For example, configuring payment gateways, setting up
+external services, or modifying environment variables.
 
 ## Contributing
 
